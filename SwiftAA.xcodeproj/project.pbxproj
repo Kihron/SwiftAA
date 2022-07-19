@@ -11,6 +11,9 @@
 		B65AE1C32886F401006EC138 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* ContentView.swift */; };
 		B65AE1C52886F404006EC138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C42886F404006EC138 /* Assets.xcassets */; };
 		B65AE1C82886F404006EC138 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C72886F404006EC138 /* Preview Assets.xcassets */; };
+		B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* AdvancementView.swift */; };
+		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
+		B65AE1D7288709F4006EC138 /* Minecraft.otf in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1D6288709F4006EC138 /* Minecraft.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,10 @@
 		B65AE1C42886F404006EC138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65AE1C72886F404006EC138 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B65AE1C92886F404006EC138 /* SwiftAA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAA.entitlements; sourceTree = "<group>"; };
+		B65AE1D02886F8C1006EC138 /* AdvancementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancementView.swift; sourceTree = "<group>"; };
+		B65AE1D32887032F006EC138 /* Advancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advancement.swift; sourceTree = "<group>"; };
+		B65AE1D6288709F4006EC138 /* Minecraft.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.otf; sourceTree = "<group>"; };
+		B65AE1D828870B66006EC138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,10 @@
 		B65AE1BF2886F401006EC138 /* SwiftAA */ = {
 			isa = PBXGroup;
 			children = (
+				B65AE1D828870B66006EC138 /* Info.plist */,
+				B65AE1D5288709E5006EC138 /* Font */,
+				B65AE1D2288702C6006EC138 /* Views */,
+				B65AE1CF2886F88C006EC138 /* Data */,
 				B65AE1C02886F401006EC138 /* SwiftAAApp.swift */,
 				B65AE1C22886F401006EC138 /* ContentView.swift */,
 				B65AE1C42886F404006EC138 /* Assets.xcassets */,
@@ -67,6 +78,30 @@
 				B65AE1C72886F404006EC138 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B65AE1CF2886F88C006EC138 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B65AE1D32887032F006EC138 /* Advancement.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B65AE1D2288702C6006EC138 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B65AE1D02886F8C1006EC138 /* AdvancementView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B65AE1D5288709E5006EC138 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B65AE1D6288709F4006EC138 /* Minecraft.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +164,7 @@
 			files = (
 				B65AE1C82886F404006EC138 /* Preview Assets.xcassets in Resources */,
 				B65AE1C52886F404006EC138 /* Assets.xcassets in Resources */,
+				B65AE1D7288709F4006EC138 /* Minecraft.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +177,8 @@
 			files = (
 				B65AE1C32886F401006EC138 /* ContentView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
+				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
+				B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +312,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftAA/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +340,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftAA/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
