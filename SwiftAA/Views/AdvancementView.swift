@@ -18,12 +18,14 @@ struct AdvancementView: View {
                     .resizable()
                     .frame(width: 52, height: 52)
                     .padding([.top, .leading, .trailing], 6)
+                    .saturation((indicator.completed) ? 1.5 : 1)
+                    .brightness((indicator.completed) ? 0.15 : 0)
                     .overlay {
                         if (indicator.completed) {
                            Image("frame_glow")
                                 .interpolation(.none)
                                 .resizable()
-                                .brightness(0.25)
+                                .brightness(0.3)
                                 .saturation(1.7)
                                 .frame(width: 128, height: 128)
                                 .padding([.top, .leading, .trailing], 6)
@@ -37,14 +39,11 @@ struct AdvancementView: View {
                     .padding(.top, 6)
             }
             
-            Text("City at the end of the")
+            Text(indicator.name)
                 .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(.clear)
-                .overlay {
-                    Text(indicator.name)
-                        .font(.custom("Minecraft-Regular", size: 10))
-                        .multilineTextAlignment(.center)
-                }
+                .multilineTextAlignment(.center)
+                .frame(height: 24, alignment: .top)
+                .padding(.top, -2)
         }
         .frame(width: 74)
     }
@@ -52,7 +51,7 @@ struct AdvancementView: View {
 
 struct AdvancementView_Previews: PreviewProvider {
     static var previews: some View {
-        AdvancementView(indicator: Advancement(id: "bullseye", name: "City at the End of the Game", icon: "bullseye", frameStyle: "challenge", completed: true))
-            .frame(width: 100, height: 150)
+        AdvancementView(indicator: Advancement(id: "bullseye", name: "Bullseye", icon: "bullseye", frameStyle: "challenge", completed: true))
+            .frame(width: 100, height: 100)
     }
 }
