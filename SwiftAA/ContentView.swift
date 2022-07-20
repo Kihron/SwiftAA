@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    var advancements: [Indicator] = [Advancement(id: "bullseye", name: "Bullseye", icon: "bullseye", frameStyle: .challenge, completed: false), Advancement(id: "postmortal", name: "Postmortal", icon: "totem_of_undying", frameStyle: .goal, completed: false)]
-    let rows = [GridItem(.adaptive(minimum: 64)), GridItem(.adaptive(minimum: 64))]
+    @ObservedObject var dataHandler = DataHandler()
+    let columns = [GridItem(.adaptive(minimum: 64), spacing: 0), GridItem(.adaptive(minimum: 64), spacing: 0)]
     
     var body: some View {
-        LazyHGrid(rows: rows) {
-            ForEach(advancements, id: \.self.id, content: AdvancementView.init)
+        LazyVGrid(columns: columns, spacing: 0) {
+            ForEach(dataHandler.decode(file: "adventure"), id: \.self.id, content: AdvancementView.init)
         }
     }
 }

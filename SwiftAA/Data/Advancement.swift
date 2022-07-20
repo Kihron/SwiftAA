@@ -11,18 +11,14 @@ protocol Indicator {
     var id: String { get set }
     var name: String { get set }
     var icon: String { get set }
-    var frameStyle: frameStyle { get set }
+    var frameStyle: String { get set }
     var completed: Bool { get set }
 }
 
-struct Advancement: Indicator, Identifiable, Hashable {
+struct Advancement: Indicator, Identifiable, Codable, Hashable {
     var id: String
     var name: String
     var icon: String
-    var frameStyle: frameStyle
+    var frameStyle: String
     var completed: Bool
-}
-
-enum frameStyle {
-    case normal, challenge, goal, statistic
 }

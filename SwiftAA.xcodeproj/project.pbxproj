@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C02886F401006EC138 /* SwiftAAApp.swift */; };
 		B65AE1C32886F401006EC138 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* ContentView.swift */; };
-		B65AE1C52886F404006EC138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C42886F404006EC138 /* Assets.xcassets */; };
-		B65AE1C82886F404006EC138 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C72886F404006EC138 /* Preview Assets.xcassets */; };
 		B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* AdvancementView.swift */; };
 		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
-		B65AE1D7288709F4006EC138 /* Minecraft.otf in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1D6288709F4006EC138 /* Minecraft.otf */; };
+		B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A076F28879ED900DC0A2C /* DataHandler.swift */; };
+		B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07712887A2C900DC0A2C /* CriterionView.swift */; };
+		B66A07742887A32900DC0A2C /* Criterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07732887A32900DC0A2C /* Criterion.swift */; };
+		B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C72886F404006EC138 /* Preview Assets.xcassets */; };
+		B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C42886F404006EC138 /* Assets.xcassets */; };
+		B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1D6288709F4006EC138 /* Minecraft.otf */; };
+		B66A07832887B93100DC0A2C /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B66A07822887B93100DC0A2C /* SWXMLHash */; };
+		B66A07852887B95A00DC0A2C /* adventure.xml in Resources */ = {isa = PBXBuildFile; fileRef = B66A07842887B95A00DC0A2C /* adventure.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,10 @@
 		B65AE1D32887032F006EC138 /* Advancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advancement.swift; sourceTree = "<group>"; };
 		B65AE1D6288709F4006EC138 /* Minecraft.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.otf; sourceTree = "<group>"; };
 		B65AE1D828870B66006EC138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B66A076F28879ED900DC0A2C /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		B66A07712887A2C900DC0A2C /* CriterionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionView.swift; sourceTree = "<group>"; };
+		B66A07732887A32900DC0A2C /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
+		B66A07842887B95A00DC0A2C /* adventure.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = adventure.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66A07832887B93100DC0A2C /* SWXMLHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,11 +70,12 @@
 			isa = PBXGroup;
 			children = (
 				B65AE1D828870B66006EC138 /* Info.plist */,
-				B65AE1D5288709E5006EC138 /* Font */,
 				B65AE1D2288702C6006EC138 /* Views */,
 				B65AE1CF2886F88C006EC138 /* Data */,
 				B65AE1C02886F401006EC138 /* SwiftAAApp.swift */,
 				B65AE1C22886F401006EC138 /* ContentView.swift */,
+				B66A07752887B2A800DC0A2C /* Resources */,
+				B65AE1D5288709E5006EC138 /* Font */,
 				B65AE1C42886F404006EC138 /* Assets.xcassets */,
 				B65AE1C92886F404006EC138 /* SwiftAA.entitlements */,
 				B65AE1C62886F404006EC138 /* Preview Content */,
@@ -84,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				B65AE1D32887032F006EC138 /* Advancement.swift */,
+				B66A076F28879ED900DC0A2C /* DataHandler.swift */,
+				B66A07732887A32900DC0A2C /* Criterion.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -92,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				B65AE1D02886F8C1006EC138 /* AdvancementView.swift */,
+				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +118,14 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		B66A07752887B2A800DC0A2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B66A07842887B95A00DC0A2C /* adventure.xml */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,13 +135,16 @@
 			buildPhases = (
 				B65AE1B92886F401006EC138 /* Sources */,
 				B65AE1BA2886F401006EC138 /* Frameworks */,
-				B65AE1BB2886F401006EC138 /* Resources */,
+				B66A07782887B7D400DC0A2C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SwiftAA;
+			packageProductDependencies = (
+				B66A07822887B93100DC0A2C /* SWXMLHash */,
+			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +173,9 @@
 				Base,
 			);
 			mainGroup = B65AE1B42886F401006EC138;
+			packageReferences = (
+				B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,13 +186,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B65AE1BB2886F401006EC138 /* Resources */ = {
+		B66A07782887B7D400DC0A2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65AE1C82886F404006EC138 /* Preview Assets.xcassets in Resources */,
-				B65AE1C52886F404006EC138 /* Assets.xcassets in Resources */,
-				B65AE1D7288709F4006EC138 /* Minecraft.otf in Resources */,
+				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
+				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
+				B66A07852887B95A00DC0A2C /* adventure.xml in Resources */,
+				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,10 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B65AE1C32886F401006EC138 /* ContentView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */,
+				B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */,
+				B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B66A07822887B93100DC0A2C /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B65AE1B52886F401006EC138 /* Project object */;
 }
