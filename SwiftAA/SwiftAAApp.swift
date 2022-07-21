@@ -12,7 +12,7 @@ struct SwiftAAApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 500, maxWidth: 500, minHeight: 700, maxHeight: 700, alignment: .center)
+                .frame(minWidth: 1356, maxWidth: 1356, minHeight: 775, maxHeight: 775, alignment: .center)
         }
     }
 }

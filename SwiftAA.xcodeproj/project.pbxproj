@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C02886F401006EC138 /* SwiftAAApp.swift */; };
-		B65AE1C32886F401006EC138 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* ContentView.swift */; };
+		B65AE1C32886F401006EC138 /* AdvGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* AdvGroupView.swift */; };
 		B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* AdvancementView.swift */; };
 		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
 		B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A076F28879ED900DC0A2C /* DataHandler.swift */; };
@@ -20,12 +20,19 @@
 		B66A07832887B93100DC0A2C /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B66A07822887B93100DC0A2C /* SWXMLHash */; };
 		B66A07852887B95A00DC0A2C /* adventure.xml in Resources */ = {isa = PBXBuildFile; fileRef = B66A07842887B95A00DC0A2C /* adventure.xml */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
+		B6A772E4288892BD00436551 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalView.swift */; };
+		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
+		B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E72888FCE100436551 /* PotionPanelView.swift */; };
+		B6A772ED2889053E00436551 /* end.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772E92889053E00436551 /* end.xml */; };
+		B6A772EE2889053E00436551 /* husbandry.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772EA2889053E00436551 /* husbandry.xml */; };
+		B6A772EF2889053E00436551 /* minecraft.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772EB2889053E00436551 /* minecraft.xml */; };
+		B6A772F02889053E00436551 /* nether.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772EC2889053E00436551 /* nether.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B65AE1BD2886F401006EC138 /* SwiftAA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65AE1C02886F401006EC138 /* SwiftAAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAAApp.swift; sourceTree = "<group>"; };
-		B65AE1C22886F401006EC138 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B65AE1C22886F401006EC138 /* AdvGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvGroupView.swift; sourceTree = "<group>"; };
 		B65AE1C42886F404006EC138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65AE1C72886F404006EC138 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B65AE1C92886F404006EC138 /* SwiftAA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAA.entitlements; sourceTree = "<group>"; };
@@ -38,6 +45,13 @@
 		B66A07732887A32900DC0A2C /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
 		B66A07842887B95A00DC0A2C /* adventure.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = adventure.xml; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		B6A772E3288892BD00436551 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B6A772E72888FCE100436551 /* PotionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionPanelView.swift; sourceTree = "<group>"; };
+		B6A772E92889053E00436551 /* end.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = end.xml; sourceTree = "<group>"; };
+		B6A772EA2889053E00436551 /* husbandry.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = husbandry.xml; sourceTree = "<group>"; };
+		B6A772EB2889053E00436551 /* minecraft.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minecraft.xml; sourceTree = "<group>"; };
+		B6A772EC2889053E00436551 /* nether.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nether.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +89,7 @@
 				B65AE1D2288702C6006EC138 /* Views */,
 				B65AE1CF2886F88C006EC138 /* Data */,
 				B65AE1C02886F401006EC138 /* SwiftAAApp.swift */,
-				B65AE1C22886F401006EC138 /* ContentView.swift */,
+				B6A772E52888FBA600436551 /* ContentView.swift */,
 				B66A07752887B2A800DC0A2C /* Resources */,
 				B65AE1D5288709E5006EC138 /* Font */,
 				B65AE1C42886F404006EC138 /* Assets.xcassets */,
@@ -107,8 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				B65AE1D02886F8C1006EC138 /* AdvancementView.swift */,
+				B65AE1C22886F401006EC138 /* AdvGroupView.swift */,
 				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
 				B6A772E128888B3600436551 /* ProgressBarView.swift */,
+				B6A772E3288892BD00436551 /* GoalView.swift */,
+				B6A772E72888FCE100436551 /* PotionPanelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				B66A07842887B95A00DC0A2C /* adventure.xml */,
+				B6A772E92889053E00436551 /* end.xml */,
+				B6A772EA2889053E00436551 /* husbandry.xml */,
+				B6A772EB2889053E00436551 /* minecraft.xml */,
+				B6A772EC2889053E00436551 /* nether.xml */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -193,10 +214,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A772EF2889053E00436551 /* minecraft.xml in Resources */,
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
 				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
+				B6A772ED2889053E00436551 /* end.xml in Resources */,
 				B66A07852887B95A00DC0A2C /* adventure.xml in Resources */,
+				B6A772EE2889053E00436551 /* husbandry.xml in Resources */,
 				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
+				B6A772F02889053E00436551 /* nether.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,12 +233,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
-				B65AE1C32886F401006EC138 /* ContentView.swift in Sources */,
+				B65AE1C32886F401006EC138 /* AdvGroupView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
+				B6A772E62888FBA600436551 /* ContentView.swift in Sources */,
 				B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */,
+				B6A772E4288892BD00436551 /* GoalView.swift in Sources */,
+				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ struct ProgressBarView: View {
                         Image("bar_ender_dragon_inactive_left")
                         Image("bar_ender_dragon_inactive_middle")
                             .resizable()
-                            .frame(width: .infinity, height: 10)
+                            .frame(width: CGFloat(Int(item.size.width) - 40), height: 10)
                         Image("bar_ender_dragon_inactive_right")
                     }
                     

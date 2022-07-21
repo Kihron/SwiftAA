@@ -19,7 +19,6 @@ struct CriterionView: View {
                 .font(.custom("Minecraft-Regular", size: 10))
         }
         .opacity(criterion.completed ? 1 : 0.3)
-        .padding()
     }
 }
 

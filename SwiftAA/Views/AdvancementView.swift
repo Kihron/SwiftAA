@@ -9,9 +9,16 @@ import SwiftUI
 
 struct AdvancementView: View {
     @State var indicator: Indicator
+//    @State var angle: Double = 0.0
+//    @State var isAnimating = false
+//    
+//    var foreverAnimation: Animation {
+//        Animation.linear(duration: 2.0)
+//            .repeatForever(autoreverses: false)
+//    }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 3) {
             ZStack {
                 Image("frame_mc_\(indicator.frameStyle)_\((indicator.completed ? "" : "in"))complete")
                     .interpolation(.none)
@@ -29,6 +36,11 @@ struct AdvancementView: View {
                                 .saturation(1.7)
                                 .frame(width: 128, height: 128)
                                 .padding([.top, .leading, .trailing], 6)
+//                                .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
+//                                .animation(self.foreverAnimation)
+//                                .onAppear {
+//                                    self.isAnimating = true
+//                            }
                         }
                     }
 
@@ -51,7 +63,7 @@ struct AdvancementView: View {
 
 struct AdvancementView_Previews: PreviewProvider {
     static var previews: some View {
-        AdvancementView(indicator: Advancement(id: "bullseye", name: "Bullseye", icon: "bullseye", frameStyle: "challenge", completed: true))
+        AdvancementView(indicator: Advancement(id: "bullseye", name: "Bullseye", icon: "bullseye", frameStyle: "challenge", criteria: [], completed: true))
             .frame(width: 100, height: 100)
     }
 }
