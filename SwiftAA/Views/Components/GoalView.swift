@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct GoalView: View {
-    @State var advancement: Advancement
+    @Binding var advancement: Advancement
+    @State var completedTotal: Int = 0
     @State var rowCount: Int
+    @State var goal: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,18 +19,22 @@ struct GoalView: View {
                 Spacer()
                 Spacer()
                 
-                AdvancementView(indicator: advancement)
-                
+                IndicatorView(indicator: $advancement.asIndicator)
+
                 Spacer()
                 Spacer()
                 
-                ForEach(advancement.criteria, id: \.self.id, content: CriterionView.init)
-                    .frame(alignment: .leading)
+                ForEach($advancement.criteria, id: \.self.id) { item in
+                    CriterionView(criterion: item)
+                }
+                .frame(alignment: .leading)
             }
             .frame(maxHeight: .infinity)
             .padding(.leading, 5)
 
-            ProgressBarView(value: 0, total: advancement.criteria.count, title: "Biomes Visited")
+            ProgressBarView(value: .constant($advancement.criteria.filter({ criterion in
+                return criterion.completed.wrappedValue
+            }).count), total: advancement.criteria.count, title: goal)
         }
         .padding(4)
         .background(Color("ender_pearl_background"))
@@ -40,7 +46,7 @@ struct GoalView_Previews: PreviewProvider {
     @ObservedObject static var dataHandler = DataHandler()
     
     static var previews: some View {
-        GoalView(advancement: dataHandler.decode(file: "adventure")[18], rowCount: 16)
+        GoalView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
             .frame(width: 500, height: 400)
     }
 }

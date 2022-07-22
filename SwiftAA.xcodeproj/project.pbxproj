@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
+		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
+		B64199F1288A73830064AF5B /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199F0288A73830064AF5B /* enchant_item.gif */; };
+		B64827282889C74B00B44855 /* QLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64827272889C74B00B44855 /* QLImage.swift */; };
+		B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64827292889CB7100B44855 /* TrackingSettingsView.swift */; };
+		B648272E2889CD8100B44855 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B648272D2889CD8100B44855 /* Settings.swift */; };
 		B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C02886F401006EC138 /* SwiftAAApp.swift */; };
 		B65AE1C32886F401006EC138 /* AdvGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* AdvGroupView.swift */; };
-		B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* AdvancementView.swift */; };
+		B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* IndicatorView.swift */; };
 		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
 		B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A076F28879ED900DC0A2C /* DataHandler.swift */; };
 		B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07712887A2C900DC0A2C /* CriterionView.swift */; };
@@ -27,16 +33,26 @@
 		B6A772EE2889053E00436551 /* husbandry.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772EA2889053E00436551 /* husbandry.xml */; };
 		B6A772EF2889053E00436551 /* minecraft.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772EB2889053E00436551 /* minecraft.xml */; };
 		B6A772F02889053E00436551 /* nether.xml in Resources */ = {isa = PBXBuildFile; fileRef = B6A772EC2889053E00436551 /* nether.xml */; };
+		B6A772F52889949A00436551 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772F42889949A00436551 /* SettingsView.swift */; };
+		B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772F6288994DE00436551 /* ThemeSettingsView.swift */; };
+		B6A772FC2889998700436551 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FB2889998700436551 /* Statistics.swift */; };
+		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
+		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
+		B64199F0288A73830064AF5B /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
+		B64827272889C74B00B44855 /* QLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLImage.swift; sourceTree = "<group>"; };
+		B64827292889CB7100B44855 /* TrackingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSettingsView.swift; sourceTree = "<group>"; };
+		B648272D2889CD8100B44855 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B65AE1BD2886F401006EC138 /* SwiftAA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65AE1C02886F401006EC138 /* SwiftAAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAAApp.swift; sourceTree = "<group>"; };
 		B65AE1C22886F401006EC138 /* AdvGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvGroupView.swift; sourceTree = "<group>"; };
 		B65AE1C42886F404006EC138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65AE1C72886F404006EC138 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B65AE1C92886F404006EC138 /* SwiftAA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAA.entitlements; sourceTree = "<group>"; };
-		B65AE1D02886F8C1006EC138 /* AdvancementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancementView.swift; sourceTree = "<group>"; };
+		B65AE1D02886F8C1006EC138 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		B65AE1D32887032F006EC138 /* Advancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advancement.swift; sourceTree = "<group>"; };
 		B65AE1D6288709F4006EC138 /* Minecraft.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.otf; sourceTree = "<group>"; };
 		B65AE1D828870B66006EC138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +68,10 @@
 		B6A772EA2889053E00436551 /* husbandry.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = husbandry.xml; sourceTree = "<group>"; };
 		B6A772EB2889053E00436551 /* minecraft.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minecraft.xml; sourceTree = "<group>"; };
 		B6A772EC2889053E00436551 /* nether.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nether.xml; sourceTree = "<group>"; };
+		B6A772F42889949A00436551 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B6A772F6288994DE00436551 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
+		B6A772FB2889998700436551 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B648272B2889CD6F00B44855 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B648272D2889CD8100B44855 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		B65AE1B42886F401006EC138 = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +138,12 @@
 		B65AE1CF2886F88C006EC138 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B648272B2889CD6F00B44855 /* Settings */,
+				B6A772FE28899D2200436551 /* Json */,
 				B65AE1D32887032F006EC138 /* Advancement.swift */,
 				B66A076F28879ED900DC0A2C /* DataHandler.swift */,
 				B66A07732887A32900DC0A2C /* Criterion.swift */,
+				B6A772FB2889998700436551 /* Statistics.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -120,12 +151,8 @@
 		B65AE1D2288702C6006EC138 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B65AE1D02886F8C1006EC138 /* AdvancementView.swift */,
-				B65AE1C22886F401006EC138 /* AdvGroupView.swift */,
-				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
-				B6A772E128888B3600436551 /* ProgressBarView.swift */,
-				B6A772E3288892BD00436551 /* GoalView.swift */,
-				B6A772E72888FCE100436551 /* PotionPanelView.swift */,
+				B6A772F22889947700436551 /* Settings */,
+				B6A772F12889945F00436551 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +168,7 @@
 		B66A07752887B2A800DC0A2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6A773042889BA3900436551 /* Gifs */,
 				B66A07842887B95A00DC0A2C /* adventure.xml */,
 				B6A772E92889053E00436551 /* end.xml */,
 				B6A772EA2889053E00436551 /* husbandry.xml */,
@@ -148,6 +176,56 @@
 				B6A772EC2889053E00436551 /* nether.xml */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B6A772F12889945F00436551 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B6A773112889BE4800436551 /* Gifs */,
+				B65AE1D02886F8C1006EC138 /* IndicatorView.swift */,
+				B65AE1C22886F401006EC138 /* AdvGroupView.swift */,
+				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
+				B6A772E128888B3600436551 /* ProgressBarView.swift */,
+				B6A772E3288892BD00436551 /* GoalView.swift */,
+				B6A772E72888FCE100436551 /* PotionPanelView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B6A772F22889947700436551 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B6A772F42889949A00436551 /* SettingsView.swift */,
+				B6A772F6288994DE00436551 /* ThemeSettingsView.swift */,
+				B64827292889CB7100B44855 /* TrackingSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B6A772FE28899D2200436551 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				B6A772FF28899D3900436551 /* JsonAdvancement.swift */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		B6A773042889BA3900436551 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */,
+				B64199F0288A73830064AF5B /* enchant_item.gif */,
+				B64199EE288A72C10064AF5B /* summon_wither.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		B6A773112889BE4800436551 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				B64827272889C74B00B44855 /* QLImage.swift */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +294,12 @@
 			files = (
 				B6A772EF2889053E00436551 /* minecraft.xml in Resources */,
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
+				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
 				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
+				B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */,
 				B6A772ED2889053E00436551 /* end.xml in Resources */,
 				B66A07852887B95A00DC0A2C /* adventure.xml in Resources */,
+				B64199F1288A73830064AF5B /* enchant_item.gif in Resources */,
 				B6A772EE2889053E00436551 /* husbandry.xml in Resources */,
 				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
 				B6A772F02889053E00436551 /* nether.xml in Resources */,
@@ -232,17 +313,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A772FC2889998700436551 /* Statistics.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvGroupView.swift in Sources */,
+				B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
-				B65AE1D12886F8C1006EC138 /* AdvancementView.swift in Sources */,
+				B648272E2889CD8100B44855 /* Settings.swift in Sources */,
+				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
+				B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
+				B64827282889C74B00B44855 /* QLImage.swift in Sources */,
 				B6A772E62888FBA600436551 /* ContentView.swift in Sources */,
 				B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */,
 				B6A772E4288892BD00436551 /* GoalView.swift in Sources */,
+				B6A772F52889949A00436551 /* SettingsView.swift in Sources */,
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */,
+				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

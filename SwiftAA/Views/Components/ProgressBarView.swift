@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressBarView: View {
-    @State var value: Int
+    @Binding var value: Int
     @State var total: Int
     @State var title: String
     
@@ -48,7 +48,7 @@ struct ProgressBarView: View {
 
 struct ProgressBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBarView(value: 20, total: 42, title: "Biomes Visited")
+        ProgressBarView(value: .constant(0), total: 42, title: "Biomes Visited")
             .frame(width: 400, height: 100)
     }
 }

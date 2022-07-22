@@ -9,22 +9,25 @@ import SwiftUI
 import SWXMLHash
 
 class DataHandler: ObservableObject {
-    var map = [String:[Advancement]]()
+    @Published var map = [String:[Advancement]]()
+    @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
+    @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
     
-    func decode(file: String, start: String = "", end: String = "") -> [Advancement] {
-        var cache = map[file]
+    func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
+        let cache = map[file]
         if (cache != nil) {
+            var cache = cache!
             if (start != "") {
-                while (cache![0].id != start) {
-                    cache!.removeFirst()
+                while (cache[0].id != start) {
+                    cache.removeFirst()
                 }
             }
             if (end != "") {
-                while (cache![cache!.count - 1].id != end) {
-                    cache!.removeLast()
+                while (cache[cache.count - 1].id != end) {
+                    cache.removeLast()
                 }
             }
-            return cache!
+            return Binding.constant(cache)
         }
         
         var advancements = [Advancement]()
@@ -66,7 +69,7 @@ class DataHandler: ObservableObject {
         }
         
         map[file] = fullList
-        return advancements
+        return Binding.constant(advancements)
     }
     
     func getIconFromID(id: String, separator: Character) -> String {

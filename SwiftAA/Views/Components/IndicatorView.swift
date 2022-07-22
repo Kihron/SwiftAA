@@ -6,16 +6,11 @@
 //
 
 import SwiftUI
+import Quartz
 
-struct AdvancementView: View {
-    @State var indicator: Indicator
-//    @State var angle: Double = 0.0
-//    @State var isAnimating = false
-//    
-//    var foreverAnimation: Animation {
-//        Animation.linear(duration: 2.0)
-//            .repeatForever(autoreverses: false)
-//    }
+struct IndicatorView: View {
+    @Binding var indicator: Indicator
+    @State var refresh: Bool = false
     
     var body: some View {
         VStack(spacing: 3) {
@@ -36,19 +31,20 @@ struct AdvancementView: View {
                                 .saturation(1.7)
                                 .frame(width: 128, height: 128)
                                 .padding([.top, .leading, .trailing], 6)
-//                                .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
-//                                .animation(self.foreverAnimation)
-//                                .onAppear {
-//                                    self.isAnimating = true
-//                            }
                         }
                     }
 
-                Image(indicator.icon)
-                    .interpolation(.none)
-                    .resizable()
-                    .frame(width: 32, height: 32)
-                    .padding(.top, 6)
+                if (isAnimated(icon: indicator.icon)) {
+                    QLImage(indicator.icon)
+                        .frame(width: 32, height: 32)
+                        .padding(.top, 6)
+                } else {
+                    Image(indicator.icon)
+                        .interpolation(.none)
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .padding(.top, 6)
+                }
             }
             
             Text(indicator.name)
@@ -59,11 +55,15 @@ struct AdvancementView: View {
         }
         .frame(width: 74)
     }
+    
+    func isAnimated(icon: String) -> Bool {
+        return ["enchant_item", "enchanted_golden_apple", "summon_wither"].contains(icon)
+    }
 }
 
-struct AdvancementView_Previews: PreviewProvider {
+struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        AdvancementView(indicator: Advancement(id: "bullseye", name: "Bullseye", icon: "bullseye", frameStyle: "challenge", criteria: [], completed: true))
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)))
             .frame(width: 100, height: 100)
     }
 }

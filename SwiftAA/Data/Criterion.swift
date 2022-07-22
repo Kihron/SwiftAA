@@ -7,9 +7,20 @@
 
 import SwiftUI
 
-struct Criterion {
+class Criterion: NSObject {
     var id: String
     var name: String
     var icon: String
     var completed: Bool
+    
+    init(id: String, name: String, icon: String, completed: Bool) {
+        self.id = id
+        self.name = name
+        self.icon = icon
+        self.completed = completed
+    }
+    
+    public override var description: String {
+        return "\(self.name) \(self.completed)"
+    }
 }
