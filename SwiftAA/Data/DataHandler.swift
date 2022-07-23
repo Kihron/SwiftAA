@@ -12,6 +12,7 @@ class DataHandler: ObservableObject {
     @Published var map = [String:[Advancement]]()
     @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
     @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
+    @Published var playTime: Int = 0
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
         let cache = map[file]
@@ -82,5 +83,72 @@ class DataHandler: ObservableObject {
     
     func getNameFromID(id: String, prefix: String) -> String {
         return id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+    }
+    
+    //https://stackoverflow.com/questions/72443976/how-to-get-arguments-of-nsrunningapplication
+    func processArguments(pid: pid_t) -> [String]? {
+        
+        // Determine space for arguments:
+        var name : [CInt] = [ CTL_KERN, KERN_PROCARGS2, pid ]
+        var length: size_t = 0
+        if sysctl(&name, CUnsignedInt(name.count), nil, &length, nil, 0) == -1 {
+            return nil
+        }
+        
+        // Get raw arguments:
+        var buffer = [CChar](repeating: 0, count: length)
+        if sysctl(&name, CUnsignedInt(name.count), &buffer, &length, nil, 0) == -1 {
+            return nil
+        }
+        
+        // There should be at least the space for the argument count:
+        var argc : CInt = 0
+        if length < MemoryLayout.size(ofValue: argc) {
+            return nil
+        }
+        
+        var argv: [String] = []
+        
+        buffer.withUnsafeBufferPointer { bp in
+            
+            // Get argc:
+            memcpy(&argc, bp.baseAddress, MemoryLayout.size(ofValue: argc))
+            var pos = MemoryLayout.size(ofValue: argc)
+            
+            // Skip the saved exec_path.
+            while pos < bp.count && bp[pos] != 0 {
+                pos += 1
+            }
+            if pos == bp.count {
+                return
+            }
+            
+            // Skip trailing '\0' characters.
+            while pos < bp.count && bp[pos] == 0 {
+                pos += 1
+            }
+            if pos == bp.count {
+                return
+            }
+            
+            // Iterate through the '\0'-terminated strings.
+            for _ in 0..<argc {
+                let start = bp.baseAddress! + pos
+                while pos < bp.count && bp[pos] != 0 {
+                    pos += 1
+                }
+                if pos == bp.count {
+                    return
+                }
+                argv.append(String(cString: start))
+                pos += 1
+            }
+        }
+        
+        return argv.count == argc ? argv : nil
+    }
+    
+    func robSaveFile() {
+        
     }
 }

@@ -11,10 +11,18 @@ struct ProgressBarView: View {
     @Binding var value: Int
     @State var total: Int
     @State var title: String
+    @Binding var message: String
+    
+    init(value: Binding<Int>, total: Int, title: String, message: Binding<String> = .constant("")) {
+        _value = value
+        self.total = total
+        self.title = title
+        _message = message
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("\(value) / \(total) \(title) (\(value * 100 / total)%)")
+            Text("\(value) / \(total) \(title) (\(value * 100 / total)%)\(message)")
                 .font(.custom("Minecraft-Regular", size: 10))
             
             GeometryReader { item in

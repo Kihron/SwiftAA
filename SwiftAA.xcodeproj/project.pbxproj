@@ -25,6 +25,9 @@
 		B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1D6288709F4006EC138 /* Minecraft.otf */; };
 		B66A07832887B93100DC0A2C /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B66A07822887B93100DC0A2C /* SWXMLHash */; };
 		B66A07852887B95A00DC0A2C /* adventure.xml in Resources */ = {isa = PBXBuildFile; fileRef = B66A07842887B95A00DC0A2C /* adventure.xml */; };
+		B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */; };
+		B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A830288AF27000560177 /* ToolbarAAView.swift */; };
+		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E4288892BD00436551 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
@@ -60,6 +63,9 @@
 		B66A07712887A2C900DC0A2C /* CriterionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionView.swift; sourceTree = "<group>"; };
 		B66A07732887A32900DC0A2C /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
 		B66A07842887B95A00DC0A2C /* adventure.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = adventure.xml; sourceTree = "<group>"; };
+		B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarAlertView.swift; sourceTree = "<group>"; };
+		B673A830288AF27000560177 /* ToolbarAAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarAAView.swift; sourceTree = "<group>"; };
+		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E3288892BD00436551 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		B65AE1D2288702C6006EC138 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B673A82D288AEF6500560177 /* Toolbar */,
 				B6A772F22889947700436551 /* Settings */,
 				B6A772F12889945F00436551 /* Components */,
 			);
@@ -176,6 +183,16 @@
 				B6A772EC2889053E00436551 /* nether.xml */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B673A82D288AEF6500560177 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				B673A830288AF27000560177 /* ToolbarAAView.swift */,
+				B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */,
+				B673A832288B104F00560177 /* ToolbarRefreshView.swift */,
+			);
+			path = Toolbar;
 			sourceTree = "<group>";
 		};
 		B6A772F12889945F00436551 /* Components */ = {
@@ -314,11 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A772FC2889998700436551 /* Statistics.swift in Sources */,
+				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvGroupView.swift in Sources */,
 				B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
+				B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
+				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B648272E2889CD8100B44855 /* Settings.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
 				B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */,

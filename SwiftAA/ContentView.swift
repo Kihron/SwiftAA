@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Cocoa
 
 struct ContentView: View {
     @ObservedObject var dataHandler: DataHandler
@@ -57,7 +58,7 @@ struct ContentView: View {
                     GoalView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "Visited")
                         .frame(width: 130)
                 }
-                .frame(width: 1431, height: 344)
+                .frame(width: 1431, height: 323)
                 
                 if (refresh && !refresh) {
                     Spacer()
@@ -69,8 +70,8 @@ struct ContentView: View {
                 if (changed) {
                     withAnimation {
                         refresh.toggle()
+                        changed = false
                     }
-                    changed = false
                 }
             }
         }

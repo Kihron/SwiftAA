@@ -11,50 +11,83 @@ struct TrackingSettingsView: View {
     @EnvironmentObject var settings: AppSettings
     
     var body: some View {
-        HStack(spacing: 20) {
-            VStack {
-                Text("Game Version")
-                    .font(.custom("Minecraft-Regular", size: 10))
-                
-                Menu {
-                    Button {
-                        settings.gameVersion = "1.16"
-                    } label: {
-                        Text("1.16")
-                    }
-                } label: {
-                    Text(settings.gameVersion)
-                        .font(.custom("Minecraft-Regular", size: 10))
-               }
-                .padding(.horizontal)
-            }
-            .frame(width: 100)
-            
-            VStack(alignment: .leading) {
-                Text("Custom Saves Folder")
-                    .font(.custom("Minecraft-Regular", size: 10))
-                
-                HStack {
-                    TextField("Enter Directory", text: $settings.customSavesPath)
-                        .textFieldStyle(.roundedBorder)
+        VStack {
+            HStack(spacing: 20) {
+                VStack {
+                    Text("Game Version")
                         .font(.custom("Minecraft-Regular", size: 10))
                     
-                    Button {
-                        let panel = NSOpenPanel()
-                        panel.allowsMultipleSelection = false
-                        panel.canChooseDirectories = true
-                        panel.canChooseFiles = false
-                        if panel.runModal() == .OK {
-                            settings.customSavesPath = panel.url?.path ?? ""
+                    Menu {
+                        Button {
+                            settings.gameVersion = "1.16"
+                        } label: {
+                            Text("1.16")
                         }
-                        NSApp.keyWindow?.makeFirstResponder(nil)
                     } label: {
-                        Text("Browse")
+                        Text(settings.gameVersion)
                             .font(.custom("Minecraft-Regular", size: 10))
-                    }
+                   }
+                    .padding(.horizontal)
+                    
+                    Spacer()
                 }
-                .padding(.horizontal)
+                .frame(width: 100)
+                
+                VStack {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Picker(selection: settings.$trackingMode, label: Text("")) {
+                                Group {
+                                    Text("Seamless Tracking")
+                                        .font(.custom("Minecraft-Regular", size: 10))
+                                }
+                                .tag(TrackingMode.seamless)
+                                .padding(.bottom)
+                                
+                                Group {
+                                    VStack(alignment: .leading) {
+                                        Text("Custom Saves Folder")
+                                            .font(.custom("Minecraft-Regular", size: 10))
+                                        
+                                        HStack {
+                                            TextField("Enter Directory", text: $settings.customSavesPath)
+                                                .font(.custom("Minecraft-Regular", size: 10))
+                                                .textFieldStyle(.roundedBorder)
+                                            
+                                            
+                                            Button {
+                                                let panel = NSOpenPanel()
+                                                panel.allowsMultipleSelection = false
+                                                panel.canChooseDirectories = true
+                                                panel.canChooseFiles = false
+                                                if panel.runModal() == .OK {
+                                                    settings.customSavesPath = panel.url?.path ?? ""
+                                                }
+                                                NSApp.keyWindow?.makeFirstResponder(nil)
+                                            } label: {
+                                                Text("Browse")
+                                                    .font(.custom("Minecraft-Regular", size: 10))
+                                            }
+                                            
+                                        }
+                                        .padding(.trailing)
+                                    }
+                                }
+                                .tag(TrackingMode.directory)
+                            }.pickerStyle(.radioGroup)
+                            
+                            Spacer()
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding(.bottom)
+                }
             }
+            .padding(.top)
+            
+            
+            Spacer()
         }
     }
 }
@@ -64,7 +97,7 @@ struct TrackingSettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         TrackingSettingsView()
-            .frame(width: 450, height: 250)
+            .frame(width: 500, height: 300)
             .environmentObject(settings)
     }
 }

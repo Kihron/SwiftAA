@@ -8,16 +8,11 @@
 import SwiftUI
 
 class AppSettings: ObservableObject {
-    @Published var gameVersion: String = "1.16"
-    @Published var customSavesPath: String = ""
-    
-    func save() {
-        UserDefaults.standard.set(gameVersion, forKey: "gameVersion")
-        UserDefaults.standard.set(customSavesPath, forKey: "customSavesFolder")
-    }
-    
-    func load() {
-        gameVersion = UserDefaults.standard.string(forKey: "gameVersion") ?? "1.16"
-        customSavesPath = UserDefaults.standard.string(forKey: "customSavesFolder") ?? ""
-    }
+    @AppStorage("gameVersion") var gameVersion: String = "1.16"
+    @AppStorage("customSavesPath") var customSavesPath: String = ""
+    @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
+}
+
+enum TrackingMode: String {
+    case seamless, directory
 }

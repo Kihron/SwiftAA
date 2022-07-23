@@ -16,25 +16,42 @@ struct SwiftAAApp: App {
     @State var changed: Bool = false
     @State var windowTitle = "SwiftAA"
     @State var lastModified = Date.now
+    @State var wasCleared: Bool = true
+    @State var error = ""
+    
+    @State var activeWindows = [pid_t:String]()
+    @State var lastWorking = ""
     
     let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     var body: some Scene {
         WindowGroup {
             ContentView(dataHandler: dataHandler, refresh: false, changed: $changed)
-                .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 775, maxHeight: 775, alignment: .center)
+                .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 754, maxHeight: 754, alignment: .center)
                 .onAppear {
-                    settings.load()
-                    
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
-                        windowTitle = "SwiftAA\(self.refreshData())"
-                    }
-                    
-                    NotificationCenter.default.addObserver(forName: NSApplication.willTerminateNotification, object: nil, queue: .main) { _ in
-                        settings.save()
+                        error = self.refreshData()
                     }
                 }
                 .navigationTitle(windowTitle)
+                .toolbar {
+                    ToolbarItem(placement: .status) {
+                        ToolbarRefreshView(visible: $changed)
+                    }
+                    ToolbarItem(placement: .status) {
+                        ToolbarAAView(map: $dataHandler.map, playTime: $dataHandler.playTime, changed: $changed)
+                    }
+                    ToolbarItem(placement: .status) {
+                        if (!error.isEmpty) {
+                            ToolbarAlertView(error: $error, showPopover: false)
+                        }
+                    }
+                }
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
+                    for window in NSApplication.shared.windows {
+                        window.standardWindowButton(.zoomButton)?.isEnabled = false
+                    }
+                })
                 .environmentObject(settings)
         }
         
@@ -45,15 +62,35 @@ struct SwiftAAApp: App {
     }
     
     func refreshData() -> String {
-        let saves = settings.customSavesPath
+        let saves: String
+        if (settings.trackingMode == .directory) {
+            saves = settings.customSavesPath
+        } else {
+            let dir = getSavesFromActiveInstance()
+            if (dir.count <= 0) {
+                saves = lastWorking
+                if (saves.count <= 0) {
+                    updateAll()
+                    return "Tab into Minecraft to start Tracking"
+                }
+            } else {
+                saves = dir
+                if (saves != lastWorking) {
+                    lastWorking = saves
+                }
+            }
+        }
+        
         let fileManager = FileManager.default
         if (fileManager.fileExists(atPath: saves)) {
             do {
+                
                 let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
                     return folder != ".DS_Store"
                 })
                 if (contents.isEmpty) {
-                    return " - No Worlds Found"
+                    updateAll()
+                    return "No Worlds Found"
                 }
                 var world = try contents.max { a, b in
                     let date1 = try getModifiedTime("\(saves)/\(a)", fileManager: fileManager)
@@ -62,11 +99,13 @@ struct SwiftAAApp: App {
                 }!
                 world = "\(saves)/\(world)"
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {
-                    return " - Invalid Directory"
+                    updateAll()
+                    return "Invalid Directory"
                 }
                 
                 if (try fileManager.contentsOfDirectory(atPath: "\(world)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(world)/stats").isEmpty) {
-                    return " - Invalid Directory"
+                    updateAll()
+                    return "Invalid Directory"
                 }
                 
                 let fileName = try fileManager.contentsOfDirectory(atPath: "\(world)/advancements")[0]
@@ -81,18 +120,7 @@ struct SwiftAAApp: App {
                     let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
                     let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(world)/stats/\(fileName)")))
                     
-                    let flatMap = dataHandler.map.values.flatMap({$0})
-                    flatMap.forEach { adv in
-                        adv.update(advancements: advancements, stats: statistics.stats)
-                    }
-                    
-                    var stats = dataHandler.topStats
-                    stats.append(contentsOf: dataHandler.bottomStats)
-                    stats.forEach { stat in
-                        stat.update(advancements: advancements, stats: statistics.stats)
-                    }
-                    
-                    changed = true
+                    updateAll(advancements: advancements, statistics: statistics.stats)
                 }
                 
             } catch let error {
@@ -100,15 +128,71 @@ struct SwiftAAApp: App {
             }
         } else {
             if (saves.isEmpty) {
-                return " - No Directory Selected"
+                updateAll()
+                return "No Directory Selected"
             }
-            return " - Directory Not Found"
+            updateAll()
+            return "Directory Not Found"
         }
         return ""
     }
     
     func getModifiedTime(_ filePath: String, fileManager: FileManager) throws -> Date? {
         return try fileManager.attributesOfItem(atPath: filePath)[FileAttributeKey.modificationDate] as? Date
+    }
+    
+    func getSavesFromActiveInstance() -> String {
+        let workspace = NSWorkspace.shared
+        let apps = workspace.runningApplications.filter{  $0.activationPolicy == .regular }
+        if let currentApp = apps.first(where: {$0.isActive}) {
+            let pid = currentApp.processIdentifier
+            if let path = activeWindows[pid] {
+                return path
+            }
+            if let arguments = dataHandler.processArguments(pid: pid) {
+                if let gameDirIndex = arguments.firstIndex(of: "--gameDir") {
+                    let path = "\(arguments[gameDirIndex + 1])/saves"
+                    activeWindows[pid] = path
+                    return path
+                }
+                if let nativesArg = arguments.first(where: {$0.starts(with: "-Djava.library.path=")}) {
+                    let path = "\(nativesArg.dropFirst(20).dropLast("natives".count)).minecraft/saves"
+                    activeWindows[pid] = path
+                    return path
+                }
+                activeWindows[pid] = ""
+            }
+        }
+        return ""
+    }
+    
+    func updateAll(advancements: [String:JsonAdvancement] = [:], statistics: [String:[String:Int]] = [:]) {
+        if (advancements.count == 0) {
+            if (wasCleared) {
+                return
+            }
+            wasCleared = true
+            lastModified = Date.now
+        } else {
+            wasCleared = false
+        }
+        
+        withAnimation(.linear(duration: 0.5)) {
+            dataHandler.playTime = statistics["minecraft:custom"]?["minecraft:play_one_minute"] ?? 0
+        }
+        
+        let flatMap = dataHandler.map.values.flatMap({$0})
+        flatMap.forEach { adv in
+            adv.update(advancements: advancements, stats: statistics)
+        }
+        
+        var stats = dataHandler.topStats
+        stats.append(contentsOf: dataHandler.bottomStats)
+        stats.forEach { stat in
+            stat.update(advancements: advancements, stats: statistics)
+        }
+        
+        changed = true
     }
 }
 

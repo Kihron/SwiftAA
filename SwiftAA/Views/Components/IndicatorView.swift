@@ -10,7 +10,6 @@ import Quartz
 
 struct IndicatorView: View {
     @Binding var indicator: Indicator
-    @State var refresh: Bool = false
     
     var body: some View {
         VStack(spacing: 3) {
