@@ -10,7 +10,7 @@ import SwiftUI
 struct ToolbarAlertView: View {
     @Binding var error: String
     @State var showPopover: Bool
-    let tips = ["Tab into Minecraft to start Tracking"]
+    let tips = ["Tab into Minecraft to start tracking"]
     
     var body: some View {
         Button {
@@ -21,7 +21,7 @@ struct ToolbarAlertView: View {
              .foregroundColor(tips.contains(error) ? .blue : .red)
         }
         .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
-             PopoverView(error: $error)
+            PopoverView(error: $error)
         }
         .buttonStyle(.plain)
         .padding(.trailing, 5)

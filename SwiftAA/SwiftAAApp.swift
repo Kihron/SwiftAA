@@ -52,6 +52,7 @@ struct SwiftAAApp: App {
                         window.standardWindowButton(.zoomButton)?.isEnabled = false
                     }
                 })
+                .removeFocusOnTap()
                 .environmentObject(settings)
         }
         
@@ -71,7 +72,7 @@ struct SwiftAAApp: App {
                 saves = lastWorking
                 if (saves.count <= 0) {
                     updateAll()
-                    return "Tab into Minecraft to start Tracking"
+                    return "Tab into Minecraft to start tracking"
                 }
             } else {
                 saves = dir
@@ -108,6 +109,7 @@ struct SwiftAAApp: App {
                     return "Invalid Directory"
                 }
                 
+                settings.worldPath = world
                 let fileName = try fileManager.contentsOfDirectory(atPath: "\(world)/advancements")[0]
                 let lastUpdate = try getModifiedTime("\(world)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
                 

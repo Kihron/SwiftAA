@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "loot_bastion@1x.png",
+      "filename" : "loot_bastion@2x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "loot_bastion@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "loot_bastion@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

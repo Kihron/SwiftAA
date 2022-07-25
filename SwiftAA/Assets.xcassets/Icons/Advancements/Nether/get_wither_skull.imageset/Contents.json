@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "get_wither_skull@1x.png",
+      "filename" : "get_wither_skull@2x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "get_wither_skull@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "get_wither_skull@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

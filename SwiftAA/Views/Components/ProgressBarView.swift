@@ -40,7 +40,7 @@ struct ProgressBarView: View {
                             Image("bar_ender_dragon_active_left")
                             Image("bar_ender_dragon_active_middle")
                                 .resizable()
-                                .frame(width: CGFloat(Int(item.size.width) * value / total) - (value >= total ? 40 : 20), height: 10)
+                                .frame(width: CGFloat(max(0, (Int(item.size.width) * value / total) - (value >= total ? 40 : 20))), height: 10)
                             if (value >= total) {
                                 Image("bar_ender_dragon_active_right")
                             }

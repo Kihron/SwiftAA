@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "find_bastion@1x.png",
+      "filename" : "find_bastion@2x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "find_bastion@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

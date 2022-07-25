@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "obtain_crying_obsidian@1x.png",
+      "filename" : "obtain_crying_obsidian@2x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "obtain_crying_obsidian@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "obtain_crying_obsidian@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "charge_respawn_anchor@1x.png",
+      "filename" : "charge_respawn_anchor@2x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "charge_respawn_anchor@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -32,7 +32,7 @@ struct PotionView: View {
             Text("Potion of \(name)")
                 .font(.custom("Minecraft-Regular", size: 10))
             
-            HStack {
+            HStack(spacing: 0) {
                 Image("potion_\(name.replacingOccurrences(of: " ", with: "_").lowercased())")
                     .interpolation(.none)
                     .resizable()
@@ -43,11 +43,20 @@ struct PotionView: View {
                     .foregroundColor(Color("ender_pearl_border"))
                 
                 ForEach(ensureCapacity(ingredients), id: \.self) { item in
-                    Image(item)
-                        .interpolation(.none)
-                        .resizable()
-                        .frame(width: 32, height: 32)
+                    if (!item.isEmpty) {
+                        Image(item)
+                            .interpolation(.none)
+                            .resizable()
+                            .frame(width: 32, height: 32)
+                    }
+                    else {
+                        Rectangle()
+                            .fill(.clear)
+                            .frame(width: 32, height: 32)
+                    }
                 }
+                
+                Spacer()
             }
         }
         .padding(1.95)

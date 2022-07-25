@@ -11,6 +11,8 @@ class AppSettings: ObservableObject {
     @AppStorage("gameVersion") var gameVersion: String = "1.16"
     @AppStorage("customSavesPath") var customSavesPath: String = ""
     @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
+    @AppStorage("notes") var notes: [String:[String]] = [:]
+    @Published var worldPath: String = ""
 }
 
 enum TrackingMode: String {

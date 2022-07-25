@@ -41,7 +41,8 @@ struct ContentView: View {
                     }
                     .frame(width: 75)
                     
-                    PotionPanelView()
+                    InfoPanelView()
+                        .frame(width: 196)
                 }
                 
                 HStack(spacing: 0) {

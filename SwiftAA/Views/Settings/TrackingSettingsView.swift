@@ -86,8 +86,13 @@ struct TrackingSettingsView: View {
             }
             .padding(.top)
             
-            
             Spacer()
+            
+            Text("This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.")
+                .font(.custom("Minecraft-Regular", size: 12))
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 10)
+                .frame(width: 400)
         }
     }
 }

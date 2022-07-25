@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "find_fortress@1x.png",
+      "filename" : "find_fortress@2x-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "find_fortress@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "find_fortress@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
