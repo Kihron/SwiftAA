@@ -22,6 +22,7 @@ struct TrackingSettingsView: View {
                             settings.gameVersion = "1.16"
                         } label: {
                             Text("1.16")
+                                .font(.custom("Minecraft-Regular", size: 10))
                         }
                     } label: {
                         Text(settings.gameVersion)

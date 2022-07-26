@@ -43,6 +43,7 @@
 		B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772F6288994DE00436551 /* ThemeSettingsView.swift */; };
 		B6A772FC2889998700436551 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FB2889998700436551 /* Statistics.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
+		B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		B6A772F6288994DE00436551 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		B6A772FB2889998700436551 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
+		B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				B6A772F42889949A00436551 /* SettingsView.swift */,
 				B6A772F6288994DE00436551 /* ThemeSettingsView.swift */,
 				B64827292889CB7100B44855 /* TrackingSettingsView.swift */,
+				B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvGroupView.swift in Sources */,
+				B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */,
 				B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */,
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,

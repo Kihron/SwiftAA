@@ -20,6 +20,10 @@ struct SettingsView: View {
                  .tabItem {
                      Label("Theme", systemImage: "paintpalette")
                  }
+            NotesSettingsView()
+                .tabItem {
+                    Label("Notes", systemImage: "rectangle.and.pencil.and.ellipsis")
+                }
          }
          .frame(width: 450, height: 250)
          .environmentObject(settings)
