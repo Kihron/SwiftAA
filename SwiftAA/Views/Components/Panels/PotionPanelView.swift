@@ -24,6 +24,7 @@ struct PotionPanelView: View {
 }
 
 struct PotionView: View {
+    @EnvironmentObject var settings: AppSettings
     @State var name: String
     @State var ingredients: [String]
     
@@ -60,8 +61,8 @@ struct PotionView: View {
             }
         }
         .padding(1.95)
-        .background(Color("ender_pearl_background"))
-        .border(Color("ender_pearl_border"), width: 2)
+        .background(settings.backgroudColor)
+        .border(settings.borderColor, width: 2)
     }
     
     func ensureCapacity(_ ingredients: [String]) -> [String] {
@@ -74,9 +75,12 @@ struct PotionView: View {
 }
 
 struct PotionPanelView_Previews: PreviewProvider {
+    @StateObject static var settings = AppSettings()
+    
     static var previews: some View {
         PotionPanelView()
             .frame(width: 300, height: 800)
+            .environmentObject(settings)
     }
 }
 

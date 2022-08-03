@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct AdvGroupView: View {
+struct AdvPanelView: View {
+    @EnvironmentObject var settings: AppSettings
     @Binding var indicators: [Indicator]
     @State var columnCount: Int
     
@@ -18,16 +19,18 @@ struct AdvGroupView: View {
             }
         }
         .padding(4)
-        .background(Color("ender_pearl_background"))
-        .border(Color("ender_pearl_border"), width: 2)
+        .background(settings.backgroudColor)
+        .border(settings.borderColor, width: 2)
     }
 }
 
-struct AdvGroupView_Previews: PreviewProvider {
+struct AdvPanelViewView_Previews: PreviewProvider {
     @ObservedObject static var dataHandler = DataHandler()
+    @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        AdvGroupView(indicators: dataHandler.decode(file: "adventure"), columnCount: 2)
+        AdvPanelView(indicators: dataHandler.decode(file: "adventure"), columnCount: 2)
             .frame(width: 300, height: 500)
+            .environmentObject(settings)
     }
 }

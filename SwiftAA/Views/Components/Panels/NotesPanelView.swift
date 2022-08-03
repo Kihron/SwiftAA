@@ -45,8 +45,8 @@ struct NotesPanelView: View {
             }
         }
         .padding()
-        .background(Color("ender_pearl_background"))
-        .border(Color("ender_pearl_border"), width: 2)
+        .background(settings.backgroudColor)
+        .border(settings.borderColor, width: 2)
         .onAppear {
             if (!settings.worldPath.isEmpty) {
                 if let worldNotes = settings.notes[settings.worldPath] {
@@ -164,11 +164,15 @@ private extension String {
 }
 
 struct NotesPanelView_Previews: PreviewProvider {
+    @StateObject static var settings = AppSettings()
+    
     static var previews: some View {
         NotesPanelView()
             .frame(width: 300, height: 800)
+            .environmentObject(settings)
         
         WayPointCardView(index: 0, icon: "silverfish")
             .padding(4)
+            .environmentObject(settings)
     }
 }

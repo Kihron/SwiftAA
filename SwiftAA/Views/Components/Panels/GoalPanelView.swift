@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct GoalView: View {
+struct GoalPanelView: View {
+    @EnvironmentObject var settings: AppSettings
     @Binding var advancement: Advancement
     @State var completedTotal: Int = 0
     @State var rowCount: Int
@@ -37,16 +38,18 @@ struct GoalView: View {
             }).count), total: advancement.criteria.count, title: goal)
         }
         .padding(4)
-        .background(Color("ender_pearl_background"))
-        .border(Color("ender_pearl_border"), width: 2)
+        .background(settings.backgroudColor)
+        .border(settings.borderColor, width: 2)
     }
 }
 
-struct GoalView_Previews: PreviewProvider {
+struct GoalPanelViewView_Previews: PreviewProvider {
     @ObservedObject static var dataHandler = DataHandler()
+    @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        GoalView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
+        GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
             .frame(width: 500, height: 400)
+            .environmentObject(settings)
     }
 }

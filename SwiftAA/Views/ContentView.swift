@@ -18,26 +18,26 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        AdvGroupView(indicators: dataHandler.decode(file: "minecraft", start: "minecraft:story/mine_stone"), columnCount: 5)
-                        AdvGroupView(indicators: dataHandler.decode(file: "end", start: "minecraft:end/kill_dragon"), columnCount: 5)
+                        AdvPanelView(indicators: dataHandler.decode(file: "minecraft", start: "minecraft:story/mine_stone"), columnCount: 5)
+                        AdvPanelView(indicators: dataHandler.decode(file: "end", start: "minecraft:end/kill_dragon"), columnCount: 5)
                     }
                     .frame(width: 350)
                     
                     VStack(spacing: 0) {
-                        AdvGroupView(indicators: dataHandler.decode(file: "nether"), columnCount: 8)
-                        AdvGroupView(indicators: dataHandler.decode(file: "husbandry"), columnCount: 8)
+                        AdvPanelView(indicators: dataHandler.decode(file: "nether"), columnCount: 8)
+                        AdvPanelView(indicators: dataHandler.decode(file: "husbandry"), columnCount: 8)
                     }
                     .frame(width: 540)
                     
                     VStack(spacing: 0) {
-                        AdvGroupView(indicators: dataHandler.decode(file: "adventure", end: "minecraft:adventure/sniper_duel"), columnCount: 4)
-                        AdvGroupView(indicators: dataHandler.decode(file: "adventure", start: "minecraft:adventure/voluntary_exile"), columnCount: 4)
+                        AdvPanelView(indicators: dataHandler.decode(file: "adventure", end: "minecraft:adventure/sniper_duel"), columnCount: 4)
+                        AdvPanelView(indicators: dataHandler.decode(file: "adventure", start: "minecraft:adventure/voluntary_exile"), columnCount: 4)
                     }
                     .frame(width: 270)
                 
                     VStack(spacing: 0) {
-                        AdvGroupView(indicators: Binding.constant(dataHandler.topStats), columnCount: 1)
-                        AdvGroupView(indicators: Binding.constant(dataHandler.bottomStats), columnCount: 1)
+                        AdvPanelView(indicators: Binding.constant(dataHandler.topStats), columnCount: 1)
+                        AdvPanelView(indicators: Binding.constant(dataHandler.bottomStats), columnCount: 1)
                     }
                     .frame(width: 75)
                     
@@ -46,17 +46,17 @@ struct ContentView: View {
                 }
                 
                 HStack(spacing: 0) {
-                    GoalView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
+                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
                         .frame(width: 350)
-                    GoalView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: "Monsters Killed")
+                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: "Monsters Killed")
                         .frame(width: 312)
-                    GoalView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: "Foods Eaten")
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: "Foods Eaten")
                         .frame(width: 330)
-                    GoalView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: "Animals Bred")
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: "Animals Bred")
                         .frame(width: 168)
-                    GoalView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: "Cats")
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: "Cats")
                         .frame(width: 141)
-                    GoalView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "Visited")
+                    GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "Visited")
                         .frame(width: 130)
                 }
                 .frame(width: 1431, height: 323)
