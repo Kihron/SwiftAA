@@ -12,6 +12,7 @@ struct SwiftAAApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var settings = AppSettings()
     @ObservedObject var dataHandler = DataHandler()
+    @Environment(\.openURL) var openURL
     
     @State var changed: Bool = false
     @State var windowTitle = "SwiftAA"
@@ -25,7 +26,7 @@ struct SwiftAAApp: App {
     let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup("SwiftAA") {
             ContentView(dataHandler: dataHandler, refresh: false, changed: $changed)
                 .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 754, maxHeight: 754, alignment: .center)
                 .onAppear {
@@ -55,6 +56,31 @@ struct SwiftAAApp: App {
                 .removeFocusOnTap()
                 .environmentObject(settings)
         }
+        
+        WindowGroup("Overlay") {
+            OverlayView(dataHandler: dataHandler)
+                .frame(width: 500, height: 500)
+        }.commands {
+            CommandGroup(after: .sidebar, addition: {
+                Button {
+                    let windows = NSApplication.shared.windows.filter({ window in
+                        window.title == "Overlay"
+                    })
+                    
+                    if (windows.isEmpty) {
+                        if let url = URL(string: "SwiftAA://Overlay") {
+                            openURL(url)
+                        }
+                    } else {
+                        windows.first!.close()
+                    }
+                } label: {
+                    Text("Toggle Overlay")
+                }
+                .keyboardShortcut("o")
+            })
+        }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "Overlay"))
         
         Settings {
             SettingsView()
@@ -201,5 +227,9 @@ struct SwiftAAApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
+    }
+    
+    func applicationWillFinishLaunching(_ notification: Notification) {
+            NSWindow.allowsAutomaticWindowTabbing = false
     }
 }

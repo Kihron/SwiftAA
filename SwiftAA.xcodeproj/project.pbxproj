@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* OverlayView.swift */; };
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
 		B64199F1288A73830064AF5B /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199F0288A73830064AF5B /* enchant_item.gif */; };
@@ -29,6 +30,8 @@
 		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
+		B6762C72289B97BA00C1E2DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6762C70289B97BA00C1E2DD /* Localizable.strings */; };
+		B6762C75289B989300C1E2DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6762C77289B989300C1E2DD /* Localizable.strings */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
@@ -50,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B616FAA4289B232F004E4A41 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
 		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
 		B64199F0288A73830064AF5B /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
+		B6762C71289B97BA00C1E2DD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6762C76289B989300C1E2DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B616FAA3289B2314004E4A41 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				B616FAA4289B232F004E4A41 /* OverlayView.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
 		B648272B2889CD6F00B44855 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A772F12889945F00436551 /* Components */,
+				B616FAA3289B2314004E4A41 /* Overlay */,
 				B6A772F22889947700436551 /* Settings */,
 				B673A82D288AEF6500560177 /* Toolbar */,
 				B6A772E52888FBA600436551 /* ContentView.swift */,
@@ -182,6 +197,8 @@
 				B6FEFED228998E610095CF08 /* Advancements */,
 				B65AE1D5288709E5006EC138 /* Fonts */,
 				B6A773042889BA3900436551 /* Gifs */,
+				B6762C70289B97BA00C1E2DD /* Localizable.strings */,
+				B6762C77289B989300C1E2DD /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -269,8 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				B6A772FE28899D2200436551 /* Json */,
-				B65AE1D32887032F006EC138 /* Advancement.swift */,
 				B66A07732887A32900DC0A2C /* Criterion.swift */,
+				B65AE1D32887032F006EC138 /* Advancement.swift */,
 				B6A772FB2889998700436551 /* Statistics.swift */,
 			);
 			path = Models;
@@ -391,6 +408,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = B65AE1B42886F401006EC138;
 			packageReferences = (
@@ -412,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A772EF2889053E00436551 /* minecraft.xml in Resources */,
+				B6762C72289B97BA00C1E2DD /* Localizable.strings in Resources */,
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
 				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
 				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
@@ -419,6 +438,7 @@
 				B6A772ED2889053E00436551 /* end.xml in Resources */,
 				B66A07852887B95A00DC0A2C /* adventure.xml in Resources */,
 				B64199F1288A73830064AF5B /* enchant_item.gif in Resources */,
+				B6762C75289B989300C1E2DD /* Localizable.strings in Resources */,
 				B6A772EE2889053E00436551 /* husbandry.xml in Resources */,
 				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
 				B6A772F02889053E00436551 /* nether.xml in Resources */,
@@ -441,6 +461,7 @@
 				B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */,
 				B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */,
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
+				B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
@@ -464,6 +485,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6762C70289B97BA00C1E2DD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6762C71289B97BA00C1E2DD /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B6762C77289B989300C1E2DD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6762C76289B989300C1E2DD /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B65AE1CA2886F404006EC138 /* Debug */ = {
@@ -522,6 +562,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -575,6 +616,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;

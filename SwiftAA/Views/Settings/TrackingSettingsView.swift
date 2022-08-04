@@ -16,6 +16,7 @@ struct TrackingSettingsView: View {
                 VStack {
                     Text("Game Version")
                         .font(.custom("Minecraft-Regular", size: 10))
+                        .padding(.horizontal)
                     
                     Menu {
                         Button {
@@ -105,5 +106,6 @@ struct TrackingSettingsView_Previews: PreviewProvider {
         TrackingSettingsView()
             .frame(width: 500, height: 300)
             .environmentObject(settings)
+            .environment(\.locale, .init(identifier: "es"))
     }
 }

@@ -43,11 +43,11 @@ struct ThemeSettingsView: View {
                             Text("Custom")
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
-                            ColorPicker("Background Color", selection: settings.$userBgColor)
+                            ColorPicker("Background Color", selection: settings.$userBgColor, supportsOpacity: false)
                                 .font(.custom("Minecraft-Regular", size: 10))
                                 .disabled(settings.themeMode == .preset)
                             
-                            ColorPicker("Foreground Color", selection: settings.$userBrColor)
+                            ColorPicker("Foreground Color", selection: settings.$userBrColor, supportsOpacity: false)
                                 .font(.custom("Minecraft-Regular", size: 10))
                                 .disabled(settings.themeMode == .preset)
                         }
