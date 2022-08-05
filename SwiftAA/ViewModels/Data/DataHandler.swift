@@ -147,8 +147,4 @@ class DataHandler: ObservableObject {
         
         return argv.count == argc ? argv : nil
     }
-    
-    func robSaveFile() {
-        
-    }
 }

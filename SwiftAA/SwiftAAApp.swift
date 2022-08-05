@@ -59,7 +59,7 @@ struct SwiftAAApp: App {
         
         WindowGroup("Overlay") {
             OverlayView(dataHandler: dataHandler)
-                .frame(width: 500, height: 500)
+                .frame(minWidth: 400, idealWidth: 800, maxWidth: 1000, minHeight: 300, maxHeight: 300, alignment: .center)
         }.commands {
             CommandGroup(after: .sidebar, addition: {
                 Button {
@@ -79,8 +79,11 @@ struct SwiftAAApp: App {
                 }
                 .keyboardShortcut("o")
             })
+            
+            CommandGroup(replacing: .newItem, addition: {})
         }
         .handlesExternalEvents(matching: Set(arrayLiteral: "Overlay"))
+        .windowStyle(HiddenTitleBarWindowStyle())
         
         Settings {
             SettingsView()

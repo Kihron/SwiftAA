@@ -106,6 +106,6 @@ struct TrackingSettingsView_Previews: PreviewProvider {
         TrackingSettingsView()
             .frame(width: 500, height: 300)
             .environmentObject(settings)
-            .environment(\.locale, .init(identifier: "es"))
+            .environment(\.locale, .init(identifier: "en"))
     }
 }
