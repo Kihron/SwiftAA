@@ -156,6 +156,8 @@
 				B65AE1D2288702C6006EC138 /* Views */,
 				B65AE1C02886F401006EC138 /* SwiftAAApp.swift */,
 				B66A07752887B2A800DC0A2C /* Resources */,
+				B65AE1D828870B66006EC138 /* Info.plist */,
+				B65AE1C92886F404006EC138 /* SwiftAA.entitlements */,
 			);
 			path = SwiftAA;
 			sourceTree = "<group>";
@@ -196,8 +198,6 @@
 				B6A773042889BA3900436551 /* Gifs */,
 				B65AE1C62886F404006EC138 /* Preview Content */,
 				B65AE1C42886F404006EC138 /* Assets.xcassets */,
-				B65AE1C92886F404006EC138 /* SwiftAA.entitlements */,
-				B65AE1D828870B66006EC138 /* Info.plist */,
 				B6E1492F28A17F260084A529 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -640,7 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -668,7 +668,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
