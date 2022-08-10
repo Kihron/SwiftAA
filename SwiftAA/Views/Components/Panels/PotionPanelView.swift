@@ -10,15 +10,15 @@ import SwiftUI
 struct PotionPanelView: View {
     var body: some View {
         VStack(spacing: 0) {
-            PotionView(name: "Strength", ingredients: ["nether_wart", "blaze_powder"])
-            PotionView(name: "Weakness", ingredients: ["fermented_spider_eye"])
-            PotionView(name: "Swiftness", ingredients: ["nether_wart", "sugar"])
-            PotionView(name: "Slowness", ingredients: ["nether_wart", "sugar", "fermented_spider_eye"])
-            PotionView(name: "Night Vision", ingredients: ["nether_wart", "golden_carrot"])
-            PotionView(name: "Invisibility", ingredients: ["nether_wart", "golden_carrot", "fermented_spider_eye"])
-            PotionView(name: "Leaping", ingredients: ["nether_wart", "rabbit_foot"])
-            PotionView(name: "Slow Falling", ingredients: ["nether_wart", "phantom_membrane"])
-            PotionView(name: "Water Breathing", ingredients: ["nether_wart", "pufferfish"])
+            PotionView(name: "strength", ingredients: ["nether_wart", "blaze_powder"])
+            PotionView(name: "weakness", ingredients: ["fermented_spider_eye"])
+            PotionView(name: "swiftness", ingredients: ["nether_wart", "sugar"])
+            PotionView(name: "slowness", ingredients: ["nether_wart", "sugar", "fermented_spider_eye"])
+            PotionView(name: "night-vision", ingredients: ["nether_wart", "golden_carrot"])
+            PotionView(name: "invisibility", ingredients: ["nether_wart", "golden_carrot", "fermented_spider_eye"])
+            PotionView(name: "leaping", ingredients: ["nether_wart", "rabbit_foot"])
+            PotionView(name: "slow-falling", ingredients: ["nether_wart", "phantom_membrane"])
+            PotionView(name: "water-breathing", ingredients: ["nether_wart", "pufferfish"])
         }
     }
 }
@@ -30,11 +30,11 @@ struct PotionView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("Potion of \(name)")
+            Text("potion-\(name)".localized)
                 .font(.custom("Minecraft-Regular", size: 10))
             
             HStack(spacing: 0) {
-                Image("potion_\(name.replacingOccurrences(of: " ", with: "_").lowercased())")
+                Image("potion_\(name.replacingOccurrences(of: "-", with: "_").lowercased())")
                     .interpolation(.none)
                     .resizable()
                     .frame(width: 32, height: 32)

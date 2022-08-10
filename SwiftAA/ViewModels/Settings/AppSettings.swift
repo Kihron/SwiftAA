@@ -14,7 +14,7 @@ class AppSettings: ObservableObject {
     @AppStorage("notes") var notes: [String:[String]] = [:]
     @Published var worldPath: String = ""
     
-    @AppStorage("theme") var theme: String = "Ender Pearl"
+    @AppStorage("theme") var theme: String = "theme-presets-ender-pearl"
     @AppStorage("themeMode") var themeMode: ThemeMode = .preset
     
     @AppStorage("backgroundColor") var backgroudColor: Color = Color("ender_pearl_background")

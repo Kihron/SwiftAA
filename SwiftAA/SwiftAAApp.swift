@@ -57,7 +57,7 @@ struct SwiftAAApp: App {
                 .environmentObject(settings)
         }
         
-        WindowGroup("Overlay") {
+        WindowGroup("overlay") {
             OverlayView(dataHandler: dataHandler)
                 .frame(minWidth: 400, idealWidth: 800, maxWidth: 1000, minHeight: 300, maxHeight: 300, alignment: .center)
         }.commands {
@@ -75,7 +75,7 @@ struct SwiftAAApp: App {
                         windows.first!.close()
                     }
                 } label: {
-                    Text("Toggle Overlay")
+                    Text("overlay-toggle", comment: "Button: shows/hides overlay")
                 }
                 .keyboardShortcut("o")
             })

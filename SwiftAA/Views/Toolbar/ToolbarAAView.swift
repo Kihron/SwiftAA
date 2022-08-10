@@ -13,7 +13,7 @@ struct ToolbarAAView: View {
     @Binding var changed: Bool
     
     var body: some View {
-        ProgressBarView(value: .constant($map.values.flatMap({$0}).filter({$0.completed.wrappedValue}).count), total: $map.values.compactMap({$0.count}).reduce(0, +), title: "Advancements", message: .constant("      IGT: \(ticksToIGT(ticks: $playTime.wrappedValue))"))
+        ProgressBarView(value: .constant($map.values.flatMap({$0}).filter({$0.completed.wrappedValue}).count), total: $map.values.compactMap({$0.count}).reduce(0, +), title: "goal-advancements".localized, message: .constant("      IGT: \(ticksToIGT(ticks: $playTime.wrappedValue))"))
             .frame(width: 300)
     }
     

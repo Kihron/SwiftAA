@@ -1,9 +1,129 @@
 /* No comment provided by engineer. */
-"Game Version" = "Versión del Juego";
+"%lld / %lld %@ (%lld%%)%@" = "%lld / %lld %@ (%lld%%)%@";
 
 /* No comment provided by engineer. */
-"Overlay" = "Transparencia";
+"%lld/%lld" = "%lld/%lld";
 
 /* No comment provided by engineer. */
-"This application was heavily inspired by and utilizes assets from CTM's AATool for Windows." = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";
+"1.16" = "1.16";
+
+/* Title: all advancments goal */
+"goal-advancements" = "Logros";
+
+/* Title: animals bred goal */
+"goal-animals-bred" = "Animales Criados";
+
+/* Title: biomes visited goal */
+"goal-biomes-visited" = "Biomas Visitados";
+
+/* Title: cats goal */
+"goal-cats" = "Gatos";
+
+/* Title: foods eaten goal */
+"goal-foods-eaten" = "Alimentos Consumidos";
+
+/* Title: monsters killed goal */
+"goal-monsters-killed" = "Monstruos Asesinados";
+
+/* Title: nether biomes visited goal */
+"goal-nether" = "Visitados";
+
+/* Button: delete all notes */
+"notes-clear-all" = "Borrar Todo";
+
+/* Title: no notes available/recorded */
+"notes-none" = "No Hay Notas Disponibles";
+
+/* Title: Notes Menu */
+"notes-panel-view-bottom-title" = "Notas";
+
+/* Title: Waypoint Menu */
+"notes-panel-view-top-title" = "Puntos de Referencia";
+
+/* No comment provided by engineer. */
+"notes-select-world" = "Elige un mundo para ver sus notas...";
+
+/* No comment provided by engineer. */
+"overlay" = "Overlay";
+
+/* Button: shows/hides overlay */
+"overlay-toggle" = "Alternar Overlay";
+
+/* No comment provided by engineer. */
+"potion-invisibility" = "Poción de Invisibilidad";
+
+/* No comment provided by engineer. */
+"potion-leaping" = "Poción de Salto";
+
+/* No comment provided by engineer. */
+"potion-night-vision" = "Poción de Visión Nocturna";
+
+/* No comment provided by engineer. */
+"potion-slow-falling" = "Poción de Caída Lenta";
+
+/* No comment provided by engineer. */
+"potion-slowness" = "Poción de Lentitud";
+
+/* No comment provided by engineer. */
+"potion-strength" = "Poción de Fuerza";
+
+/* No comment provided by engineer. */
+"potion-swiftness" = "Poción de Velocidad";
+
+/* No comment provided by engineer. */
+"potion-water-breathing" = "Poción de Apnea";
+
+/* No comment provided by engineer. */
+"potion-weakness" = "Poción de Debilidad";
+
+/* No comment provided by engineer. */
+"settings-notes" = "Notas";
+
+/* No comment provided by engineer. */
+"settings-theme" = "Tema";
+
+/* No comment provided by engineer. */
+"settings-tracking" = "Seguimiento";
+
+/* No comment provided by engineer. */
+"SwiftAA" = "SwiftAA";
+
+/* No comment provided by engineer. */
+"theme-background-color" = "Color del Fondo";
+
+/* Title: custom user color scheme */
+"theme-custom" = "Personalizado";
+
+/* No comment provided by engineer. */
+"theme-foreground-color" = "Color del Frente";
+
+/* Title: preset options for color scheme */
+"theme-presets" = "Predeterminados";
+
+/* Ender Pearl Theme */
+"theme-presets-ender-pearl" = "Perla de Ender";
+
+/* Attribution message for CTM's AATool for Windows */
+"tracking-attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";
+
+/* Button: browse to select folder */
+"tracking-browse" = "Buscar";
+
+/* Title: custom user defined saves directory */
+"tracking-custom-saves" = "Carpeta de Mundos Personalizada";
+
+/* No comment provided by engineer. */
+"tracking-enter-directory" = "Ingresar la dirección a la Carpeta";
+
+/* Title: game version */
+"tracking-game-version" = "Versión del Juego";
+
+/* title: automatically tracks active instance */
+"tracking-seamless" = "Rastreo Automático";
+
+/* No comment provided by engineer. */
+"X" = "X";
+
+/* No comment provided by engineer. */
+"Z" = "Z";
 

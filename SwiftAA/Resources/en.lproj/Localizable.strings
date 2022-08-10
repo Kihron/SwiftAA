@@ -1,7 +1,111 @@
-/* 
-  Localizable.strings
-  SwiftAA
+/* Title: all advancments goal */
+"goal-advancements" = "Advancements";
 
-  Created by Dominic Thompson on 8/4/22.
-  
-*/
+/* Title: animals bred goal */
+"goal-animals-bred" = "Animals Bred";
+
+/* Title: biomes visited goal */
+"goal-biomes-visited" = "Biomes Visited";
+
+/* Title: cats goal */
+"goal-cats" = "Cats";
+
+/* Title: foods eaten goal */
+"goal-foods-eaten" = "Foods Eaten";
+
+/* Title: monsters killed goal */
+"goal-monsters-killed" = "Monsters Killed";
+
+/* Title: nether biomes visited goal */
+"goal-nether" = "Visited";
+
+/* Button: delete all notes */
+"notes-clear-all" = "Clear All";
+
+/* Title: no notes available/recorded */
+"notes-none" = "No Notes Recorded";
+
+/* Title: Notes Menu */
+"notes-panel-view-bottom-title" = "Notes";
+
+/* Title: Waypoint Menu */
+"notes-panel-view-top-title" = "Waypoints";
+
+/* No comment provided by engineer. */
+"notes-select-world" = "Select a world to see its notes...";
+
+/* No comment provided by engineer. */
+"overlay" = "Overlay";
+
+/* Button: shows/hides overlay */
+"overlay-toggle" = "Toggle Overlay";
+
+/* No comment provided by engineer. */
+"potion-invisibility" = "Potion of Invisibility";
+
+/* No comment provided by engineer. */
+"potion-leaping" = "Potion of Leaping";
+
+/* No comment provided by engineer. */
+"potion-night-vision" = "Potion of Night Vision";
+
+/* No comment provided by engineer. */
+"potion-slow-falling" = "Potion of Slow Falling";
+
+/* No comment provided by engineer. */
+"potion-slowness" = "Potion of Slowness";
+
+/* No comment provided by engineer. */
+"potion-strength" = "Potion of Strength";
+
+/* No comment provided by engineer. */
+"potion-swiftness" = "Potion of Swiftness";
+
+/* No comment provided by engineer. */
+"potion-water-breathing" = "Potion of Water Breathing";
+
+/* No comment provided by engineer. */
+"potion-weakness" = "Potion of Weakness";
+
+/* No comment provided by engineer. */
+"settings-notes" = "Notes";
+
+/* No comment provided by engineer. */
+"settings-theme" = "Theme";
+
+/* No comment provided by engineer. */
+"settings-tracking" = "Tracking";
+
+/* No comment provided by engineer. */
+"theme-background-color" = "Background Color";
+
+/* Title: custom user color scheme */
+"theme-custom" = "Custom";
+
+/* No comment provided by engineer. */
+"theme-foreground-color" = "Foreground Color";
+
+/* Title: preset options for color scheme */
+"theme-presets" = "Presets";
+
+/* Ender Pearl Theme */
+"theme-presets-ender-pearl" = "Ender Pearl";
+
+/* Attribution message for CTM's AATool for Windows */
+"tracking-attribution" = "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.";
+
+/* Button: browse to select folder */
+"tracking-browse" = "Browse";
+
+/* Title: custom user defined saves directory */
+"tracking-custom-saves" = "Custom Saves Folder";
+
+/* No comment provided by engineer. */
+"tracking-enter-directory" = "Enter Directory";
+
+/* Title: game version */
+"tracking-game-version" = "Game Version";
+
+/* title: automatically tracks active instance */
+"tracking-seamless" = "Seamless Tracking";
+

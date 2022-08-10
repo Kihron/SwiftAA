@@ -14,7 +14,7 @@ struct TrackingSettingsView: View {
         VStack {
             HStack(spacing: 20) {
                 VStack {
-                    Text("Game Version")
+                    Text("tracking-game-version", comment: "Title: game version")
                         .font(.custom("Minecraft-Regular", size: 10))
                         .padding(.horizontal)
                     
@@ -40,7 +40,7 @@ struct TrackingSettingsView: View {
                         HStack {
                             Picker(selection: settings.$trackingMode, label: Text("")) {
                                 Group {
-                                    Text("Seamless Tracking")
+                                    Text("tracking-seamless", comment: "title: automatically tracks active instance")
                                         .font(.custom("Minecraft-Regular", size: 10))
                                 }
                                 .tag(TrackingMode.seamless)
@@ -48,11 +48,11 @@ struct TrackingSettingsView: View {
                                 
                                 Group {
                                     VStack(alignment: .leading) {
-                                        Text("Custom Saves Folder")
+                                        Text("tracking-custom-saves", comment: "Title: custom user defined saves directory")
                                             .font(.custom("Minecraft-Regular", size: 10))
                                         
                                         HStack {
-                                            TextField("Enter Directory", text: $settings.customSavesPath)
+                                            TextField("tracking-enter-directory", text: $settings.customSavesPath)
                                                 .font(.custom("Minecraft-Regular", size: 10))
                                                 .textFieldStyle(.roundedBorder)
                                             
@@ -67,7 +67,7 @@ struct TrackingSettingsView: View {
                                                 }
                                                 NSApp.keyWindow?.makeFirstResponder(nil)
                                             } label: {
-                                                Text("Browse")
+                                                Text("tracking-browse", comment: "Button: browse to select folder")
                                                     .font(.custom("Minecraft-Regular", size: 10))
                                             }
                                             
@@ -90,7 +90,7 @@ struct TrackingSettingsView: View {
             
             Spacer()
             
-            Text("This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.")
+            Text("tracking-attribution", comment: "Attribution message for CTM's AATool for Windows")
                 .font(.custom("Minecraft-Regular", size: 12))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 10)
@@ -106,6 +106,6 @@ struct TrackingSettingsView_Previews: PreviewProvider {
         TrackingSettingsView()
             .frame(width: 500, height: 300)
             .environmentObject(settings)
-            .environment(\.locale, .init(identifier: "en"))
+            .environment(\.locale, .init(identifier: "es"))
     }
 }

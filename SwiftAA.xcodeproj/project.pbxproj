@@ -30,8 +30,6 @@
 		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
-		B6762C72289B97BA00C1E2DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6762C70289B97BA00C1E2DD /* Localizable.strings */; };
-		B6762C75289B989300C1E2DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6762C77289B989300C1E2DD /* Localizable.strings */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
@@ -44,7 +42,9 @@
 		B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772F6288994DE00436551 /* ThemeSettingsView.swift */; };
 		B6A772FC2889998700436551 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FB2889998700436551 /* Statistics.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
+		B6D3065828A2B150004D27E6 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3065728A2B150004D27E6 /* Localize.swift */; };
 		B6DF1C2E28904F2900044F67 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B6DF1C2D28904F2900044F67 /* SWXMLHash */; };
+		B6E1493128A17F260084A529 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E1492F28A17F260084A529 /* Localizable.strings */; };
 		B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */; };
 		B6FEFED5289991070095CF08 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFED4289991070095CF08 /* Indicator.swift */; };
 		B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */; };
@@ -79,8 +79,6 @@
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
-		B6762C71289B97BA00C1E2DD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B6762C76289B989300C1E2DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +91,9 @@
 		B6A772F6288994DE00436551 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		B6A772FB2889998700436551 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
+		B6D3065428A2AD44004D27E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B6D3065728A2B150004D27E6 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		B6E1493028A17F260084A529 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesSettingsView.swift; sourceTree = "<group>"; };
 		B6FEFED4289991070095CF08 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFocusOnTap.swift; sourceTree = "<group>"; };
@@ -155,10 +156,6 @@
 				B65AE1D2288702C6006EC138 /* Views */,
 				B65AE1C02886F401006EC138 /* SwiftAAApp.swift */,
 				B66A07752887B2A800DC0A2C /* Resources */,
-				B65AE1C42886F404006EC138 /* Assets.xcassets */,
-				B65AE1C92886F404006EC138 /* SwiftAA.entitlements */,
-				B65AE1C62886F404006EC138 /* Preview Content */,
-				B65AE1D828870B66006EC138 /* Info.plist */,
 			);
 			path = SwiftAA;
 			sourceTree = "<group>";
@@ -197,10 +194,21 @@
 				B6FEFED228998E610095CF08 /* Advancements */,
 				B65AE1D5288709E5006EC138 /* Fonts */,
 				B6A773042889BA3900436551 /* Gifs */,
-				B6762C70289B97BA00C1E2DD /* Localizable.strings */,
-				B6762C77289B989300C1E2DD /* Localizable.strings */,
+				B65AE1C62886F404006EC138 /* Preview Content */,
+				B65AE1C42886F404006EC138 /* Assets.xcassets */,
+				B65AE1C92886F404006EC138 /* SwiftAA.entitlements */,
+				B65AE1D828870B66006EC138 /* Info.plist */,
+				B6E1492F28A17F260084A529 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B66DB3D428A29F47006BE9D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B673A82D288AEF6500560177 /* Toolbar */ = {
@@ -262,6 +270,14 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		B6D3065528A2B13F004D27E6 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				B6D3065728A2B150004D27E6 /* Localize.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		B6FEFED228998E610095CF08 /* Advancements */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +329,7 @@
 		B6FEFED9289992FF0095CF08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B6D3065528A2B13F004D27E6 /* Text */,
 				B6FEFEE528999D8D0095CF08 /* Color */,
 				B6FEFEE0289993B90095CF08 /* Dictionary */,
 			);
@@ -322,7 +339,7 @@
 		B6FEFEDC2899933D0095CF08 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */,
+				B66DB3D428A29F47006BE9D9 /* View */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -430,7 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A772EF2889053E00436551 /* minecraft.xml in Resources */,
-				B6762C72289B97BA00C1E2DD /* Localizable.strings in Resources */,
+				B6E1493128A17F260084A529 /* Localizable.strings in Resources */,
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
 				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
 				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
@@ -438,7 +455,6 @@
 				B6A772ED2889053E00436551 /* end.xml in Resources */,
 				B66A07852887B95A00DC0A2C /* adventure.xml in Resources */,
 				B64199F1288A73830064AF5B /* enchant_item.gif in Resources */,
-				B6762C75289B989300C1E2DD /* Localizable.strings in Resources */,
 				B6A772EE2889053E00436551 /* husbandry.xml in Resources */,
 				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
 				B6A772F02889053E00436551 /* nether.xml in Resources */,
@@ -464,6 +480,7 @@
 				B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */,
+				B6D3065828A2B150004D27E6 /* Localize.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B648272E2889CD8100B44855 /* AppSettings.swift in Sources */,
@@ -487,18 +504,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B6762C70289B97BA00C1E2DD /* Localizable.strings */ = {
+		B6E1492F28A17F260084A529 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B6762C71289B97BA00C1E2DD /* es */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		B6762C77289B989300C1E2DD /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6762C76289B989300C1E2DD /* en */,
+				B6E1493028A17F260084A529 /* es */,
+				B6D3065428A2AD44004D27E6 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

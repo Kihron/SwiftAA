@@ -14,7 +14,7 @@ struct NotesPanelView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text("Waypoints")
+                Text("notes-panel-view-top-title", comment: "Title: Waypoint Menu")
                     .font(.custom("Minecraft-Regular", size: 12))
                 
                 VStack(spacing: 5) {
@@ -28,7 +28,7 @@ struct NotesPanelView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                Text("Notes")
+                Text("notes-panel-view-bottom-title", comment: "Title: Notes Menu")
                     .font(.custom("Minecraft-Regular", size: 12))
                 
                 TextEditor(text: $notes)

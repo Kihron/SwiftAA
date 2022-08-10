@@ -14,15 +14,15 @@ struct SettingsView: View {
         TabView {
             TrackingSettingsView()
                  .tabItem {
-                     Label("Tracking", systemImage: "slider.horizontal.3")
+                     Label("settings-tracking", systemImage: "slider.horizontal.3")
                  }
             ThemeSettingsView()
                  .tabItem {
-                     Label("Theme", systemImage: "paintpalette")
+                     Label("settings-theme", systemImage: "paintpalette")
                  }
             NotesSettingsView()
                 .tabItem {
-                    Label("Notes", systemImage: "rectangle.and.pencil.and.ellipsis")
+                    Label("settings-notes", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
          }
          .frame(width: 450, height: 250)

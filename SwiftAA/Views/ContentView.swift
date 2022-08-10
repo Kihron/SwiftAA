@@ -46,17 +46,17 @@ struct ContentView: View {
                 }
                 
                 HStack(spacing: 0) {
-                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
+                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "goal-biomes-visited".localized)
                         .frame(width: 350)
-                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: "Monsters Killed")
+                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: "goal-monsters-killed".localized)
                         .frame(width: 312)
-                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: "Foods Eaten")
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: "goal-foods-eaten".localized)
                         .frame(width: 330)
-                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: "Animals Bred")
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: "goal-animals-bred".localized)
                         .frame(width: 168)
-                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: "Cats")
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: "goal-cats".localized)
                         .frame(width: 141)
-                    GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "Visited")
+                    GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "goal-nether".localized)
                         .frame(width: 130)
                 }
                 .frame(width: 1431, height: 323)
