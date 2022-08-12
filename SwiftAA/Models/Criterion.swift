@@ -9,12 +9,14 @@ import SwiftUI
 
 class Criterion: NSObject {
     var id: String
+    var key: String
     var name: String
     var icon: String
     var completed: Bool
     
-    init(id: String, name: String, icon: String, completed: Bool) {
+    init(id: String, key: String, name: String, icon: String, completed: Bool) {
         self.id = id
+        self.key = key
         self.name = name
         self.icon = icon
         self.completed = completed

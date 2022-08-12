@@ -9,6 +9,7 @@ import SwiftUI
 
 class Advancement: NSObject, Indicator, Identifiable {
     var id: String
+    var key: String
     var name: String
     var icon: String
     var frameStyle: String
@@ -22,8 +23,9 @@ class Advancement: NSObject, Indicator, Identifiable {
         }
     }
     
-    init(id: String, name: String, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool) {
+    init(id: String, key: String, name: String, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool) {
         self.id = id
+        self.key = key
         self.name = name
         self.icon = icon
         self.frameStyle = frameStyle

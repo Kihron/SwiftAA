@@ -9,6 +9,7 @@ import SwiftUI
 
 protocol Indicator {
     var id: String { get set }
+    var key: String { get set }
     var name: String { get set }
     var icon: String { get set }
     var frameStyle: String { get set }

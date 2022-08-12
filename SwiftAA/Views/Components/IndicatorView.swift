@@ -46,7 +46,7 @@ struct IndicatorView: View {
                 }
             }
             
-            Text(indicator.name)
+            Text(indicator.key.localized(value: indicator.name))
                 .font(.custom("Minecraft-Regular", size: 10))
                 .multilineTextAlignment(.center)
                 .frame(height: 24, alignment: .top)
@@ -62,7 +62,7 @@ struct IndicatorView: View {
 
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        IndicatorView(indicator: .constant(Advancement(id: "bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)))
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "adventure-bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)))
             .frame(width: 100, height: 100)
     }
 }

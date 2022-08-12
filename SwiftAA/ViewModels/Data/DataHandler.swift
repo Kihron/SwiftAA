@@ -48,17 +48,19 @@ class DataHandler: ObservableObject {
         var addItems = start == ""
         for item in xml["group"]["advancement"].all {
             let id = item.element!.attribute(by: "id")!.text
+            let key = item.element!.attribute(by: "key")!.text
             let name = item.element!.attribute(by: "name")!.text
             let icon = item.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
             let frameStyle = item.element!.attribute(by: "type")?.text ?? "normal"
             let prefix = item.element!.attribute(by: "prefix")?.text ?? "minecraft:"
             let criteria: [Criterion] = (item.children.isEmpty) ? [] : item["criteria"]["criterion"].all.map({ c in
                 let id = c.element!.attribute(by: "id")!.text
+                let key = c.element!.attribute(by: "key")!.text
                 let name = c.element!.attribute(by: "name")?.text ?? getNameFromID(id: id, prefix: prefix)
                 let icon = c.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: ":")
-                return Criterion(id: id, name: name, icon: icon, completed: false)
+                return Criterion(id: id, key: key, name: name, icon: icon, completed: false)
             })
-            let current = Advancement(id: id, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
+            let current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
             fullList.append(current)
             addItems = addItems || id == start
             if (addItems) {

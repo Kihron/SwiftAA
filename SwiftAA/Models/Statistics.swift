@@ -9,6 +9,7 @@ import SwiftUI
 
 class GodApple: Indicator {
     var id: String = "minecraft:recipes/misc/mojang_banner_pattern"
+    var key: String = "stats-god-apple"
     var name: String = "Obtain God Apple"
     var icon: String = "enchanted_golden_apple"
     var frameStyle: String = "statistic"
@@ -22,6 +23,7 @@ class GodApple: Indicator {
 
 class Trident: Indicator {
     var id: String = "minecraft:trident"
+    var key: String = "stats-trident"
     var name: String = "Obtain\nTrident"
     var icon: String = "throw_trident"
     var frameStyle: String = "statistic"
@@ -36,6 +38,7 @@ class Trident: Indicator {
 
 class Shells: Indicator {
     var id: String = "minecraft:nautilus_shell"
+    var key: String = "stats-shells"
     var name: String = "Shells\n0 / 8"
     var icon: String = "nautilus_shell"
     var frameStyle: String = "statistic"
@@ -51,6 +54,7 @@ class Shells: Indicator {
 
 class WitherSkulls: Indicator {
     var id: String = "minecraft:wither_skeleton_skull"
+    var key: String = "stats-wither-skulls"
     var name: String = "Skulls\n0 / 3"
     var icon: String = "get_wither_skull"
     var frameStyle: String = "statistic"
@@ -64,9 +68,9 @@ class WitherSkulls: Indicator {
     }
 }
 
-
 class AncientDebris: Indicator {
     var id: String = "minecraft:ancient_debris"
+    var key: String = "stats-ancient-debris"
     var name: String = "Debris: 0\nTNT: 0"
     var icon: String = "obtain_ancient_debris"
     var frameStyle: String = "statistic"

@@ -1,108 +1,108 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <group name="Adventure">
-    <advancement id="minecraft:adventure/root"                  name="Adventure"                icon="adventure"/>
-    <advancement id="minecraft:adventure/kill_a_mob"            name="Monster Hunter"           short_name="Hunter"/>
-    <advancement id="minecraft:adventure/ol_betsy"              name="Ol' Betsy"/>
-    <advancement id="minecraft:adventure/whos_the_pillager_now" name="Who's the Pillager Now?"  short_name="The Pillager" half="false"/>
+    <advancement id="minecraft:adventure/root" name="Adventure" icon="adventure" key="adventure-root"/>
+    <advancement id="minecraft:adventure/kill_a_mob" name="Monster Hunter" short_name="Hunter" key="adventure-kill-a-mob"/>
+    <advancement id="minecraft:adventure/ol_betsy" name="Ol' Betsy" key="adventure-ol-betsy"/>
+    <advancement id="minecraft:adventure/whos_the_pillager_now" name="Who's the Pillager Now?" short_name="The Pillager" half="false" key="adventure-whos-the-pillager-now"/>
 
-    <advancement id="minecraft:adventure/sleep_in_bed"          name="Sweet&#xA;Dreams"             short_name="Dreams"/>
-    <advancement id="minecraft:adventure/trade"                 name="What a Deal!"/>
-    <advancement id="minecraft:adventure/two_birds_one_arrow"   name="Two Birds, One Arrow"     short_name="Two Birds" type="challenge" half="false"/>
-    <advancement id="minecraft:adventure/arbalistic"            name="Arbalistic"               type="challenge" half="false"/>
+    <advancement id="minecraft:adventure/sleep_in_bed" name="Sweet&#xA;Dreams" short_name="Dreams" key="adventure-sleep-in-bed"/>
+    <advancement id="minecraft:adventure/trade" name="What a Deal!" key="adventure-trade"/>
+    <advancement id="minecraft:adventure/two_birds_one_arrow" name="Two Birds, One Arrow" short_name="Two Birds" type="challenge" half="false" key="adventure-two-birds-one-arrow"/>
+    <advancement id="minecraft:adventure/arbalistic" name="Arbalistic" type="challenge" half="false" key="adventure-arbalistic"/>
 
-    <advancement id="minecraft:adventure/honey_block_slide"     name="Sticky Situation"         short_name="Sticky" half="false"/>
-    <advancement id="minecraft:adventure/bullseye"              name="Bullseye"                 type="challenge"/>
-    <advancement id="minecraft:adventure/shoot_arrow"           name="Take Aim"/>
-    <advancement id="minecraft:adventure/sniper_duel"           name="Sniper Duel"              type="challenge"/>
+    <advancement id="minecraft:adventure/honey_block_slide" name="Sticky Situation" short_name="Sticky" half="false" key="adventure-honey-block-slide"/>
+    <advancement id="minecraft:adventure/bullseye" name="Bullseye" type="challenge" key="adventure-bullseye"/>
+    <advancement id="minecraft:adventure/shoot_arrow" name="Take Aim" key="adventure-shoot-arrow"/>
+    <advancement id="minecraft:adventure/sniper_duel" name="Sniper Duel" type="challenge" key="adventure-sniper-duel"/>
 
-    <advancement id="minecraft:adventure/voluntary_exile"       name="Voluntary Exile"          short_name="Exile" icon="pillager_banner" half="false"/>
-    <advancement id="minecraft:adventure/hero_of_the_village"   name="Hero of the Village"      short_name="Hero" icon="pillager_banner" type="challenge" half="false"/>
-    <advancement id="minecraft:adventure/throw_trident"         name="A Throwaway Joke"         short_name="ATJ" half="false"/>
-    <advancement id="minecraft:adventure/very_very_frightening" name="Very Very Frightening"    short_name="VVF" half="false"/>
+    <advancement id="minecraft:adventure/voluntary_exile" name="Voluntary Exile" short_name="Exile" icon="pillager_banner" half="false" key="adventure-voluntary-exile"/>
+    <advancement id="minecraft:adventure/hero_of_the_village" name="Hero of the Village" short_name="Hero" icon="pillager_banner" type="challenge" half="false" key="adventure-hero-of-the-village"/>
+    <advancement id="minecraft:adventure/throw_trident" name="A Throwaway Joke" short_name="ATJ" half="false" key="adventure-throw-trident"/>
+    <advancement id="minecraft:adventure/very_very_frightening" name="Very Very Frightening" short_name="VVF" half="false" key="adventure-very-very-frightening"/>
 
-    <advancement id="minecraft:adventure/summon_iron_golem"     name="Hired Help"               type="goal" half="false"/>
-    <advancement id="minecraft:adventure/totem_of_undying"      name="Postmortal"               type="goal" half="false"/>
-    <advancement id="minecraft:adventure/adventuring_time"      name="Adventuring Time" short_name="Adventuring" type="challenge" half="false">
+    <advancement id="minecraft:adventure/summon_iron_golem" name="Hired Help" type="goal" half="false" key="adventure-summon-iron-golem"/>
+    <advancement id="minecraft:adventure/totem_of_undying" name="Postmortal" type="goal" half="false" key="adventure-totem-of-undying"/>
+    <advancement id="minecraft:adventure/adventuring_time" name="Adventuring Time" short_name="Adventuring" type="challenge" half="false" key="adventure-adventuring-time">
         <criteria goal="Biomes Visited">
-            <criterion id="minecraft:plains"/>
-            <criterion id="minecraft:forest"/>
-            <criterion id="minecraft:wooded_hills"              short_name="Wooded Hills"/>
-            <criterion id="minecraft:birch_forest"/>
-            <criterion id="minecraft:birch_forest_hills"        name="Birch Hills"/>
-            <criterion id="minecraft:dark_forest"/>
-            <criterion id="minecraft:swamp"/>
-            <criterion id="minecraft:taiga"/>
-            <criterion id="minecraft:taiga_hills"/>
-            <criterion id="minecraft:giant_tree_taiga"          name="Mega Taiga"/>
-            <criterion id="minecraft:giant_tree_taiga_hills"    name="Mega Taiga Hill" short_name="Mega Taiga H"/>
-            <criterion id="minecraft:snowy_taiga"               name="Snowy Taiga"       short_name="Snow Taiga"/>
-            <criterion id="minecraft:snowy_taiga_hills"         name="Snowy Taiga Hill"  short_name="Snow Taiga H"/>
-            <criterion id="minecraft:snowy_tundra"              name="Snowy Tundra"      short_name="Snow Tundra"/>
-            <criterion id="minecraft:snowy_mountains"           name="Snowy Mountain"    short_name="Snow Mtn"/>
-            <criterion id="minecraft:snowy_beach"               name="Snowy Beach"       short_name="Snow Beach"/>
-            <criterion id="minecraft:frozen_river"                                      short_name="F River"/>
-            <criterion id="minecraft:river"/>
-            <criterion id="minecraft:desert"/>
-            <criterion id="minecraft:desert_hills"/>
-            <criterion id="minecraft:savanna"/>
-            <criterion id="minecraft:savanna_plateau"           name="Savanna Plat"/>
-            <criterion id="minecraft:jungle"/>
-            <criterion id="minecraft:jungle_edge"/>
-            <criterion id="minecraft:jungle_hills"/>
-            <criterion id="minecraft:bamboo_jungle"             short_name="Bamboo"/>
-            <criterion id="minecraft:bamboo_jungle_hills"       name="Bamboo Hills"/>
-            <criterion id="minecraft:stone_shore"               short_name="Stn Shore"/>
-            <criterion id="minecraft:mountains"/>
-            <criterion id="minecraft:wooded_mountains"          name="Wooded Mtn"/>
-            <criterion id="minecraft:badlands"/>
-            <criterion id="minecraft:badlands_plateau"          name="Badlands Plateau"    short_name="Bad Plat"/>
-            <criterion id="minecraft:wooded_badlands_plateau"   name="Wooded Plateau" short_name="Wood Plat"/>
-            <criterion id="minecraft:mushroom_fields"           short_name="Mushroom"/>
-            <criterion id="minecraft:mushroom_field_shore"      name="Mushroom Shore"       short_name="MushShore"/>
-            <criterion id="minecraft:beach"/>
-            <criterion id="minecraft:warm_ocean"                                        short_name="Warm"/>
-            <criterion id="minecraft:lukewarm_ocean"                                    short_name="Lukewarm"/>
-            <criterion id="minecraft:deep_lukewarm_ocean"       name="Deep Lukewarm"    short_name="Deep LW"/>
-            <criterion id="minecraft:cold_ocean"                                        short_name="Cold"/>
-            <criterion id="minecraft:deep_cold_ocean"                                   short_name="Deep C"/>
-            <criterion id="minecraft:deep_frozen_ocean"         name="Deep Frozen"      short_name="DF"/>
+            <criterion id="minecraft:plains" key="adventure-biomes-visited-plains"/>
+            <criterion id="minecraft:forest" key="adventure-biomes-visited-forest"/>
+            <criterion id="minecraft:wooded_hills" short_name="Wooded Hills" key="adventure-biomes-visited-wooded-hills"/>
+            <criterion id="minecraft:birch_forest" key="adventure-biomes-visited-birch-forest"/>
+            <criterion id="minecraft:birch_forest_hills" name="Birch Hills" key="adventure-biomes-visited-birch-forest-hills"/>
+            <criterion id="minecraft:dark_forest" key="adventure-biomes-visited-dark-forest"/>
+            <criterion id="minecraft:swamp" key="adventure-biomes-visited-swamp"/>
+            <criterion id="minecraft:taiga" key="adventure-biomes-visited-taiga"/>
+            <criterion id="minecraft:taiga_hills" key="adventure-biomes-visited-taiga-hills"/>
+            <criterion id="minecraft:giant_tree_taiga" name="Mega Taiga" key="adventure-biomes-visited-giant-tree-taiga"/>
+            <criterion id="minecraft:giant_tree_taiga_hills" name="Mega Taiga Hill" short_name="Mega Taiga H" key="adventure-biomes-visited-giant-tree-taiga-hills"/>
+            <criterion id="minecraft:snowy_taiga" name="Snowy Taiga" short_name="Snow Taiga" key="adventure-biomes-visited-snowy-taiga"/>
+            <criterion id="minecraft:snowy_taiga_hills" name="Snowy Taiga Hill" short_name="Snow Taiga H" key="adventure-biomes-visited-snowy-taiga-hills"/>
+            <criterion id="minecraft:snowy_tundra" name="Snowy Tundra" short_name="Snow Tundra" key="adventure-biomes-visited-snowy-tundra"/>
+            <criterion id="minecraft:snowy_mountains" name="Snowy Mountain" short_name="Snow Mtn" key="adventure-biomes-visited-snowy-mountains"/>
+            <criterion id="minecraft:snowy_beach" name="Snowy Beach" short_name="Snow Beach" key="adventure-biomes-visited-snowy-beach"/>
+            <criterion id="minecraft:frozen_river" short_name="F River" key="adventure-biomes-visited-frozen-river"/>
+            <criterion id="minecraft:river" key="adventure-biomes-visited-river"/>
+            <criterion id="minecraft:desert" key="adventure-biomes-visited-desert"/>
+            <criterion id="minecraft:desert_hills" key="adventure-biomes-visited-desert-hills"/>
+            <criterion id="minecraft:savanna" key="adventure-biomes-visited-savanna"/>
+            <criterion id="minecraft:savanna_plateau" name="Savanna Plat" key="adventure-biomes-visited-savanna-plateau"/>
+            <criterion id="minecraft:jungle" key="adventure-biomes-visited-jungle"/>
+            <criterion id="minecraft:jungle_edge" key="adventure-biomes-visited-jungle-edge"/>
+            <criterion id="minecraft:jungle_hills" key="adventure-biomes-visited-jungle-hills"/>
+            <criterion id="minecraft:bamboo_jungle" short_name="Bamboo" key="adventure-biomes-visited-bamboo-jungle"/>
+            <criterion id="minecraft:bamboo_jungle_hills" name="Bamboo Hills" key="adventure-biomes-visited-bamboo-jungle-hills"/>
+            <criterion id="minecraft:stone_shore" short_name="Stn Shore" key="adventure-biomes-visited-stone-shore"/>
+            <criterion id="minecraft:mountains" key="adventure-biomes-visited-mountains"/>
+            <criterion id="minecraft:wooded_mountains" name="Wooded Mtn" key="adventure-biomes-visited-wooded-mountains"/>
+            <criterion id="minecraft:badlands" key="adventure-biomes-visited-badlands"/>
+            <criterion id="minecraft:badlands_plateau" name="Badlands Plateau" short_name="Bad Plat" key="adventure-biomes-visited-badlands-plateau"/>
+            <criterion id="minecraft:wooded_badlands_plateau" name="Wooded Plateau" short_name="Wood Plat" key="adventure-biomes-visited-wooded-badlands-plateau"/>
+            <criterion id="minecraft:mushroom_fields" short_name="Mushroom" key="adventure-biomes-visited-mushroom-fields"/>
+            <criterion id="minecraft:mushroom_field_shore" name="Mushroom Shore" short_name="MushShore" key="adventure-biomes-visited-mushroom-field-shore"/>
+            <criterion id="minecraft:beach" key="adventure-biomes-visited-beach"/>
+            <criterion id="minecraft:warm_ocean" short_name="Warm" key="adventure-biomes-visited-warm-ocean"/>
+            <criterion id="minecraft:lukewarm_ocean" short_name="Lukewarm" key="adventure-biomes-visited-lukewarm-ocean"/>
+            <criterion id="minecraft:deep_lukewarm_ocean" name="Deep Lukewarm" short_name="Deep LW" key="adventure-biomes-visited-deep-lukewarm-ocean"/>
+            <criterion id="minecraft:cold_ocean" short_name="Cold" key="adventure-biomes-visited-cold-ocean"/>
+            <criterion id="minecraft:deep_cold_ocean" short_name="Deep C" key="adventure-biomes-visited-deep-cold-ocean"/>
+            <criterion id="minecraft:deep_frozen_ocean" name="Deep Frozen" short_name="DF" key="adventure-biomes-visited-deep-frozen-ocean"/>
         </criteria>
     </advancement>
-    <advancement id="minecraft:adventure/kill_all_mobs" name="Monsters Hunted" short_name="Monsters" type="challenge" half="false">
+    <advancement id="minecraft:adventure/kill_all_mobs" name="Monsters Hunted" short_name="Monsters" type="challenge" half="false" key="adventure-kill-all-mobs">
         <criteria goal="Monsters Killed">
-            <criterion id="minecraft:creeper"/>
-            <criterion id="minecraft:zombie"/>
-            <criterion id="minecraft:skeleton"/>
-            <criterion id="minecraft:husk"/>
-            <criterion id="minecraft:drowned"/>
-            <criterion id="minecraft:stray"/>
-            <criterion id="minecraft:spider"/>
-            <criterion id="minecraft:cave_spider"/>
-            <criterion id="minecraft:enderman"/>
-            <criterion id="minecraft:slime"/>
-            <criterion id="minecraft:magma_cube"/>
-            <criterion id="minecraft:ghast"/>
-            <criterion id="minecraft:blaze"/>
-            <criterion id="minecraft:wither_skeleton" name="Wither Skeleton" short_name="W Skeleton"/>
-            <criterion id="minecraft:piglin"/>
-            <criterion id="minecraft:zombified_piglin" name="Zombie Piglin"/>
-            <criterion id="minecraft:hoglin"/>
-            <criterion id="minecraft:zoglin"/>
-            <criterion id="minecraft:silverfish"/>
-            <criterion id="minecraft:ender_dragon"/>
-            <criterion id="minecraft:endermite"/>
-            <criterion id="minecraft:shulker"/>
-            <criterion id="minecraft:wither"/>
-            <criterion id="minecraft:phantom"/>
-            <criterion id="minecraft:guardian"/>
-            <criterion id="minecraft:elder_guardian"/>
-            <criterion id="minecraft:zombie_villager" short_name="Z-Villager"/>
-            <criterion id="minecraft:witch"/>
-            <criterion id="minecraft:pillager"/>
-            <criterion id="minecraft:vindicator"/>
-            <criterion id="minecraft:evoker"/>
-            <criterion id="minecraft:vex"/>
-            <criterion id="minecraft:ravager"/>
+            <criterion id="minecraft:creeper" key="adventure-monsters-killed-creeper"/>
+            <criterion id="minecraft:zombie" key="adventure-monsters-killed-zombie"/>
+            <criterion id="minecraft:skeleton" key="adventure-monsters-killed-skeleton"/>
+            <criterion id="minecraft:husk" key="adventure-monsters-killed-husk"/>
+            <criterion id="minecraft:drowned" key="adventure-monsters-killed-drowned"/>
+            <criterion id="minecraft:stray" key="adventure-monsters-killed-stray"/>
+            <criterion id="minecraft:spider" key="adventure-monsters-killed-spider"/>
+            <criterion id="minecraft:cave_spider" key="adventure-monsters-killed-cave-spider"/>
+            <criterion id="minecraft:enderman" key="adventure-monsters-killed-enderman"/>
+            <criterion id="minecraft:slime" key="adventure-monsters-killed-slime"/>
+            <criterion id="minecraft:magma_cube" key="adventure-monsters-killed-magma-cube"/>
+            <criterion id="minecraft:ghast" key="adventure-monsters-killed-ghast"/>
+            <criterion id="minecraft:blaze" key="adventure-monsters-killed-blaze"/>
+            <criterion id="minecraft:wither_skeleton" name="Wither Skeleton" short_name="W Skeleton" key="adventure-monsters-killed-wither-skeleton"/>
+            <criterion id="minecraft:piglin" key="adventure-monsters-killed-piglin"/>
+            <criterion id="minecraft:zombified_piglin" name="Zombie Piglin" key="adventure-monsters-killed-zombified-piglin"/>
+            <criterion id="minecraft:hoglin" key="adventure-monsters-killed-hoglin"/>
+            <criterion id="minecraft:zoglin" key="adventure-monsters-killed-zoglin"/>
+            <criterion id="minecraft:silverfish" key="adventure-monsters-killed-silverfish"/>
+            <criterion id="minecraft:ender_dragon" key="adventure-monsters-killed-ender-dragon"/>
+            <criterion id="minecraft:endermite" key="adventure-monsters-killed-endermite"/>
+            <criterion id="minecraft:shulker" key="adventure-monsters-killed-shulker"/>
+            <criterion id="minecraft:wither" key="adventure-monsters-killed-wither"/>
+            <criterion id="minecraft:phantom" key="adventure-monsters-killed-phantom"/>
+            <criterion id="minecraft:guardian" key="adventure-monsters-killed-guardian"/>
+            <criterion id="minecraft:elder_guardian" key="adventure-monsters-killed-elder-guardian"/>
+            <criterion id="minecraft:zombie_villager" short_name="Z-Villager" key="adventure-monsters-killed-zombie-villager"/>
+            <criterion id="minecraft:witch" key="adventure-monsters-killed-witch"/>
+            <criterion id="minecraft:pillager" key="adventure-monsters-killed-pillager"/>
+            <criterion id="minecraft:vindicator" key="adventure-monsters-killed-vindicator"/>
+            <criterion id="minecraft:evoker" key="adventure-monsters-killed-evoker"/>
+            <criterion id="minecraft:vex" key="adventure-monsters-killed-vex"/>
+            <criterion id="minecraft:ravager" key="adventure-monsters-killed-ravager"/>
         </criteria>
     </advancement>
 </group>
