@@ -17,7 +17,7 @@ struct ToolbarAlertView: View {
             showPopover.toggle()
         } label: {
             Image(systemName: "exclamationmark.triangle.fill")
-             .font(.system(size: 15))
+                .font(.system(size: 15))
              .foregroundColor(tips.contains(error) ? .blue : .red)
         }
         .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {

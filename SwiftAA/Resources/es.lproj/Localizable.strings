@@ -7,6 +7,15 @@
 /* No comment provided by engineer. */
 "1.16" = "1.16";
 
+/* No comment provided by engineer. */
+"about-button" = "Acerca de SwiftAA";
+
+/* No comment provided by engineer. */
+"about-description" = "All Advancements Tracker for macOS";
+
+/* No comment provided by engineer. */
+"about-copyright" = "Copyright © 2022 Kihron, Slackow.\nAll rights reserved.";
+
 /* Title: all advancments goal */
 "goal-advancements" = "Logros";
 

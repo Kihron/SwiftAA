@@ -56,6 +56,26 @@ struct SwiftAAApp: App {
                 .removeFocusOnTap()
                 .environmentObject(settings)
         }
+        .commands {
+            CommandGroup(replacing: .appInfo) {
+                Button("about-button".localized) {
+                    NSApplication.shared.orderFrontStandardAboutPanel(
+                        options: [
+                            NSApplication.AboutPanelOptionKey.credits: NSAttributedString(
+                                string: "about-description".localized,
+                                attributes: [
+                                    NSAttributedString.Key.font: NSFont.boldSystemFont(
+                                        ofSize: NSFont.smallSystemFontSize)
+                                ]
+                            ),
+                            NSApplication.AboutPanelOptionKey(
+                                rawValue: "Copyright"
+                            ): "about-copyright".localized
+                        ]
+                    )
+                }
+            }
+        }
         
         WindowGroup("overlay") {
             OverlayView(dataHandler: dataHandler)

@@ -16,12 +16,7 @@ struct ToolbarRefreshView: View {
             .resizable()
             .frame(width: 32, height: 32)
             .opacity(visible ? 1 : 0)
-            .onAppear {
-                visible = false
-                withAnimation {
-                    visible = true
-                }
-            }
+            .animation(.linear, value: visible)
     }
 }
 

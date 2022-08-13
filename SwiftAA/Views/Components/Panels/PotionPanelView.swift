@@ -43,7 +43,8 @@ struct PotionView: View {
                     .renderingMode(.template)
                     .foregroundColor(Color("ender_pearl_border"))
                 
-                ForEach(ensureCapacity(ingredients), id: \.self) { item in
+                ForEach(ensureCapacity(ingredients).indices, id: \.self) { index in
+                    let item = ensureCapacity(ingredients)[index]
                     if (!item.isEmpty) {
                         Image(item)
                             .interpolation(.none)
@@ -83,10 +84,3 @@ struct PotionPanelView_Previews: PreviewProvider {
             .environmentObject(settings)
     }
 }
-
-//struct PotionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PotionView(name: "Strength", ingredients: ["nether_wart", "blaze_powder"])
-//            .frame(width: 400, height: 100)
-//    }
-//}
