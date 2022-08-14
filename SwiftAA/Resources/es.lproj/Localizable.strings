@@ -11,10 +11,10 @@
 "about-button" = "Acerca de SwiftAA";
 
 /* No comment provided by engineer. */
-"about-description" = "All Advancements Tracker for macOS";
+"about-description" = "Seguimiento de logros para macOS";
 
 /* No comment provided by engineer. */
-"about-copyright" = "Copyright © 2022 Kihron, Slackow.\nAll rights reserved.";
+"about-copyright" = "Copyright © 2022 Kihron, Slackow.\nReservados todos los derechos.";
 
 /* Title: all advancments goal */
 "goal-advancements" = "Logros";

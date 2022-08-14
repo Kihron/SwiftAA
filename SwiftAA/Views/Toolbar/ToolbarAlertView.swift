@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ToolbarAlertView: View {
     @Binding var error: String
-    @State var showPopover: Bool
+    @State var showPopover: Bool = false
     let tips = ["Tab into Minecraft to start tracking"]
     
     var body: some View {
@@ -18,7 +18,7 @@ struct ToolbarAlertView: View {
         } label: {
             Image(systemName: "exclamationmark.triangle.fill")
                 .font(.system(size: 15))
-             .foregroundColor(tips.contains(error) ? .blue : .red)
+                .foregroundColor(tips.contains(error) ? .blue : .red)
         }
         .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
             PopoverView(error: $error)

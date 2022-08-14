@@ -74,6 +74,7 @@ struct ThemeSettingsView: View {
                 
                 Spacer()
             }
+            
             Spacer()
         }
         .padding()

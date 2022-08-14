@@ -44,7 +44,7 @@ struct SwiftAAApp: App {
                     }
                     ToolbarItem(placement: .status) {
                         if (!error.isEmpty) {
-                            ToolbarAlertView(error: $error, showPopover: false)
+                            ToolbarAlertView(error: $error)
                         }
                     }
                 }
