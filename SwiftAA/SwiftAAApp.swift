@@ -28,7 +28,7 @@ struct SwiftAAApp: App {
     var body: some Scene {
         WindowGroup("SwiftAA") {
             ContentView(dataHandler: dataHandler, refresh: false, changed: $changed)
-                .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 754, maxHeight: 754, alignment: .center)
+                .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 754, maxHeight: 754, alignment: .center)
                 .onAppear {
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
                         error = self.refreshData()
@@ -40,7 +40,7 @@ struct SwiftAAApp: App {
                         ToolbarRefreshView(visible: $changed)
                     }
                     ToolbarItem(placement: .status) {
-                        ToolbarAAView(map: $dataHandler.map, playTime: $dataHandler.playTime, changed: $changed)
+                        ToolbarAAView(dataHandler: dataHandler, changed: $changed)
                     }
                     ToolbarItem(placement: .status) {
                         if (!error.isEmpty) {
@@ -77,18 +77,19 @@ struct SwiftAAApp: App {
             }
         }
         
-        WindowGroup("overlay") {
+        WindowGroup("OverlayWindow") {
             OverlayView(dataHandler: dataHandler)
-                .frame(minWidth: 400, idealWidth: 800, maxWidth: 1000, minHeight: 300, maxHeight: 300, alignment: .center)
+                .frame(minWidth: !dataHandler.allAdvancements ? 400 : 785, idealWidth: 800, maxWidth: 1000, minHeight: 354, maxHeight: 354, alignment: .center)
+                .environmentObject(settings)
         }.commands {
             CommandGroup(after: .sidebar, addition: {
                 Button {
                     let windows = NSApplication.shared.windows.filter({ window in
-                        window.title == "Overlay"
+                        window.title == "OverlayWindow"
                     })
                     
                     if (windows.isEmpty) {
-                        if let url = URL(string: "SwiftAA://Overlay") {
+                        if let url = URL(string: "SwiftAA://OverlayWindow") {
                             openURL(url)
                         }
                     } else {
@@ -102,7 +103,7 @@ struct SwiftAAApp: App {
             
             CommandGroup(replacing: .newItem, addition: {})
         }
-        .handlesExternalEvents(matching: Set(arrayLiteral: "Overlay"))
+        .handlesExternalEvents(matching: Set(arrayLiteral: "OverlayWindow"))
         .windowStyle(HiddenTitleBarWindowStyle())
         
         Settings {
@@ -228,10 +229,6 @@ struct SwiftAAApp: App {
             wasCleared = false
         }
         
-        withAnimation(.linear(duration: 0.5)) {
-            dataHandler.playTime = statistics["minecraft:custom"]?["minecraft:play_one_minute"] ?? 0
-        }
-        
         let flatMap = dataHandler.map.values.flatMap({$0})
         flatMap.forEach { adv in
             adv.update(advancements: advancements, stats: statistics)
@@ -241,6 +238,11 @@ struct SwiftAAApp: App {
         stats.append(contentsOf: dataHandler.bottomStats)
         stats.forEach { stat in
             stat.update(advancements: advancements, stats: statistics)
+        }
+        
+        withAnimation(.linear(duration: 0.5)) {
+            dataHandler.playTime = statistics["minecraft:custom"]?["minecraft:play_one_minute"] ?? 0
+            dataHandler.allAdvancements = dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count == dataHandler.map.values.compactMap({$0.count}).reduce(0, +)
         }
         
         changed = true
@@ -253,6 +255,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
-            NSWindow.allowsAutomaticWindowTabbing = false
+        NSWindow.allowsAutomaticWindowTabbing = false
     }
 }

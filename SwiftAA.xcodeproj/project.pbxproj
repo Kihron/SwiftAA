@@ -30,6 +30,10 @@
 		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
+		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
+		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
+		B69EB68328AC9A6B0029B988 /* OverlayStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB68228AC9A6B0029B988 /* OverlayStatsView.swift */; };
+		B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
@@ -79,6 +83,10 @@
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
+		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
+		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
+		B69EB68228AC9A6B0029B988 /* OverlayStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStatsView.swift; sourceTree = "<group>"; };
+		B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySettingsView.swift; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,7 +124,9 @@
 		B616FAA3289B2314004E4A41 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
+				B69EB68128AC997B0029B988 /* Stats */,
 				B616FAA4289B232F004E4A41 /* OverlayView.swift */,
+				B69EB67828AC08450029B988 /* OverlayCompletedView.swift */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";
@@ -221,6 +231,22 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
+		B69EB67D28AC926E0029B988 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B69EB68128AC997B0029B988 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				B69EB68228AC9A6B0029B988 /* OverlayStatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
 		B6A772F12889945F00436551 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,8 +263,9 @@
 			isa = PBXGroup;
 			children = (
 				B6A772F42889949A00436551 /* SettingsView.swift */,
-				B6A772F6288994DE00436551 /* ThemeSettingsView.swift */,
 				B64827292889CB7100B44855 /* TrackingSettingsView.swift */,
+				B6A772F6288994DE00436551 /* ThemeSettingsView.swift */,
+				B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */,
 				B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */,
 			);
 			path = Settings;
@@ -329,6 +356,7 @@
 		B6FEFED9289992FF0095CF08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B69EB67D28AC926E0029B988 /* View */,
 				B6D3065528A2B13F004D27E6 /* Text */,
 				B6FEFEE528999D8D0095CF08 /* Color */,
 				B6FEFEE0289993B90095CF08 /* Dictionary */,
@@ -468,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */,
 				B6FEFEE728999D9B0095CF08 /* RawValue.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
 				B6A772FC2889998700436551 /* Statistics.swift in Sources */,
@@ -476,16 +505,19 @@
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */,
 				B6A772F7288994DE00436551 /* ThemeSettingsView.swift in Sources */,
+				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* Localize.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
+				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B648272E2889CD8100B44855 /* AppSettings.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
 				B6FEFED5289991070095CF08 /* Indicator.swift in Sources */,
+				B69EB68328AC9A6B0029B988 /* OverlayStatsView.swift in Sources */,
 				B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
 				B64827282889C74B00B44855 /* QLImage.swift in Sources */,

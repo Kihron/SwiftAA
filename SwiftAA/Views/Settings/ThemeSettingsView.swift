@@ -31,7 +31,7 @@ struct ThemeSettingsView: View {
                             } label: {
                                 Text(settings.theme.localized)
                                     .font(.custom("Minecraft-Regular", size: 10))
-                           }
+                            }
                             .padding(.trailing)
                         }
                     }

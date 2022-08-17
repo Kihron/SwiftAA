@@ -89,6 +89,9 @@
 "settings-notes" = "Notas";
 
 /* No comment provided by engineer. */
+"settings-overlay" = "Overlay";
+
+/* No comment provided by engineer. */
 "settings-theme" = "Tema";
 
 /* No comment provided by engineer. */
@@ -153,7 +156,7 @@
 "adventure-hero-of-the-village" = "Héroe De La Aldea";
 "adventure-throw-trident" = "Jugada Maestra";
 "adventure-very-very-frightening" = "Impactrueno";
-"adventure-summon-iron-golem" = "El Guardaespaldas";
+"adventure-summon-iron-golem" = "Ayuda Contratada";
 "adventure-totem-of-undying" = "Post Mortem";
 "adventure-biomes-visited-plains" = "Llanura";
 "adventure-biomes-visited-forest" = "Bosque";

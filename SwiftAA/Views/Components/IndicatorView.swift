@@ -10,6 +10,7 @@ import Quartz
 
 struct IndicatorView: View {
     @Binding var indicator: Indicator
+    @State var isOverlay: Bool = false
     
     var body: some View {
         VStack(spacing: 3) {
@@ -22,7 +23,7 @@ struct IndicatorView: View {
                     .saturation((indicator.completed) ? 1.5 : 1)
                     .brightness((indicator.completed) ? 0.15 : 0)
                     .overlay {
-                        if (indicator.completed) {
+                        if (indicator.completed && !isOverlay) {
                            Image("frame_glow")
                                 .interpolation(.none)
                                 .resizable()

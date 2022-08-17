@@ -8,12 +8,16 @@
 import SwiftUI
 
 class AppSettings: ObservableObject {
+    //Tracking
     @AppStorage("gameVersion") var gameVersion: String = "1.16"
     @AppStorage("customSavesPath") var customSavesPath: String = ""
     @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
-    @AppStorage("notes") var notes: [String:[String]] = [:]
     @Published var worldPath: String = ""
     
+    //Notes
+    @AppStorage("notes") var notes: [String:[String]] = [:]
+    
+    //Theme
     @AppStorage("theme") var theme: String = "theme-presets-ender-pearl"
     @AppStorage("themeMode") var themeMode: ThemeMode = .preset
     
@@ -22,6 +26,12 @@ class AppSettings: ObservableObject {
     
     @AppStorage("userBgColor") var userBgColor: Color = Color("ender_pearl_background")
     @AppStorage("userBrColor") var userBrColor: Color = Color("ender_pearl_border")
+    
+    //Overlay
+    @AppStorage("showStats") var showStats: Bool = true
+    @AppStorage("statsRowPos") var statsRowPos: Bool = true
+    
+    @AppStorage("userOverlayColor") var userOverlayColor: Color = Color("overlay_green")
 }
 
 enum TrackingMode: String {

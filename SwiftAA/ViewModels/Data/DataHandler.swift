@@ -12,6 +12,8 @@ class DataHandler: ObservableObject {
     @Published var map = [String:[Advancement]]()
     @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
     @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
+    @Published var stats: [Indicator] = [Indicator]()
+    @Published var allAdvancements: Bool = false
     @Published var playTime: Int = 0
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
@@ -72,6 +74,7 @@ class DataHandler: ObservableObject {
         }
         
         map[file] = fullList
+        stats = topStats + bottomStats
         return Binding.constant(advancements)
     }
     
@@ -85,6 +88,14 @@ class DataHandler: ObservableObject {
     
     func getNameFromID(id: String, prefix: String) -> String {
         return id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+    }
+    
+    func ticksToIGT(ticks: Int) -> String {
+        let dateFormatter = DateComponentsFormatter()
+        dateFormatter.allowedUnits = [.hour, .minute, .second]
+        dateFormatter.unitsStyle = .positional
+        dateFormatter.zeroFormattingBehavior = .pad
+        return dateFormatter.string(from: Double(ticks / 20)) ?? "0:00:00"
     }
     
     //https://stackoverflow.com/questions/72443976/how-to-get-arguments-of-nsrunningapplication

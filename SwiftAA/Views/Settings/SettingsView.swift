@@ -13,20 +13,24 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             TrackingSettingsView()
-                 .tabItem {
-                     Label("settings-tracking", systemImage: "slider.horizontal.3")
-                 }
+                .tabItem {
+                    Label("settings-tracking", systemImage: "slider.horizontal.3")
+                }
             ThemeSettingsView()
-                 .tabItem {
-                     Label("settings-theme", systemImage: "paintpalette")
-                 }
+                .tabItem {
+                    Label("settings-theme", systemImage: "paintpalette")
+                }
+            OverlaySettingsView()
+                .tabItem {
+                    Label("settings-overlay", systemImage: "ipad.landscape")
+                }
             NotesSettingsView()
                 .tabItem {
                     Label("settings-notes", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
-         }
-         .frame(width: 450, height: 250)
-         .environmentObject(settings)
+        }
+        .frame(width: 450, height: 250)
+        .environmentObject(settings)
     }
 }
 
