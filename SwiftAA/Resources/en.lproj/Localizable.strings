@@ -5,7 +5,7 @@
 "about-description" = "All Advancements Tracker for macOS";
 
 /* No comment provided by engineer. */
-"about-copyright" = "Copyright © 2022 Kihron, Slackow.\nAll rights reserved.";
+"about-copyright" = "Copyright © 2022 Kihron, Slackow.";
 
 /* Title: all advancments goal */
 "goal-advancements" = "Advancements";
@@ -45,6 +45,9 @@
 
 /* No comment provided by engineer. */
 "overlay" = "Overlay";
+
+/* No comment provided by engineer. */
+"overlay-complete-stats" = "Run Stats";
 
 /* Button: shows/hides overlay */
 "overlay-toggle" = "Toggle Overlay";

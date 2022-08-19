@@ -17,8 +17,8 @@ class Advancement: NSObject, Indicator, Identifiable {
     var completed: Bool
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        self.completed = advancements[id]?.done ?? false
-        self.criteria.forEach { criterion in
+        completed = advancements[id]?.done ?? false
+        criteria.forEach { criterion in
             criterion.completed = advancements[id]?.criteria[criterion.id] != nil
         }
     }
@@ -34,6 +34,6 @@ class Advancement: NSObject, Indicator, Identifiable {
     }
     
     public override var description: String {
-        return "\(self.name) \(self.completed)"
+        "\(name) \(completed)"
     }
 }

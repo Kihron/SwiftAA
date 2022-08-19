@@ -23,6 +23,6 @@ class Criterion: NSObject {
     }
     
     public override var description: String {
-        return "\(self.name) \(self.completed)"
+        "\(name) \(completed)"
     }
 }

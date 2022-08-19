@@ -23,6 +23,8 @@ struct SwiftAAApp: App {
     @State var activeWindows = [pid_t:String]()
     @State var lastWorking = ""
     
+    @State var uuid = ""
+    
     let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     var body: some Scene {
@@ -31,13 +33,19 @@ struct SwiftAAApp: App {
                 .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 754, maxHeight: 754, alignment: .center)
                 .onAppear {
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
-                        error = self.refreshData()
+                        withAnimation {
+                            error = refreshData()
+                        }
                     }
                 }
                 .navigationTitle(windowTitle)
                 .toolbar {
                     ToolbarItem(placement: .status) {
                         ToolbarRefreshView(visible: $changed)
+                    }
+                    ToolbarItem(placement: .status) {
+                        ToolbarPlayerHead()
+                            .environmentObject(settings)
                     }
                     ToolbarItem(placement: .status) {
                         ToolbarAAView(dataHandler: dataHandler, changed: $changed)
@@ -79,7 +87,7 @@ struct SwiftAAApp: App {
         
         WindowGroup("OverlayWindow") {
             OverlayView(dataHandler: dataHandler)
-                .frame(minWidth: !dataHandler.allAdvancements ? 400 : 785, idealWidth: 800, maxWidth: 1000, minHeight: 354, maxHeight: 354, alignment: .center)
+                .frame(minWidth: !dataHandler.allAdvancements ? 400 : 825, idealWidth: 825, maxWidth: .infinity, minHeight: 354, maxHeight: 354, alignment: .center)
                 .environmentObject(settings)
         }.commands {
             CommandGroup(after: .sidebar, addition: {
@@ -137,7 +145,7 @@ struct SwiftAAApp: App {
             do {
                 
                 let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
-                    return folder != ".DS_Store"
+                    folder != ".DS_Store"
                 })
                 if (contents.isEmpty) {
                     updateAll()
@@ -172,6 +180,13 @@ struct SwiftAAApp: App {
                     let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
                     let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(world)/stats/\(fileName)")))
                     
+                    uuid = String(fileName.dropLast(5))
+                    Task {
+                        let player = await getPlayer()
+                        if (player != settings.player) {
+                            settings.player = player
+                        }
+                    }
                     updateAll(advancements: advancements, statistics: statistics.stats)
                 }
                 
@@ -189,8 +204,18 @@ struct SwiftAAApp: App {
         return ""
     }
     
+    func getPlayer() async -> Player {
+        do {
+            let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)")!
+            return try await URLSession.shared.decode(Player.self, from: url)
+        } catch {
+            print(error.localizedDescription)
+            return Player(id: "", name: "")
+        }
+    }
+    
     func getModifiedTime(_ filePath: String, fileManager: FileManager) throws -> Date? {
-        return try fileManager.attributesOfItem(atPath: filePath)[FileAttributeKey.modificationDate] as? Date
+        try fileManager.attributesOfItem(atPath: filePath)[FileAttributeKey.modificationDate] as? Date
     }
     
     func getSavesFromActiveInstance() -> String {
@@ -234,16 +259,13 @@ struct SwiftAAApp: App {
             adv.update(advancements: advancements, stats: statistics)
         }
         
-        var stats = dataHandler.topStats
-        stats.append(contentsOf: dataHandler.bottomStats)
-        stats.forEach { stat in
+        dataHandler.stats.forEach { stat in
             stat.update(advancements: advancements, stats: statistics)
         }
         
-        withAnimation(.linear(duration: 0.5)) {
-            dataHandler.playTime = statistics["minecraft:custom"]?["minecraft:play_one_minute"] ?? 0
-            dataHandler.allAdvancements = dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count == dataHandler.map.values.compactMap({$0.count}).reduce(0, +)
-        }
+        dataHandler.statsData = statistics
+        dataHandler.playTime = statistics["minecraft:custom"]?["minecraft:play_one_minute"] ?? 0
+        dataHandler.allAdvancements = dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count >= dataHandler.map.values.compactMap({$0.count}).reduce(0, +)
         
         changed = true
     }
@@ -251,7 +273,7 @@ struct SwiftAAApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
+        true
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {

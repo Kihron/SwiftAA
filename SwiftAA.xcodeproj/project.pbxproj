@@ -30,9 +30,15 @@
 		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
+		B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */; };
+		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
+		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
+		B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* StatsView.swift */; };
+		B6872FBF28AEC908003CEA95 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6872FBE28AEC908003CEA95 /* CachedAsyncImage */; };
+		B6872FC328AED0CD003CEA95 /* RawCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC228AED0CD003CEA95 /* RawCodable.swift */; };
+		B6872FC528AEDA4A003CEA95 /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* Stat.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
-		B69EB68328AC9A6B0029B988 /* OverlayStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB68228AC9A6B0029B988 /* OverlayStatsView.swift */; };
 		B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
@@ -83,9 +89,14 @@
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
+		B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
+		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlayerHead.swift; sourceTree = "<group>"; };
+		B6872FB828AEBEB6003CEA95 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		B6872FC228AED0CD003CEA95 /* RawCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCodable.swift; sourceTree = "<group>"; };
+		B6872FC428AEDA4A003CEA95 /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
-		B69EB68228AC9A6B0029B988 /* OverlayStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStatsView.swift; sourceTree = "<group>"; };
 		B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySettingsView.swift; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
@@ -115,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6DF1C2E28904F2900044F67 /* SWXMLHash in Frameworks */,
+				B6872FBF28AEC908003CEA95 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +136,6 @@
 		B616FAA3289B2314004E4A41 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				B69EB68128AC997B0029B988 /* Stats */,
 				B616FAA4289B232F004E4A41 /* OverlayView.swift */,
 				B69EB67828AC08450029B988 /* OverlayCompletedView.swift */,
 			);
@@ -227,8 +238,25 @@
 				B673A830288AF27000560177 /* ToolbarAAView.swift */,
 				B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */,
 				B673A832288B104F00560177 /* ToolbarRefreshView.swift */,
+				B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */,
 			);
 			path = Toolbar;
+			sourceTree = "<group>";
+		};
+		B6872FB128AEA9BC003CEA95 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		B6872FC028AED0AB003CEA95 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				B6872FC228AED0CD003CEA95 /* RawCodable.swift */,
+			);
+			path = Codable;
 			sourceTree = "<group>";
 		};
 		B69EB67D28AC926E0029B988 /* View */ = {
@@ -239,14 +267,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B69EB68128AC997B0029B988 /* Stats */ = {
-			isa = PBXGroup;
-			children = (
-				B69EB68228AC9A6B0029B988 /* OverlayStatsView.swift */,
-			);
-			path = Stats;
-			sourceTree = "<group>";
-		};
 		B6A772F12889945F00436551 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +275,7 @@
 				B6FEFEE42899953E0095CF08 /* ProgressBars */,
 				B65AE1D02886F8C1006EC138 /* IndicatorView.swift */,
 				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
+				B6872FB828AEBEB6003CEA95 /* StatsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -329,9 +350,11 @@
 			isa = PBXGroup;
 			children = (
 				B6A772FE28899D2200436551 /* Json */,
-				B66A07732887A32900DC0A2C /* Criterion.swift */,
 				B65AE1D32887032F006EC138 /* Advancement.swift */,
+				B66A07732887A32900DC0A2C /* Criterion.swift */,
+				B6872FB428AEAA45003CEA95 /* Player.swift */,
 				B6A772FB2889998700436551 /* Statistics.swift */,
+				B6872FC428AEDA4A003CEA95 /* Stat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +379,8 @@
 		B6FEFED9289992FF0095CF08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B6872FC028AED0AB003CEA95 /* Codable */,
+				B6872FB128AEA9BC003CEA95 /* URL */,
 				B69EB67D28AC926E0029B988 /* View */,
 				B6D3065528A2B13F004D27E6 /* Text */,
 				B6FEFEE528999D8D0095CF08 /* Color */,
@@ -426,6 +451,7 @@
 			name = SwiftAA;
 			packageProductDependencies = (
 				B6DF1C2D28904F2900044F67 /* SWXMLHash */,
+				B6872FBE28AEC908003CEA95 /* CachedAsyncImage */,
 			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
@@ -459,6 +485,7 @@
 			packageReferences = (
 				B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6DF1C2C28904F2900044F67 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+				B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
@@ -496,7 +523,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */,
+				B6872FC328AED0CD003CEA95 /* RawCodable.swift in Sources */,
 				B6FEFEE728999D9B0095CF08 /* RawValue.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
 				B6A772FC2889998700436551 /* Statistics.swift in Sources */,
@@ -509,15 +538,17 @@
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
+				B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* Localize.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
+				B6872FB528AEAA45003CEA95 /* Player.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
+				B6872FC528AEDA4A003CEA95 /* Stat.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B648272E2889CD8100B44855 /* AppSettings.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
 				B6FEFED5289991070095CF08 /* Indicator.swift in Sources */,
-				B69EB68328AC9A6B0029B988 /* OverlayStatsView.swift in Sources */,
 				B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
 				B64827282889C74B00B44855 /* QLImage.swift in Sources */,
@@ -530,6 +561,7 @@
 				B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */,
 				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
 				B6FEFEE2289994390095CF08 /* RawRepresentable.swift in Sources */,
+				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,19 +703,19 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftAA/SwiftAA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftAA/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 KIHRON, SLACKOW";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -699,19 +731,19 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftAA/SwiftAA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftAA/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 KIHRON, SLACKOW";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -751,6 +783,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		B6DF1C2C28904F2900044F67 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
@@ -762,6 +802,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6872FBE28AEC908003CEA95 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
 		B6DF1C2D28904F2900044F67 /* SWXMLHash */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6DF1C2C28904F2900044F67 /* XCRemoteSwiftPackageReference "SWXMLHash" */;

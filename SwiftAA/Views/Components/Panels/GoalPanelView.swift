@@ -13,18 +13,18 @@ struct GoalPanelView: View {
     @State var completedTotal: Int = 0
     @State var rowCount: Int
     @State var goal: String
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 2, alignment: .leading), count: rowCount), spacing: 5) {
                 Spacer()
                 Spacer()
-                
+
                 IndicatorView(indicator: $advancement.asIndicator)
 
                 Spacer()
                 Spacer()
-                
+
                 ForEach($advancement.criteria, id: \.self.id) { item in
                     CriterionView(criterion: item)
                 }
@@ -34,7 +34,7 @@ struct GoalPanelView: View {
             .padding(.leading, 5)
 
             ProgressBarView(value: .constant($advancement.criteria.filter({ criterion in
-                return criterion.completed.wrappedValue
+                    criterion.completed.wrappedValue
             }).count), total: advancement.criteria.count, title: goal)
         }
         .padding(4)
@@ -46,7 +46,7 @@ struct GoalPanelView: View {
 struct GoalPanelViewView_Previews: PreviewProvider {
     @ObservedObject static var dataHandler = DataHandler()
     @StateObject static var settings = AppSettings()
-    
+
     static var previews: some View {
         GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
             .frame(width: 500, height: 400)

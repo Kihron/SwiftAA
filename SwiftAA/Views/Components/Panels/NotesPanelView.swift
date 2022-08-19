@@ -20,7 +20,7 @@ struct NotesPanelView: View {
                 VStack(spacing: 5) {
                     WayPointCardView(index: 0, icon: "elder_guardian")
                     WayPointCardView(index: 1, icon: "pillager")
-                    WayPointCardView(index: 2, icon: "ender_dragon")
+                    WayPointCardView(index: 2, icon: "silverfish")
                 }
                 Spacer()
             }

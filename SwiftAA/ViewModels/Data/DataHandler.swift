@@ -10,9 +10,12 @@ import SWXMLHash
 
 class DataHandler: ObservableObject {
     @Published var map = [String:[Advancement]]()
+    
     @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
     @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
     @Published var stats: [Indicator] = [Indicator]()
+    @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
+    
     @Published var allAdvancements: Bool = false
     @Published var playTime: Int = 0
     
@@ -87,7 +90,7 @@ class DataHandler: ObservableObject {
     }
     
     func getNameFromID(id: String, prefix: String) -> String {
-        return id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+        id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
     }
     
     func ticksToIGT(ticks: Int) -> String {

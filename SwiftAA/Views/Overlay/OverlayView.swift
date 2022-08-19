@@ -22,8 +22,10 @@ struct OverlayView: View {
     var body: some View {
         GeometryReader { screen in
             if (dataHandler.allAdvancements) {
-                OverlayCompletedView(dataHandler: dataHandler)
-                    .environmentObject(settings)
+                withAnimation {
+                    OverlayCompletedView(dataHandler: dataHandler)
+                        .environmentObject(settings)
+                }
             } else {
                 VStack(alignment: settings.statsRowPos ? .leading : .trailing) {
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 20) {
@@ -90,10 +92,10 @@ struct OverlayView: View {
                 }
                 .background(settings.userOverlayColor)
                 .onReceive(animationTimer) { timer in
-                    withAnimation() {
+                    withAnimation {
                         self.progress -= 0.01
                     }
-                    if self.progress <= 0.0 {
+                    if progress <= 0.0 {
                         totalSections = totalSections(screen: screen) - 1
                         criteriaTotalSections = totalCriteriaSections(screen: screen) - 1
                         section = (section < totalSections) ? section + 1 : 0
@@ -117,7 +119,7 @@ struct OverlayView: View {
     }
     
     func totalSections(screen: GeometryProxy) -> Int {
-        return (dataHandler.map.values.flatMap({$0}).filter({!$0.completed}).count / Int((floor(screen.size.width / 74))) + 1) / 2
+        (dataHandler.map.values.flatMap({ $0 }).filter({ !$0.completed }).count / Int((floor(screen.size.width / 74))) + 1) / 2
     }
     
     func getCriteriaSection(_ section: Int, screen: GeometryProxy) -> [Criterion] {
@@ -138,7 +140,7 @@ struct OverlayView: View {
     }
     
     func isAnimated(icon: String) -> Bool {
-        return ["enchant_item", "enchanted_golden_apple", "summon_wither"].contains(icon)
+        ["enchant_item", "enchanted_golden_apple", "summon_wither"].contains(icon)
     }
 }
 

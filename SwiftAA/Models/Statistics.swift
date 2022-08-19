@@ -16,8 +16,8 @@ class GodApple: Indicator {
     var completed: Bool = false
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        self.completed = (advancements[id] != nil)
-        self.name = (self.completed) ? "Obtained God Apple" : "Obtain God Apple"
+        completed = (advancements[id] != nil)
+        name = (completed) ? "Obtained God Apple" : "Obtain God Apple"
     }
 }
 
@@ -30,9 +30,9 @@ class Trident: Indicator {
     var completed: Bool = false
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        self.completed = (stats["minecraft:picked_up"]?[id] ?? 0) > 0
+        completed = (stats["minecraft:picked_up"]?[id] ?? 0) > 0
         let thunderDone = advancements["minecraft:adventure/very_very_frightening"]?.done ?? false
-        self.name = thunderDone ? "Done With Thunder" : ((self.completed) ? "Awaiting\nThunder" : "Obtain\nTrident")
+        name = thunderDone ? "Done With Thunder" : ((completed) ? "Awaiting\nThunder" : "Obtain\nTrident")
     }
 }
 
@@ -47,8 +47,8 @@ class Shells: Indicator {
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         let count = stats["minecraft:picked_up"]?[id] ?? 0
         let conduitCrafted = (stats["minecraft:crafted"]?["minecraft:conduit"] ?? 0) > 0
-        self.completed = count >= 8 || conduitCrafted
-        self.name = conduitCrafted ? "Conduit Crafted" : "Shells\n\(count) / 8"
+        completed = count >= 8 || conduitCrafted
+        name = conduitCrafted ? "Conduit Crafted" : "Shells\n\(count) / 8"
     }
 }
 
@@ -63,8 +63,8 @@ class WitherSkulls: Indicator {
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         let count = stats["minecraft:picked_up"]?[id] ?? 0
         let witherKilled = (stats["minecraft:killed"]?["minecraft:wither"] ?? 0) > 0
-        self.completed = count >= 3
-        self.name = witherKilled ? "Wither Has Been Killed" : "Skulls\n\(count) / 3"
+        completed = count >= 3
+        name = witherKilled ? "Wither Has Been Killed" : "Skulls\n\(count) / 3"
     }
 }
 
@@ -81,11 +81,9 @@ class AncientDebris: Indicator {
         let count = (stats["minecraft:picked_up"]?[id] ?? 0) + offset
         let countTNT = (stats["minecraft:mined"]?["minecraft:tnt"] ?? 0) - (stats["minecraft:used"]?[id] ?? 0)
         let netheriteAdvs = ["minecraft:nether/obtain_ancient_debris", "minecraft:nether/netherite_armor", "minecraft:husbandry/obtain_netherite_hoe"]
-        let doneWithNetherite = netheriteAdvs.allSatisfy { adv in
-            return advancements[adv]?.done ?? false
-        }
-        
-        self.completed = count >= 20 || doneWithNetherite
-        self.name = (doneWithNetherite) ? "Done With Netherite" : "Debris: \(count)\nTNT: \(countTNT)"
+        let doneWithNetherite = netheriteAdvs.allSatisfy({ adv in advancements[adv]?.done ?? false })
+
+        completed = count >= 20 || doneWithNetherite
+        name = (doneWithNetherite) ? "Done With Netherite" : "Debris: \(count)\nTNT: \(countTNT)"
     }
 }

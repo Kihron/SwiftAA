@@ -32,6 +32,9 @@ class AppSettings: ObservableObject {
     @AppStorage("statsRowPos") var statsRowPos: Bool = true
     
     @AppStorage("userOverlayColor") var userOverlayColor: Color = Color("overlay_green")
+    
+    //Player
+    @AppStorage("player") var player: Player? = nil
 }
 
 enum TrackingMode: String {
