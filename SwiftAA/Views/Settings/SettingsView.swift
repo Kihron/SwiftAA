@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var settings: AppSettings
+    @ObservedObject var updater: Updater
     
     var body: some View {
         TabView {
@@ -28,6 +29,10 @@ struct SettingsView: View {
                 .tabItem {
                     Label("settings-notes", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
+            UpdateSettingsView(updater: updater)
+                .tabItem {
+                    Label("settings-updater", systemImage: "square.and.arrow.down")
+                }
         }
         .frame(width: 450, height: 250)
         .environmentObject(settings)
@@ -35,7 +40,9 @@ struct SettingsView: View {
 }
 
 struct SettingsView_Previews: PreviewProvider {
+    @ObservedObject static var updater = Updater()
+    
     static var previews: some View {
-        SettingsView()
+        SettingsView(updater: updater)
     }
 }

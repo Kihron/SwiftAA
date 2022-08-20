@@ -16,6 +16,7 @@ struct NotesPanelView: View {
             VStack(alignment: .leading) {
                 Text("notes-panel-view-top-title", comment: "Title: Waypoint Menu")
                     .font(.custom("Minecraft-Regular", size: 12))
+                    .foregroundColor(settings.textColor)
                 
                 VStack(spacing: 5) {
                     WayPointCardView(index: 0, icon: "elder_guardian")
@@ -30,6 +31,7 @@ struct NotesPanelView: View {
             VStack(alignment: .leading) {
                 Text("notes-panel-view-bottom-title", comment: "Title: Notes Menu")
                     .font(.custom("Minecraft-Regular", size: 12))
+                    .foregroundColor(settings.textColor)
                 
                 TextEditor(text: $notes)
                     .font(.custom("Minecraft-Regular", size: 10))

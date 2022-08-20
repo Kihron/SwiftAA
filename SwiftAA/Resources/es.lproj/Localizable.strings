@@ -55,6 +55,18 @@
 /* No comment provided by engineer. */
 "overlay" = "Overlay";
 
+/* No comment provided by engineer. */
+"overlay-background" = "Color del Fondo del Overlay";
+
+/* No comment provided by engineer. */
+"overlay-stat-row-pos" = "Posición de la Fila Estadísticas";
+
+/* No comment provided by engineer. */
+"overlay-stat-row-pos-left" = "Izquierda";
+
+/* No comment provided by engineer. */
+"overlay-stat-row-pos-right" = "Derecha";
+
 /* Button: shows/hides overlay */
 "overlay-toggle" = "Alternar Overlay";
 
@@ -98,6 +110,51 @@
 "settings-tracking" = "Seguimiento";
 
 /* No comment provided by engineer. */
+"settings-updater" = "Actualizaciones";
+
+/* No comment provided by engineer. */
+"settings-updater-auto-check" = "Revisar las Actualizaciones\nAutomaticamente";
+
+/* No comment provided by engineer. */
+"settings-updater-check" = "Buscar Actualizaciones";
+
+/* No comment provided by engineer. */
+"settings-updater-last-checked" = "Revisado Por Ultima Vez";
+
+/* No comment provided by engineer. */
+"stat-ancient-debris" = "Escombros: %@\nTNT: %@";
+
+/* No comment provided by engineer. */
+"stat-ancient-debris-done" = "Hecho Con Netherita";
+
+/* No comment provided by engineer. */
+"stat-god-apple-obtain" = "Obtenlo";
+
+/* No comment provided by engineer. */
+"stat-god-apple-obtained" = "Obtenido";
+
+/* No comment provided by engineer. */
+"stat-shells" = "Conchas\n%@ / 8";
+
+/* No comment provided by engineer. */
+"stat-shells-crafted" = "Conducto Crafteado";
+
+/* No comment provided by engineer. */
+"stat-trident-awaiting" = "Sin Trueno";
+
+/* No comment provided by engineer. */
+"stat-trident-obtain" = "Obten\nUn Tridente";
+
+/* No comment provided by engineer. */
+"stat-trident-thunder" = "Con Trueno";
+
+/* No comment provided by engineer. */
+"stat-wither-killed" = "Ha Sido Asesinado";
+
+/* No comment provided by engineer. */
+"stat-wither-skulls" = "Calaveras\n%@ / 3";
+
+/* No comment provided by engineer. */
 "SwiftAA" = "SwiftAA";
 
 /* No comment provided by engineer. */
@@ -114,6 +171,18 @@
 
 /* Ender Pearl Theme */
 "theme-presets-ender-pearl" = "Perla de Ender";
+
+/* Berry Theme */
+"theme-presets-berry" = "Baya";
+
+/* Blazed Theme */
+"theme-presets-blazed" = "Fuego";
+
+/* Brick Theme */
+"theme-presets-brick" = "Ladrillo";
+
+/* No comment provided by engineer. */
+"theme-text-color" = "Color del Texto";
 
 /* Attribution message for CTM's AATool for Windows */
 "tracking-attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";

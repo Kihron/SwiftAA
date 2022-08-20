@@ -23,9 +23,11 @@ class AppSettings: ObservableObject {
     
     @AppStorage("backgroundColor") var backgroudColor: Color = Color("ender_pearl_background")
     @AppStorage("borderColor") var borderColor: Color = Color("ender_pearl_border")
+    @AppStorage("textColor") var textColor: Color = Color("ender_pearl_text")
     
     @AppStorage("userBgColor") var userBgColor: Color = Color("ender_pearl_background")
     @AppStorage("userBrColor") var userBrColor: Color = Color("ender_pearl_border")
+    @AppStorage("userTxColor") var userTxColor: Color = Color("ender_pearl_text")
     
     //Overlay
     @AppStorage("showStats") var showStats: Bool = true
@@ -35,6 +37,9 @@ class AppSettings: ObservableObject {
     
     //Player
     @AppStorage("player") var player: Player? = nil
+    
+    //Updater
+    @AppStorage("lastUpdateCheck") var lastUpdateCheck: Date? = nil
 }
 
 enum TrackingMode: String {

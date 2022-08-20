@@ -14,7 +14,7 @@ struct OverlaySettingsView: View {
         VStack(alignment: .leading) {
             HStack {
                 HStack{
-                    Text("Statistics Row Position")
+                    Text("overlay-stat-row-pos")
                         .font(.custom("Minecraft-Regular", size: 10))
                     
                     Menu {
@@ -23,7 +23,7 @@ struct OverlaySettingsView: View {
                                 settings.statsRowPos = true
                             }
                         } label: {
-                            Text("Left")
+                            Text("overlay-stat-row-pos-left")
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
                         Button {
@@ -31,18 +31,18 @@ struct OverlaySettingsView: View {
                                 settings.statsRowPos = false
                             }
                         } label: {
-                            Text("Right")
+                            Text("overlay-stat-row-pos-right")
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
                     } label: {
-                        Text(settings.statsRowPos ? "Left" : "Right")
+                        Text(settings.statsRowPos ? "overlay-stat-row-pos-left" : "overlay-stat-row-pos-right")
                             .font(.custom("Minecraft-Regular", size: 10))
                     }
                     .frame(width: 75)
                 }
                 
                 HStack {
-                    ColorPicker("Overlay Background Color", selection: settings.$userOverlayColor, supportsOpacity: false)
+                    ColorPicker("overlay-background", selection: settings.$userOverlayColor, supportsOpacity: false)
                         .font(.custom("Minecraft-Regular", size: 10))
                     
                     Button {

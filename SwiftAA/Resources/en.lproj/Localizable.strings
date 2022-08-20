@@ -47,7 +47,19 @@
 "overlay" = "Overlay";
 
 /* No comment provided by engineer. */
+"overlay-background" = "Overlay Background Color";
+
+/* No comment provided by engineer. */
 "overlay-complete-stats" = "Run Stats";
+
+/* No comment provided by engineer. */
+"overlay-stat-row-pos" = "Statistics Row Position";
+
+/* No comment provided by engineer. */
+"overlay-stat-row-pos-left" = "Left";
+
+/* No comment provided by engineer. */
+"overlay-stat-row-pos-right" = "Right";
 
 /* Button: shows/hides overlay */
 "overlay-toggle" = "Toggle Overlay";
@@ -92,6 +104,51 @@
 "settings-tracking" = "Tracking";
 
 /* No comment provided by engineer. */
+"settings-updater" = "Updates";
+
+/* No comment provided by engineer. */
+"settings-updater-auto-check" = "Check for Updates Automatically";
+
+/* No comment provided by engineer. */
+"settings-updater-check" = "Check For Updates";
+
+/* No comment provided by engineer. */
+"settings-updater-last-checked" = "Last Checked";
+
+/* No comment provided by engineer. */
+"stat-ancient-debris" = "Debris: %@\nTNT: %@";
+
+/* No comment provided by engineer. */
+"stat-ancient-debris-done" = "Done With Netherite";
+
+/* No comment provided by engineer. */
+"stat-god-apple-obtain" = "Obtain God Apple";
+
+/* No comment provided by engineer. */
+"stat-god-apple-obtained" = "Obtained God Apple";
+
+/* No comment provided by engineer. */
+"stat-shells" = "Shells\n%@ / 8";
+
+/* No comment provided by engineer. */
+"stat-shells-crafted" = "Conduit Crafted";
+
+/* No comment provided by engineer. */
+"stat-trident-awaiting" = "Awaiting\nThunder";
+
+/* No comment provided by engineer. */
+"stat-trident-obtain" = "Obtain\nTrident";
+
+/* No comment provided by engineer. */
+"stat-trident-thunder" = "Done With Thunder";
+
+/* No comment provided by engineer. */
+"stat-wither-killed" = "Wither Has Been Killed";
+
+/* No comment provided by engineer. */
+"stat-wither-skulls" = "Skulls\n%@ / 3";
+
+/* No comment provided by engineer. */
 "theme-background-color" = "Background Color";
 
 /* Title: custom user color scheme */
@@ -105,6 +162,18 @@
 
 /* Ender Pearl Theme */
 "theme-presets-ender-pearl" = "Ender Pearl";
+
+/* Berry Theme */
+"theme-presets-berry" = "Berry";
+
+/* Blazed Theme */
+"theme-presets-blazed" = "Blazed";
+
+/* Brick Theme */
+"theme-presets-brick" = "Brick";
+
+/* No comment provided by engineer. */
+"theme-text-color" = "Text Color";
 
 /* Attribution message for CTM's AATool for Windows */
 "tracking-attribution" = "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.";

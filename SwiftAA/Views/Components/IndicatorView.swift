@@ -9,8 +9,10 @@ import SwiftUI
 import Quartz
 
 struct IndicatorView: View {
+    @EnvironmentObject var settings: AppSettings
     @Binding var indicator: Indicator
     @State var isOverlay: Bool = false
+    @State var isStat: Bool = false
     
     var body: some View {
         VStack(spacing: 3) {
@@ -47,8 +49,9 @@ struct IndicatorView: View {
                 }
             }
             
-            Text(indicator.key.localized(value: indicator.name))
+            Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))
                 .font(.custom("Minecraft-Regular", size: 10))
+                .foregroundColor(isOverlay ? .white : settings.textColor)
                 .multilineTextAlignment(.center)
                 .frame(height: 24, alignment: .top)
                 .padding(.top, -2)
@@ -62,8 +65,11 @@ struct IndicatorView: View {
 }
 
 struct IndicatorView_Previews: PreviewProvider {
+    @StateObject static var settings = AppSettings()
+    
     static var previews: some View {
         IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "adventure-bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)))
             .frame(width: 100, height: 100)
+            .environmentObject(settings)
     }
 }

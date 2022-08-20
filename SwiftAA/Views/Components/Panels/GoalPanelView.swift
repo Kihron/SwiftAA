@@ -27,6 +27,7 @@ struct GoalPanelView: View {
 
                 ForEach($advancement.criteria, id: \.self.id) { item in
                     CriterionView(criterion: item)
+                        .environmentObject(settings)
                 }
                 .frame(alignment: .leading)
             }

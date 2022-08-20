@@ -12,6 +12,7 @@ struct SwiftAAApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var settings = AppSettings()
     @ObservedObject var dataHandler = DataHandler()
+    @ObservedObject var updater = Updater()
     @Environment(\.openURL) var openURL
     
     @State var changed: Bool = false
@@ -32,6 +33,7 @@ struct SwiftAAApp: App {
             ContentView(dataHandler: dataHandler, refresh: false, changed: $changed)
                 .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 754, maxHeight: 754, alignment: .center)
                 .onAppear {
+                    settings.lastUpdateCheck = updater.getLastUpdateCheckDate()
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
                         withAnimation {
                             error = refreshData()
@@ -83,6 +85,11 @@ struct SwiftAAApp: App {
                     )
                 }
             }
+            CommandGroup(after: .appInfo, addition: {
+                Button("\("settings-updater-check".localized)...") {
+                    updater.checkForUpdates()
+                }
+            })
         }
         
         WindowGroup("OverlayWindow") {
@@ -115,7 +122,7 @@ struct SwiftAAApp: App {
         .windowStyle(HiddenTitleBarWindowStyle())
         
         Settings {
-            SettingsView()
+            SettingsView(updater: updater)
                 .environmentObject(settings)
         }
     }

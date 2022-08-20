@@ -28,8 +28,10 @@ struct ToolbarPlayerHead: View {
                 }
             }
         } else {
-            ProgressView()
-                .scaleEffect(x: 0.5, y: 0.5, anchor: .center)
+            Image("steve")
+                .interpolation(.none)
+                .resizable()
+                .frame(width: 32, height: 32)
         }
     }
 }

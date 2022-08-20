@@ -18,6 +18,10 @@
 		B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* AdvPanelView.swift */; };
 		B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* IndicatorView.swift */; };
 		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
+		B65B074A28AFDAF700E10EC5 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B65B074928AFDAF700E10EC5 /* Sparkle */; };
+		B65B074D28AFDD1600E10EC5 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074C28AFDD1600E10EC5 /* Updater.swift */; };
+		B65B074F28AFE25B00E10EC5 /* UpdateSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074E28AFE25B00E10EC5 /* UpdateSettingsView.swift */; };
+		B65B075128AFF77400E10EC5 /* RawRepresentableExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B075028AFF77400E10EC5 /* RawRepresentableExts.swift */; };
 		B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A076F28879ED900DC0A2C /* DataHandler.swift */; };
 		B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07712887A2C900DC0A2C /* CriterionView.swift */; };
 		B66A07742887A32900DC0A2C /* Criterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07732887A32900DC0A2C /* Criterion.swift */; };
@@ -35,7 +39,6 @@
 		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
 		B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* StatsView.swift */; };
 		B6872FBF28AEC908003CEA95 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6872FBE28AEC908003CEA95 /* CachedAsyncImage */; };
-		B6872FC328AED0CD003CEA95 /* RawCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC228AED0CD003CEA95 /* RawCodable.swift */; };
 		B6872FC528AEDA4A003CEA95 /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* Stat.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
@@ -58,8 +61,6 @@
 		B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */; };
 		B6FEFED5289991070095CF08 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFED4289991070095CF08 /* Indicator.swift */; };
 		B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */; };
-		B6FEFEE2289994390095CF08 /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFEE1289994390095CF08 /* RawRepresentable.swift */; };
-		B6FEFEE728999D9B0095CF08 /* RawValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFEE628999D9B0095CF08 /* RawValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,9 @@
 		B65AE1D32887032F006EC138 /* Advancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advancement.swift; sourceTree = "<group>"; };
 		B65AE1D6288709F4006EC138 /* Minecraft.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.otf; sourceTree = "<group>"; };
 		B65AE1D828870B66006EC138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B65B074C28AFDD1600E10EC5 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		B65B074E28AFE25B00E10EC5 /* UpdateSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettingsView.swift; sourceTree = "<group>"; };
+		B65B075028AFF77400E10EC5 /* RawRepresentableExts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRepresentableExts.swift; sourceTree = "<group>"; };
 		B66A076F28879ED900DC0A2C /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		B66A07712887A2C900DC0A2C /* CriterionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionView.swift; sourceTree = "<group>"; };
 		B66A07732887A32900DC0A2C /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
@@ -93,7 +97,6 @@
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlayerHead.swift; sourceTree = "<group>"; };
 		B6872FB828AEBEB6003CEA95 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
-		B6872FC228AED0CD003CEA95 /* RawCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCodable.swift; sourceTree = "<group>"; };
 		B6872FC428AEDA4A003CEA95 /* Stat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
@@ -116,8 +119,6 @@
 		B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesSettingsView.swift; sourceTree = "<group>"; };
 		B6FEFED4289991070095CF08 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFocusOnTap.swift; sourceTree = "<group>"; };
-		B6FEFEE1289994390095CF08 /* RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRepresentable.swift; sourceTree = "<group>"; };
-		B6FEFEE628999D9B0095CF08 /* RawValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65B074A28AFDAF700E10EC5 /* Sparkle in Frameworks */,
 				B6DF1C2E28904F2900044F67 /* SWXMLHash in Frameworks */,
 				B6872FBF28AEC908003CEA95 /* CachedAsyncImage in Frameworks */,
 			);
@@ -211,6 +213,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B65B074B28AFDCFC00E10EC5 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				B65B074C28AFDD1600E10EC5 /* Updater.swift */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
 		B66A07752887B2A800DC0A2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,14 +261,6 @@
 			path = URL;
 			sourceTree = "<group>";
 		};
-		B6872FC028AED0AB003CEA95 /* Codable */ = {
-			isa = PBXGroup;
-			children = (
-				B6872FC228AED0CD003CEA95 /* RawCodable.swift */,
-			);
-			path = Codable;
-			sourceTree = "<group>";
-		};
 		B69EB67D28AC926E0029B988 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +290,7 @@
 				B6A772F6288994DE00436551 /* ThemeSettingsView.swift */,
 				B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */,
 				B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */,
+				B65B074E28AFE25B00E10EC5 /* UpdateSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 		B6FEFED7289991F20095CF08 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B65B074B28AFDCFC00E10EC5 /* Updater */,
 				B6FEFED82899926E0095CF08 /* Data */,
 				B648272B2889CD6F00B44855 /* Settings */,
 			);
@@ -379,12 +383,10 @@
 		B6FEFED9289992FF0095CF08 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B6872FC028AED0AB003CEA95 /* Codable */,
 				B6872FB128AEA9BC003CEA95 /* URL */,
 				B69EB67D28AC926E0029B988 /* View */,
 				B6D3065528A2B13F004D27E6 /* Text */,
-				B6FEFEE528999D8D0095CF08 /* Color */,
-				B6FEFEE0289993B90095CF08 /* Dictionary */,
+				B65B075028AFF77400E10EC5 /* RawRepresentableExts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,14 +397,6 @@
 				B66DB3D428A29F47006BE9D9 /* View */,
 			);
 			path = ViewModifiers;
-			sourceTree = "<group>";
-		};
-		B6FEFEE0289993B90095CF08 /* Dictionary */ = {
-			isa = PBXGroup;
-			children = (
-				B6FEFEE1289994390095CF08 /* RawRepresentable.swift */,
-			);
-			path = Dictionary;
 			sourceTree = "<group>";
 		};
 		B6FEFEE3289994B90095CF08 /* Panels */ = {
@@ -425,14 +419,6 @@
 			path = ProgressBars;
 			sourceTree = "<group>";
 		};
-		B6FEFEE528999D8D0095CF08 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				B6FEFEE628999D9B0095CF08 /* RawValue.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -452,6 +438,7 @@
 			packageProductDependencies = (
 				B6DF1C2D28904F2900044F67 /* SWXMLHash */,
 				B6872FBE28AEC908003CEA95 /* CachedAsyncImage */,
+				B65B074928AFDAF700E10EC5 /* Sparkle */,
 			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
@@ -486,6 +473,7 @@
 				B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6DF1C2C28904F2900044F67 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				B65B074828AFDAF700E10EC5 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
@@ -525,10 +513,9 @@
 			files = (
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */,
-				B6872FC328AED0CD003CEA95 /* RawCodable.swift in Sources */,
-				B6FEFEE728999D9B0095CF08 /* RawValue.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
 				B6A772FC2889998700436551 /* Statistics.swift in Sources */,
+				B65B074F28AFE25B00E10EC5 /* UpdateSettingsView.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
@@ -545,6 +532,7 @@
 				B6872FB528AEAA45003CEA95 /* Player.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* Stat.swift in Sources */,
+				B65B075128AFF77400E10EC5 /* RawRepresentableExts.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B648272E2889CD8100B44855 /* AppSettings.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
@@ -552,6 +540,7 @@
 				B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
 				B64827282889C74B00B44855 /* QLImage.swift in Sources */,
+				B65B074D28AFDD1600E10EC5 /* Updater.swift in Sources */,
 				B6A772E62888FBA600436551 /* ContentView.swift in Sources */,
 				B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */,
 				B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */,
@@ -560,7 +549,6 @@
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */,
 				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
-				B6FEFEE2289994390095CF08 /* RawRepresentable.swift in Sources */,
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +691,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftAA/SwiftAA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.8.0;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -715,7 +704,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -731,6 +720,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftAA/SwiftAA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 0.8.0;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -743,7 +733,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -775,6 +765,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B65B074828AFDAF700E10EC5 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				branch = 2.x;
+				kind = branch;
+			};
+		};
 		B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
@@ -802,6 +800,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B65B074928AFDAF700E10EC5 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B65B074828AFDAF700E10EC5 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
 		B6872FBE28AEC908003CEA95 /* CachedAsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;

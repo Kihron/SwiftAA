@@ -32,6 +32,7 @@ struct PotionView: View {
         VStack(spacing: 0) {
             Text("potion-\(name)".localized)
                 .font(.custom("Minecraft-Regular", size: 10))
+                .foregroundColor(settings.textColor)
             
             HStack(spacing: 0) {
                 Image("potion_\(name.replacingOccurrences(of: "-", with: "_").lowercased())")

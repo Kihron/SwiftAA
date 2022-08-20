@@ -11,11 +11,13 @@ struct AdvPanelView: View {
     @EnvironmentObject var settings: AppSettings
     @Binding var indicators: [Indicator]
     @State var columnCount: Int
+    @State var isStat: Bool = false
     
     var body: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 64), spacing: 0), count: columnCount), spacing: 0) {
             ForEach($indicators, id: \.self.id) { adv in
-                IndicatorView(indicator: adv)
+                IndicatorView(indicator: adv, isStat: isStat)
+                    .environmentObject(settings)
             }
         }
         .padding(4)

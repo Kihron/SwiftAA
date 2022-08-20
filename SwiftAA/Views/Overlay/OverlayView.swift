@@ -46,7 +46,7 @@ struct OverlayView: View {
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: Int(floor(screen.size.width / 74))), spacing: 0) {
                         ForEach(getSection(section, screen: screen), id: \.self) { adv in
-                            IndicatorView(indicator: .constant(adv))
+                            IndicatorView(indicator: .constant(adv), isOverlay: true)
                         }
                     }
                     .frame(width: screen.size.width)
@@ -56,7 +56,7 @@ struct OverlayView: View {
                     
                     HStack {
                         ForEach(dataHandler.stats, id: \.self.id) { adv in
-                            IndicatorView(indicator: .constant(adv), isOverlay: true)
+                            IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
                         }
                     }
                     .frame(height: 84)

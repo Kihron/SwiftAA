@@ -37,8 +37,8 @@ struct ContentView: View {
                         .frame(width: 270)
                         
                         VStack(spacing: 0) {
-                            AdvPanelView(indicators: Binding.constant(dataHandler.topStats), columnCount: 1)
-                            AdvPanelView(indicators: Binding.constant(dataHandler.bottomStats), columnCount: 1)
+                            AdvPanelView(indicators: Binding.constant(dataHandler.topStats), columnCount: 1, isStat: true)
+                            AdvPanelView(indicators: Binding.constant(dataHandler.bottomStats), columnCount: 1, isStat: true)
                         }
                         .frame(width: 75)
                         
