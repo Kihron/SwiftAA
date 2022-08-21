@@ -18,7 +18,6 @@
 		B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* AdvPanelView.swift */; };
 		B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* IndicatorView.swift */; };
 		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
-		B65B074A28AFDAF700E10EC5 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B65B074928AFDAF700E10EC5 /* Sparkle */; };
 		B65B074D28AFDD1600E10EC5 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074C28AFDD1600E10EC5 /* Updater.swift */; };
 		B65B074F28AFE25B00E10EC5 /* UpdateSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074E28AFE25B00E10EC5 /* UpdateSettingsView.swift */; };
 		B65B075128AFF77400E10EC5 /* RawRepresentableExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B075028AFF77400E10EC5 /* RawRepresentableExts.swift */; };
@@ -38,7 +37,6 @@
 		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
 		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
 		B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* StatsView.swift */; };
-		B6872FBF28AEC908003CEA95 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6872FBE28AEC908003CEA95 /* CachedAsyncImage */; };
 		B6872FC528AEDA4A003CEA95 /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* Stat.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
@@ -56,6 +54,8 @@
 		B6A772FC2889998700436551 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FB2889998700436551 /* Statistics.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 		B6D3065828A2B150004D27E6 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3065728A2B150004D27E6 /* Localize.swift */; };
+		B6DAEFAF28B1E15100C72D19 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6DAEFAE28B1E15100C72D19 /* CachedAsyncImage */; };
+		B6DAEFB228B1E15F00C72D19 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6DAEFB128B1E15F00C72D19 /* Sparkle */; };
 		B6DF1C2E28904F2900044F67 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B6DF1C2D28904F2900044F67 /* SWXMLHash */; };
 		B6E1493128A17F260084A529 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E1492F28A17F260084A529 /* Localizable.strings */; };
 		B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */; };
@@ -126,9 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B65B074A28AFDAF700E10EC5 /* Sparkle in Frameworks */,
+				B6DAEFB228B1E15F00C72D19 /* Sparkle in Frameworks */,
 				B6DF1C2E28904F2900044F67 /* SWXMLHash in Frameworks */,
-				B6872FBF28AEC908003CEA95 /* CachedAsyncImage in Frameworks */,
+				B6DAEFAF28B1E15100C72D19 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,8 +437,8 @@
 			name = SwiftAA;
 			packageProductDependencies = (
 				B6DF1C2D28904F2900044F67 /* SWXMLHash */,
-				B6872FBE28AEC908003CEA95 /* CachedAsyncImage */,
-				B65B074928AFDAF700E10EC5 /* Sparkle */,
+				B6DAEFAE28B1E15100C72D19 /* CachedAsyncImage */,
+				B6DAEFB128B1E15F00C72D19 /* Sparkle */,
 			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
@@ -472,8 +472,8 @@
 			packageReferences = (
 				B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6DF1C2C28904F2900044F67 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
-				B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
-				B65B074828AFDAF700E10EC5 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				B6DAEFAD28B1E15100C72D19 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				B6DAEFB028B1E15F00C72D19 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
@@ -767,14 +767,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B65B074828AFDAF700E10EC5 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				branch = 2.x;
-				kind = branch;
-			};
-		};
 		B66A07812887B93100DC0A2C /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
@@ -783,12 +775,20 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+		B6DAEFAD28B1E15100C72D19 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = main;
+				kind = branch;
+			};
+		};
+		B6DAEFB028B1E15F00C72D19 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				branch = 2.x;
+				kind = branch;
 			};
 		};
 		B6DF1C2C28904F2900044F67 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
@@ -802,15 +802,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B65B074928AFDAF700E10EC5 /* Sparkle */ = {
+		B6DAEFAE28B1E15100C72D19 /* CachedAsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B65B074828AFDAF700E10EC5 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-		B6872FBE28AEC908003CEA95 /* CachedAsyncImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B6872FBD28AEC908003CEA95 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			package = B6DAEFAD28B1E15100C72D19 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		B6DAEFB128B1E15F00C72D19 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6DAEFB028B1E15F00C72D19 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		B6DF1C2D28904F2900044F67 /* SWXMLHash */ = {
 			isa = XCSwiftPackageProductDependency;

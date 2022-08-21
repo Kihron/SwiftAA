@@ -64,6 +64,7 @@ struct SwiftAAApp: App {
                     }
                 })
                 .removeFocusOnTap()
+                .preferredColorScheme(.dark)
                 .environmentObject(settings)
         }
         .commands {
@@ -95,6 +96,7 @@ struct SwiftAAApp: App {
         WindowGroup("OverlayWindow") {
             OverlayView(dataHandler: dataHandler)
                 .frame(minWidth: !dataHandler.allAdvancements ? 400 : 825, idealWidth: 825, maxWidth: .infinity, minHeight: 354, maxHeight: 354, alignment: .center)
+                .preferredColorScheme(.dark)
                 .environmentObject(settings)
         }.commands {
             CommandGroup(after: .sidebar, addition: {
@@ -123,6 +125,7 @@ struct SwiftAAApp: App {
         
         Settings {
             SettingsView(updater: updater)
+                .preferredColorScheme(.dark)
                 .environmentObject(settings)
         }
     }
