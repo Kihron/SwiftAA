@@ -20,51 +20,33 @@ struct ThemeSettingsView: View {
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
                             Menu {
-                                Button {
-                                    settings.theme = "theme-presets-ender-pearl"
-                                    settings.backgroudColor = Color("ender_pearl_background")
-                                    settings.borderColor = Color("ender_pearl_border")
-                                    settings.textColor = Color("ender_pearl_text")
-                                } label: {
-                                    Text("theme-presets-ender-pearl", comment: "Ender Pearl Theme")
-                                        .font(.custom("Minecraft-Regular", size: 10))
-                                }
-                                Button {
-                                    settings.theme = "theme-presets-blazed"
-                                    settings.backgroudColor = Color("blazed_background")
-                                    settings.borderColor = Color("blazed_border")
-                                    settings.textColor = Color("blazed_text")
-                                } label: {
-                                    Text("theme-presets-blazed", comment: "Blazed Theme")
-                                        .font(.custom("Minecraft-Regular", size: 10))
-                                }
-                                Button {
-                                    settings.theme = "theme-presets-brick"
-                                    settings.backgroudColor = Color("brick_background")
-                                    settings.borderColor = Color("brick_border")
-                                    settings.textColor = Color("brick_text")
-                                } label: {
-                                    Text("theme-presets-brick", comment: "Brick Theme")
-                                        .font(.custom("Minecraft-Regular", size: 10))
-                                }
-                                Button {
-                                    settings.theme = "theme-presets-berry"
-                                    settings.backgroudColor = Color("berry_background")
-                                    settings.borderColor = Color("berry_border")
-                                    settings.textColor = Color("berry_text")
-                                } label: {
-                                    Text("theme-presets-berry", comment: "Berry Theme")
-                                        .font(.custom("Minecraft-Regular", size: 10))
-                                }
+                                self.createPresetButton(name: "ender-pearl")
+                                self.createPresetButton(name: "github-dark")
+                                self.createPresetButton(name: "high-contrast")
+                                self.createPresetButton(name: "blazed")
+                                self.createPresetButton(name: "brick")
+                                self.createPresetButton(name: "berry")
+                                self.createPresetButton(name: "dark")
+                                self.createPresetButton(name: "light")
                             } label: {
                                 Text(settings.theme.localized)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
-                            .disabled(settings.themeMode == ThemeMode.custom)
                             .padding(.trailing)
+                            
+                            Button {
+                                settings.userBgColor = settings.backgroudColor
+                                settings.userBrColor = settings.borderColor
+                                settings.userTxColor = settings.textColor
+                                settings.themeMode = ThemeMode.custom
+                            } label: {
+                                Text("Copy to Custom")
+                                    .font(.custom("Minecraft-Regular", size: 10))
+                            }
                             
                             Spacer()
                         }
+                        .disabled(settings.themeMode == ThemeMode.custom)
                     }
                     .tag(ThemeMode.preset)
                     .padding(.bottom, 34)
@@ -121,6 +103,20 @@ struct ThemeSettingsView: View {
             Spacer()
         }
         .padding()
+    }
+    
+    func createPresetButton(name: String) -> Button<Text> {
+        let colorName = name.replacingOccurrences(of: "-", with: "_")
+        let view = Button {
+            settings.theme = "theme-presets-\(name)"
+            settings.backgroudColor = Color("\(colorName)_background")
+            settings.borderColor = Color("\(colorName)_border")
+            settings.textColor = Color("\(colorName)_text")
+        } label: {
+            Text("theme-presets-\(name)".localized)
+                .font(.custom("Minecraft-Regular", size: 10))
+        }
+        return view
     }
 }
 

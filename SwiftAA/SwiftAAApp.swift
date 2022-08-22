@@ -47,7 +47,6 @@ struct SwiftAAApp: App {
                     }
                     ToolbarItem(placement: .status) {
                         ToolbarPlayerHead()
-                            .environmentObject(settings)
                     }
                     ToolbarItem(placement: .status) {
                         ToolbarAAView(dataHandler: dataHandler, changed: $changed)
@@ -96,7 +95,6 @@ struct SwiftAAApp: App {
         WindowGroup("OverlayWindow") {
             OverlayView(dataHandler: dataHandler)
                 .frame(minWidth: !dataHandler.allAdvancements ? 400 : 825, idealWidth: 825, maxWidth: .infinity, minHeight: 354, maxHeight: 354, alignment: .center)
-                .preferredColorScheme(.dark)
                 .environmentObject(settings)
         }.commands {
             CommandGroup(after: .sidebar, addition: {
@@ -125,7 +123,6 @@ struct SwiftAAApp: App {
         
         Settings {
             SettingsView(updater: updater)
-                .preferredColorScheme(.dark)
                 .environmentObject(settings)
         }
     }
@@ -166,6 +163,7 @@ struct SwiftAAApp: App {
                     let date2 = try getModifiedTime("\(saves)/\(b)", fileManager: fileManager)
                     return date1?.compare(date2!) == ComparisonResult.orderedAscending
                 }!
+                //print("Directory searched!")
                 world = "\(saves)/\(world)"
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {
                     updateAll()

@@ -17,7 +17,6 @@ struct AdvPanelView: View {
         LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 64), spacing: 0), count: columnCount), spacing: 0) {
             ForEach($indicators, id: \.self.id) { adv in
                 IndicatorView(indicator: adv, isStat: isStat)
-                    .environmentObject(settings)
             }
         }
         .padding(4)

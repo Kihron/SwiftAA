@@ -27,7 +27,7 @@ struct ProgressBarView: View {
         VStack(alignment: .leading, spacing: 5) {
             Text("\(value) / \(total) \(title) (\(value * 100 / total)%)\(message)")
                 .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(isToolbar ? .white :  settings.textColor)
+                .foregroundColor(isToolbar ? Color.primary :  settings.textColor)
             
             GeometryReader { item in
                 ZStack(alignment: .leading) {

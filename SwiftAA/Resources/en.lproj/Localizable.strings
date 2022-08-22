@@ -160,9 +160,6 @@
 /* Title: preset options for color scheme */
 "theme-presets" = "Presets";
 
-/* Ender Pearl Theme */
-"theme-presets-ender-pearl" = "Ender Pearl";
-
 /* Berry Theme */
 "theme-presets-berry" = "Berry";
 
@@ -171,6 +168,21 @@
 
 /* Brick Theme */
 "theme-presets-brick" = "Brick";
+
+/* Dark Mode Theme */
+"theme-presets-dark" = "Dark";
+
+/* Ender Pearl Theme */
+"theme-presets-ender-pearl" = "Ender Pearl";
+
+/* GitHub Dark Theme */
+"theme-presets-github-dark" = "GitHub Dark";
+
+/* High Contrast Theme */
+"theme-presets-high-contrast" = "High Contrast";
+
+/* Light Mode Theme */
+"theme-presets-light" = "Light";
 
 /* No comment provided by engineer. */
 "theme-text-color" = "Text Color";

@@ -24,7 +24,6 @@ struct OverlayView: View {
             if (dataHandler.allAdvancements) {
                 withAnimation {
                     OverlayCompletedView(dataHandler: dataHandler)
-                        .environmentObject(settings)
                 }
             } else {
                 VStack(alignment: settings.statsRowPos ? .leading : .trailing) {
