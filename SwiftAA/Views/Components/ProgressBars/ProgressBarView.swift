@@ -10,14 +10,14 @@ import SwiftUI
 struct ProgressBarView: View {
     @EnvironmentObject var settings: AppSettings
     @Binding var value: Int
-    @State var total: Int
+    @Binding var total: Int
     @State var title: String
     @Binding var message: String
     @State var isToolbar: Bool
     
-    init(value: Binding<Int>, total: Int, title: String, message: Binding<String> = .constant(""), isToolbar: Bool = false) {
+    init(value: Binding<Int>, total: Binding<Int>, title: String, message: Binding<String> = .constant(""), isToolbar: Bool = false) {
         _value = value
-        self.total = total
+        _total = total
         self.title = title
         _message = message
         self.isToolbar = isToolbar
@@ -62,7 +62,7 @@ struct ProgressBarView_Previews: PreviewProvider {
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        ProgressBarView(value: .constant(0), total: 42, title: "Biomes Visited")
+        ProgressBarView(value: .constant(0), total: .constant(42), title: "Biomes Visited")
             .frame(width: 400, height: 100)
             .environmentObject(settings)
     }

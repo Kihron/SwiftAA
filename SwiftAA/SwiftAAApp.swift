@@ -30,8 +30,8 @@ struct SwiftAAApp: App {
     
     var body: some Scene {
         WindowGroup("SwiftAA") {
-            ContentView(dataHandler: dataHandler, refresh: false, changed: $changed)
-                .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 754, maxHeight: 754, alignment: .center)
+            ContentView(dataHandler: dataHandler, changed: $changed)
+                .applyVersionFrame(gameVersion: settings.$gameVersion)
                 .onAppear {
                     settings.lastUpdateCheck = updater.getLastUpdateCheckDate()
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
@@ -195,6 +195,7 @@ struct SwiftAAApp: App {
                             settings.player = player
                         }
                     }
+                    
                     updateAll(advancements: advancements, statistics: statistics.stats)
                 }
                 
@@ -271,8 +272,10 @@ struct SwiftAAApp: App {
             stat.update(advancements: advancements, stats: statistics)
         }
         
+        let timeStat = settings.gameVersion == "1.16" ? "minecraft:play_one_minute" : "minecraft:play_time"
+        
         dataHandler.statsData = statistics
-        dataHandler.playTime = statistics["minecraft:custom"]?["minecraft:play_one_minute"] ?? 0
+        dataHandler.playTime = statistics["minecraft:custom"]?[timeStat] ?? 0
         dataHandler.allAdvancements = dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count >= dataHandler.map.values.compactMap({$0.count}).reduce(0, +)
         
         changed = true

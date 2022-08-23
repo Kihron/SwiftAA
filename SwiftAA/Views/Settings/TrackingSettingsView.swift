@@ -25,6 +25,12 @@ struct TrackingSettingsView: View {
                             Text("1.16")
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
+                        Button {
+                            settings.gameVersion = "1.19"
+                        } label: {
+                            Text("1.19")
+                                .font(.custom("Minecraft-Regular", size: 10))
+                        }
                     } label: {
                         Text(settings.gameVersion)
                             .font(.custom("Minecraft-Regular", size: 10))

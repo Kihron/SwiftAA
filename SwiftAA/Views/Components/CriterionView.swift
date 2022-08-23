@@ -30,7 +30,7 @@ struct CriterionView: View {
     }
     
     func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither"].contains(icon)
+        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
     
     func calculateText() -> String {

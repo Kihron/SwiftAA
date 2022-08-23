@@ -20,6 +20,9 @@ class DataHandler: ObservableObject {
     @Published var playTime: Int = 0
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
+        let version = UserDefaults.standard.string(forKey: "gameVersion")!
+        let file = "Advancements/\(version)/\(file)"
+        
         let cache = map[file]
         if (cache != nil) {
             var cache = cache!
