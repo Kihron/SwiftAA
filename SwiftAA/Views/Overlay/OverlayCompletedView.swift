@@ -23,7 +23,7 @@ struct OverlayCompletedView: View {
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             .padding(.trailing, 5)
                         
-                        Text("All \(dataHandler.map.values.compactMap({$0.count}).reduce(0, +)) Advancements Complete!")
+                        Text("overlay-complete-title".localized((["\(dataHandler.map.values.compactMap({$0.count}).reduce(0, +))"])))
                             .font(.custom("Minecraft-Regular", size: 24))
                             .padding(.top)
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
@@ -38,13 +38,13 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            Text("\(settings.player!.name) has completed\nMinecraft: Java Edition (\(settings.gameVersion))\nAll Advancements")
+                            Text("overlay-complete-message".localized(["\(settings.player!.name)", "\(settings.gameVersion)"]))
                                 .font(.custom("Minecraft-Regular", size: 24))
                                 .multilineTextAlignment(.center)
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
-                            Text("\(dataHandler.ticksToIGT(ticks: dataHandler.playTime))\nApproximate IGT")
+                            Text("overlay-complete-time".localized(["\(dataHandler.ticksToIGT(ticks: dataHandler.playTime))"]))
                                 .font(.custom("Minecraft-Regular", size: 24))
                                 .multilineTextAlignment(.center)
                                 .padding(.top)
@@ -88,7 +88,6 @@ struct OverlayCompletedView: View {
                     
                     Spacer()
                 }
-
             }
         }
         .padding(.horizontal, 15)
@@ -97,15 +96,15 @@ struct OverlayCompletedView: View {
     
     func getStatsArray() -> [AnyView] {
         return [
-            AnyView(StatsView(stat: Stat(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM", flipped: true), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "overlay-complete-stat-elytra", flipped: true), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: "Eaten"), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: "overlay-complete-stat-bread"), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: "Ench'ed"), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: "overlay-complete-stat-enchant"), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: "Thrown", flipped: true), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: "overlay-complete-stat-pearl", flipped: true), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: "Temples"), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: "overlay-complete-stat-temples"), statsData: dataHandler.statsData)),
             
             AnyView(Spacer()),
             

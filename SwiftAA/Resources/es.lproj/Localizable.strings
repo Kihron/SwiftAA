@@ -16,6 +16,9 @@
 /* No comment provided by engineer. */
 "about-copyright" = "Copyright © 2022 Kihron, Slackow.";
 
+/* Error: Switch to Minecraft Window */
+"error-enter-minecraft" = "Entra a Minecraft para comenzar a trackear";
+
 /* Title: all advancments goal */
 "goal-advancements" = "Logros";
 
@@ -57,6 +60,33 @@
 
 /* No comment provided by engineer. */
 "overlay-background" = "Color del Fondo del Overlay";
+
+/* No comment provided by engineer. */
+"overlay-complete-title" = "¡Los %@ Logros Completos!";
+
+/* No comment provided by engineer. */
+"overlay-complete-message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos Los Logros";
+
+/* No comment provided by engineer. */
+"overlay-complete-stat-elytra" = "KM";
+
+/* No comment provided by engineer. */
+"overlay-complete-stat-bread" = "Comido";
+
+/* No comment provided by engineer. */
+"overlay-complete-stat-enchant" = "Ench'ed";
+
+/* No comment provided by engineer. */
+"overlay-complete-stat-pearl" = "Tirado";
+
+/* No comment provided by engineer. */
+"overlay-complete-stat-temples" = "Templos";
+
+/* No comment provided by engineer. */
+"overlay-complete-stats" = "Run Estadísticas";
+
+/* No comment provided by engineer. */
+"overlay-complete-time" = "%@\nIGT Aproximado";
 
 /* No comment provided by engineer. */
 "overlay-stat-row-pos" = "Posición de la Fila Estadísticas";
@@ -159,6 +189,9 @@
 
 /* No comment provided by engineer. */
 "theme-background-color" = "Color del Fondo";
+
+/* Button: copy preset theme to custom */
+"theme-copy" = "Copiar al Personalizado";
 
 /* Title: custom user color scheme */
 "theme-custom" = "Personalizado";
@@ -317,12 +350,54 @@
 "adventure-monsters-killed-ravager" = "Devastador";
 "adventure-kill-all-mobs" = "Falta Daño";
 
+//1.19
+"adventure-trade-at-world-height" = "Comerciante Estrella";
+"adventure-fall-from-world-height" = "Cuevas Y Acantilados";
+"adventure-play-jukebox-in-meadows" = "El Dulce Cantar";
+"adventure-spyglass-at-parrot" = "¿Es Un Pájaro?";
+"adventure-spyglass-at-ghast" = "¿Es Un Globo?";
+"adventure-spyglass-at-dragon" = "¿Es Un Avión?";
+"adventure-biomes-visited-old-growth-birch-forest" = "Abedular ancestral";
+"adventure-biomes-visited-mangrove-swamp" = "Manglar";
+"adventure-biomes-visited-old-growth-pine-taiga" = "Taiga de pinos ancestrales";
+"adventure-biomes-visited-old-growth-spruce-taiga" = "Taiga de abetos ancestral";
+"adventure-biomes-visited-grove" = "Arboleda";
+"adventure-biomes-visited-ice-spikes" = "Picos de hielo";
+"adventure-biomes-visited-snowy-plains" = "Llanura nevada";
+"adventure-biomes-visited-snowy-slopes" = "Ladera nevada";
+"adventure-biomes-visited-frozen-peaks" = "Cumbres heladas";
+"adventure-biomes-visited-jagged-peaks" = "Cumbres escarpadas";
+"adventure-biomes-visited-stony-peaks" = "Cumbres rocosas";
+"adventure-biomes-visited-stony-shore" = "Costa rocosa";
+"adventure-biomes-visited-windswept-hills" = "Colinas ventosas";
+"adventure-biomes-visited-flower-forest" = "Bosque floral";
+"adventure-biomes-visited-sunflower-plains" = "Llanura de girasoles";
+"adventure-biomes-visited-meadow" = "Pradera";
+"adventure-biomes-visited-windswept-savanna" = "Sabana ventosa";
+"adventure-biomes-visited-windswept-forest" = "Bosque ventoso";
+"adventure-biomes-visited-windswept-gravelly-hills" = "Colinas ventosas de grava";
+"adventure-biomes-visited-ocean" = "Océano";
+"adventure-biomes-visited-frozen-ocean" = "Océano congelado";
+"adventure-biomes-visited-deep-ocean" = "Océano profundo";
+"adventure-biomes-visited-sparse-jungle" = "Jungla dispersa";
+"adventure-biomes-visited-wooded-badlands" = "Badlands frondosa";
+"adventure-biomes-visited-eroded-badlands" = "Badlands erosionadas";
+"adventure-biomes-visited-dripstone-caves" = "Cuevas kársticas";
+"adventure-biomes-visited-lush-caves" = "Cuevas frondosas";
+"adventure-biomes-visited-deep-dark" = "Oscuridad profunda";
+"adventure-monsters-killed-piglin-brute" = "Piglin Bruto";
+"adventure-lightning-rod-with-villager-no-fire" = "Protector De Sobretensión";
+"adventure-walk-on-powder-snow-with-leather-boots" = "Ligero Como Conejo";
+"adventure-avoid-vibration" = "Discreción\n100";
+"adventure-kill-mob-near-sculk-catalyst" = "Se Propaga";
+
 /* End Advancements */
 "end-root" = "El End";
 "end-kill-dragon" = "La Libertad Del End";
 "end-dragon-egg" = "La Nueva Generación";
 "end-enter-end-gateway" = "Puerta\nRemota";
 "end-find-end-city" = "La Ciudad Al Final Del Juego";
+"end-find-end-city-19" = "La Ciudad Al Final Del Juego";
 "end-dragon-breath" = "¡Qué Mal Aliento!";
 "end-respawn-dragon" = "¿Es Un Déjà Vu?";
 "end-elytra" = "Al Infinito...\n¡y Más Allá!";
@@ -411,6 +486,22 @@
 "husbandry-cats-textures/entity/cat/siamese.png" = "Siamese";
 "husbandry-complete-catalogue" = "Un Gatálogo Completo";
 
+//1.19
+"husbandry-axolotl-in-a-bucket" = "El Depredador Más Lindo";
+"husbandry-kill-axolotl-target" = "¡El Poder Curativo De La Amistad!";
+"husbandry-make-a-sign-glow" = "¡Brillante\nIdea!";
+"husbandry-wax-on" = "Dar Cera";
+"husbandry-wax-off" = "Pulir Cera";
+"husbandry-ride-a-boat-with-a-goat" = "¡Cabra A La Vista!";
+"husbandry-animals-bred-goat" = "Cabra";
+"husbandry-animals-bred-axolotl" = "Ajolote";
+"husbandry-animals-bred-frog" = "Rana";
+"husbandry-allay-deliver-item-to-player" = "Yo Soy Tu Amigo Fiel";
+"husbandry-allay-deliver-cake-to-note-block" = "¡Cumpleaños Feliz!";
+"husbandry-froglights" = "¡Combinando Nuestros\nPoderes!";
+"husbandry-leash-all-frog-variants" = "Los Tres Mosqueteros";
+"husbandry-tadpole-in-a-bucket" = "Croac-croac";
+
 /* Minecraft Advancements */
 "minecraft-root" = "Minecraft";
 "minecraft-mine-stone" = "La Edad De Piedra";
@@ -452,6 +543,7 @@
 "nether-fast-travel" = "Burbuja Subespacial";
 "nether-uneasy-alliance" = "Falsa\nAlianza";
 "nether-ride-strider" = "¡Un Bote Con Patas!";
+"nether-ride-strider-in-overworld-lava" = "Como en Casa";
 "nether-get-wither-skull" = "Por Una Cabeza";
 "nether-summon-wither" = "Dr.\nWitherstein";
 "nether-create-beacon" = "Hágase\nLa Luz";

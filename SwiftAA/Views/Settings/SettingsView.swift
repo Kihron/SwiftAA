@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var dataHandler: DataHandler
     @EnvironmentObject var settings: AppSettings
     @ObservedObject var updater: Updater
     
     var body: some View {
         TabView {
-            TrackingSettingsView()
+            TrackingSettingsView(dataHandler: dataHandler)
                 .tabItem {
                     Label("settings-tracking", systemImage: "slider.horizontal.3")
                 }
@@ -39,9 +40,10 @@ struct SettingsView: View {
 }
 
 struct SettingsView_Previews: PreviewProvider {
+    @ObservedObject static var dataHandler = DataHandler()
     @ObservedObject static var updater = Updater()
     
     static var previews: some View {
-        SettingsView(updater: updater)
+        SettingsView(dataHandler: dataHandler, updater: updater)
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TrackingSettingsView: View {
+    @ObservedObject var dataHandler: DataHandler
     @EnvironmentObject var settings: AppSettings
     
     var body: some View {
@@ -20,15 +21,25 @@ struct TrackingSettingsView: View {
                     
                     Menu {
                         Button {
-                            settings.gameVersion = "1.16"
+                            if (settings.gameVersion != "1.19") {
+                                settings.gameVersion = "1.19"
+                                Task {
+                                    dataHandler.removeOldVersion(gameVersion: settings.gameVersion)
+                                }
+                            }
                         } label: {
-                            Text("1.16")
+                            Text("1.19")
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
                         Button {
-                            settings.gameVersion = "1.19"
+                            if (settings.gameVersion != "1.16") {
+                                settings.gameVersion = "1.16"
+                                Task {
+                                    dataHandler.removeOldVersion(gameVersion: settings.gameVersion)
+                                }
+                            }
                         } label: {
-                            Text("1.19")
+                            Text("1.16")
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
                     } label: {
@@ -106,10 +117,11 @@ struct TrackingSettingsView: View {
 }
 
 struct TrackingSettingsView_Previews: PreviewProvider {
+    @ObservedObject static var dataHandler = DataHandler()
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        TrackingSettingsView()
+        TrackingSettingsView(dataHandler: dataHandler)
             .frame(width: 500, height: 300)
             .environmentObject(settings)
     }

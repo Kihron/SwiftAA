@@ -77,17 +77,17 @@
     </advancement>
     <advancement id="minecraft:husbandry/complete_catalogue" name="A Complete Catalogue" short_name="Catalogue" type="challenge" half="false" key="husbandry-complete-catalogue">
         <criteria goal="Cats">
-            <criterion id="textures/entity/cat/jellie.png" name="Jellie" icon="jellie" key="husbandry-cats-textures/entity/cat/jellie.png"/>
-            <criterion id="textures/entity/cat/calico.png" name="Calico" icon="calico" key="husbandry-cats-textures/entity/cat/calico.png"/>
-            <criterion id="textures/entity/cat/red.png" name="Red" icon="red" key="husbandry-cats-textures/entity/cat/red.png"/>
-            <criterion id="textures/entity/cat/black.png" name="Tuxedo" icon="tuxedo" key="husbandry-cats-textures/entity/cat/black.png"/>
-            <criterion id="textures/entity/cat/white.png" name="White" icon="white" key="husbandry-cats-textures/entity/cat/white.png"/>
-            <criterion id="textures/entity/cat/ragdoll.png" name="Ragdoll" icon="ragdoll" key="husbandry-cats-textures/entity/cat/ragdoll.png"/>
-            <criterion id="textures/entity/cat/british_shorthair.png" name="British" icon="british_shorthair" key="husbandry-cats-textures/entity/cat/british-shorthair.png"/>
-            <criterion id="textures/entity/cat/tabby.png" name="Tabby" icon="tabby" key="husbandry-cats-textures/entity/cat/tabby.png"/>
-            <criterion id="textures/entity/cat/all_black.png" name="Black" icon="black" key="husbandry-cats-textures/entity/cat/all-black.png"/>
-            <criterion id="textures/entity/cat/persian.png" name="Persian" icon="persian" key="husbandry-cats-textures/entity/cat/persian.png"/>
-            <criterion id="textures/entity/cat/siamese.png" name="Siamese" icon="siamese" key="husbandry-cats-textures/entity/cat/siamese.png"/>
+            <criterion id="textures/entity/cat/jellie.png" name="Jellie" icon="jellie" key="husbandry-cats-jellie"/>
+            <criterion id="textures/entity/cat/calico.png" name="Calico" icon="calico" key="husbandry-cats-calico"/>
+            <criterion id="textures/entity/cat/red.png" name="Red" icon="red" key="husbandry-cats-red"/>
+            <criterion id="textures/entity/cat/black.png" name="Tuxedo" icon="tuxedo" key="husbandry-cats-black"/>
+            <criterion id="textures/entity/cat/white.png" name="White" icon="white" key="husbandry-cats-white"/>
+            <criterion id="textures/entity/cat/ragdoll.png" name="Ragdoll" icon="ragdoll" key="husbandry-cats-ragdoll"/>
+            <criterion id="textures/entity/cat/british_shorthair.png" name="British" icon="british_shorthair" key="husbandry-cats-british-shorthair"/>
+            <criterion id="textures/entity/cat/tabby.png" name="Tabby" icon="tabby" key="husbandry-cats-tabby"/>
+            <criterion id="textures/entity/cat/all_black.png" name="Black" icon="black" key="husbandry-cats-all-black"/>
+            <criterion id="textures/entity/cat/persian.png" name="Persian" icon="persian" key="husbandry-cats-persian"/>
+            <criterion id="textures/entity/cat/siamese.png" name="Siamese" icon="siamese" key="husbandry-cats-siamese"/>
         </criteria>
     </advancement>
 </group>

@@ -17,8 +17,8 @@ struct SwiftAAApp: App {
     
     @State var changed: Bool = false
     @State var windowTitle = "SwiftAA"
-    @State var lastModified = Date.now
     @State var wasCleared: Bool = true
+    @State var lastDirectoryUpdate: Date? = Date.now
     @State var error = ""
     
     @State var activeWindows = [pid_t:String]()
@@ -122,7 +122,7 @@ struct SwiftAAApp: App {
         .windowStyle(HiddenTitleBarWindowStyle())
         
         Settings {
-            SettingsView(updater: updater)
+            SettingsView(dataHandler: dataHandler, updater: updater)
                 .environmentObject(settings)
         }
     }
@@ -137,7 +137,7 @@ struct SwiftAAApp: App {
                 saves = lastWorking
                 if (saves.count <= 0) {
                     updateAll()
-                    return "Tab into Minecraft to start tracking"
+                    return "error-enter-minecraft"
                 }
             } else {
                 saves = dir
@@ -150,24 +150,34 @@ struct SwiftAAApp: App {
         let fileManager = FileManager.default
         if (fileManager.fileExists(atPath: saves)) {
             do {
+                let savesDirectoryUpdated = try getModifiedTime(saves, fileManager: fileManager)
+                var world: String
                 
-                let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
-                    folder != ".DS_Store"
-                })
-                if (contents.isEmpty) {
-                    updateAll()
-                    return "No Worlds Found"
+                if (lastDirectoryUpdate != savesDirectoryUpdated) {
+                    lastDirectoryUpdate = savesDirectoryUpdated
+                    let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
+                        folder != ".DS_Store"
+                    })
+                    if (contents.isEmpty) {
+                        updateAll()
+                        return "No Worlds Found"
+                    }
+                    
+                    world = try contents.max { a, b in
+                        let date1 = try getModifiedTime("\(saves)/\(a)", fileManager: fileManager)
+                        let date2 = try getModifiedTime("\(saves)/\(b)", fileManager: fileManager)
+                        return date1?.compare(date2!) == ComparisonResult.orderedAscending
+                    }!
+                    
+                    world = "\(saves)/\(world)"
+                    settings.worldPath = world
+                } else {
+                    world = settings.worldPath
                 }
-                var world = try contents.max { a, b in
-                    let date1 = try getModifiedTime("\(saves)/\(a)", fileManager: fileManager)
-                    let date2 = try getModifiedTime("\(saves)/\(b)", fileManager: fileManager)
-                    return date1?.compare(date2!) == ComparisonResult.orderedAscending
-                }!
-                //print("Directory searched!")
-                world = "\(saves)/\(world)"
+                
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {
                     updateAll()
-                    return "Invalid Directory"
+                    return ""
                 }
                 
                 if (try fileManager.contentsOfDirectory(atPath: "\(world)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(world)/stats").isEmpty) {
@@ -175,12 +185,11 @@ struct SwiftAAApp: App {
                     return "Invalid Directory"
                 }
                 
-                settings.worldPath = world
                 let fileName = try fileManager.contentsOfDirectory(atPath: "\(world)/advancements")[0]
                 let lastUpdate = try getModifiedTime("\(world)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
                 
-                if (lastModified != lastUpdate) {
-                    lastModified = lastUpdate
+                if (dataHandler.lastModified != lastUpdate) {
+                    dataHandler.lastModified = lastUpdate
                     var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(world)/advancements/\(fileName)"))
                     let advRange = NSRange(location: 0, length: advFileContents.count)
                     advFileContents = regex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
@@ -258,7 +267,7 @@ struct SwiftAAApp: App {
                 return
             }
             wasCleared = true
-            lastModified = Date.now
+            dataHandler.lastModified = Date.now
         } else {
             wasCleared = false
         }

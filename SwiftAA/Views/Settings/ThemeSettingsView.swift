@@ -40,7 +40,7 @@ struct ThemeSettingsView: View {
                                 settings.userTxColor = settings.textColor
                                 settings.themeMode = ThemeMode.custom
                             } label: {
-                                Text("Copy to Custom")
+                                Text("theme-copy")
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
                             

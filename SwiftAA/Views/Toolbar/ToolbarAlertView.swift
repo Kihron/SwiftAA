@@ -10,7 +10,7 @@ import SwiftUI
 struct ToolbarAlertView: View {
     @Binding var error: String
     @State var showPopover: Bool = false
-    let tips = ["Tab into Minecraft to start tracking"]
+    let tips = ["error-enter-minecraft"]
     
     var body: some View {
         Button {
@@ -33,7 +33,7 @@ struct PopoverView: View {
     
     var body: some View {
         VStack {
-            Text(error)
+            Text(error.localized)
                 .padding()
         }
     }

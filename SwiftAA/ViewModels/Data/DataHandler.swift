@@ -15,6 +15,7 @@ class DataHandler: ObservableObject {
     @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
     @Published var stats: [Indicator] = [Indicator]()
     @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
+    @Published var lastModified: Date = Date.now
     
     @Published var allAdvancements: Bool = false
     @Published var playTime: Int = 0
@@ -27,12 +28,12 @@ class DataHandler: ObservableObject {
         if (cache != nil) {
             var cache = cache!
             if (start != "") {
-                while (cache[0].id != start) {
+                while (!cache.isEmpty && cache[0].id != start) {
                     cache.removeFirst()
                 }
             }
             if (end != "") {
-                while (cache[cache.count - 1].id != end) {
+                while (!cache.isEmpty && cache[cache.count - 1].id != end) {
                     cache.removeLast()
                 }
             }
@@ -94,6 +95,15 @@ class DataHandler: ObservableObject {
     
     func getNameFromID(id: String, prefix: String) -> String {
         id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+    }
+    
+    func removeOldVersion(gameVersion: String) {
+        for key in map.keys {
+            if (!key.contains(gameVersion)) {
+                map.removeValue(forKey: key)
+            }
+        }
+        lastModified = Date.now
     }
     
     func ticksToIGT(ticks: Int) -> String {

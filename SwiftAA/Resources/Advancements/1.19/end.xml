@@ -5,7 +5,7 @@
     <advancement id="minecraft:end/kill_dragon" name=" Free the  End" short_name="Free End" key="end-kill-dragon"/>
     <advancement id="minecraft:end/dragon_egg" name="The Next Generation" short_name="Next Gen" type="goal" key="end-dragon-egg"/>
     <advancement id="minecraft:end/enter_end_gateway" name="Remote Getaway" short_name="Getaway" key="end-enter-end-gateway"/>
-    <advancement id="minecraft:end/find_end_city" name="City at End of the Game" short_name="End City" key="end-find-end-city"/>
+    <advancement id="minecraft:end/find_end_city" name="City at End of the Game" short_name="End City" key="end-find-end-city-19"/>
     <advancement id="minecraft:end/dragon_breath" name="You Need a Mint" short_name="Need a Mint" type="goal" key="end-dragon-breath"/>
     <advancement id="minecraft:end/respawn_dragon" name="The End... Again..." short_name="Again..." type="goal" key="end-respawn-dragon"/>
     <advancement id="minecraft:end/elytra" name="Sky's the Limit" short_name="The Limit" type="goal" key="end-elytra"/>

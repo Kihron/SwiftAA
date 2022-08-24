@@ -27,6 +27,35 @@ struct OverlayView: View {
                 }
             } else {
                 VStack(alignment: settings.statsRowPos ? .leading : .trailing) {
+                    ZStack(alignment: .center) {
+                        VStack {
+                            Spacer()
+                            
+                            HStack {
+                                Spacer()
+                                
+                                RoundedRectangle(cornerRadius: 5)
+                                    .background(.gray)
+                                    .opacity(0.5)
+                                    .frame(width: max(0, screen.size.width * progress), height: 2)
+                                
+                                Spacer()
+                            }
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Text("\(dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count)/\(dataHandler.map.values.compactMap({$0.count}).reduce(0, +))")
+                                    .font(.custom("Minecraft-Regular", size: 12))
+                                    .padding(.top, -15)
+                                    .padding(.trailing)
+                            }
+                            Spacer()
+                        }
+                        .frame(height: 10)
+                        .padding(.top, 10)
+                    }
+                    
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 20) {
                         ForEach(getCriteriaSection(criteriaSection, screen: screen), id: \.self) { criterion in
                             if (isAnimated(icon: criterion.icon)) {
@@ -39,7 +68,6 @@ struct OverlayView: View {
                         }
                     }
                     .frame(width: screen.size.width - 40, height: 54, alignment: .top)
-                    .padding(.top, 10)
                     .padding(.horizontal)
                     .padding(.leading, 10)
                     
@@ -61,33 +89,7 @@ struct OverlayView: View {
                     .frame(height: 84)
                     .padding(.bottom)
                     
-                    ZStack {
-                        VStack {
-                            Spacer()
-                            
-                            HStack {
-                                Spacer()
-                                
-                                RoundedRectangle(cornerRadius: 5)
-                                    .background(.gray)
-                                    .opacity(0.5)
-                                    .frame(width: max(0, screen.size.width * progress), height: 2)
-                                
-                                Spacer()
-                            }
-                        }
-                        .frame(height: 10)
-                        .padding(.top, -20)
-                        
-                        HStack {
-                            Spacer()
-                            
-                            Text("\(dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count)/\(dataHandler.map.values.compactMap({$0.count}).reduce(0, +))")
-                                .font(.custom("Minecraft-Regular", size: 12))
-                                .padding(.top, -20)
-                                .padding(.trailing)
-                        }
-                    }
+                    
                 }
                 .background(settings.userOverlayColor)
                 .onReceive(animationTimer) { timer in

@@ -39,7 +39,7 @@ struct StatsView: View {
             if (!stat.tooltip.isEmpty) {
                 Spacer()
                 
-                Text(stat.tooltip)
+                Text(stat.tooltip.localized)
                     .font(.custom("Minecraft-Regular", size: 14))
             }
         }
