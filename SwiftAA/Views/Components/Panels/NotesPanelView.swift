@@ -2,7 +2,7 @@
 //  NotesPanelView.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/23/22.
+//  Created by Kihron on 7/23/22.
 //
 
 import SwiftUI

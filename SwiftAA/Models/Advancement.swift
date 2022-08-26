@@ -2,7 +2,7 @@
 //  Advancement.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/19/22.
+//  Created by Kihron on 7/19/22.
 //
 
 import SwiftUI

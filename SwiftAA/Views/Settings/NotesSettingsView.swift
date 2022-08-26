@@ -2,7 +2,7 @@
 //  NotesSettingsView.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/26/22.
+//  Created by Kihron on 7/26/22.
 //
 
 import SwiftUI

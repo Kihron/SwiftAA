@@ -2,7 +2,7 @@
 //  QLImage.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/21/22.
+//  Created by Kihron on 7/21/22.
 //
 
 import SwiftUI

@@ -16,6 +16,9 @@
 /* No comment provided by engineer. */
 "about-copyright" = "Copyright © 2022 Kihron, Slackow.";
 
+/* No comment provided by engineer. */
+"donate-message" = "Apóyanos en Ko-Fi";
+
 /* Error: Switch to Minecraft Window */
 "error-enter-minecraft" = "Entra a Minecraft para comenzar a trackear";
 

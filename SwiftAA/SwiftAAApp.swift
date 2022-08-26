@@ -2,7 +2,7 @@
 //  SwiftAAApp.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/19/22.
+//  Created by Kihron on 7/19/22.
 //
 
 import SwiftUI
@@ -103,7 +103,7 @@ struct SwiftAAApp: App {
                         let windows = NSApplication.shared.windows.filter({ window in
                             window.title == "Overlay"
                         })
-                        windows.first!.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
+                        windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
                     }
                 }
                 .onDisappear {

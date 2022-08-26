@@ -2,7 +2,7 @@
 //  UpdateSettingsView.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 8/19/22.
+//  Created by Kihron on 8/19/22.
 //
 
 import SwiftUI

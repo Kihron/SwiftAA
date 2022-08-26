@@ -2,7 +2,7 @@
 //  L1_16.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 8/22/22.
+//  Created by Kihron on 8/22/22.
 //
 
 import SwiftUI

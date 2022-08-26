@@ -2,7 +2,7 @@
 //  ToolbarRefreshView.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/22/22.
+//  Created by Kihron on 7/22/22.
 //
 
 import SwiftUI

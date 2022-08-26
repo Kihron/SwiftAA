@@ -2,7 +2,7 @@
 //  TrackingSettingsView.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 7/21/22.
+//  Created by Kihron on 7/21/22.
 //
 
 import SwiftUI
@@ -106,17 +106,16 @@ struct TrackingSettingsView: View {
             .padding(.top)
             
             Spacer()
-            
-            HStack(spacing: 0) {
-                Text("tracking-attribution", comment: "Attribution message for CTM's AATool for Windows")
-                    .font(.custom("Minecraft-Regular", size: 12))
-                    .multilineTextAlignment(.center)
-                    .frame(width: 200)
-                    .padding(.trailing)
                 
-                DonationView()
-            }
-            .padding(.bottom, 10)
+            DonationView()
+                .padding(.bottom, 10)
+            
+            Text("tracking-attribution", comment: "Attribution message for CTM's AATool for Windows")
+                .font(.custom("Minecraft-Regular", size: 12))
+                .multilineTextAlignment(.center)
+                .frame(width: 400)
+                .padding(.trailing)
+                .padding(.bottom, 10)
         }
     }
 }
