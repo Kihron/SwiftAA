@@ -86,10 +86,8 @@ struct OverlayView: View {
                             IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
                         }
                     }
-                    .frame(height: 84)
+                    .frame(height: 70)
                     .padding(.bottom)
-                    
-                    
                 }
                 .background(settings.userOverlayColor)
                 .onReceive(animationTimer) { timer in
@@ -152,7 +150,7 @@ struct OverlayView_Previews: PreviewProvider {
     static var previews: some View {
         OverlayView(dataHandler: dataHandler)
             .environmentObject(settings)
-            .frame(width: 800, height: 354)
+            .frame(width: 800, height: 345)
             .onAppear {
                 _ = dataHandler.decode(file: "adventure")
             }

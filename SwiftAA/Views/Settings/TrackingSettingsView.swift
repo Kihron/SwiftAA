@@ -107,11 +107,16 @@ struct TrackingSettingsView: View {
             
             Spacer()
             
-            Text("tracking-attribution", comment: "Attribution message for CTM's AATool for Windows")
-                .font(.custom("Minecraft-Regular", size: 12))
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 10)
-                .frame(width: 400)
+            HStack(spacing: 0) {
+                Text("tracking-attribution", comment: "Attribution message for CTM's AATool for Windows")
+                    .font(.custom("Minecraft-Regular", size: 12))
+                    .multilineTextAlignment(.center)
+                    .frame(width: 200)
+                    .padding(.trailing)
+                
+                DonationView()
+            }
+            .padding(.bottom, 10)
         }
     }
 }
@@ -122,7 +127,7 @@ struct TrackingSettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
         TrackingSettingsView(dataHandler: dataHandler)
-            .frame(width: 500, height: 300)
+            .frame(width: 450, height: 300)
             .environmentObject(settings)
     }
 }

@@ -32,6 +32,8 @@ class AppSettings: ObservableObject {
     //Overlay
     @AppStorage("showStats") var showStats: Bool = true
     @AppStorage("statsRowPos") var statsRowPos: Bool = true
+    @AppStorage("overlayWidth") var overlayWidth: Double = 400
+    @AppStorage("overlayLoaded") var overlayLoaded: Bool = false
     
     @AppStorage("userOverlayColor") var userOverlayColor: Color = Color("overlay_green")
     

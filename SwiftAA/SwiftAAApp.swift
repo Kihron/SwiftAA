@@ -19,6 +19,7 @@ struct SwiftAAApp: App {
     @State var windowTitle = "SwiftAA"
     @State var wasCleared: Bool = true
     @State var lastDirectoryUpdate: Date? = Date.now
+    @State var lastLogUpdate: Date? = Date.now
     @State var error = ""
     
     @State var activeWindows = [pid_t:String]()
@@ -92,22 +93,35 @@ struct SwiftAAApp: App {
             })
         }
         
-        WindowGroup("OverlayWindow") {
+        WindowGroup("Overlay") {
             OverlayView(dataHandler: dataHandler)
-                .frame(minWidth: !dataHandler.allAdvancements ? 400 : 825, idealWidth: 825, maxWidth: .infinity, minHeight: 354, maxHeight: 354, alignment: .center)
+                .frame(minWidth: settings.overlayLoaded ? (!dataHandler.allAdvancements ? 400 : 825) : settings.overlayWidth, maxWidth: settings.overlayLoaded ? .infinity : settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
                 .environmentObject(settings)
+                .onAppear {
+                    settings.overlayLoaded = true
+                    Task {
+                        let windows = NSApplication.shared.windows.filter({ window in
+                            window.title == "Overlay"
+                        })
+                        windows.first!.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
+                    }
+                }
+                .onDisappear {
+                    settings.overlayLoaded = false
+                }
         }.commands {
             CommandGroup(after: .sidebar, addition: {
                 Button {
                     let windows = NSApplication.shared.windows.filter({ window in
-                        window.title == "OverlayWindow"
+                        window.title == "Overlay"
                     })
                     
                     if (windows.isEmpty) {
-                        if let url = URL(string: "SwiftAA://OverlayWindow") {
+                        if let url = URL(string: "SwiftAA://Overlay") {
                             openURL(url)
                         }
                     } else {
+                        settings.overlayWidth = Double(windows.first!.frame.width)
                         windows.first!.close()
                     }
                 } label: {
@@ -118,7 +132,7 @@ struct SwiftAAApp: App {
             
             CommandGroup(replacing: .newItem, addition: {})
         }
-        .handlesExternalEvents(matching: Set(arrayLiteral: "OverlayWindow"))
+        .handlesExternalEvents(matching: Set(arrayLiteral: "Overlay"))
         .windowStyle(HiddenTitleBarWindowStyle())
         
         Settings {
@@ -153,8 +167,22 @@ struct SwiftAAApp: App {
                 let savesDirectoryUpdated = try getModifiedTime(saves, fileManager: fileManager)
                 var world: String
                 
-                if (lastDirectoryUpdate != savesDirectoryUpdated) {
+                let logFile = "\(saves.dropLast(5))/logs/latest.log"
+                let logUpdated = try getModifiedTime(logFile, fileManager: fileManager)
+                
+                var isNewWorld = false
+                if (lastLogUpdate != logUpdated) {
+                    lastLogUpdate = logUpdated
+                    let log = try String(contentsOfFile: logFile, encoding: .utf8).components(separatedBy: .newlines)
+                    let lastLine = log[log.count - 2]
+                    if (lastLine.contains("Loaded") && lastLine.contains("advancements")) {
+                        isNewWorld = true
+                    }
+                }
+                
+                if (lastDirectoryUpdate != savesDirectoryUpdated || isNewWorld) {
                     lastDirectoryUpdate = savesDirectoryUpdated
+                    isNewWorld = false
                     let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
                         folder != ".DS_Store"
                     })

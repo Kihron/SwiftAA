@@ -38,15 +38,11 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            Text("overlay-complete-message".localized(["\(settings.player!.name)", "\(settings.gameVersion)"]))
-                                .font(.custom("Minecraft-Regular", size: 24))
-                                .multilineTextAlignment(.center)
+                            OverlayShimmerView(message: "overlay-complete-message".localized(["\(settings.player!.name)", "\(settings.gameVersion)"]))
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
-                            Text("overlay-complete-time".localized(["\(dataHandler.ticksToIGT(ticks: dataHandler.playTime))"]))
-                                .font(.custom("Minecraft-Regular", size: 24))
-                                .multilineTextAlignment(.center)
+                            OverlayShimmerView(message: "overlay-complete-time".localized(["\(dataHandler.ticksToIGT(ticks: dataHandler.playTime))"]))
                                 .padding(.top)
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
@@ -139,7 +135,7 @@ struct OverlayCompletedView_Previews: PreviewProvider {
     
     static var previews: some View {
         OverlayCompletedView(dataHandler: dataHandler)
-            .frame(width: 820, height: 354)
+            .frame(width: 820, height: 345)
             .environmentObject(settings)
     }
 }
