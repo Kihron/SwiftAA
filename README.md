@@ -1,4 +1,5 @@
 # Download → [SwiftAA for macOS](https://github.com/Kihron/SwiftAA/releases/latest/)
+# Tutorial → [SwiftAA Setup Guide](https://youtu.be/rrWwdvWQdVU)
 
 ![](Info/main.png)
 
