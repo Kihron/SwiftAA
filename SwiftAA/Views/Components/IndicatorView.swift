@@ -55,6 +55,7 @@ struct IndicatorView: View {
                 .multilineTextAlignment(.center)
                 .frame(height: 24, alignment: .top)
                 .padding(.top, -2)
+
         }
         .frame(width: 74)
     }
@@ -68,7 +69,7 @@ struct IndicatorView_Previews: PreviewProvider {
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "adventure-bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)))
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "adventure-bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)), isOverlay: true)
             .frame(width: 100, height: 100)
             .environmentObject(settings)
     }

@@ -89,7 +89,6 @@ struct OverlayView: View {
                     .frame(height: 70)
                     .padding(.bottom)
                 }
-                .background(settings.userOverlayColor)
                 .onReceive(animationTimer) { timer in
                     withAnimation {
                         self.progress -= 0.01

@@ -87,7 +87,6 @@ struct OverlayCompletedView: View {
             }
         }
         .padding(.horizontal, 15)
-        .background(settings.userOverlayColor)
     }
     
     func getStatsArray() -> [AnyView] {

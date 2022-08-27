@@ -35,8 +35,6 @@ class AppSettings: ObservableObject {
     @AppStorage("overlayWidth") var overlayWidth: Double = 400
     @AppStorage("overlayLoaded") var overlayLoaded: Bool = false
     
-    @AppStorage("userOverlayColor") var userOverlayColor: Color = Color("overlay_green")
-    
     //Player
     @AppStorage("player") var player: Player? = nil
     

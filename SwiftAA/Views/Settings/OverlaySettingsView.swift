@@ -41,17 +41,8 @@ struct OverlaySettingsView: View {
                     .frame(width: 75)
                 }
                 
-                HStack {
-                    ColorPicker("overlay-background", selection: settings.$userOverlayColor, supportsOpacity: false)
-                        .font(.custom("Minecraft-Regular", size: 10))
-                    
-                    Button {
-                        settings.userOverlayColor = Color("overlay_green")
-                    } label: {
-                        Image(systemName: "arrow.clockwise")
-                    }
-                }
-                .padding(.leading)
+                Spacer()
+
             }
             
             Spacer()

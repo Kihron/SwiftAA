@@ -93,7 +93,7 @@ struct SwiftAAApp: App {
             })
         }
         
-        WindowGroup("Overlay") {
+        WindowGroup("OverlayWindow") {
             OverlayView(dataHandler: dataHandler)
                 .frame(minWidth: settings.overlayLoaded ? (!dataHandler.allAdvancements ? 400 : 825) : settings.overlayWidth, maxWidth: settings.overlayLoaded ? .infinity : settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
                 .environmentObject(settings)
@@ -101,7 +101,7 @@ struct SwiftAAApp: App {
                     settings.overlayLoaded = true
                     Task {
                         let windows = NSApplication.shared.windows.filter({ window in
-                            window.title == "Overlay"
+                            window.title == "OverlayWindow"
                         })
                         windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
                     }
@@ -109,15 +109,16 @@ struct SwiftAAApp: App {
                 .onDisappear {
                     settings.overlayLoaded = false
                 }
+                .background(TransparentWindow())
         }.commands {
             CommandGroup(after: .sidebar, addition: {
                 Button {
                     let windows = NSApplication.shared.windows.filter({ window in
-                        window.title == "Overlay"
+                        window.title == "OverlayWindow"
                     })
                     
                     if (windows.isEmpty) {
-                        if let url = URL(string: "SwiftAA://Overlay") {
+                        if let url = URL(string: "SwiftAA://OverlayWindow") {
                             openURL(url)
                         }
                     } else {
@@ -132,7 +133,7 @@ struct SwiftAAApp: App {
             
             CommandGroup(replacing: .newItem, addition: {})
         }
-        .handlesExternalEvents(matching: Set(arrayLiteral: "Overlay"))
+        .handlesExternalEvents(matching: Set(arrayLiteral: "OverlayWindow"))
         .windowStyle(HiddenTitleBarWindowStyle())
         
         Settings {
