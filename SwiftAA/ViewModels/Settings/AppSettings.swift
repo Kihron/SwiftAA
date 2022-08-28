@@ -40,6 +40,7 @@ class AppSettings: ObservableObject {
     
     //Updater
     @AppStorage("lastUpdateCheck") var lastUpdateCheck: Date? = nil
+    @AppStorage("checkAutomatically") var checkAutomatically: Bool = true
 }
 
 enum TrackingMode: String {

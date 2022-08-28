@@ -26,7 +26,6 @@ struct UpdateSettingsView: View {
             VStack(spacing: 0) {
                 Image(nsImage: NSImage(named: "AppIcon") ?? NSImage())
                 
-                
                 Text("SwiftAA")
                     .font(.custom("Minecraft-Regular", size: 14))
                 
@@ -35,7 +34,7 @@ struct UpdateSettingsView: View {
             }
             
             VStack(spacing: 24) {
-                Toggle(isOn: $updater.automaticallyCheckForUpdates, label: {
+                Toggle(isOn: settings.$checkAutomatically, label: {
                     Text("settings-updater-auto-check")
                         .font(.custom("Minecraft-Regular", size: 12))
                         .multilineTextAlignment(.center)
@@ -68,6 +67,9 @@ struct UpdateSettingsView: View {
                     }
                 }
             }
+        }
+        .onChange(of: settings.checkAutomatically) { value in
+            updater.automaticallyCheckForUpdates = value
         }
     }
 }
