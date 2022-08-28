@@ -2,6 +2,7 @@
 # Tutorial → [SwiftAA Setup Guide](https://youtu.be/rrWwdvWQdVU)
 
 ![](Info/main.png)
+![](Info/overlay.png)
 
 # What is SwiftAA?
 SwiftAA is an app that was heavily inspiried by and utilizes assets from [CTM's AATool for Windows](https://github.com/DarwinBaker/AATool) and is designed to track the completion status
