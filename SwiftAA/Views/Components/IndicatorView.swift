@@ -51,7 +51,9 @@ struct IndicatorView: View {
             
             Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))
                 .font(.custom("Minecraft-Regular", size: 10))
+                .tracking(0.1)
                 .foregroundColor(isOverlay ? .white : settings.textColor)
+                .lineLimit(2)
                 .multilineTextAlignment(.center)
                 .frame(height: 24, alignment: .top)
                 .padding(.top, -2)
@@ -69,7 +71,7 @@ struct IndicatorView_Previews: PreviewProvider {
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "adventure-bullseye", name: "Bullseye", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)), isOverlay: true)
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-trvel", name: "Sticky Situation", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)), isOverlay: true)
             .frame(width: 100, height: 100)
             .environmentObject(settings)
     }

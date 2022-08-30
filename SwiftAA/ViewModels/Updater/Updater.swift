@@ -16,7 +16,9 @@ final class Updater: ObservableObject {
     
     var automaticallyCheckForUpdates: Bool {
         get {
-            return updaterController.updater.automaticallyChecksForUpdates
+            let isAutomatic = updaterController.updater.automaticallyChecksForUpdates
+            UserDefaults.standard.set(isAutomatic, forKey: "checkAutomatically")
+            return isAutomatic
         }
         set(newValue) {
             updaterController.updater.automaticallyChecksForUpdates = newValue

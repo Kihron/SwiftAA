@@ -34,10 +34,12 @@ struct OverlayView: View {
                             HStack {
                                 Spacer()
                                 
-                                RoundedRectangle(cornerRadius: 5)
-                                    .background(.gray)
-                                    .opacity(0.5)
-                                    .frame(width: max(0, screen.size.width * progress), height: 2)
+                                if (max(totalSections, criteriaTotalSections) != 1) {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .background(.gray)
+                                        .opacity(0.5)
+                                        .frame(width: max(0, screen.size.width * progress), height: 2)
+                                }
                                 
                                 Spacer()
                             }
@@ -91,24 +93,24 @@ struct OverlayView: View {
                 }
                 .onReceive(animationTimer) { timer in
                     withAnimation {
-                        self.progress -= 0.01
+                        self.progress -= (0.01 * (1000 / screen.size.width))
                     }
                     if progress <= 0.0 {
-                        totalSections = totalSections(screen: screen) - 1
-                        criteriaTotalSections = totalCriteriaSections(screen: screen) - 1
-                        section = (section < totalSections) ? section + 1 : 0
-                        criteriaSection = (criteriaSection < criteriaTotalSections) ? criteriaSection + 1 : 0
+                        totalSections = totalSections(screen: screen)
+                        criteriaTotalSections = totalCriteriaSections(screen: screen)
+                        section = (section + 1) % totalSections
+                        criteriaSection = (criteriaSection + 1) % criteriaTotalSections
                         self.progress = 0.7
                     }
                 }
             }
         }
     }
-    
+
     func getSection(_ section: Int, screen: GeometryProxy) -> [Advancement] {
         let values = dataHandler.map.values.flatMap({$0}).filter({!$0.completed})
         
-        let maxOnScreen = Int(floor(screen.size.width / 74)) * 2
+        let maxOnScreen = getMaxOnScreen(type: "indicator", width: screen.size.width)
         
         let sectionStart = section * maxOnScreen
         let sectionEnd = sectionStart + maxOnScreen
@@ -123,7 +125,7 @@ struct OverlayView: View {
     func getCriteriaSection(_ section: Int, screen: GeometryProxy) -> [Criterion] {
         let values = dataHandler.map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
         
-        let maxOnScreen = Int(floor((screen.size.width - 40) / 26)) * 2
+        let maxOnScreen = getMaxOnScreen(type: "criteria", width: screen.size.width)
         
         let sectionStart = section * maxOnScreen
         let sectionEnd = sectionStart + maxOnScreen
@@ -133,8 +135,17 @@ struct OverlayView: View {
     
     func totalCriteriaSections(screen: GeometryProxy) -> Int {
         let count = dataHandler.map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}.count
-        let pages = (count / Int((floor((screen.size.width - 40) / 26))) + 1) / 2
-        return (pages == 1 && count > Int((floor((screen.size.width - 40) / 26))) + 1) ? 2 : pages
+        let maxOnScreen = getMaxOnScreen(type: "criteria", width: screen.size.width)
+        let pages = max(1, (count - 0) / maxOnScreen + 1)
+        return pages
+    }
+    
+    func getMaxOnScreen(type: String, width: CGFloat) -> Int {
+        switch type {
+            case "indicator" : return Int(floor(width / 74)) * 2
+            case "criteria" : return Int(floor((width - 40) / 26)) * 2
+            default : return 0
+        }
     }
     
     func isAnimated(icon: String) -> Bool {

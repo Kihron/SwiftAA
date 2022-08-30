@@ -245,7 +245,7 @@
 "adventure-whos-the-pillager-now" = "Who's the Pillager Now?";
 "adventure-sleep-in-bed" = "Sweet\nDreams";
 "adventure-trade" = "What a Deal!";
-"adventure-two-birds-one-arrow" = "Two Birds, One Arrow";
+"adventure-two-birds-one-arrow" = "Two Birds,\nOne Arrow";
 "adventure-arbalistic" = "Arbalistic";
 "adventure-honey-block-slide" = "Sticky Situation";
 "adventure-bullseye" = "Bullseye";
@@ -380,7 +380,7 @@
 "end-root" = "The End";
 "end-kill-dragon" = " Free the\nEnd";
 "end-dragon-egg" = "The Next Generation";
-"end-enter-end-gateway" = "Remote Getaway";
+"end-enter-end-gateway" = "Remote\nGetaway";
 "end-find-end-city" = "City at the End of the Game";
 "end-find-end-city-19" = "City at End\nof the Game";
 "end-dragon-breath" = "You Need a Mint";
@@ -391,7 +391,7 @@
 /* Husbandry Advancements */
 "husbandry-root" = "Husbandry";
 "husbandry-plant-seed" = "A Seedy\nPlace";
-"husbandry-breed-an-animal" = "The Parrots and the Bats";
+"husbandry-breed-an-animal" = "The Parrots\nand the Bats";
 "husbandry-tame-an-animal" = "Best Friends Forever";
 "husbandry-fishy-business" = "Fishy\nBusiness";
 "husbandry-tactical-fishing" = "Tactical Fishing";
