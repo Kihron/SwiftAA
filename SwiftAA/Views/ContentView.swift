@@ -18,8 +18,8 @@ struct ContentView: View {
             ScrollView(.horizontal) {
                 VStack(alignment: .leading, spacing: 0) {
                     switch settings.gameVersion {
-                    case "1.16" :                     L1_16(dataHandler: dataHandler)
-                    case "1.19" :                     L1_19(dataHandler: dataHandler)
+                    case "1.16" : L1_16(dataHandler: dataHandler)
+                    case "1.19" : L1_19(dataHandler: dataHandler)
                     default:
                         L1_16(dataHandler: dataHandler)
                     }

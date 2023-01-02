@@ -53,6 +53,9 @@
 "overlay" = "Overlay";
 
 /* No comment provided by engineer. */
+"overlay-bar" = "Show Page Bar";
+
+/* No comment provided by engineer. */
 "overlay-background" = "Overlay Background Color";
 
 /* No comment provided by engineer. */

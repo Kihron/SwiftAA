@@ -20,22 +20,19 @@ class DataHandler: ObservableObject {
     @Published var allAdvancements: Bool = false
     @Published var playTime: Int = 0
     
+    var settings: AppSettings = .init()
+    
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
-        let version = UserDefaults.standard.string(forKey: "gameVersion")!
-        let file = "Advancements/\(version)/\(file)"
+        let file = "Advancements/\(settings.gameVersion)/\(file)"
         
         let cache = map[file]
         if (cache != nil) {
             var cache = cache!
-            if (start != "") {
-                while (!cache.isEmpty && cache[0].id != start) {
-                    cache.removeFirst()
-                }
+            if (!start.isEmpty) {
+                cache = Array(cache.drop(while: { $0.id != start }))
             }
-            if (end != "") {
-                while (!cache.isEmpty && cache[cache.count - 1].id != end) {
-                    cache.removeLast()
-                }
+            if (!end.isEmpty) {
+                cache = cache.prefix(while: { $0.id != end })
             }
             return Binding.constant(cache)
         }
@@ -80,8 +77,10 @@ class DataHandler: ObservableObject {
             }
         }
         
-        map[file] = fullList
-        stats = topStats + bottomStats
+        DispatchQueue.main.async {
+            self.map[file] = fullList
+            self.stats = self.topStats + self.bottomStats
+        }
         return Binding.constant(advancements)
     }
     

@@ -35,6 +35,7 @@ struct SwiftAAApp: App {
                 .applyVersionFrame(gameVersion: settings.$gameVersion)
                 .onAppear {
                     settings.lastUpdateCheck = updater.getLastUpdateCheckDate()
+                    settings.player = nil
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
                         withAnimation {
                             error = refreshData()
@@ -254,7 +255,8 @@ struct SwiftAAApp: App {
     func getPlayer() async -> Player {
         do {
             let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)")!
-            return try await URLSession.shared.decode(Player.self, from: url)
+            let player = try await URLSession.shared.decode(Player.self, from: url)
+            return player
         } catch {
             print(error.localizedDescription)
             return Player(id: "", name: "")
@@ -273,6 +275,7 @@ struct SwiftAAApp: App {
             if let path = activeWindows[pid] {
                 return path
             }
+            
             if let arguments = dataHandler.processArguments(pid: pid) {
                 if let gameDirIndex = arguments.firstIndex(of: "--gameDir") {
                     let path = "\(arguments[gameDirIndex + 1])/saves"
