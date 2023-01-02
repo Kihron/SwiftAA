@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* OverlayView.swift */; };
+		B637DB3129634FA800A73F62 /* SwiftAAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637DB3029634FA800A73F62 /* SwiftAAViewModel.swift */; };
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
 		B64199F1288A73830064AF5B /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199F0288A73830064AF5B /* enchant_item.gif */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		B616FAA4289B232F004E4A41 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		B637DB3029634FA800A73F62 /* SwiftAAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAAViewModel.swift; sourceTree = "<group>"; };
 		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
 		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
 		B64199F0288A73830064AF5B /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
@@ -150,6 +152,15 @@
 				B6AAB57F28BA831E007B981B /* TransparentView.swift */,
 			);
 			path = Overlay;
+			sourceTree = "<group>";
+		};
+		B637DB2F29634F7900A73F62 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B66A076F28879ED900DC0A2C /* DataHandler.swift */,
+				B637DB3029634FA800A73F62 /* SwiftAAViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		B648272B2889CD6F00B44855 /* Settings */ = {
@@ -375,18 +386,18 @@
 			isa = PBXGroup;
 			children = (
 				B65B074B28AFDCFC00E10EC5 /* Updater */,
-				B6FEFED82899926E0095CF08 /* Data */,
+				B6FEFED82899926E0095CF08 /* Windows */,
 				B648272B2889CD6F00B44855 /* Settings */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		B6FEFED82899926E0095CF08 /* Data */ = {
+		B6FEFED82899926E0095CF08 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
-				B66A076F28879ED900DC0A2C /* DataHandler.swift */,
+				B637DB2F29634F7900A73F62 /* Main */,
 			);
-			path = Data;
+			path = Windows;
 			sourceTree = "<group>";
 		};
 		B6FEFED9289992FF0095CF08 /* Extensions */ = {
@@ -540,6 +551,7 @@
 				B6872FB528AEAA45003CEA95 /* Player.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* Stat.swift in Sources */,
+				B637DB3129634FA800A73F62 /* SwiftAAViewModel.swift in Sources */,
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
 				B65B075128AFF77400E10EC5 /* RawRepresentableExts.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
