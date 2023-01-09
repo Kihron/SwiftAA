@@ -38,11 +38,6 @@ struct SwiftAAApp: App {
                         }
                     }
                 }
-                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-                    for window in NSApplication.shared.windows {
-                        window.standardWindowButton(.zoomButton)?.isEnabled = false
-                    }
-                })
                 .removeFocusOnTap()
                 .preferredColorScheme(.dark)
                 .environmentObject(viewModel.settings)
