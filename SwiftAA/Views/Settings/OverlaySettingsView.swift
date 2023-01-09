@@ -40,6 +40,14 @@ struct OverlaySettingsView: View {
                     }
                     .frame(width: 75)
                 }
+                .padding(.trailing)
+                
+                HStack {
+                    Text("overlay-bar")
+                        .font(.custom("Minecraft-Regular", size: 10))
+                    
+                    Toggle("", isOn: settings.$showBar)
+                }
                 
                 Spacer()
 

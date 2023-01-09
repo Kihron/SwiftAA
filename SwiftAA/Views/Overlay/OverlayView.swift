@@ -34,7 +34,7 @@ struct OverlayView: View {
                             HStack {
                                 Spacer()
                                 
-                                if (max(totalSections, criteriaTotalSections) != 1) {
+                                if (settings.showBar && max(totalSections, criteriaTotalSections) != 1) {
                                     RoundedRectangle(cornerRadius: 5)
                                         .background(.gray)
                                         .opacity(0.5)

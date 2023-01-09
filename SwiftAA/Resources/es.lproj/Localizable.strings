@@ -62,6 +62,9 @@
 "overlay" = "Overlay";
 
 /* No comment provided by engineer. */
+"overlay-bar" = "Alternar Barra de Páginas";
+
+/* No comment provided by engineer. */
 "overlay-background" = "Color del Fondo del Overlay";
 
 /* No comment provided by engineer. */

@@ -23,9 +23,13 @@ struct ProgressBarView: View {
         self.isToolbar = isToolbar
     }
     
+    var header: String {
+        "\(value) / \(total) \(title) (\(total == 0 ? 0 : (value * 100 / total))%)\(message)"
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("\(value) / \(total) \(title) (\(value * 100 / total)%)\(message)")
+            Text(header)
                 .font(.custom("Minecraft-Regular", size: 10))
                 .foregroundColor(isToolbar ? Color.primary :  settings.textColor)
             

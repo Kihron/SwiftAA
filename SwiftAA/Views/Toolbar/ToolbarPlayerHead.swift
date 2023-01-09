@@ -12,7 +12,7 @@ struct ToolbarPlayerHead: View {
     @EnvironmentObject var settings: AppSettings
     
     var body: some View {
-        if (settings.player != nil) {
+        if (settings.player != nil && !settings.player!.id.isEmpty) {
             CachedAsyncImage(url: URL(string: "https://cravatar.eu/helmhead/\(settings.player!.id)/64.png")) { phase in
                 switch phase {
                     case .empty:
