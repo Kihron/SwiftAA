@@ -14,7 +14,7 @@ struct OverlayCompletedView: View {
     var body: some View {
         GeometryReader { screen in
             HStack(spacing: 0) {
-                VStack {
+                VStack(spacing: 0) {
                     ZStack {
                         RoundedCornersShape(radius: 5, corners: [.topLeft, .topRight])
                             .fill(Color("overlay_completed"))
@@ -25,8 +25,8 @@ struct OverlayCompletedView: View {
                         
                         Text("overlay-complete-title".localized((["\(dataHandler.map.values.compactMap({$0.count}).reduce(0, +))"])))
                             .font(.custom("Minecraft-Regular", size: 24))
-                            .padding(.top)
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
+                            .padding(.top, 5)
                     }
                     
                     ZStack {
@@ -38,7 +38,7 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            OverlayShimmerView(message: "overlay-complete-message".localized(["\(settings.player!.name)", "\(settings.gameVersion)"]))
+                            OverlayShimmerView(message: "overlay-complete-message".localized(["\(settings.player?.name ?? "Player")", "\(settings.gameVersion)"]))
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
@@ -53,7 +53,7 @@ struct OverlayCompletedView: View {
                     Spacer()
                 }
                 
-                VStack {
+                VStack(spacing: 0) {
                     ZStack {
                         RoundedCornersShape(radius: 5, corners: [.topLeft, .topRight])
                             .fill(Color("overlay_completed"))
@@ -63,7 +63,7 @@ struct OverlayCompletedView: View {
                         
                         Text("overlay-complete-stats".localized)
                             .font(.custom("Minecraft-Regular", size: 24))
-                            .padding(.top)
+                            .padding(.top, 5)
                     }
                     
                     ZStack {
