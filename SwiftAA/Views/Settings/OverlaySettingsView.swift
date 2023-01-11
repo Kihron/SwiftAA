@@ -50,11 +50,9 @@ struct OverlaySettingsView: View {
                 }
                 
                 Spacer()
-
             }
-            
-            Spacer()
         }
+        .frame(maxHeight: .infinity, alignment: .top)
         .padding()
     }
 }

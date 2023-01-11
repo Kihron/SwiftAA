@@ -10,7 +10,7 @@ import SwiftUI
 struct ToolbarAlertView: View {
     @Binding var error: String
     @State var showPopover: Bool = false
-    let tips = ["error-enter-minecraft"]
+    let tips = [L10n.Error.enterMinecraft]
     
     var body: some View {
         Button {

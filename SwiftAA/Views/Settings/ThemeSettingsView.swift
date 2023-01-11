@@ -11,7 +11,7 @@ struct ThemeSettingsView: View {
     @EnvironmentObject var settings: AppSettings
     
     var body: some View {
-        HStack{
+        HStack {
             VStack(alignment: .leading) {
                 Picker(selection: settings.$themeMode, label: Text("")) {
                     Group {
@@ -43,9 +43,8 @@ struct ThemeSettingsView: View {
                                 Text(L10n.Theme.copy)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
-                            
-                            Spacer()
                         }
+                        .frame(maxHeight: .infinity, alignment: .top)
                         .disabled(settings.themeMode == ThemeMode.custom)
                     }
                     .tag(ThemeMode.preset)
@@ -69,8 +68,8 @@ struct ThemeSettingsView: View {
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(settings.themeMode == .preset)
                             }
-                            Spacer()
                         }
+                        .frame(maxHeight: .infinity, alignment: .top)
                     }
                     .tag(ThemeMode.custom)
                 }
@@ -96,16 +95,12 @@ struct ThemeSettingsView: View {
                 .onChange(of: settings.userTxColor) { newValue in
                     settings.textColor = newValue
                 }
-                
-                Spacer()
             }
-            
-            Spacer()
         }
         .padding()
     }
     
-    func createPresetButton(name: String) -> Button<Text> {
+    private func createPresetButton(name: String) -> Button<Text> {
         let colorName = name.replacingOccurrences(of: ".", with: "_")
         let view = Button {
             settings.theme = "theme.presets.\(name)"

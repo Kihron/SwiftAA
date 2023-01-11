@@ -1107,10 +1107,8 @@ internal enum L10n {
     internal static let message = L10n.tr("Localizable", "donate.message", fallback: "Support us on Ko-Fi")
   }
   internal enum Error {
-    internal enum Enter {
-      /// Tab into Minecraft to start tracking
-      internal static let minecraft = L10n.tr("Localizable", "error.enter.minecraft", fallback: "Tab into Minecraft to start tracking")
-    }
+    /// Tab into Minecraft to start tracking
+    internal static let enterMinecraft = L10n.tr("Localizable", "error.enter_minecraft", fallback: "Tab into Minecraft to start tracking")
   }
   internal enum Goal {
     /// Advancements

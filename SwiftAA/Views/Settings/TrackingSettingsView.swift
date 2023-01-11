@@ -45,68 +45,60 @@ struct TrackingSettingsView: View {
                     } label: {
                         Text(settings.gameVersion)
                             .font(.custom("Minecraft-Regular", size: 10))
-                   }
+                    }
                     .padding(.horizontal)
-                    
-                    Spacer()
                 }
                 .frame(width: 100)
+                .frame(maxHeight: .infinity, alignment: .top)
                 
-                VStack {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Picker(selection: settings.$trackingMode, label: Text("")) {
-                                Group {
-                                    Text(L10n.Tracking.seamless)
-                                        .font(.custom("Minecraft-Regular", size: 10))
-                                }
-                                .tag(TrackingMode.seamless)
-                                .padding(.bottom)
-                                
-                                Group {
-                                    VStack(alignment: .leading) {
-                                        Text(L10n.Tracking.Custom.saves)
-                                            .font(.custom("Minecraft-Regular", size: 10))
-                                        
-                                        HStack {
-                                            TextField(L10n.Tracking.Enter.directory, text: $settings.customSavesPath)
-                                                .font(.custom("Minecraft-Regular", size: 10))
-                                                .textFieldStyle(.roundedBorder)
-                                            
-                                            
-                                            Button {
-                                                let panel = NSOpenPanel()
-                                                panel.allowsMultipleSelection = false
-                                                panel.canChooseDirectories = true
-                                                panel.canChooseFiles = false
-                                                if panel.runModal() == .OK {
-                                                    settings.customSavesPath = panel.url?.path ?? ""
-                                                }
-                                                NSApp.keyWindow?.makeFirstResponder(nil)
-                                            } label: {
-                                                Text(L10n.Tracking.browse)
-                                                    .font(.custom("Minecraft-Regular", size: 10))
-                                            }
-                                            
-                                        }
-                                        .padding(.trailing)
-                                    }
-                                }
-                                .tag(TrackingMode.directory)
-                            }.pickerStyle(.radioGroup)
-                            
-                            Spacer()
+                VStack(alignment: .leading) {
+                    Picker(selection: settings.$trackingMode, label: Text("")) {
+                        Group {
+                            Text(L10n.Tracking.seamless)
+                                .font(.custom("Minecraft-Regular", size: 10))
                         }
+                        .tag(TrackingMode.seamless)
+                        .padding(.bottom)
                         
-                        Spacer()
-                    }
-                    .padding(.bottom)
+                        Group {
+                            VStack(alignment: .leading) {
+                                Text(L10n.Tracking.Custom.saves)
+                                    .font(.custom("Minecraft-Regular", size: 10))
+                                
+                                HStack {
+                                    TextField(L10n.Tracking.Enter.directory, text: $settings.customSavesPath)
+                                        .font(.custom("Minecraft-Regular", size: 10))
+                                        .textFieldStyle(.roundedBorder)
+                                    
+                                    
+                                    Button {
+                                        let panel = NSOpenPanel()
+                                        panel.allowsMultipleSelection = false
+                                        panel.canChooseDirectories = true
+                                        panel.canChooseFiles = false
+                                        if panel.runModal() == .OK {
+                                            settings.customSavesPath = panel.url?.path ?? ""
+                                        }
+                                        NSApp.keyWindow?.makeFirstResponder(nil)
+                                    } label: {
+                                        Text(L10n.Tracking.browse)
+                                            .font(.custom("Minecraft-Regular", size: 10))
+                                    }
+                                    
+                                }
+                                .padding(.trailing)
+                            }
+                        }
+                        .tag(TrackingMode.directory)
+                    }.pickerStyle(.radioGroup)
                 }
+                .frame(maxHeight: .infinity, alignment: .top)
+                .padding(.bottom)
             }
             .padding(.top)
             
             Spacer()
-                
+            
             DonationView()
                 .padding(.bottom, 10)
             

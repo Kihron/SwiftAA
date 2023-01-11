@@ -44,7 +44,7 @@ class SwiftAAViewModel: ObservableObject {
                 saves = lastWorking
                 if (saves.count <= 0) {
                     updateAll()
-                    return "error-enter-minecraft"
+                    return L10n.Error.enterMinecraft
                 }
             } else {
                 saves = dir

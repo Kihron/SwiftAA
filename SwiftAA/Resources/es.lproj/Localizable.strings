@@ -9,7 +9,7 @@
 
 "donate.message" = "Apóyanos en Ko-Fi";
 
-"error.enter.minecraft" = "Entra a Minecraft para comenzar a trackear";
+"error.enter_minecraft" = "Entra a Minecraft para comenzar a trackear";
 
 "goal.advancements" = "Logros";
 "goal.animals.bred" = "Animales Criados";

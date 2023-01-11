@@ -87,7 +87,7 @@ struct SwiftAAApp: App {
                 Button {
                     toggleOverlay()
                 } label: {
-                    Text("overlay-toggle", comment: "Button: shows/hides overlay")
+                    Text(L10n.Overlay.toggle)
                 }
                 .keyboardShortcut("o")
             })
