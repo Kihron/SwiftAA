@@ -1,558 +1,385 @@
-/* No comment provided by engineer. */
-"%lld / %lld %@ (%lld%%)%@" = "%lld / %lld %@ (%lld%%)%@";
+"player" = "Jugador";
+"never" = "Nunca";
 
-/* No comment provided by engineer. */
-"%lld/%lld" = "%lld/%lld";
+"app.title" = "SwiftAA";
 
-/* No comment provided by engineer. */
-"1.16" = "1.16";
+"about.button" = "Acerca de SwiftAA";
+"about.description" = "Seguimiento de logros para macOS";
+"about.copyright" = "Copyright © 2022 Kihron, Slackow.";
 
-/* No comment provided by engineer. */
-"about-button" = "Acerca de SwiftAA";
+"donate.message" = "Apóyanos en Ko-Fi";
 
-/* No comment provided by engineer. */
-"about-description" = "Seguimiento de logros para macOS";
+"error.enter.minecraft" = "Entra a Minecraft para comenzar a trackear";
 
-/* No comment provided by engineer. */
-"about-copyright" = "Copyright © 2022 Kihron, Slackow.";
+"goal.advancements" = "Logros";
+"goal.animals.bred" = "Animales Criados";
+"goal.biomes.visited" = "Biomas Visitados";
+"goal.cats" = "Gatos";
+"goal.foods.eaten" = "Alimentos Consumidos";
+"goal.monsters.killed" = "Monstruos Asesinados";
+"goal.nether" = "Visitados";
 
-/* No comment provided by engineer. */
-"donate-message" = "Apóyanos en Ko-Fi";
+"notes.clear.all" = "Borrar Todo";
+"notes.none" = "No Hay Notas Disponibles";
+"notes.panel.view.bottom.title" = "Notas";
+"notes.panel.view.top.title" = "Puntos de Referencia";
+"notes.select.world" = "Elige un mundo para ver sus notas...";
 
-/* Error: Switch to Minecraft Window */
-"error-enter-minecraft" = "Entra a Minecraft para comenzar a trackear";
-
-/* Title: all advancments goal */
-"goal-advancements" = "Logros";
-
-/* Title: animals bred goal */
-"goal-animals-bred" = "Animales Criados";
-
-/* Title: biomes visited goal */
-"goal-biomes-visited" = "Biomas Visitados";
-
-/* Title: cats goal */
-"goal-cats" = "Gatos";
-
-/* Title: foods eaten goal */
-"goal-foods-eaten" = "Alimentos Consumidos";
-
-/* Title: monsters killed goal */
-"goal-monsters-killed" = "Monstruos Asesinados";
-
-/* Title: nether biomes visited goal */
-"goal-nether" = "Visitados";
-
-/* Button: delete all notes */
-"notes-clear-all" = "Borrar Todo";
-
-/* Title: no notes available/recorded */
-"notes-none" = "No Hay Notas Disponibles";
-
-/* Title: Notes Menu */
-"notes-panel-view-bottom-title" = "Notas";
-
-/* Title: Waypoint Menu */
-"notes-panel-view-top-title" = "Puntos de Referencia";
-
-/* No comment provided by engineer. */
-"notes-select-world" = "Elige un mundo para ver sus notas...";
-
-/* No comment provided by engineer. */
 "overlay" = "Overlay";
-
-/* No comment provided by engineer. */
-"overlay-bar" = "Alternar Barra de Páginas";
-
-/* No comment provided by engineer. */
-"overlay-background" = "Color del Fondo del Overlay";
-
-/* No comment provided by engineer. */
-"overlay-complete-title" = "¡Los %@ Logros Completos!";
-
-/* No comment provided by engineer. */
-"overlay-complete-message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos Los Logros";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-elytra" = "KM";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-bread" = "Comido";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-enchant" = "Ench'ed";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-pearl" = "Tirado";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-temples" = "Templos";
-
-/* No comment provided by engineer. */
-"overlay-complete-stats" = "Run Estadísticas";
-
-/* No comment provided by engineer. */
-"overlay-complete-time" = "%@\nIGT Aproximado";
-
-/* No comment provided by engineer. */
-"overlay-stat-row-pos" = "Posición de la Fila Estadísticas";
-
-/* No comment provided by engineer. */
-"overlay-stat-row-pos-left" = "Izquierda";
-
-/* No comment provided by engineer. */
-"overlay-stat-row-pos-right" = "Derecha";
-
-/* Button: shows/hides overlay */
-"overlay-toggle" = "Alternar Overlay";
-
-/* No comment provided by engineer. */
-"potion-invisibility" = "Poción de Invisibilidad";
-
-/* No comment provided by engineer. */
-"potion-leaping" = "Poción de Salto";
-
-/* No comment provided by engineer. */
-"potion-night-vision" = "Poción de Visión Nocturna";
-
-/* No comment provided by engineer. */
-"potion-slow-falling" = "Poción de Caída Lenta";
-
-/* No comment provided by engineer. */
-"potion-slowness" = "Poción de Lentitud";
-
-/* No comment provided by engineer. */
-"potion-strength" = "Poción de Fuerza";
-
-/* No comment provided by engineer. */
-"potion-swiftness" = "Poción de Velocidad";
-
-/* No comment provided by engineer. */
-"potion-water-breathing" = "Poción de Apnea";
-
-/* No comment provided by engineer. */
-"potion-weakness" = "Poción de Debilidad";
-
-/* No comment provided by engineer. */
-"settings-notes" = "Notas";
-
-/* No comment provided by engineer. */
-"settings-overlay" = "Overlay";
-
-/* No comment provided by engineer. */
-"settings-theme" = "Tema";
-
-/* No comment provided by engineer. */
-"settings-tracking" = "Seguimiento";
-
-/* No comment provided by engineer. */
-"settings-updater" = "Actualizaciones";
-
-/* No comment provided by engineer. */
-"settings-updater-auto-check" = "Revisar las Actualizaciones\nAutomaticamente";
-
-/* No comment provided by engineer. */
-"settings-updater-check" = "Buscar Actualizaciones";
-
-/* No comment provided by engineer. */
-"settings-updater-last-checked" = "Revisado Por Ultima Vez";
-
-/* No comment provided by engineer. */
-"stat-ancient-debris" = "Escombros: %@\nTNT: %@";
-
-/* No comment provided by engineer. */
-"stat-ancient-debris-done" = "Hecho Con Netherita";
-
-/* No comment provided by engineer. */
-"stat-god-apple-obtain" = "Obtenlo";
-
-/* No comment provided by engineer. */
-"stat-god-apple-obtained" = "Obtenido";
-
-/* No comment provided by engineer. */
-"stat-shells" = "Conchas\n%@ / 8";
-
-/* No comment provided by engineer. */
-"stat-shells-crafted" = "Conducto Crafteado";
-
-/* No comment provided by engineer. */
-"stat-trident-awaiting" = "Sin Trueno";
-
-/* No comment provided by engineer. */
-"stat-trident-obtain" = "Obten\nUn Tridente";
-
-/* No comment provided by engineer. */
-"stat-trident-thunder" = "Con Trueno";
-
-/* No comment provided by engineer. */
-"stat-wither-killed" = "Ha Sido Asesinado";
-
-/* No comment provided by engineer. */
-"stat-wither-skulls" = "Calaveras\n%@ / 3";
-
-/* No comment provided by engineer. */
-"SwiftAA" = "SwiftAA";
-
-/* No comment provided by engineer. */
-"theme-background-color" = "Color del Fondo";
-
-/* Button: copy preset theme to custom */
-"theme-copy" = "Copiar al Personalizado";
-
-/* Title: custom user color scheme */
-"theme-custom" = "Personalizado";
-
-/* No comment provided by engineer. */
-"theme-foreground-color" = "Color del Frente";
-
-/* Title: preset options for color scheme */
-"theme-presets" = "Predeterminados";
-
-/* Berry Theme */
-"theme-presets-berry" = "Baya";
-
-/* Blazed Theme */
-"theme-presets-blazed" = "Fuego";
-
-/* Brick Theme */
-"theme-presets-brick" = "Ladrillo";
-
-/* Dark Mode Theme */
-"theme-presets-dark-mode" = "Obscuro";
-
-/* Ender Pearl Theme */
-"theme-presets-ender-pearl" = "Perla de Ender";
-
-/* GitHub Dark Theme */
-"theme-presets-github-dark" = "Obscuro del GitHub";
-
-/* High Contrast Theme */
-"theme-presets-high-contrast" = "Alto Contraste";
-
-/* Light Mode Theme */
-"theme-presets-light-mode" = "Claro";
-
-/* No comment provided by engineer. */
-"theme-text-color" = "Color del Texto";
-
-/* Attribution message for CTM's AATool for Windows */
-"tracking-attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";
-
-/* Button: browse to select folder */
-"tracking-browse" = "Buscar";
-
-/* Title: custom user defined saves directory */
-"tracking-custom-saves" = "Carpeta de Mundos Personalizada";
-
-/* No comment provided by engineer. */
-"tracking-enter-directory" = "Ingresar la dirección a la Carpeta";
-
-/* Title: game version */
-"tracking-game-version" = "Versión del Juego";
-
-/* title: automatically tracks active instance */
-"tracking-seamless" = "Rastreo Automático";
-
-/* No comment provided by engineer. */
-"X" = "X";
-
-/* No comment provided by engineer. */
-"Z" = "Z";
-
-/* Adventure Advancements */
-"adventure-root" = "Aventura";
-"adventure-kill-a-mob" = "Cazamonstruos";
-"adventure-ol-betsy" = "La Vieja\nBetsy";
-"adventure-whos-the-pillager-now" = "El Saqueador Saqueado";
-"adventure-sleep-in-bed" = "Dulces\nSueños";
-"adventure-trade" = "¡Qué Buen Trato!";
-"adventure-two-birds-one-arrow" = "Dos Pájaros De Un Tiro";
-"adventure-arbalistic" = "Ballestería Avanzada";
-"adventure-honey-block-slide" = "Situación Pegajosa";
-"adventure-bullseye" = "¡Ojo De Halcón!";
-"adventure-shoot-arrow" = "En El Punto De Mira";
-"adventure-sniper-duel" = "Duelo De Francocazadores";
-"adventure-voluntary-exile" = "Exilio Voluntario";
-"adventure-hero-of-the-village" = "Héroe De La Aldea";
-"adventure-throw-trident" = "Jugada Maestra";
-"adventure-very-very-frightening" = "Impactrueno";
-"adventure-summon-iron-golem" = "Ayuda Contratada";
-"adventure-totem-of-undying" = "Post Mortem";
-"adventure-biomes-visited-plains" = "Llanura";
-"adventure-biomes-visited-forest" = "Bosque";
-"adventure-biomes-visited-wooded-hills" = "Colinas frondosas";
-"adventure-biomes-visited-birch-forest" = "Abedular";
-"adventure-biomes-visited-birch-forest-hills" = "Colinas de abedular";
-"adventure-biomes-visited-dark-forest" = "Bosque oscuro";
-"adventure-biomes-visited-swamp" = "Pantano";
-"adventure-biomes-visited-taiga" = "Taiga";
-"adventure-biomes-visited-taiga-hills" = "Colinas de taiga";
-"adventure-biomes-visited-giant-tree-taiga" = "Taiga con árboles gigantes";
-"adventure-biomes-visited-giant-tree-taiga-hills" = "Colinas de taiga con árboles gigantes";
-"adventure-biomes-visited-snowy-taiga" = "Taiga nevada";
-"adventure-biomes-visited-snowy-taiga-hills" = "Colinas de taiga nevada";
-"adventure-biomes-visited-snowy-tundra" = "Tundra nevada";
-"adventure-biomes-visited-snowy-mountains" = "Montañas nevadas";
-"adventure-biomes-visited-snowy-beach" = "Playa nevada";
-"adventure-biomes-visited-frozen-river" = "Río congelado";
-"adventure-biomes-visited-river" = "Río";
-"adventure-biomes-visited-desert" = "Desierto";
-"adventure-biomes-visited-desert-hills" = "Colinas de desierto";
-"adventure-biomes-visited-savanna" = "Sabana";
-"adventure-biomes-visited-savanna-plateau" = "Meseta de sabana";
-"adventure-biomes-visited-jungle" = "Jungla";
-"adventure-biomes-visited-jungle-edge" = "Borde de jungla";
-"adventure-biomes-visited-jungle-hills" = "Colinas de jungla";
-"adventure-biomes-visited-bamboo-jungle" = "Jungla de bambú";
-"adventure-biomes-visited-bamboo-jungle-hills" = "Colinas de jungla de bambú";
-"adventure-biomes-visited-stone-shore" = "Costa rocosa";
-"adventure-biomes-visited-mountains" = "Montañas";
-"adventure-biomes-visited-wooded-mountains" = "Montañas frondosas";
-"adventure-biomes-visited-badlands" = "Badlands";
-"adventure-biomes-visited-badlands-plateau" = "Meseta de badlands";
-"adventure-biomes-visited-wooded-badlands-plateau" = "Meseta de badlands frondosa";
-"adventure-biomes-visited-mushroom-fields" = "Campo fúngico";
-"adventure-biomes-visited-mushroom-field-shore" = "Costa de campo fúngico";
-"adventure-biomes-visited-beach" = "Playa";
-"adventure-biomes-visited-warm-ocean" = "Océano cálido";
-"adventure-biomes-visited-lukewarm-ocean" = "Océano tibio";
-"adventure-biomes-visited-deep-lukewarm-ocean" = "Océano tibio profundo";
-"adventure-biomes-visited-cold-ocean" = "Océano frío";
-"adventure-biomes-visited-deep-cold-ocean" = "Océano frío profundo";
-"adventure-biomes-visited-deep-frozen-ocean" = "Océano congelado profundo";
-"adventure-adventuring-time" = "Hora De Aventura";
-"adventure-monsters-killed-creeper" = "Creeper";
-"adventure-monsters-killed-zombie" = "Zombi";
-"adventure-monsters-killed-skeleton" = "Esqueleto";
-"adventure-monsters-killed-husk" = "Zombi momificado";
-"adventure-monsters-killed-drowned" = "Ahogado";
-"adventure-monsters-killed-stray" = "Esqueleto glacial";
-"adventure-monsters-killed-spider" = "Araña";
-"adventure-monsters-killed-cave-spider" = "Araña de cueva";
-"adventure-monsters-killed-enderman" = "Enderman";
-"adventure-monsters-killed-slime" = "Slime";
-"adventure-monsters-killed-magma-cube" = "Cubo de magma";
-"adventure-monsters-killed-ghast" = "Ghast";
-"adventure-monsters-killed-blaze" = "Blaze";
-"adventure-monsters-killed-wither-skeleton" = "Esqueleto del Wither";
-"adventure-monsters-killed-piglin" = "Piglin";
-"adventure-monsters-killed-zombified-piglin" = "Piglin zombificado";
-"adventure-monsters-killed-hoglin" = "Hoglin";
-"adventure-monsters-killed-zoglin" = "Zoglin";
-"adventure-monsters-killed-silverfish" = "Pez de plata";
-"adventure-monsters-killed-ender-dragon" = "Ender Dragon";
-"adventure-monsters-killed-endermite" = "Endermite";
-"adventure-monsters-killed-shulker" = "Shulker";
-"adventure-monsters-killed-wither" = "Wither";
-"adventure-monsters-killed-phantom" = "Phantom";
-"adventure-monsters-killed-guardian" = "Guardián";
-"adventure-monsters-killed-elder-guardian" = "Guardián anciano";
-"adventure-monsters-killed-zombie-villager" = "Aldeano zombi";
-"adventure-monsters-killed-witch" = "Bruja";
-"adventure-monsters-killed-pillager" = "Saqueador";
-"adventure-monsters-killed-vindicator" = "Vindicador";
-"adventure-monsters-killed-evoker" = "Invocador";
-"adventure-monsters-killed-vex" = "Vex";
-"adventure-monsters-killed-ravager" = "Devastador";
-"adventure-kill-all-mobs" = "Falta Daño";
-
-//1.19
-"adventure-trade-at-world-height" = "Comerciante Estrella";
-"adventure-fall-from-world-height" = "Cuevas Y Acantilados";
-"adventure-play-jukebox-in-meadows" = "El Dulce Cantar";
-"adventure-spyglass-at-parrot" = "¿Es Un Pájaro?";
-"adventure-spyglass-at-ghast" = "¿Es Un Globo?";
-"adventure-spyglass-at-dragon" = "¿Es Un Avión?";
-"adventure-biomes-visited-old-growth-birch-forest" = "Abedular ancestral";
-"adventure-biomes-visited-mangrove-swamp" = "Manglar";
-"adventure-biomes-visited-old-growth-pine-taiga" = "Taiga de pinos ancestrales";
-"adventure-biomes-visited-old-growth-spruce-taiga" = "Taiga de abetos ancestral";
-"adventure-biomes-visited-grove" = "Arboleda";
-"adventure-biomes-visited-ice-spikes" = "Picos de hielo";
-"adventure-biomes-visited-snowy-plains" = "Llanura nevada";
-"adventure-biomes-visited-snowy-slopes" = "Ladera nevada";
-"adventure-biomes-visited-frozen-peaks" = "Cumbres heladas";
-"adventure-biomes-visited-jagged-peaks" = "Cumbres escarpadas";
-"adventure-biomes-visited-stony-peaks" = "Cumbres rocosas";
-"adventure-biomes-visited-stony-shore" = "Costa rocosa";
-"adventure-biomes-visited-windswept-hills" = "Colinas ventosas";
-"adventure-biomes-visited-flower-forest" = "Bosque floral";
-"adventure-biomes-visited-sunflower-plains" = "Llanura de girasoles";
-"adventure-biomes-visited-meadow" = "Pradera";
-"adventure-biomes-visited-windswept-savanna" = "Sabana ventosa";
-"adventure-biomes-visited-windswept-forest" = "Bosque ventoso";
-"adventure-biomes-visited-windswept-gravelly-hills" = "Colinas ventosas de grava";
-"adventure-biomes-visited-ocean" = "Océano";
-"adventure-biomes-visited-frozen-ocean" = "Océano congelado";
-"adventure-biomes-visited-deep-ocean" = "Océano profundo";
-"adventure-biomes-visited-sparse-jungle" = "Jungla dispersa";
-"adventure-biomes-visited-wooded-badlands" = "Badlands frondosa";
-"adventure-biomes-visited-eroded-badlands" = "Badlands erosionadas";
-"adventure-biomes-visited-dripstone-caves" = "Cuevas kársticas";
-"adventure-biomes-visited-lush-caves" = "Cuevas frondosas";
-"adventure-biomes-visited-deep-dark" = "Oscuridad profunda";
-"adventure-monsters-killed-piglin-brute" = "Piglin Bruto";
-"adventure-lightning-rod-with-villager-no-fire" = "Protector De Sobretensión";
-"adventure-walk-on-powder-snow-with-leather-boots" = "Ligero Como Conejo";
-"adventure-avoid-vibration" = "Discreción\n100";
-"adventure-kill-mob-near-sculk-catalyst" = "Se Propaga";
-
-/* End Advancements */
-"end-root" = "El End";
-"end-kill-dragon" = "La Libertad Del End";
-"end-dragon-egg" = "La Nueva Generación";
-"end-enter-end-gateway" = "Puerta\nRemota";
-"end-find-end-city" = "La Ciudad Al Final Del Juego";
-"end-find-end-city-19" = "La Ciudad Al Final Del Juego";
-"end-dragon-breath" = "¡Qué Mal Aliento!";
-"end-respawn-dragon" = "¿Es Un Déjà Vu?";
-"end-elytra" = "Al Infinito...\n¡y Más Allá!";
-"end-levitate" = "Lindas Vistas Desde Aquí";
-
-/* Husbandry Advancements */
-"husbandry-root" = "Prosperidad";
-"husbandry-plant-seed" = "Crecen Tan Rápido...";
-"husbandry-breed-an-animal" = "Tortolitos";
-"husbandry-tame-an-animal" = "Mejores Amigos Para Siempre";
-"husbandry-fishy-business" = "Un Asunto Escamoso";
-"husbandry-tactical-fishing" = "Pesca\nTáctica";
-"husbandry-silk-touch-nest" = "Abejémonos De Aquí";
-"husbandry-safely-harvest-honey" = "Abelante,\nEsta Es Tu\nCasa";
-"husbandry-obtain-netherite-hoe" = "Dedicación Seria";
-"husbandry-animals-bred-pig" = "Cerdo";
-"husbandry-animals-bred-sheep" = "Oveja";
-"husbandry-animals-bred-chicken" = "Gallina";
-"husbandry-animals-bred-cow" = "Vaca";
-"husbandry-animals-bred-mooshroom" = "Mooshroom";
-"husbandry-animals-bred-cat" = "Gato";
-"husbandry-animals-bred-ocelot" = "Ocelote";
-"husbandry-animals-bred-wolf" = "Lobo";
-"husbandry-animals-bred-fox" = "Zorro";
-"husbandry-animals-bred-rabbit" = "Conejo";
-"husbandry-animals-bred-bee" = "Abeja";
-"husbandry-animals-bred-horse" = "Caballo";
-"husbandry-animals-bred-donkey" = "Burro";
-"husbandry-animals-bred-mule" = "Mula";
-"husbandry-animals-bred-llama" = "Llama";
-"husbandry-animals-bred-panda" = "Panda";
-"husbandry-animals-bred-turtle" = "Tortuga";
-"husbandry-animals-bred-strider" = "Strider";
-"husbandry-animals-bred-hoglin" = "Hoglin";
-"husbandry-bred-all-animals" = "De Dos\nEn Dos";
-"husbandry-foods-eaten-bread" = "Pan";
-"husbandry-foods-eaten-cooked-porkchop" = "Chuleta asada";
-"husbandry-foods-eaten-porkchop" = "Chuleta cruda";
-"husbandry-foods-eaten-cooked-beef" = "Bistec asado";
-"husbandry-foods-eaten-beef" = "Bistec crudo";
-"husbandry-foods-eaten-cooked-chicken" = "Pollo asado";
-"husbandry-foods-eaten-chicken" = "Pollo crudo";
-"husbandry-foods-eaten-cooked-mutton" = "Cordero asado";
-"husbandry-foods-eaten-mutton" = "Cordero crudo";
-"husbandry-foods-eaten-cooked-rabbit" = "Conejo asado";
-"husbandry-foods-eaten-rabbit" = "Conejo crudo";
-"husbandry-foods-eaten-cooked-cod" = "Bacalao asado";
-"husbandry-foods-eaten-cod" = "Bacalao crudo";
-"husbandry-foods-eaten-tropical-fish" = "Pez tropical";
-"husbandry-foods-eaten-cooked-salmon" = "Salmón asado";
-"husbandry-foods-eaten-salmon" = "Salmón crudo";
-"husbandry-foods-eaten-pufferfish" = "Pez globo";
-"husbandry-foods-eaten-cookie" = "Galleta";
-"husbandry-foods-eaten-pumpkin-pie" = "Pastel de calabaza";
-"husbandry-foods-eaten-apple" = "Manzana";
-"husbandry-foods-eaten-golden-apple" = "Manzana de oro";
-"husbandry-foods-eaten-enchanted-golden-apple" = "Manzana de oro encantada";
-"husbandry-foods-eaten-golden-carrot" = "Zanahoria de oro";
-"husbandry-foods-eaten-carrot" = "Zanahoria";
-"husbandry-foods-eaten-melon-slice" = "Rebanada de sandía";
-"husbandry-foods-eaten-baked-potato" = "Papa horneada";
-"husbandry-foods-eaten-potato" = "Papa";
-"husbandry-foods-eaten-poisonous-potato" = "Papa venenosa";
-"husbandry-foods-eaten-beetroot" = "Betabel";
-"husbandry-foods-eaten-sweet-berries" = "Bayas dulces";
-"husbandry-foods-eaten-chorus-fruit" = "Fruta de chorus";
-"husbandry-foods-eaten-mushroom-stew" = "Sopa de hongos";
-"husbandry-foods-eaten-suspicious-stew" = "Sopa sospechosa";
-"husbandry-foods-eaten-rabbit-stew" = "Sopa de conejo";
-"husbandry-foods-eaten-beetroot-soup" = "Sopa de betabel";
-"husbandry-foods-eaten-dried-kelp" = "Algas secas";
-"husbandry-foods-eaten-honey-bottle" = "Botella de miel";
-"husbandry-foods-eaten-rotten-flesh" = "Carne podrida";
-"husbandry-foods-eaten-spider-eye" = "Ojo de araña";
-"husbandry-balanced-diet" = "Una Dieta Balanceada";
-"husbandry-cats-textures/entity/cat/jellie.png" = "Jellie";
-"husbandry-cats-textures/entity/cat/calico.png" = "Calico";
-"husbandry-cats-textures/entity/cat/red.png" = "Red";
-"husbandry-cats-textures/entity/cat/black.png" = "Tuxedo";
-"husbandry-cats-textures/entity/cat/white.png" = "White";
-"husbandry-cats-textures/entity/cat/ragdoll.png" = "Ragdoll";
-"husbandry-cats-textures/entity/cat/british-shorthair.png" = "British";
-"husbandry-cats-textures/entity/cat/tabby.png" = "Tabby";
-"husbandry-cats-textures/entity/cat/all-black.png" = "Black";
-"husbandry-cats-textures/entity/cat/persian.png" = "Persian";
-"husbandry-cats-textures/entity/cat/siamese.png" = "Siamese";
-"husbandry-complete-catalogue" = "Un Gatálogo Completo";
-
-//1.19
-"husbandry-axolotl-in-a-bucket" = "El Depredador Más Lindo";
-"husbandry-kill-axolotl-target" = "¡El Poder Curativo De La Amistad!";
-"husbandry-make-a-sign-glow" = "¡Brillante\nIdea!";
-"husbandry-wax-on" = "Dar Cera";
-"husbandry-wax-off" = "Pulir Cera";
-"husbandry-ride-a-boat-with-a-goat" = "¡Cabra A La Vista!";
-"husbandry-animals-bred-goat" = "Cabra";
-"husbandry-animals-bred-axolotl" = "Ajolote";
-"husbandry-animals-bred-frog" = "Rana";
-"husbandry-allay-deliver-item-to-player" = "Yo Soy Tu Amigo Fiel";
-"husbandry-allay-deliver-cake-to-note-block" = "¡Cumpleaños Feliz!";
-"husbandry-froglights" = "¡Combinando Nuestros\nPoderes!";
-"husbandry-leash-all-frog-variants" = "Los Tres Mosqueteros";
-"husbandry-tadpole-in-a-bucket" = "Croac-croac";
-
-/* Minecraft Advancements */
-"minecraft-root" = "Minecraft";
-"minecraft-mine-stone" = "La Edad De Piedra";
-"minecraft-upgrade-tools" = "Mejorando Herramientas";
-"minecraft-iron-tools" = "¿No Es Hierrónico?";
-"minecraft-smelt-iron" = "La Edad De Hierro";
-"minecraft-mine-diamond" = "¡DIAMANTES!";
-"minecraft-lava-bucket" = "¡La Cosa Está Que Arde!";
-"minecraft-form-obsidian" = "Mente\nFría";
-"minecraft-enter-the-nether" = "Tenemos Que Ir Más Profundo";
-"minecraft-obtain-armor" = "A Vestirse";
-"minecraft-shiny-gear" = "Cúbreme Con Diamantes";
-"minecraft-cure-zombie-villager" = "Zombiólogo";
-"minecraft-deflect-arrow" = "Hoy No, Gracias";
-"minecraft-follow-ender-eye" = "Ojo Espía";
-"minecraft-enter-the-end" = "¿Se Acabó?";
-"minecraft-enchant-item" = "Aprendiz De Mago";
-
-/* Nether Advancements */
-"nether-root" = "El Nether";
-"nether-find-fortress" = "Una Terrible Fortaleza";
-"nether-find-bastion" = "Qué Tiempos Aquellos";
-"nether-loot-bastion" = "Guerra De Cerdos";
-"nether-obtain-crying-obsidian" = "¿Quién Está Cortando\nCebollas?";
-"nether-charge-respawn-anchor" = "No \"Siete\" Vidas\nExactamente ";
-"nether-use-lodestone" = "Magnetita, Llévame\nA Casita";
-"nether-return-to-sender" = "Devolver Al Remitente";
-"nether-netherite-armor" = "Cúbreme Con Netherita";
-"nether-visited-nether-wastes" = "Desiertos del Nether";
-"nether-visited-crimson-forest" = "Bosque carmesí";
-"nether-visited-warped-forest" = "Bosque distorsionado";
-"nether-visited-basalt-deltas" = "Deltas de basalto";
-"nether-visited-soul-sand-valley" = "Valle de almas";
-"nether-explore-nether" = "Turismo Infernal";
-"nether-obtain-ancient-debris" = "Oculto En\nLas Profundidades";
-"nether-distract-piglin" = "Mi Precioso...";
-"nether-obtain-blaze-rod" = "Jugando Con Fuego";
-"nether-brew-potion" = "Destilería Local";
-"nether-fast-travel" = "Burbuja Subespacial";
-"nether-uneasy-alliance" = "Falsa\nAlianza";
-"nether-ride-strider" = "¡Un Bote Con Patas!";
-"nether-ride-strider-in-overworld-lava" = "Como en Casa";
-"nether-get-wither-skull" = "Por Una Cabeza";
-"nether-summon-wither" = "Dr.\nWitherstein";
-"nether-create-beacon" = "Hágase\nLa Luz";
-"nether-create-full-beacon" = "Faroneitor";
-"nether-all-potions" = "Mezcla Explosiva";
-"nether-all-effects" = "¿Cómo Llegamos\nHasta Aquí?";
+"overlay.bar" = "Alternar Barra de Páginas";
+"overlay.background" = "Color del Fondo del Overlay";
+"overlay.complete.title" = "¡Los %d Logros Completos!";
+"overlay.complete.message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos Los Logros";
+"overlay.complete.stat.elytra" = "KM";
+"overlay.complete.stat.bread" = "Comido";
+"overlay.complete.stat.enchant" = "Ench'ed";
+"overlay.complete.stat.pearl" = "Tirado";
+"overlay.complete.stat.temples" = "Templos";
+"overlay.complete.stats" = "Run Estadísticas";
+"overlay.complete.time" = "%@\nIGT Aproximado";
+"overlay.stat.row.pos" = "Posición de la Fila Estadísticas";
+"overlay.stat.row.pos.left" = "Izquierda";
+"overlay.stat.row.pos.right" = "Derecha";
+"overlay.toggle" = "Alternar Overlay";
+
+"potion.invisibility" = "Poción de Invisibilidad";
+"potion.leaping" = "Poción de Salto";
+"potion.night_vision" = "Poción de Visión Nocturna";
+"potion.slow_falling" = "Poción de Caída Lenta";
+"potion.slowness" = "Poción de Lentitud";
+"potion.strength" = "Poción de Fuerza";
+"potion.swiftness" = "Poción de Velocidad";
+"potion.water_breathing" = "Poción de Apnea";
+"potion.weakness" = "Poción de Debilidad";
+
+"settings.notes" = "Notas";
+"settings.overlay" = "Overlay";
+"settings.theme" = "Tema";
+"settings.tracking" = "Seguimiento";
+"settings.updater" = "Actualizaciones";
+"settings.updater.auto.check" = "Revisar las Actualizaciones\nAutomaticamente";
+"settings.updater.check" = "Buscar Actualizaciones";
+"settings.updater.last.checked" = "Revisado Por Ultima Vez:";
+
+"statistic.ancient_debris" = "Escombros: %d\nTNT: %d";
+"statistic.ancient_debris.done" = "Hecho Con Netherita";
+"statistic.god_apple.obtain" = "Obtenlo";
+"statistic.god_apple.obtained" = "Obtenido";
+"statistic.shells" = "Conchas\n%d / 8";
+"statistic.shells.crafted" = "Conducto Crafteado";
+"statistic.trident.awaiting" = "Sin Trueno";
+"statistic.trident.obtain" = "Obten\nUn Tridente";
+"statistic.trident.thunder" = "Con Trueno";
+"statistic.wither.killed" = "Ha Sido Asesinado";
+"statistic.wither.skulls" = "Calaveras\n%d / 3";
+
+"theme.background.color" = "Color del Fondo";
+"theme.copy" = "Copiar al Personalizado";
+"theme.custom" = "Personalizado";
+"theme.foreground.color" = "Color del Frente";
+"theme.presets" = "Predeterminados";
+"theme.presets.berry" = "Baya";
+"theme.presets.blazed" = "Fuego";
+"theme.presets.brick" = "Ladrillo";
+"theme.presets.dark.mode" = "Obscuro";
+"theme.presets.ender.pearl" = "Perla de Ender";
+"theme.presets.github.dark" = "Obscuro del GitHub";
+"theme.presets.high.contrast" = "Alto Contraste";
+"theme.presets.light.mode" = "Claro";
+"theme.text.color" = "Color del Texto";
+
+"tracking.attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";
+"tracking.browse" = "Buscar";
+"tracking.custom.saves" = "Carpeta de Mundos Personalizada";
+"tracking.enter.directory" = "Ingresar la dirección a la Carpeta";
+"tracking.game.version" = "Versión del Juego";
+"tracking.seamless" = "Rastreo Automático";
+
+"advancement.adventure.root" = "Aventura";
+"advancement.adventure.kill.a.mob" = "Cazamonstruos";
+"advancement.adventure.ol.betsy" = "La Vieja\nBetsy";
+"advancement.adventure.whos.the.pillager.now" = "El Saqueador Saqueado";
+"advancement.adventure.sleep.in.bed" = "Dulces\nSueños";
+"advancement.adventure.trade" = "¡Qué Buen Trato!";
+"advancement.adventure.two.birds.one.arrow" = "Dos Pájaros De Un Tiro";
+"advancement.adventure.arbalistic" = "Ballestería Avanzada";
+"advancement.adventure.honey.block.slide" = "Situación Pegajosa";
+"advancement.adventure.bullseye" = "¡Ojo De Halcón!";
+"advancement.adventure.shoot.arrow" = "En El Punto De Mira";
+"advancement.adventure.sniper.duel" = "Duelo De Francocazadores";
+"advancement.adventure.voluntary.exile" = "Exilio Voluntario";
+"advancement.adventure.hero.of.the.village" = "Héroe De La Aldea";
+"advancement.adventure.throw.trident" = "Jugada Maestra";
+"advancement.adventure.very.very.frightening" = "Impactrueno";
+"advancement.adventure.summon.iron.golem" = "Ayuda Contratada";
+"advancement.adventure.totem.of.undying" = "Post Mortem";
+"advancement.adventure.biomes.visited.plains" = "Llanura";
+"advancement.adventure.biomes.visited.forest" = "Bosque";
+"advancement.adventure.biomes.visited.wooded.hills" = "Colinas frondosas";
+"advancement.adventure.biomes.visited.birch.forest" = "Abedular";
+"advancement.adventure.biomes.visited.birch.forest.hills" = "Colinas de abedular";
+"advancement.adventure.biomes.visited.dark.forest" = "Bosque oscuro";
+"advancement.adventure.biomes.visited.swamp" = "Pantano";
+"advancement.adventure.biomes.visited.taiga" = "Taiga";
+"advancement.adventure.biomes.visited.taiga.hills" = "Colinas de taiga";
+"advancement.adventure.biomes.visited.giant.tree.taiga" = "Taiga con árboles gigantes";
+"advancement.adventure.biomes.visited.giant.tree.taiga.hills" = "Colinas de taiga con árboles gigantes";
+"advancement.adventure.biomes.visited.snowy.taiga" = "Taiga nevada";
+"advancement.adventure.biomes.visited.snowy.taiga.hills" = "Colinas de taiga nevada";
+"advancement.adventure.biomes.visited.snowy.tundra" = "Tundra nevada";
+"advancement.adventure.biomes.visited.snowy.mountains" = "Montañas nevadas";
+"advancement.adventure.biomes.visited.snowy.beach" = "Playa nevada";
+"advancement.adventure.biomes.visited.frozen.river" = "Río congelado";
+"advancement.adventure.biomes.visited.river" = "Río";
+"advancement.adventure.biomes.visited.desert" = "Desierto";
+"advancement.adventure.biomes.visited.desert.hills" = "Colinas de desierto";
+"advancement.adventure.biomes.visited.savanna" = "Sabana";
+"advancement.adventure.biomes.visited.savanna.plateau" = "Meseta de sabana";
+"advancement.adventure.biomes.visited.jungle" = "Jungla";
+"advancement.adventure.biomes.visited.jungle.edge" = "Borde de jungla";
+"advancement.adventure.biomes.visited.jungle.hills" = "Colinas de jungla";
+"advancement.adventure.biomes.visited.bamboo.jungle" = "Jungla de bambú";
+"advancement.adventure.biomes.visited.bamboo.jungle.hills" = "Colinas de jungla de bambú";
+"advancement.adventure.biomes.visited.stone.shore" = "Costa rocosa";
+"advancement.adventure.biomes.visited.mountains" = "Montañas";
+"advancement.adventure.biomes.visited.wooded.mountains" = "Montañas frondosas";
+"advancement.adventure.biomes.visited.badlands" = "Badlands";
+"advancement.adventure.biomes.visited.badlands.plateau" = "Meseta de badlands";
+"advancement.adventure.biomes.visited.wooded.badlands.plateau" = "Meseta de badlands frondosa";
+"advancement.adventure.biomes.visited.mushroom.fields" = "Campo fúngico";
+"advancement.adventure.biomes.visited.mushroom.field.shore" = "Costa de campo fúngico";
+"advancement.adventure.biomes.visited.beach" = "Playa";
+"advancement.adventure.biomes.visited.warm.ocean" = "Océano cálido";
+"advancement.adventure.biomes.visited.lukewarm.ocean" = "Océano tibio";
+"advancement.adventure.biomes.visited.deep.lukewarm.ocean" = "Océano tibio profundo";
+"advancement.adventure.biomes.visited.cold.ocean" = "Océano frío";
+"advancement.adventure.biomes.visited.deep.cold.ocean" = "Océano frío profundo";
+"advancement.adventure.biomes.visited.deep.frozen.ocean" = "Océano congelado profundo";
+"advancement.adventure.adventuring.time" = "Hora De Aventura";
+"advancement.adventure.monsters.killed.creeper" = "Creeper";
+"advancement.adventure.monsters.killed.zombie" = "Zombi";
+"advancement.adventure.monsters.killed.skeleton" = "Esqueleto";
+"advancement.adventure.monsters.killed.husk" = "Zombi momificado";
+"advancement.adventure.monsters.killed.drowned" = "Ahogado";
+"advancement.adventure.monsters.killed.stray" = "Esqueleto glacial";
+"advancement.adventure.monsters.killed.spider" = "Araña";
+"advancement.adventure.monsters.killed.cave.spider" = "Araña de cueva";
+"advancement.adventure.monsters.killed.enderman" = "Enderman";
+"advancement.adventure.monsters.killed.slime" = "Slime";
+"advancement.adventure.monsters.killed.magma.cube" = "Cubo de magma";
+"advancement.adventure.monsters.killed.ghast" = "Ghast";
+"advancement.adventure.monsters.killed.blaze" = "Blaze";
+"advancement.adventure.monsters.killed.wither.skeleton" = "Esqueleto del Wither";
+"advancement.adventure.monsters.killed.piglin" = "Piglin";
+"advancement.adventure.monsters.killed.zombified.piglin" = "Piglin zombificado";
+"advancement.adventure.monsters.killed.hoglin" = "Hoglin";
+"advancement.adventure.monsters.killed.zoglin" = "Zoglin";
+"advancement.adventure.monsters.killed.silverfish" = "Pez de plata";
+"advancement.adventure.monsters.killed.ender.dragon" = "Ender Dragon";
+"advancement.adventure.monsters.killed.endermite" = "Endermite";
+"advancement.adventure.monsters.killed.shulker" = "Shulker";
+"advancement.adventure.monsters.killed.wither" = "Wither";
+"advancement.adventure.monsters.killed.phantom" = "Phantom";
+"advancement.adventure.monsters.killed.guardian" = "Guardián";
+"advancement.adventure.monsters.killed.elder.guardian" = "Guardián anciano";
+"advancement.adventure.monsters.killed.zombie.villager" = "Aldeano zombi";
+"advancement.adventure.monsters.killed.witch" = "Bruja";
+"advancement.adventure.monsters.killed.pillager" = "Saqueador";
+"advancement.adventure.monsters.killed.vindicator" = "Vindicador";
+"advancement.adventure.monsters.killed.evoker" = "Invocador";
+"advancement.adventure.monsters.killed.vex" = "Vex";
+"advancement.adventure.monsters.killed.ravager" = "Devastador";
+"advancement.adventure.kill.all.mobs" = "Falta Daño";
+"advancement.adventure.trade.at.world.height" = "Comerciante Estrella";
+"advancement.adventure.fall.from.world.height" = "Cuevas Y Acantilados";
+"advancement.adventure.play.jukebox.in.meadows" = "El Dulce Cantar";
+"advancement.adventure.spyglass.at.parrot" = "¿Es Un Pájaro?";
+"advancement.adventure.spyglass.at.ghast" = "¿Es Un Globo?";
+"advancement.adventure.spyglass.at.dragon" = "¿Es Un Avión?";
+"advancement.adventure.biomes.visited.old.growth.birch.forest" = "Abedular ancestral";
+"advancement.adventure.biomes.visited.mangrove.swamp" = "Manglar";
+"advancement.adventure.biomes.visited.old.growth.pine.taiga" = "Taiga de pinos ancestrales";
+"advancement.adventure.biomes.visited.old.growth.spruce.taiga" = "Taiga de abetos ancestral";
+"advancement.adventure.biomes.visited.grove" = "Arboleda";
+"advancement.adventure.biomes.visited.ice.spikes" = "Picos de hielo";
+"advancement.adventure.biomes.visited.snowy.plains" = "Llanura nevada";
+"advancement.adventure.biomes.visited.snowy.slopes" = "Ladera nevada";
+"advancement.adventure.biomes.visited.frozen.peaks" = "Cumbres heladas";
+"advancement.adventure.biomes.visited.jagged.peaks" = "Cumbres escarpadas";
+"advancement.adventure.biomes.visited.stony.peaks" = "Cumbres rocosas";
+"advancement.adventure.biomes.visited.stony.shore" = "Costa rocosa";
+"advancement.adventure.biomes.visited.windswept.hills" = "Colinas ventosas";
+"advancement.adventure.biomes.visited.flower.forest" = "Bosque floral";
+"advancement.adventure.biomes.visited.sunflower.plains" = "Llanura de girasoles";
+"advancement.adventure.biomes.visited.meadow" = "Pradera";
+"advancement.adventure.biomes.visited.windswept.savanna" = "Sabana ventosa";
+"advancement.adventure.biomes.visited.windswept.forest" = "Bosque ventoso";
+"advancement.adventure.biomes.visited.windswept.gravelly.hills" = "Colinas ventosas de grava";
+"advancement.adventure.biomes.visited.ocean" = "Océano";
+"advancement.adventure.biomes.visited.frozen.ocean" = "Océano congelado";
+"advancement.adventure.biomes.visited.deep.ocean" = "Océano profundo";
+"advancement.adventure.biomes.visited.sparse.jungle" = "Jungla dispersa";
+"advancement.adventure.biomes.visited.wooded.badlands" = "Badlands frondosa";
+"advancement.adventure.biomes.visited.eroded.badlands" = "Badlands erosionadas";
+"advancement.adventure.biomes.visited.dripstone.caves" = "Cuevas kársticas";
+"advancement.adventure.biomes.visited.lush.caves" = "Cuevas frondosas";
+"advancement.adventure.biomes.visited.deep.dark" = "Oscuridad profunda";
+"advancement.adventure.monsters.killed.piglin.brute" = "Piglin Bruto";
+"advancement.adventure.lightning.rod.with.villager.no.fire" = "Protector De Sobretensión";
+"advancement.adventure.walk.on.powder.snow.with.leather.boots" = "Ligero Como Conejo";
+"advancement.adventure.avoid.vibration" = "Discreción\n100";
+"advancement.adventure.kill.mob.near.sculk.catalyst" = "Se Propaga";
+
+"advancement.end.root" = "El End";
+"advancement.end.kill.dragon" = "La Libertad Del End";
+"advancement.end.dragon.egg" = "La Nueva Generación";
+"advancement.end.enter.end.gateway" = "Puerta\nRemota";
+"advancement.end.find.end.city" = "La Ciudad Al Final Del Juego";
+"advancement.end.find.end.city.19" = "La Ciudad Al Final Del Juego";
+"advancement.end.dragon.breath" = "¡Qué Mal Aliento!";
+"advancement.end.respawn.dragon" = "¿Es Un Déjà Vu?";
+"advancement.end.elytra" = "Al Infinito...\n¡y Más Allá!";
+"advancement.end.levitate" = "Lindas Vistas Desde Aquí";
+
+"advancement.husbandry.root" = "Prosperidad";
+"advancement.husbandry.plant.seed" = "Crecen Tan Rápido...";
+"advancement.husbandry.breed.an.animal" = "Tortolitos";
+"advancement.husbandry.tame.an.animal" = "Mejores Amigos Para Siempre";
+"advancement.husbandry.fishy.business" = "Un Asunto Escamoso";
+"advancement.husbandry.tactical.fishing" = "Pesca\nTáctica";
+"advancement.husbandry.silk.touch.nest" = "Abejémonos De Aquí";
+"advancement.husbandry.safely.harvest.honey" = "Abelante,\nEsta Es Tu\nCasa";
+"advancement.husbandry.obtain.netherite.hoe" = "Dedicación Seria";
+"advancement.husbandry.animals.bred.pig" = "Cerdo";
+"advancement.husbandry.animals.bred.sheep" = "Oveja";
+"advancement.husbandry.animals.bred.chicken" = "Gallina";
+"advancement.husbandry.animals.bred.cow" = "Vaca";
+"advancement.husbandry.animals.bred.mooshroom" = "Mooshroom";
+"advancement.husbandry.animals.bred.cat" = "Gato";
+"advancement.husbandry.animals.bred.ocelot" = "Ocelote";
+"advancement.husbandry.animals.bred.wolf" = "Lobo";
+"advancement.husbandry.animals.bred.fox" = "Zorro";
+"advancement.husbandry.animals.bred.rabbit" = "Conejo";
+"advancement.husbandry.animals.bred.bee" = "Abeja";
+"advancement.husbandry.animals.bred.horse" = "Caballo";
+"advancement.husbandry.animals.bred.donkey" = "Burro";
+"advancement.husbandry.animals.bred.mule" = "Mula";
+"advancement.husbandry.animals.bred.llama" = "Llama";
+"advancement.husbandry.animals.bred.panda" = "Panda";
+"advancement.husbandry.animals.bred.turtle" = "Tortuga";
+"advancement.husbandry.animals.bred.strider" = "Strider";
+"advancement.husbandry.animals.bred.hoglin" = "Hoglin";
+"advancement.husbandry.bred.all.animals" = "De Dos\nEn Dos";
+"advancement.husbandry.foods.eaten.bread" = "Pan";
+"advancement.husbandry.foods.eaten.cooked.porkchop" = "Chuleta asada";
+"advancement.husbandry.foods.eaten.porkchop" = "Chuleta cruda";
+"advancement.husbandry.foods.eaten.cooked.beef" = "Bistec asado";
+"advancement.husbandry.foods.eaten.beef" = "Bistec crudo";
+"advancement.husbandry.foods.eaten.cooked.chicken" = "Pollo asado";
+"advancement.husbandry.foods.eaten.chicken" = "Pollo crudo";
+"advancement.husbandry.foods.eaten.cooked.mutton" = "Cordero asado";
+"advancement.husbandry.foods.eaten.mutton" = "Cordero crudo";
+"advancement.husbandry.foods.eaten.cooked.rabbit" = "Conejo asado";
+"advancement.husbandry.foods.eaten.rabbit" = "Conejo crudo";
+"advancement.husbandry.foods.eaten.cooked.cod" = "Bacalao asado";
+"advancement.husbandry.foods.eaten.cod" = "Bacalao crudo";
+"advancement.husbandry.foods.eaten.tropical.fish" = "Pez tropical";
+"advancement.husbandry.foods.eaten.cooked.salmon" = "Salmón asado";
+"advancement.husbandry.foods.eaten.salmon" = "Salmón crudo";
+"advancement.husbandry.foods.eaten.pufferfish" = "Pez globo";
+"advancement.husbandry.foods.eaten.cookie" = "Galleta";
+"advancement.husbandry.foods.eaten.pumpkin.pie" = "Pastel de calabaza";
+"advancement.husbandry.foods.eaten.apple" = "Manzana";
+"advancement.husbandry.foods.eaten.golden.apple" = "Manzana de oro";
+"advancement.husbandry.foods.eaten.enchanted.golden.apple" = "Manzana de oro encantada";
+"advancement.husbandry.foods.eaten.golden.carrot" = "Zanahoria de oro";
+"advancement.husbandry.foods.eaten.carrot" = "Zanahoria";
+"advancement.husbandry.foods.eaten.melon.slice" = "Rebanada de sandía";
+"advancement.husbandry.foods.eaten.baked.potato" = "Papa horneada";
+"advancement.husbandry.foods.eaten.potato" = "Papa";
+"advancement.husbandry.foods.eaten.poisonous.potato" = "Papa venenosa";
+"advancement.husbandry.foods.eaten.beetroot" = "Betabel";
+"advancement.husbandry.foods.eaten.sweet.berries" = "Bayas dulces";
+"advancement.husbandry.foods.eaten.chorus.fruit" = "Fruta de chorus";
+"advancement.husbandry.foods.eaten.mushroom.stew" = "Sopa de hongos";
+"advancement.husbandry.foods.eaten.suspicious.stew" = "Sopa sospechosa";
+"advancement.husbandry.foods.eaten.rabbit.stew" = "Sopa de conejo";
+"advancement.husbandry.foods.eaten.beetroot.soup" = "Sopa de betabel";
+"advancement.husbandry.foods.eaten.dried.kelp" = "Algas secas";
+"advancement.husbandry.foods.eaten.honey.bottle" = "Botella de miel";
+"advancement.husbandry.foods.eaten.rotten.flesh" = "Carne podrida";
+"advancement.husbandry.foods.eaten.spider.eye" = "Ojo de araña";
+"advancement.husbandry.balanced.diet" = "Una Dieta Balanceada";
+"advancement.husbandry.cats.textures/entity/cat/jellie.png" = "Jellie";
+"advancement.husbandry.cats.textures/entity/cat/calico.png" = "Calico";
+"advancement.husbandry.cats.textures/entity/cat/red.png" = "Red";
+"advancement.husbandry.cats.textures/entity/cat/black.png" = "Tuxedo";
+"advancement.husbandry.cats.textures/entity/cat/white.png" = "White";
+"advancement.husbandry.cats.textures/entity/cat/ragdoll.png" = "Ragdoll";
+"advancement.husbandry.cats.textures/entity/cat/british.shorthair.png" = "British";
+"advancement.husbandry.cats.textures/entity/cat/tabby.png" = "Tabby";
+"advancement.husbandry.cats.textures/entity/cat/all.black.png" = "Black";
+"advancement.husbandry.cats.textures/entity/cat/persian.png" = "Persian";
+"advancement.husbandry.cats.textures/entity/cat/siamese.png" = "Siamese";
+"advancement.husbandry.complete.catalogue" = "Un Gatálogo Completo";
+"advancement.husbandry.axolotl.in.a.bucket" = "El Depredador Más Lindo";
+"advancement.husbandry.kill.axolotl.target" = "¡El Poder Curativo De La Amistad!";
+"advancement.husbandry.make.a.sign.glow" = "¡Brillante\nIdea!";
+"advancement.husbandry.wax.on" = "Dar Cera";
+"advancement.husbandry.wax.off" = "Pulir Cera";
+"advancement.husbandry.ride.a.boat.with.a.goat" = "¡Cabra A La Vista!";
+"advancement.husbandry.animals.bred.goat" = "Cabra";
+"advancement.husbandry.animals.bred.axolotl" = "Ajolote";
+"advancement.husbandry.animals.bred.frog" = "Rana";
+"advancement.husbandry.allay.deliver.item.to.player" = "Yo Soy Tu Amigo Fiel";
+"advancement.husbandry.allay.deliver.cake.to.note.block" = "¡Cumpleaños Feliz!";
+"advancement.husbandry.froglights" = "¡Combinando Nuestros\nPoderes!";
+"advancement.husbandry.leash.all.frog.variants" = "Los Tres Mosqueteros";
+"advancement.husbandry.tadpole.in.a.bucket" = "Croac.croac";
+
+"advancement.minecraft.root" = "Minecraft";
+"advancement.minecraft.mine.stone" = "La Edad De Piedra";
+"advancement.minecraft.upgrade.tools" = "Mejorando Herramientas";
+"advancement.minecraft.iron.tools" = "¿No Es Hierrónico?";
+"advancement.minecraft.smelt.iron" = "La Edad De Hierro";
+"advancement.minecraft.mine.diamond" = "¡DIAMANTES!";
+"advancement.minecraft.lava.bucket" = "¡La Cosa Está Que Arde!";
+"advancement.minecraft.form.obsidian" = "Mente\nFría";
+"advancement.minecraft.enter.the.nether" = "Tenemos Que Ir Más Profundo";
+"advancement.minecraft.obtain.armor" = "A Vestirse";
+"advancement.minecraft.shiny.gear" = "Cúbreme Con Diamantes";
+"advancement.minecraft.cure.zombie.villager" = "Zombiólogo";
+"advancement.minecraft.deflect.arrow" = "Hoy No, Gracias";
+"advancement.minecraft.follow.ender.eye" = "Ojo Espía";
+"advancement.minecraft.enter.the.end" = "¿Se Acabó?";
+"advancement.minecraft.enchant.item" = "Aprendiz De Mago";
+
+"advancement.nether.root" = "El Nether";
+"advancement.nether.find.fortress" = "Una Terrible Fortaleza";
+"advancement.nether.find.bastion" = "Qué Tiempos Aquellos";
+"advancement.nether.loot.bastion" = "Guerra De Cerdos";
+"advancement.nether.obtain.crying.obsidian" = "¿Quién Está Cortando\nCebollas?";
+"advancement.nether.charge.respawn.anchor" = "No \"Siete\" Vidas\nExactamente ";
+"advancement.nether.use.lodestone" = "Magnetita, Llévame\nA Casita";
+"advancement.nether.return.to.sender" = "Devolver Al Remitente";
+"advancement.nether.netherite.armor" = "Cúbreme Con Netherita";
+"advancement.nether.visited.nether.wastes" = "Desiertos del Nether";
+"advancement.nether.visited.crimson.forest" = "Bosque carmesí";
+"advancement.nether.visited.warped.forest" = "Bosque distorsionado";
+"advancement.nether.visited.basalt.deltas" = "Deltas de basalto";
+"advancement.nether.visited.soul.sand.valley" = "Valle de almas";
+"advancement.nether.explore.nether" = "Turismo Infernal";
+"advancement.nether.obtain.ancient.debris" = "Oculto En\nLas Profundidades";
+"advancement.nether.distract.piglin" = "Mi Precioso...";
+"advancement.nether.obtain.blaze.rod" = "Jugando Con Fuego";
+"advancement.nether.brew.potion" = "Destilería Local";
+"advancement.nether.fast.travel" = "Burbuja Subespacial";
+"advancement.nether.uneasy.alliance" = "Falsa\nAlianza";
+"advancement.nether.ride.strider" = "¡Un Bote Con Patas!";
+"advancement.nether.ride.strider.in.overworld.lava" = "Como en Casa";
+"advancement.nether.get.wither.skull" = "Por Una Cabeza";
+"advancement.nether.summon.wither" = "Dr.\nWitherstein";
+"advancement.nether.create.beacon" = "Hágase\nLa Luz";
+"advancement.nether.create.full.beacon" = "Faroneitor";
+"advancement.nether.all.potions" = "Mezcla Explosiva";
+"advancement.nether.all.effects" = "¿Cómo Llegamos\nHasta Aquí?";

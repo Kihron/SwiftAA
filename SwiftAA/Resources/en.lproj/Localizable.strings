@@ -1,541 +1,386 @@
-/* No comment provided by engineer. */
-"about-button" = "About SwiftAA";
+"player" = "Player";
+"never" = "Never";
 
-/* No comment provided by engineer. */
-"about-description" = "All Advancements Tracker for macOS";
+"app.title" = "SwiftAA";
 
-/* No comment provided by engineer. */
-"about-copyright" = "Copyright © 2022 Kihron, Slackow.";
+"about.button" = "About SwiftAA";
+"about.description" = "All Advancements Tracker for macOS";
+"about.copyright" = "Copyright © 2022 Kihron, Slackow.";
 
-/* No comment provided by engineer. */
-"donate-message" = "Support us on Ko-Fi";
+"donate.message" = "Support us on Ko-Fi";
 
-/* Error: Switch to Minecraft Window */
-"error-enter-minecraft" = "Tab into Minecraft to start tracking";
+"error.enter.minecraft" = "Tab into Minecraft to start tracking";
 
-/* Title: all advancments goal */
-"goal-advancements" = "Advancements";
+"goal.advancements" = "Advancements";
+"goal.animals.bred" = "Animals Bred";
+"goal.biomes.visited" = "Biomes Visited";
+"goal.cats" = "Cats";
+"goal.foods.eaten" = "Foods Eaten";
+"goal.monsters.killed" = "Monsters Killed";
+"goal.nether" = "Visited";
 
-/* Title: animals bred goal */
-"goal-animals-bred" = "Animals Bred";
+"notes.clear.all" = "Clear All";
+"notes.none" = "No Notes Recorded";
+"notes.panel.view.bottom.title" = "Notes";
+"notes.panel.view.top.title" = "Waypoints";
+"notes.select.world" = "Select a world to see its notes...";
 
-/* Title: biomes visited goal */
-"goal-biomes-visited" = "Biomes Visited";
-
-/* Title: cats goal */
-"goal-cats" = "Cats";
-
-/* Title: foods eaten goal */
-"goal-foods-eaten" = "Foods Eaten";
-
-/* Title: monsters killed goal */
-"goal-monsters-killed" = "Monsters Killed";
-
-/* Title: nether biomes visited goal */
-"goal-nether" = "Visited";
-
-/* Button: delete all notes */
-"notes-clear-all" = "Clear All";
-
-/* Title: no notes available/recorded */
-"notes-none" = "No Notes Recorded";
-
-/* Title: Notes Menu */
-"notes-panel-view-bottom-title" = "Notes";
-
-/* Title: Waypoint Menu */
-"notes-panel-view-top-title" = "Waypoints";
-
-/* No comment provided by engineer. */
-"notes-select-world" = "Select a world to see its notes...";
-
-/* No comment provided by engineer. */
 "overlay" = "Overlay";
-
-/* No comment provided by engineer. */
-"overlay-bar" = "Show Page Bar";
-
-/* No comment provided by engineer. */
-"overlay-background" = "Overlay Background Color";
-
-/* No comment provided by engineer. */
-"overlay-complete-title" = "All %@ Advancements Complete!";
-
-/* No comment provided by engineer. */
-"overlay-complete-message" = "%@ has completed\nMinecraft: Java Edition (%@)\nAll Advancements";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-elytra" = "KM";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-bread" = "Eaten";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-enchant" = "Ench'ed";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-pearl" = "Thrown";
-
-/* No comment provided by engineer. */
-"overlay-complete-stat-temples" = "Temples";
-
-/* No comment provided by engineer. */
-"overlay-complete-stats" = "Run Stats";
-
-/* No comment provided by engineer. */
-"overlay-complete-time" = "%@\nApproximate IGT";
-
-/* No comment provided by engineer. */
-"overlay-stat-row-pos" = "Statistics Row Position";
-
-/* No comment provided by engineer. */
-"overlay-stat-row-pos-left" = "Left";
-
-/* No comment provided by engineer. */
-"overlay-stat-row-pos-right" = "Right";
-
-/* Button: shows/hides overlay */
-"overlay-toggle" = "Toggle Overlay";
-
-/* No comment provided by engineer. */
-"potion-invisibility" = "Potion of Invisibility";
-
-/* No comment provided by engineer. */
-"potion-leaping" = "Potion of Leaping";
-
-/* No comment provided by engineer. */
-"potion-night-vision" = "Potion of Night Vision";
-
-/* No comment provided by engineer. */
-"potion-slow-falling" = "Potion of Slow Falling";
-
-/* No comment provided by engineer. */
-"potion-slowness" = "Potion of Slowness";
-
-/* No comment provided by engineer. */
-"potion-strength" = "Potion of Strength";
-
-/* No comment provided by engineer. */
-"potion-swiftness" = "Potion of Swiftness";
-
-/* No comment provided by engineer. */
-"potion-water-breathing" = "Potion of Water Breathing";
-
-/* No comment provided by engineer. */
-"potion-weakness" = "Potion of Weakness";
-
-/* No comment provided by engineer. */
-"settings-notes" = "Notes";
-
-/* No comment provided by engineer. */
-"settings-overlay" = "Overlay";
-
-/* No comment provided by engineer. */
-"settings-theme" = "Theme";
-
-/* No comment provided by engineer. */
-"settings-tracking" = "Tracking";
-
-/* No comment provided by engineer. */
-"settings-updater" = "Updates";
-
-/* No comment provided by engineer. */
-"settings-updater-auto-check" = "Check for Updates Automatically";
-
-/* No comment provided by engineer. */
-"settings-updater-check" = "Check For Updates";
-
-/* No comment provided by engineer. */
-"settings-updater-last-checked" = "Last Checked";
-
-/* No comment provided by engineer. */
-"stat-ancient-debris" = "Debris: %@\nTNT: %@";
-
-/* No comment provided by engineer. */
-"stat-ancient-debris-done" = "Done With Netherite";
-
-/* No comment provided by engineer. */
-"stat-god-apple-obtain" = "Obtain God Apple";
-
-/* No comment provided by engineer. */
-"stat-god-apple-obtained" = "Obtained God Apple";
-
-/* No comment provided by engineer. */
-"stat-shells" = "Shells\n%@ / 8";
-
-/* No comment provided by engineer. */
-"stat-shells-crafted" = "Conduit Crafted";
-
-/* No comment provided by engineer. */
-"stat-trident-awaiting" = "Awaiting\nThunder";
-
-/* No comment provided by engineer. */
-"stat-trident-obtain" = "Obtain\nTrident";
-
-/* No comment provided by engineer. */
-"stat-trident-thunder" = "Done With Thunder";
-
-/* No comment provided by engineer. */
-"stat-wither-killed" = "Wither Has Been Killed";
-
-/* No comment provided by engineer. */
-"stat-wither-skulls" = "Skulls\n%@ / 3";
-
-/* No comment provided by engineer. */
-"theme-background-color" = "Background Color";
-
-/* Button: copy preset theme to custom */
-"theme-copy" = "Copy to Custom";
-
-/* Title: custom user color scheme */
-"theme-custom" = "Custom";
-
-/* No comment provided by engineer. */
-"theme-foreground-color" = "Foreground Color";
-
-/* Title: preset options for color scheme */
-"theme-presets" = "Presets";
-
-/* Berry Theme */
-"theme-presets-berry" = "Berry";
-
-/* Blazed Theme */
-"theme-presets-blazed" = "Blazed";
-
-/* Brick Theme */
-"theme-presets-brick" = "Brick";
-
-/* Dark Mode Theme */
-"theme-presets-dark" = "Dark";
-
-/* Ender Pearl Theme */
-"theme-presets-ender-pearl" = "Ender Pearl";
-
-/* GitHub Dark Theme */
-"theme-presets-github-dark" = "GitHub Dark";
-
-/* High Contrast Theme */
-"theme-presets-high-contrast" = "High Contrast";
-
-/* Light Mode Theme */
-"theme-presets-light" = "Light";
-
-/* No comment provided by engineer. */
-"theme-text-color" = "Text Color";
-
-/* Attribution message for CTM's AATool for Windows */
-"tracking-attribution" = "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.";
-
-/* Button: browse to select folder */
-"tracking-browse" = "Browse";
-
-/* Title: custom user defined saves directory */
-"tracking-custom-saves" = "Custom Saves Folder";
-
-/* No comment provided by engineer. */
-"tracking-enter-directory" = "Enter Directory";
-
-/* Title: game version */
-"tracking-game-version" = "Game Version";
-
-/* title: automatically tracks active instance */
-"tracking-seamless" = "Seamless Tracking";
-
-/* Adventure Advancements */
-"adventure-root" = "Adventure";
-"adventure-kill-a-mob" = "Monster Hunter";
-"adventure-ol-betsy" = "Ol' Betsy";
-"adventure-whos-the-pillager-now" = "Who's the Pillager Now?";
-"adventure-sleep-in-bed" = "Sweet\nDreams";
-"adventure-trade" = "What a Deal!";
-"adventure-two-birds-one-arrow" = "Two Birds,\nOne Arrow";
-"adventure-arbalistic" = "Arbalistic";
-"adventure-honey-block-slide" = "Sticky Situation";
-"adventure-bullseye" = "Bullseye";
-"adventure-shoot-arrow" = "Take Aim";
-"adventure-sniper-duel" = "Sniper Duel";
-"adventure-voluntary-exile" = "Voluntary Exile";
-"adventure-hero-of-the-village" = "Hero of the Village";
-"adventure-throw-trident" = "A Throwaway Joke";
-"adventure-very-very-frightening" = "Very Very Frightening";
-"adventure-summon-iron-golem" = "Hired Help";
-"adventure-totem-of-undying" = "Postmortal";
-"adventure-biomes-visited-plains" = "Plains";
-"adventure-biomes-visited-forest" = "Forest";
-"adventure-biomes-visited-wooded-hills" = "Wooded Hills";
-"adventure-biomes-visited-birch-forest" = "Birch Forest";
-"adventure-biomes-visited-birch-forest-hills" = "Birch Hills";
-"adventure-biomes-visited-dark-forest" = "Dark Forest";
-"adventure-biomes-visited-swamp" = "Swamp";
-"adventure-biomes-visited-taiga" = "Taiga";
-"adventure-biomes-visited-taiga-hills" = "Taiga Hills";
-"adventure-biomes-visited-giant-tree-taiga" = "Mega Taiga";
-"adventure-biomes-visited-giant-tree-taiga-hills" = "Mega Taiga Hill";
-"adventure-biomes-visited-snowy-taiga" = "Snowy Taiga";
-"adventure-biomes-visited-snowy-taiga-hills" = "Snowy Taiga Hill";
-"adventure-biomes-visited-snowy-tundra" = "Snowy Tundra";
-"adventure-biomes-visited-snowy-mountains" = "Snowy Mountain";
-"adventure-biomes-visited-snowy-beach" = "Snowy Beach";
-"adventure-biomes-visited-frozen-river" = "Frozen River";
-"adventure-biomes-visited-river" = "River";
-"adventure-biomes-visited-desert" = "Desert";
-"adventure-biomes-visited-desert-hills" = "Desert Hills";
-"adventure-biomes-visited-savanna" = "Savanna";
-"adventure-biomes-visited-savanna-plateau" = "Savanna Plat";
-"adventure-biomes-visited-jungle" = "Jungle";
-"adventure-biomes-visited-jungle-edge" = "Jungle Edge";
-"adventure-biomes-visited-jungle-hills" = "Jungle Hills";
-"adventure-biomes-visited-bamboo-jungle" = "Bamboo Jungle";
-"adventure-biomes-visited-bamboo-jungle-hills" = "Bamboo Hills";
-"adventure-biomes-visited-stone-shore" = "Stone Shore";
-"adventure-biomes-visited-mountains" = "Mountains";
-"adventure-biomes-visited-wooded-mountains" = "Wooded Mtn";
-"adventure-biomes-visited-badlands" = "Badlands";
-"adventure-biomes-visited-badlands-plateau" = "Badlands Plateau";
-"adventure-biomes-visited-wooded-badlands-plateau" = "Wooded Plateau";
-"adventure-biomes-visited-mushroom-fields" = "Mushroom Fields";
-"adventure-biomes-visited-mushroom-field-shore" = "Mushroom Shore";
-"adventure-biomes-visited-beach" = "Beach";
-"adventure-biomes-visited-warm-ocean" = "Warm Ocean";
-"adventure-biomes-visited-lukewarm-ocean" = "Lukewarm Ocean";
-"adventure-biomes-visited-deep-lukewarm-ocean" = "Deep Lukewarm";
-"adventure-biomes-visited-cold-ocean" = "Cold Ocean";
-"adventure-biomes-visited-deep-cold-ocean" = "Deep Cold Ocean";
-"adventure-biomes-visited-deep-frozen-ocean" = "Deep Frozen";
-"adventure-adventuring-time" = "Adventuring Time";
-"adventure-monsters-killed-creeper" = "Creeper";
-"adventure-monsters-killed-zombie" = "Zombie";
-"adventure-monsters-killed-skeleton" = "Skeleton";
-"adventure-monsters-killed-husk" = "Husk";
-"adventure-monsters-killed-drowned" = "Drowned";
-"adventure-monsters-killed-stray" = "Stray";
-"adventure-monsters-killed-spider" = "Spider";
-"adventure-monsters-killed-cave-spider" = "Cave Spider";
-"adventure-monsters-killed-enderman" = "Enderman";
-"adventure-monsters-killed-slime" = "Slime";
-"adventure-monsters-killed-magma-cube" = "Magma Cube";
-"adventure-monsters-killed-ghast" = "Ghast";
-"adventure-monsters-killed-blaze" = "Blaze";
-"adventure-monsters-killed-wither-skeleton" = "Wither Skeleton";
-"adventure-monsters-killed-piglin" = "Piglin";
-"adventure-monsters-killed-zombified-piglin" = "Zombie Piglin";
-"adventure-monsters-killed-hoglin" = "Hoglin";
-"adventure-monsters-killed-zoglin" = "Zoglin";
-"adventure-monsters-killed-silverfish" = "Silverfish";
-"adventure-monsters-killed-ender-dragon" = "Ender Dragon";
-"adventure-monsters-killed-endermite" = "Endermite";
-"adventure-monsters-killed-shulker" = "Shulker";
-"adventure-monsters-killed-wither" = "Wither";
-"adventure-monsters-killed-phantom" = "Phantom";
-"adventure-monsters-killed-guardian" = "Guardian";
-"adventure-monsters-killed-elder-guardian" = "Elder Guardian";
-"adventure-monsters-killed-zombie-villager" = "Zombie Villager";
-"adventure-monsters-killed-witch" = "Witch";
-"adventure-monsters-killed-pillager" = "Pillager";
-"adventure-monsters-killed-vindicator" = "Vindicator";
-"adventure-monsters-killed-evoker" = "Evoker";
-"adventure-monsters-killed-vex" = "Vex";
-"adventure-monsters-killed-ravager" = "Ravager";
-"adventure-kill-all-mobs" = "Monsters Hunted";
-
-//1.19
-"adventure-trade-at-world-height" = "Star Trader";
-"adventure-fall-from-world-height" = "Caves and Cliffs";
-"adventure-play-jukebox-in-meadows" = "Sound of Music";
-"adventure-spyglass-at-parrot" = "Is It a Bird?";
-"adventure-spyglass-at-ghast" = "Is It a Balloon?";
-"adventure-spyglass-at-dragon" = "Is It a Plane?";
-"adventure-lightning-rod-with-villager-no-fire" = "Surge Protector";
-"adventure-walk-on-powder-snow-with-leather-boots" = "Light as a Rabbit";
-"adventure-biomes-visited-old-growth-birch-forest" = "Old Birch";
-"adventure-biomes-visited-mangrove-swamp" = "Mangrove Swamp";
-"adventure-biomes-visited-old-growth-pine-taiga" = "Old Pine";
-"adventure-biomes-visited-old-growth-spruce-taiga" = "Old Spruce";
-"adventure-biomes-visited-grove" = "Grove";
-"adventure-biomes-visited-ice-spikes" = "Ice Spikes";
-"adventure-biomes-visited-snowy-plains" = "Snowy Plains";
-"adventure-biomes-visited-snowy-slopes" = "Snowy Slopes";
-"adventure-biomes-visited-frozen-peaks" = "Frozen Peaks";
-"adventure-biomes-visited-jagged-peaks" = "Jagged Peaks";
-"adventure-biomes-visited-stony-peaks" = "Stony Peaks";
-"adventure-biomes-visited-stony-shore" = "Stony Shore";
-"adventure-biomes-visited-windswept-hills" = "Windswept Hills";
-"adventure-biomes-visited-flower-forest" = "Flower Forest";
-"adventure-biomes-visited-sunflower-plains" = "Sunflowers";
-"adventure-biomes-visited-meadow" = "Meadow";
-"adventure-biomes-visited-windswept-savanna" = "Windswept Savanna";
-"adventure-biomes-visited-windswept-forest" = "Windswept Forest";
-"adventure-biomes-visited-windswept-gravelly-hills" = "Windswept Gravel";
-"adventure-biomes-visited-ocean" = "Ocean";
-"adventure-biomes-visited-frozen-ocean" = "Frozen Ocean";
-"adventure-biomes-visited-deep-ocean" = "Deep Ocean";
-"adventure-biomes-visited-sparse-jungle" = "Sparse Jungle";
-"adventure-biomes-visited-wooded-badlands" = "Wooded Badlands";
-"adventure-biomes-visited-eroded-badlands" = "Eroded Badlands";
-"adventure-biomes-visited-dripstone-caves" = "Dripstone Caves";
-"adventure-biomes-visited-lush-caves" = "Lush Caves";
-"adventure-biomes-visited-deep-dark" = "Deep Dark";
-"adventure-monsters-killed-piglin-brute" = "Piglin Brute";
-"adventure-avoid-vibration" = "Sneak 100";
-"adventure-kill-mob-near-sculk-catalyst" = "It Spreads";
-
-/* End Advancements */
-"end-root" = "The End";
-"end-kill-dragon" = " Free the\nEnd";
-"end-dragon-egg" = "The Next Generation";
-"end-enter-end-gateway" = "Remote\nGetaway";
-"end-find-end-city" = "City at the End of the Game";
-"end-find-end-city-19" = "City at End\nof the Game";
-"end-dragon-breath" = "You Need a Mint";
-"end-respawn-dragon" = "The End... Again...";
-"end-elytra" = "Sky's the\nLimit";
-"end-levitate" = "Great View From Here";
-
-/* Husbandry Advancements */
-"husbandry-root" = "Husbandry";
-"husbandry-plant-seed" = "A Seedy\nPlace";
-"husbandry-breed-an-animal" = "The Parrots\nand the Bats";
-"husbandry-tame-an-animal" = "Best Friends Forever";
-"husbandry-fishy-business" = "Fishy\nBusiness";
-"husbandry-tactical-fishing" = "Tactical Fishing";
-"husbandry-silk-touch-nest" = "Total Beelocation";
-"husbandry-safely-harvest-honey" = "Bee Our\nGuest";
-"husbandry-obtain-netherite-hoe" = "Serious Dedication";
-"husbandry-animals-bred-pig" = "Pig";
-"husbandry-animals-bred-sheep" = "Sheep";
-"husbandry-animals-bred-chicken" = "Chicken";
-"husbandry-animals-bred-cow" = "Cow";
-"husbandry-animals-bred-mooshroom" = "Mooshroom";
-"husbandry-animals-bred-cat" = "Cat";
-"husbandry-animals-bred-ocelot" = "Ocelot";
-"husbandry-animals-bred-wolf" = "Wolf";
-"husbandry-animals-bred-fox" = "Fox";
-"husbandry-animals-bred-rabbit" = "Rabbit";
-"husbandry-animals-bred-bee" = "Bee";
-"husbandry-animals-bred-horse" = "Horse";
-"husbandry-animals-bred-donkey" = "Donkey";
-"husbandry-animals-bred-mule" = "Mule";
-"husbandry-animals-bred-llama" = "Llama";
-"husbandry-animals-bred-panda" = "Panda";
-"husbandry-animals-bred-turtle" = "Turtle";
-"husbandry-animals-bred-strider" = "Strider";
-"husbandry-animals-bred-hoglin" = "Hoglin";
-"husbandry-bred-all-animals" = "Two by Two";
-"husbandry-foods-eaten-bread" = "Bread";
-"husbandry-foods-eaten-cooked-porkchop" = "Porkchop";
-"husbandry-foods-eaten-porkchop" = "Raw Porkchop";
-"husbandry-foods-eaten-cooked-beef" = "Beef";
-"husbandry-foods-eaten-beef" = "Raw Beef";
-"husbandry-foods-eaten-cooked-chicken" = "Chicken";
-"husbandry-foods-eaten-chicken" = "Raw Chicken";
-"husbandry-foods-eaten-cooked-mutton" = "Mutton";
-"husbandry-foods-eaten-mutton" = "Raw Mutton";
-"husbandry-foods-eaten-cooked-rabbit" = "Rabbit";
-"husbandry-foods-eaten-rabbit" = "Raw Rabbit";
-"husbandry-foods-eaten-cooked-cod" = "Cod";
-"husbandry-foods-eaten-cod" = "Raw Cod";
-"husbandry-foods-eaten-tropical-fish" = "Tropical Fish";
-"husbandry-foods-eaten-cooked-salmon" = "Salmon";
-"husbandry-foods-eaten-salmon" = "Raw Salmon";
-"husbandry-foods-eaten-pufferfish" = "Pufferfish";
-"husbandry-foods-eaten-cookie" = "Cookie";
-"husbandry-foods-eaten-pumpkin-pie" = "Pumpkin Pie";
-"husbandry-foods-eaten-apple" = "Apple";
-"husbandry-foods-eaten-golden-apple" = "Golden Apple";
-"husbandry-foods-eaten-enchanted-golden-apple" = "God Apple";
-"husbandry-foods-eaten-golden-carrot" = "Golden Carrot";
-"husbandry-foods-eaten-carrot" = "Carrot";
-"husbandry-foods-eaten-melon-slice" = "Melon Slice";
-"husbandry-foods-eaten-baked-potato" = "Baked Potato";
-"husbandry-foods-eaten-potato" = "Potato";
-"husbandry-foods-eaten-poisonous-potato" = "Poison Potato";
-"husbandry-foods-eaten-beetroot" = "Beetroot";
-"husbandry-foods-eaten-sweet-berries" = "Sweet Berries";
-"husbandry-foods-eaten-chorus-fruit" = "Chorus Fruit";
-"husbandry-foods-eaten-mushroom-stew" = "Shroom Stew";
-"husbandry-foods-eaten-suspicious-stew" = "Sus Stew";
-"husbandry-foods-eaten-rabbit-stew" = "Rabbit Stew";
-"husbandry-foods-eaten-beetroot-soup" = "Beet Soup";
-"husbandry-foods-eaten-dried-kelp" = "Dried Kelp";
-"husbandry-foods-eaten-honey-bottle" = "Honey Bottle";
-"husbandry-foods-eaten-rotten-flesh" = "Rotten Flesh";
-"husbandry-foods-eaten-spider-eye" = "Spider Eye";
-"husbandry-balanced-diet" = "A Balanced Diet";
-"husbandry-cats-jellie" = "Jellie";
-"husbandry-cats-calico" = "Calico";
-"husbandry-cats-red" = "Red";
-"husbandry-cats-black" = "Tuxedo";
-"husbandry-cats-white" = "White";
-"husbandry-cats-ragdoll" = "Ragdoll";
-"husbandry-cats-british-shorthair" = "British";
-"husbandry-cats-tabby" = "Tabby";
-"husbandry-cats-all-black" = "Black";
-"husbandry-cats-persian" = "Persian";
-"husbandry-cats-siamese" = "Siamese";
-"husbandry-complete-catalogue" = "A Complete Catalogue";
-
-//1.19
-"husbandry-axolotl-in-a-bucket" = "The Cutest Predator";
-"husbandry-kill-axolotl-target" = "Healing Power of Friendship";
-"husbandry-make-a-sign-glow" = "Glow and Behold!";
-"husbandry-wax-on" = "Wax On";
-"husbandry-wax-off" = "Wax Off";
-"husbandry-ride-a-boat-with-a-goat" = "Whatever Floats Your Goat!";
-"husbandry-animals-bred-goat" = "Goat";
-"husbandry-animals-bred-axolotl" = "Axolotl";
-"husbandry-animals-bred-frog" = "Frog";
-"husbandry-foods-eaten-glow-berries" = "Glow Berries";
-"husbandry-allay-deliver-item-to-player" = "You've Got a Friend in Me";
-"husbandry-allay-deliver-cake-to-note-block" = "Birthday\nSong";
-"husbandry-froglights" = "Our Powers Combined!";
-"husbandry-leash-all-frog-variants" = "Squad Hops Into Town";
-"husbandry-tadpole-in-a-bucket" = "Bukkit Bukkit";
-
-/* Minecraft Advancements */
-"minecraft-root" = "Minecraft";
-"minecraft-mine-stone" = "Stone Age";
-"minecraft-upgrade-tools" = "Getting an Upgrade";
-"minecraft-iron-tools" = "Isn't It Iron Pick";
-"minecraft-smelt-iron" = "Acquire Hardware";
-"minecraft-mine-diamond" = "Diamonds!";
-"minecraft-lava-bucket" = "Hot Stuff";
-"minecraft-form-obsidian" = "Ice Bucket Challenge";
-"minecraft-enter-the-nether" = "We Need to Go Deeper";
-"minecraft-obtain-armor" = "Suit Up";
-"minecraft-shiny-gear" = "Cover Me With Diamonds";
-"minecraft-cure-zombie-villager" = "Zombie\nDoctor";
-"minecraft-deflect-arrow" = "Not Today, Thank You";
-"minecraft-follow-ender-eye" = "Eye Spy";
-"minecraft-enter-the-end" = "The End?";
-"minecraft-enchant-item" = "Enchanter";
-
-/* Nether Advancements */
-"nether-root" = "Nether";
-"nether-find-fortress" = "A Terrible Fortress";
-"nether-find-bastion" = "Those Were the Days";
-"nether-loot-bastion" = "War Pigs";
-"nether-obtain-crying-obsidian" = "Who's Cutting Onions?";
-"nether-charge-respawn-anchor" = "Not Quite \"Nine\" Lives";
-"nether-use-lodestone" = "Country Lode, Take Me Home";
-"nether-return-to-sender" = "Return to Sender";
-"nether-netherite-armor" = "Cover Me in Debris";
-"nether-visited-nether-wastes" = "Nether Wastes";
-"nether-visited-crimson-forest" = "Crimson Forest";
-"nether-visited-warped-forest" = "Warped Forest";
-"nether-visited-basalt-deltas" = "Basalt Deltas";
-"nether-visited-soul-sand-valley" = "Soul Sand Valley";
-"nether-explore-nether" = "Hot Tourist Destinations";
-"nether-obtain-ancient-debris" = "Hidden in the Depths";
-"nether-distract-piglin" = "Oh Shiny";
-"nether-obtain-blaze-rod" = "Into Fire";
-"nether-brew-potion" = "Local Brewery";
-"nether-fast-travel" = "Subspace Bubble";
-"nether-uneasy-alliance" = "Uneasy Alliance";
-"nether-ride-strider" = "This Boat Has Legs";
-"nether-ride-strider-in-overworld-lava" = "Feels Like Home";
-"nether-get-wither-skull" = "Spooky Scary Skeleton";
-"nether-summon-wither" = "Withering Heights";
-"nether-create-beacon" = "Bring Home the Beacon";
-"nether-create-full-beacon" = "Beaconator";
-"nether-all-potions" = "A Furious Cocktail";
-"nether-all-effects" = "How Did We Get Here?";
+"overlay.bar" = "Show Page Bar";
+"overlay.background" = "Overlay Background Color";
+"overlay.complete.title" = "All %d Advancements Complete!";
+"overlay.complete.message" = "%@ has completed\nMinecraft: Java Edition (%@)\nAll Advancements";
+"overlay.complete.stat.elytra" = "KM";
+"overlay.complete.stat.bread" = "Eaten";
+"overlay.complete.stat.enchant" = "Ench'ed";
+"overlay.complete.stat.pearl" = "Thrown";
+"overlay.complete.stat.temples" = "Temples";
+"overlay.complete.stats" = "Run Stats";
+"overlay.complete.time" = "%@\nApproximate IGT";
+"overlay.stat.row.pos" = "Statistics Row Position";
+"overlay.stat.row.pos.left" = "Left";
+"overlay.stat.row.pos.right" = "Right";
+"overlay.toggle" = "Toggle Overlay";
+
+"potion.invisibility" = "Potion of Invisibility";
+"potion.leaping" = "Potion of Leaping";
+"potion.night_vision" = "Potion of Night Vision";
+"potion.slow_falling" = "Potion of Slow Falling";
+"potion.slowness" = "Potion of Slowness";
+"potion.strength" = "Potion of Strength";
+"potion.swiftness" = "Potion of Swiftness";
+"potion.water_breathing" = "Potion of Water Breathing";
+"potion.weakness" = "Potion of Weakness";
+
+"settings.notes" = "Notes";
+"settings.overlay" = "Overlay";
+"settings.theme" = "Theme";
+"settings.tracking" = "Tracking";
+"settings.updater" = "Updates";
+"settings.updater.auto.check" = "Check for Updates Automatically";
+"settings.updater.check" = "Check For Updates";
+"settings.updater.last.checked" = "Last Checked:";
+
+"statistic.ancient_debris" = "Debris: %d\nTNT: %d";
+"statistic.ancient_debris.done" = "Done With Netherite";
+"statistic.god_apple.obtain" = "Obtain God Apple";
+"statistic.god_apple.obtained" = "Obtained God Apple";
+"statistic.shells" = "Shells\n%d / 8";
+"statistic.shells.crafted" = "Conduit Crafted";
+"statistic.trident.awaiting" = "Awaiting\nThunder";
+"statistic.trident.obtain" = "Obtain\nTrident";
+"statistic.trident.thunder" = "Done With Thunder";
+"statistic.wither.killed" = "Wither Has Been Killed";
+"statistic.wither.skulls" = "Skulls\n%d / 3";
+
+"theme.background.color" = "Background Color";
+"theme.copy" = "Copy to Custom";
+"theme.custom" = "Custom";
+"theme.foreground.color" = "Foreground Color";
+"theme.presets" = "Presets";
+"theme.presets.berry" = "Berry";
+"theme.presets.blazed" = "Blazed";
+"theme.presets.brick" = "Brick";
+"theme.presets.dark" = "Dark";
+"theme.presets.ender.pearl" = "Ender Pearl";
+"theme.presets.github.dark" = "GitHub Dark";
+"theme.presets.high.contrast" = "High Contrast";
+"theme.presets.light" = "Light";
+"theme.text.color" = "Text Color";
+
+"tracking.attribution" = "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.";
+"tracking.browse" = "Browse";
+"tracking.custom.saves" = "Custom Saves Folder";
+"tracking.enter.directory" = "Enter Directory";
+"tracking.game.version" = "Game Version";
+"tracking.seamless" = "Seamless Tracking";
+
+"advancement.adventure.root" = "Adventure";
+"advancement.adventure.kill.a.mob" = "Monster Hunter";
+"advancement.adventure.ol.betsy" = "Ol' Betsy";
+"advancement.adventure.whos.the.pillager.now" = "Who's the Pillager Now?";
+"advancement.adventure.sleep.in.bed" = "Sweet\nDreams";
+"advancement.adventure.trade" = "What a Deal!";
+"advancement.adventure.two.birds.one.arrow" = "Two Birds,\nOne Arrow";
+"advancement.adventure.arbalistic" = "Arbalistic";
+"advancement.adventure.honey.block.slide" = "Sticky Situation";
+"advancement.adventure.bullseye" = "Bullseye";
+"advancement.adventure.shoot.arrow" = "Take Aim";
+"advancement.adventure.sniper.duel" = "Sniper Duel";
+"advancement.adventure.voluntary.exile" = "Voluntary Exile";
+"advancement.adventure.hero.of.the.village" = "Hero of the Village";
+"advancement.adventure.throw.trident" = "A Throwaway Joke";
+"advancement.adventure.very.very.frightening" = "Very Very Frightening";
+"advancement.adventure.summon.iron.golem" = "Hired Help";
+"advancement.adventure.totem.of.undying" = "Postmortal";
+"advancement.adventure.biomes.visited.plains" = "Plains";
+"advancement.adventure.biomes.visited.forest" = "Forest";
+"advancement.adventure.biomes.visited.wooded.hills" = "Wooded Hills";
+"advancement.adventure.biomes.visited.birch.forest" = "Birch Forest";
+"advancement.adventure.biomes.visited.birch.forest.hills" = "Birch Hills";
+"advancement.adventure.biomes.visited.dark.forest" = "Dark Forest";
+"advancement.adventure.biomes.visited.swamp" = "Swamp";
+"advancement.adventure.biomes.visited.taiga" = "Taiga";
+"advancement.adventure.biomes.visited.taiga.hills" = "Taiga Hills";
+"advancement.adventure.biomes.visited.giant.tree.taiga" = "Mega Taiga";
+"advancement.adventure.biomes.visited.giant.tree.taiga.hills" = "Mega Taiga Hill";
+"advancement.adventure.biomes.visited.snowy.taiga" = "Snowy Taiga";
+"advancement.adventure.biomes.visited.snowy.taiga.hills" = "Snowy Taiga Hill";
+"advancement.adventure.biomes.visited.snowy.tundra" = "Snowy Tundra";
+"advancement.adventure.biomes.visited.snowy.mountains" = "Snowy Mountain";
+"advancement.adventure.biomes.visited.snowy.beach" = "Snowy Beach";
+"advancement.adventure.biomes.visited.frozen.river" = "Frozen River";
+"advancement.adventure.biomes.visited.river" = "River";
+"advancement.adventure.biomes.visited.desert" = "Desert";
+"advancement.adventure.biomes.visited.desert.hills" = "Desert Hills";
+"advancement.adventure.biomes.visited.savanna" = "Savanna";
+"advancement.adventure.biomes.visited.savanna.plateau" = "Savanna Plat";
+"advancement.adventure.biomes.visited.jungle" = "Jungle";
+"advancement.adventure.biomes.visited.jungle.edge" = "Jungle Edge";
+"advancement.adventure.biomes.visited.jungle.hills" = "Jungle Hills";
+"advancement.adventure.biomes.visited.bamboo.jungle" = "Bamboo Jungle";
+"advancement.adventure.biomes.visited.bamboo.jungle.hills" = "Bamboo Hills";
+"advancement.adventure.biomes.visited.stone.shore" = "Stone Shore";
+"advancement.adventure.biomes.visited.mountains" = "Mountains";
+"advancement.adventure.biomes.visited.wooded.mountains" = "Wooded Mtn";
+"advancement.adventure.biomes.visited.badlands" = "Badlands";
+"advancement.adventure.biomes.visited.badlands.plateau" = "Badlands Plateau";
+"advancement.adventure.biomes.visited.wooded.badlands.plateau" = "Wooded Plateau";
+"advancement.adventure.biomes.visited.mushroom.fields" = "Mushroom Fields";
+"advancement.adventure.biomes.visited.mushroom.field.shore" = "Mushroom Shore";
+"advancement.adventure.biomes.visited.beach" = "Beach";
+"advancement.adventure.biomes.visited.warm.ocean" = "Warm Ocean";
+"advancement.adventure.biomes.visited.lukewarm.ocean" = "Lukewarm Ocean";
+"advancement.adventure.biomes.visited.deep.lukewarm.ocean" = "Deep Lukewarm";
+"advancement.adventure.biomes.visited.cold.ocean" = "Cold Ocean";
+"advancement.adventure.biomes.visited.deep.cold.ocean" = "Deep Cold Ocean";
+"advancement.adventure.biomes.visited.deep.frozen.ocean" = "Deep Frozen";
+"advancement.adventure.adventuring.time" = "Adventuring Time";
+"advancement.adventure.monsters.killed.creeper" = "Creeper";
+"advancement.adventure.monsters.killed.zombie" = "Zombie";
+"advancement.adventure.monsters.killed.skeleton" = "Skeleton";
+"advancement.adventure.monsters.killed.husk" = "Husk";
+"advancement.adventure.monsters.killed.drowned" = "Drowned";
+"advancement.adventure.monsters.killed.stray" = "Stray";
+"advancement.adventure.monsters.killed.spider" = "Spider";
+"advancement.adventure.monsters.killed.cave.spider" = "Cave Spider";
+"advancement.adventure.monsters.killed.enderman" = "Enderman";
+"advancement.adventure.monsters.killed.slime" = "Slime";
+"advancement.adventure.monsters.killed.magma.cube" = "Magma Cube";
+"advancement.adventure.monsters.killed.ghast" = "Ghast";
+"advancement.adventure.monsters.killed.blaze" = "Blaze";
+"advancement.adventure.monsters.killed.wither.skeleton" = "Wither Skeleton";
+"advancement.adventure.monsters.killed.piglin" = "Piglin";
+"advancement.adventure.monsters.killed.zombified.piglin" = "Zombie Piglin";
+"advancement.adventure.monsters.killed.hoglin" = "Hoglin";
+"advancement.adventure.monsters.killed.zoglin" = "Zoglin";
+"advancement.adventure.monsters.killed.silverfish" = "Silverfish";
+"advancement.adventure.monsters.killed.ender.dragon" = "Ender Dragon";
+"advancement.adventure.monsters.killed.endermite" = "Endermite";
+"advancement.adventure.monsters.killed.shulker" = "Shulker";
+"advancement.adventure.monsters.killed.wither" = "Wither";
+"advancement.adventure.monsters.killed.phantom" = "Phantom";
+"advancement.adventure.monsters.killed.guardian" = "Guardian";
+"advancement.adventure.monsters.killed.elder.guardian" = "Elder Guardian";
+"advancement.adventure.monsters.killed.zombie.villager" = "Zombie Villager";
+"advancement.adventure.monsters.killed.witch" = "Witch";
+"advancement.adventure.monsters.killed.pillager" = "Pillager";
+"advancement.adventure.monsters.killed.vindicator" = "Vindicator";
+"advancement.adventure.monsters.killed.evoker" = "Evoker";
+"advancement.adventure.monsters.killed.vex" = "Vex";
+"advancement.adventure.monsters.killed.ravager" = "Ravager";
+"advancement.adventure.kill.all.mobs" = "Monsters Hunted";
+"advancement.adventure.trade.at.world.height" = "Star Trader";
+"advancement.adventure.fall.from.world.height" = "Caves and Cliffs";
+"advancement.adventure.play.jukebox.in.meadows" = "Sound of Music";
+"advancement.adventure.spyglass.at.parrot" = "Is It a Bird?";
+"advancement.adventure.spyglass.at.ghast" = "Is It a Balloon?";
+"advancement.adventure.spyglass.at.dragon" = "Is It a Plane?";
+"advancement.adventure.lightning.rod.with.villager.no.fire" = "Surge Protector";
+"advancement.adventure.walk.on.powder.snow.with.leather.boots" = "Light as a Rabbit";
+"advancement.adventure.biomes.visited.old.growth.birch.forest" = "Old Birch";
+"advancement.adventure.biomes.visited.mangrove.swamp" = "Mangrove Swamp";
+"advancement.adventure.biomes.visited.old.growth.pine.taiga" = "Old Pine";
+"advancement.adventure.biomes.visited.old.growth.spruce.taiga" = "Old Spruce";
+"advancement.adventure.biomes.visited.grove" = "Grove";
+"advancement.adventure.biomes.visited.ice.spikes" = "Ice Spikes";
+"advancement.adventure.biomes.visited.snowy.plains" = "Snowy Plains";
+"advancement.adventure.biomes.visited.snowy.slopes" = "Snowy Slopes";
+"advancement.adventure.biomes.visited.frozen.peaks" = "Frozen Peaks";
+"advancement.adventure.biomes.visited.jagged.peaks" = "Jagged Peaks";
+"advancement.adventure.biomes.visited.stony.peaks" = "Stony Peaks";
+"advancement.adventure.biomes.visited.stony.shore" = "Stony Shore";
+"advancement.adventure.biomes.visited.windswept.hills" = "Windswept Hills";
+"advancement.adventure.biomes.visited.flower.forest" = "Flower Forest";
+"advancement.adventure.biomes.visited.sunflower.plains" = "Sunflowers";
+"advancement.adventure.biomes.visited.meadow" = "Meadow";
+"advancement.adventure.biomes.visited.windswept.savanna" = "Windswept Savanna";
+"advancement.adventure.biomes.visited.windswept.forest" = "Windswept Forest";
+"advancement.adventure.biomes.visited.windswept.gravelly.hills" = "Windswept Gravel";
+"advancement.adventure.biomes.visited.ocean" = "Ocean";
+"advancement.adventure.biomes.visited.frozen.ocean" = "Frozen Ocean";
+"advancement.adventure.biomes.visited.deep.ocean" = "Deep Ocean";
+"advancement.adventure.biomes.visited.sparse.jungle" = "Sparse Jungle";
+"advancement.adventure.biomes.visited.wooded.badlands" = "Wooded Badlands";
+"advancement.adventure.biomes.visited.eroded.badlands" = "Eroded Badlands";
+"advancement.adventure.biomes.visited.dripstone.caves" = "Dripstone Caves";
+"advancement.adventure.biomes.visited.lush.caves" = "Lush Caves";
+"advancement.adventure.biomes.visited.deep.dark" = "Deep Dark";
+"advancement.adventure.monsters.killed.piglin.brute" = "Piglin Brute";
+"advancement.adventure.avoid.vibration" = "Sneak 100";
+"advancement.adventure.kill.mob.near.sculk.catalyst" = "It Spreads";
+
+"advancement.end.root" = "The End";
+"advancement.end.kill.dragon" = " Free the\nEnd";
+"advancement.end.dragon.egg" = "The Next Generation";
+"advancement.end.enter.end.gateway" = "Remote\nGetaway";
+"advancement.end.find.end.city" = "City at the End of the Game";
+"advancement.end.find.end.city.19" = "City at End\nof the Game";
+"advancement.end.dragon.breath" = "You Need a Mint";
+"advancement.end.respawn.dragon" = "The End... Again...";
+"advancement.end.elytra" = "Sky's the\nLimit";
+"advancement.end.levitate" = "Great View From Here";
+
+"advancement.husbandry.root" = "Husbandry";
+"advancement.husbandry.plant.seed" = "A Seedy\nPlace";
+"advancement.husbandry.breed.an.animal" = "The Parrots\nand the Bats";
+"advancement.husbandry.tame.an.animal" = "Best Friends Forever";
+"advancement.husbandry.fishy.business" = "Fishy\nBusiness";
+"advancement.husbandry.tactical.fishing" = "Tactical Fishing";
+"advancement.husbandry.silk.touch.nest" = "Total Beelocation";
+"advancement.husbandry.safely.harvest.honey" = "Bee Our\nGuest";
+"advancement.husbandry.obtain.netherite.hoe" = "Serious Dedication";
+"advancement.husbandry.animals.bred.pig" = "Pig";
+"advancement.husbandry.animals.bred.sheep" = "Sheep";
+"advancement.husbandry.animals.bred.chicken" = "Chicken";
+"advancement.husbandry.animals.bred.cow" = "Cow";
+"advancement.husbandry.animals.bred.mooshroom" = "Mooshroom";
+"advancement.husbandry.animals.bred.cat" = "Cat";
+"advancement.husbandry.animals.bred.ocelot" = "Ocelot";
+"advancement.husbandry.animals.bred.wolf" = "Wolf";
+"advancement.husbandry.animals.bred.fox" = "Fox";
+"advancement.husbandry.animals.bred.rabbit" = "Rabbit";
+"advancement.husbandry.animals.bred.bee" = "Bee";
+"advancement.husbandry.animals.bred.horse" = "Horse";
+"advancement.husbandry.animals.bred.donkey" = "Donkey";
+"advancement.husbandry.animals.bred.mule" = "Mule";
+"advancement.husbandry.animals.bred.llama" = "Llama";
+"advancement.husbandry.animals.bred.panda" = "Panda";
+"advancement.husbandry.animals.bred.turtle" = "Turtle";
+"advancement.husbandry.animals.bred.strider" = "Strider";
+"advancement.husbandry.animals.bred.hoglin" = "Hoglin";
+"advancement.husbandry.bred.all.animals" = "Two by Two";
+"advancement.husbandry.foods.eaten.bread" = "Bread";
+"advancement.husbandry.foods.eaten.cooked.porkchop" = "Porkchop";
+"advancement.husbandry.foods.eaten.porkchop" = "Raw Porkchop";
+"advancement.husbandry.foods.eaten.cooked.beef" = "Beef";
+"advancement.husbandry.foods.eaten.beef" = "Raw Beef";
+"advancement.husbandry.foods.eaten.cooked.chicken" = "Chicken";
+"advancement.husbandry.foods.eaten.chicken" = "Raw Chicken";
+"advancement.husbandry.foods.eaten.cooked.mutton" = "Mutton";
+"advancement.husbandry.foods.eaten.mutton" = "Raw Mutton";
+"advancement.husbandry.foods.eaten.cooked.rabbit" = "Rabbit";
+"advancement.husbandry.foods.eaten.rabbit" = "Raw Rabbit";
+"advancement.husbandry.foods.eaten.cooked.cod" = "Cod";
+"advancement.husbandry.foods.eaten.cod" = "Raw Cod";
+"advancement.husbandry.foods.eaten.tropical.fish" = "Tropical Fish";
+"advancement.husbandry.foods.eaten.cooked.salmon" = "Salmon";
+"advancement.husbandry.foods.eaten.salmon" = "Raw Salmon";
+"advancement.husbandry.foods.eaten.pufferfish" = "Pufferfish";
+"advancement.husbandry.foods.eaten.cookie" = "Cookie";
+"advancement.husbandry.foods.eaten.pumpkin.pie" = "Pumpkin Pie";
+"advancement.husbandry.foods.eaten.apple" = "Apple";
+"advancement.husbandry.foods.eaten.golden.apple" = "Golden Apple";
+"advancement.husbandry.foods.eaten.enchanted.golden.apple" = "God Apple";
+"advancement.husbandry.foods.eaten.golden.carrot" = "Golden Carrot";
+"advancement.husbandry.foods.eaten.carrot" = "Carrot";
+"advancement.husbandry.foods.eaten.melon.slice" = "Melon Slice";
+"advancement.husbandry.foods.eaten.baked.potato" = "Baked Potato";
+"advancement.husbandry.foods.eaten.potato" = "Potato";
+"advancement.husbandry.foods.eaten.poisonous.potato" = "Poison Potato";
+"advancement.husbandry.foods.eaten.beetroot" = "Beetroot";
+"advancement.husbandry.foods.eaten.sweet.berries" = "Sweet Berries";
+"advancement.husbandry.foods.eaten.chorus.fruit" = "Chorus Fruit";
+"advancement.husbandry.foods.eaten.mushroom.stew" = "Shroom Stew";
+"advancement.husbandry.foods.eaten.suspicious.stew" = "Sus Stew";
+"advancement.husbandry.foods.eaten.rabbit.stew" = "Rabbit Stew";
+"advancement.husbandry.foods.eaten.beetroot.soup" = "Beet Soup";
+"advancement.husbandry.foods.eaten.dried.kelp" = "Dried Kelp";
+"advancement.husbandry.foods.eaten.honey.bottle" = "Honey Bottle";
+"advancement.husbandry.foods.eaten.rotten.flesh" = "Rotten Flesh";
+"advancement.husbandry.foods.eaten.spider.eye" = "Spider Eye";
+"advancement.husbandry.balanced.diet" = "A Balanced Diet";
+"advancement.husbandry.cats.jellie" = "Jellie";
+"advancement.husbandry.cats.calico" = "Calico";
+"advancement.husbandry.cats.red" = "Red";
+"advancement.husbandry.cats.black" = "Tuxedo";
+"advancement.husbandry.cats.white" = "White";
+"advancement.husbandry.cats.ragdoll" = "Ragdoll";
+"advancement.husbandry.cats.british.shorthair" = "British";
+"advancement.husbandry.cats.tabby" = "Tabby";
+"advancement.husbandry.cats.all.black" = "Black";
+"advancement.husbandry.cats.persian" = "Persian";
+"advancement.husbandry.cats.siamese" = "Siamese";
+"advancement.husbandry.complete.catalogue" = "A Complete Catalogue";
+"advancement.husbandry.axolotl.in.a.bucket" = "The Cutest Predator";
+"advancement.husbandry.kill.axolotl.target" = "Healing Power of Friendship";
+"advancement.husbandry.make.a.sign.glow" = "Glow and Behold!";
+"advancement.husbandry.wax.on" = "Wax On";
+"advancement.husbandry.wax.off" = "Wax Off";
+"advancement.husbandry.ride.a.boat.with.a.goat" = "Whatever Floats Your Goat!";
+"advancement.husbandry.animals.bred.goat" = "Goat";
+"advancement.husbandry.animals.bred.axolotl" = "Axolotl";
+"advancement.husbandry.animals.bred.frog" = "Frog";
+"advancement.husbandry.foods.eaten.glow.berries" = "Glow Berries";
+"advancement.husbandry.allay.deliver.item.to.player" = "You've Got a Friend in Me";
+"advancement.husbandry.allay.deliver.cake.to.note.block" = "Birthday\nSong";
+"advancement.husbandry.froglights" = "Our Powers Combined!";
+"advancement.husbandry.leash.all.frog.variants" = "Squad Hops Into Town";
+"advancement.husbandry.tadpole.in.a.bucket" = "Bukkit Bukkit";
+
+"advancement.minecraft.root" = "Minecraft";
+"advancement.minecraft.mine.stone" = "Stone Age";
+"advancement.minecraft.upgrade.tools" = "Getting an Upgrade";
+"advancement.minecraft.iron.tools" = "Isn't It Iron Pick";
+"advancement.minecraft.smelt.iron" = "Acquire Hardware";
+"advancement.minecraft.mine.diamond" = "Diamonds!";
+"advancement.minecraft.lava.bucket" = "Hot Stuff";
+"advancement.minecraft.form.obsidian" = "Ice Bucket Challenge";
+"advancement.minecraft.enter.the.nether" = "We Need to Go Deeper";
+"advancement.minecraft.obtain.armor" = "Suit Up";
+"advancement.minecraft.shiny.gear" = "Cover Me With Diamonds";
+"advancement.minecraft.cure.zombie.villager" = "Zombie\nDoctor";
+"advancement.minecraft.deflect.arrow" = "Not Today, Thank You";
+"advancement.minecraft.follow.ender.eye" = "Eye Spy";
+"advancement.minecraft.enter.the.end" = "The End?";
+"advancement.minecraft.enchant.item" = "Enchanter";
+
+"advancement.nether.root" = "Nether";
+"advancement.nether.find.fortress" = "A Terrible Fortress";
+"advancement.nether.find.bastion" = "Those Were the Days";
+"advancement.nether.loot.bastion" = "War Pigs";
+"advancement.nether.obtain.crying.obsidian" = "Who's Cutting Onions?";
+"advancement.nether.charge.respawn.anchor" = "Not Quite \"Nine\" Lives";
+"advancement.nether.use.lodestone" = "Country Lode, Take Me Home";
+"advancement.nether.return.to.sender" = "Return to Sender";
+"advancement.nether.netherite.armor" = "Cover Me in Debris";
+"advancement.nether.visited.nether.wastes" = "Nether Wastes";
+"advancement.nether.visited.crimson.forest" = "Crimson Forest";
+"advancement.nether.visited.warped.forest" = "Warped Forest";
+"advancement.nether.visited.basalt.deltas" = "Basalt Deltas";
+"advancement.nether.visited.soul.sand.valley" = "Soul Sand Valley";
+"advancement.nether.explore.nether" = "Hot Tourist Destinations";
+"advancement.nether.obtain.ancient.debris" = "Hidden in the Depths";
+"advancement.nether.distract.piglin" = "Oh Shiny";
+"advancement.nether.obtain.blaze.rod" = "Into Fire";
+"advancement.nether.brew.potion" = "Local Brewery";
+"advancement.nether.fast.travel" = "Subspace Bubble";
+"advancement.nether.uneasy.alliance" = "Uneasy Alliance";
+"advancement.nether.ride.strider" = "This Boat Has Legs";
+"advancement.nether.ride.strider.in.overworld.lava" = "Feels Like Home";
+"advancement.nether.get.wither.skull" = "Spooky Scary Skeleton";
+"advancement.nether.summon.wither" = "Withering Heights";
+"advancement.nether.create.beacon" = "Bring Home the Beacon";
+"advancement.nether.create.full.beacon" = "Beaconator";
+"advancement.nether.all.potions" = "A Furious Cocktail";
+"advancement.nether.all.effects" = "How Did We Get Here?";

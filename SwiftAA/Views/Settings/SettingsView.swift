@@ -16,23 +16,23 @@ struct SettingsView: View {
         TabView {
             TrackingSettingsView(dataHandler: dataHandler)
                 .tabItem {
-                    Label("settings-tracking", systemImage: "slider.horizontal.3")
+                    Label(L10n.Settings.tracking, systemImage: "slider.horizontal.3")
                 }
             ThemeSettingsView()
                 .tabItem {
-                    Label("settings-theme", systemImage: "paintpalette")
+                    Label(L10n.Settings.theme, systemImage: "paintpalette")
                 }
             OverlaySettingsView()
                 .tabItem {
-                    Label("settings-overlay", systemImage: "ipad.landscape")
+                    Label(L10n.Settings.overlay, systemImage: "ipad.landscape")
                 }
             NotesSettingsView()
                 .tabItem {
-                    Label("settings-notes", systemImage: "rectangle.and.pencil.and.ellipsis")
+                    Label(L10n.Settings.notes, systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
             UpdateSettingsView(updater: updater)
                 .tabItem {
-                    Label("settings-updater", systemImage: "square.and.arrow.down")
+                    Label(L10n.Settings.updater, systemImage: "square.and.arrow.down")
                 }
         }
         .frame(width: 450, height: 250)

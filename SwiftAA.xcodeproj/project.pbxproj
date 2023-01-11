@@ -33,6 +33,7 @@
 		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
+		B6842B04296E59B9000B62DF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6842B03296E59B9000B62DF /* Strings.swift */; };
 		B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */; };
 		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
 		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
@@ -56,6 +57,7 @@
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 		B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAB57F28BA831E007B981B /* TransparentView.swift */; };
 		B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABC3D728B8646000E6633D /* DonationView.swift */; };
+		B6B4A14D296E433B00F43D4C /* OverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4A14C296E433B00F43D4C /* OverlayViewModel.swift */; };
 		B6CDBA0128BDA6B60016D248 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0028BDA6B60016D248 /* Sparkle */; };
 		B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0328BDA6BE0016D248 /* SWXMLHash */; };
 		B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */; };
@@ -97,6 +99,7 @@
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
+		B6842B03296E59B9000B62DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlayerHead.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
 		B6AAB57F28BA831E007B981B /* TransparentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentView.swift; sourceTree = "<group>"; };
 		B6ABC3D728B8646000E6633D /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		B6B4A14C296E433B00F43D4C /* OverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewModel.swift; sourceTree = "<group>"; };
 		B6D3065428A2AD44004D27E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6D3065728A2B150004D27E6 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		B6E1493028A17F260084A529 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 		B66A07752887B2A800DC0A2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6842B06296E59E7000B62DF /* Generated */,
 				B687E17C28B3E06C002CF5D7 /* Advancements */,
 				B65AE1D5288709E5006EC138 /* Fonts */,
 				B6A773042889BA3900436551 /* Gifs */,
@@ -272,6 +277,14 @@
 				B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */,
 			);
 			path = Toolbar;
+			sourceTree = "<group>";
+		};
+		B6842B06296E59E7000B62DF /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B6842B03296E59B9000B62DF /* Strings.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		B6872FB128AEA9BC003CEA95 /* URL */ = {
@@ -353,6 +366,14 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		B6B4A14B296E432600F43D4C /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				B6B4A14C296E433B00F43D4C /* OverlayViewModel.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
 		B6D3065528A2B13F004D27E6 /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +416,7 @@
 		B6FEFED82899926E0095CF08 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
+				B6B4A14B296E432600F43D4C /* Overlay */,
 				B637DB2F29634F7900A73F62 /* Main */,
 			);
 			path = Windows;
@@ -446,6 +468,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B65AE1CC2886F404006EC138 /* Build configuration list for PBXNativeTarget "SwiftAA" */;
 			buildPhases = (
+				B6B4A151296E50E700F43D4C /* Code Gen */,
 				B65AE1B92886F401006EC138 /* Sources */,
 				B65AE1BA2886F401006EC138 /* Frameworks */,
 				B66A07782887B7D400DC0A2C /* Resources */,
@@ -522,11 +545,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B6B4A151296E50E700F43D4C /* Code Gen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/SwiftAA/Resources/en.lproj/Localizable.strings",
+			);
+			name = "Code Gen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/SwiftAA/Resources/Generated/Strings.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Scripts/swiftgen/bin/swiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B65AE1B92886F401006EC138 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
@@ -560,6 +607,7 @@
 				B6FEFED5289991070095CF08 /* Indicator.swift in Sources */,
 				B648272A2889CB7200B44855 /* TrackingSettingsView.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
+				B6B4A14D296E433B00F43D4C /* OverlayViewModel.swift in Sources */,
 				B64827282889C74B00B44855 /* QLImage.swift in Sources */,
 				B65B074D28AFDD1600E10EC5 /* Updater.swift in Sources */,
 				B6A772E62888FBA600436551 /* ContentView.swift in Sources */,

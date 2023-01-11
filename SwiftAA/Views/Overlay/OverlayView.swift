@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct OverlayView: View {
-    @ObservedObject var dataHandler: DataHandler
+    @ObservedObject var viewModel: OverlayViewModel
     @EnvironmentObject var settings: AppSettings
     
-    @State var section = 0
-    @State var totalSections = 0
-    @State var criteriaSection = 0
-    @State var criteriaTotalSections = 0
+    @State private var section = 0
+    @State private var totalSections = 0
+    @State private var criteriaSection = 0
+    @State private var criteriaTotalSections = 0
     
-    @State var progress: CGFloat = 0.7
+    @State private var progress: CGFloat = 0.7
     private let animationTimer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         GeometryReader { screen in
-            if (dataHandler.allAdvancements) {
+            if (viewModel.dataHandler.allAdvancements) {
                 withAnimation {
-                    OverlayCompletedView(dataHandler: dataHandler)
+                    OverlayCompletedView(viewModel: viewModel)
                 }
             } else {
                 VStack(alignment: settings.statsRowPos ? .leading : .trailing) {
@@ -47,7 +47,7 @@ struct OverlayView: View {
                             HStack {
                                 Spacer()
                                 
-                                Text("\(dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count)/\(dataHandler.map.values.compactMap({$0.count}).reduce(0, +))")
+                                Text("\(viewModel.completedAdvancements)/\(viewModel.totalAdvancements)")
                                     .font(.custom("Minecraft-Regular", size: 12))
                                     .padding(.top, -15)
                                     .padding(.trailing)
@@ -59,7 +59,7 @@ struct OverlayView: View {
                     }
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 20) {
-                        ForEach(getCriteriaSection(criteriaSection, screen: screen), id: \.self) { criterion in
+                        ForEach(viewModel.getCriteriaSection(criteriaSection, screen: screen), id: \.self) { criterion in
                             if (isAnimated(icon: criterion.icon)) {
                                 QLImage(criterion.icon)
                                     .frame(width: 16, height: 16)
@@ -74,7 +74,7 @@ struct OverlayView: View {
                     .padding(.leading, 10)
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: Int(floor(screen.size.width / 74))), spacing: 0) {
-                        ForEach(getSection(section, screen: screen), id: \.self) { adv in
+                        ForEach(viewModel.getSection(section, screen: screen), id: \.self) { adv in
                             IndicatorView(indicator: .constant(adv), isOverlay: true)
                         }
                     }
@@ -84,7 +84,7 @@ struct OverlayView: View {
                     Spacer()
                     
                     HStack {
-                        ForEach(dataHandler.stats, id: \.self.id) { adv in
+                        ForEach(viewModel.dataHandler.stats, id: \.self.id) { adv in
                             IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
                         }
                     }
@@ -96,55 +96,14 @@ struct OverlayView: View {
                         self.progress -= (0.01 * (1000 / screen.size.width))
                     }
                     if progress <= 0.0 {
-                        totalSections = totalSections(screen: screen)
-                        criteriaTotalSections = totalCriteriaSections(screen: screen)
+                        totalSections = viewModel.totalSections(screen: screen)
+                        criteriaTotalSections = viewModel.totalCriteriaSections(screen: screen)
                         section = (section + 1) % totalSections
                         criteriaSection = (criteriaSection + 1) % criteriaTotalSections
                         self.progress = 0.7
                     }
                 }
             }
-        }
-    }
-
-    func getSection(_ section: Int, screen: GeometryProxy) -> [Advancement] {
-        let values = dataHandler.map.values.flatMap({$0}).filter({!$0.completed})
-        
-        let maxOnScreen = getMaxOnScreen(type: "indicator", width: screen.size.width)
-        
-        let sectionStart = section * maxOnScreen
-        let sectionEnd = sectionStart + maxOnScreen
-        
-        return values.enumerated().filter { $0.offset >= sectionStart && $0.offset < sectionEnd }.map { $0.element }
-    }
-    
-    func totalSections(screen: GeometryProxy) -> Int {
-        (dataHandler.map.values.flatMap({ $0 }).filter({ !$0.completed }).count / Int((floor(screen.size.width / 74))) + 1) / 2
-    }
-    
-    func getCriteriaSection(_ section: Int, screen: GeometryProxy) -> [Criterion] {
-        let values = dataHandler.map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
-        
-        let maxOnScreen = getMaxOnScreen(type: "criteria", width: screen.size.width)
-        
-        let sectionStart = section * maxOnScreen
-        let sectionEnd = sectionStart + maxOnScreen
-        
-        return values.enumerated().filter { $0.offset >= sectionStart && $0.offset < sectionEnd }.map { $0.element }
-    }
-    
-    func totalCriteriaSections(screen: GeometryProxy) -> Int {
-        let count = dataHandler.map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}.count
-        let maxOnScreen = getMaxOnScreen(type: "criteria", width: screen.size.width)
-        let pages = max(1, (count - 0) / maxOnScreen + 1)
-        return pages
-    }
-    
-    func getMaxOnScreen(type: String, width: CGFloat) -> Int {
-        switch type {
-            case "indicator" : return Int(floor(width / 74)) * 2
-            case "criteria" : return Int(floor((width - 40) / 26)) * 2
-            default : return 0
         }
     }
     
@@ -158,7 +117,7 @@ struct OverlayView_Previews: PreviewProvider {
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        OverlayView(dataHandler: dataHandler)
+        OverlayView(viewModel: .init(dataHandler: dataHandler))
             .environmentObject(settings)
             .frame(width: 800, height: 345)
             .onAppear {

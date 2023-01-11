@@ -25,7 +25,7 @@ class Advancement: NSObject, Indicator, Identifiable {
     
     init(id: String, key: String, name: String, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool) {
         self.id = id
-        self.key = key
+        self.key = "advancement.\(key.replacingOccurrences(of: "-", with: "."))"
         self.name = name
         self.icon = icon
         self.frameStyle = frameStyle

@@ -48,14 +48,14 @@ struct NotesSettingsView: View {
                             selected = nil
                             selectedWorld = ""
                         } label: {
-                            Text("notes-clear-all", comment: "Button: delete all notes")
+                            Text(L10n.Notes.Clear.all)
                                 .font(.custom("Minecraft-Regular", size: 12))
                         }
                     }
                     .padding(.bottom)
                 }
                 
-                TextEditor(text: .constant((selected ?? ["notes-select-world".localized]).joined(separator: "\n")))
+                TextEditor(text: .constant((selected ?? [L10n.Notes.Select.world]).joined(separator: "\n")))
                     .font(.custom("Minecraft-Regular", size: 10))
                     .disabled(true)
                     .cornerRadius(5)
@@ -64,7 +64,7 @@ struct NotesSettingsView: View {
                 Spacer()
             }
         } else {
-            Text("notes-none", comment: "Title: no notes available/recorded")
+            Text(L10n.Notes.none)
                 .font(.custom("Minecraft-Regular", size: 24))
         }
     }

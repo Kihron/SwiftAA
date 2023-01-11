@@ -44,11 +44,11 @@ struct SwiftAAApp: App {
         }
         .commands {
             CommandGroup(replacing: .appInfo) {
-                Button("about-button".localized) {
+                Button(L10n.About.button) {
                     NSApplication.shared.orderFrontStandardAboutPanel(
                         options: [
                             NSApplication.AboutPanelOptionKey.credits: NSAttributedString(
-                                string: "about-description".localized,
+                                string: L10n.About.description,
                                 attributes: [
                                     NSAttributedString.Key.font: NSFont.boldSystemFont(
                                         ofSize: NSFont.smallSystemFontSize)
@@ -56,13 +56,13 @@ struct SwiftAAApp: App {
                             ),
                             NSApplication.AboutPanelOptionKey(
                                 rawValue: "Copyright"
-                            ): "about-copyright".localized
+                            ): L10n.About.copyright
                         ]
                     )
                 }
             }
             CommandGroup(after: .appInfo, addition: {
-                Button("\("settings-updater-check".localized)...") {
+                Button("\(L10n.Settings.Updater.check)...") {
                     viewModel.updater.checkForUpdates()
                 }
             })
@@ -70,7 +70,7 @@ struct SwiftAAApp: App {
         .windowResizability(.contentSize)
         
         Window("OverlayWindow", id: "overlay-window") {
-            OverlayView(dataHandler: viewModel.dataHandler)
+            OverlayView(viewModel: .init(dataHandler: viewModel.dataHandler))
                 .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataHandler.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
                 .environmentObject(viewModel.settings)
                 .onAppear {

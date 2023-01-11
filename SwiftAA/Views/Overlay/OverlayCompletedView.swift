@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OverlayCompletedView: View {
-    @ObservedObject var dataHandler: DataHandler
+    @ObservedObject var viewModel: OverlayViewModel
     @EnvironmentObject var settings: AppSettings
     
     var body: some View {
@@ -23,7 +23,7 @@ struct OverlayCompletedView: View {
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             .padding(.trailing, 5)
                         
-                        Text("overlay-complete-title".localized((["\(dataHandler.map.values.compactMap({$0.count}).reduce(0, +))"])))
+                        Text(L10n.Overlay.Complete.title(viewModel.totalAdvancements))
                             .font(.custom("Minecraft-Regular", size: 24))
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             .padding(.top, 5)
@@ -38,11 +38,11 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            OverlayShimmerView(message: "overlay-complete-message".localized(["\(settings.player?.name ?? "Player")", "\(settings.gameVersion)"]))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.message(settings.player?.name ?? L10n.player, settings.gameVersion))
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
-                            OverlayShimmerView(message: "overlay-complete-time".localized(["\(dataHandler.ticksToIGT(ticks: dataHandler.playTime))"]))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.time(viewModel.dataHandler.ticksToIGT(ticks: viewModel.dataHandler.playTime)))
                                 .padding(.top)
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
@@ -61,7 +61,7 @@ struct OverlayCompletedView: View {
                             .padding(.top)
                         
                         
-                        Text("overlay-complete-stats".localized)
+                        Text(L10n.Overlay.Complete.stats)
                             .font(.custom("Minecraft-Regular", size: 24))
                             .padding(.top, 5)
                     }
@@ -74,7 +74,7 @@ struct OverlayCompletedView: View {
                             .padding(.bottom)
                         
                         LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 32), spacing: 2, alignment: .leading), count: 3), spacing: 10) {
-                            let array = getStatsArray()
+                            let array = viewModel.getStatsArray()
                             ForEach(array.indices, id: \.self) { index in
                                 array[index]
                             }
@@ -88,44 +88,6 @@ struct OverlayCompletedView: View {
         }
         .padding(.horizontal, 15)
     }
-    
-    func getStatsArray() -> [AnyView] {
-        return [
-            AnyView(StatsView(stat: Stat(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "overlay-complete-stat-elytra", flipped: true), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: "overlay-complete-stat-bread"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: "overlay-complete-stat-enchant"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: "overlay-complete-stat-pearl", flipped: true), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: "overlay-complete-stat-temples"), statsData: dataHandler.statsData)),
-            
-            AnyView(Spacer()),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:creeper", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "creeper"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:drowned", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "drowned"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:wither_skeleton", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "wither_skeleton"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:cod", type: "minecraft:killed", icon: "diamond_axe", secondaryIcon: "cod"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:salmon", type: "minecraft:killed", icon: "diamond_axe", secondaryIcon: "salmon"), statsData: dataHandler.statsData)),
-            
-            AnyView(Spacer()),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:netherrack", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "netherrack"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:gold_block", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "gold_block"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:ender_chest", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "ender_chest"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:lectern", type: "minecraft:mined", icon: "diamond_axe", secondaryIcon: "lectern"), statsData: dataHandler.statsData)),
-            
-            AnyView(StatsView(stat: Stat(id: "minecraft:sugar_cane", type: "minecraft:picked_up", icon: "diamond_axe", secondaryIcon: "sugarcane"), statsData: dataHandler.statsData))
-        ]
-    }
 }
 
 struct OverlayCompletedView_Previews: PreviewProvider {
@@ -133,7 +95,7 @@ struct OverlayCompletedView_Previews: PreviewProvider {
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        OverlayCompletedView(dataHandler: dataHandler)
+        OverlayCompletedView(viewModel: .init(dataHandler: dataHandler))
             .frame(width: 820, height: 345)
             .environmentObject(settings)
     }

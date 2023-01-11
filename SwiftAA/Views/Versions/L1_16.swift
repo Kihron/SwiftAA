@@ -41,17 +41,17 @@ struct L1_16: View {
         }
         
         HStack(spacing: 0) {
-            GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "goal-biomes-visited".localized)
+            GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
                 .frame(width: 350)
-            GoalPanelView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: "goal-monsters-killed".localized)
+            GoalPanelView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
                 .frame(width: 312)
-            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: "goal-foods-eaten".localized)
+            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
                 .frame(width: 330)
-            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: "goal-animals-bred".localized)
+            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
                 .frame(width: 168)
-            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: "goal-cats".localized)
+            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
                 .frame(width: 141)
-            GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "goal-nether".localized)
+            GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether)
                 .frame(width: 130)
         }
         .frame(width: 1431, height: 323)

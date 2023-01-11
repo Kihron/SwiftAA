@@ -26,7 +26,7 @@ struct UpdateSettingsView: View {
             VStack(spacing: 0) {
                 Image(nsImage: NSImage(named: "AppIcon") ?? NSImage())
                 
-                Text("SwiftAA")
+                Text(L10n.App.title)
                     .font(.custom("Minecraft-Regular", size: 14))
                 
                 Text("v\(appVersion!)")
@@ -35,7 +35,7 @@ struct UpdateSettingsView: View {
             
             VStack(spacing: 24) {
                 Toggle(isOn: settings.$checkAutomatically, label: {
-                    Text("settings-updater-auto-check")
+                    Text(L10n.Settings.Updater.Auto.check)
                         .font(.custom("Minecraft-Regular", size: 12))
                         .multilineTextAlignment(.center)
                 })
@@ -49,19 +49,19 @@ struct UpdateSettingsView: View {
                             settings.lastUpdateCheck = updater.getLastUpdateCheckDate()
                         }
                     }, label: {
-                        Text("settings-updater-check")
+                        Text(L10n.Settings.Updater.check)
                             .font(.custom("Minecraft-Regular", size: 12))
                     })
                     
                     HStack(spacing: 5) {
-                        Text("\("settings-updater-last-checked".localized):")
+                        Text(L10n.Settings.Updater.Last.checked)
                             .font(.custom("Minecraft-Regular", size: 10))
                         
                         if (settings.lastUpdateCheck != nil) {
                             Text(settings.lastUpdateCheck!, formatter: Self.lastUpdateFormatter)
                                 .font(.custom("Minecraft-Regular", size: 10))
                         } else {
-                            Text("Never")
+                            Text(L10n.never)
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
                     }

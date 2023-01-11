@@ -14,11 +14,11 @@ struct PotionPanelView: View {
             PotionView(name: "weakness", ingredients: ["fermented_spider_eye"])
             PotionView(name: "swiftness", ingredients: ["nether_wart", "sugar"])
             PotionView(name: "slowness", ingredients: ["nether_wart", "sugar", "fermented_spider_eye"])
-            PotionView(name: "night-vision", ingredients: ["nether_wart", "golden_carrot"])
+            PotionView(name: "night_vision", ingredients: ["nether_wart", "golden_carrot"])
             PotionView(name: "invisibility", ingredients: ["nether_wart", "golden_carrot", "fermented_spider_eye"])
             PotionView(name: "leaping", ingredients: ["nether_wart", "rabbit_foot"])
-            PotionView(name: "slow-falling", ingredients: ["nether_wart", "phantom_membrane"])
-            PotionView(name: "water-breathing", ingredients: ["nether_wart", "pufferfish"])
+            PotionView(name: "slow_falling", ingredients: ["nether_wart", "phantom_membrane"])
+            PotionView(name: "water_breathing", ingredients: ["nether_wart", "pufferfish"])
         }
     }
 }
@@ -30,12 +30,12 @@ struct PotionView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("potion-\(name)".localized)
+            Text("potion.\(name)".localized)
                 .font(.custom("Minecraft-Regular", size: 10))
                 .foregroundColor(settings.textColor)
             
             HStack(spacing: 0) {
-                Image("potion_\(name.replacingOccurrences(of: "-", with: "_").lowercased())")
+                Image("potion_\(name)")
                     .interpolation(.none)
                     .resizable()
                     .frame(width: 32, height: 32)

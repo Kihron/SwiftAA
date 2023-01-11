@@ -45,17 +45,17 @@ struct L1_19: View {
                 }
                 
                 HStack(spacing: 0) {
-                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[26].asAdvancement, rowCount: 16, goal: "goal-biomes-visited".localized)
+                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[26].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
                         .frame(width: 521)
-                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[27].asAdvancement, rowCount: 16, goal: "goal-monsters-killed".localized)
+                    GoalPanelView(advancement: dataHandler.decode(file: "adventure")[27].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
                         .frame(width: 362)
-                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[15].asAdvancement, rowCount: 16, goal: "goal-foods-eaten".localized)
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[15].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
                         .frame(width: 355)
-                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[14].asAdvancement, rowCount: 16, goal: "goal-animals-bred".localized)
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[14].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
                         .frame(width: 193)
-                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[16].asAdvancement, rowCount: 16, goal: "goal-cats".localized)
+                    GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[16].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
                         .frame(width: 141)
-                    GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: "goal-nether".localized)
+                    GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether)
                         .frame(width: 130)
                 }
                 .frame(width: 1702, height: 323)

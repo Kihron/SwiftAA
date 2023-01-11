@@ -22,6 +22,14 @@ class DataHandler: ObservableObject {
     
     var settings: AppSettings = .init()
     
+    var totalAdvancements: Int {
+        return map.values.compactMap({$0.count}).reduce(0, +)
+    }
+    
+    var completedAdvancements: Int {
+        return map.values.flatMap({$0}).filter({$0.completed}).count
+    }
+    
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
         let file = "Advancements/\(settings.gameVersion)/\(file)"
         

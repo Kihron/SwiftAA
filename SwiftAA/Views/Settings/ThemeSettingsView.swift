@@ -16,13 +16,13 @@ struct ThemeSettingsView: View {
                 Picker(selection: settings.$themeMode, label: Text("")) {
                     Group {
                         VStack(alignment: .leading) {
-                            Text("theme-presets", comment: "Title: preset options for color scheme")
+                            Text(L10n.Theme.presets)
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
                             Menu {
-                                self.createPresetButton(name: "ender-pearl")
-                                self.createPresetButton(name: "github-dark")
-                                self.createPresetButton(name: "high-contrast")
+                                self.createPresetButton(name: "ender.pearl")
+                                self.createPresetButton(name: "github.dark")
+                                self.createPresetButton(name: "high.contrast")
                                 self.createPresetButton(name: "blazed")
                                 self.createPresetButton(name: "brick")
                                 self.createPresetButton(name: "berry")
@@ -40,7 +40,7 @@ struct ThemeSettingsView: View {
                                 settings.userTxColor = settings.textColor
                                 settings.themeMode = ThemeMode.custom
                             } label: {
-                                Text("theme-copy")
+                                Text(L10n.Theme.copy)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
                             
@@ -53,19 +53,19 @@ struct ThemeSettingsView: View {
                     
                     Group {
                         VStack(alignment: .leading) {
-                            Text("theme-custom", comment: "Title: custom user color scheme")
+                            Text(L10n.Theme.custom)
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
                             VStack(alignment: .trailing) {
-                                ColorPicker("theme-background-color", selection: settings.$userBgColor, supportsOpacity: false)
+                                ColorPicker(L10n.Theme.Background.color, selection: settings.$userBgColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(settings.themeMode == .preset)
                                 
-                                ColorPicker("theme-foreground-color", selection: settings.$userBrColor, supportsOpacity: false)
+                                ColorPicker(L10n.Theme.Foreground.color, selection: settings.$userBrColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(settings.themeMode == .preset)
                                 
-                                ColorPicker("theme-text-color", selection: settings.$userTxColor, supportsOpacity: false)
+                                ColorPicker(L10n.Theme.Text.color, selection: settings.$userTxColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(settings.themeMode == .preset)
                             }
@@ -78,9 +78,9 @@ struct ThemeSettingsView: View {
                 .horizontalRadioGroupLayout()
                 .onChange(of: settings.themeMode) { newValue in
                     if (newValue == .preset) {
-                        settings.backgroudColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: "-", with: "_"))_background")
-                        settings.borderColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: "-", with: "_"))_border")
-                        settings.textColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: "-", with: "_"))_text")
+                        settings.backgroudColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_background")
+                        settings.borderColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_border")
+                        settings.textColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_text")
                     } else {
                         settings.backgroudColor = settings.userBgColor
                         settings.borderColor = settings.userBrColor
@@ -106,14 +106,14 @@ struct ThemeSettingsView: View {
     }
     
     func createPresetButton(name: String) -> Button<Text> {
-        let colorName = name.replacingOccurrences(of: "-", with: "_")
+        let colorName = name.replacingOccurrences(of: ".", with: "_")
         let view = Button {
-            settings.theme = "theme-presets-\(name)"
+            settings.theme = "theme.presets.\(name)"
             settings.backgroudColor = Color("\(colorName)_background")
             settings.borderColor = Color("\(colorName)_border")
             settings.textColor = Color("\(colorName)_text")
         } label: {
-            Text("theme-presets-\(name)".localized)
+            Text("theme.presets.\(name)".localized)
                 .font(.custom("Minecraft-Regular", size: 10))
         }
         return view
