@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* OverlayView.swift */; };
+		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
 		B637DB3129634FA800A73F62 /* SwiftAAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637DB3029634FA800A73F62 /* SwiftAAViewModel.swift */; };
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
@@ -22,6 +23,10 @@
 		B65B074D28AFDD1600E10EC5 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074C28AFDD1600E10EC5 /* Updater.swift */; };
 		B65B074F28AFE25B00E10EC5 /* UpdateSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074E28AFE25B00E10EC5 /* UpdateSettingsView.swift */; };
 		B65B075128AFF77400E10EC5 /* RawRepresentableExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B075028AFF77400E10EC5 /* RawRepresentableExts.swift */; };
+		B65FE5912AA6CFE900C30A8F /* UIThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5902AA6CFE900C30A8F /* UIThemeManager.swift */; };
+		B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5922AA6D27700C30A8F /* ThemePresets.swift */; };
+		B65FE5962AA6DEE400C30A8F /* ApplyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5952AA6DEE400C30A8F /* ApplyTheme.swift */; };
+		B65FE5982AA6E5FE00C30A8F /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5972AA6E5FE00C30A8F /* Potion.swift */; };
 		B66A077028879ED900DC0A2C /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A076F28879ED900DC0A2C /* DataHandler.swift */; };
 		B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07712887A2C900DC0A2C /* CriterionView.swift */; };
 		B66A07742887A32900DC0A2C /* Criterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07732887A32900DC0A2C /* Criterion.swift */; };
@@ -71,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		B616FAA4289B232F004E4A41 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		B637DB3029634FA800A73F62 /* SwiftAAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAAViewModel.swift; sourceTree = "<group>"; };
 		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
 		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
@@ -91,6 +97,10 @@
 		B65B074C28AFDD1600E10EC5 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		B65B074E28AFE25B00E10EC5 /* UpdateSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettingsView.swift; sourceTree = "<group>"; };
 		B65B075028AFF77400E10EC5 /* RawRepresentableExts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRepresentableExts.swift; sourceTree = "<group>"; };
+		B65FE5902AA6CFE900C30A8F /* UIThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIThemeManager.swift; sourceTree = "<group>"; };
+		B65FE5922AA6D27700C30A8F /* ThemePresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePresets.swift; sourceTree = "<group>"; };
+		B65FE5952AA6DEE400C30A8F /* ApplyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyTheme.swift; sourceTree = "<group>"; };
+		B65FE5972AA6E5FE00C30A8F /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
 		B66A076F28879ED900DC0A2C /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		B66A07712887A2C900DC0A2C /* CriterionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionView.swift; sourceTree = "<group>"; };
 		B66A07732887A32900DC0A2C /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
@@ -194,6 +204,7 @@
 		B65AE1BF2886F401006EC138 /* SwiftAA */ = {
 			isa = PBXGroup;
 			children = (
+				B65FE58C2AA6C97500C30A8F /* Enums */,
 				B6FEFED9289992FF0095CF08 /* Extensions */,
 				B6FEFED6289991760095CF08 /* Models */,
 				B6FEFED3289990D40095CF08 /* Protocols */,
@@ -243,6 +254,31 @@
 				B65B074C28AFDD1600E10EC5 /* Updater.swift */,
 			);
 			path = Updater;
+			sourceTree = "<group>";
+		};
+		B65FE58C2AA6C97500C30A8F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B65FE5922AA6D27700C30A8F /* ThemePresets.swift */,
+				B65FE5972AA6E5FE00C30A8F /* Potion.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B65FE58F2AA6CFDE00C30A8F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B65FE5902AA6CFE900C30A8F /* UIThemeManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B65FE5942AA6DECF00C30A8F /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B65FE5952AA6DEE400C30A8F /* ApplyTheme.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		B66A07752887B2A800DC0A2C /* Resources */ = {
@@ -330,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A772F42889949A00436551 /* SettingsView.swift */,
+				B621A8EA29860163000B9DDF /* SettingsCardView.swift */,
 				B64827292889CB7100B44855 /* TrackingSettingsView.swift */,
 				B6A772F6288994DE00436551 /* ThemeSettingsView.swift */,
 				B6A5883F28AA98D10091990F /* OverlaySettingsView.swift */,
@@ -406,6 +443,7 @@
 		B6FEFED7289991F20095CF08 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B65FE58F2AA6CFDE00C30A8F /* Managers */,
 				B65B074B28AFDCFC00E10EC5 /* Updater */,
 				B6FEFED82899926E0095CF08 /* Windows */,
 				B648272B2889CD6F00B44855 /* Settings */,
@@ -436,6 +474,7 @@
 		B6FEFEDC2899933D0095CF08 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				B65FE5942AA6DECF00C30A8F /* Style */,
 				B66DB3D428A29F47006BE9D9 /* View */,
 			);
 			path = ViewModifiers;
@@ -575,13 +614,17 @@
 			files = (
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
+				B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */,
 				B6A5884028AA98D10091990F /* OverlaySettingsView.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
 				B6A772FC2889998700436551 /* Statistics.swift in Sources */,
 				B65B074F28AFE25B00E10EC5 /* UpdateSettingsView.swift in Sources */,
+				B65FE5982AA6E5FE00C30A8F /* Potion.swift in Sources */,
+				B65FE5912AA6CFE900C30A8F /* UIThemeManager.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
+				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */,
 				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
@@ -590,6 +633,7 @@
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B616FAA5289B232F004E4A41 /* OverlayView.swift in Sources */,
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
+				B65FE5962AA6DEE400C30A8F /* ApplyTheme.swift in Sources */,
 				B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarAAView.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* Localize.swift in Sources */,
@@ -767,7 +811,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.1.0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -782,7 +826,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -799,7 +843,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.1.0;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -814,7 +858,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

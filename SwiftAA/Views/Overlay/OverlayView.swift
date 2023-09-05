@@ -98,7 +98,7 @@ struct OverlayView: View {
                     if progress <= 0.0 {
                         totalSections = viewModel.totalSections(screen: screen)
                         criteriaTotalSections = viewModel.totalCriteriaSections(screen: screen)
-                        section = (section + 1) % totalSections
+                        section = (section + 1) % max(1, totalSections)
                         criteriaSection = (criteriaSection + 1) % criteriaTotalSections
                         self.progress = 0.7
                     }

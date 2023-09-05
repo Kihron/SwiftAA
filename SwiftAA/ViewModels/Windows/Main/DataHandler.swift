@@ -40,7 +40,9 @@ class DataHandler: ObservableObject {
                 cache = Array(cache.drop(while: { $0.id != start }))
             }
             if (!end.isEmpty) {
-                cache = cache.prefix(while: { $0.id != end })
+                if let index = cache.lastIndex(where: { $0.id == end }) {
+                    cache = cache.dropLast(cache.count - index - 1)
+                }
             }
             return Binding.constant(cache)
         }

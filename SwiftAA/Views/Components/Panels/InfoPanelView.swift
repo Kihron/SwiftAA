@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct InfoPanelView: View {
-    @EnvironmentObject var settings: AppSettings
     @State var isNotes = false
     
     var body: some View {
@@ -26,7 +25,7 @@ struct InfoPanelView: View {
             } label: {
                 Image(systemName: "arrow.counterclockwise.circle")
                     .font(.system(size: 14))
-                    .foregroundColor(settings.textColor)
+                    .applyThemeText()
                     .frame(width: 32, height: 32)
                     .padding(4)
             }
@@ -38,11 +37,8 @@ struct InfoPanelView: View {
 }
 
 struct InfoPanelView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         InfoPanelView()
             .frame(width: 300, height: 800)
-            .environmentObject(settings)
     }
 }

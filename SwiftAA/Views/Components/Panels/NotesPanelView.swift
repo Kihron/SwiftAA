@@ -14,9 +14,8 @@ struct NotesPanelView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text("notes-panel-view-top-title", comment: "Title: Waypoint Menu")
+                Text(L10n.Notes.Panel.View.Top.title)
                     .font(.custom("Minecraft-Regular", size: 12))
-                    .foregroundColor(settings.textColor)
                 
                 VStack(spacing: 5) {
                     WayPointCardView(index: 0, icon: "elder_guardian")
@@ -29,9 +28,8 @@ struct NotesPanelView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                Text("notes-panel-view-bottom-title", comment: "Title: Notes Menu")
+                Text(L10n.Notes.Panel.View.Bottom.title)
                     .font(.custom("Minecraft-Regular", size: 12))
-                    .foregroundColor(settings.textColor)
                 
                 TextEditor(text: $notes)
                     .font(.custom("Minecraft-Regular", size: 10))
@@ -47,8 +45,7 @@ struct NotesPanelView: View {
             }
         }
         .padding()
-        .background(settings.backgroudColor)
-        .border(settings.borderColor, width: 2)
+        .applyThemeModifiers()
         .onAppear {
             if (!settings.worldPath.isEmpty) {
                 if let worldNotes = settings.notes[settings.worldPath] {

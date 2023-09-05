@@ -17,14 +17,6 @@ class AppSettings: ObservableObject {
     //Notes
     @AppStorage("notes") var notes: [String:[String]] = [:]
     
-    //Theme
-    @AppStorage("theme") var theme: String = "theme-presets-ender-pearl"
-    @AppStorage("themeMode") var themeMode: ThemeMode = .preset
-    
-    @AppStorage("backgroundColor") var backgroudColor: Color = Color("ender_pearl_background")
-    @AppStorage("borderColor") var borderColor: Color = Color("ender_pearl_border")
-    @AppStorage("textColor") var textColor: Color = Color("ender_pearl_text")
-    
     @AppStorage("userBgColor") var userBgColor: Color = Color("ender_pearl_background")
     @AppStorage("userBrColor") var userBrColor: Color = Color("ender_pearl_border")
     @AppStorage("userTxColor") var userTxColor: Color = Color("ender_pearl_text")
@@ -49,6 +41,3 @@ enum TrackingMode: String {
     case seamless, directory
 }
 
-enum ThemeMode: String {
-    case preset, custom
-}

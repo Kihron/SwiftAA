@@ -28,22 +28,21 @@ struct StatsView: View {
                     .offset(x: 5)
                     .padding(.trailing, stat.tooltip.isEmpty ? 10 : 0)
             }
-            
-            if (!stat.tooltip.isEmpty) {
-                Spacer()
-            }
+            .padding(.trailing, 5)
+        
             
             Text("\(getStatValue() / stat.factor)")
                 .font(.custom("Minecraft-Regular", size: 24))
             
             if (!stat.tooltip.isEmpty) {
-                Spacer()
-                
                 Text(stat.tooltip.localized)
                     .font(.custom("Minecraft-Regular", size: 14))
+                
+                Spacer()
             }
         }
         .frame(maxWidth: 160)
+        .padding(.trailing, -3)
     }
     
     func getStatValue() -> Int {
@@ -53,7 +52,7 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stat: Stat(id: "minecraft:stat", type: "", factor: 10000, icon: "rockets", secondaryIcon: "elytra", tooltip: ""), statsData: [String:[String:Int]]())
+        StatsView(stat: Stat(id: "minecraft:stat", type: "", factor: 10000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"), statsData: [String:[String:Int]]())
             .padding()
     }
 }

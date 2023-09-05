@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressBarView: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject var themeManager = UIThemeManager.shared
     @Binding var value: Int
     @Binding var total: Int
     @State var title: String
@@ -31,7 +31,7 @@ struct ProgressBarView: View {
         VStack(alignment: .leading, spacing: 5) {
             Text(header)
                 .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(isToolbar ? Color.primary :  settings.textColor)
+                .foregroundColor(isToolbar ? Color.primary : themeManager.text)
             
             GeometryReader { item in
                 ZStack(alignment: .leading) {
@@ -63,11 +63,8 @@ struct ProgressBarView: View {
 }
 
 struct ProgressBarView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         ProgressBarView(value: .constant(0), total: .constant(42), title: "Biomes Visited")
             .frame(width: 400, height: 100)
-            .environmentObject(settings)
     }
 }

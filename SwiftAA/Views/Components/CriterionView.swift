@@ -23,7 +23,7 @@ struct CriterionView: View {
             
             Text(calculateText())
                 .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(settings.textColor)
+                .applyThemeText()
         }
         .opacity(criterion.completed ? 1 : 0.3)
 

@@ -9,7 +9,7 @@ import SwiftUI
 import Quartz
 
 struct IndicatorView: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject var themeManager = UIThemeManager.shared
     @Binding var indicator: Indicator
     @State var isOverlay: Bool = false
     @State var isStat: Bool = false
@@ -52,7 +52,7 @@ struct IndicatorView: View {
             Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))
                 .font(.custom("Minecraft-Regular", size: 10))
                 .tracking(0.1)
-                .foregroundColor(isOverlay ? .white : settings.textColor)
+                .foregroundColor(isOverlay ? .white : themeManager.text)
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
                 .frame(height: 24, alignment: .top)

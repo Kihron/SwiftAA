@@ -9,43 +9,41 @@ import SwiftUI
 
 struct ThemeSettingsView: View {
     @EnvironmentObject var settings: AppSettings
+    @ObservedObject var themeManager: UIThemeManager = UIThemeManager.shared
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Picker(selection: settings.$themeMode, label: Text("")) {
+                Picker(selection: $themeManager.themeMode, label: Text("")) {
                     Group {
                         VStack(alignment: .leading) {
                             Text(L10n.Theme.presets)
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
                             Menu {
-                                self.createPresetButton(name: "ender.pearl")
-                                self.createPresetButton(name: "github.dark")
-                                self.createPresetButton(name: "high.contrast")
-                                self.createPresetButton(name: "blazed")
-                                self.createPresetButton(name: "brick")
-                                self.createPresetButton(name: "berry")
-                                self.createPresetButton(name: "dark")
-                                self.createPresetButton(name: "light")
+                                ForEach(ThemePreset.allCases) { preset in
+                                    Button(action: { UIThemeManager.shared.changePreset(preset: preset)}) {
+                                        Text(preset.localized)
+                                    }
+                                }
                             } label: {
-                                Text(settings.theme.localized)
+                                Text(themeManager.currentPreset.localized)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
                             .padding(.trailing)
                             
                             Button {
-                                settings.userBgColor = settings.backgroudColor
-                                settings.userBrColor = settings.borderColor
-                                settings.userTxColor = settings.textColor
-                                settings.themeMode = ThemeMode.custom
+//                                settings.userBgColor = settings.backgroudColor
+//                                settings.userBrColor = settings.borderColor
+//                                settings.userTxColor = settings.textColor
+//                                settings.themeMode = ThemeMode.custom
                             } label: {
                                 Text(L10n.Theme.copy)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
-                        .disabled(settings.themeMode == ThemeMode.custom)
+                        .disabled(themeManager.themeMode == ThemeMode.custom)
                     }
                     .tag(ThemeMode.preset)
                     .padding(.bottom, 34)
@@ -58,15 +56,15 @@ struct ThemeSettingsView: View {
                             VStack(alignment: .trailing) {
                                 ColorPicker(L10n.Theme.Background.color, selection: settings.$userBgColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
-                                    .disabled(settings.themeMode == .preset)
+                                    .disabled(themeManager.themeMode == .preset)
                                 
                                 ColorPicker(L10n.Theme.Foreground.color, selection: settings.$userBrColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
-                                    .disabled(settings.themeMode == .preset)
+                                    .disabled(themeManager.themeMode == .preset)
                                 
                                 ColorPicker(L10n.Theme.Text.color, selection: settings.$userTxColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
-                                    .disabled(settings.themeMode == .preset)
+                                    .disabled(themeManager.themeMode == .preset)
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
@@ -75,43 +73,29 @@ struct ThemeSettingsView: View {
                 }
                 .pickerStyle(.radioGroup)
                 .horizontalRadioGroupLayout()
-                .onChange(of: settings.themeMode) { newValue in
-                    if (newValue == .preset) {
-                        settings.backgroudColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_background")
-                        settings.borderColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_border")
-                        settings.textColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_text")
-                    } else {
-                        settings.backgroudColor = settings.userBgColor
-                        settings.borderColor = settings.userBrColor
-                        settings.textColor = settings.userTxColor
-                    }
-                }
-                .onChange(of: settings.userBgColor) { newValue in
-                    settings.backgroudColor = newValue
-                }
-                .onChange(of: settings.userBrColor) { newValue in
-                    settings.borderColor = newValue
-                }
-                .onChange(of: settings.userTxColor) { newValue in
-                    settings.textColor = newValue
-                }
+//                .onChange(of: settings.themeMode) { newValue in
+//                    if (newValue == .preset) {
+//                        settings.backgroudColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_background")
+//                        settings.borderColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_border")
+//                        settings.textColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_text")
+//                    } else {
+//                        settings.backgroudColor = settings.userBgColor
+//                        settings.borderColor = settings.userBrColor
+//                        settings.textColor = settings.userTxColor
+//                    }
+//                }
+//                .onChange(of: settings.userBgColor) { newValue in
+//                    settings.backgroudColor = newValue
+//                }
+//                .onChange(of: settings.userBrColor) { newValue in
+//                    settings.borderColor = newValue
+//                }
+//                .onChange(of: settings.userTxColor) { newValue in
+//                    settings.textColor = newValue
+//                }
             }
         }
         .padding()
-    }
-    
-    private func createPresetButton(name: String) -> Button<Text> {
-        let colorName = name.replacingOccurrences(of: ".", with: "_")
-        let view = Button {
-            settings.theme = "theme.presets.\(name)"
-            settings.backgroudColor = Color("\(colorName)_background")
-            settings.borderColor = Color("\(colorName)_border")
-            settings.textColor = Color("\(colorName)_text")
-        } label: {
-            Text("theme.presets.\(name)".localized)
-                .font(.custom("Minecraft-Regular", size: 10))
-        }
-        return view
     }
 }
 

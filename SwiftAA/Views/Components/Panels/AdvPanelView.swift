@@ -20,8 +20,7 @@ struct AdvPanelView: View {
             }
         }
         .padding(4)
-        .background(settings.backgroudColor)
-        .border(settings.borderColor, width: 2)
+        .applyThemeModifiers()
     }
 }
 

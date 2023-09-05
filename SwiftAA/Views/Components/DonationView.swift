@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DonationView: View {
     @Environment(\.openURL) var openURL
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject var themeManager = UIThemeManager.shared
     @State private var window: NSWindow?
     @State var show = false
     
@@ -19,14 +19,14 @@ struct DonationView: View {
         } label: {
             ZStack {
                 Rectangle()
-                    .fill(settings.backgroudColor)
+                    .fill(themeManager.background)
                     .overlay {
                         Rectangle()
                             .fill(.clear)
-                            .border(settings.borderColor, width: 2)
+                            .border(themeManager.border, width: 2)
                             .frame(width: 200, height: 50)
                     }
-                    .shadow(color: settings.borderColor, radius: 3, x: 0, y: 0)
+                    .shadow(color: themeManager.border, radius: 3, x: 0, y: 0)
                 
                 HStack {
                     Image("enchantment_table")
@@ -36,7 +36,7 @@ struct DonationView: View {
                         
                     Text(L10n.Donate.message)
                         .font(.custom("Minecraft-Regular", size: 12))
-                        .foregroundColor(settings.textColor)
+                        .foregroundColor(themeManager.text)
                     }
             }
             .frame(width: 200, height: 50)
@@ -46,11 +46,8 @@ struct DonationView: View {
 }
 
 struct DonationView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         DonationView()
             .frame(width: 300, height: 300)
-            .environmentObject(settings)
     }
 }

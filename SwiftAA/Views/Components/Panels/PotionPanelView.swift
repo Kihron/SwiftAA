@@ -10,21 +10,15 @@ import SwiftUI
 struct PotionPanelView: View {
     var body: some View {
         VStack(spacing: 0) {
-            PotionView(name: "strength", ingredients: ["nether_wart", "blaze_powder"])
-            PotionView(name: "weakness", ingredients: ["fermented_spider_eye"])
-            PotionView(name: "swiftness", ingredients: ["nether_wart", "sugar"])
-            PotionView(name: "slowness", ingredients: ["nether_wart", "sugar", "fermented_spider_eye"])
-            PotionView(name: "night_vision", ingredients: ["nether_wart", "golden_carrot"])
-            PotionView(name: "invisibility", ingredients: ["nether_wart", "golden_carrot", "fermented_spider_eye"])
-            PotionView(name: "leaping", ingredients: ["nether_wart", "rabbit_foot"])
-            PotionView(name: "slow_falling", ingredients: ["nether_wart", "phantom_membrane"])
-            PotionView(name: "water_breathing", ingredients: ["nether_wart", "pufferfish"])
+            ForEach(Potion.allCases) { potion in
+                PotionView(name: potion.name, ingredients: potion.ingredients)
+            }
         }
     }
 }
 
 struct PotionView: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject var themeManager = UIThemeManager.shared
     @State var name: String
     @State var ingredients: [String]
     
@@ -32,7 +26,7 @@ struct PotionView: View {
         VStack(spacing: 0) {
             Text("potion.\(name)".localized)
                 .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(settings.textColor)
+                .foregroundColor(themeManager.text)
             
             HStack(spacing: 0) {
                 Image("potion_\(name)")
@@ -42,7 +36,7 @@ struct PotionView: View {
                 
                 Image("arrow")
                     .renderingMode(.template)
-                    .foregroundColor(Color("ender_pearl_border"))
+                    .foregroundColor(themeManager.border)
                 
                 ForEach(ensureCapacity(ingredients).indices, id: \.self) { index in
                     let item = ensureCapacity(ingredients)[index]
@@ -63,8 +57,8 @@ struct PotionView: View {
             }
         }
         .padding(1.95)
-        .background(settings.backgroudColor)
-        .border(settings.borderColor, width: 2)
+        .background(themeManager.background)
+        .border(themeManager.border, width: 2)
     }
     
     func ensureCapacity(_ ingredients: [String]) -> [String] {
@@ -77,11 +71,8 @@ struct PotionView: View {
 }
 
 struct PotionPanelView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         PotionPanelView()
             .frame(width: 300, height: 800)
-            .environmentObject(settings)
     }
 }

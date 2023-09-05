@@ -2,7 +2,7 @@
 //  OverlayViewModel.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 1/10/23.
+//  Created by Kihron on 1/10/23.
 //
 
 import SwiftUI
@@ -65,15 +65,15 @@ class OverlayViewModel: ObservableObject {
     
     func getStatsArray() -> [AnyView] {
         return [
-            AnyView(StatsView(stat: Stat(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "overlay-complete-stat-elytra", flipped: true), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: L10n.Overlay.Complete.Stat.elytra, flipped: true), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: "overlay-complete-stat-bread"), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: L10n.Overlay.Complete.Stat.bread), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: "overlay-complete-stat-enchant"), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: L10n.Overlay.Complete.Stat.enchant), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: "overlay-complete-stat-pearl", flipped: true), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: L10n.Overlay.Complete.Stat.pearl, flipped: true), statsData: dataHandler.statsData)),
             
-            AnyView(StatsView(stat: Stat(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: "overlay-complete-stat-temples"), statsData: dataHandler.statsData)),
+            AnyView(StatsView(stat: Stat(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: L10n.Overlay.Complete.Stat.temples), statsData: dataHandler.statsData)),
             
             AnyView(Spacer()),
             

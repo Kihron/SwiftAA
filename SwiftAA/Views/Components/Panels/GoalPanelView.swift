@@ -38,8 +38,7 @@ struct GoalPanelView: View {
             }).count), total: .constant(advancement.criteria.count), title: goal)
         }
         .padding(4)
-        .background(settings.backgroudColor)
-        .border(settings.borderColor, width: 2)
+        .applyThemeModifiers()
     }
 }
 
