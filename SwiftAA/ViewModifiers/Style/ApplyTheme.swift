@@ -3,7 +3,6 @@
 //  SwiftAA
 //
 //  Created by Kihron on 9/4/23.
-//
 
 import SwiftUI
 

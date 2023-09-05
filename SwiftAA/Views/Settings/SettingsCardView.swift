@@ -3,7 +3,6 @@
 //  SwiftAA
 //
 //  Created by Kihron on 1/28/23.
-//
 
 import SwiftUI
 
@@ -19,7 +18,7 @@ struct SettingsCardView<Content: View>: View {
                     .padding(.leading, 10)
                     .font(.custom("Minecraft-Regular", size: 10))
             }
-
+            
             content()
                 .padding(10)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
