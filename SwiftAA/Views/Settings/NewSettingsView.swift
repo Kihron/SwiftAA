@@ -56,5 +56,3 @@ struct NewSettingsView: View {
 #Preview {
     NewSettingsView()
 }
-
-

@@ -52,4 +52,3 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
         }
     }
 }
-
