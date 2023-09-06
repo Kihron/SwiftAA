@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AdvPanelView: View {
-    @EnvironmentObject var settings: AppSettings
     @Binding var indicators: [Indicator]
     @State var columnCount: Int
     @State var isStat: Bool = false
@@ -25,12 +24,10 @@ struct AdvPanelView: View {
 }
 
 struct AdvPanelViewView_Previews: PreviewProvider {
-    @ObservedObject static var dataHandler = DataHandler()
-    @StateObject static var settings = AppSettings()
+    @ObservedObject static var dataManager = DataManager()
     
     static var previews: some View {
-        AdvPanelView(indicators: dataHandler.decode(file: "adventure"), columnCount: 2)
+        AdvPanelView(indicators: dataManager.decode(file: "adventure"), columnCount: 2)
             .frame(width: 300, height: 500)
-            .environmentObject(settings)
     }
 }

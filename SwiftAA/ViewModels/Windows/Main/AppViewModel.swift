@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-class SwiftAAViewModel: ObservableObject {    
+class AppViewModel: ObservableObject {    
     @ObservedObject var settings = AppSettings()
-    @ObservedObject var dataHandler = DataHandler()
+    @ObservedObject var dataManager = DataManager.shared
+    @ObservedObject var trackerManager = TrackerManager.shared
     @ObservedObject var updater = Updater()
     
-    @Published var changed: Bool = false
+    @Published var advancementsUpdated: Bool = false
     @Published var error: String = ""
     
     private var lastWorking = ""
@@ -35,9 +36,10 @@ class SwiftAAViewModel: ObservableObject {
     }
     
     func refreshData() -> String {
+        advancementsUpdated = false
         let saves: String
-        if (settings.trackingMode == .directory) {
-            saves = settings.customSavesPath
+        if (trackerManager.trackingMode == .directory) {
+            saves = trackerManager.customSavesPath
         } else {
             let dir = getSavesFromActiveInstance()
             if (dir.count <= 0) {
@@ -109,8 +111,8 @@ class SwiftAAViewModel: ObservableObject {
                 let fileName = try fileManager.contentsOfDirectory(atPath: "\(world)/advancements")[0]
                 let lastUpdate = try getModifiedTime("\(world)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
                 
-                if (dataHandler.lastModified != lastUpdate) {
-                    dataHandler.lastModified = lastUpdate
+                if (dataManager.lastModified != lastUpdate) {
+                    dataManager.lastModified = lastUpdate
                     var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(world)/advancements/\(fileName)"))
                     let advRange = NSRange(location: 0, length: advFileContents.count)
                     advFileContents = regex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
@@ -167,7 +169,7 @@ class SwiftAAViewModel: ObservableObject {
                 return path
             }
             
-            if let arguments = dataHandler.processArguments(pid: pid) {
+            if let arguments = dataManager.processArguments(pid: pid) {
                 if let gameDirIndex = arguments.firstIndex(of: "--gameDir") {
                     let path = "\(arguments[gameDirIndex + 1])/saves"
                     activeWindows[pid] = path
@@ -190,26 +192,26 @@ class SwiftAAViewModel: ObservableObject {
                 return
             }
             wasCleared = true
-            dataHandler.lastModified = Date.now
+            dataManager.lastModified = Date.now
         } else {
             wasCleared = false
         }
         
-        let flatMap = dataHandler.map.values.flatMap({$0})
+        let flatMap = dataManager.map.values.flatMap({$0})
         flatMap.forEach { adv in
             adv.update(advancements: advancements, stats: statistics)
         }
         
-        dataHandler.stats.forEach { stat in
+        dataManager.stats.forEach { stat in
             stat.update(advancements: advancements, stats: statistics)
         }
         
-        let timeStat = settings.gameVersion == "1.16" ? "minecraft:play_one_minute" : "minecraft:play_time"
+        let timeStat = TrackerManager.shared.gameVersion == .v1_16 ? "minecraft:play_one_minute" : "minecraft:play_time"
         
-        dataHandler.statsData = statistics
-        dataHandler.playTime = statistics["minecraft:custom"]?[timeStat] ?? 0
-        dataHandler.allAdvancements = dataHandler.map.values.flatMap({$0}).filter({$0.completed}).count >= dataHandler.map.values.compactMap({$0.count}).reduce(0, +)
+        dataManager.statsData = statistics
+        dataManager.playTime = statistics["minecraft:custom"]?[timeStat] ?? 0
+        dataManager.allAdvancements = dataManager.map.values.flatMap({$0}).filter({$0.completed}).count >= dataManager.map.values.compactMap({$0.count}).reduce(0, +)
         
-        changed = true
+        advancementsUpdated = true
     }
 }

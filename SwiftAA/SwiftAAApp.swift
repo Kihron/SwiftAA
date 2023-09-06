@@ -12,25 +12,26 @@ struct SwiftAAApp: App {
     @Environment(\.openWindow) private var openWindow
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @ObservedObject var viewModel = SwiftAAViewModel()
+    @ObservedObject var viewModel = AppViewModel()
     
     var body: some Scene {
         Window("SwiftAA", id: "swiftaa-window") {
-            ContentView(dataHandler: viewModel.dataHandler, changed: $viewModel.changed)
-                .applyVersionFrame(gameVersion: viewModel.settings.$gameVersion)
+            ContentView()
+                .applyVersionFrame()
                 .onAppear {
                     viewModel.onAppear()
                 }
                 .navigationTitle("SwiftAA")
                 .toolbar {
                     ToolbarItem(placement: .automatic) {
-                        ToolbarRefreshView(visible: $viewModel.changed)
+                        ToolbarRefreshView(visible: $viewModel.advancementsUpdated)
                     }
                     ToolbarItem(placement: .automatic) {
-                        ToolbarPlayerHead()
-                    }
-                    ToolbarItem(placement: .automatic) {
-                        ToolbarAAView(dataHandler: viewModel.dataHandler, changed: $viewModel.changed)
+                        HStack {
+                            ToolbarPlayerHead()
+                            
+                            ToolbarProgressView()
+                        }
                     }
                     ToolbarItem(placement: .automatic) {
                         if (!viewModel.error.isEmpty) {
@@ -70,8 +71,8 @@ struct SwiftAAApp: App {
         .windowResizability(.contentSize)
         
         Window("OverlayWindow", id: "overlay-window") {
-            OverlayView(viewModel: .init(dataHandler: viewModel.dataHandler))
-                .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataHandler.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
+            OverlayView(viewModel: .init(dataManager: viewModel.dataManager))
+                .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataManager.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
                 .environmentObject(viewModel.settings)
                 .onAppear {
                     Task {
@@ -97,9 +98,16 @@ struct SwiftAAApp: App {
         .windowStyle(HiddenTitleBarWindowStyle())
         .windowResizability(.contentSize)
         
-        Settings {
-            SettingsView(dataHandler: viewModel.dataHandler, updater: viewModel.updater)
-                .environmentObject(viewModel.settings)
+        Window("Settings", id: "settings-window") {
+            NewSettingsView()
+        }
+        .commands {
+            CommandGroup(replacing: .appSettings) {
+                Button(action: { openWindow(id: "settings-window") }) {
+                    Text("Settings...")
+                }
+                .keyboardShortcut(",", modifiers: .command)
+            }
         }
     }
     

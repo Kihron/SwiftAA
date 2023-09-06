@@ -1,5 +1,5 @@
 //
-//  Statistics.swift
+//  StatusIndicators.swift
 //  SwiftAA
 //
 //  Created by Kihron on 7/21/22.

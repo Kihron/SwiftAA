@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsView: View {
-    @State var stat: Stat
+    @State var stat: Statistic
     @State var statsData: [String:[String:Int]]
     
     var body: some View {
@@ -52,7 +52,7 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stat: Stat(id: "minecraft:stat", type: "", factor: 10000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"), statsData: [String:[String:Int]]())
+        StatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 10000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"), statsData: [String:[String:Int]]())
             .padding()
     }
 }

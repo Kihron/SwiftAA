@@ -21,7 +21,7 @@ struct OverlayView: View {
     
     var body: some View {
         GeometryReader { screen in
-            if (viewModel.dataHandler.allAdvancements) {
+            if (viewModel.dataManager.allAdvancements) {
                 withAnimation {
                     OverlayCompletedView(viewModel: viewModel)
                 }
@@ -84,7 +84,7 @@ struct OverlayView: View {
                     Spacer()
                     
                     HStack {
-                        ForEach(viewModel.dataHandler.stats, id: \.self.id) { adv in
+                        ForEach(viewModel.dataManager.stats, id: \.self.id) { adv in
                             IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
                         }
                     }
@@ -113,15 +113,15 @@ struct OverlayView: View {
 }
 
 struct OverlayView_Previews: PreviewProvider {
-    @ObservedObject static var dataHandler = DataHandler()
+    @ObservedObject static var dataManager = DataManager()
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        OverlayView(viewModel: .init(dataHandler: dataHandler))
+        OverlayView(viewModel: .init(dataManager: dataManager))
             .environmentObject(settings)
             .frame(width: 800, height: 345)
             .onAppear {
-                _ = dataHandler.decode(file: "adventure")
+                _ = dataManager.decode(file: "adventure")
             }
     }
 }

@@ -7,24 +7,17 @@
 import SwiftUI
 
 struct SettingsCardView<Content: View>: View {
-    var title: String?
     var padding: CGFloat?
     let content: () -> Content
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            if let title = title {
-                Text(title)
-                    .padding(.leading, 10)
-                    .font(.custom("Minecraft-Regular", size: 10))
-            }
-            
             content()
                 .padding(10)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(.systemGray), lineWidth: 1)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .background(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(.systemGray), lineWidth: 0.5)
                 )
         }
         .padding(padding ?? 0)
@@ -33,10 +26,11 @@ struct SettingsCardView<Content: View>: View {
 
 struct SettingsCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsCardView(title: "Configuration") {
+        SettingsCardView() {
             Text("Hello")
                 .font(.custom("Minecraft-Regular", size: 10))
         }
         .padding()
+        .frame(width: 200, height: 200)
     }
 }

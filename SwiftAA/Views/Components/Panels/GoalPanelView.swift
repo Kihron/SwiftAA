@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GoalPanelView: View {
-    @EnvironmentObject var settings: AppSettings
     @Binding var advancement: Advancement
     @State var completedTotal: Int = 0
     @State var rowCount: Int
@@ -43,12 +42,10 @@ struct GoalPanelView: View {
 }
 
 struct GoalPanelViewView_Previews: PreviewProvider {
-    @ObservedObject static var dataHandler = DataHandler()
-    @StateObject static var settings = AppSettings()
+    @ObservedObject static var dataManager = DataManager()
 
     static var previews: some View {
-        GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
-            .frame(width: 500, height: 400)
-            .environmentObject(settings)
+        GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
+            .frame(width: 350)
     }
 }

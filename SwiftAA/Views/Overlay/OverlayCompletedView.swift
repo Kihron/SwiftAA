@@ -38,11 +38,11 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            OverlayShimmerView(message: L10n.Overlay.Complete.message(settings.player?.name ?? L10n.player, settings.gameVersion))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.message(settings.player?.name ?? L10n.player, TrackerManager.shared.gameVersion))
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
-                            OverlayShimmerView(message: L10n.Overlay.Complete.time(viewModel.dataHandler.ticksToIGT(ticks: viewModel.dataHandler.playTime)))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.time(viewModel.dataManager.ticksToIGT(ticks: viewModel.dataManager.playTime)))
                                 .padding(.top)
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
@@ -91,11 +91,11 @@ struct OverlayCompletedView: View {
 }
 
 struct OverlayCompletedView_Previews: PreviewProvider {
-    @ObservedObject static var dataHandler = DataHandler()
+    @ObservedObject static var dataManager = DataManager()
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        OverlayCompletedView(viewModel: .init(dataHandler: dataHandler))
+        OverlayCompletedView(viewModel: .init(dataManager: dataManager))
             .frame(width: 820, height: 345)
             .environmentObject(settings)
     }

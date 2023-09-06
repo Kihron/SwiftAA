@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ThemeSettingsView: View {
-    @EnvironmentObject var settings: AppSettings
     @ObservedObject var themeManager: UIThemeManager = UIThemeManager.shared
     
     var body: some View {
@@ -32,12 +31,7 @@ struct ThemeSettingsView: View {
                             }
                             .padding(.trailing)
                             
-                            Button {
-//                                settings.userBgColor = settings.backgroudColor
-//                                settings.userBrColor = settings.borderColor
-//                                settings.userTxColor = settings.textColor
-//                                settings.themeMode = ThemeMode.custom
-                            } label: {
+                            Button(action: { themeManager.copyPresetToUserTheme() }) {
                                 Text(L10n.Theme.copy)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
@@ -54,15 +48,15 @@ struct ThemeSettingsView: View {
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
                             VStack(alignment: .trailing) {
-                                ColorPicker(L10n.Theme.Background.color, selection: settings.$userBgColor, supportsOpacity: false)
+                                ColorPicker(L10n.Theme.Background.color, selection: $themeManager.userTheme.backgroundColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(themeManager.themeMode == .preset)
                                 
-                                ColorPicker(L10n.Theme.Foreground.color, selection: settings.$userBrColor, supportsOpacity: false)
+                                ColorPicker(L10n.Theme.Foreground.color, selection: $themeManager.userTheme.borderColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(themeManager.themeMode == .preset)
                                 
-                                ColorPicker(L10n.Theme.Text.color, selection: settings.$userTxColor, supportsOpacity: false)
+                                ColorPicker(L10n.Theme.Text.color, selection: $themeManager.userTheme.textColor, supportsOpacity: false)
                                     .font(.custom("Minecraft-Regular", size: 10))
                                     .disabled(themeManager.themeMode == .preset)
                             }
@@ -73,26 +67,6 @@ struct ThemeSettingsView: View {
                 }
                 .pickerStyle(.radioGroup)
                 .horizontalRadioGroupLayout()
-//                .onChange(of: settings.themeMode) { newValue in
-//                    if (newValue == .preset) {
-//                        settings.backgroudColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_background")
-//                        settings.borderColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_border")
-//                        settings.textColor = Color("\(settings.theme.dropFirst(14).lowercased().replacingOccurrences(of: ".", with: "_"))_text")
-//                    } else {
-//                        settings.backgroudColor = settings.userBgColor
-//                        settings.borderColor = settings.userBrColor
-//                        settings.textColor = settings.userTxColor
-//                    }
-//                }
-//                .onChange(of: settings.userBgColor) { newValue in
-//                    settings.backgroudColor = newValue
-//                }
-//                .onChange(of: settings.userBrColor) { newValue in
-//                    settings.borderColor = newValue
-//                }
-//                .onChange(of: settings.userTxColor) { newValue in
-//                    settings.textColor = newValue
-//                }
             }
         }
         .padding()
@@ -100,11 +74,8 @@ struct ThemeSettingsView: View {
 }
 
 struct ThemeSettingsView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         ThemeSettingsView()
             .frame(width: 450, height: 250)
-            .environmentObject(settings)
     }
 }

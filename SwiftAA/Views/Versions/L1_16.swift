@@ -8,31 +8,31 @@
 import SwiftUI
 
 struct L1_16: View {
-    @ObservedObject var dataHandler: DataHandler
+    @ObservedObject var dataManager = DataManager.shared
     
     var body: some View {
         HStack(spacing: 0) {
             VStack(spacing: 0) {
-                AdvPanelView(indicators: dataHandler.decode(file: "minecraft", start: "minecraft:story/mine_stone"), columnCount: 5)
-                AdvPanelView(indicators: dataHandler.decode(file: "end", start: "minecraft:end/kill_dragon"), columnCount: 5)
+                AdvPanelView(indicators: dataManager.decode(file: "minecraft", start: "minecraft:story/mine_stone"), columnCount: 5)
+                AdvPanelView(indicators: dataManager.decode(file: "end", start: "minecraft:end/kill_dragon"), columnCount: 5)
             }
             .frame(width: 350)
             
             VStack(spacing: 0) {
-                AdvPanelView(indicators: dataHandler.decode(file: "nether"), columnCount: 8)
-                AdvPanelView(indicators: dataHandler.decode(file: "husbandry"), columnCount: 8)
+                AdvPanelView(indicators: dataManager.decode(file: "nether"), columnCount: 8)
+                AdvPanelView(indicators: dataManager.decode(file: "husbandry"), columnCount: 8)
             }
             .frame(width: 540)
             
             VStack(spacing: 0) {
-                AdvPanelView(indicators: dataHandler.decode(file: "adventure", end: "minecraft:adventure/sniper_duel"), columnCount: 4)
-                AdvPanelView(indicators: dataHandler.decode(file: "adventure", start: "minecraft:adventure/voluntary_exile"), columnCount: 4)
+                AdvPanelView(indicators: dataManager.decode(file: "adventure", end: "minecraft:adventure/sniper_duel"), columnCount: 4)
+                AdvPanelView(indicators: dataManager.decode(file: "adventure", start: "minecraft:adventure/voluntary_exile"), columnCount: 4)
             }
             .frame(width: 270)
             
             VStack(spacing: 0) {
-                AdvPanelView(indicators: Binding.constant(dataHandler.topStats), columnCount: 1, isStat: true)
-                AdvPanelView(indicators: Binding.constant(dataHandler.bottomStats), columnCount: 1, isStat: true)
+                AdvPanelView(indicators: Binding.constant(dataManager.topStats), columnCount: 1, isStat: true)
+                AdvPanelView(indicators: Binding.constant(dataManager.bottomStats), columnCount: 1, isStat: true)
             }
             .frame(width: 75)
             
@@ -41,17 +41,17 @@ struct L1_16: View {
         }
         
         HStack(spacing: 0) {
-            GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
+            GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
                 .frame(width: 350)
-            GoalPanelView(advancement: dataHandler.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
+            GoalPanelView(advancement: dataManager.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
                 .frame(width: 312)
-            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
+            GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
                 .frame(width: 330)
-            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
+            GoalPanelView(advancement: dataManager.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
                 .frame(width: 168)
-            GoalPanelView(advancement: dataHandler.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
+            GoalPanelView(advancement: dataManager.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
                 .frame(width: 141)
-            GoalPanelView(advancement: dataHandler.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether)
+            GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether)
                 .frame(width: 130)
         }
         .frame(width: 1431, height: 323)
@@ -59,11 +59,7 @@ struct L1_16: View {
 }
 
 struct L1_16_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    @ObservedObject static var dataHandler = DataHandler()
-    
     static var previews: some View {
-        L1_16(dataHandler: dataHandler)
-            .environmentObject(settings)
+        L1_16()
     }
 }

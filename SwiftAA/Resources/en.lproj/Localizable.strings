@@ -89,7 +89,7 @@
 "theme.text.color" = "Text Color";
 
 "tracking.attribution" = "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.";
-"tracking.browse" = "Browse";
+"tracking.browse" = "...";
 "tracking.custom.saves" = "Custom Saves Folder";
 "tracking.enter.directory" = "Enter Directory";
 "tracking.game.version" = "Game Version";
