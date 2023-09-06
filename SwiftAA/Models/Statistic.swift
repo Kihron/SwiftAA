@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Stat {
+struct Statistic {
     var id: String
     var type: String
     var factor: Int = 1

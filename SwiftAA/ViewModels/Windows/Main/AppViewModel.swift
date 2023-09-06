@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-class SwiftAAViewModel: ObservableObject {    
+class AppViewModel: ObservableObject {    
     @ObservedObject var settings = AppSettings()
     @ObservedObject var dataHandler = DataHandler()
+    @ObservedObject var trackerManager = TrackerManager.shared
     @ObservedObject var updater = Updater()
     
     @Published var changed: Bool = false
@@ -36,8 +37,8 @@ class SwiftAAViewModel: ObservableObject {
     
     func refreshData() -> String {
         let saves: String
-        if (settings.trackingMode == .directory) {
-            saves = settings.customSavesPath
+        if (trackerManager.trackingMode == .directory) {
+            saves = trackerManager.customSavesPath
         } else {
             let dir = getSavesFromActiveInstance()
             if (dir.count <= 0) {
@@ -204,7 +205,7 @@ class SwiftAAViewModel: ObservableObject {
             stat.update(advancements: advancements, stats: statistics)
         }
         
-        let timeStat = settings.gameVersion == "1.16" ? "minecraft:play_one_minute" : "minecraft:play_time"
+        let timeStat = TrackerManager.shared.gameVersion == .v1_16 ? "minecraft:play_one_minute" : "minecraft:play_time"
         
         dataHandler.statsData = statistics
         dataHandler.playTime = statistics["minecraft:custom"]?[timeStat] ?? 0

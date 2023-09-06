@@ -8,19 +8,22 @@
 import SwiftUI
 import SWXMLHash
 
-class DataHandler: ObservableObject {
+class DataManager: ObservableObject {
+    @ObservedObject private var versionManager = TrackerManager.shared
+    
     @Published var map = [String:[Advancement]]()
     
     @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
     @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
     @Published var stats: [Indicator] = [Indicator]()
     @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
+    
     @Published var lastModified: Date = Date.now
     
     @Published var allAdvancements: Bool = false
     @Published var playTime: Int = 0
     
-    var settings: AppSettings = .init()
+    static let shared = DataManager()
     
     var totalAdvancements: Int {
         return map.values.compactMap({$0.count}).reduce(0, +)
@@ -31,7 +34,7 @@ class DataHandler: ObservableObject {
     }
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
-        let file = "Advancements/\(settings.gameVersion)/\(file)"
+        let file = "Advancements/\(versionManager.gameVersion.label)/\(file)"
         
         let cache = map[file]
         if (cache != nil) {

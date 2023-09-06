@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct ToolbarAAView: View {
+struct ToolbarProgressView: View {
     @ObservedObject var dataHandler: DataHandler
-    @Binding var changed: Bool
     
     var body: some View {
         ProgressBarView(value: .constant(dataHandler.completedAdvancements), total: .constant(dataHandler.totalAdvancements), title: L10n.Goal.advancements, message: .constant("      IGT: \(dataHandler.ticksToIGT(ticks: dataHandler.playTime))"), isToolbar: true)
@@ -17,10 +16,10 @@ struct ToolbarAAView: View {
     }
 }
 
-struct ToolbarAAView_Previews: PreviewProvider {
+struct ToolbarProgressView_Previews: PreviewProvider {
     static var dataHandler = DataHandler()
     
     static var previews: some View {
-        ToolbarAAView(dataHandler: dataHandler, changed: .constant(false))
+        ToolbarProgressView(dataHandler: dataHandler)
     }
 }
