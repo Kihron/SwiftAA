@@ -2,7 +2,7 @@
 //  Version.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 9/5/23.
+//  Created by Kihron on 9/5/23.
 //
 
 import SwiftUI

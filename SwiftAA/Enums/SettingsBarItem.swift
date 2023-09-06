@@ -2,7 +2,7 @@
 //  SettingsBarItem.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 9/5/23.
+//  Created by Kihron on 9/5/23.
 //
 
 import SwiftUI
@@ -52,4 +52,3 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
         }
     }
 }
-
