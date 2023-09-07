@@ -40,7 +40,9 @@ class UIThemeManager: ObservableObject {
     }
     
     func changePreset(preset: ThemePreset) {
-        self.currentPreset = preset
+        withAnimation {
+            self.currentPreset = preset
+        }
     }
     
     func selectUserTheme() {
@@ -72,7 +74,9 @@ class UIThemeManager: ObservableObject {
         userTheme.textColor = text.rawValue
         do {
             try context.save()
-            userThemes.append(UserTheme(id: uuid, name: name, backgroundColor: background, borderColor: border, textColor: text))
+            withAnimation {
+                userThemes.append(UserTheme(id: uuid, name: name, backgroundColor: background, borderColor: border, textColor: text))
+            }
         } catch {
             print(error.localizedDescription)
         }
@@ -94,7 +98,9 @@ class UIThemeManager: ObservableObject {
             print("Failed to delete object")
         }
         
-        userThemes.removeAll(where: { $0.id == theme.id })
+        withAnimation {
+            userThemes.removeAll(where: { $0.id == theme.id })
+        }
     }
 }
 
