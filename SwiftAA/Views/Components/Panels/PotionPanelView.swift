@@ -26,7 +26,6 @@ struct PotionView: View {
         VStack(spacing: 0) {
             Text("potion.\(name)".localized)
                 .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(themeManager.text)
             
             HStack(spacing: 0) {
                 Image("potion_\(name)")
@@ -57,8 +56,7 @@ struct PotionView: View {
             }
         }
         .padding(1.95)
-        .background(themeManager.background)
-        .border(themeManager.border, width: 2)
+        .applyThemeModifiers()
     }
     
     func ensureCapacity(_ ingredients: [String]) -> [String] {

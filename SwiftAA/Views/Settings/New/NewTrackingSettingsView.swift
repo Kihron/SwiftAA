@@ -28,14 +28,8 @@ struct NewTrackingSettingsView: View {
                 }
             }
             
-            Text("Mode")
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            SettingsLabel(title: "Mode", description: "Switch between automatic window tracking or manually specifying a saves directory.")
                 .padding(.top, 5)
-            
-            Text("Switch between automatic window tracking or manually specifying a saves directory.")
-                .font(.caption)
-                .frame(maxWidth: .infinity, alignment: .leading)
 
             SettingsCardView {
                 VStack {

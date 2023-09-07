@@ -6,17 +6,25 @@
 //
 
 import SwiftUI
-import Cocoa
 
 struct ContentView: View {
+    @ObservedObject private var themeManager = UIThemeManager.shared
+    
     var body: some View {
         ScrollView(.vertical) {
             ScrollView(.horizontal) {
-                VStack(alignment: .leading, spacing: 0) {
-                    switch TrackerManager.shared.gameVersion {
-                        case .v1_16 : L1_16()
-                        case .v1_19 : L1_19()
+                ZStack {
+                    VStack(alignment: .leading, spacing: 0) {
+                        switch TrackerManager.shared.gameVersion {
+                            case .v1_16 : L1_16()
+                            case .v1_19 : L1_19()
+                        }
                     }
+                    
+                    RoundedCornersShape(radius: 10, corners: [.bottomLeft, .bottomRight])
+                        .stroke(themeManager.border, lineWidth: 1.5)
+                        .padding(.top, 1)
+                        .padding(1)
                 }
             }
         }

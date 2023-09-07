@@ -23,12 +23,16 @@ struct ProgressBarView: View {
         self.isToolbar = isToolbar
     }
     
-    var header: String {
-        "\(value) / \(total) \(title) (\(total == 0 ? 0 : (value * 100 / total))%)\(message)"
+    private var header: String {
+        return "\(value) / \(total) \(title) (\(total == 0 ? 0 : (value * 100 / total))%)\(message)"
+    }
+    
+    private var alignment: HorizontalAlignment {
+        return isToolbar ? .leading : .center
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: alignment, spacing: 5) {
             Text(header)
                 .font(.custom("Minecraft-Regular", size: 10))
                 .foregroundColor(isToolbar ? Color.primary : themeManager.text)

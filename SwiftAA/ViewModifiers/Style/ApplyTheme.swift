@@ -13,7 +13,7 @@ struct ApplyTheme: ViewModifier {
         content
             .background(themeManager.background)
             .foregroundStyle(themeManager.text)
-            .border(themeManager.border, width: 2)
+            .border(themeManager.border, width: 1)
     }
 }
 

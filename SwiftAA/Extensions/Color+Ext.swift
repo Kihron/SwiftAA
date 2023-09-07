@@ -57,6 +57,28 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+    
+    var hex: String? {
+        guard let components = cgColor?.components, components.count >= 3 else {
+            print("Failed")
+            return nil
+        }
+
+        let r = Float(components[0])
+        let g = Float(components[1])
+        let b = Float(components[2])
+        let a = Float(components.count >= 4 ? components[3] : 1)
+
+        var hex = "#"
+
+        if a < 1 {
+            hex += String(format: "%02lx", Int(a * 255))
+        }
+
+        hex += String(format: "%02lx%02lx%02lx", Int(r * 255), Int(g * 255), Int(b * 255))
+
+        return hex
+    }
 }
 
 extension Color: Codable {

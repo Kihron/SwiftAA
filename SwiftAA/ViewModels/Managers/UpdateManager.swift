@@ -1,5 +1,5 @@
 //
-//  Updater.swift
+//  UpdateManager.swift
 //  SwiftAA
 //
 //  Created by Kihron on 8/19/22.
@@ -9,8 +9,12 @@ import SwiftUI
 import Sparkle
 
 // This view model class manages Sparkle's updater and publishes when new updates are allowed to be checked
-final class Updater: ObservableObject {
+final class UpdateManager: ObservableObject {
+    @AppStorage("checkAutomatically") var checkAutomatically: Bool = true
+    
     private let updaterController: SPUStandardUpdaterController
+    
+    static let shared = UpdateManager()
     
     @Published var canCheckForUpdates = false
     
@@ -48,18 +52,18 @@ final class Updater: ObservableObject {
 }
 
 struct CheckForUpdatesView: View {
-    @ObservedObject var updater: Updater
+    @ObservedObject var updateManager: UpdateManager
     
     var body: some View {
-        Button("Check for Updates…", action: updater.checkForUpdates)
-            .disabled(!updater.canCheckForUpdates)
+        Button("Check for Updates…", action: updateManager.checkForUpdates)
+            .disabled(!updateManager.canCheckForUpdates)
     }
 }
 
 struct CheckForUpdatesViewView_Preview: PreviewProvider {
-    @ObservedObject static var updater = Updater()
+    @ObservedObject static var updater = UpdateManager()
 
     static var previews: some View {
-        CheckForUpdatesView(updater: updater)
+        CheckForUpdatesView(updateManager: updater)
     }
 }

@@ -92,6 +92,7 @@ class DataManager: ObservableObject {
         
         DispatchQueue.main.async {
             self.map[file] = fullList
+            self.removeOldVersion(gameVersion: self.versionManager.gameVersion.label)
             self.stats = self.topStats + self.bottomStats
         }
         return Binding.constant(advancements)

@@ -12,6 +12,8 @@ class TrackerManager: ObservableObject {
     @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
     @AppStorage("gameVersion") var gameVersion: Version = .v1_16
     
+    @Published var worldPath: String = ""
+    
     static let shared = TrackerManager()
     
     init() {

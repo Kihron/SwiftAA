@@ -8,12 +8,6 @@
 import SwiftUI
 
 class AppSettings: ObservableObject {
-    //Tracking
-    @Published var worldPath: String = ""
-    
-    //Notes
-    @AppStorage("notes") var notes: [String:[String]] = [:]
-    
     //Overlay
     @AppStorage("showStats") var showStats: Bool = true
     @AppStorage("statsRowPos") var statsRowPos: Bool = true
@@ -24,9 +18,5 @@ class AppSettings: ObservableObject {
     
     //Player
     @AppStorage("player") var player: Player? = nil
-    
-    //Updater
-    @AppStorage("lastUpdateCheck") var lastUpdateCheck: Date? = nil
-    @AppStorage("checkAutomatically") var checkAutomatically: Bool = true
 }
 

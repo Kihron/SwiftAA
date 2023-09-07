@@ -31,7 +31,7 @@ struct ThemeSettingsView: View {
                             }
                             .padding(.trailing)
                             
-                            Button(action: { themeManager.copyPresetToUserTheme() }) {
+                            Button(action: {  }) {
                                 Text(L10n.Theme.copy)
                                     .font(.custom("Minecraft-Regular", size: 10))
                             }
@@ -48,17 +48,17 @@ struct ThemeSettingsView: View {
                                 .font(.custom("Minecraft-Regular", size: 10))
                             
                             VStack(alignment: .trailing) {
-                                ColorPicker(L10n.Theme.Background.color, selection: $themeManager.userTheme.backgroundColor, supportsOpacity: false)
-                                    .font(.custom("Minecraft-Regular", size: 10))
-                                    .disabled(themeManager.themeMode == .preset)
-                                
-                                ColorPicker(L10n.Theme.Foreground.color, selection: $themeManager.userTheme.borderColor, supportsOpacity: false)
-                                    .font(.custom("Minecraft-Regular", size: 10))
-                                    .disabled(themeManager.themeMode == .preset)
-                                
-                                ColorPicker(L10n.Theme.Text.color, selection: $themeManager.userTheme.textColor, supportsOpacity: false)
-                                    .font(.custom("Minecraft-Regular", size: 10))
-                                    .disabled(themeManager.themeMode == .preset)
+//                                ColorPicker(L10n.Theme.Background.color, selection: $themeManager.userTheme.backgroundColor, supportsOpacity: false)
+//                                    .font(.custom("Minecraft-Regular", size: 10))
+//                                    .disabled(themeManager.themeMode == .preset)
+//                                
+//                                ColorPicker(L10n.Theme.Foreground.color, selection: $themeManager.userTheme.borderColor, supportsOpacity: false)
+//                                    .font(.custom("Minecraft-Regular", size: 10))
+//                                    .disabled(themeManager.themeMode == .preset)
+//                                
+//                                ColorPicker(L10n.Theme.Text.color, selection: $themeManager.userTheme.textColor, supportsOpacity: false)
+//                                    .font(.custom("Minecraft-Regular", size: 10))
+//                                    .disabled(themeManager.themeMode == .preset)
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .top)

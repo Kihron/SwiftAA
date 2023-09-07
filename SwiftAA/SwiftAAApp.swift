@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct SwiftAAApp: App {
     @Environment(\.openWindow) private var openWindow
+    @ObservedObject private var coreDataManager = CoreDataManager.shared
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @ObservedObject var viewModel = AppViewModel()
@@ -42,6 +43,7 @@ struct SwiftAAApp: App {
                 .removeFocusOnTap()
                 .preferredColorScheme(.dark)
                 .environmentObject(viewModel.settings)
+                .environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }
         .commands {
             CommandGroup(replacing: .appInfo) {
@@ -64,7 +66,7 @@ struct SwiftAAApp: App {
             }
             CommandGroup(after: .appInfo, addition: {
                 Button("\(L10n.Settings.Updater.check)...") {
-                    viewModel.updater.checkForUpdates()
+                    UpdateManager.shared.checkForUpdates()
                 }
             })
         }
@@ -100,6 +102,8 @@ struct SwiftAAApp: App {
         
         Window("Settings", id: "settings-window") {
             NewSettingsView()
+                .frame(minWidth: 700, maxWidth: 700, minHeight: 300, alignment: .center)
+                .environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }
         .commands {
             CommandGroup(replacing: .appSettings) {
@@ -109,6 +113,7 @@ struct SwiftAAApp: App {
                 .keyboardShortcut(",", modifiers: .command)
             }
         }
+        .windowResizability(.contentSize)
     }
     
     private func toggleOverlay() {

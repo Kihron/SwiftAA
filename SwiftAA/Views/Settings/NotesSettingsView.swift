@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct NotesSettingsView: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject private var noteManager = NoteManager.shared
     @State var selected: [String]? = nil
     @State var selectedWorld: String = ""
     
     var body: some View {
-        if (!settings.notes.isEmpty) {
+        if (!noteManager.notes.isEmpty) {
             HStack {
                 VStack {
                     ScrollView {
                         VStack(alignment: .center, spacing: 5) {
-                            ForEach(Array(settings.notes).sorted(by: { $0.key.lowercased() < $1.key.lowercased()}), id: \.self.key) { item in
+                            ForEach(Array(noteManager.notes).sorted(by: { $0.key.lowercased() < $1.key.lowercased()}), id: \.self.key) { item in
                                 Button {
                                     selected = item.value
                                     selectedWorld = item.key
@@ -36,7 +36,7 @@ struct NotesSettingsView: View {
                     
                     HStack {
                         Button {
-                            settings.notes.removeValue(forKey: selectedWorld)
+                            noteManager.notes.removeValue(forKey: selectedWorld)
                             selected = nil
                             selectedWorld = ""
                         } label: {
@@ -44,7 +44,7 @@ struct NotesSettingsView: View {
                         }
                         
                         Button {
-                            settings.notes.removeAll()
+                            noteManager.notes.removeAll()
                             selected = nil
                             selectedWorld = ""
                         } label: {

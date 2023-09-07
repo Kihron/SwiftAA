@@ -10,8 +10,7 @@ import SwiftUI
 class AppViewModel: ObservableObject {    
     @ObservedObject var settings = AppSettings()
     @ObservedObject var dataManager = DataManager.shared
-    @ObservedObject var trackerManager = TrackerManager.shared
-    @ObservedObject var updater = Updater()
+    @ObservedObject private var trackerManager = TrackerManager.shared
     
     @Published var advancementsUpdated: Bool = false
     @Published var error: String = ""
@@ -26,7 +25,6 @@ class AppViewModel: ObservableObject {
     private let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     func onAppear() {
-        settings.lastUpdateCheck = updater.getLastUpdateCheckDate()
         settings.player = nil
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             withAnimation {
@@ -93,9 +91,9 @@ class AppViewModel: ObservableObject {
                     }!
                     
                     world = "\(saves)/\(world)"
-                    settings.worldPath = world
+                    trackerManager.worldPath = world
                 } else {
-                    world = settings.worldPath
+                    world = trackerManager.worldPath
                 }
                 
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {

@@ -41,13 +41,13 @@ struct NewSettingsView: View {
                 case .tracking:
                     NewTrackingSettingsView()
                 case .theme:
-                    Text(selectedSettingsBarItem.label.localized)
+                    NewThemeSettingsView()
                 case .overlay:
                     Text(selectedSettingsBarItem.label.localized)
                 case .notes:
                     Text(selectedSettingsBarItem.label.localized)
                 case .updates:
-                    Text(selectedSettingsBarItem.label.localized)
+                    UpdateSettingsView()
             }
         }
     }

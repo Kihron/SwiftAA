@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct NotesPanelView: View {
-    @EnvironmentObject var settings: AppSettings
-    @State var notes = ""
+    @ObservedObject private var trackerManager = TrackerManager.shared
+    @ObservedObject private var noteManager = NoteManager.shared
+    @State private var notes = ""
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,7 +36,7 @@ struct NotesPanelView: View {
                     .font(.custom("Minecraft-Regular", size: 10))
                     .cornerRadius(5)
                     .padding(.bottom, 5)
-                    .disabled(settings.worldPath.isEmpty)
+                    .disabled(trackerManager.worldPath.isEmpty)
                 
                 Spacer()
                 
@@ -47,32 +48,33 @@ struct NotesPanelView: View {
         .padding()
         .applyThemeModifiers()
         .onAppear {
-            if (!settings.worldPath.isEmpty) {
-                if let worldNotes = settings.notes[settings.worldPath] {
+            if (!trackerManager.worldPath.isEmpty) {
+                if let worldNotes = noteManager.notes[trackerManager.worldPath] {
                     self.notes = worldNotes[3]
                 }
             }
         }
-        .onChange(of: settings.worldPath) { path in
+        .onChange(of: trackerManager.worldPath) { path in
             if (!path.isEmpty) {
-                self.notes = settings.notes[path]?[3] ?? ""
+                self.notes = noteManager.notes[path]?[3] ?? ""
             } else {
                 notes = ""
             }
         }
         .onChange(of: notes) { note in
-            settings.notes[settings.worldPath, default: [",", ",", ",", ""]][3] = notes
+            noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][3] = notes
         }
         .onDisappear {
-            if (!settings.worldPath.isEmpty) {
-                settings.notes[settings.worldPath, default: [",", ",", ",", ""]][3] = notes
+            if (!trackerManager.worldPath.isEmpty) {
+                noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][3] = notes
             }
         }
     }
 }
 
 struct WayPointCardView: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject private var trackerManager = TrackerManager.shared
+    @ObservedObject private var noteManager = NoteManager.shared
     @State var index: Int
     @State var icon: String
     @State var x: String = ""
@@ -89,11 +91,11 @@ struct WayPointCardView: View {
                 HStack {
                     TextField("X", text: $x)
                             .font(.custom("Minecraft-Regular", size: 10))
-                            .disabled(settings.worldPath.isEmpty)
+                            .disabled(trackerManager.worldPath.isEmpty)
                     
                     TextField("Z", text: $z)
                             .font(.custom("Minecraft-Regular", size: 10))
-                            .disabled(settings.worldPath.isEmpty)
+                            .disabled(trackerManager.worldPath.isEmpty)
                 }
                 
                 HStack {
@@ -112,17 +114,17 @@ struct WayPointCardView: View {
             }
         }
         .onAppear {
-            if (!settings.worldPath.isEmpty) {
-                if let worldNotes = settings.notes[settings.worldPath] {
+            if (!trackerManager.worldPath.isEmpty) {
+                if let worldNotes = noteManager.notes[trackerManager.worldPath] {
                     let coords = worldNotes[index].components(separatedBy: ",")
                     self.x = String(coords[0])
                     self.z = String(coords[1])
                 }
             }
         }
-        .onChange(of: settings.worldPath) { path in
+        .onChange(of: trackerManager.worldPath) { path in
             if (!path.isEmpty) {
-                if let worldNotes = settings.notes[path] {
+                if let worldNotes = noteManager.notes[path] {
                     let coords = worldNotes[index].components(separatedBy: ",")
                     self.x = String(coords[0])
                     self.z = String(coords[1])
@@ -136,14 +138,14 @@ struct WayPointCardView: View {
             }
         }
         .onChange(of: x) { note in
-            settings.notes[settings.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
+            noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
         }
         .onChange(of: z) { note in
-            settings.notes[settings.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
+            noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
         }
         .onDisappear {
-            if (!settings.worldPath.isEmpty) {
-                settings.notes[settings.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
+            if (!trackerManager.worldPath.isEmpty) {
+                noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
             }
         }
     }
@@ -163,15 +165,11 @@ private extension String {
 }
 
 struct NotesPanelView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         NotesPanelView()
             .frame(width: 300, height: 800)
-            .environmentObject(settings)
         
         WayPointCardView(index: 0, icon: "silverfish")
             .padding(4)
-            .environmentObject(settings)
     }
 }
