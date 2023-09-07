@@ -62,6 +62,7 @@ struct NewThemeSettingsView: View {
                             .buttonStyle(.plain)
                         }
                     }
+                    .padding(.bottom)
                 }
             }
             .padding(.horizontal)

@@ -57,6 +57,7 @@ class UIThemeManager: ObservableObject {
     //    }
     
     func getUserThemesFromFetch(fetch: FetchedResults<UserThemes>) {
+        userThemes.removeAll()
         for theme in fetch {
             if let uuid = theme.id, let name = theme.name, let backgroundColor = theme.backgroundColor, let borderColor = theme.borderColor, let textColor = theme.textColor {
                 userThemes.append(UserTheme(id: uuid, name: name, backgroundColor: Color(rawValue: backgroundColor)!, borderColor: Color(rawValue: borderColor)!, textColor: Color(rawValue: textColor)!))
