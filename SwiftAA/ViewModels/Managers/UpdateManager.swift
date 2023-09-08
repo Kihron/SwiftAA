@@ -11,10 +11,13 @@ import Sparkle
 // This view model class manages Sparkle's updater and publishes when new updates are allowed to be checked
 final class UpdateManager: ObservableObject {
     @AppStorage("checkAutomatically") var checkAutomatically: Bool = true
+    @AppStorage("downloadAutomatically") var downloadAutomatically: Bool = true
     
     private let updaterController: SPUStandardUpdaterController
     
     static let shared = UpdateManager()
+    
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
     @Published var canCheckForUpdates = false
     
@@ -28,6 +31,25 @@ final class UpdateManager: ObservableObject {
             updaterController.updater.automaticallyChecksForUpdates = newValue
         }
     }
+    
+    var automaticallyDownloadUpdates: Bool {
+        get {
+            let isAutomatic = updaterController.updater.automaticallyDownloadsUpdates
+            UserDefaults.standard.set(isAutomatic, forKey: "downloadAutomatically")
+            return isAutomatic
+        }
+        set(newValue) {
+            updaterController.updater.automaticallyDownloadsUpdates = newValue
+        }
+    }
+    
+    let lastUpdateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
     
     init() {
         // If you want to start the updater manually, pass false to startingUpdater and call .startUpdater() later

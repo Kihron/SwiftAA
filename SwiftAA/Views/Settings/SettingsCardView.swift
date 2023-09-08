@@ -16,8 +16,13 @@ struct SettingsCardView<Content: View>: View {
                 .padding(10)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .background(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(.systemGray), lineWidth: 0.5)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(.gray.opacity(0.05))
+                        
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color(.systemGray), lineWidth: 0.5)
+                    }
                 )
         }
         .padding(padding ?? 0)

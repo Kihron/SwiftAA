@@ -38,7 +38,7 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            OverlayShimmerView(message: L10n.Overlay.Complete.message(settings.player?.name ?? L10n.player, TrackerManager.shared.gameVersion))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.message(settings.player?.name ?? L10n.player, TrackerManager.shared.gameVersion.label))
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             

@@ -47,7 +47,7 @@ struct NewSettingsView: View {
                 case .notes:
                     Text(selectedSettingsBarItem.label.localized)
                 case .updates:
-                    UpdateSettingsView()
+                    NewUpdateSettings()
             }
         }
     }

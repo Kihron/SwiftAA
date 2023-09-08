@@ -11,9 +11,6 @@ struct NewThemeSettingsView: View {
     @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = UIThemeManager.shared
     
-    @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
-    private var fetch: FetchedResults<UserThemes>
-    
     private let columns = Array(repeating: GridItem(.adaptive(minimum: 100), spacing: 20), count: 4)
     
     var body: some View {
@@ -23,7 +20,7 @@ struct NewThemeSettingsView: View {
             Divider()
             
             SettingsCardView {
-                Text(themeManager.currentPreset.localized)
+                Text(themeManager.label)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(10)
@@ -36,13 +33,13 @@ struct NewThemeSettingsView: View {
                         .padding(.top, 10)
                     
                     LazyVGrid(columns: columns, spacing: 15) {
-                        Button(action: { themeManager.saveUserTheme(name: "Test", background: ThemePreset.enderPearl.backgroundColor, border: ThemePreset.enderPearl.borderColor, text: ThemePreset.enderPearl.textColor, context: context) }) {
+                        Button(action: { themeManager.saveUserTheme(name: "Test", background: ThemePreset.allCases.randomElement()!.backgroundColor, border: ThemePreset.allCases.randomElement()!.borderColor, text: ThemePreset.allCases.randomElement()!.textColor, context: context) }) {
                             CustomThemeView()
                         }
                         .buttonStyle(.plain)
                         
                         ForEach(themeManager.userThemes) { theme in
-                            Button(action: { themeManager.deleteUserTheme(theme: theme, context: context) }) {
+                            Button(action: { themeManager.selectUserTheme(theme: theme) }) {
                                 ThemePreviewView(theme: theme)
                                     .frame(height: 67)
                             }
@@ -68,8 +65,14 @@ struct NewThemeSettingsView: View {
             .padding(.horizontal)
         }
         .frame(maxHeight: .infinity, alignment: .topLeading)
-        .onAppear {
-            themeManager.getUserThemesFromFetch(fetch: fetch)
+        .toolbar {
+            if themeManager.themeMode == .custom {
+                ToolbarItem(placement: .destructiveAction) {
+                    Button(action: { themeManager.deleteUserTheme(context: context) }) {
+                        Image(systemName: "trash")
+                    }
+                }
+            }
         }
     }
 }
