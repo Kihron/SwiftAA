@@ -73,18 +73,26 @@ struct SwiftAAApp: App {
         .windowResizability(.contentSize)
         
         Window("OverlayWindow", id: "overlay-window") {
-            OverlayView(viewModel: .init(dataManager: viewModel.dataManager))
-                .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataManager.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
-                .environmentObject(viewModel.settings)
-                .onAppear {
-                    Task {
-                        let windows = NSApplication.shared.windows.filter({ window in
-                            window.title == "OverlayWindow"
-                        })
-                        windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
-                    }
+            Group {
+                if viewModel.settings.overlayLoaded {
+                    OverlayView(viewModel: .init(dataManager: viewModel.dataManager))
+                    //                                NewOverlayView()
+                        .environmentObject(viewModel.settings)
+                } else {
+                    ProgressView()
                 }
-                .background(TransparentWindow())
+            }
+            .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataManager.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
+            //            .frame(minWidth: 600, maxWidth: 1000, minHeight: 200, maxHeight: 400)
+            .onAppear {
+                Task {
+                    let windows = NSApplication.shared.windows.filter({ window in
+                        window.title == "OverlayWindow"
+                    })
+                    windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
+                }
+            }
+            .background(TransparentWindow())
         }.commands {
             CommandGroup(after: .sidebar, addition: {
                 Button {
@@ -101,7 +109,7 @@ struct SwiftAAApp: App {
         .windowResizability(.contentSize)
         
         Window("Settings", id: "settings-window") {
-            NewSettingsView()
+            SettingsView()
                 .frame(minWidth: 700, maxWidth: 700, minHeight: 300, alignment: .center)
                 .environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }

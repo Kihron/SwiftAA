@@ -2,80 +2,82 @@
 //  ThemeSettingsView.swift
 //  SwiftAA
 //
-//  Created by Kihron on 7/21/22.
+//  Created by Kihron on 9/6/23.
 //
 
 import SwiftUI
 
 struct ThemeSettingsView: View {
-    @ObservedObject var themeManager: UIThemeManager = UIThemeManager.shared
+    @Environment(\.managedObjectContext) private var context
+    @ObservedObject private var themeManager = UIThemeManager.shared
+    
+    private let columns = Array(repeating: GridItem(.adaptive(minimum: 100), spacing: 20), count: 4)
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Picker(selection: $themeManager.themeMode, label: Text("")) {
-                    Group {
-                        VStack(alignment: .leading) {
-                            Text(L10n.Theme.presets)
-                                .font(.custom("Minecraft-Regular", size: 10))
-                            
-                            Menu {
-                                ForEach(ThemePreset.allCases) { preset in
-                                    Button(action: { UIThemeManager.shared.changePreset(preset: preset)}) {
-                                        Text(preset.localized)
-                                    }
-                                }
-                            } label: {
-                                Text(themeManager.currentPreset.localized)
-                                    .font(.custom("Minecraft-Regular", size: 10))
-                            }
-                            .padding(.trailing)
-                            
-                            Button(action: {  }) {
-                                Text(L10n.Theme.copy)
-                                    .font(.custom("Minecraft-Regular", size: 10))
-                            }
-                        }
-                        .frame(maxHeight: .infinity, alignment: .top)
-                        .disabled(themeManager.themeMode == ThemeMode.custom)
-                    }
-                    .tag(ThemeMode.preset)
-                    .padding(.bottom, 34)
+        VStack(spacing: 0) {
+            ThemeExampleView()
+            
+            Divider()
+            
+            SettingsCardView {
+                Text(themeManager.label)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .padding(10)
+            
+            Divider()
+            
+            VStack {
+                ScrollView {
+                    SettingsLabel(title: "Custom")
+                        .padding(.top, 10)
                     
-                    Group {
-                        VStack(alignment: .leading) {
-                            Text(L10n.Theme.custom)
-                                .font(.custom("Minecraft-Regular", size: 10))
-                            
-                            VStack(alignment: .trailing) {
-//                                ColorPicker(L10n.Theme.Background.color, selection: $themeManager.userTheme.backgroundColor, supportsOpacity: false)
-//                                    .font(.custom("Minecraft-Regular", size: 10))
-//                                    .disabled(themeManager.themeMode == .preset)
-//                                
-//                                ColorPicker(L10n.Theme.Foreground.color, selection: $themeManager.userTheme.borderColor, supportsOpacity: false)
-//                                    .font(.custom("Minecraft-Regular", size: 10))
-//                                    .disabled(themeManager.themeMode == .preset)
-//                                
-//                                ColorPicker(L10n.Theme.Text.color, selection: $themeManager.userTheme.textColor, supportsOpacity: false)
-//                                    .font(.custom("Minecraft-Regular", size: 10))
-//                                    .disabled(themeManager.themeMode == .preset)
-                            }
+                    LazyVGrid(columns: columns, spacing: 15) {
+                        Button(action: { themeManager.saveUserTheme(name: "Test", background: ThemePreset.allCases.randomElement()!.backgroundColor, border: ThemePreset.allCases.randomElement()!.borderColor, text: ThemePreset.allCases.randomElement()!.textColor, context: context) }) {
+                            CustomThemeView()
                         }
-                        .frame(maxHeight: .infinity, alignment: .top)
+                        .buttonStyle(.plain)
+                        
+                        ForEach(themeManager.userThemes) { theme in
+                            Button(action: { themeManager.selectUserTheme(theme: theme) }) {
+                                ThemePreviewView(theme: theme)
+                                    .frame(height: 67)
+                            }
+                            .buttonStyle(.plain)
+                        }
                     }
-                    .tag(ThemeMode.custom)
+                    
+                    SettingsLabel(title: "Presets")
+                        .padding(.top, 10)
+                    
+                    LazyVGrid(columns: columns, spacing: 15) {
+                        ForEach(ThemePreset.allCases, id: \.self) { preset in
+                            Button(action: { themeManager.changePreset(preset: preset) }) {
+                                ThemePreviewView(theme: preset)
+                                    .frame(height: 67)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.bottom)
                 }
-                .pickerStyle(.radioGroup)
-                .horizontalRadioGroupLayout()
+            }
+            .padding(.horizontal)
+        }
+        .frame(maxHeight: .infinity, alignment: .topLeading)
+        .toolbar {
+            if themeManager.themeMode == .custom {
+                ToolbarItem(placement: .destructiveAction) {
+                    Button(action: { themeManager.deleteUserTheme(context: context) }) {
+                        Image(systemName: "trash")
+                    }
+                }
             }
         }
-        .padding()
     }
 }
 
-struct ThemeSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThemeSettingsView()
-            .frame(width: 450, height: 250)
-    }
+#Preview {
+    ThemeSettingsView()
+        .frame(width: 500, height: 600)
 }

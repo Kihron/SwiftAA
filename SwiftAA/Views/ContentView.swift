@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = UIThemeManager.shared
+    
+    @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
+    private var fetch: FetchedResults<UserThemes>
     
     var body: some View {
         ScrollView(.vertical) {
@@ -27,6 +31,9 @@ struct ContentView: View {
                         .padding(1)
                 }
             }
+        }
+        .onAppear {
+            themeManager.getUserThemesFromFetch(fetch: fetch)
         }
     }
 }

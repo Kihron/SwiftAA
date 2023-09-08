@@ -16,6 +16,10 @@ class UIThemeManager: ObservableObject {
     
     @Published var userThemes: [UserTheme] = []
     
+    var label: String {
+        return themeMode == .preset ? currentPreset.localized : userTheme.name
+    }
+    
     var userTheme: UserTheme {
         if let uuid = selectedUserTheme, let theme = userThemes.first(where: { $0.id == uuid }) {
             return theme
@@ -41,12 +45,16 @@ class UIThemeManager: ObservableObject {
     
     func changePreset(preset: ThemePreset) {
         withAnimation {
+            self.themeMode = .preset
             self.currentPreset = preset
         }
     }
     
-    func selectUserTheme() {
-        self.themeMode = .custom
+    func selectUserTheme(theme: UserTheme) {
+        withAnimation {
+            self.themeMode = .custom
+            self.selectedUserTheme = theme.id
+        }
     }
     
     //    func copyPresetToUserTheme() {
@@ -83,24 +91,34 @@ class UIThemeManager: ObservableObject {
         }
     }
     
-    func deleteUserTheme(theme: UserTheme, context: NSManagedObjectContext) {
-        let fetchRequest: NSFetchRequest<UserThemes> = UserThemes.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", theme.id as CVarArg)
-
-        do {
-            let objects = try context.fetch(fetchRequest)
-            if let object = objects.first {
-                context.delete(object)
-                try context.save()
-            } else {
-                print("Object not found")
+    func deleteUserTheme(context: NSManagedObjectContext) {
+        if let id = selectedUserTheme {
+            let fetchRequest: NSFetchRequest<UserThemes> = UserThemes.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let objects = try context.fetch(fetchRequest)
+                if let object = objects.first {
+                    context.delete(object)
+                    try context.save()
+                } else {
+                    print("Object not found")
+                }
+            } catch {
+                print("Failed to delete object")
             }
-        } catch {
-            print("Failed to delete object")
-        }
-        
-        withAnimation {
-            userThemes.removeAll(where: { $0.id == theme.id })
+            
+            withAnimation {
+                let idx = userThemes.firstIndex(where: { $0.id == id })
+                if let idx = idx {
+                    if idx - 1 >= 0 {
+                        selectUserTheme(theme: userThemes[idx - 1])
+                    } else {
+                        changePreset(preset: .enderPearl)
+                    }
+                    userThemes.remove(at: idx)
+                }
+            }
         }
     }
 }

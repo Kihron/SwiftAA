@@ -21,6 +21,7 @@ struct SettingsLabel: View {
                 Text(description)
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundStyle(.gray)
             }
         }
     }

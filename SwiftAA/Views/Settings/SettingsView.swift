@@ -2,46 +2,57 @@
 //  SettingsView.swift
 //  SwiftAA
 //
-//  Created by Kihron on 7/21/22.
+//  Created by Kihron on 9/5/23.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var dataManager: DataManager
-    @EnvironmentObject var settings: AppSettings
+    @State var sideBarVisibility: NavigationSplitViewVisibility = .doubleColumn
+    @State var selectedSettingsBarItem: SettingsBarItem = .tracking
     
     var body: some View {
-        TabView {
-            TrackingSettingsView(dataManager: dataManager)
-                .tabItem {
-                    Label(L10n.Settings.tracking, systemImage: "slider.horizontal.3")
+        NavigationSplitView(columnVisibility: $sideBarVisibility) {
+            List(SettingsBarItem.allCases, selection: $selectedSettingsBarItem) { item in
+                NavigationLink(value: item) {
+                    HStack(alignment: .center, spacing: 10) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(item.color.gradient)
+                                .frame(width: 25, height: 25)
+                            
+                            Image(systemName: item.icon)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 20, alignment: .center)
+                        }
+                        
+                        Text(item.label.localized)
+                            .tint(.primary)
+                    }
+                    .frame(height: 20)
+                    .padding(.vertical, 5)
+                    .contentShape(Rectangle())
                 }
-            ThemeSettingsView()
-                .tabItem {
-                    Label(L10n.Settings.theme, systemImage: "paintpalette")
-                }
-            OverlaySettingsView()
-                .tabItem {
-                    Label(L10n.Settings.overlay, systemImage: "ipad.landscape")
-                }
-            NotesSettingsView()
-                .tabItem {
-                    Label(L10n.Settings.notes, systemImage: "rectangle.and.pencil.and.ellipsis")
-                }
-            UpdateSettingsView()
-                .tabItem {
-                    Label(L10n.Settings.updater, systemImage: "square.and.arrow.down")
-                }
+            }
+            .frame(width: 200)
+        } detail: {
+            switch selectedSettingsBarItem {
+                case .tracking:
+                    TrackingSettingsView()
+                case .theme:
+                    ThemeSettingsView()
+                case .overlay:
+                    Text(selectedSettingsBarItem.label.localized)
+                case .notes:
+                    Text(selectedSettingsBarItem.label.localized)
+                case .updates:
+                    UpdateSettings()
+            }
         }
-        .frame(width: 450, height: 250)
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    @ObservedObject static var dataManager = DataManager()
-    
-    static var previews: some View {
-        SettingsView(dataManager: dataManager)
-    }
+#Preview {
+    SettingsView()
 }

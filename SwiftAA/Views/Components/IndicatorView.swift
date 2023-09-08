@@ -31,6 +31,7 @@ struct IndicatorView: View {
                                 .resizable()
                                 .brightness(0.3)
                                 .saturation(1.7)
+                                .opacity(0.6)
                                 .frame(width: 128, height: 128)
                                 .padding([.top, .leading, .trailing], 6)
                         }
@@ -71,7 +72,7 @@ struct IndicatorView_Previews: PreviewProvider {
     @StateObject static var settings = AppSettings()
     
     static var previews: some View {
-        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-trvel", name: "Sticky Situation", icon: "enter_end_gateway", frameStyle: "normal", criteria: [], completed: false)), isOverlay: true)
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-trvel", name: "Sticky Situation", icon: "enter_end_ateway", frameStyle: "normal", criteria: [], completed: true)), isOverlay: false)
             .frame(width: 100, height: 100)
             .environmentObject(settings)
     }
