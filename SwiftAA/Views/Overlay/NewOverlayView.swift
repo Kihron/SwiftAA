@@ -8,33 +8,50 @@
 import SwiftUI
 
 struct NewOverlayView: View {
-    var indicators = DataManager.shared.map.values.flatMap({$0}).filter({!$0.completed})
+    @ObservedObject private var overlayManager = OverlayManager.shared
+    @ObservedObject private var dataManager = DataManager.shared
     
-    var body: some View {
-        GeometryReader { geometry in
-            if !indicators.isEmpty {
-                let displayCount = max(getMaxOnScreen(type: "indicator", width: geometry.size.width), indicators.count)
-                // Repeat the elements if needed
-                let repeatedIndicators = Array(repeating: indicators, count: displayCount/indicators.count).flatMap {$0}
-                
-                let contentWidth = 74 * CGFloat(repeatedIndicators.count)
-                
-                InfiniteScroller(contentWidth: contentWidth) {
-                    HStack(spacing: 0) {
-                        ForEach(repeatedIndicators, id: \.self) { indicator in
-                            IndicatorView(indicator: .constant(indicator), isOverlay: true)
-                        }
-                    }
-                }
-            }
+    var alignment: Alignment {
+        switch overlayManager.statisticsAlignment {
+            case .leading:
+                .leading
+            case .center:
+                .center
+            case .trailing:
+                .trailing
         }
     }
     
-    func getMaxOnScreen(type: String, width: CGFloat) -> Int {
-        switch type {
-        case "indicator": return Int(floor(width / 74))
-        default: return 0
+    var body: some View {
+        VStack {
+            CriteriaTickerTapeView()
+                .frame(height: 40)
+            
+            IndicatorTickerTapeView()
+                .frame(height: 90)
+            
+            HStack {
+                if overlayManager.showStatistics {
+                    ForEach(dataManager.stats, id: \.self.id) { adv in
+                        if isAnimated(icon: adv.icon) {
+                            IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                        } else {
+                            IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                                .drawingGroup()
+                        }
+                    }
+                    .transition(.opacity)
+                }
+            }
+            .animation(.spring, value: overlayManager.statisticsAlignment)
+            .frame(height: 70)
+            .frame(maxWidth: .infinity, alignment: alignment)
+            .padding(.bottom)
         }
+    }
+    
+    private func isAnimated(icon: String) -> Bool {
+        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
 }
 

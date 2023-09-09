@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverlaySettingsView: View {
     @EnvironmentObject var settings: AppSettings
+    @ObservedObject private var overlayManager = OverlayManager.shared
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,7 +21,7 @@ struct OverlaySettingsView: View {
                     Menu {
                         Button {
                             withAnimation(.spring()) {
-                                settings.statsRowPos = true
+                                overlayManager.statisticsAlignment = .leading
                             }
                         } label: {
                             Text(L10n.Overlay.Stat.Row.Pos.left)
@@ -28,14 +29,14 @@ struct OverlaySettingsView: View {
                         }
                         Button {
                             withAnimation(.spring()) {
-                                settings.statsRowPos = false
+                                overlayManager.statisticsAlignment = .trailing
                             }
                         } label: {
                             Text(L10n.Overlay.Stat.Row.Pos.right)
                                 .font(.custom("Minecraft-Regular", size: 10))
                         }
                     } label: {
-                        Text(settings.statsRowPos ? L10n.Overlay.Stat.Row.Pos.left : L10n.Overlay.Stat.Row.Pos.right)
+                        Text(overlayManager.statisticsAlignment == .leading ? L10n.Overlay.Stat.Row.Pos.left : L10n.Overlay.Stat.Row.Pos.right)
                             .font(.custom("Minecraft-Regular", size: 10))
                     }
                     .frame(width: 75)
@@ -46,7 +47,7 @@ struct OverlaySettingsView: View {
                     Text(L10n.Overlay.bar)
                         .font(.custom("Minecraft-Regular", size: 10))
                     
-                    Toggle("", isOn: settings.$showBar)
+                    Toggle("", isOn: $overlayManager.showLegacyPageBar)
                 }
                 
                 Spacer()

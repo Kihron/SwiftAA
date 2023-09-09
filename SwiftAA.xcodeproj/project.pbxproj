@@ -20,6 +20,11 @@
 		B64199F1288A73830064AF5B /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199F0288A73830064AF5B /* enchant_item.gif */; };
 		B64827282889C74B00B44855 /* QLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64827272889C74B00B44855 /* QLImage.swift */; };
 		B648272E2889CD8100B44855 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B648272D2889CD8100B44855 /* AppSettings.swift */; };
+		B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D6E2AABDC4600230808 /* RingBuffer.swift */; };
+		B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */; };
+		B6498D732AAC226400230808 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D722AAC226400230808 /* OverlayManager.swift */; };
+		B6498D752AAC23B300230808 /* HAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D742AAC23B300230808 /* HAlignment.swift */; };
+		B6498D772AAC244D00230808 /* NewOverlaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D762AAC244D00230808 /* NewOverlaySettings.swift */; };
 		B65AB3442AA965BB001F4FE6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65AB3422AA965BB001F4FE6 /* Model.xcdatamodeld */; };
 		B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB34E2AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift */; };
 		B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB34F2AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift */; };
@@ -88,7 +93,7 @@
 		B6E331162AA81218001D7FF2 /* TrackingSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331152AA81218001D7FF2 /* TrackingSettingsViewModel.swift */; };
 		B6E331182AA8131C001D7FF2 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331172AA8131C001D7FF2 /* TrackingMode.swift */; };
 		B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */; };
-		B6E7B0862AAA94FB00D83FA7 /* InfiniteScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0852AAA94FB00D83FA7 /* InfiniteScroller.swift */; };
+		B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */; };
 		B6E7B0882AAA951700D83FA7 /* NewOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0872AAA951700D83FA7 /* NewOverlayView.swift */; };
 		B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */; };
 		B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */; };
@@ -110,6 +115,11 @@
 		B64199F0288A73830064AF5B /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
 		B64827272889C74B00B44855 /* QLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLImage.swift; sourceTree = "<group>"; };
 		B648272D2889CD8100B44855 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		B6498D6E2AABDC4600230808 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTickerTapeView.swift; sourceTree = "<group>"; };
+		B6498D722AAC226400230808 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
+		B6498D742AAC23B300230808 /* HAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAlignment.swift; sourceTree = "<group>"; };
+		B6498D762AAC244D00230808 /* NewOverlaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOverlaySettings.swift; sourceTree = "<group>"; };
 		B65AB3432AA965BB001F4FE6 /* UserThemes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserThemes.xcdatamodel; sourceTree = "<group>"; };
 		B65AB34E2AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserThemes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B65AB34F2AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserThemes+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -179,7 +189,7 @@
 		B6E331152AA81218001D7FF2 /* TrackingSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSettingsViewModel.swift; sourceTree = "<group>"; };
 		B6E331172AA8131C001D7FF2 /* TrackingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
 		B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettings.swift; sourceTree = "<group>"; };
-		B6E7B0852AAA94FB00D83FA7 /* InfiniteScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScroller.swift; sourceTree = "<group>"; };
+		B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTickerTapeView.swift; sourceTree = "<group>"; };
 		B6E7B0872AAA951700D83FA7 /* NewOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOverlayView.swift; sourceTree = "<group>"; };
 		B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesSettingsView.swift; sourceTree = "<group>"; };
 		B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayShimmerView.swift; sourceTree = "<group>"; };
@@ -239,6 +249,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		B6498D6D2AABDC3900230808 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B6498D6E2AABDC4600230808 /* RingBuffer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B65AB3412AA9659B001F4FE6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +301,7 @@
 				B6FEFED7289991F20095CF08 /* ViewModels */,
 				B6FEFEDC2899933D0095CF08 /* ViewModifiers */,
 				B65AE1D2288702C6006EC138 /* Views */,
+				B6498D6D2AABDC3900230808 /* Utils */,
 				B65AE1C02886F401006EC138 /* SwiftAAApp.swift */,
 				B66A07752887B2A800DC0A2C /* Resources */,
 				B65AE1D828870B66006EC138 /* Info.plist */,
@@ -326,6 +345,7 @@
 				B65FE5922AA6D27700C30A8F /* ThemePresets.swift */,
 				B6E331172AA8131C001D7FF2 /* TrackingMode.swift */,
 				B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */,
+				B6498D742AAC23B300230808 /* HAlignment.swift */,
 				B6E331132AA808D5001D7FF2 /* Version.swift */,
 				B65FE5972AA6E5FE00C30A8F /* Potion.swift */,
 			);
@@ -339,6 +359,7 @@
 				B65AB3542AA97C89001F4FE6 /* CoreDataManager.swift */,
 				B6E331112AA80869001D7FF2 /* TrackerManager.swift */,
 				B65B074C28AFDD1600E10EC5 /* UpdateManager.swift */,
+				B6498D722AAC226400230808 /* OverlayManager.swift */,
 				B66A076F28879ED900DC0A2C /* DataManager.swift */,
 				B62AEA162AA95FFD008B01CD /* NoteManager.swift */,
 			);
@@ -393,7 +414,8 @@
 				B6A772E128888B3600436551 /* ProgressBarView.swift */,
 				B6AAB57F28BA831E007B981B /* TransparentView.swift */,
 				B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */,
-				B6E7B0852AAA94FB00D83FA7 /* InfiniteScroller.swift */,
+				B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */,
+				B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -476,6 +498,7 @@
 		B6E3310E2AA80802001D7FF2 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				B6498D762AAC244D00230808 /* NewOverlaySettings.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -691,6 +714,7 @@
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
+				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
@@ -707,6 +731,7 @@
 				B65FE5962AA6DEE400C30A8F /* ApplyTheme.swift in Sources */,
 				B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */,
 				B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */,
+				B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */,
 				B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */,
@@ -714,7 +739,9 @@
 				B6E331162AA81218001D7FF2 /* TrackingSettingsViewModel.swift in Sources */,
 				B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
+				B6498D732AAC226400230808 /* OverlayManager.swift in Sources */,
 				B6872FB528AEAA45003CEA95 /* Player.swift in Sources */,
+				B6498D752AAC23B300230808 /* HAlignment.swift in Sources */,
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */,
@@ -738,6 +765,7 @@
 				B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */,
 				B62AEA172AA95FFD008B01CD /* NoteManager.swift in Sources */,
 				B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */,
+				B6498D772AAC244D00230808 /* NewOverlaySettings.swift in Sources */,
 				B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */,
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
 				B6E7B0882AAA951700D83FA7 /* NewOverlayView.swift in Sources */,
@@ -750,7 +778,7 @@
 				B65AB3572AA97EB5001F4FE6 /* UUID+Ext.swift in Sources */,
 				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
-				B6E7B0862AAA94FB00D83FA7 /* InfiniteScroller.swift in Sources */,
+				B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */,
 				B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */,
 				B62AEA0E2AA93A5B008B01CD /* ThemePreviewView.swift in Sources */,
 			);

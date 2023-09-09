@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CriterionView: View {
-    @EnvironmentObject var settings: AppSettings
     @Binding var criterion: Criterion
     
     var body: some View {
@@ -44,10 +43,7 @@ struct CriterionView: View {
 }
 
 struct CriterionView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         CriterionView(criterion: .constant(Criterion(id: "plains", key: "adventure-biomes-visited-wooded-badlands-plateau", name: "Plains", icon: "plains", completed: false)))
-            .environmentObject(settings)
     }
 }

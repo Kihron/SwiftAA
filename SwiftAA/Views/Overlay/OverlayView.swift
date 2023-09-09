@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverlayView: View {
     @ObservedObject var viewModel: OverlayViewModel
+    @ObservedObject private var overlayManager = OverlayManager.shared
     @EnvironmentObject var settings: AppSettings
     
     @State private var section = 0
@@ -26,7 +27,7 @@ struct OverlayView: View {
                     OverlayCompletedView(viewModel: viewModel)
                 }
             } else {
-                VStack(alignment: settings.statsRowPos ? .leading : .trailing) {
+                VStack(alignment: overlayManager.statisticsAlignment == .leading ? .leading : .trailing) {
                     ZStack(alignment: .center) {
                         VStack {
                             Spacer()
@@ -34,7 +35,7 @@ struct OverlayView: View {
                             HStack {
                                 Spacer()
                                 
-                                if (settings.showBar && max(totalSections, criteriaTotalSections) != 1) {
+                                if (overlayManager.showLegacyPageBar && max(totalSections, criteriaTotalSections) != 1) {
                                     RoundedRectangle(cornerRadius: 5)
                                         .background(.gray)
                                         .opacity(0.5)
@@ -66,6 +67,7 @@ struct OverlayView: View {
                             } else {
                                 Image(criterion.icon)
                                     .frame(width: 16, height: 16)
+                                    .drawingGroup()
                             }
                         }
                     }
@@ -75,7 +77,12 @@ struct OverlayView: View {
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: Int(floor(screen.size.width / 74))), spacing: 0) {
                         ForEach(viewModel.getSection(section, screen: screen), id: \.self) { adv in
-                            IndicatorView(indicator: .constant(adv), isOverlay: true)
+                            if isAnimated(icon: adv.icon) {
+                                IndicatorView(indicator: .constant(adv), isOverlay: true)
+                            } else {
+                                IndicatorView(indicator: .constant(adv), isOverlay: true)
+                                    .drawingGroup()
+                            }
                         }
                     }
                     .frame(width: screen.size.width)
@@ -85,7 +92,12 @@ struct OverlayView: View {
                     
                     HStack {
                         ForEach(viewModel.dataManager.stats, id: \.self.id) { adv in
-                            IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                            if isAnimated(icon: adv.icon) {
+                                IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                            } else {
+                                IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                                    .drawingGroup()
+                            }
                         }
                     }
                     .frame(height: 70)

@@ -33,6 +33,14 @@ class DataManager: ObservableObject {
         return map.values.flatMap({$0}).filter({$0.completed}).count
     }
     
+    var incompleteAdvancements: [Advancement] {
+        return map.values.flatMap({$0}).filter({!$0.completed})
+    }
+    
+    var incompleteCriteria: [Criterion] {
+        return map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
+    }
+    
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
         let file = "Advancements/\(versionManager.gameVersion.label)/\(file)"
         

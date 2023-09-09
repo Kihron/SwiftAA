@@ -21,6 +21,7 @@ struct SwiftAAApp: App {
                 .applyVersionFrame()
                 .onAppear {
                     viewModel.onAppear()
+                    closeOverlay()
                 }
                 .navigationTitle("SwiftAA")
                 .toolbar {
@@ -75,15 +76,15 @@ struct SwiftAAApp: App {
         Window("OverlayWindow", id: "overlay-window") {
             Group {
                 if viewModel.settings.overlayLoaded {
-                    OverlayView(viewModel: .init(dataManager: viewModel.dataManager))
-                    //                                NewOverlayView()
+//                    OverlayView(viewModel: .init(dataManager: viewModel.dataManager))
+                                                    NewOverlayView()
                         .environmentObject(viewModel.settings)
                 } else {
                     ProgressView()
                 }
             }
-            .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataManager.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
-            //            .frame(minWidth: 600, maxWidth: 1000, minHeight: 200, maxHeight: 400)
+//            .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataManager.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
+                        .frame(minWidth: 600, maxWidth: 1000, minHeight: 250, maxHeight: 250)
             .onAppear {
                 Task {
                     let windows = NSApplication.shared.windows.filter({ window in
@@ -141,6 +142,20 @@ struct SwiftAAApp: App {
             viewModel.settings.overlayLoaded = false
             windows.first!.close()
         }
+    }
+    
+    private func closeOverlay() {
+        let windows = NSApplication.shared.windows.filter({ window in
+            window.title == "OverlayWindow"
+        })
+        
+        guard let window = windows.first else {
+            viewModel.settings.overlayLoaded = false
+            return
+        }
+        viewModel.settings.overlayWidth = Double(window.frame.width)
+        viewModel.settings.overlayLoaded = false
+        windows.first!.close()
     }
 }
 
