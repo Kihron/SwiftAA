@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct OverlayCompletedView: View {
-    @ObservedObject var viewModel: OverlayViewModel
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject var viewModel = MultiPageOverlayViewModel()
     
     var body: some View {
         GeometryReader { screen in
@@ -38,7 +37,7 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         VStack {
-                            OverlayShimmerView(message: L10n.Overlay.Complete.message(settings.player?.name ?? L10n.player, TrackerManager.shared.gameVersion.label))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.message("Player", TrackerManager.shared.gameVersion.label))
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
@@ -91,12 +90,8 @@ struct OverlayCompletedView: View {
 }
 
 struct OverlayCompletedView_Previews: PreviewProvider {
-    @ObservedObject static var dataManager = DataManager()
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
-        OverlayCompletedView(viewModel: .init(dataManager: dataManager))
+        OverlayCompletedView()
             .frame(width: 820, height: 345)
-            .environmentObject(settings)
     }
 }

@@ -1159,10 +1159,14 @@ internal enum L10n {
     }
   }
   internal enum Overlay {
-    /// Overlay Background Color
-    internal static let background = L10n.tr("Localizable", "overlay.background", fallback: "Overlay Background Color")
     /// Show Page Bar
     internal static let bar = L10n.tr("Localizable", "overlay.bar", fallback: "Show Page Bar")
+    /// Multi-Page
+    internal static let multipage = L10n.tr("Localizable", "overlay.multipage", fallback: "Multi-Page")
+    /// Show Statistics
+    internal static let showstats = L10n.tr("Localizable", "overlay.showstats", fallback: "Show Statistics")
+    /// Ticker Tape
+    internal static let tickertape = L10n.tr("Localizable", "overlay.tickertape", fallback: "Ticker Tape")
     /// Toggle Overlay
     internal static let toggle = L10n.tr("Localizable", "overlay.toggle", fallback: "Toggle Overlay")
     internal enum Complete {
@@ -1196,17 +1200,11 @@ internal enum L10n {
         internal static let temples = L10n.tr("Localizable", "overlay.complete.stat.temples", fallback: "Temples")
       }
     }
-    internal enum Stat {
-      internal enum Row {
-        /// Statistics Row Position
-        internal static let pos = L10n.tr("Localizable", "overlay.stat.row.pos", fallback: "Statistics Row Position")
-        internal enum Pos {
-          /// Left
-          internal static let `left` = L10n.tr("Localizable", "overlay.stat.row.pos.left", fallback: "Left")
-          /// Right
-          internal static let `right` = L10n.tr("Localizable", "overlay.stat.row.pos.right", fallback: "Right")
-        }
-      }
+    internal enum Style {
+      /// Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.
+      internal static let description = L10n.tr("Localizable", "overlay.style.description", fallback: "Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.")
+      /// Overlay Style
+      internal static let title = L10n.tr("Localizable", "overlay.style.title", fallback: "Overlay Style")
     }
   }
   internal enum Potion {
@@ -1240,6 +1238,16 @@ internal enum L10n {
     internal static let tracking = L10n.tr("Localizable", "settings.tracking", fallback: "Tracking")
     /// Updates
     internal static let updater = L10n.tr("Localizable", "settings.updater", fallback: "Updates")
+    internal enum Alignment {
+      /// Center
+      internal static let center = L10n.tr("Localizable", "settings.alignment.center", fallback: "Center")
+      /// Left
+      internal static let leading = L10n.tr("Localizable", "settings.alignment.leading", fallback: "Left")
+      /// Alignment
+      internal static let title = L10n.tr("Localizable", "settings.alignment.title", fallback: "Alignment")
+      /// Right
+      internal static let trailing = L10n.tr("Localizable", "settings.alignment.trailing", fallback: "Right")
+    }
     internal enum Updater {
       /// Check For Updates
       internal static let check = L10n.tr("Localizable", "settings.updater.check", fallback: "Check For Updates")

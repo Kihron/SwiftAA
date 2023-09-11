@@ -19,34 +19,41 @@ struct CriteriaTickerTapeView: View {
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
-                ForEach(buffer, id: \.?.id) { criterion in
-                    Group {
-                        if let criterion = criterion {
-                            if !isAnimated(icon: criterion.icon) {
-                                Image(criterion.icon)
-                                    .resizable()
-                                    .interpolation(.low)
-                                    .frame(width: 24, height: 24)
-                                    .drawingGroup()
-                            } else {
-                                QLImage(criterion.icon)
-                                    .frame(width: 24, height: 24)
+                if !dataManager.incompleteCriteria.isEmpty {
+                    ForEach(buffer, id: \.?.id) { criterion in
+                        Group {
+                            if let criterion = criterion {
+                                if !isAnimated(icon: criterion.icon) {
+                                    Image(criterion.icon)
+                                        .resizable()
+                                        .interpolation(.low)
+                                        .frame(width: 24, height: 24)
+                                        .drawingGroup()
+                                } else {
+                                    QLImage(criterion.icon)
+                                        .frame(width: 24, height: 24)
+                                }
                             }
                         }
+                        .padding(8)
                     }
-                    .padding(8)
                 }
             }
             .offset(x: xOffset, y: 0)
             .onAppear {
                 calculateBuffer(width: geometry.size.width)
-                withAnimation(.spring(duration: 4)) {
+                withAnimation(.spring(duration: 5)) {
                     xOffset -= 40
                 }
             }
             .onChange(of: TrackerManager.shared.worldPath) { _ in
-                index = 0
-                calculateBuffer(width: geometry.size.width)
+                resetBuffer(width: geometry.size.width)
+            }
+            .onChange(of: TrackerManager.shared.gameVersion) { _ in
+                resetBuffer(width: geometry.size.width)
+            }
+            .onChange(of: TrackerManager.shared.trackingMode) { _ in
+                resetBuffer(width: geometry.size.width)
             }
             .onChange(of: geometry.size.width) { value in
                 calculateBuffer(width: value)
@@ -56,11 +63,16 @@ struct CriteriaTickerTapeView: View {
                     xOffset += 40
                     cycleIndicator()
                 }
-                withAnimation(.spring(duration: 4)) {
+                withAnimation(.spring(duration: 5)) {
                     xOffset -= 40
                 }
             }
         }
+    }
+    
+    private func resetBuffer(width: CGFloat) {
+        index = 0
+        calculateBuffer(width: width)
     }
     
     private func calculateBuffer(width: CGFloat) {

@@ -1,5 +1,5 @@
 //
-//  FrameModifier.swift
+//  VersionFrameModifier.swift
 //  SwiftAA
 //
 //  Created by Kihron on 8/22/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FrameModifier: ViewModifier {
+struct VersionFrameModifier: ViewModifier {
     @ObservedObject private var versionManager = TrackerManager.shared
     
     func body(content: Content) -> some View {
@@ -24,6 +24,6 @@ struct FrameModifier: ViewModifier {
 
 extension View {
     func applyVersionFrame() -> some View {
-        modifier(FrameModifier())
+        modifier(VersionFrameModifier())
     }
 }

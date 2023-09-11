@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-class OverlayViewModel: ObservableObject {
-    @ObservedObject var dataManager: DataManager
+class MultiPageOverlayViewModel: ObservableObject {
+    @ObservedObject var dataManager = DataManager.shared
     
-    init(dataManager: DataManager) {
-        self._dataManager = ObservedObject(wrappedValue: dataManager)
+    init() {
+        
     }
     
     var totalAdvancements: Int {

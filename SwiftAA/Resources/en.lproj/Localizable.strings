@@ -27,7 +27,6 @@
 
 "overlay" = "Overlay";
 "overlay.bar" = "Show Page Bar";
-"overlay.background" = "Overlay Background Color";
 "overlay.complete.title" = "All %d Advancements Complete!";
 "overlay.complete.message" = "%@ has completed\nMinecraft: Java Edition (%@)\nAll Advancements";
 "overlay.complete.stat.elytra" = "KM";
@@ -37,9 +36,11 @@
 "overlay.complete.stat.temples" = "Temples";
 "overlay.complete.stats" = "Run Stats";
 "overlay.complete.time" = "%@\nApproximate IGT";
-"overlay.stat.row.pos" = "Statistics Row Position";
-"overlay.stat.row.pos.left" = "Left";
-"overlay.stat.row.pos.right" = "Right";
+"overlay.multipage" = "Multi-Page";
+"overlay.showstats" = "Show Statistics";
+"overlay.style.title" = "Overlay Style";
+"overlay.style.description" = "Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.";
+"overlay.tickertape" = "Ticker Tape";
 "overlay.toggle" = "Toggle Overlay";
 
 "potion.invisibility" = "Potion of Invisibility";
@@ -52,6 +53,10 @@
 "potion.water_breathing" = "Potion of Water Breathing";
 "potion.weakness" = "Potion of Weakness";
 
+"settings.alignment.title" = "Alignment";
+"settings.alignment.center" = "Center";
+"settings.alignment.leading" = "Left";
+"settings.alignment.trailing" = "Right";
 "settings.notes" = "Notes";
 "settings.overlay" = "Overlay";
 "settings.theme" = "Theme";

@@ -43,7 +43,7 @@ struct SettingsView: View {
                 case .theme:
                     ThemeSettingsView()
                 case .overlay:
-                    NewOverlaySettings()
+                    OverlaySettings()
                 case .notes:
                     Text(selectedSettingsBarItem.label.localized)
                 case .updates:

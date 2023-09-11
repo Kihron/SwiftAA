@@ -33,13 +33,18 @@ struct IndicatorTickerTapeView: View {
             .offset(x: xOffset, y: 0)
             .onAppear {
                 calculateBuffer(width: geometry.size.width)
-                withAnimation(.spring(duration: 4)) {
+                withAnimation(.spring(duration: 5)) {
                     xOffset -= 74
                 }
             }
             .onChange(of: TrackerManager.shared.worldPath) { _ in
-                index = 0
-                calculateBuffer(width: geometry.size.width)
+                resetBuffer(width: geometry.size.width)
+            }
+            .onChange(of: TrackerManager.shared.gameVersion) { _ in
+                resetBuffer(width: geometry.size.width)
+            }
+            .onChange(of: TrackerManager.shared.trackingMode) { _ in
+                resetBuffer(width: geometry.size.width)
             }
             .onChange(of: geometry.size.width) { value in
                 calculateBuffer(width: value)
@@ -49,11 +54,16 @@ struct IndicatorTickerTapeView: View {
                     xOffset += 74
                     cycleIndicator()
                 }
-                withAnimation(.spring(duration: 4)) {
+                withAnimation(.spring(duration: 5)) {
                     xOffset -= 74
                 }
             }
         }
+    }
+    
+    private func resetBuffer(width: CGFloat) {
+        index = 0
+        calculateBuffer(width: width)
     }
     
     private func calculateBuffer(width: CGFloat) {

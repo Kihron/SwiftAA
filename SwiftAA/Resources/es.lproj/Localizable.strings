@@ -27,7 +27,6 @@
 
 "overlay" = "Overlay";
 "overlay.bar" = "Alternar Barra de Páginas";
-"overlay.background" = "Color del Fondo del Overlay";
 "overlay.complete.title" = "¡Los %d Logros Completos!";
 "overlay.complete.message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos Los Logros";
 "overlay.complete.stat.elytra" = "KM";
@@ -37,9 +36,11 @@
 "overlay.complete.stat.temples" = "Templos";
 "overlay.complete.stats" = "Run Estadísticas";
 "overlay.complete.time" = "%@\nIGT Aproximado";
-"overlay.stat.row.pos" = "Posición de la Fila Estadísticas";
-"overlay.stat.row.pos.left" = "Izquierda";
-"overlay.stat.row.pos.right" = "Derecha";
+"overlay.multipage" = "Multi-Página";
+"overlay.showstats" = "Mostrar Estadísticas";
+"overlay.style.title" = "Estilo de Overlay";
+"overlay.style.description" = "Cinta Animada crea una lista infinita de logros y criterios que se desplazan constantemente. Multi-Página los divide en un conjunto estático de páginas.";
+"overlay.tickertape" = "Cinta Animada";
 "overlay.toggle" = "Alternar Overlay";
 
 "potion.invisibility" = "Poción de Invisibilidad";
@@ -52,6 +53,10 @@
 "potion.water_breathing" = "Poción de Apnea";
 "potion.weakness" = "Poción de Debilidad";
 
+"settings.alignment.title" = "Alineación";
+"settings.alignment.center" = "Centro";
+"settings.alignment.leading" = "Izquierda";
+"settings.alignment.trailing" = "Derecha";
 "settings.notes" = "Notas";
 "settings.overlay" = "Overlay";
 "settings.theme" = "Tema";
@@ -89,7 +94,7 @@
 "theme.text.color" = "Color del Texto";
 
 "tracking.attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";
-"tracking.browse" = "Buscar";
+"tracking.browse" = "...";
 "tracking.custom.saves" = "Carpeta de Mundos Personalizada";
 "tracking.enter.directory" = "Ingresar la dirección a la Carpeta";
 "tracking.game.version" = "Versión del Juego";

@@ -1,13 +1,13 @@
 //
-//  NewOverlayView.swift
+//  TickerTapeOverlayView.swift
 //  SwiftAA
 //
-//  Created by Kihron on 9/7/23.
+//  Created by Kihron on 9/10/23.
 //
 
 import SwiftUI
 
-struct NewOverlayView: View {
+struct TickerTapeOverlayView: View {
     @ObservedObject private var overlayManager = OverlayManager.shared
     @ObservedObject private var dataManager = DataManager.shared
     
@@ -22,8 +22,17 @@ struct NewOverlayView: View {
         }
     }
     
+    var counter: String {
+        return "\(dataManager.completedAdvancements) / \(dataManager.totalAdvancements)"
+    }
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            Text(counter)
+                .font(.custom("Minecraft-Regular", size: 12))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 10)
+            
             CriteriaTickerTapeView()
                 .frame(height: 40)
             
@@ -44,8 +53,8 @@ struct NewOverlayView: View {
                 }
             }
             .animation(.spring, value: overlayManager.statisticsAlignment)
-            .frame(height: 70)
             .frame(maxWidth: .infinity, alignment: alignment)
+            .frame(height: 70)
             .padding(.bottom)
         }
     }
@@ -56,6 +65,5 @@ struct NewOverlayView: View {
 }
 
 #Preview {
-    NewOverlayView()
-        .padding(.vertical)
+    TickerTapeOverlayView()
 }

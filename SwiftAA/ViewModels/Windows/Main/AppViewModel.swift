@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-class AppViewModel: ObservableObject {    
-    @ObservedObject var settings = AppSettings()
+class AppViewModel: ObservableObject {
     @ObservedObject var dataManager = DataManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
     
@@ -25,7 +24,6 @@ class AppViewModel: ObservableObject {
     private let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     func onAppear() {
-        settings.player = nil
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             withAnimation {
                 self.error = self.refreshData()
@@ -120,10 +118,7 @@ class AppViewModel: ObservableObject {
                     
                     uuid = String(fileName.dropLast(5))
                     Task {
-                        let player = await getPlayer()
-                        if (player != settings.player) {
-                            settings.player = player
-                        }
+                        await PlayerManager.shared.updatePlayer(uuid: uuid)
                     }
                     
                     updateAll(advancements: advancements, statistics: statistics.stats)
@@ -141,17 +136,6 @@ class AppViewModel: ObservableObject {
             return "Directory Not Found"
         }
         return ""
-    }
-    
-    func getPlayer() async -> Player {
-        do {
-            let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)")!
-            let player = try await URLSession.shared.decode(Player.self, from: url)
-            return player
-        } catch {
-            print(error.localizedDescription)
-            return Player(id: "", name: "")
-        }
     }
     
     func getModifiedTime(_ filePath: String, fileManager: FileManager) throws -> Date? {

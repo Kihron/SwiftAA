@@ -43,7 +43,6 @@ struct SwiftAAApp: App {
                 }
                 .removeFocusOnTap()
                 .preferredColorScheme(.dark)
-                .environmentObject(viewModel.settings)
                 .environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }
         .commands {
@@ -74,26 +73,17 @@ struct SwiftAAApp: App {
         .windowResizability(.contentSize)
         
         Window("OverlayWindow", id: "overlay-window") {
-            Group {
-                if viewModel.settings.overlayLoaded {
-//                    OverlayView(viewModel: .init(dataManager: viewModel.dataManager))
-                                                    NewOverlayView()
-                        .environmentObject(viewModel.settings)
-                } else {
-                    ProgressView()
+            OverlayView()
+                .applyOverlayFrame()
+                .onAppear {
+                    Task {
+                        let windows = NSApplication.shared.windows.filter({ window in
+                            window.title == "OverlayWindow"
+                        })
+                        windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
+                    }
                 }
-            }
-//            .frame(minWidth: viewModel.settings.overlayLoaded ? (!viewModel.dataManager.allAdvancements ? 400 : 825) : viewModel.settings.overlayWidth, maxWidth: viewModel.settings.overlayLoaded ? .infinity : viewModel.settings.overlayWidth, minHeight: 345, maxHeight: 345, alignment: .center)
-                        .frame(minWidth: 600, maxWidth: 1000, minHeight: 250, maxHeight: 250)
-            .onAppear {
-                Task {
-                    let windows = NSApplication.shared.windows.filter({ window in
-                        window.title == "OverlayWindow"
-                    })
-                    windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
-                }
-            }
-            .background(TransparentWindow())
+                .background(TransparentWindow())
         }.commands {
             CommandGroup(after: .sidebar, addition: {
                 Button {
@@ -126,21 +116,11 @@ struct SwiftAAApp: App {
     }
     
     private func toggleOverlay() {
-        let windows = NSApplication.shared.windows.filter({ window in
-            window.title == "OverlayWindow"
-        })
-        
-        if (!viewModel.settings.overlayLoaded) {
-            viewModel.settings.overlayLoaded = true
+        if (!OverlayManager.shared.overlayOpen) {
+            OverlayManager.shared.overlayOpen = true
             openWindow(id: "overlay-window")
         } else {
-            guard let window = windows.first else {
-                viewModel.settings.overlayLoaded = false
-                return
-            }
-            viewModel.settings.overlayWidth = Double(window.frame.width)
-            viewModel.settings.overlayLoaded = false
-            windows.first!.close()
+            closeOverlay()
         }
     }
     
@@ -149,12 +129,12 @@ struct SwiftAAApp: App {
             window.title == "OverlayWindow"
         })
         
-        guard let window = windows.first else {
-            viewModel.settings.overlayLoaded = false
+        guard let _ = windows.first else {
+            OverlayManager.shared.overlayOpen = false
             return
         }
-        viewModel.settings.overlayWidth = Double(window.frame.width)
-        viewModel.settings.overlayLoaded = false
+        
+        OverlayManager.shared.overlayOpen = false
         windows.first!.close()
     }
 }

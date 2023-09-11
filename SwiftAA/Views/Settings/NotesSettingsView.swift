@@ -71,11 +71,8 @@ struct NotesSettingsView: View {
 }
 
 struct NotesSettingsView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         NotesSettingsView()
             .frame(width: 500, height: 300)
-            .environmentObject(settings)
     }
 }

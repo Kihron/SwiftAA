@@ -8,9 +8,9 @@
 import SwiftUI
 
 enum HAlignment: String, CaseIterable, Identifiable, Hashable {
-    case leading = "leading"
-    case center = "center"
-    case trailing = "trailing"
+    case leading = "settings.alignment.leading"
+    case center = "settings.alignment.center"
+    case trailing = "settings.alignment.trailing"
     
     var id: UUID {
         return UUID()
