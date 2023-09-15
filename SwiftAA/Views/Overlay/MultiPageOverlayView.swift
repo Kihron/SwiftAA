@@ -36,24 +36,23 @@ struct MultiPageOverlayView: View {
                 ZStack(alignment: .center) {
                     VStack {
                         HStack {
-                            if (overlayManager.showLegacyPageBar && max(totalSections, criteriaTotalSections) != 1) {
+                            if (overlayManager.showLegacyPageIndicator && max(totalSections, criteriaTotalSections) != 1) {
                                 RoundedRectangle(cornerRadius: 5)
                                     .background(.gray)
                                     .opacity(0.5)
                                     .frame(width: max(0, screen.size.width * progress), height: 2)
                             }
                         }
-                        .padding(.top, 10)
-                        
-                        HStack {
-                            Text("\(viewModel.completedAdvancements)/\(viewModel.totalAdvancements)")
-                                .font(.custom("Minecraft-Regular", size: 12))
-                                .padding(.top, -15)
-                                .padding(.trailing)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .padding(.leading)
+                        .frame(height: 10)
                     }
+                    
+                    HStack {
+                        Text("\(viewModel.completedAdvancements)/\(viewModel.totalAdvancements)")
+                            .font(.custom("Minecraft-Regular", size: 12))
+                            .padding(.trailing)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .padding(.leading)
                 }
                 .frame(height: 10)
                 .padding(.bottom, 5)

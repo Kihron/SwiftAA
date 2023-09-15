@@ -19,8 +19,8 @@ internal enum L10n {
   internal enum About {
     /// About SwiftAA
     internal static let button = L10n.tr("Localizable", "about.button", fallback: "About SwiftAA")
-    /// Copyright © 2022 Kihron, Slackow.
-    internal static let copyright = L10n.tr("Localizable", "about.copyright", fallback: "Copyright © 2022 Kihron, Slackow.")
+    /// Copyright © 2023 Kihron, Slackow.
+    internal static let copyright = L10n.tr("Localizable", "about.copyright", fallback: "Copyright © 2023 Kihron, Slackow.")
     /// All Advancements Tracker for macOS
     internal static let description = L10n.tr("Localizable", "about.description", fallback: "All Advancements Tracker for macOS")
   }
@@ -1107,8 +1107,16 @@ internal enum L10n {
     internal static let message = L10n.tr("Localizable", "donate.message", fallback: "Support us on Ko-Fi")
   }
   internal enum Error {
-    /// Tab into Minecraft to start tracking
-    internal static let enterMinecraft = L10n.tr("Localizable", "error.enter_minecraft", fallback: "Tab into Minecraft to start tracking")
+    /// Directory not found
+    internal static let directoryNotFound = L10n.tr("Localizable", "error.directory_not_found", fallback: "Directory not found")
+    /// Open Minecraft to start tracking
+    internal static let enterMinecraft = L10n.tr("Localizable", "error.enter_minecraft", fallback: "Open Minecraft to start tracking")
+    /// Invalid directory
+    internal static let invalidDirectory = L10n.tr("Localizable", "error.invalid_directory", fallback: "Invalid directory")
+    /// No directory selected
+    internal static let noDirectory = L10n.tr("Localizable", "error.no_directory", fallback: "No directory selected")
+    /// No worlds found
+    internal static let noWorlds = L10n.tr("Localizable", "error.no_worlds", fallback: "No worlds found")
   }
   internal enum Goal {
     /// Advancements

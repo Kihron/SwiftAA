@@ -13,24 +13,39 @@ struct OverlaySettings: View {
     var body: some View {
         VStack(spacing: 12) {
             SettingsCardView {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(L10n.Overlay.Style.title)
+                VStack {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(L10n.Overlay.Style.title)
+                            
+                            Text(L10n.Overlay.Style.description)
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                                .padding(.trailing, 2)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Text(L10n.Overlay.Style.description)
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                            .padding(.trailing, 2)
+                        Picker("", selection: $overlayManager.overlayStyle) {
+                            ForEach(OverlayStyle.allCases, id: \.self) { item in
+                                Text(item.label.localized)
+                            }
+                        }
+                        .frame(maxWidth: 105)
+                        .labelsHidden()
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Picker("", selection: $overlayManager.overlayStyle) {
-                        ForEach(OverlayStyle.allCases, id: \.self) { item in
-                            Text(item.label.localized)
+                    if case .multiPage = overlayManager.overlayStyle {
+                        Divider()
+                        
+                        HStack {
+                            Text("Show Page Indicator")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Toggle("", isOn: $overlayManager.showLegacyPageIndicator)
+                                .labelsHidden()
+                                .toggleStyle(.switch)
                         }
                     }
-                    .frame(maxWidth: 105)
-                    .labelsHidden()
                 }
             }
             
@@ -64,6 +79,7 @@ struct OverlaySettings: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .animation(.bouncy, value: overlayManager.overlayStyle)
         .padding()
     }
 }

@@ -8,28 +8,30 @@
 import SwiftUI
 
 struct ToolbarAlertView: View {
-    @Binding var error: String
-    @State var showPopover: Bool = false
-    let tips = [L10n.Error.enterMinecraft]
+    @ObservedObject private var trackerManager = TrackerManager.shared
+    @State private var showPopover: Bool = false
+    let tips: [TrackerError] = [.enterMinecraft]
     
     var body: some View {
-        Button {
-            showPopover.toggle()
-        } label: {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .font(.system(size: 15))
-                .foregroundColor(tips.contains(error) ? .blue : .red)
+        if let error = trackerManager.error {
+            Button {
+                showPopover.toggle()
+            } label: {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .font(.system(size: 15))
+                    .foregroundColor(tips.contains(error) ? .blue : .red)
+            }
+            .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
+                PopoverView(error: error.description)
+            }
+            .buttonStyle(.plain)
+            .padding(.trailing, 5)
         }
-        .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
-            PopoverView(error: $error)
-        }
-        .buttonStyle(.plain)
-        .padding(.trailing, 5)
     }
 }
 
 struct PopoverView: View {
-    @Binding var error: String
+    @State var error: String
     
     var body: some View {
         VStack {
@@ -41,7 +43,7 @@ struct PopoverView: View {
 
 struct ToolbarAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        ToolbarAlertView(error: .constant("No Directory Selected"), showPopover: false)
+        ToolbarAlertView()
             .frame(width: 50, height: 50)
     }
 }

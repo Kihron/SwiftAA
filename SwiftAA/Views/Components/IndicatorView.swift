@@ -70,7 +70,7 @@ struct IndicatorView: View {
 
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-trvel", name: "Sticky Situation", icon: "enter_end_ateway", frameStyle: "normal", criteria: [], completed: true)), isOverlay: false)
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-travel", name: "Sticky Situation", icon: "enchanted_golden_apple", frameStyle: "normal", criteria: [], completed: true)), isOverlay: false)
             .frame(width: 100, height: 100)
     }
 }

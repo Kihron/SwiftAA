@@ -18,7 +18,7 @@ struct IndicatorTickerTapeView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            HStack(spacing: 0) {
+            LazyHStack(spacing: 0) {
                 ForEach(buffer, id: \.?.id) { indicator in
                     if let indicator = indicator {
                         if !isAnimated(icon: indicator.icon) {

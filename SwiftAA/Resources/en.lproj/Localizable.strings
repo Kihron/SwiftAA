@@ -5,11 +5,15 @@
 
 "about.button" = "About SwiftAA";
 "about.description" = "All Advancements Tracker for macOS";
-"about.copyright" = "Copyright © 2022 Kihron, Slackow.";
+"about.copyright" = "Copyright © 2023 Kihron, Slackow.";
 
 "donate.message" = "Support us on Ko-Fi";
 
-"error.enter_minecraft" = "Tab into Minecraft to start tracking";
+"error.enter_minecraft" = "Open Minecraft to start tracking";
+"error.invalid_directory" = "Invalid directory";
+"error.directory_not_found" = "Directory not found";
+"error.no_directory" = "No directory selected";
+"error.no_worlds" = "No worlds found";
 
 "goal.advancements" = "Advancements";
 "goal.animals.bred" = "Animals Bred";

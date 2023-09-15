@@ -20,7 +20,6 @@ struct SwiftAAApp: App {
             ContentView()
                 .applyVersionFrame()
                 .onAppear {
-                    viewModel.onAppear()
                     closeOverlay()
                 }
                 .navigationTitle("SwiftAA")
@@ -36,9 +35,7 @@ struct SwiftAAApp: App {
                         }
                     }
                     ToolbarItem(placement: .automatic) {
-                        if (!viewModel.error.isEmpty) {
-                            ToolbarAlertView(error: $viewModel.error)
-                        }
+                        ToolbarAlertView()
                     }
                 }
                 .removeFocusOnTap()

@@ -18,7 +18,7 @@ struct CriteriaTickerTapeView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            HStack(spacing: 0) {
+            LazyHStack(spacing: 0) {
                 if !dataManager.incompleteCriteria.isEmpty {
                     ForEach(buffer, id: \.?.id) { criterion in
                         Group {
