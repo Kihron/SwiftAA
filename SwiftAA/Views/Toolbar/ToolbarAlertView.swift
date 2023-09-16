@@ -10,10 +10,10 @@ import SwiftUI
 struct ToolbarAlertView: View {
     @ObservedObject private var trackerManager = TrackerManager.shared
     @State private var showPopover: Bool = false
-    let tips: [TrackerError] = [.enterMinecraft]
+    let tips: [TrackerAlert] = [.enterMinecraft]
     
     var body: some View {
-        if let error = trackerManager.error {
+        if let error = trackerManager.alert {
             Button {
                 showPopover.toggle()
             } label: {

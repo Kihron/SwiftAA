@@ -9,11 +9,11 @@
 
 "donate.message" = "Support us on Ko-Fi";
 
-"error.enter_minecraft" = "Open Minecraft to start tracking";
-"error.invalid_directory" = "Invalid directory";
-"error.directory_not_found" = "Directory not found";
-"error.no_directory" = "No directory selected";
-"error.no_worlds" = "No worlds found";
+"alert.enter_minecraft" = "Open Minecraft to start tracking";
+"alert.invalid_directory" = "Invalid directory";
+"alert.directory_not_found" = "Directory not found";
+"alert.no_directory" = "No directory selected";
+"alert.no_worlds" = "No worlds found";
 
 "goal.advancements" = "Advancements";
 "goal.animals.bred" = "Animals Bred";

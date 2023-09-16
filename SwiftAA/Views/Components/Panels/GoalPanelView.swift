@@ -15,22 +15,27 @@ struct GoalPanelView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 2, alignment: .leading), count: rowCount), spacing: 5) {
-                Spacer()
-                Spacer()
-
+            ZStack(alignment: .leading) {
                 IndicatorView(indicator: $advancement.asIndicator)
-
-                Spacer()
-                Spacer()
-
-                ForEach($advancement.criteria, id: \.self.id) { item in
-                    CriterionView(criterion: item)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                
+                LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 2, alignment: .leading), count: rowCount), spacing: 5) {
+                    
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    
+                    ForEach($advancement.criteria, id: \.self.id) { item in
+                        CriterionView(criterion: item)
+                    }
+                    .frame(alignment: .leading)
                 }
-                .frame(alignment: .leading)
+                .frame(maxHeight: .infinity)
+                .padding(.leading, 5)
+                .padding(.top, 3)
             }
-            .frame(maxHeight: .infinity)
-            .padding(.leading, 5)
 
             ProgressBarView(value: .constant($advancement.criteria.filter({ criterion in
                     criterion.completed.wrappedValue
@@ -41,11 +46,7 @@ struct GoalPanelView: View {
     }
 }
 
-struct GoalPanelViewView_Previews: PreviewProvider {
-    @ObservedObject static var dataManager = DataManager()
-
-    static var previews: some View {
-        GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
-            .frame(width: 350)
-    }
+#Preview {
+    GoalPanelView(advancement: DataManager.shared.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
+        .frame(width: 350)
 }

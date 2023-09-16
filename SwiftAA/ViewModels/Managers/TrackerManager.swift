@@ -1,5 +1,5 @@
 //
-//  VersionManager.swift
+//  TrackerManager.swift
 //  SwiftAA
 //
 //  Created by Kihron on 9/5/23.
@@ -13,7 +13,7 @@ class TrackerManager: ObservableObject {
     @AppStorage("gameVersion") var gameVersion: Version = .v1_16
     
     @Published var worldPath: String = ""
-    @Published var error: TrackerError? = .none
+    @Published var alert: TrackerAlert? = .none
     
     static let shared = TrackerManager()
     

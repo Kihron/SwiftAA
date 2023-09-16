@@ -1098,6 +1098,18 @@ internal enum L10n {
       }
     }
   }
+  internal enum Alert {
+    /// Directory not found
+    internal static let directoryNotFound = L10n.tr("Localizable", "alert.directory_not_found", fallback: "Directory not found")
+    /// Open Minecraft to start tracking
+    internal static let enterMinecraft = L10n.tr("Localizable", "alert.enter_minecraft", fallback: "Open Minecraft to start tracking")
+    /// Invalid directory
+    internal static let invalidDirectory = L10n.tr("Localizable", "alert.invalid_directory", fallback: "Invalid directory")
+    /// No directory selected
+    internal static let noDirectory = L10n.tr("Localizable", "alert.no_directory", fallback: "No directory selected")
+    /// No worlds found
+    internal static let noWorlds = L10n.tr("Localizable", "alert.no_worlds", fallback: "No worlds found")
+  }
   internal enum App {
     /// SwiftAA
     internal static let title = L10n.tr("Localizable", "app.title", fallback: "SwiftAA")
@@ -1105,18 +1117,6 @@ internal enum L10n {
   internal enum Donate {
     /// Support us on Ko-Fi
     internal static let message = L10n.tr("Localizable", "donate.message", fallback: "Support us on Ko-Fi")
-  }
-  internal enum Error {
-    /// Directory not found
-    internal static let directoryNotFound = L10n.tr("Localizable", "error.directory_not_found", fallback: "Directory not found")
-    /// Open Minecraft to start tracking
-    internal static let enterMinecraft = L10n.tr("Localizable", "error.enter_minecraft", fallback: "Open Minecraft to start tracking")
-    /// Invalid directory
-    internal static let invalidDirectory = L10n.tr("Localizable", "error.invalid_directory", fallback: "Invalid directory")
-    /// No directory selected
-    internal static let noDirectory = L10n.tr("Localizable", "error.no_directory", fallback: "No directory selected")
-    /// No worlds found
-    internal static let noWorlds = L10n.tr("Localizable", "error.no_worlds", fallback: "No worlds found")
   }
   internal enum Goal {
     /// Advancements

@@ -24,21 +24,12 @@ class AppViewModel: ObservableObject {
     init() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             withAnimation {
-                do {
-                    try self.refreshData()
-                } catch let error as TrackerError {
-                    switch error {
-                        case .enterMinecraft, .directoryNotFound, .invalidDirectory, .noDirectory, .noWorlds:
-                            self.trackerManager.error = error
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
+                self.refreshData()
             }
         }
     }
     
-    private func refreshData() throws {
+    private func refreshData() {
         advancementsUpdated = false
         
         let saves: String
@@ -54,16 +45,16 @@ class AppViewModel: ObservableObject {
                 saves = lastWorking
                 if (saves.isEmpty) {
                     updateAll()
-                    throw TrackerError.enterMinecraft
+                    trackerManager.alert = .enterMinecraft
+                    return
                 }
             }
         }
         
-        try readAllFileData(saves: saves)
-        trackerManager.error = .none
+        trackerManager.alert = readAllFileData(saves: saves)
     }
     
-    private func readAllFileData(saves: String) throws {
+    private func readAllFileData(saves: String) -> TrackerAlert? {
         let fileManager = FileManager.default
         if (fileManager.fileExists(atPath: saves)) {
             do {
@@ -71,12 +62,12 @@ class AppViewModel: ObservableObject {
                 
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {
                     updateAll()
-                    return
+                    return .none
                 }
                 
                 if (try fileManager.contentsOfDirectory(atPath: "\(world)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(world)/stats").isEmpty) {
                     updateAll()
-                    throw TrackerError.invalidDirectory
+                    return TrackerAlert.invalidDirectory
                 }
                 
                 let fileName = try fileManager.contentsOfDirectory(atPath: "\(world)/advancements")[0]
@@ -94,18 +85,18 @@ class AppViewModel: ObservableObject {
                     updatePlayerInfo(fileName: fileName)
                     updateAll(advancements: advancements, statistics: statistics.stats)
                 }
-                
             } catch {
                 print(error.localizedDescription)
             }
         } else {
             if (saves.isEmpty) {
                 updateAll()
-                throw TrackerError.noWorlds
+                return TrackerAlert.noWorlds
             }
             updateAll()
-            throw TrackerError.directoryNotFound
+            return TrackerAlert.directoryNotFound
         }
+        return .none
     }
     
     private func getWorldPath(fileManager: FileManager, saves: String) -> String {
@@ -133,7 +124,7 @@ class AppViewModel: ObservableObject {
                 })
                 if (contents.isEmpty) {
                     updateAll()
-                    throw TrackerError.noWorlds
+                    throw TrackerAlert.noWorlds
                 }
                 
                 world = try contents.max { a, b in

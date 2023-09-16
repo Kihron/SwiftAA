@@ -58,7 +58,7 @@ struct L1_19: View {
                     GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether)
                         .frame(width: 130)
                 }
-                .frame(width: 1702, height: 323)
+                .frame(width: 1702, height: 333)
             }
         }
     }

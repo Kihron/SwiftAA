@@ -1,5 +1,5 @@
 //
-//  TrackerError.swift
+//  TrackerAlert.swift
 //  SwiftAA
 //
 //  Created by Kihron on 9/14/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TrackerError: Error, CaseIterable, Identifiable, Hashable {
+enum TrackerAlert: Error, CaseIterable, Identifiable, Hashable {
     case enterMinecraft
     case invalidDirectory
     case directoryNotFound
@@ -21,15 +21,15 @@ enum TrackerError: Error, CaseIterable, Identifiable, Hashable {
     var description: String {
         switch self {
             case .enterMinecraft:
-                "error.enter_minecraft"
+                "alert.enter_minecraft"
             case .invalidDirectory:
-                "error.invalid_directory"
+                "alert.invalid_directory"
             case .directoryNotFound:
-                "error.directory_not_found"
+                "alert.directory_not_found"
             case .noDirectory:
-                "error.no_directory"
+                "alert.no_directory"
             case .noWorlds:
-                "error.no_worlds"
+                "alert.no_worlds"
         }
     }
 }

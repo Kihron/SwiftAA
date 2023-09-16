@@ -34,7 +34,7 @@ struct CriterionView: View {
     
     func calculateText() -> String {
         let text = criterion.key.localized(value: criterion.name).capitalized
-        if let languageCode = Locale.preferredLanguages.first, languageCode != "en" {
+        if let languageCode = Locale.preferredLanguages.first, !languageCode.hasPrefix("en") {
             return (text.count > 14) ? String("\(String(text.prefix(13)).trimmingCharacters(in: .whitespaces))...") : text
         } else {
             return text

@@ -58,7 +58,6 @@ struct IndicatorView: View {
                 .multilineTextAlignment(.center)
                 .frame(height: 24, alignment: .top)
                 .padding(.top, -2)
-
         }
         .frame(width: 74)
     }

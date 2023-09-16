@@ -14,10 +14,10 @@ struct VersionFrameModifier: ViewModifier {
         switch versionManager.gameVersion {
             case .v1_16 :
                 content
-                    .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 754, maxHeight: 754, alignment: .center)
+                    .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 764, maxHeight: 764, alignment: .center)
             case .v1_19 :
                 content
-                    .frame(minWidth: 350, idealWidth: 1702, maxWidth: 1702, minHeight: 260, idealHeight: 754, maxHeight: 754, alignment: .center)
+                    .frame(minWidth: 350, idealWidth: 1702, maxWidth: 1702, minHeight: 260, idealHeight: 764, maxHeight: 764, alignment: .center)
         }
     }
 }

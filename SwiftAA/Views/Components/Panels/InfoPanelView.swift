@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InfoPanelView: View {
-    @State var isNotes = false
+    @AppStorage("wasLastNotes") private var isNotes: Bool = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -33,6 +33,7 @@ struct InfoPanelView: View {
             .frame(width: 32, height: 32)
             .padding(0)
         }
+        .animation(.linear, value: isNotes)
     }
 }
 
