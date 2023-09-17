@@ -11,8 +11,8 @@ enum Version: String, CaseIterable, Identifiable, Hashable {
     case v1_16 = "1.16"
     case v1_19 = "1.19"
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var label: String {

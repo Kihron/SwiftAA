@@ -26,6 +26,16 @@ struct ApplyThemeText: ViewModifier {
     }
 }
 
+struct ApplyThemeBackgrounds: ViewModifier {
+    @ObservedObject var themeManager = UIThemeManager.shared
+
+    func body(content: Content) -> some View {
+        content
+            .background(themeManager.background)
+            .border(themeManager.border, width: 1)
+    }
+}
+
 extension View {
     func applyThemeModifiers() -> some View {
         self.modifier(ApplyTheme())
@@ -33,5 +43,9 @@ extension View {
     
     func applyThemeText() -> some View {
         self.modifier(ApplyThemeText())
+    }
+    
+    func applyThemeBackgroundAndBorder() -> some View {
+        self.modifier(ApplyThemeBackgrounds())
     }
 }

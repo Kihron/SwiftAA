@@ -1142,6 +1142,16 @@ internal enum L10n {
       internal static let killed = L10n.tr("Localizable", "goal.monsters.killed", fallback: "Monsters Killed")
     }
   }
+  internal enum Leaderboard {
+    /// Awaiting
+    internal static let awaitingVerification = L10n.tr("Localizable", "leaderboard.awaiting_verification", fallback: "Awaiting")
+    /// Not Submitted
+    internal static let notSubmitted = L10n.tr("Localizable", "leaderboard.not_submitted", fallback: "Not Submitted")
+    /// ???
+    internal static let unknown = L10n.tr("Localizable", "leaderboard.unknown", fallback: "???")
+    /// Verified
+    internal static let verified = L10n.tr("Localizable", "leaderboard.verified", fallback: "Verified")
+  }
   internal enum Notes {
     /// No Notes Recorded
     internal static let `none` = L10n.tr("Localizable", "notes.none", fallback: "No Notes Recorded")

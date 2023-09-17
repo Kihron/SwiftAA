@@ -12,8 +12,8 @@ enum HAlignment: String, CaseIterable, Identifiable, Hashable {
     case center = "settings.alignment.center"
     case trailing = "settings.alignment.trailing"
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var label: String {

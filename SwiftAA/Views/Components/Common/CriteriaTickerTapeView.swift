@@ -105,7 +105,7 @@ struct CriteriaTickerTapeView: View {
             copy = current
         }
         
-        buffer.write(current[index])
+        buffer.write(current[index % current.count])
         index = (index + 1) % current.count
     }
     

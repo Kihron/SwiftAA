@@ -14,8 +14,8 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
     case notes = "settings.notes"
     case updates = "settings.updater"
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var label: String {

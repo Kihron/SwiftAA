@@ -15,7 +15,9 @@ struct InfoPanelView: View {
             if (isNotes) {
                 NotesPanelView()
             } else {
-                PotionPanelView()
+//                PotionPanelView()
+                LeaderboardPanelView()
+                    .frame(height: 431)
             }
             
             Button {

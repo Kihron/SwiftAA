@@ -14,8 +14,8 @@ enum TrackerAlert: Error, CaseIterable, Identifiable, Hashable {
     case noDirectory
     case noWorlds
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var description: String {

@@ -19,6 +19,8 @@ final class UpdateManager: ObservableObject {
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
+    let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+    
     @Published var canCheckForUpdates = false
     
     var automaticallyCheckForUpdates: Bool {

@@ -11,8 +11,8 @@ enum OverlayStyle: String, CaseIterable, Identifiable, Hashable {
     case tickerTape = "overlay.tickertape"
     case multiPage = "overlay.multipage"
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var label: String {

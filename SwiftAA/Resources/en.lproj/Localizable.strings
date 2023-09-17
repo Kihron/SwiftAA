@@ -23,6 +23,11 @@
 "goal.monsters.killed" = "Monsters Killed";
 "goal.nether" = "Visited";
 
+"leaderboard.verified" = "Verified";
+"leaderboard.awaiting_verification" = "Awaiting";
+"leaderboard.not_submitted" = "Not Submitted";
+"leaderboard.unknown" = "???";
+
 "notes.clear.all" = "Clear All";
 "notes.none" = "No Notes Recorded";
 "notes.panel.view.bottom.title" = "Notes";

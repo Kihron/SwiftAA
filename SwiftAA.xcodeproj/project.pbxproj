@@ -10,6 +10,12 @@
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */; };
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
+		B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */; };
+		B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */; };
+		B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */; };
+		B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */; };
+		B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */; };
+		B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */; };
 		B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA0B2AA9397E008B01CD /* ThemeSettingsView.swift */; };
 		B62AEA0E2AA93A5B008B01CD /* ThemePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA0D2AA93A5B008B01CD /* ThemePreviewView.swift */; };
 		B62AEA102AA93F13008B01CD /* SettingsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */; };
@@ -108,6 +114,12 @@
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayView.swift; sourceTree = "<group>"; };
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
+		B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardManager.swift; sourceTree = "<group>"; };
+		B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
+		B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPanelView.swift; sourceTree = "<group>"; };
+		B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntryView.swift; sourceTree = "<group>"; };
+		B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationStatus.swift; sourceTree = "<group>"; };
+		B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntryRank.swift; sourceTree = "<group>"; };
 		B62AEA0B2AA9397E008B01CD /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		B62AEA0D2AA93A5B008B01CD /* ThemePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePreviewView.swift; sourceTree = "<group>"; };
 		B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabel.swift; sourceTree = "<group>"; };
@@ -227,6 +239,16 @@
 				B6E7B0872AAA951700D83FA7 /* OverlayView.swift */,
 			);
 			path = Overlay;
+			sourceTree = "<group>";
+		};
+		B62A00F32AB6A468007F5B7A /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */,
+				B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */,
+				B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */,
+			);
+			path = Leaderboard;
 			sourceTree = "<group>";
 		};
 		B62AEA112AA946F1008B01CD /* Theme */ = {
@@ -351,6 +373,7 @@
 				B65FE5922AA6D27700C30A8F /* ThemePresets.swift */,
 				B6E331172AA8131C001D7FF2 /* TrackingMode.swift */,
 				B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */,
+				B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */,
 				B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */,
 				B608417C2AB3E37800E064E7 /* TrackerAlert.swift */,
 				B6498D742AAC23B300230808 /* HAlignment.swift */,
@@ -363,6 +386,7 @@
 		B65FE58F2AA6CFDE00C30A8F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */,
 				B65FE5902AA6CFE900C30A8F /* UIThemeManager.swift */,
 				B65AB3542AA97C89001F4FE6 /* CoreDataManager.swift */,
 				B6E331112AA80869001D7FF2 /* TrackerManager.swift */,
@@ -535,6 +559,7 @@
 				B65AB3412AA9659B001F4FE6 /* CoreData */,
 				B6E331192AA836AB001D7FF2 /* Constants */,
 				B676BDA02AA78E12008BD8A9 /* UserTheme.swift */,
+				B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */,
 				B6A772FF28899D3900436551 /* JsonAdvancement.swift */,
 				B65AE1D32887032F006EC138 /* Advancement.swift */,
 				B66A07732887A32900DC0A2C /* Criterion.swift */,
@@ -589,6 +614,7 @@
 		B6FEFEE3289994B90095CF08 /* Panels */ = {
 			isa = PBXGroup;
 			children = (
+				B62A00F32AB6A468007F5B7A /* Leaderboard */,
 				B6A772E72888FCE100436551 /* PotionPanelView.swift */,
 				B67424B0288C419100EB8C16 /* InfoPanelView.swift */,
 				B67424B2288C41E900EB8C16 /* NotesPanelView.swift */,
@@ -720,12 +746,16 @@
 				B65FE5912AA6CFE900C30A8F /* UIThemeManager.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
+				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
+				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
+				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
+				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
 				B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */,
 				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
@@ -768,6 +798,7 @@
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
 				B6E331182AA8131C001D7FF2 /* TrackingMode.swift in Sources */,
 				B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */,
+				B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */,
 				B64827282889C74B00B44855 /* QLImage.swift in Sources */,
 				B65B074D28AFDD1600E10EC5 /* UpdateManager.swift in Sources */,
 				B6A772E62888FBA600436551 /* ContentView.swift in Sources */,
@@ -780,6 +811,7 @@
 				B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */,
 				B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */,
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
+				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				B65AB3532AA96D66001F4FE6 /* CustomThemeView.swift in Sources */,
 				B6E331102AA80811001D7FF2 /* TrackingSettingsView.swift in Sources */,
@@ -939,7 +971,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 91723e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -971,7 +1003,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.1.0;
+				CURRENT_PROJECT_VERSION = 91723e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

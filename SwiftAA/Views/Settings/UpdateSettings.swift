@@ -38,7 +38,7 @@ struct UpdateSettings: View {
             }
             
             VStack {
-                Text("SwiftAA \(updateManager.appVersion ?? "")")
+                Text("SwiftAA \(updateManager.appVersion ?? "") (\(updateManager.appBuild ?? ""))")
                 
                 if let lastUpdateCheck = updateManager.getLastUpdateCheckDate() {
                     HStack(spacing: 0) {

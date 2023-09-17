@@ -17,8 +17,8 @@ enum Potion: String, CaseIterable, Identifiable, Hashable {
     case slowFalling
     case waterBreathing
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var name: String {

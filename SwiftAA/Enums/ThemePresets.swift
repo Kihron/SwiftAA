@@ -17,8 +17,8 @@ enum ThemePreset: String, CaseIterable, Identifiable, Hashable, Theme {
     case dark = "dark"
     case light = "light"
     
-    var id: UUID {
-        return UUID()
+    var id: Self {
+        return self
     }
     
     var label: String {

@@ -19,6 +19,11 @@
 "goal.monsters.killed" = "Monstruos Asesinados";
 "goal.nether" = "Visitados";
 
+"leaderboard.verified" = "Verified";
+"leaderboard.awaiting_verification" = "Awaiting";
+"leaderboard.not_submitted" = "Not Submitted";
+"leaderboard.unknown" = "???";
+
 "notes.clear.all" = "Borrar Todo";
 "notes.none" = "No Hay Notas Disponibles";
 "notes.panel.view.bottom.title" = "Notas";
