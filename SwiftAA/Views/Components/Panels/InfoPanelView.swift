@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct InfoPanelView: View {
-    @AppStorage("wasLastNotes") private var isNotes: Bool = false
-    
+    @ObservedObject private var layoutManager = LayoutManager.shared
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            if (isNotes) {
+            if (layoutManager.isNotes) {
                 NotesPanelView()
             } else {
-//                PotionPanelView()
-                LeaderboardPanelView()
-                    .frame(height: 431)
+                Group {
+                    switch layoutManager.modularPanel {
+                        case .leaderboard:
+                            LeaderboardPanelView()
+                        case .potionPanel:
+                            PotionPanelView()
+                    }
+                }
+                .frame(height: 431)
             }
             
             Button {
                 withAnimation {
-                    isNotes.toggle()
+                    layoutManager.isNotes.toggle()
                 }
             } label: {
                 Image(systemName: "arrow.counterclockwise.circle")
@@ -33,9 +39,9 @@ struct InfoPanelView: View {
             }
             .buttonStyle(.plain)
             .frame(width: 32, height: 32)
-            .padding(0)
         }
-        .animation(.linear, value: isNotes)
+        .animation(.linear, value: layoutManager.isNotes)
+        .animation(.easeInOut, value: layoutManager.modularPanel)
     }
 }
 

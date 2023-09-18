@@ -28,6 +28,9 @@
 "leaderboard.not_submitted" = "Not Submitted";
 "leaderboard.unknown" = "???";
 
+"modular.leaderboard" = "Leaderboard";
+"modular.potion_panel" = "Potion Panel";
+
 "notes.clear.all" = "Clear All";
 "notes.none" = "No Notes Recorded";
 "notes.panel.view.bottom.title" = "Notes";
@@ -66,6 +69,7 @@
 "settings.alignment.center" = "Center";
 "settings.alignment.leading" = "Left";
 "settings.alignment.trailing" = "Right";
+"settings.layout" = "Layout";
 "settings.notes" = "Notes";
 "settings.overlay" = "Overlay";
 "settings.theme" = "Theme";

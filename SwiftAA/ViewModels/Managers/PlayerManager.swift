@@ -22,7 +22,7 @@ class PlayerManager: ObservableObject {
     }
     
     var imageURL: URL? {
-        guard let id = player?.id else { return nil }
+        let id = player?.id ?? ""
         return URL(string: "https://cravatar.eu/helmhead/\(id)/64.png")
     }
     

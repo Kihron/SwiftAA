@@ -8,6 +8,7 @@
 import SwiftUI
 
 class LeaderboardManager: ObservableObject {
+    @ObservedObject private var networkManager = NetworkManager.shared
     @Published var entries: [LeaderboardEntry] = []
     
     static let shared = LeaderboardManager()
@@ -28,7 +29,7 @@ class LeaderboardManager: ObservableObject {
     
     private func getV16() async {
         if let url = URL(string: getSpreadsheet(page: "1706556435")) {
-            if let raw = await getRawData(url: url) {
+            if let raw = await networkManager.getRawData(url: url) {
                 let lines = raw.components(separatedBy: "\n").dropFirst(2)
                 
                 DispatchQueue.main.async {
@@ -38,22 +39,6 @@ class LeaderboardManager: ObservableObject {
                 }
             }
         }
-    }
-    
-    private func getRawData(url: URL) async -> String? {
-        do {
-            let urlSession = URLSession.shared
-            let (data, response) = try await urlSession.data(from: url)
-            
-            if (response as! HTTPURLResponse).statusCode != 200 {
-                return nil
-            }
-            
-            return String(decoding: data, as: UTF8.self)
-        } catch {
-            print(error.localizedDescription)
-        }
-        return nil
     }
     
     private func getVerificationStatus(status: String) -> VerificationStatus {

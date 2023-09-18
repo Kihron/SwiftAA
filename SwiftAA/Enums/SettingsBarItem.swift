@@ -9,6 +9,7 @@ import SwiftUI
 
 enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
     case tracking = "settings.tracking"
+    case layout = "settings.layout"
     case theme = "settings.theme"
     case overlay = "settings.overlay"
     case notes = "settings.notes"
@@ -26,6 +27,8 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
         switch self {
             case .tracking:
                 "compass.drawing"
+            case .layout:
+                "hammer.fill"
             case .theme:
                 "paintpalette"
             case .overlay:
@@ -41,8 +44,10 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
         switch self {
             case .tracking:
                 .red
+            case .layout:
+                .blue
             case .theme:
-                .cyan
+                .indigo
             case .overlay:
                 .purple
             case .notes:

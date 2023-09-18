@@ -40,6 +40,8 @@ struct SettingsView: View {
             switch selectedSettingsBarItem {
                 case .tracking:
                     TrackingSettingsView()
+                case .layout:
+                    LayoutSettingsView()
                 case .theme:
                     ThemeSettingsView()
                 case .overlay:

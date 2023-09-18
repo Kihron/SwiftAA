@@ -1152,6 +1152,12 @@ internal enum L10n {
     /// Verified
     internal static let verified = L10n.tr("Localizable", "leaderboard.verified", fallback: "Verified")
   }
+  internal enum Modular {
+    /// Leaderboard
+    internal static let leaderboard = L10n.tr("Localizable", "modular.leaderboard", fallback: "Leaderboard")
+    /// Potion Panel
+    internal static let potionPanel = L10n.tr("Localizable", "modular.potion_panel", fallback: "Potion Panel")
+  }
   internal enum Notes {
     /// No Notes Recorded
     internal static let `none` = L10n.tr("Localizable", "notes.none", fallback: "No Notes Recorded")
@@ -1246,6 +1252,8 @@ internal enum L10n {
     internal static let weakness = L10n.tr("Localizable", "potion.weakness", fallback: "Potion of Weakness")
   }
   internal enum Settings {
+    /// Layout
+    internal static let layout = L10n.tr("Localizable", "settings.layout", fallback: "Layout")
     /// Notes
     internal static let notes = L10n.tr("Localizable", "settings.notes", fallback: "Notes")
     /// Overlay

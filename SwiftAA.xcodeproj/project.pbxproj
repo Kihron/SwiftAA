@@ -10,6 +10,10 @@
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */; };
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
+		B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37C2AB7F784006D8719 /* NetworkManager.swift */; };
+		B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */; };
+		B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3802AB803F9006D8719 /* LayoutManager.swift */; };
+		B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3822AB8044D006D8719 /* ModularPanel.swift */; };
 		B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */; };
 		B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */; };
 		B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */; };
@@ -114,6 +118,10 @@
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayView.swift; sourceTree = "<group>"; };
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
+		B624F37C2AB7F784006D8719 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSettingsView.swift; sourceTree = "<group>"; };
+		B624F3802AB803F9006D8719 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
+		B624F3822AB8044D006D8719 /* ModularPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularPanel.swift; sourceTree = "<group>"; };
 		B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardManager.swift; sourceTree = "<group>"; };
 		B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
 		B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPanelView.swift; sourceTree = "<group>"; };
@@ -374,6 +382,7 @@
 				B6E331172AA8131C001D7FF2 /* TrackingMode.swift */,
 				B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */,
 				B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */,
+				B624F3822AB8044D006D8719 /* ModularPanel.swift */,
 				B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */,
 				B608417C2AB3E37800E064E7 /* TrackerAlert.swift */,
 				B6498D742AAC23B300230808 /* HAlignment.swift */,
@@ -387,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */,
+				B624F37C2AB7F784006D8719 /* NetworkManager.swift */,
 				B65FE5902AA6CFE900C30A8F /* UIThemeManager.swift */,
 				B65AB3542AA97C89001F4FE6 /* CoreDataManager.swift */,
 				B6E331112AA80869001D7FF2 /* TrackerManager.swift */,
@@ -394,6 +404,7 @@
 				B6498D722AAC226400230808 /* OverlayManager.swift */,
 				B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */,
 				B66A076F28879ED900DC0A2C /* DataManager.swift */,
+				B624F3802AB803F9006D8719 /* LayoutManager.swift */,
 				B62AEA162AA95FFD008B01CD /* NoteManager.swift */,
 			);
 			path = Managers;
@@ -492,6 +503,7 @@
 				B6E3310E2AA80802001D7FF2 /* New */,
 				B621A8EA29860163000B9DDF /* SettingsCardView.swift */,
 				B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */,
+				B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */,
 				B6E3310F2AA80811001D7FF2 /* TrackingSettingsView.swift */,
 				B62AEA0B2AA9397E008B01CD /* ThemeSettingsView.swift */,
 				B6498D762AAC244D00230808 /* OverlaySettings.swift */,
@@ -808,19 +820,23 @@
 				B6498D772AAC244D00230808 /* OverlaySettings.swift in Sources */,
 				B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */,
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
+				B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */,
 				B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */,
 				B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */,
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
+				B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */,
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				B65AB3532AA96D66001F4FE6 /* CustomThemeView.swift in Sources */,
 				B6E331102AA80811001D7FF2 /* TrackingSettingsView.swift in Sources */,
 				B66A077028879ED900DC0A2C /* DataManager.swift in Sources */,
 				B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */,
 				B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */,
+				B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */,
 				B65AB3572AA97EB5001F4FE6 /* UUID+Ext.swift in Sources */,
 				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
+				B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */,
 				B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */,
 				B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */,
 				B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */,
@@ -971,7 +987,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 91723e;
+				CURRENT_PROJECT_VERSION = 231809e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1003,7 +1019,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 91723e;
+				CURRENT_PROJECT_VERSION = 231809e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
