@@ -77,6 +77,38 @@ struct OverlaySettings: View {
                     .disabled(!overlayManager.showStatistics)
                 }
             }
+            
+            SettingsLabel(title: "Appearance", description: "Change the style of the frames, keep them in sync or mix and match.")
+                .padding(.top, 5)
+            
+            SettingsCardView {
+                VStack {
+                    HStack {
+                        Text("Sync Overlay")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Toggle("", isOn: $overlayManager.syncOverlayFrame)
+                            .labelsHidden()
+                            .toggleStyle(.switch)
+                    }
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Frame Style")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Picker("", selection: $overlayManager.overlayFrameStyle) {
+                            ForEach(FrameStyle.allCases, id: \.self) { item in
+                                Text(item.label.localized)
+                            }
+                        }
+                        .frame(maxWidth: 90)
+                        .labelsHidden()
+                    }
+                    .disabled(overlayManager.syncOverlayFrame)
+                }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .animation(.bouncy, value: overlayManager.overlayStyle)

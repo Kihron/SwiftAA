@@ -14,6 +14,9 @@ class OverlayManager: ObservableObject {
     @AppStorage("statisticsAlignment") var statisticsAlignment: HAlignment = .leading
     @AppStorage("showLegacyPageIndicator") var showLegacyPageIndicator: Bool = true
     
+    @AppStorage("overlayFrameStyle") var overlayFrameStyle: FrameStyle = .minecraft
+    @AppStorage("syncOverlayFrame") var syncOverlayFrame: Bool = true
+    
     static let shared = OverlayManager()
     
     init() {

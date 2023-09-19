@@ -8,6 +8,7 @@
 import SwiftUI
 
 class LayoutManager: ObservableObject {
+    @AppStorage("frameStyle") var frameStyle: FrameStyle = .minecraft    
     @AppStorage("modularPanel") var modularPanel: ModularPanel = .leaderboard
     @AppStorage("isNotes") var isNotes: Bool = false
     

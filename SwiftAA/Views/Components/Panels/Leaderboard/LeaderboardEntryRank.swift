@@ -26,7 +26,7 @@ struct LeaderboardEntryRank: View {
                 .frame(minWidth: 25)
                 .background(
                     Rectangle()
-                        .fill(getColor().gradient.opacity(0.8))
+                        .fill(Color("frame_modern_background"))
                         .border(getColor().gradient, width: 1)
                 )
         }

@@ -109,6 +109,7 @@
 		B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */; };
 		B6F1B48E2AAEB4CA00422D8E /* OverlayFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48D2AAEB4CA00422D8E /* OverlayFrameModifier.swift */; };
 		B6F1B4902AAEC34500422D8E /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */; };
+		B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */; };
 		B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */; };
 		B6FEFED5289991070095CF08 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFED4289991070095CF08 /* Indicator.swift */; };
 		B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */; };
@@ -218,6 +219,7 @@
 		B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTapeOverlayView.swift; sourceTree = "<group>"; };
 		B6F1B48D2AAEB4CA00422D8E /* OverlayFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayFrameModifier.swift; sourceTree = "<group>"; };
 		B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameStyle.swift; sourceTree = "<group>"; };
 		B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayShimmerView.swift; sourceTree = "<group>"; };
 		B6FEFED4289991070095CF08 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFocusOnTap.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */,
 				B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */,
 				B624F3822AB8044D006D8719 /* ModularPanel.swift */,
+				B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */,
 				B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */,
 				B608417C2AB3E37800E064E7 /* TrackerAlert.swift */,
 				B6498D742AAC23B300230808 /* HAlignment.swift */,
@@ -799,6 +802,7 @@
 				B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
 				B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */,
+				B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */,
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
 				B62AEA102AA93F13008B01CD /* SettingsLabel.swift in Sources */,
 				B676BDA82AA7A7D8008BD8A9 /* Dictionary+Ext.swift in Sources */,

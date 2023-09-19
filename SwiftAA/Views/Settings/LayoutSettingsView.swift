@@ -13,24 +13,42 @@ struct LayoutSettingsView: View {
     var body: some View {
         VStack {
             SettingsCardView {
-                HStack {
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text("Modular Panel")
-                            
-                            Text("Switch between multiple panels to display different types of information located on the far right.")
-                                .font(.caption)
-                                .foregroundStyle(.gray)
-                                .padding(.trailing, 2)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("Modular Panel")
                         
-                        Picker("", selection: $layoutManager.modularPanel) {
-                            ForEach(ModularPanel.allCases, id: \.self) { item in
+                        Text("Switch between multiple panels to display different types of information located on the far right.")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                            .padding(.trailing, 2)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Picker("", selection: $layoutManager.modularPanel) {
+                        ForEach(ModularPanel.allCases, id: \.self) { item in
+                            Text(item.label.localized)
+                        }
+                    }
+                    .frame(maxWidth: 110)
+                    .labelsHidden()
+                }
+            }
+            
+            SettingsLabel(title: "Styling")
+                .padding(.top, 5)
+            
+            SettingsCardView {
+                VStack {
+                    HStack {
+                        Text("Frame Style")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Picker("", selection: $layoutManager.frameStyle) {
+                            ForEach(FrameStyle.allCases, id: \.self) { item in
                                 Text(item.label.localized)
                             }
                         }
-                        .frame(maxWidth: 110)
+                        .frame(maxWidth: 90)
                         .labelsHidden()
                     }
                 }
