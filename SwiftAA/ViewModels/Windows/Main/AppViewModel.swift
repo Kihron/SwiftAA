@@ -104,7 +104,7 @@ class AppViewModel: ObservableObject {
             let savesDirectoryUpdated = try getModifiedTime(saves, fileManager: fileManager)
             var world: String
             
-            let logFile = "\(saves.dropLast(5))/logs/latest.log"
+            let logFile = "\(saves)/../logs/latest.log"
             let logUpdated = try getModifiedTime(logFile, fileManager: fileManager)
             
             var isNewWorld = false

@@ -984,8 +984,8 @@ internal enum L10n {
       }
       internal enum Charge {
         internal enum Respawn {
-          /// Not Quite "Nine" Lives
-          internal static let anchor = L10n.tr("Localizable", "advancement.nether.charge.respawn.anchor", fallback: "Not Quite \"Nine\" Lives")
+          /// Not Quite "9" Lives
+          internal static let anchor = L10n.tr("Localizable", "advancement.nether.charge.respawn.anchor", fallback: "Not Quite \"9\" Lives")
         }
       }
       internal enum Create {

@@ -10,6 +10,7 @@ import SwiftUI
 struct LeaderboardEntry: Identifiable, Hashable {
     let id = UUID()
     
+    var position: Int
     var name: String
     var igt: String
     var date: String

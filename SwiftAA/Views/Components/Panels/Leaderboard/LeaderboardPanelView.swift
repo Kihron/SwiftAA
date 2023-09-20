@@ -30,19 +30,15 @@ struct LeaderboardPanelView: View {
                 .frame(height: 2)
                 .overlay(themeManager.border)
             
-            if leaderboardManager.entries.isEmpty {
-                ProgressView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            } else {
-                ScrollView(.vertical) {
-                    LazyVStack(alignment: .leading, spacing: 0) {
-                        ForEach(leaderboardManager.entries.indices, id: \.self) { idx in
-                            let entry = leaderboardManager.entries[idx]
-                            LeaderboardEntryView(entry: entry, placement: idx)
+            ZStack {
+                if leaderboardManager.entries.isEmpty {
+                    VStack(alignment: .leading, spacing: 0) {
+                        ForEach(1..<7, id: \.self) { idx in
+                            LeaderboardPlaceholderView(placement: idx)
                                 .padding(.bottom, 10)
                                 .padding(.top, 14)
                             
-                            if idx < leaderboardManager.entries.count - 1 {
+                            if idx < 6 {
                                 Divider()
                                     .frame(height: 2)
                                     .overlay(themeManager.border)
@@ -50,16 +46,51 @@ struct LeaderboardPanelView: View {
                         }
                     }
                     .padding(.horizontal, 8)
+                } else {
+                    ScrollView(.vertical) {
+                        LazyVStack(alignment: .leading, spacing: 0) {
+                            ForEach(leaderboardManager.entries.indices, id: \.self) { idx in
+                                let entry = leaderboardManager.entries[idx]
+                                LeaderboardEntryView(entry: entry)
+                                    .padding(.bottom, 10)
+                                    .padding(.top, 14)
+                                
+                                if entry.position < leaderboardManager.entries.count {
+                                    Divider()
+                                        .frame(height: 2)
+                                        .overlay(themeManager.border)
+                                }
+                            }
+                            
+                            if leaderboardManager.entries.count < 6 {
+                                ForEach(leaderboardManager.entries.count..<6, id: \.self) { idx in
+                                    LeaderboardPlaceholderView(placement: idx + 1)
+                                        .padding(.bottom, 10)
+                                        .padding(.top, 14)
+                                    
+                                    if idx < 6 {
+                                        Divider()
+                                            .frame(height: 2)
+                                            .overlay(themeManager.border)
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 8)
+                    }
+                    .animation(.bouncy, value: leaderboardManager.entries)
                 }
-                .animation(.bouncy, value: leaderboardManager.entries)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .applyThemeBackgroundAndBorder()
         .task {
+            await leaderboardManager.fetchNicknames()
+            await leaderboardManager.fetchOtherVersionData()
             await leaderboardManager.getLeaderboardEntries()
         }
         .onChange(of: trackerManager.gameVersion) { _ in
+            leaderboardManager.entries.removeAll()
             Task {
                 await leaderboardManager.getLeaderboardEntries()
             }

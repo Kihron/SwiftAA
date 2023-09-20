@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Criterion: NSObject {
+class Criterion: NSObject, Codable {
     var id: String
     var key: String
     var name: String

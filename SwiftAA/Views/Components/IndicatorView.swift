@@ -31,11 +31,11 @@ struct IndicatorView: View {
                 Group {
                     switch frameStyle {
                         case .minecraft:
-                            minecraft
+                            MinecraftFrame(indicator: $indicator)
                         case .geode:
-                            geode
+                            GeodeFrame(indicator: $indicator)
                         case .modern:
-                            modern
+                            ModernFrame(indicator: $indicator)
                     }
                 }
                 .frame(width: 52, height: 52)
@@ -77,59 +77,6 @@ struct IndicatorView: View {
         }
         .animation(.easeIn, value: frameStyle)
         .frame(width: 74)
-    }
-    
-    var minecraft: some View {
-        Image("frame_mc_\(indicator.frameStyle)_\((indicator.completed ? "" : "in"))complete")
-            .interpolation(.none)
-            .resizable()
-            .saturation((indicator.completed) ? 1.5 : 1)
-            .brightness((indicator.completed) ? 0.15 : 0)
-    }
-    
-    var geode: some View {
-        ZStack {
-            if indicator.completed {
-                Group {
-                    Image("frame_geode_back_complete")
-                    
-                    Image("frame_geode_border_complete")
-                        .brightness(0.1)
-                }
-                .saturation(1.7)
-            } else {
-                Group {
-                    Image("frame_geode_back")
-                        .brightness(0.05)
-                    
-                    Image("frame_geode_border")
-                        .saturation(1.1)
-                        .brightness(0.1)
-                }
-            }
-        }
-    }
-    
-    var modern: some View {
-        ZStack {
-            if indicator.completed {
-                Group {
-                    Image("frame_modern_back_complete")
-                    
-                    Image("frame_modern_border_complete")
-                }
-                .brightness(0.1)
-                .saturation(1.7)
-            } else {
-                Image("frame_modern_back")
-                    .renderingMode(.template)
-                    .foregroundStyle(Color("frame_modern_background"))
-                
-                Image("frame_modern_border")
-                    .renderingMode(.template)
-                    .foregroundStyle(.gray)
-            }
-        }
     }
     
     func isAnimated(icon: String) -> Bool {

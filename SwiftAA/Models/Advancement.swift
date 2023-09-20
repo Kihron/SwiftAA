@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Advancement: NSObject, Indicator, Identifiable {
+class Advancement: NSObject, Indicator, Identifiable, Codable {
     var id: String
     var key: String
     var name: String
@@ -35,5 +35,11 @@ class Advancement: NSObject, Indicator, Identifiable {
     
     public override var description: String {
         "\(name) \(completed)"
+    }
+}
+
+extension Advancement: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        CodableRepresentation(contentType: .item)
     }
 }

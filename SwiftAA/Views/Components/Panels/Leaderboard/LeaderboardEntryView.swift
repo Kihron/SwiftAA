@@ -9,18 +9,22 @@ import SwiftUI
 import CachedAsyncImage
 
 struct LeaderboardEntryView: View {
+    @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     @State var entry: LeaderboardEntry
-    let placement: Int
     
     var body: some View {
         HStack {
             ZStack {
-                CachedAsyncImage(url: getAvatarURL())
-                    .frame(width: 32)
-                    .padding(.leading, 10)
-                    .shadow(color: getColor().opacity(0.5), radius: 10)
+                CachedAsyncImage(url: getAvatarURL()) { image in
+                    image
+                } placeholder: {
+                    Image("steve_avatar")
+                }
+                .frame(width: 32)
+                .padding(.leading, 10)
+                .shadow(color: getColor().opacity(0.5), radius: 10)
                 
-                LeaderboardEntryRank(placement: placement)
+                LeaderboardEntryRank(placement: $entry.position)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .offset(y: -5)
             }
@@ -57,7 +61,8 @@ struct LeaderboardEntryView: View {
     }
     
     private func getAvatarURL() -> URL? {
-        return URL(string: "https://minotar.net/helm/\(entry.name)/32")
+        let name = leaderboardManager.nicknames[entry.name] ?? entry.name
+        return URL(string: "https://minotar.net/helm/\(name)/32")
     }
     
     private func getVerificationColor() -> Color {
@@ -74,7 +79,7 @@ struct LeaderboardEntryView: View {
     }
     
     private func getColor() -> Color {
-        switch placement {
+        switch entry.position {
             case 0:
                 return .yellow
             case 1:
@@ -88,7 +93,7 @@ struct LeaderboardEntryView: View {
 }
 
 #Preview {
-    LeaderboardEntryView(entry: LeaderboardEntry(name: "Feinberg", igt: "2:25:30", date: "23 August 2023", verification: .verified), placement: 1)
+    LeaderboardEntryView(entry: LeaderboardEntry(position: 0, name: "Feinberg", igt: "2:25:30", date: "23 August 2023", verification: .verified))
         .frame(width: 196)
         .padding()
 }

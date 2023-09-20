@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
+		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
+		B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */; };
+		B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */; };
+		B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB62ABA886800A79D4E /* ModernFrame.swift */; };
 		B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */; };
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
 		B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37C2AB7F784006D8719 /* NetworkManager.swift */; };
@@ -117,6 +121,10 @@
 
 /* Begin PBXFileReference section */
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
+		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
+		B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFrame.swift; sourceTree = "<group>"; };
+		B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeodeFrame.swift; sourceTree = "<group>"; };
+		B60C6BB62ABA886800A79D4E /* ModernFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernFrame.swift; sourceTree = "<group>"; };
 		B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayView.swift; sourceTree = "<group>"; };
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		B624F37C2AB7F784006D8719 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -239,6 +247,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60C6BB02ABA87D100A79D4E /* Frames */ = {
+			isa = PBXGroup;
+			children = (
+				B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */,
+				B60C6BB62ABA886800A79D4E /* ModernFrame.swift */,
+				B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */,
+			);
+			path = Frames;
+			sourceTree = "<group>";
+		};
 		B616FAA3289B2314004E4A41 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +275,7 @@
 				B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */,
 				B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */,
 				B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */,
+				B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -488,6 +507,7 @@
 		B6A772F12889945F00436551 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B60C6BB02ABA87D100A79D4E /* Frames */,
 				B676BDA92AA7A81B008BD8A9 /* Common */,
 				B6A773112889BE4800436551 /* Gifs */,
 				B6FEFEE3289994B90095CF08 /* Panels */,
@@ -763,7 +783,9 @@
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
+				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
 				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
+				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
@@ -795,12 +817,14 @@
 				B6F1B4902AAEC34500422D8E /* PlayerManager.swift in Sources */,
 				B6498D732AAC226400230808 /* OverlayManager.swift in Sources */,
 				B6872FB528AEAA45003CEA95 /* Player.swift in Sources */,
+				B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */,
 				B6F1B48E2AAEB4CA00422D8E /* OverlayFrameModifier.swift in Sources */,
 				B6498D752AAC23B300230808 /* HAlignment.swift in Sources */,
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
+				B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */,
 				B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */,
 				B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */,
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
@@ -991,7 +1015,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231909e;
+				CURRENT_PROJECT_VERSION = 232009e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1023,7 +1047,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231909e;
+				CURRENT_PROJECT_VERSION = 232009e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

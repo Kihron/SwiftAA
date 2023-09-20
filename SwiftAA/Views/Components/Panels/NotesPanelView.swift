@@ -23,10 +23,8 @@ struct NotesPanelView: View {
                     WayPointCardView(index: 1, icon: "pillager")
                     WayPointCardView(index: 2, icon: "silverfish")
                 }
-                Spacer()
             }
-            
-            Spacer()
+            .frame(maxHeight: .infinity, alignment: .top)
             
             VStack(alignment: .leading) {
                 Text(L10n.Notes.Panel.View.Bottom.title)
@@ -35,14 +33,8 @@ struct NotesPanelView: View {
                 TextEditor(text: $notes)
                     .font(.custom("Minecraft-Regular", size: 10))
                     .cornerRadius(5)
-                    .padding(.bottom, 5)
+                    .padding(.bottom, 15)
                     .disabled(trackerManager.worldPath.isEmpty)
-                
-                Spacer()
-                
-                HStack {
-                    Spacer()
-                }
             }
         }
         .padding()
@@ -73,6 +65,7 @@ struct NotesPanelView: View {
 }
 
 struct WayPointCardView: View {
+    @ObservedObject private var themeManager = UIThemeManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
     @State var index: Int
@@ -89,28 +82,43 @@ struct WayPointCardView: View {
             
             VStack(spacing: 5) {
                 HStack {
-                    TextField("X", text: $x)
-                            .font(.custom("Minecraft-Regular", size: 10))
-                            .disabled(trackerManager.worldPath.isEmpty)
+                    TextField("", text: $x, prompt: Text("X"))
+                        .font(.custom("Minecraft-Regular", size: 10))
+                        .disabled(trackerManager.worldPath.isEmpty)
+                        .background(Color("frame_modern_background"))
+                        .roundedCorners(radius: 2, corners: [.allCorners])
                     
-                    TextField("Z", text: $z)
-                            .font(.custom("Minecraft-Regular", size: 10))
-                            .disabled(trackerManager.worldPath.isEmpty)
+                    TextField("", text: $z, prompt: Text("Z"))
+                        .font(.custom("Minecraft-Regular", size: 10))
+                        .disabled(trackerManager.worldPath.isEmpty)
+                        .background(Color("frame_modern_background"))
+                        .roundedCorners(radius: 2, corners: [.allCorners])
                 }
                 
                 HStack {
-                    TextField("", text: $x.toNether)
+                    ZStack {
+                        Text(x.toNether)
                             .font(.custom("Minecraft-Regular", size: 10))
-                            .disabled(true)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.vertical, 2)
+                            .padding(.horizontal, 4)
                             .background(.red.opacity(0.5))
-                            .foregroundColor(.white)
+                            .roundedCorners(radius: 2, corners: [.allCorners])
+                    }
                     
-                    TextField("", text: $z.toNether)
+                    ZStack {
+                        Text(z.toNether)
                             .font(.custom("Minecraft-Regular", size: 10))
-                            .disabled(true)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.vertical, 2)
+                            .padding(.horizontal, 4)
                             .background(.red.opacity(0.5))
-                            .foregroundColor(.white)
+                            .roundedCorners(radius: 2, corners: [.allCorners])
+                    }
                 }
+                .applyThemeText()
             }
         }
         .onAppear {
@@ -155,7 +163,7 @@ private extension String {
     var toNether: String {
         get {
             if let num = Int(self) {
-                return String(num / 8)
+                return String((num / 8) - (num < 0 ? 1 : 0))
             } else {
                 return "?"
             }
@@ -168,8 +176,5 @@ struct NotesPanelView_Previews: PreviewProvider {
     static var previews: some View {
         NotesPanelView()
             .frame(width: 300, height: 800)
-        
-        WayPointCardView(index: 0, icon: "silverfish")
-            .padding(4)
     }
 }
