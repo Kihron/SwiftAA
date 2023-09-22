@@ -112,6 +112,11 @@ struct OverlaySettings: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .animation(.bouncy, value: overlayManager.overlayStyle)
+        .onChange(of: overlayManager.syncOverlayFrame) { value in
+            if value {
+                overlayManager.overlayFrameStyle = LayoutManager.shared.frameStyle
+            }
+        }
         .padding()
     }
 }

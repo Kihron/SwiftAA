@@ -10,6 +10,7 @@ import SwiftUI
 struct ThemeSettingsView: View {
     @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = UIThemeManager.shared
+    @State private var showThemeEditor: Bool = false
     
     private let columns = Array(repeating: GridItem(.adaptive(minimum: 100), spacing: 20), count: 4)
     
@@ -33,7 +34,7 @@ struct ThemeSettingsView: View {
                         .padding(.top, 10)
                     
                     LazyVGrid(columns: columns, spacing: 15) {
-                        Button(action: { themeManager.saveUserTheme(name: "Test", background: ThemePreset.allCases.randomElement()!.backgroundColor, border: ThemePreset.allCases.randomElement()!.borderColor, text: ThemePreset.allCases.randomElement()!.textColor, context: context) }) {
+                        Button(action: { showThemeEditor.toggle() }) {
                             CustomThemeView()
                         }
                         .buttonStyle(.plain)
@@ -74,6 +75,9 @@ struct ThemeSettingsView: View {
                 }
             }
         }
+        .sheet(isPresented: $showThemeEditor, content: {
+            UserThemeEditor()
+        })
     }
 }
 

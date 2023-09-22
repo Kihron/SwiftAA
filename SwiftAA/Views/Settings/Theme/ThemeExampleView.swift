@@ -12,37 +12,10 @@ struct ThemeExampleView: View {
     
     var body: some View {
         ZStack {
-            HStack(spacing: 0) {
-                ZStack(alignment: .bottom) {
-                    Rectangle()
-                        .fill(themeManager.background)
-                    
-                    Text("Bg")
-                        .foregroundStyle(themeManager.text)
-                        .padding(.bottom, 5)
-                }
-                
-                ZStack(alignment: .bottom) {
-                    Rectangle()
-                        .fill(themeManager.border)
-                    
-                    Text("Br")
-                        .foregroundStyle(themeManager.background)
-                        .padding(.bottom, 5)
-                }
-                
-                ZStack(alignment: .bottom) {
-                    Rectangle()
-                        .fill(themeManager.text)
-                    
-                    Text("T")
-                        .foregroundStyle(themeManager.background)
-                        .padding(.bottom, 5)
-                }
-            }
-            .frame(width: 100, height: 67)
-            .roundedCorners(radius: 5, corners: [.allCorners])
-            .padding(.vertical)
+            ThemeSampleView(background: .constant(themeManager.background), border: .constant(themeManager.border), text: .constant(themeManager.text))
+                .frame(width: 100, height: 67)
+                .roundedCorners(radius: 5, corners: [.allCorners])
+                .padding(.vertical)
         }
         .padding(.vertical)
         .frame(maxWidth: .infinity)

@@ -71,6 +71,12 @@
 		B676BDA62AA7A7B4008BD8A9 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA52AA7A7B4008BD8A9 /* Date+Ext.swift */; };
 		B676BDA82AA7A7D8008BD8A9 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA72AA7A7D8008BD8A9 /* Dictionary+Ext.swift */; };
 		B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */; };
+		B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A1132ABD2BDE00162E7C /* UserThemeEditor.swift */; };
+		B683A1162ABD3F4B00162E7C /* ThemeSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A1152ABD3F4B00162E7C /* ThemeSampleView.swift */; };
+		B683A1282ABD4A6800162E7C /* NewNotesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A1272ABD4A6800162E7C /* NewNotesSettings.swift */; };
+		B683A12A2ABD4D7700162E7C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A1292ABD4D7700162E7C /* Note.swift */; };
+		B683A12D2ABD54A900162E7C /* WorldNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A12B2ABD54A900162E7C /* WorldNote+CoreDataClass.swift */; };
+		B683A12E2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A12C2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift */; };
 		B6842B04296E59B9000B62DF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6842B03296E59B9000B62DF /* Strings.swift */; };
 		B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */; };
 		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
@@ -187,6 +193,12 @@
 		B676BDA52AA7A7B4008BD8A9 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		B676BDA72AA7A7D8008BD8A9 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
+		B683A1132ABD2BDE00162E7C /* UserThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserThemeEditor.swift; sourceTree = "<group>"; };
+		B683A1152ABD3F4B00162E7C /* ThemeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSampleView.swift; sourceTree = "<group>"; };
+		B683A1272ABD4A6800162E7C /* NewNotesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotesSettings.swift; sourceTree = "<group>"; };
+		B683A1292ABD4D7700162E7C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		B683A12B2ABD54A900162E7C /* WorldNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorldNote+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B683A12C2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorldNote+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B6842B03296E59B9000B62DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -285,7 +297,9 @@
 			children = (
 				B62AEA0D2AA93A5B008B01CD /* ThemePreviewView.swift */,
 				B62AEA122AA9470E008B01CD /* ThemeExampleView.swift */,
+				B683A1152ABD3F4B00162E7C /* ThemeSampleView.swift */,
 				B65AB3522AA96D66001F4FE6 /* CustomThemeView.swift */,
+				B683A1132ABD2BDE00162E7C /* UserThemeEditor.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -326,6 +340,8 @@
 		B65AB3492AA96650001F4FE6 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				B683A12B2ABD54A900162E7C /* WorldNote+CoreDataClass.swift */,
+				B683A12C2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift */,
 				B65AB34E2AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift */,
 				B65AB34F2AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift */,
 			);
@@ -567,6 +583,7 @@
 		B6E3310E2AA80802001D7FF2 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				B683A1272ABD4A6800162E7C /* NewNotesSettings.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -600,6 +617,7 @@
 				B66A07732887A32900DC0A2C /* Criterion.swift */,
 				B6872FC428AEDA4A003CEA95 /* Statistic.swift */,
 				B6872FB428AEAA45003CEA95 /* Player.swift */,
+				B683A1292ABD4D7700162E7C /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -793,6 +811,7 @@
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
 				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
+				B683A1282ABD4A6800162E7C /* NewNotesSettings.swift in Sources */,
 				B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */,
 				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
@@ -813,8 +832,10 @@
 				B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */,
 				B6E331162AA81218001D7FF2 /* TrackingSettingsViewModel.swift in Sources */,
 				B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */,
+				B683A12D2ABD54A900162E7C /* WorldNote+CoreDataClass.swift in Sources */,
 				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
 				B6F1B4902AAEC34500422D8E /* PlayerManager.swift in Sources */,
+				B683A12E2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift in Sources */,
 				B6498D732AAC226400230808 /* OverlayManager.swift in Sources */,
 				B6872FB528AEAA45003CEA95 /* Player.swift in Sources */,
 				B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */,
@@ -823,6 +844,7 @@
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */,
+				B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
 				B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */,
 				B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */,
@@ -850,6 +872,7 @@
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
 				B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */,
 				B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */,
+				B683A12A2ABD4D7700162E7C /* Note.swift in Sources */,
 				B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */,
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
@@ -866,6 +889,7 @@
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
 				B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */,
 				B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */,
+				B683A1162ABD3F4B00162E7C /* ThemeSampleView.swift in Sources */,
 				B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */,
 				B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */,
 				B62AEA0E2AA93A5B008B01CD /* ThemePreviewView.swift in Sources */,
@@ -1015,7 +1039,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 232009e;
+				CURRENT_PROJECT_VERSION = 232209e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1047,7 +1071,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 232009e;
+				CURRENT_PROJECT_VERSION = 232209e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

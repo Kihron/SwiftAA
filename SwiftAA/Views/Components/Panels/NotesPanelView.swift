@@ -11,6 +11,8 @@ struct NotesPanelView: View {
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
     @State private var notes = ""
+
+    @State private var currentNote: Note = Note.newNote
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,9 +21,9 @@ struct NotesPanelView: View {
                     .font(.custom("Minecraft-Regular", size: 12))
                 
                 VStack(spacing: 5) {
-                    WayPointCardView(index: 0, icon: "elder_guardian")
-                    WayPointCardView(index: 1, icon: "pillager")
-                    WayPointCardView(index: 2, icon: "silverfish")
+                    WayPointCardView(note: $currentNote, index: 0, icon: "elder_guardian")
+                    WayPointCardView(note: $currentNote, index: 1, icon: "pillager")
+                    WayPointCardView(note: $currentNote, index: 2, icon: "silverfish")
                 }
             }
             .frame(maxHeight: .infinity, alignment: .top)
@@ -39,6 +41,22 @@ struct NotesPanelView: View {
         }
         .padding()
         .applyThemeModifiers()
+//        .onAppear {
+//            if !trackerManager.worldPath.isEmpty {
+//                if let note = noteManager.currentWorldNote {
+//                    currentNote = note
+//                }
+//            }
+//        }
+//        .onChange(of: trackerManager.worldPath) { _ in
+//            if !trackerManager.worldPath.isEmpty {
+//                if let note = noteManager.currentWorldNote {
+//                    currentNote = note
+//                }
+//            } else {
+//                currentNote = Note.newNote
+//            }
+//        }
         .onAppear {
             if (!trackerManager.worldPath.isEmpty) {
                 if let worldNotes = noteManager.notes[trackerManager.worldPath] {
@@ -47,6 +65,7 @@ struct NotesPanelView: View {
             }
         }
         .onChange(of: trackerManager.worldPath) { path in
+            print(path)
             if (!path.isEmpty) {
                 self.notes = noteManager.notes[path]?[3] ?? ""
             } else {
@@ -65,13 +84,18 @@ struct NotesPanelView: View {
 }
 
 struct WayPointCardView: View {
+    @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = UIThemeManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
+    
+    @Binding var note: Note
+    
     @State var index: Int
     @State var icon: String
-    @State var x: String = ""
-    @State var z: String = ""
+    
+    @State private var x: String = ""
+    @State private var z: String = ""
     
     var body: some View {
         HStack {
@@ -121,6 +145,12 @@ struct WayPointCardView: View {
                 .applyThemeText()
             }
         }
+//        .onChange(of: x) { _ in
+//            //noteManager.saveNote(note: note, context: context)
+//        }
+//        .onChange(of: z) { _ in
+//            //noteManager.saveNote(note: note, context: context)
+//        }
         .onAppear {
             if (!trackerManager.worldPath.isEmpty) {
                 if let worldNotes = noteManager.notes[trackerManager.worldPath] {

@@ -10,9 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var noteManager = NoteManager.shared
     
     @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
-    private var fetch: FetchedResults<UserThemes>
+    private var themeFetch: FetchedResults<UserThemes>
+    
+    @FetchRequest(entity: WorldNote.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \WorldNote.path, ascending: true)])
+    private var noteFetch: FetchedResults<WorldNote>
     
     var body: some View {
         ScrollView(.vertical) {
@@ -33,7 +37,8 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            themeManager.getUserThemesFromFetch(fetch: fetch)
+            themeManager.getUserThemesFromFetch(fetch: themeFetch)
+            noteManager.getWorldNotesFromFetch(fetch: noteFetch)
         }
     }
 }

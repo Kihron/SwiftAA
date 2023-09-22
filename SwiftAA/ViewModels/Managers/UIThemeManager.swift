@@ -57,13 +57,6 @@ class UIThemeManager: ObservableObject {
         }
     }
     
-    //    func copyPresetToUserTheme() {
-    //        userTheme.backgroundColor = currentPreset.backgroundColor
-    //        userTheme.borderColor = currentPreset.borderColor
-    //        userTheme.textColor = currentPreset.textColor
-    //        self.themeMode = .custom
-    //    }
-    
     func getUserThemesFromFetch(fetch: FetchedResults<UserThemes>) {
         userThemes.removeAll()
         for theme in fetch {
@@ -84,7 +77,9 @@ class UIThemeManager: ObservableObject {
         do {
             try context.save()
             withAnimation {
-                userThemes.append(UserTheme(id: uuid, name: name, backgroundColor: background, borderColor: border, textColor: text))
+                let theme = UserTheme(id: uuid, name: name, backgroundColor: background, borderColor: border, textColor: text)
+                userThemes.append(theme)
+                selectUserTheme(theme: theme)
             }
         } catch {
             print(error.localizedDescription)

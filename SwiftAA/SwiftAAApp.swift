@@ -98,7 +98,7 @@ struct SwiftAAApp: App {
         
         Window("Settings", id: "settings-window") {
             SettingsView()
-                .frame(minWidth: 700, maxWidth: 700, minHeight: 300, alignment: .center)
+                .frame(minWidth: 700, maxWidth: 700, minHeight: 435, alignment: .center)
                 .environment(\.managedObjectContext, coreDataManager.container.viewContext)
         }
         .commands {
