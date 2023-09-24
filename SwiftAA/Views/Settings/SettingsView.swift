@@ -47,7 +47,7 @@ struct SettingsView: View {
                 case .overlay:
                     OverlaySettings()
                 case .notes:
-                    Text(selectedSettingsBarItem.label.localized)
+                    NewNotesSettings()
                 case .updates:
                     UpdateSettings()
             }

@@ -38,7 +38,7 @@ struct ContentView: View {
         }
         .onAppear {
             themeManager.getUserThemesFromFetch(fetch: themeFetch)
-            noteManager.getWorldNotesFromFetch(fetch: noteFetch)
+            noteManager.getWorldNotesFromFetch(fetch: noteFetch, context: context)
         }
     }
 }

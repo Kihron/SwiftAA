@@ -197,8 +197,8 @@
 		B683A1152ABD3F4B00162E7C /* ThemeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSampleView.swift; sourceTree = "<group>"; };
 		B683A1272ABD4A6800162E7C /* NewNotesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotesSettings.swift; sourceTree = "<group>"; };
 		B683A1292ABD4D7700162E7C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		B683A12B2ABD54A900162E7C /* WorldNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorldNote+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		B683A12C2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorldNote+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		B683A12B2ABD54A900162E7C /* WorldNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WorldNote+CoreDataClass.swift"; path = "SwiftAA/Models/CoreData/Generated/WorldNote+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B683A12C2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WorldNote+CoreDataProperties.swift"; path = "SwiftAA/Models/CoreData/Generated/WorldNote+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		B6842B03296E59B9000B62DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -1039,7 +1039,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 232209e;
+				CURRENT_PROJECT_VERSION = 232409e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1071,7 +1071,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 232209e;
+				CURRENT_PROJECT_VERSION = 232409e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

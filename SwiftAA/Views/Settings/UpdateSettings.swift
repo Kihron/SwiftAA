@@ -60,6 +60,7 @@ struct UpdateSettings: View {
                 Button(action: { updateManager.checkForUpdates() }) {
                     Image(systemName: "arrow.clockwise")
                 }
+                .help("Check for updates")
             }
         }
     }

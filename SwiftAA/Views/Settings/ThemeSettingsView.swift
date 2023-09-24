@@ -72,6 +72,7 @@ struct ThemeSettingsView: View {
                     Button(action: { themeManager.deleteUserTheme(context: context) }) {
                         Image(systemName: "trash")
                     }
+                    .help("Delete selected theme")
                 }
             }
         }

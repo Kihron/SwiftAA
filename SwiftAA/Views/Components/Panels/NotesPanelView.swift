@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NotesPanelView: View {
+    @Environment(\.managedObjectContext) private var context
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
-    @State private var notes = ""
-
+    
     @State private var currentNote: Note = Note.newNote
     
     var body: some View {
@@ -32,7 +32,7 @@ struct NotesPanelView: View {
                 Text(L10n.Notes.Panel.View.Bottom.title)
                     .font(.custom("Minecraft-Regular", size: 12))
                 
-                TextEditor(text: $notes)
+                TextEditor(text: $currentNote.message)
                     .font(.custom("Minecraft-Regular", size: 10))
                     .cornerRadius(5)
                     .padding(.bottom, 15)
@@ -41,43 +41,26 @@ struct NotesPanelView: View {
         }
         .padding()
         .applyThemeModifiers()
-//        .onAppear {
-//            if !trackerManager.worldPath.isEmpty {
-//                if let note = noteManager.currentWorldNote {
-//                    currentNote = note
-//                }
-//            }
-//        }
-//        .onChange(of: trackerManager.worldPath) { _ in
-//            if !trackerManager.worldPath.isEmpty {
-//                if let note = noteManager.currentWorldNote {
-//                    currentNote = note
-//                }
-//            } else {
-//                currentNote = Note.newNote
-//            }
-//        }
-        .onAppear {
-            if (!trackerManager.worldPath.isEmpty) {
-                if let worldNotes = noteManager.notes[trackerManager.worldPath] {
-                    self.notes = worldNotes[3]
+        .onChange(of: trackerManager.worldPath) { path in
+            withAnimation {
+                if !path.isEmpty {
+                    if currentNote.isEmpty() {
+                        noteManager.deleteNote(note: currentNote, context: context)
+                    }
+                    
+                    if let note = noteManager.currentWorldNote {
+                        currentNote = note
+                    } else {
+                        currentNote = Note.newNote
+                        currentNote.path = path
+                        noteManager.saveNote(note: currentNote, context: context)
+                    }
                 }
             }
         }
-        .onChange(of: trackerManager.worldPath) { path in
-            print(path)
-            if (!path.isEmpty) {
-                self.notes = noteManager.notes[path]?[3] ?? ""
-            } else {
-                notes = ""
-            }
-        }
-        .onChange(of: notes) { note in
-            noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][3] = notes
-        }
-        .onDisappear {
-            if (!trackerManager.worldPath.isEmpty) {
-                noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][3] = notes
+        .onChange(of: currentNote.message) { _ in
+            if !currentNote.message.isEmpty && !currentNote.path.isEmpty {
+                noteManager.updateNote(note: currentNote, context: context)
             }
         }
     }
@@ -145,47 +128,53 @@ struct WayPointCardView: View {
                 .applyThemeText()
             }
         }
-//        .onChange(of: x) { _ in
-//            //noteManager.saveNote(note: note, context: context)
-//        }
-//        .onChange(of: z) { _ in
-//            //noteManager.saveNote(note: note, context: context)
-//        }
         .onAppear {
-            if (!trackerManager.worldPath.isEmpty) {
-                if let worldNotes = noteManager.notes[trackerManager.worldPath] {
-                    let coords = worldNotes[index].components(separatedBy: ",")
-                    self.x = String(coords[0])
-                    self.z = String(coords[1])
-                }
+            withAnimation {
+                loadWaypoint()
             }
         }
-        .onChange(of: trackerManager.worldPath) { path in
-            if (!path.isEmpty) {
-                if let worldNotes = noteManager.notes[path] {
-                    let coords = worldNotes[index].components(separatedBy: ",")
-                    self.x = String(coords[0])
-                    self.z = String(coords[1])
-                } else {
-                    x = ""
-                    z = ""
-                }
-            } else {
-                x = ""
-                z = ""
+        .onChange(of: note.path) { _ in
+            withAnimation {
+                loadWaypoint()
             }
         }
-        .onChange(of: x) { note in
-            noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
+        .onChange(of: x) { _ in
+            saveWaypoint()
+            noteManager.updateNote(note: note, context: context)
         }
-        .onChange(of: z) { note in
-            noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
+        .onChange(of: z) { _ in
+            saveWaypoint()
+            noteManager.updateNote(note: note, context: context)
         }
-        .onDisappear {
-            if (!trackerManager.worldPath.isEmpty) {
-                noteManager.notes[trackerManager.worldPath, default: [",", ",", ",", ""]][index] = "\(x),\(z)"
-            }
+    }
+    
+    private func saveWaypoint() {
+        let value = x + String(repeating: " ", count: max(x.count, z.count) - min(x.count, z.count)) + z
+        
+        switch index {
+            case 0:
+                note.monument = value
+            case 1:
+                note.outpost = value
+            default:
+                note.stronghold = value
         }
+    }
+    
+    private func loadWaypoint() {
+        let value: String
+        switch index {
+            case 0:
+                value = note.monument
+            case 1:
+                value = note.outpost
+            default:
+                value = note.stronghold
+        }
+        
+        let mid = value.count / 2
+        x = value.dropLast(mid).trimmingCharacters(in: .whitespaces)
+        z = value.dropFirst(mid).trimmingCharacters(in: .whitespaces)
     }
 }
 
