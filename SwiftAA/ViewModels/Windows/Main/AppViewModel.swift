@@ -14,8 +14,6 @@ class AppViewModel: ObservableObject {
     @Published var advancementsUpdated: Bool = false
     
     private var lastWorking = ""
-    private var lastDirectoryUpdate: Date? = Date.now
-    private var lastLogUpdate: Date? = Date.now
     private var activeWindows = [pid_t:String]()
     private var wasCleared: Bool = true
     
@@ -108,16 +106,16 @@ class AppViewModel: ObservableObject {
             let logUpdated = try getModifiedTime(logFile, fileManager: fileManager)
             
             var isNewWorld = false
-            if (lastLogUpdate != logUpdated) {
-                lastLogUpdate = logUpdated
+            if (trackerManager.lastLogUpdate != logUpdated) {
+                trackerManager.lastLogUpdate = logUpdated
                 
                 if let line = readLastLine(ofFileAtPath: logFile), line.contains("Loaded") && line.contains("advancements") {
                     isNewWorld = true
                 }
             }
             
-            if lastDirectoryUpdate != savesDirectoryUpdated || isNewWorld {
-                lastDirectoryUpdate = savesDirectoryUpdated
+            if trackerManager.lastDirectoryUpdate != savesDirectoryUpdated || isNewWorld {
+                trackerManager.lastDirectoryUpdate = savesDirectoryUpdated
                 isNewWorld = false
                 let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
                     folder != ".DS_Store"

@@ -12,6 +12,9 @@ class TrackerManager: ObservableObject {
     @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
     @AppStorage("gameVersion") var gameVersion: Version = .v1_16
     
+    @Published var lastDirectoryUpdate: Date? = Date.now
+    @Published var lastLogUpdate: Date? = Date.now
+    
     @Published var worldPath: String = ""
     @Published var alert: TrackerAlert? = .none
     
@@ -24,5 +27,10 @@ class TrackerManager: ObservableObject {
     
     init() {
         
+    }
+    
+    func resetWorldPath() {
+        worldPath = ""
+        lastDirectoryUpdate = Date.now
     }
 }

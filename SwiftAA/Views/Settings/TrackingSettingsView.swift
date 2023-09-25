@@ -55,6 +55,9 @@ struct TrackingSettingsView: View {
                 }
             }
         }
+        .onChange(of: trackerManager.trackingMode) { _ in
+            trackerManager.resetWorldPath()
+        }
         .padding([.horizontal, .top])
         .frame(maxHeight: .infinity, alignment: .topLeading)
     }

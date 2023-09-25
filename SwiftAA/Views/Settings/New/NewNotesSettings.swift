@@ -13,6 +13,11 @@ struct NewNotesSettings: View {
     
     @State private var selected: Note = Note.newNote
     
+    private var folderExists: Bool {
+        let fileManager = FileManager.default
+        return fileManager.fileExists(atPath: selected.path)
+    }
+    
     var body: some View {
         HStack(spacing: 0) {
             ScrollView {
@@ -85,7 +90,16 @@ struct NewNotesSettings: View {
         }
         .toolbar {
             if !selected.path.isEmpty {
-                ToolbarItem(placement: .destructiveAction) {
+                if folderExists {
+                    ToolbarItem(placement: .automatic) {
+                        Button(action: { showInFinder() }) {
+                            Image(systemName: "folder")
+                        }
+                        .help("Show in folder")
+                    }
+                }
+                
+                ToolbarItem(placement: .automatic) {
                     Button(action: { deleteNote(note: selected) }) {
                         Image(systemName: "trash")
                     }
@@ -93,6 +107,11 @@ struct NewNotesSettings: View {
                 }
             }
         }
+    }
+    
+    func showInFinder() {
+        let url = URL(filePath: selected.path)
+        NSWorkspace.shared.activateFileViewerSelecting([url])
     }
     
     private func deleteNote(note: Note) {

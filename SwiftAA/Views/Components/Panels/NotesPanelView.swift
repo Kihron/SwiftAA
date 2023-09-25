@@ -13,6 +13,7 @@ struct NotesPanelView: View {
     @ObservedObject private var noteManager = NoteManager.shared
     
     @State private var currentNote: Note = Note.newNote
+    @State private var userInteracted: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -41,27 +42,40 @@ struct NotesPanelView: View {
         }
         .padding()
         .applyThemeModifiers()
-        .onChange(of: trackerManager.worldPath) { path in
+        .onAppear {
             withAnimation {
-                if !path.isEmpty {
-                    if currentNote.isEmpty() {
-                        noteManager.deleteNote(note: currentNote, context: context)
-                    }
-                    
-                    if let note = noteManager.currentWorldNote {
-                        currentNote = note
-                    } else {
-                        currentNote = Note.newNote
-                        currentNote.path = path
-                        noteManager.saveNote(note: currentNote, context: context)
-                    }
-                }
+                updateCurrentNote(path: trackerManager.worldPath)
+            }
+        }
+        .onChange(of: trackerManager.worldPath) { path in
+            userInteracted = false
+            withAnimation {
+                updateCurrentNote(path: path)
             }
         }
         .onChange(of: currentNote.message) { _ in
-            if !currentNote.message.isEmpty && !currentNote.path.isEmpty {
+            if userInteracted || (!currentNote.message.isEmpty && !currentNote.path.isEmpty) {
                 noteManager.updateNote(note: currentNote, context: context)
+                userInteracted = true
             }
+        }
+    }
+    
+    private func updateCurrentNote(path: String) {
+        if currentNote.isEmpty() {
+            noteManager.deleteNote(note: currentNote, context: context)
+        }
+        
+        if !path.isEmpty {
+            if let note = noteManager.currentWorldNote {
+                currentNote = note
+            } else {
+                currentNote = Note.newNote
+                currentNote.path = path
+                noteManager.saveNote(note: currentNote, context: context)
+            }
+        } else {
+            currentNote = Note.newNote
         }
     }
 }
