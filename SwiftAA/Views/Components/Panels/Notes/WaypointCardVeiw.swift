@@ -1,86 +1,13 @@
 //
-//  NotesPanelView.swift
+//  WaypointCardVeiw.swift
 //  SwiftAA
 //
-//  Created by Kihron on 7/23/22.
+//  Created by Kihron on 9/26/23.
 //
 
 import SwiftUI
 
-struct NotesPanelView: View {
-    @Environment(\.managedObjectContext) private var context
-    @ObservedObject private var trackerManager = TrackerManager.shared
-    @ObservedObject private var noteManager = NoteManager.shared
-    
-    @State private var currentNote: Note = Note.newNote
-    @State private var userInteracted: Bool = false
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading) {
-                Text(L10n.Notes.Panel.View.Top.title)
-                    .font(.custom("Minecraft-Regular", size: 12))
-                
-                VStack(spacing: 5) {
-                    WayPointCardView(note: $currentNote, index: 0, icon: "elder_guardian")
-                    WayPointCardView(note: $currentNote, index: 1, icon: "pillager")
-                    WayPointCardView(note: $currentNote, index: 2, icon: "silverfish")
-                }
-            }
-            .frame(maxHeight: .infinity, alignment: .top)
-            
-            VStack(alignment: .leading) {
-                Text(L10n.Notes.Panel.View.Bottom.title)
-                    .font(.custom("Minecraft-Regular", size: 12))
-                
-                TextEditor(text: $currentNote.message)
-                    .font(.custom("Minecraft-Regular", size: 10))
-                    .cornerRadius(5)
-                    .padding(.bottom, 15)
-                    .disabled(trackerManager.worldPath.isEmpty)
-            }
-        }
-        .padding()
-        .applyThemeModifiers()
-        .onAppear {
-            withAnimation {
-                updateCurrentNote(path: trackerManager.worldPath)
-            }
-        }
-        .onChange(of: trackerManager.worldPath) { path in
-            userInteracted = false
-            withAnimation {
-                updateCurrentNote(path: path)
-            }
-        }
-        .onChange(of: currentNote.message) { _ in
-            if userInteracted || (!currentNote.message.isEmpty && !currentNote.path.isEmpty) {
-                noteManager.updateNote(note: currentNote, context: context)
-                userInteracted = true
-            }
-        }
-    }
-    
-    private func updateCurrentNote(path: String) {
-        if currentNote.isEmpty() {
-            noteManager.deleteNote(note: currentNote, context: context)
-        }
-        
-        if !path.isEmpty {
-            if let note = noteManager.currentWorldNote {
-                currentNote = note
-            } else {
-                currentNote = Note.newNote
-                currentNote.path = path
-                noteManager.saveNote(note: currentNote, context: context)
-            }
-        } else {
-            currentNote = Note.newNote
-        }
-    }
-}
-
-struct WayPointCardView: View {
+struct WaypointCardView: View {
     @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = UIThemeManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
@@ -152,13 +79,39 @@ struct WayPointCardView: View {
                 loadWaypoint()
             }
         }
-        .onChange(of: x) { _ in
+        .onChange(of: x) { value in
+            if let copiedText = NSPasteboard.general.string(forType: .string), copiedText == value {
+                checkF3C(input: value)
+            }
+            
             saveWaypoint()
             noteManager.updateNote(note: note, context: context)
         }
-        .onChange(of: z) { _ in
+        .onChange(of: z) { value in
+            if let copiedText = NSPasteboard.general.string(forType: .string), copiedText == value {
+                checkF3C(input: value)
+            }
+            
             saveWaypoint()
             noteManager.updateNote(note: note, context: context)
+        }
+    }
+    
+    private func checkF3C(input: String) {
+        let pattern = #"\s(-?\d+\.\d+)\s(-?\d+\.\d+)\s(-?\d+\.\d+)\s"#
+
+        if let match = input.range(of: pattern, options: .regularExpression) {
+            let start = match.lowerBound
+            let end = match.upperBound
+            let coordinatesSubstring = input[start..<end]
+            
+            let coordinatesArray = coordinatesSubstring.split(separator: " ")
+            if coordinatesArray.count >= 2 {
+                if let x = Double(coordinatesArray[0]), let z = Double(coordinatesArray[2]) {
+                    self.x = String(Int(x))
+                    self.z = String(Int(z))
+                }
+            }
         }
     }
     
@@ -202,12 +155,5 @@ private extension String {
             }
         }
         set {}
-    }
-}
-
-struct NotesPanelView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotesPanelView()
-            .frame(width: 300, height: 800)
     }
 }

@@ -53,9 +53,9 @@ struct NewNotesSettings: View {
                     
                     SettingsCardView {
                         VStack {
-                            WayPointCardView(note: $selected, index: 0, icon: "elder_guardian")
-                            WayPointCardView(note: $selected, index: 1, icon: "pillager")
-                            WayPointCardView(note: $selected, index: 2, icon: "silverfish")
+                            WaypointCardView(note: $selected, index: 0, icon: "elder_guardian")
+                            WaypointCardView(note: $selected, index: 1, icon: "pillager")
+                            WaypointCardView(note: $selected, index: 2, icon: "silverfish")
                         }
                     }
                     .disabled(true)
