@@ -11,6 +11,15 @@ struct StatsView: View {
     @State var stat: Statistic
     @State var statsData: [String:[String:Int]]
     
+    private var statValue: String {
+        let value = Double(statsData[stat.type]?[stat.id] ?? 999)
+        if stat.factor > 1 {
+            return String(format: stat.factor >= 10 ? "%.1f" : "%.0f", value / Double(stat.factor))
+        } else {
+            return value >= 1000 ? String(format: "%.1fk", value / 1000) : "\(Int(value))"
+        }
+    }
+    
     var body: some View {
         HStack {
             ZStack {
@@ -31,12 +40,12 @@ struct StatsView: View {
             .padding(.trailing, 5)
         
             
-            Text("\(getStatValue() / stat.factor)")
-                .font(.custom("Minecraft-Regular", size: 24))
+            Text(statValue)
+                .font(.custom("Minecraft-Regular", size: 20))
             
             if (!stat.tooltip.isEmpty) {
                 Text(stat.tooltip.localized)
-                    .font(.custom("Minecraft-Regular", size: 14))
+                    .font(.custom("Minecraft-Regular", size: 12))
                 
                 Spacer()
             }
@@ -52,7 +61,7 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 10000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"), statsData: [String:[String:Int]]())
+        StatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"), statsData: [String:[String:Int]]())
             .padding()
     }
 }

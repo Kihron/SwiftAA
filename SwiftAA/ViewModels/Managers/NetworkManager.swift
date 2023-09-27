@@ -39,33 +39,15 @@ class NetworkManager: ObservableObject {
             let (data, response): (Data, URLResponse)
             
             if connected {
-                // Create a "HEAD" request to check the content size in the response headers
-                var headRequest = URLRequest(url: url)
-                headRequest.httpMethod = "HEAD"
-                let (_, headResponse) = try await URLSession.shared.data(for: headRequest)
-                
-                if let cacheAttributes = try? FileManager.default.attributesOfItem(atPath: cacheFile.path),
-                   let cacheSize = cacheAttributes[.size] as? NSNumber,
-                   let serverSize = headResponse.expectedContentLength > -1 ? Int64(headResponse.expectedContentLength) as NSNumber : nil,
-                   serverSize == cacheSize {
-                    // If the cache file’s size matches the server’s file, load the cache
-                    if let cachedData = try? Data(contentsOf: cacheFile) {
-                        data = cachedData
-                        response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-                    } else {
-                        throw URLError(.cannotLoadFromNetwork)
-                    }
-                } else {
-                    // download fresh data
-                    let dataTaskRequest = URLRequest(url: url)
-                    (data, response) = try await URLSession.shared.data(for: dataTaskRequest)
+                // download fresh data
+                let dataTaskRequest = URLRequest(url: url)
+                (data, response) = try await URLSession.shared.data(for: dataTaskRequest)
 
-                    guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                        throw URLError(.badServerResponse)
-                    }
-                    
-                    try data.write(to: cacheFile)
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    throw URLError(.badServerResponse)
                 }
+                
+                try data.write(to: cacheFile)
             } else {
                 // No network
                 if FileManager.default.fileExists(atPath: cacheFile.path), let cachedData = try? Data(contentsOf: cacheFile) {

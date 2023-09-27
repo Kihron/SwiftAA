@@ -23,7 +23,7 @@ struct OverlayFrameModifier: ViewModifier {
             }
         } else {
             content
-                .frame(minWidth: 825, maxWidth: 1000, minHeight: 345, maxHeight: 345)
+                .frame(minWidth: 950, maxWidth: 1000, minHeight: 345, maxHeight: 345)
         }
     }
 }
