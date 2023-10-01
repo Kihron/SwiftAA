@@ -10,6 +10,7 @@ import SwiftUI
 class TrackerManager: ObservableObject {
     @AppStorage("customSavesPath") var customSavesPath: String = ""
     @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
+    @AppStorage("layoutStyle") var layoutStyle: LayoutStyle = .standard
     @AppStorage("gameVersion") var gameVersion: Version = .v1_16
     
     @Published var lastDirectoryUpdate: Date? = Date.now

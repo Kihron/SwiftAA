@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AdvPanelView: View {
+    @ObservedObject private var dataManager = DataManager.shared
+    
     @Binding var indicators: [Indicator]
     @State var columnCount: Int
     @State var isStat: Bool = false

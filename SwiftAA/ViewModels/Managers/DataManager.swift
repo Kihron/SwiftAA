@@ -25,6 +25,10 @@ class DataManager: ObservableObject {
     
     static let shared = DataManager()
     
+    init() {
+        self.stats = self.topStats + self.bottomStats
+    }
+    
     var totalAdvancements: Int {
         return map.values.compactMap({$0.count}).reduce(0, +)
     }
@@ -55,7 +59,7 @@ class DataManager: ObservableObject {
                     cache = cache.dropLast(cache.count - index - 1)
                 }
             }
-            return Binding.constant(cache)
+            return .constant(cache)
         }
         
         var advancements = [Advancement]()
@@ -101,9 +105,8 @@ class DataManager: ObservableObject {
         DispatchQueue.main.async {
             self.map[file] = fullList
             self.removeOldVersion(gameVersion: self.versionManager.gameVersion.label)
-            self.stats = self.topStats + self.bottomStats
         }
-        return Binding.constant(advancements)
+        return .constant(advancements)
     }
     
     func getIconFromID(id: String, separator: Character) -> String {

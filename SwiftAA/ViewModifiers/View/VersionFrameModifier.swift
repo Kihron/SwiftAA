@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct VersionFrameModifier: ViewModifier {
-    @ObservedObject private var versionManager = TrackerManager.shared
+    @ObservedObject private var trackerManager = TrackerManager.shared
     
     func body(content: Content) -> some View {
-        switch versionManager.gameVersion {
-            case .v1_16 :
+        switch (trackerManager.gameVersion, trackerManager.layoutStyle)  {
+            case (.v1_16, _):
                 content
                     .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 764, maxHeight: 764, alignment: .center)
-            case .v1_19 :
+            case (.v1_19, _):
                 content
                     .frame(minWidth: 350, idealWidth: 1702, maxWidth: 1702, minHeight: 260, idealHeight: 764, maxHeight: 764, alignment: .center)
         }

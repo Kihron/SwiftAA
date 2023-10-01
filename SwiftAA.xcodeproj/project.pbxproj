@@ -105,6 +105,8 @@
 		B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0328BDA6BE0016D248 /* SWXMLHash */; };
 		B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */; };
 		B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3065728A2B150004D27E6 /* String+Ext.swift */; };
+		B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD06252AC515F3005D1B2A /* L1_16M.swift */; };
+		B6DD06282AC51648005D1B2A /* 1_16M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD06272AC51648005D1B2A /* 1_16M.swift */; };
 		B6E1493128A17F260084A529 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E1492F28A17F260084A529 /* Localizable.strings */; };
 		B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */; };
 		B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */; };
@@ -116,6 +118,8 @@
 		B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */; };
 		B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */; };
 		B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0872AAA951700D83FA7 /* OverlayView.swift */; };
+		B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */; };
+		B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */; };
 		B6F1020728902DA300E5A2F6 /* NotesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */; };
 		B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */; };
 		B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */; };
@@ -227,6 +231,8 @@
 		B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayViewModel.swift; sourceTree = "<group>"; };
 		B6D3065428A2AD44004D27E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6D3065728A2B150004D27E6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B6DD06252AC515F3005D1B2A /* L1_16M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16M.swift; sourceTree = "<group>"; };
+		B6DD06272AC51648005D1B2A /* 1_16M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1_16M.swift; sourceTree = "<group>"; };
 		B6E1493028A17F260084A529 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarItem.swift; sourceTree = "<group>"; };
@@ -238,6 +244,8 @@
 		B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettings.swift; sourceTree = "<group>"; };
 		B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTickerTapeView.swift; sourceTree = "<group>"; };
 		B6E7B0872AAA951700D83FA7 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16S.swift; sourceTree = "<group>"; };
+		B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyle.swift; sourceTree = "<group>"; };
 		B6F1020628902DA300E5A2F6 /* NotesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesSettingsView.swift; sourceTree = "<group>"; };
 		B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStyle.swift; sourceTree = "<group>"; };
 		B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTapeOverlayView.swift; sourceTree = "<group>"; };
@@ -338,6 +346,7 @@
 		B6498D6D2AABDC3900230808 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B6DD06242AC511E0005D1B2A /* Constants */,
 				B6498D6E2AABDC4600230808 /* RingBuffer.swift */,
 			);
 			path = Utils;
@@ -437,6 +446,7 @@
 				B624F3822AB8044D006D8719 /* ModularPanel.swift */,
 				B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */,
 				B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */,
+				B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */,
 				B608417C2AB3E37800E064E7 /* TrackerAlert.swift */,
 				B6498D742AAC23B300230808 /* HAlignment.swift */,
 				B6E331132AA808D5001D7FF2 /* Version.swift */,
@@ -527,8 +537,8 @@
 		B687E17E28B3E37F002CF5D7 /* Versions */ = {
 			isa = PBXGroup;
 			children = (
-				B687E18628B3E457002CF5D7 /* L1_16.swift */,
-				B687E18A28B3E996002CF5D7 /* L1_19.swift */,
+				B6EEBAD22AC4F854001CF4D0 /* 1_16 */,
+				B6EEBAD32AC4F8B1001CF4D0 /* L1_19 */,
 			);
 			path = Versions;
 			sourceTree = "<group>";
@@ -593,6 +603,22 @@
 			path = Overlay;
 			sourceTree = "<group>";
 		};
+		B6DD06242AC511E0005D1B2A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B6DD06292AC51651005D1B2A /* Minimalist */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B6DD06292AC51651005D1B2A /* Minimalist */ = {
+			isa = PBXGroup;
+			children = (
+				B6DD06272AC51648005D1B2A /* 1_16M.swift */,
+			);
+			path = Minimalist;
+			sourceTree = "<group>";
+		};
 		B6E3310E2AA80802001D7FF2 /* New */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +633,24 @@
 				B6A772FB2889998700436551 /* StatusIndicators.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		B6EEBAD22AC4F854001CF4D0 /* 1_16 */ = {
+			isa = PBXGroup;
+			children = (
+				B687E18628B3E457002CF5D7 /* L1_16.swift */,
+				B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */,
+				B6DD06252AC515F3005D1B2A /* L1_16M.swift */,
+			);
+			path = 1_16;
+			sourceTree = "<group>";
+		};
+		B6EEBAD32AC4F8B1001CF4D0 /* L1_19 */ = {
+			isa = PBXGroup;
+			children = (
+				B687E18A28B3E996002CF5D7 /* L1_19.swift */,
+			);
+			path = L1_19;
 			sourceTree = "<group>";
 		};
 		B6FEFED3289990D40095CF08 /* Protocols */ = {
@@ -803,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
@@ -820,6 +865,7 @@
 				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
+				B6DD06282AC51648005D1B2A /* 1_16M.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
@@ -842,6 +888,7 @@
 				B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */,
+				B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */,
 				B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */,
 				B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */,
 				B6E331162AA81218001D7FF2 /* TrackingSettingsViewModel.swift in Sources */,
@@ -892,6 +939,7 @@
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
 				B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */,
+				B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */,
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				B65AB3532AA96D66001F4FE6 /* CustomThemeView.swift in Sources */,
 				B6E331102AA80811001D7FF2 /* TrackingSettingsView.swift in Sources */,

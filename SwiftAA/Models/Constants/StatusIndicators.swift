@@ -16,8 +16,8 @@ class GodApple: Indicator {
     var completed: Bool = false
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        completed = (advancements[id] != nil)
-        key = (completed) ? L10n.Statistic.GodApple.obtained : L10n.Statistic.GodApple.obtain
+        completed = advancements[id] != nil
+        key = completed ? L10n.Statistic.GodApple.obtained : L10n.Statistic.GodApple.obtain
     }
 }
 

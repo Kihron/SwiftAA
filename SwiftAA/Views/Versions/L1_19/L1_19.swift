@@ -24,7 +24,7 @@ struct L1_19: View {
                                 .frame(width: 74)
                             AdvPanelView(indicators: dataManager.decode(file: "adventure", end: "minecraft:adventure/spyglass_at_dragon"), columnCount: 6)
                                 .frame(width: 467)
-                            AdvPanelView(indicators: Binding.constant(dataManager.topStats), columnCount: 1, isStat: true)
+                            AdvPanelView(indicators: .constant(dataManager.topStats), columnCount: 1, isStat: true)
                                 .frame(width: 75)
                         }
                         
@@ -35,7 +35,7 @@ struct L1_19: View {
                                 .frame(width: 688)
                             AdvPanelView(indicators: dataManager.decode(file: "adventure", start: "minecraft:adventure/honey_block_slide"), columnCount: 6)
                                 .frame(width: 467)
-                            AdvPanelView(indicators: Binding.constant(dataManager.bottomStats), columnCount: 1, isStat: true)
+                            AdvPanelView(indicators: .constant(dataManager.bottomStats), columnCount: 1, isStat: true)
                                 .frame(width: 75)
                         }
                     }

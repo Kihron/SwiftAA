@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct StatsView: View {
+    @ObservedObject private var dataManager = DataManager.shared
     @State var stat: Statistic
-    @State var statsData: [String:[String:Int]]
     
     private var statValue: String {
-        let value = Double(statsData[stat.type]?[stat.id] ?? 999)
+        let value = Double(dataManager.statsData[stat.type]?[stat.id] ?? 999)
         if stat.factor > 1 {
             return String(format: stat.factor >= 10 ? "%.1f" : "%.0f", value / Double(stat.factor))
         } else {
@@ -55,13 +55,13 @@ struct StatsView: View {
     }
     
     func getStatValue() -> Int {
-        statsData[stat.type]?[stat.id] ?? 0
+        dataManager.statsData[stat.type]?[stat.id] ?? 0
     }
 }
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"), statsData: [String:[String:Int]]())
+        StatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"))
             .padding()
     }
 }

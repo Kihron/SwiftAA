@@ -22,11 +22,9 @@ struct ContentView: View {
         ScrollView(.vertical) {
             ScrollView(.horizontal) {
                 ZStack {
-                    VStack(alignment: .leading, spacing: 0) {
-                        switch TrackerManager.shared.gameVersion {
-                            case .v1_16 : L1_16()
-                            case .v1_19 : L1_19()
-                        }
+                    switch TrackerManager.shared.gameVersion {
+                        case .v1_16 : L1_16()
+                        case .v1_19 : L1_19()
                     }
                     
                     RoundedCornersShape(radius: 10, corners: [.bottomLeft, .bottomRight])

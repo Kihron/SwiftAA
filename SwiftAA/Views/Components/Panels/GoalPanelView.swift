@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GoalPanelView: View {
+    @ObservedObject private var dataManager = DataManager.shared
+    
     @Binding var advancement: Advancement
     @State var completedTotal: Int = 0
     @State var rowCount: Int
