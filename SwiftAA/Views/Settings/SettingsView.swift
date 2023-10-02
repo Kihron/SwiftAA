@@ -47,7 +47,7 @@ struct SettingsView: View {
                 case .overlay:
                     OverlaySettings()
                 case .notes:
-                    NewNotesSettings()
+                    NotesSettingsView()
                 case .updates:
                     UpdateSettings()
             }

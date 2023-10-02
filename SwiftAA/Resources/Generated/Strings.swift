@@ -1381,8 +1381,14 @@ internal enum L10n {
     internal static let attribution = L10n.tr("Localizable", "tracking.attribution", fallback: "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.")
     /// ...
     internal static let browse = L10n.tr("Localizable", "tracking.browse", fallback: "...")
+    /// Minimalistic
+    internal static let minimalistic = L10n.tr("Localizable", "tracking.minimalistic", fallback: "Minimalistic")
     /// Seamless Tracking
     internal static let seamless = L10n.tr("Localizable", "tracking.seamless", fallback: "Seamless Tracking")
+    /// Standard
+    internal static let standard = L10n.tr("Localizable", "tracking.standard", fallback: "Standard")
+    /// Vertical
+    internal static let vertical = L10n.tr("Localizable", "tracking.vertical", fallback: "Vertical")
     internal enum Custom {
       /// Custom Saves Folder
       internal static let saves = L10n.tr("Localizable", "tracking.custom.saves", fallback: "Custom Saves Folder")

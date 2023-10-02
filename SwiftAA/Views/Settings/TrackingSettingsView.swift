@@ -8,29 +8,70 @@
 import SwiftUI
 
 struct TrackingSettingsView: View {
-    @ObservedObject var viewModel = TrackingSettingsViewModel()
-    @ObservedObject var trackerManager = TrackerManager.shared
+    @ObservedObject private var viewModel = TrackingSettingsViewModel()
+    @ObservedObject private var trackerManager = TrackerManager.shared
+    @ObservedObject private var dataManager = DataManager.shared
     
     var body: some View {
         VStack {
             SettingsCardView {
-                HStack {
-                    Text(L10n.Tracking.Game.version)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Picker("", selection: $trackerManager.gameVersion) {
-                        ForEach(Version.allCases, id: \.self) { item in
-                            Text(item.label)
+                VStack {
+                    HStack {
+                        Text(L10n.Tracking.Game.version)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Picker("", selection: $trackerManager.gameVersion) {
+                            ForEach(Version.allCases, id: \.self) { item in
+                                Text(item.label)
+                            }
+                        }
+                        .frame(maxWidth: 75)
+                        .labelsHidden()
+                        .onChange(of: trackerManager.gameVersion) { _ in
+                            if trackerManager.layoutStyle == .minimalist {
+                                dataManager.loadAllAdvancements()
+                            }
                         }
                     }
-                    .frame(maxWidth: 75)
-                    .labelsHidden()
+                    
+                    let availableStyles = LayoutStyle.getAvailableStyles(version: trackerManager.gameVersion)
+                    
+                    if availableStyles.count > 1 {
+                        Divider()
+                        
+                        HStack {
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text("View Style")
+                                
+                                Text("Standard shows all advancements horizontally. Both Vertical and Minimalistic remove redundant advancements.")
+                                    .font(.caption)
+                                    .foregroundStyle(.gray)
+                                    .padding(.trailing, 2)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Picker("", selection: $trackerManager.layoutStyle) {
+                                ForEach(availableStyles, id: \.self) { item in
+                                    Text(item.label.localized)
+                                }
+                            }
+                            .frame(maxWidth: 110)
+                            .labelsHidden()
+                            .onChange(of: trackerManager.layoutStyle) { layout in
+                                dataManager.map.removeAll()
+                                
+                                if layout == .minimalist {
+                                    dataManager.loadAllAdvancements()
+                                }
+                            }
+                        }
+                    }
                 }
             }
             
             SettingsLabel(title: "Mode", description: "Switch between automatic window tracking or manually specifying a saves directory.")
                 .padding(.top, 5)
-
+            
             SettingsCardView {
                 VStack {
                     HStack {

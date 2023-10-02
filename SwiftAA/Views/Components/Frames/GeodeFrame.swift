@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct GeodeFrame: View {
+    @ObservedObject private var layoutManager = LayoutManager.shared
     @Binding var indicator: Indicator
+    
+    private var isCompleted: Bool {
+        return indicator.completed && !layoutManager.infoMode
+    }
     
     var body: some View {
         ZStack {
-            if indicator.completed {
+            if isCompleted {
                 Group {
                     Image("frame_geode_back_complete")
                     

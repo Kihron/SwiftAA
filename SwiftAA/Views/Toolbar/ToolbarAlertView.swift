@@ -13,20 +13,30 @@ struct ToolbarAlertView: View {
     let tips: [TrackerAlert] = [.enterMinecraft]
     
     var body: some View {
-        if let error = trackerManager.alert {
-            Button {
-                showPopover.toggle()
-            } label: {
-                Image(systemName: "exclamationmark.triangle.fill")
-                    .font(.system(size: 15))
-                    .foregroundColor(tips.contains(error) ? .blue : .red)
+        VStack {
+            if let error = trackerManager.alert {
+                Button {
+                    showPopover.toggle()
+                } label: {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.system(size: 16))
+                        .foregroundColor(tips.contains(error) ? .blue : .red)
+                }
+                .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
+                    PopoverView(error: error.description)
+                }
+                .buttonStyle(.plain)
+                .frame(width: 32, height: 32)
+                .transition(.scale.combined(with: .opacity))
+                .onAppear {
+                    LayoutManager.shared.infoMode = false
+                }
+            } else {
+                ToolbarInfoView()
+                    .transition(.scale.combined(with: .opacity))
             }
-            .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
-                PopoverView(error: error.description)
-            }
-            .buttonStyle(.plain)
-            .padding(.trailing, 5)
         }
+        .animation(.linear(duration: 0.2), value: trackerManager.alert)
     }
 }
 

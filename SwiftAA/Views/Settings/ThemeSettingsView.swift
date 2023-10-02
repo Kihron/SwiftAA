@@ -67,13 +67,17 @@ struct ThemeSettingsView: View {
         }
         .frame(maxHeight: .infinity, alignment: .topLeading)
         .toolbar {
-            if themeManager.themeMode == .custom {
-                ToolbarItem(placement: .destructiveAction) {
-                    Button(action: { themeManager.deleteUserTheme(context: context) }) {
-                        Image(systemName: "trash")
+            ToolbarItem(placement: .destructiveAction) {
+                VStack {
+                    if themeManager.themeMode == .custom {
+                        Button(action: { themeManager.deleteUserTheme(context: context) }) {
+                            Image(systemName: "trash")
+                        }
+                        .help("Delete selected theme")
                     }
-                    .help("Delete selected theme")
                 }
+                .frame(width: 32, height: 32)
+                .animation(.linear(duration: 0.2), value: themeManager.themeMode)
             }
         }
         .sheet(isPresented: $showThemeEditor, content: {

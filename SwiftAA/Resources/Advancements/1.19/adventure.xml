@@ -9,8 +9,8 @@
     
     <advancement id="minecraft:adventure/trade" name="What a Deal!" key="adventure-trade"/>
     <advancement id="minecraft:adventure/trade_at_world_height" name="Star Trader" icon="trade" key="adventure-trade-at-world-height"/>
-    <advancement id="minecraft:adventure/sniper_duel" name="Sniper Duel" type="challenge" key="adventure-sniper-duel"/>
-    <advancement id="minecraft:adventure/bullseye" name="Bullseye" type="challenge" key="adventure-bullseye"/>
+    <advancement id="minecraft:adventure/sniper_duel" name="Sniper Duel" type="challenge" key="adventure-sniper-duel" tooltip="Be at least 50 blocks away horizontally when a skeleton is killed by an arrow after the player has attacked it once."/>
+    <advancement id="minecraft:adventure/bullseye" name="Bullseye" type="challenge" key="adventure-bullseye" tooltip="Be at least 30 blocks away horizontally when the center of a target is shot with a projectile by the player."/>
     <advancement id="minecraft:adventure/two_birds_one_arrow" name="Two Birds, One Arrow" short_name="Two Birds" type="challenge" key="adventure-two-birds-one-arrow"/>
     <advancement id="minecraft:adventure/arbalistic" name="Arbalistic" type="challenge" key="adventure-arbalistic"/>
 

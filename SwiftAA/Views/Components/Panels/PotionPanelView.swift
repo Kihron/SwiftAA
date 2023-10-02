@@ -9,11 +9,15 @@ import SwiftUI
 
 struct PotionPanelView: View {
     var body: some View {
-        VStack(spacing: 0) {
-            ForEach(Potion.allCases) { potion in
-                PotionView(name: potion.name, ingredients: potion.ingredients)
+        ScrollView {
+            VStack(spacing: 0) {
+                ForEach(Potion.allCases) { potion in
+                    PotionView(name: potion.name, ingredients: potion.ingredients)
+                }
             }
+            .frame(height: 431)
         }
+        .applyThemeModifiers()
     }
 }
 

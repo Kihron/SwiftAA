@@ -12,6 +12,8 @@ class LayoutManager: ObservableObject {
     @AppStorage("modularPanel") var modularPanel: ModularPanel = .leaderboard
     @AppStorage("isNotes") var isNotes: Bool = false
     
+    @Published var infoMode: Bool = false
+    
     static let shared = LayoutManager()
     
     init() {

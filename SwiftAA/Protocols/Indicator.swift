@@ -14,6 +14,7 @@ protocol Indicator {
     var icon: String { get set }
     var frameStyle: String { get set }
     var completed: Bool { get set }
+    var tooltip: String { get set }
     
     func update(advancements: [String:JsonAdvancement], stats: [String:[String:Int]])
 }

@@ -16,6 +16,8 @@ struct IndicatorView: View {
     @Binding var indicator: Indicator
     @State var isOverlay: Bool = false
     @State var isStat: Bool = false
+    @State var isMinimal: Bool = false
+    @State private var showTooltip: Bool = false
     
     private var frameStyle: FrameStyle {
         if isOverlay && !overlayManager.syncOverlayFrame {
@@ -23,6 +25,12 @@ struct IndicatorView: View {
         }
         
         return layoutManager.frameStyle
+    }
+    
+    private var showGlow: Bool {
+        let completedNotOverlay = indicator.completed && !isOverlay;
+        let infoModeNotEmptyTip = layoutManager.infoMode && !indicator.tooltip.isEmpty;
+        return (completedNotOverlay || infoModeNotEmptyTip) && !(layoutManager.infoMode && indicator.tooltip.isEmpty)
     }
     
     var body: some View {
@@ -41,7 +49,7 @@ struct IndicatorView: View {
                 .frame(width: 52, height: 52)
                 .padding([.top, .leading, .trailing], 6)
                 .overlay {
-                    if (indicator.completed && !isOverlay) {
+                    if (showGlow) {
                         Image("frame_glow")
                             .interpolation(.none)
                             .resizable()
@@ -63,6 +71,13 @@ struct IndicatorView: View {
                         .resizable()
                         .frame(width: 32, height: 32)
                         .padding(.top, 6)
+                        .onHover(perform: { hovering in
+                            if layoutManager.infoMode {
+                                showTooltip = hovering
+                            } else {
+                                showTooltip = false
+                            }
+                        })
                 }
             }
             
@@ -72,11 +87,16 @@ struct IndicatorView: View {
                 .foregroundColor(isOverlay ? .white : themeManager.text)
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
-                .frame(height: 24, alignment: .top)
+                .frame(height: isMinimal ? 12 : 24, alignment: .top)
                 .padding(.top, -2)
         }
         .animation(.easeIn, value: frameStyle)
+        .opacity(layoutManager.infoMode && indicator.tooltip.isEmpty && !isOverlay ? 0.5 : 1)
+        .animation(.easeIn, value: layoutManager.infoMode)
         .frame(width: 74)
+        .popover(isPresented: $showTooltip, content: {
+            IndicatorInfoView(tooltip: indicator.tooltip)
+        })
     }
     
     func isAnimated(icon: String) -> Bool {
@@ -86,7 +106,7 @@ struct IndicatorView: View {
 
 struct IndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-travel", name: "Sticky Situation", icon: "very_very_frightening", frameStyle: "normal", criteria: [], completed: true)), isOverlay: false)
+        IndicatorView(indicator: .constant(Advancement(id: "bullseye", key: "nether-fast-travel", name: "Sticky Situation", icon: "very_very_frightening", frameStyle: "normal", criteria: [], completed: true)), isOverlay: false, isMinimal: true)
             .frame(width: 100, height: 100)
     }
 }

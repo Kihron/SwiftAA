@@ -113,6 +113,10 @@
 "tracking.game.version" = "Game Version";
 "tracking.seamless" = "Seamless Tracking";
 
+"tracking.standard" = "Standard";
+"tracking.vertical" = "Vertical";
+"tracking.minimalistic" = "Minimalistic";
+
 "advancement.adventure.root" = "Adventure";
 "advancement.adventure.kill.a.mob" = "Monster Hunter";
 "advancement.adventure.ol.betsy" = "Ol' Betsy";

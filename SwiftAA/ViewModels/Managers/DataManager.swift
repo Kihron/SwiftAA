@@ -12,6 +12,7 @@ class DataManager: ObservableObject {
     @ObservedObject private var versionManager = TrackerManager.shared
     
     @Published var map = [String:[Advancement]]()
+    var minimalCache: [Indicator]? = nil
     
     @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
     @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
@@ -29,8 +30,10 @@ class DataManager: ObservableObject {
         self.stats = self.topStats + self.bottomStats
     }
     
+    var uncounted = [Advancement]()
+    
     var totalAdvancements: Int {
-        return map.values.compactMap({$0.count}).reduce(0, +)
+        return map.values.flatMap({$0}).count
     }
     
     var completedAdvancements: Int {
@@ -83,6 +86,7 @@ class DataManager: ObservableObject {
             let name = item.element!.attribute(by: "name")!.text
             let icon = item.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
             let frameStyle = item.element!.attribute(by: "type")?.text ?? "normal"
+            let tooltip = item.element!.attribute(by: "tooltip")?.text ?? ""
             let prefix = item.element!.attribute(by: "prefix")?.text ?? "minecraft:"
             let criteria: [Criterion] = (item.children.isEmpty) ? [] : item["criteria"]["criterion"].all.map({ c in
                 let id = c.element!.attribute(by: "id")!.text
@@ -91,7 +95,7 @@ class DataManager: ObservableObject {
                 let icon = c.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: ":")
                 return Criterion(id: id, key: key, name: name, icon: icon, completed: false)
             })
-            let current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
+            let current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
             fullList.append(current)
             addItems = addItems || id == start
             if (addItems) {
@@ -136,6 +140,68 @@ class DataManager: ObservableObject {
         dateFormatter.unitsStyle = .positional
         dateFormatter.zeroFormattingBehavior = .pad
         return dateFormatter.string(from: Double(ticks / 20)) ?? "0:00:00"
+    }
+    
+    func loadAllAdvancements() {
+        let file = "Advancements/\(versionManager.gameVersion.label)/minimal"
+        let url = Bundle.main.url(forResource: file, withExtension: "json")
+        
+        guard let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url!)) else {
+            print("Error decoding sublayout")
+            return
+        }
+
+        for category in sublayout.categories {
+            let _ = decode(file: category)
+        }
+    }
+    
+    func getMinimalisticAdvancements() -> Binding<[Indicator]> {
+        if let minimalCache, !minimalCache.isEmpty {
+            return .constant(minimalCache)
+        }
+
+        let file = "Advancements/\(versionManager.gameVersion.label)/minimal"
+        let url = Bundle.main.url(forResource: file, withExtension: "json")
+        var advancements = [Advancement]()
+        
+        guard let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url!)) else {
+            print("Error decoding sublayout")
+            return .constant([])
+        }
+        
+        var fulllist = [Indicator]()
+        let loaded = map.values.flatMap({$0})
+        if loaded.isEmpty {
+            for category in sublayout.categories {
+                fulllist += decode(file: category).wrappedValue
+            }
+        } else {
+            fulllist = loaded
+        }
+        
+        advancements.reserveCapacity(sublayout.advancements.count)
+        for adv in sublayout.advancements {
+            if adv.id.contains("+") {
+                let ids = adv.id.split(separator: "+", maxSplits: 2)
+                guard let first = fulllist.first(where: { $0.id == "minecraft:\(ids[0])" })?.asAdvancement else { continue }
+                guard let second = fulllist.first(where: { $0.id == "minecraft:\(ids[1])" })?.asAdvancement else { continue }
+                first.name = adv.name
+                first.key = adv.name
+                let dual = Advancement.DualAdvancement(first: first, second: second)
+                uncounted.append(dual)
+                advancements.append(dual)
+            } else {
+                if let advFromMap = fulllist.first(where: { $0.id == "minecraft:\(adv.id)" })?.asAdvancement {
+                    advFromMap.name = adv.name
+                    advFromMap.key = adv.name
+                    advancements.append(advFromMap)
+                }
+            }
+        }
+        
+        minimalCache = advancements
+        return .constant(advancements)
     }
     
     //https://stackoverflow.com/questions/72443976/how-to-get-arguments-of-nsrunningapplication

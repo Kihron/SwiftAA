@@ -14,6 +14,7 @@ class GodApple: Indicator {
     var icon: String = "enchanted_golden_apple"
     var frameStyle: String = "statistic"
     var completed: Bool = false
+    var tooltip: String = ""
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         completed = advancements[id] != nil
@@ -28,6 +29,7 @@ class Trident: Indicator {
     var icon: String = "throw_trident"
     var frameStyle: String = "statistic"
     var completed: Bool = false
+    var tooltip: String = ""
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         completed = (stats["minecraft:picked_up"]?[id] ?? 0) > 0
@@ -43,6 +45,7 @@ class Shells: Indicator {
     var icon: String = "nautilus_shell"
     var frameStyle: String = "statistic"
     var completed: Bool = false
+    var tooltip: String = ""
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         let count = stats["minecraft:picked_up"]?[id] ?? 0
@@ -59,6 +62,7 @@ class WitherSkulls: Indicator {
     var icon: String = "get_wither_skull"
     var frameStyle: String = "statistic"
     var completed: Bool = false
+    var tooltip: String = ""
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         let count = stats["minecraft:picked_up"]?[id] ?? 0
@@ -76,6 +80,7 @@ class AncientDebris: Indicator {
     var frameStyle: String = "statistic"
     var completed: Bool = false
     var offset: Int = 0
+    var tooltip: String = ""
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         let count = (stats["minecraft:picked_up"]?[id] ?? 0) + offset

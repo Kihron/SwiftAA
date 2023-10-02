@@ -200,6 +200,10 @@ class AppViewModel: ObservableObject {
             stat.update(advancements: advancements, stats: statistics)
         }
         
+        dataManager.uncounted.forEach { adv in
+            adv.update(advancements: advancements, stats: statistics)
+        }
+        
         let timeStat = TrackerManager.shared.gameVersion == .v1_16 ? "minecraft:play_one_minute" : "minecraft:play_time"
         
         dataManager.statsData = statistics

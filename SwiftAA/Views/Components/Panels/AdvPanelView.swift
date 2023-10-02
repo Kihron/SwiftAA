@@ -13,14 +13,16 @@ struct AdvPanelView: View {
     @Binding var indicators: [Indicator]
     @State var columnCount: Int
     @State var isStat: Bool = false
+    @State var isMinimal: Bool = false
     
     var body: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 64), spacing: 0), count: columnCount), spacing: 0) {
             ForEach($indicators, id: \.self.id) { adv in
-                IndicatorView(indicator: adv, isStat: isStat)
+                IndicatorView(indicator: adv, isStat: isStat, isMinimal: isMinimal)
             }
         }
         .padding(4)
+        .frame(maxHeight: .infinity)
         .applyThemeModifiers()
     }
 }

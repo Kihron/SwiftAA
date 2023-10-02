@@ -32,16 +32,18 @@ struct LeaderboardPanelView: View {
             
             ZStack {
                 if leaderboardManager.entries.isEmpty {
-                    VStack(alignment: .leading, spacing: 0) {
-                        ForEach(1..<7, id: \.self) { idx in
-                            LeaderboardPlaceholderView(placement: idx)
-                                .padding(.bottom, 10)
-                                .padding(.top, 14)
-                            
-                            if idx < 6 {
-                                Divider()
-                                    .frame(height: 2)
-                                    .overlay(themeManager.border)
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 0) {
+                            ForEach(1..<7, id: \.self) { idx in
+                                LeaderboardPlaceholderView(placement: idx)
+                                    .padding(.bottom, 10)
+                                    .padding(.top, 14)
+                                
+                                if idx < 6 {
+                                    Divider()
+                                        .frame(height: 2)
+                                        .overlay(themeManager.border)
+                                }
                             }
                         }
                     }
@@ -100,6 +102,6 @@ struct LeaderboardPanelView: View {
 
 #Preview {
     LeaderboardPanelView()
-        .frame(width: 196)
+        .frame(width: 196, height: 364)
         .padding()
 }

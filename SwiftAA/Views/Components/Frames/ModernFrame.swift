@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ModernFrame: View {
+    @ObservedObject private var layoutManager = LayoutManager.shared
     @Binding var indicator: Indicator
+    
+    private var isCompleted: Bool {
+        return indicator.completed && !layoutManager.infoMode
+    }
     
     var body: some View {
         ZStack {
-            if indicator.completed {
+            if isCompleted {
                 Group {
                     Image("frame_modern_back_complete")
                     
