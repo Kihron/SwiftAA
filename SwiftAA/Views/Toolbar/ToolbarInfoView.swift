@@ -2,7 +2,7 @@
 //  ToolbarInfoView.swift
 //  SwiftAA
 //
-//  Created by Dominic Thompson on 10/1/23.
+//  Created by Kihron on 10/1/23.
 //
 
 import SwiftUI

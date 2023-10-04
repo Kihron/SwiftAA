@@ -14,14 +14,7 @@ struct L1_16M: View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 0) {
-                    let indicators = dataManager.getMinimalisticAdvancements()
-                    if !indicators.isEmpty {
-                        AdvPanelView(indicators: indicators, columnCount: 7, isMinimal: true)
-                    } else {
-                        ProgressView()
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .applyThemeBackgroundAndBorder()
-                    }
+                    AdvPanelView(indicators: dataManager.getMinimalisticAdvancements(), columnCount: 7, isMinimal: true)
                 }
                 .frame(width: 518)
                 

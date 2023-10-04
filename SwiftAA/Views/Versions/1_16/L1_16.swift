@@ -15,7 +15,8 @@ struct L1_16: View {
             case .standard:
                 L1_16S()
             case .vertical:
-                EmptyView()
+                Text("Vertical Layout")
+                    .padding()
             case .minimalist:
                 L1_16M()
         }

@@ -41,11 +41,11 @@ struct TickerTapeOverlayView: View {
             
             HStack {
                 if overlayManager.showStatistics {
-                    ForEach(dataManager.stats, id: \.self.id) { adv in
-                        if isAnimated(icon: adv.icon) {
-                            IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                    ForEach($dataManager.stats, id: \.self.id) { adv in
+                        if isAnimated(icon: adv.wrappedValue.icon) {
+                            IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                         } else {
-                            IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                            IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                                 .drawingGroup()
                         }
                     }

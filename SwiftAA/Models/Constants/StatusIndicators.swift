@@ -92,3 +92,23 @@ class AncientDebris: Indicator {
         key = (doneWithNetherite) ? L10n.Statistic.AncientDebris.done : L10n.Statistic.ancientDebris(count, countTNT)
     }
 }
+
+class Beehives: Indicator {
+    var id: String = "minecraft:bee_nest"
+    var key: String = L10n.Statistic.beehives(0)
+    var name: String = "Hives: 0"
+    var icon: String = "silk_touch_nest"
+    var frameStyle: String = "statistic"
+    var completed: Bool = false
+    var tooltip: String = ""
+    
+    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
+        let count = stats["minecraft:picked_up"]?[id] ?? 0
+        let honeyAdvs = ["minecraft:husbandry/safely_harvest_honey", "minecraft:adventure/honey_block_slide", "minecraft:husbandry/silk_touch_nest"]
+        let doneWithDiet = advancements["minecraft:husbandry/balanced_diet"]?.criteria["honey_bottle"] != nil
+        let doneWithHoney = honeyAdvs.allSatisfy({ adv in advancements[adv]?.done ?? false })
+        
+        completed = doneWithHoney && doneWithDiet
+        key = completed ? L10n.Statistic.Beehives.done : L10n.Statistic.beehives(count)
+    }
+}

@@ -1293,6 +1293,10 @@ internal enum L10n {
     internal static func ancientDebris(_ p1: Int, _ p2: Int) -> String {
       return L10n.tr("Localizable", "statistic.ancient_debris", p1, p2, fallback: "Debris: %d\nTNT: %d")
     }
+    /// Hives: %d
+    internal static func beehives(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.beehives", p1, fallback: "Hives: %d")
+    }
     /// Shells
     /// %d / 8
     internal static func shells(_ p1: Int) -> String {
@@ -1301,6 +1305,10 @@ internal enum L10n {
     internal enum AncientDebris {
       /// Done With Netherite
       internal static let done = L10n.tr("Localizable", "statistic.ancient_debris.done", fallback: "Done With Netherite")
+    }
+    internal enum Beehives {
+      /// Done With Bees
+      internal static let done = L10n.tr("Localizable", "statistic.beehives.done", fallback: "Done With Bees")
     }
     internal enum GodApple {
       /// Obtain God Apple

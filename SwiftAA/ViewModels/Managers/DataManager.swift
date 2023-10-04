@@ -28,6 +28,7 @@ class DataManager: ObservableObject {
     
     init() {
         self.stats = self.topStats + self.bottomStats
+        self.stats.append(Beehives())
     }
     
     var uncounted = [Advancement]()
@@ -144,9 +145,9 @@ class DataManager: ObservableObject {
     
     func loadAllAdvancements() {
         let file = "Advancements/\(versionManager.gameVersion.label)/minimal"
-        let url = Bundle.main.url(forResource: file, withExtension: "json")
+        guard let url = Bundle.main.url(forResource: file, withExtension: "json") else { return }
         
-        guard let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url!)) else {
+        guard let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url)) else {
             print("Error decoding sublayout")
             return
         }

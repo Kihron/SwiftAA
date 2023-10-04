@@ -54,7 +54,9 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         }
         
         override func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-            completed = advancements[first.id]?.done ?? false && advancements[second.id]?.done ?? false
+            let firstDone = advancements[first.id]?.done ?? false
+            let secondDone = advancements[second.id]?.done ?? false
+            completed = firstDone && secondDone
         }
     }
 }

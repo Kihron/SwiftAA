@@ -28,9 +28,8 @@ struct IndicatorView: View {
     }
     
     private var showGlow: Bool {
-        let completedNotOverlay = indicator.completed && !isOverlay;
         let infoModeNotEmptyTip = layoutManager.infoMode && !indicator.tooltip.isEmpty;
-        return (completedNotOverlay || infoModeNotEmptyTip) && !(layoutManager.infoMode && indicator.tooltip.isEmpty)
+        return !isOverlay && ((indicator.completed || infoModeNotEmptyTip) && !(layoutManager.infoMode && indicator.tooltip.isEmpty))
     }
     
     var body: some View {
@@ -72,7 +71,7 @@ struct IndicatorView: View {
                         .frame(width: 32, height: 32)
                         .padding(.top, 6)
                         .onHover(perform: { hovering in
-                            if layoutManager.infoMode {
+                            if layoutManager.infoMode && !isOverlay {
                                 showTooltip = hovering
                             } else {
                                 showTooltip = false

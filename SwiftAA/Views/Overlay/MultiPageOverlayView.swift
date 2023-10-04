@@ -89,11 +89,11 @@ struct MultiPageOverlayView: View {
                 
                 HStack {
                     if overlayManager.showStatistics {
-                        ForEach(viewModel.dataManager.stats, id: \.self.id) { adv in
-                            if isAnimated(icon: adv.icon) {
-                                IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                        ForEach($viewModel.dataManager.stats, id: \.self.id) { adv in
+                            if isAnimated(icon: adv.wrappedValue.icon) {
+                                IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                             } else {
-                                IndicatorView(indicator: .constant(adv), isOverlay: true, isStat: true)
+                                IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                                     .drawingGroup()
                             }
                         }
