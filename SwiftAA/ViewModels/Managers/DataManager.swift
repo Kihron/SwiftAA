@@ -152,6 +152,7 @@ class DataManager: ObservableObject {
             return
         }
 
+        minimalCache = nil
         for category in sublayout.categories {
             let _ = decode(file: category)
         }
@@ -201,7 +202,10 @@ class DataManager: ObservableObject {
             }
         }
         
-        minimalCache = advancements
+        if !loaded.isEmpty {
+            minimalCache = advancements
+        }
+        
         return .constant(advancements)
     }
     

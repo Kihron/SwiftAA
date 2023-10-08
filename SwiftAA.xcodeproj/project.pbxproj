@@ -90,6 +90,7 @@
 		B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */; };
 		B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18A28B3E996002CF5D7 /* L1_19.swift */; };
 		B687E18D28B48079002CF5D7 /* skulk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* skulk_sensor.gif */; };
+		B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */; };
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
@@ -219,6 +220,7 @@
 		B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionFrameModifier.swift; sourceTree = "<group>"; };
 		B687E18A28B3E996002CF5D7 /* L1_19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_19.swift; sourceTree = "<group>"; };
 		B687E18C28B48079002CF5D7 /* skulk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = skulk_sensor.gif; sourceTree = "<group>"; };
+		B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSidebar.swift; sourceTree = "<group>"; };
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				B65FE5952AA6DEE400C30A8F /* ApplyTheme.swift */,
+				B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
+				B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
 				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
@@ -1091,7 +1095,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231004e;
+				CURRENT_PROJECT_VERSION = 231008e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1123,7 +1127,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231004e;
+				CURRENT_PROJECT_VERSION = 231008e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

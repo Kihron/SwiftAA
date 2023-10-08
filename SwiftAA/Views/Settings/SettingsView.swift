@@ -36,6 +36,7 @@ struct SettingsView: View {
                 }
             }
             .frame(width: 200)
+            .removeSidebar()
         } detail: {
             switch selectedSettingsBarItem {
                 case .tracking:

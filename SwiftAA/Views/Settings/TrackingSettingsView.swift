@@ -82,6 +82,11 @@ struct TrackingSettingsView: View {
                         }
                         .pickerStyle(.segmented)
                         .labelsHidden()
+                        .onChange(of: trackerManager.trackingMode) { _ in
+                            if trackerManager.layoutStyle == .minimalist {
+                                dataManager.minimalCache = nil
+                            }
+                        }
                     }
                     
                     HStack {

@@ -26,13 +26,13 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
     var icon: String {
         switch self {
             case .tracking:
-                "compass.drawing"
+                "location.fill"
             case .layout:
                 "hammer.fill"
             case .theme:
-                "paintpalette"
+                "paintbrush.fill"
             case .overlay:
-                "ipad.landscape"
+                "tv"
             case .notes:
                 "note.text"
             case .updates:
@@ -51,7 +51,7 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
             case .overlay:
                 .purple
             case .notes:
-                .yellow
+                .orange
             case .updates:
                 .gray
         }
