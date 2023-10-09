@@ -12,6 +12,8 @@ struct LeaderboardPanelView: View {
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     
+    let placeholderUsers = 8
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ZStack {
@@ -34,12 +36,12 @@ struct LeaderboardPanelView: View {
                 if leaderboardManager.entries.isEmpty {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 0) {
-                            ForEach(1..<9, id: \.self) { idx in
+                            ForEach(1..<placeholderUsers + 1, id: \.self) { idx in
                                 LeaderboardPlaceholderView(placement: idx)
                                     .padding(.bottom, 10)
                                     .padding(.top, 14)
                                 
-                                if idx < 8 {
+                                if idx < placeholderUsers {
                                     Divider()
                                         .frame(height: 2)
                                         .overlay(themeManager.border)
@@ -64,13 +66,13 @@ struct LeaderboardPanelView: View {
                                 }
                             }
                             
-                            if leaderboardManager.entries.count < 8 {
-                                ForEach(leaderboardManager.entries.count..<8, id: \.self) { idx in
+                            if leaderboardManager.entries.count < placeholderUsers {
+                                ForEach(leaderboardManager.entries.count..<placeholderUsers, id: \.self) { idx in
                                     LeaderboardPlaceholderView(placement: idx + 1)
                                         .padding(.bottom, 10)
                                         .padding(.top, 14)
                                     
-                                    if idx < 8 {
+                                    if idx < placeholderUsers {
                                         Divider()
                                             .frame(height: 2)
                                             .overlay(themeManager.border)

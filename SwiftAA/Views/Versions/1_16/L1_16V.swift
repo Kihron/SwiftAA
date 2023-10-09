@@ -5,7 +5,6 @@
 //  Created by Andrew on 10/8/23.
 //
 
-
 import SwiftUI
 
 struct L1_16V: View {
@@ -19,27 +18,29 @@ struct L1_16V: View {
                 }
                 .frame(width: 370)
                 
-                VStack {
+                VStack(spacing: 0) {
                     AdvPanelView(indicators: $dataManager.stats, columnCount: 1, isStat: true)
                 }
                 .frame(width: 74)
+                
                 InfoPanelView()
                     .frame(width: 236)
-                
-                
-                
             }
-            .frame(height: 504)
+            .frame(height: 506)
             
             HStack(spacing:0) {
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 13, goal: L10n.Goal.Foods.eaten, isMinimal: true)
                     .frame(width: 330)
+                
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[9].asAdvancement, rowCount: 14, goal: L10n.Goal.Animals.bred, isMinimal: true)
                     .frame(width: 186)
+                
                 VStack(spacing:0) {
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[11].asAdvancement, rowCount: 6, goal: L10n.Goal.cats, isMinimal: true)
+                    
                     GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 5, goal: L10n.Goal.nether, isMinimal: true)
-                }.frame(width: 164)
+                }
+                .frame(width: 164)
             }
             .frame(height: 310)
             

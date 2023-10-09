@@ -23,7 +23,7 @@ struct L1_16M: View {
                 }
                 .frame(width: 148)
                 
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 15, goal: L10n.Goal.Foods.eaten, isMinimal: true)
                 .frame(width: 330)
                 
                 InfoPanelView()
