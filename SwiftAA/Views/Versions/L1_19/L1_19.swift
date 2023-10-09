@@ -41,7 +41,7 @@ struct L1_19: View {
                     }
                     
                     InfoPanelView()
-                        .frame(width: 196)
+                        .frame(width: 196, height: 431)
                 }
                 
                 HStack(spacing: 0) {

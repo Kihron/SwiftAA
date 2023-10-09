@@ -32,18 +32,18 @@ struct L1_16M: View {
             .frame(height: 364)
             
             HStack(spacing: 0) {
-                GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 14, goal: L10n.Goal.Biomes.visited, isMinimal: true)
                     .frame(width: 368)
-                GoalPanelView(advancement: dataManager.decode(file: "adventure")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "adventure")[19].asAdvancement, rowCount: 14, goal: L10n.Goal.Monsters.killed, isMinimal: true)
                     .frame(width: 330)
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[9].asAdvancement, rowCount: 14, goal: L10n.Goal.Animals.bred, isMinimal: true)
                     .frame(width: 186)
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[11].asAdvancement, rowCount: 16, goal: L10n.Goal.cats, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[11].asAdvancement, rowCount: 14, goal: L10n.Goal.cats, isMinimal: true)
                     .frame(width: 159)
-                GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 14, goal: L10n.Goal.nether, isMinimal: true)
                     .frame(width: 149)
             }
-            .frame(width: 1192, height: 350)
+            .frame(width: 1192, height: 310)
         }
     }
 }

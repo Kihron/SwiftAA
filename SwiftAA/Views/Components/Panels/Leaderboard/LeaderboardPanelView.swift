@@ -34,12 +34,12 @@ struct LeaderboardPanelView: View {
                 if leaderboardManager.entries.isEmpty {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 0) {
-                            ForEach(1..<7, id: \.self) { idx in
+                            ForEach(1..<9, id: \.self) { idx in
                                 LeaderboardPlaceholderView(placement: idx)
                                     .padding(.bottom, 10)
                                     .padding(.top, 14)
                                 
-                                if idx < 6 {
+                                if idx < 8 {
                                     Divider()
                                         .frame(height: 2)
                                         .overlay(themeManager.border)
@@ -64,13 +64,13 @@ struct LeaderboardPanelView: View {
                                 }
                             }
                             
-                            if leaderboardManager.entries.count < 6 {
-                                ForEach(leaderboardManager.entries.count..<6, id: \.self) { idx in
+                            if leaderboardManager.entries.count < 8 {
+                                ForEach(leaderboardManager.entries.count..<8, id: \.self) { idx in
                                     LeaderboardPlaceholderView(placement: idx + 1)
                                         .padding(.bottom, 10)
                                         .padding(.top, 14)
                                     
-                                    if idx < 6 {
+                                    if idx < 8 {
                                         Divider()
                                             .frame(height: 2)
                                             .overlay(themeManager.border)

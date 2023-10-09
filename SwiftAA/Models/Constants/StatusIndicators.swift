@@ -84,7 +84,7 @@ class AncientDebris: Indicator {
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         let count = (stats["minecraft:picked_up"]?[id] ?? 0) + offset
-        let countTNT = (stats["minecraft:mined"]?["minecraft:tnt"] ?? 0) - (stats["minecraft:used"]?[id] ?? 0)
+        let countTNT = (stats["minecraft:mined"]?["minecraft:tnt"] ?? 0) - (stats["minecraft:used"]?["minecraft:tnt"] ?? 0)
         let netheriteAdvs = ["minecraft:nether/obtain_ancient_debris", "minecraft:nether/netherite_armor", "minecraft:husbandry/obtain_netherite_hoe"]
         let doneWithNetherite = netheriteAdvs.allSatisfy({ adv in advancements[adv]?.done ?? false })
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
 		B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */; };
@@ -134,6 +135,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
 		B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFrame.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 				B687E18628B3E457002CF5D7 /* L1_16.swift */,
 				B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */,
 				B6DD06252AC515F3005D1B2A /* L1_16M.swift */,
+				490F121D2AD3701300BC30DD /* L1_16V.swift */,
 			);
 			path = 1_16;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 				B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */,
 				B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */,
 				B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */,
+				490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */,
 				B6E331162AA81218001D7FF2 /* TrackingSettingsViewModel.swift in Sources */,
 				B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */,
 				B683A12D2ABD54A900162E7C /* WorldNote+CoreDataClass.swift in Sources */,
@@ -1093,12 +1097,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SwiftAA/SwiftAA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231008e;
+				CURRENT_PROJECT_VERSION = 231009e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1113,6 +1118,7 @@
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1125,12 +1131,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SwiftAA/SwiftAA.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231008e;
+				CURRENT_PROJECT_VERSION = 231009e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1145,6 +1152,7 @@
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ks.SwiftAA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

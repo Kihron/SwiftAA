@@ -12,7 +12,7 @@ struct StatsView: View {
     @State var stat: Statistic
     
     private var statValue: String {
-        let value = Double(dataManager.statsData[stat.type]?[stat.id] ?? 999)
+        let value = Double(dataManager.statsData[stat.type]?[stat.id] ?? 0)
         if stat.factor > 1 {
             return String(format: stat.factor >= 10 ? "%.1f" : "%.0f", value / Double(stat.factor))
         } else {

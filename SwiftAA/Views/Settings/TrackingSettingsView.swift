@@ -28,7 +28,7 @@ struct TrackingSettingsView: View {
                         .frame(maxWidth: 75)
                         .labelsHidden()
                         .onChange(of: trackerManager.gameVersion) { _ in
-                            if trackerManager.layoutStyle == .minimalist {
+                            if trackerManager.layoutStyle != .standard {
                                 dataManager.loadAllAdvancements()
                             }
                         }
@@ -60,7 +60,7 @@ struct TrackingSettingsView: View {
                             .onChange(of: trackerManager.layoutStyle) { layout in
                                 dataManager.map.removeAll()
                                 
-                                if layout == .minimalist {
+                                if layout != .standard {
                                     dataManager.loadAllAdvancements()
                                 }
                             }
@@ -83,7 +83,7 @@ struct TrackingSettingsView: View {
                         .pickerStyle(.segmented)
                         .labelsHidden()
                         .onChange(of: trackerManager.trackingMode) { _ in
-                            if trackerManager.layoutStyle == .minimalist {
+                            if trackerManager.layoutStyle != .standard {
                                 dataManager.minimalCache = nil
                             }
                         }

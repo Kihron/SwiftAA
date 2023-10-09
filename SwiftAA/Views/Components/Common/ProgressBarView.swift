@@ -24,7 +24,7 @@ struct ProgressBarView: View {
     }
     
     private var header: String {
-        return "\(value) / \(total) \(title) (\(total == 0 ? 0 : (value * 100 / total))%)\(message)"
+        return "\(value) / \(total) \(title) (\(total == 0 ? 0 : (value * 100 / total))%)"
     }
     
     private var alignment: HorizontalAlignment {
@@ -33,9 +33,16 @@ struct ProgressBarView: View {
     
     var body: some View {
         VStack(alignment: alignment, spacing: 5) {
-            Text(header)
-                .font(.custom("Minecraft-Regular", size: 10))
-                .foregroundColor(isToolbar ? Color.primary : themeManager.text)
+            HStack {
+                Text(header)
+                if !message.isEmpty {
+                    Spacer()
+                    Text(message)
+                }
+            }
+            .padding(.horizontal, 5)
+            .font(.custom("Minecraft-Regular", size: 10))
+            .foregroundColor(isToolbar ? Color.primary : themeManager.text)
             
             GeometryReader { item in
                 ZStack(alignment: .leading) {
