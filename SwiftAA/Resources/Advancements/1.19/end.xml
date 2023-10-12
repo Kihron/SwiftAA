@@ -9,5 +9,5 @@
     <advancement id="minecraft:end/dragon_breath" name="You Need a Mint" short_name="Need a Mint" type="goal" key="end-dragon-breath"/>
     <advancement id="minecraft:end/respawn_dragon" name="The End... Again..." short_name="Again..." type="goal" key="end-respawn-dragon"/>
     <advancement id="minecraft:end/elytra" name="Sky's the Limit" short_name="The Limit" type="goal" key="end-elytra"/>
-    <advancement id="minecraft:end/levitate" name="Great View From Here" short_name="Great View" type="challenge" key="end-levitate"/>
+    <advancement id="minecraft:end/levitate" name="Great View From Here" short_name="Great View" type="challenge" key="end-levitate" tooltip="info.great_view"/>
 </group>

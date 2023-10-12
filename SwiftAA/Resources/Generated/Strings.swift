@@ -1142,6 +1142,24 @@ internal enum L10n {
       internal static let killed = L10n.tr("Localizable", "goal.monsters.killed", fallback: "Monsters Killed")
     }
   }
+  internal enum Info {
+    /// Kill **five unique mobs** with one crossbow shot.
+    internal static let arbalistic = L10n.tr("Localizable", "info.arbalistic", fallback: "Kill **five unique mobs** with one crossbow shot.")
+    /// Be at least **30 blocks** away horizontally when the center of a target is shot with a projectile by the player.
+    internal static let bullseye = L10n.tr("Localizable", "info.bullseye", fallback: "Be at least **30 blocks** away horizontally when the center of a target is shot with a projectile by the player.")
+    /// While riding a strider, travel **50 blocks** on lava in the Overworld. Only horizontal displacement is counted. 
+    /// 
+    /// *Traveling in a circle for more than 50 blocks doesn't count.*
+    internal static let feelsLikeHome = L10n.tr("Localizable", "info.feels_like_home", fallback: "While riding a strider, travel **50 blocks** on lava in the Overworld. Only horizontal displacement is counted. \n\n*Traveling in a circle for more than 50 blocks doesn't count.*")
+    /// Move a distance of **50 blocks** vertically with the Levitation effect applied, regardless of direction or whether it is caused by the effect.
+    internal static let greatView = L10n.tr("Localizable", "info.great_view", fallback: "Move a distance of **50 blocks** vertically with the Levitation effect applied, regardless of direction or whether it is caused by the effect.")
+    /// Be at least **50 blocks** away horizontally when a skeleton is killed by an arrow after the player has attacked it once.
+    internal static let sniperDuel = L10n.tr("Localizable", "info.sniper_duel", fallback: "Be at least **50 blocks** away horizontally when a skeleton is killed by an arrow after the player has attacked it once.")
+    /// Use the Nether to travel between 2 points in the Overworld with a distance of **7000 blocks** between each other, which is **875 blocks** in the Nether.
+    internal static let subspaceBubble = L10n.tr("Localizable", "info.subspace_bubble", fallback: "Use the Nether to travel between 2 points in the Overworld with a distance of **7000 blocks** between each other, which is **875 blocks** in the Nether.")
+    /// Be within **30 blocks** of a lightning strike that doesn't set any blocks on fire, while an unharmed villager is within or up to six blocks above a **30×30×30** volume centered on the lightning strike.
+    internal static let surgeProtector = L10n.tr("Localizable", "info.surge_protector", fallback: "Be within **30 blocks** of a lightning strike that doesn't set any blocks on fire, while an unharmed villager is within or up to six blocks above a **30×30×30** volume centered on the lightning strike.")
+  }
   internal enum Leaderboard {
     /// Awaiting
     internal static let awaitingVerification = L10n.tr("Localizable", "leaderboard.awaiting_verification", fallback: "Awaiting")

@@ -20,8 +20,9 @@ struct IndicatorInfoView: View {
                         .stroke(themeManager.border, lineWidth: 2)
                 }
             
-            Text(tooltip)
-                .multilineTextAlignment(.center)
+            Text(.init(tooltip))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.leading)
                 .padding(10)
         }
         .frame(width: 250)
@@ -30,6 +31,7 @@ struct IndicatorInfoView: View {
 }
 
 #Preview {
-    IndicatorInfoView(tooltip: "Test")
+    IndicatorInfoView(tooltip: "Kill **five unique mobs** with one crossbow shot.")
+        .applyThemeText()
         .padding()
 }

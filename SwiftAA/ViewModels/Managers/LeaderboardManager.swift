@@ -17,10 +17,15 @@ class LeaderboardManager: ObservableObject {
     static let shared = LeaderboardManager()
     
     init() {
-        
+        Task {
+            await fetchNicknames()
+            await fetchOtherVersionData()
+            await getLeaderboardEntries()
+        }
     }
     
     func getLeaderboardEntries() async {
+        entries.removeAll()
         switch TrackerManager.shared.gameVersion {
             case .v1_16:
                 await getV16()

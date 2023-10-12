@@ -9,10 +9,10 @@
     
     <advancement id="minecraft:adventure/trade" name="What a Deal!" key="adventure-trade"/>
     <advancement id="minecraft:adventure/trade_at_world_height" name="Star Trader" icon="trade" key="adventure-trade-at-world-height"/>
-    <advancement id="minecraft:adventure/sniper_duel" name="Sniper Duel" type="challenge" key="adventure-sniper-duel" tooltip="Be at least 50 blocks away horizontally when a skeleton is killed by an arrow after the player has attacked it once."/>
-    <advancement id="minecraft:adventure/bullseye" name="Bullseye" type="challenge" key="adventure-bullseye" tooltip="Be at least 30 blocks away horizontally when the center of a target is shot with a projectile by the player."/>
+    <advancement id="minecraft:adventure/sniper_duel" name="Sniper Duel" type="challenge" key="adventure-sniper-duel" tooltip="info.sniper_duel"/>
+    <advancement id="minecraft:adventure/bullseye" name="Bullseye" type="challenge" key="adventure-bullseye" tooltip="info.bullseye"/>
     <advancement id="minecraft:adventure/two_birds_one_arrow" name="Two Birds, One Arrow" short_name="Two Birds" type="challenge" key="adventure-two-birds-one-arrow"/>
-    <advancement id="minecraft:adventure/arbalistic" name="Arbalistic" type="challenge" key="adventure-arbalistic"/>
+    <advancement id="minecraft:adventure/arbalistic" name="Arbalistic" type="challenge" key="adventure-arbalistic" tooltip="info.arbalistic"/>
 
     <advancement id="minecraft:adventure/fall_from_world_height" name="Caves and Cliffs" short_name="Caves/Cliffs" key="adventure-fall-from-world-height"/>
     <advancement id="minecraft:adventure/play_jukebox_in_meadows" name="Sound of Music" short_name="Music" key="adventure-play-jukebox-in-meadows"/>
@@ -22,7 +22,7 @@
     <advancement id="minecraft:adventure/spyglass_at_dragon" name="Is It a Plane?" short_name="A Plane?" icon="spyglass" key="adventure-spyglass-at-dragon"/>
 
     <advancement id="minecraft:adventure/honey_block_slide" name="Sticky Situation" short_name="Sticky " key="adventure-honey-block-slide"/>
-    <advancement id="minecraft:adventure/lightning_rod_with_villager_no_fire" name="Surge Protector" short_name="Surge Prot" icon="lightning_rod" key="adventure-lightning-rod-with-villager-no-fire"/>
+    <advancement id="minecraft:adventure/lightning_rod_with_villager_no_fire" name="Surge Protector" short_name="Surge Prot" icon="lightning_rod" key="adventure-lightning-rod-with-villager-no-fire" tooltip="info.surge_protector"/>
     <advancement id="minecraft:adventure/walk_on_powder_snow_with_leather_boots" name="Light as a Rabbit" short_name="LaaR" icon="leather_boots" key="adventure-walk-on-powder-snow-with-leather-boots"/>
     <advancement id="minecraft:adventure/voluntary_exile" name="Voluntary Exile" short_name="Exile" icon="pillager_banner" key="adventure-voluntary-exile"/>
     <advancement id="minecraft:adventure/hero_of_the_village" name="Hero of the Village" short_name="Hero" icon="pillager_banner" type="challenge" key="adventure-hero-of-the-village"/>

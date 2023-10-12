@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PotionPanelView: View {
+    @ObservedObject private var themeManager = UIThemeManager.shared
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
                 ForEach(Potion.allCases) { potion in
                     PotionView(name: potion.name, ingredients: potion.ingredients)
+                        .applyThemeModifiers()
                 }
             }
             .frame(height: 431)
@@ -22,7 +25,7 @@ struct PotionPanelView: View {
 }
 
 struct PotionView: View {
-    @ObservedObject var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = UIThemeManager.shared
     @State var name: String
     @State var ingredients: [String]
     
@@ -41,26 +44,26 @@ struct PotionView: View {
                     .renderingMode(.template)
                     .foregroundColor(themeManager.border)
                 
-                ForEach(ensureCapacity(ingredients).indices, id: \.self) { index in
-                    let item = ensureCapacity(ingredients)[index]
-                    if (!item.isEmpty) {
-                        Image(item)
-                            .interpolation(.none)
-                            .resizable()
-                            .frame(width: 32, height: 32)
-                    }
-                    else {
-                        Rectangle()
-                            .fill(.clear)
-                            .frame(width: 32, height: 32)
+                HStack(spacing: 0) {
+                    ForEach(ensureCapacity(ingredients).indices, id: \.self) { index in
+                        let item = ensureCapacity(ingredients)[index]
+                        if (!item.isEmpty) {
+                            Image(item)
+                                .interpolation(.none)
+                                .resizable()
+                                .frame(width: 32, height: 32)
+                        }
+                        else {
+                            Rectangle()
+                                .fill(.clear)
+                                .frame(width: 32, height: 32)
+                        }
                     }
                 }
-                
-                Spacer()
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .padding(1.95)
-        .applyThemeModifiers()
     }
     
     func ensureCapacity(_ ingredients: [String]) -> [String] {

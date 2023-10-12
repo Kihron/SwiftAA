@@ -23,11 +23,11 @@
     <advancement id="minecraft:nether/distract_piglin" name="Oh Shiny" key="nether-distract-piglin"/>
     <advancement id="minecraft:nether/obtain_blaze_rod" name="Into Fire" key="nether-obtain-blaze-rod"/>
     <advancement id="minecraft:nether/brew_potion" name="Local Brewery" short_name="Brewery" key="nether-brew-potion"/>
-    <advancement id="minecraft:nether/fast_travel" name="Subspace Bubble" short_name="Subspace" type="challenge" half="false" key="nether-fast-travel" tooltip="Use the Nether to travel between 2 points in the Overworld with a minimum horizontal euclidean distance of 7000 blocks between each other, which is 875 blocks in the Nether."/>
+    <advancement id="minecraft:nether/fast_travel" name="Subspace Bubble" short_name="Subspace" type="challenge" half="false" key="nether-fast-travel" tooltip="info.subspace_bubble"/>
     <advancement id="minecraft:nether/uneasy_alliance" name="Uneasy Alliance" short_name="Uneasy" type="challenge" half="false" key="nether-uneasy-alliance"/>
     
     <advancement id="minecraft:nether/ride_strider" name="This Boat Has Legs" short_name="This Boat" half="false" key="nether-ride-strider"/>
-    <advancement id="minecraft:nether/ride_strider_in_overworld_lava" name="Feels Like Home" short_name="Like Home" icon="ride_strider" key="nether-ride-strider-in-overworld-lava"/>
+    <advancement id="minecraft:nether/ride_strider_in_overworld_lava" name="Feels Like Home" short_name="Like Home" icon="ride_strider" key="nether-ride-strider-in-overworld-lava" tooltip="info.feels_like_home"/>
     <advancement id="minecraft:nether/get_wither_skull" name="Spooky&#160;Scary Skeleton" short_name="Spooky" half="false" key="nether-get-wither-skull"/>
     <advancement id="minecraft:nether/summon_wither" name="Withering Heights" short_name="Withering" half="false" key="nether-summon-wither"/>
     <advancement id="minecraft:nether/create_beacon" name="Bring Home the Beacon" short_name="Beacon" icon="beacon" half="false" key="nether-create-beacon"/>

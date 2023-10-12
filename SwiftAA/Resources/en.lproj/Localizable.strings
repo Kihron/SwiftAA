@@ -23,6 +23,14 @@
 "goal.monsters.killed" = "Monsters Killed";
 "goal.nether" = "Visited";
 
+"info.bullseye" = "Be at least **30 blocks** away horizontally when the center of a target is shot with a projectile by the player.";
+"info.sniper_duel" = "Be at least **50 blocks** away horizontally when a skeleton is killed by an arrow after the player has attacked it once.";
+"info.subspace_bubble" = "Use the Nether to travel between 2 points in the Overworld with a distance of **7000 blocks** between each other, which is **875 blocks** in the Nether.";
+"info.feels_like_home" = "While riding a strider, travel **50 blocks** on lava in the Overworld. Only horizontal displacement is counted. \n\n*Traveling in a circle for more than 50 blocks doesn't count.*";
+"info.great_view" = "Move a distance of **50 blocks** vertically with the Levitation effect applied, regardless of direction or whether it is caused by the effect.";
+"info.surge_protector" = "Be within **30 blocks** of a lightning strike that doesn't set any blocks on fire, while an unharmed villager is within or up to six blocks above a **30×30×30** volume centered on the lightning strike.";
+"info.arbalistic" = "Kill **five unique mobs** with one crossbow shot.";
+
 "leaderboard.verified" = "Verified";
 "leaderboard.awaiting_verification" = "Awaiting";
 "leaderboard.not_submitted" = "Not Submitted";

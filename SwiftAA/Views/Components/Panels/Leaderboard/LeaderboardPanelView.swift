@@ -88,13 +88,7 @@ struct LeaderboardPanelView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .applyThemeBackgroundAndBorder()
-        .task {
-            await leaderboardManager.fetchNicknames()
-            await leaderboardManager.fetchOtherVersionData()
-            await leaderboardManager.getLeaderboardEntries()
-        }
-        .onChange(of: trackerManager.gameVersion) { _ in
-            leaderboardManager.entries.removeAll()
+        .onChange(of: trackerManager.gameVersion) { value in
             Task {
                 await leaderboardManager.getLeaderboardEntries()
             }
