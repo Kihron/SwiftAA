@@ -46,41 +46,43 @@ struct NotesSettingsView: View {
             
             Divider()
             
-            VStack(alignment: .leading) {
-                if !selected.path.isEmpty {
-                    Text("Waypoints")
-                        .fontWeight(.bold)
-                    
-                    SettingsCardView {
-                        VStack {
-                            WaypointCardView(note: $selected, index: 0, icon: "elder_guardian")
-                            WaypointCardView(note: $selected, index: 1, icon: "pillager")
-                            WaypointCardView(note: $selected, index: 2, icon: "silverfish")
+            ScrollView {
+                VStack(alignment: .leading) {
+                    if !selected.path.isEmpty {
+                        Text("Waypoints")
+                            .fontWeight(.bold)
+                        
+                        SettingsCardView {
+                            VStack {
+                                WaypointCardView(note: $selected, index: 0, icon: "elder_guardian")
+                                WaypointCardView(note: $selected, index: 1, icon: "pillager")
+                                WaypointCardView(note: $selected, index: 2, icon: "silverfish")
+                            }
+                        }
+                        .disabled(true)
+                        
+                        Text("Notes")
+                            .fontWeight(.bold)
+                            .padding(.top, 10)
+                        
+                        SettingsCardView {
+                            Text(selected.message)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        }
+                        
+                        Text("Path")
+                            .fontWeight(.bold)
+                            .padding(.top, 10)
+                        
+                        SettingsCardView {
+                            Text(selected.path)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
-                    .disabled(true)
-                    
-                    Text("Notes")
-                        .fontWeight(.bold)
-                        .padding(.top, 10)
-                    
-                    SettingsCardView {
-                        Text(selected.message)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    }
-                    
-                    Text("Path")
-                        .fontWeight(.bold)
-                        .padding(.top, 10)
-                    
-                    SettingsCardView {
-                        Text(selected.path)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .padding()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .onAppear {

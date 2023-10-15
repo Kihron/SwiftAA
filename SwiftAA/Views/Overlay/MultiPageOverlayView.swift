@@ -10,6 +10,7 @@ import SwiftUI
 struct MultiPageOverlayView: View {
     @ObservedObject private var viewModel = MultiPageOverlayViewModel()
     @ObservedObject private var overlayManager = OverlayManager.shared
+    @ObservedObject private var dataManager = DataManager.shared
     
     @State private var section = 0
     @State private var totalSections = 0
@@ -59,13 +60,26 @@ struct MultiPageOverlayView: View {
                 
                 LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 20) {
                     ForEach(viewModel.getCriteriaSection(criteriaSection, screen: screen), id: \.self) { criterion in
-                        if (isAnimated(icon: criterion.icon)) {
-                            QLImage(criterion.icon)
-                                .frame(width: 16, height: 16)
-                        } else {
-                            Image(criterion.icon)
-                                .frame(width: 16, height: 16)
-                                .drawingGroup()
+                        ZStack {
+                            if (isAnimated(icon: criterion.icon)) {
+                                QLImage(criterion.icon)
+                                    .frame(width: 16, height: 16)
+                            } else {
+                                Image(criterion.icon)
+                                    .frame(width: 16, height: 16)
+                                    .drawingGroup()
+                            }
+                            
+                            if overlayManager.clarifyAmbigiousCriteria && dataManager.ambigiousCriteria.contains(criterion.icon) {
+                                if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
+                                    Image(adv.icon)
+                                        .resizable()
+                                        .interpolation(.none)
+                                        .frame(width: 16, height: 16)
+                                        .drawingGroup()
+                                        .offset(x: -8, y: -5)
+                                }
+                            }
                         }
                     }
                 }

@@ -13,6 +13,7 @@ class OverlayManager: ObservableObject {
     @AppStorage("showStatistics") var showStatistics: Bool = true
     @AppStorage("statisticsAlignment") var statisticsAlignment: HAlignment = .leading
     @AppStorage("showLegacyPageIndicator") var showLegacyPageIndicator: Bool = true
+    @AppStorage("clarifyAmbigiousCriteria") var clarifyAmbigiousCriteria: Bool = true
     
     @AppStorage("overlayFrameStyle") var overlayFrameStyle: FrameStyle = .minecraft
     @AppStorage("syncOverlayFrame") var syncOverlayFrame: Bool = true

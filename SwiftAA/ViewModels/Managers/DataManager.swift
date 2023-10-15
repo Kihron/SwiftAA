@@ -49,6 +49,12 @@ class DataManager: ObservableObject {
         return map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
     }
     
+    private var advancementsWithCriteria: [Advancement] {
+        return map.values.flatMap({$0}).filter({!$0.criteria.isEmpty})
+    }
+    
+    let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
+    
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
         let file = "Advancements/\(versionManager.gameVersion.label)/\(file)"
         
@@ -124,6 +130,10 @@ class DataManager: ObservableObject {
     
     func getNameFromID(id: String, prefix: String) -> String {
         id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+    }
+    
+    func getAdvancementForCriteria(criterion: Criterion) -> Advancement? {
+        advancementsWithCriteria.first(where: { $0.criteria.contains(criterion) })
     }
     
     func removeOldVersion(gameVersion: String) {

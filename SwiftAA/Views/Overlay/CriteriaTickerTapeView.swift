@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CriteriaTickerTapeView: View {
     @ObservedObject private var dataManager = DataManager.shared
+    @ObservedObject private var overlayManager = OverlayManager.shared
     @State private var buffer: RingBuffer<Criterion> = RingBuffer(size: 0)
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var xOffset: CGFloat = 0
@@ -21,21 +22,34 @@ struct CriteriaTickerTapeView: View {
             LazyHStack(spacing: 0) {
                 if !dataManager.incompleteCriteria.isEmpty {
                     ForEach(buffer, id: \.?.id) { criterion in
-                        Group {
-                            if let criterion = criterion {
-                                if !isAnimated(icon: criterion.icon) {
-                                    Image(criterion.icon)
-                                        .resizable()
-                                        .interpolation(.low)
-                                        .frame(width: 24, height: 24)
-                                        .drawingGroup()
-                                } else {
-                                    QLImage(criterion.icon)
-                                        .frame(width: 24, height: 24)
+                        if let criterion = criterion {
+                            ZStack {
+                                Group {
+                                    if !isAnimated(icon: criterion.icon) {
+                                        Image(criterion.icon)
+                                            .resizable()
+                                            .interpolation(.low)
+                                            .frame(width: 24, height: 24)
+                                            .drawingGroup()
+                                    } else {
+                                        QLImage(criterion.icon)
+                                            .frame(width: 24, height: 24)
+                                    }
+                                }
+                                .padding(8)
+                                
+                                if overlayManager.clarifyAmbigiousCriteria && dataManager.ambigiousCriteria.contains(criterion.icon) {
+                                    if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
+                                        Image(adv.icon)
+                                            .resizable()
+                                            .interpolation(.none)
+                                            .frame(width: 24, height: 24)
+                                            .drawingGroup()
+                                            .offset(x: -8, y: -5)
+                                    }
                                 }
                             }
                         }
-                        .padding(8)
                     }
                 }
             }

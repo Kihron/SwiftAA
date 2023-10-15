@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OverlayShimmerView: View {
     @State var message: String
-    @State var show = false
+    @State private var show = false
     
     var body : some View{
         ZStack{
@@ -41,5 +41,6 @@ struct OverlayShimmerView: View {
 struct OverlayShimmerView_Previews: PreviewProvider {
     static var previews: some View {
         OverlayShimmerView(message: "This is a test!\nThis is a longer test to see how well this works")
+            .frame(width: 800, height: 300)
     }
 }

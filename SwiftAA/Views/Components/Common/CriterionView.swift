@@ -25,7 +25,6 @@ struct CriterionView: View {
                 .applyThemeText()
         }
         .opacity(criterion.completed ? 1 : 0.3)
-
     }
     
     func isAnimated(icon: String) -> Bool {

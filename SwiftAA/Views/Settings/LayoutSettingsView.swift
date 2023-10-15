@@ -34,7 +34,7 @@ struct LayoutSettingsView: View {
                 }
             }
             
-            SettingsLabel(title: "Styling")
+            SettingsLabel(title: "Appearance")
                 .padding(.top, 5)
             
             SettingsCardView {
