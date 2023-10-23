@@ -13,16 +13,21 @@ struct OverlayView: View {
     
     var body: some View {
         if overlayManager.overlayOpen {
-            if !dataManager.allAdvancements {
-                switch overlayManager.overlayStyle {
-                    case .tickerTape:
-                        TickerTapeOverlayView()
-                    case .multiPage:
-                        MultiPageOverlayView()
+            Group {
+                if !dataManager.allAdvancements {
+                    switch overlayManager.overlayStyle {
+                        case .tickerTape:
+                            TickerTapeOverlayView()
+                        case .multiPage:
+                            MultiPageOverlayView()
+                    }
+                } else {
+                    OverlayCompletedView()
                 }
-            } else {
-                OverlayCompletedView()
             }
+            .onHover(perform: { hovering in
+                overlayManager.isHovering = hovering
+            })
         } else {
             ProgressView()
         }

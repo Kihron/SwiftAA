@@ -18,6 +18,8 @@ class OverlayManager: ObservableObject {
     @AppStorage("overlayFrameStyle") var overlayFrameStyle: FrameStyle = .minecraft
     @AppStorage("syncOverlayFrame") var syncOverlayFrame: Bool = true
     
+    @Published var isHovering: Bool = false
+    
     static let shared = OverlayManager()
     
     init() {

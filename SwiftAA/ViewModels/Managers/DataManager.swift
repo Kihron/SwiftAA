@@ -14,9 +14,7 @@ class DataManager: ObservableObject {
     @Published var map = [String:[Advancement]]()
     var minimalCache: [Indicator]? = nil
     
-    @Published var topStats: [Indicator] = [GodApple(), Trident(), Shells()]
-    @Published var bottomStats: [Indicator] = [WitherSkulls(), AncientDebris()]
-    @Published var stats: [Indicator] = [Indicator]()
+    @Published var stats: [Indicator] = Constants.statusIndicators
     @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
     
     @Published var lastModified: Date = Date.now
@@ -27,8 +25,7 @@ class DataManager: ObservableObject {
     static let shared = DataManager()
     
     init() {
-        self.stats = self.topStats + self.bottomStats
-        self.stats.append(Beehives())
+        
     }
     
     var uncounted = [Advancement]()

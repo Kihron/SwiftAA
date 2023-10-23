@@ -9,6 +9,8 @@ import SwiftUI
 
 struct L1_16S: View {
     @ObservedObject private var dataManager = DataManager.shared
+    @State private var topStats = Array(DataManager.shared.stats.prefix(3))
+    @State private var bottomStats = Array(DataManager.shared.stats.dropFirst(3).dropLast())
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -32,8 +34,8 @@ struct L1_16S: View {
                 .frame(width: 270)
                 
                 VStack(spacing: 0) {
-                    AdvPanelView(indicators: $dataManager.topStats, columnCount: 1, isStat: true)
-                    AdvPanelView(indicators: $dataManager.bottomStats, columnCount: 1, isStat: true)
+                    AdvPanelView(indicators: $topStats, columnCount: 1, isStat: true)
+                    AdvPanelView(indicators: $bottomStats, columnCount: 1, isStat: true)
                 }
                 .frame(width: 75)
                 

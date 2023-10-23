@@ -106,6 +106,9 @@
 		B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */; };
 		B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */; };
 		B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */; };
+		B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */; };
+		B6CD41CD2AE60C500024D4E4 /* StatusIndicatorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */; };
+		B6CD41CF2AE60D600024D4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD41CE2AE60D600024D4E4 /* Constants.swift */; };
 		B6CDBA0128BDA6B60016D248 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0028BDA6B60016D248 /* Sparkle */; };
 		B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0328BDA6BE0016D248 /* SWXMLHash */; };
 		B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */; };
@@ -237,6 +240,9 @@
 		B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarInfoView.swift; sourceTree = "<group>"; };
 		B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLayout.swift; sourceTree = "<group>"; };
 		B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayViewModel.swift; sourceTree = "<group>"; };
+		B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorRowView.swift; sourceTree = "<group>"; };
+		B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorPickerView.swift; sourceTree = "<group>"; };
+		B6CD41CE2AE60D600024D4E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6D3065428A2AD44004D27E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6D3065728A2B150004D27E6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B6DD06252AC515F3005D1B2A /* L1_16M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16M.swift; sourceTree = "<group>"; };
@@ -296,6 +302,8 @@
 				B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */,
 				B69EB67828AC08450029B988 /* OverlayCompletedView.swift */,
 				B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */,
+				B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */,
+				B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */,
 				B6E7B0872AAA951700D83FA7 /* OverlayView.swift */,
 			);
 			path = Overlay;
@@ -361,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				B6498D6E2AABDC4600230808 /* RingBuffer.swift */,
+				B6CD41CE2AE60D600024D4E4 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -859,6 +868,7 @@
 				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
+				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
@@ -902,6 +912,7 @@
 				B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */,
 				B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */,
+				B6CD41CF2AE60D600024D4E4 /* Constants.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
 				B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */,
 				B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */,
@@ -952,6 +963,7 @@
 				B683A1162ABD3F4B00162E7C /* ThemeSampleView.swift in Sources */,
 				B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */,
 				B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */,
+				B6CD41CD2AE60C500024D4E4 /* StatusIndicatorPickerView.swift in Sources */,
 				B62AEA0E2AA93A5B008B01CD /* ThemePreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1100,7 +1112,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231014e;
+				CURRENT_PROJECT_VERSION = 231022e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1134,7 +1146,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231014e;
+				CURRENT_PROJECT_VERSION = 231022e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

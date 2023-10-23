@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct L1_19: View {
-    @ObservedObject var dataManager = DataManager.shared
+    @ObservedObject private var dataManager = DataManager.shared
+    @State private var topStats = Array(DataManager.shared.stats.prefix(3))
+    @State private var bottomStats = Array(DataManager.shared.stats.dropFirst(3).dropLast())
     
     var body: some View {
         HStack(spacing: 0) {
@@ -24,7 +26,7 @@ struct L1_19: View {
                                 .frame(width: 74)
                             AdvPanelView(indicators: dataManager.decode(file: "adventure", end: "minecraft:adventure/spyglass_at_dragon"), columnCount: 6)
                                 .frame(width: 467)
-                            AdvPanelView(indicators: .constant(dataManager.topStats), columnCount: 1, isStat: true)
+                            AdvPanelView(indicators: $topStats, columnCount: 1, isStat: true)
                                 .frame(width: 75)
                         }
                         
@@ -35,7 +37,7 @@ struct L1_19: View {
                                 .frame(width: 688)
                             AdvPanelView(indicators: dataManager.decode(file: "adventure", start: "minecraft:adventure/honey_block_slide"), columnCount: 6)
                                 .frame(width: 467)
-                            AdvPanelView(indicators: .constant(dataManager.bottomStats), columnCount: 1, isStat: true)
+                            AdvPanelView(indicators: $bottomStats, columnCount: 1, isStat: true)
                                 .frame(width: 75)
                         }
                     }

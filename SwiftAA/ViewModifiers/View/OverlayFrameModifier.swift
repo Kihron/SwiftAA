@@ -19,7 +19,7 @@ struct OverlayFrameModifier: ViewModifier {
                         .frame(minWidth: 600, maxWidth: 1000, minHeight: 250, maxHeight: 250)
                 case .multiPage:
                     content
-                        .frame(minWidth: 400, maxWidth: .infinity, minHeight: 345, maxHeight: 345)
+                        .frame(minWidth: 600, maxWidth: .infinity, minHeight: 345, maxHeight: 345)
             }
         } else {
             content

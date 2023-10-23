@@ -18,22 +18,11 @@ struct MultiPageOverlayView: View {
     @State private var criteriaTotalSections = 0
     
     @State private var progress: CGFloat = 0.7
-    private let animationTimer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-    
-    var alignment: Alignment {
-        switch overlayManager.statisticsAlignment {
-            case .leading:
-                    .leading
-            case .center:
-                    .center
-            case .trailing:
-                    .trailing
-        }
-    }
+    private let animationTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         GeometryReader { screen in
-            VStack {
+            VStack(spacing: 0) {
                 ZStack(alignment: .center) {
                     VStack {
                         HStack {
@@ -86,6 +75,7 @@ struct MultiPageOverlayView: View {
                 .frame(width: screen.size.width - 40, height: 54, alignment: .top)
                 .padding(.horizontal)
                 .padding(.leading, 10)
+                .padding(.top, 10)
                 
                 LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: Int(floor(screen.size.width / 74))), spacing: 0) {
                     ForEach(viewModel.getSection(section, screen: screen), id: \.self) { adv in
@@ -98,27 +88,16 @@ struct MultiPageOverlayView: View {
                     }
                 }
                 .frame(width: screen.size.width)
+                .frame(maxHeight: .infinity)
                 .padding(.trailing, 4)
                 
-                
-                HStack {
-                    if overlayManager.showStatistics {
-                        ForEach($viewModel.dataManager.stats, id: \.self.id) { adv in
-                            if isAnimated(icon: adv.wrappedValue.icon) {
-                                IndicatorView(indicator: adv, isOverlay: true, isStat: true)
-                            } else {
-                                IndicatorView(indicator: adv, isOverlay: true, isStat: true)
-                                    .drawingGroup()
-                            }
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: alignment)
-                .animation(.spring, value: overlayManager.statisticsAlignment)
+                StatusIndicatorRowView()
+                    .padding(.bottom)
             }
+            .frame(maxWidth: .infinity)
             .onReceive(animationTimer) { timer in
                 withAnimation {
-                    self.progress -= (0.01 * (1000 / screen.size.width))
+                    self.progress -= (0.1 * (1000 / screen.size.width))
                 }
                 if progress <= 0.0 {
                     totalSections = viewModel.totalSections(screen: screen)
