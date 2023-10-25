@@ -32,6 +32,7 @@
 		B62AEA172AA95FFD008B01CD /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA162AA95FFD008B01CD /* NoteManager.swift */; };
 		B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637DB3029634FA800A73F62 /* AppViewModel.swift */; };
 		B6397EDF2AC9E9B3007C8606 /* IndicatorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */; };
+		B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */; };
 		B64192D12AC29D02006C8CC4 /* WaypointCardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64192D02AC29D02006C8CC4 /* WaypointCardVeiw.swift */; };
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
@@ -163,6 +164,7 @@
 		B62AEA162AA95FFD008B01CD /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		B637DB3029634FA800A73F62 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorInfoView.swift; sourceTree = "<group>"; };
+		B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountView.swift; sourceTree = "<group>"; };
 		B64192D02AC29D02006C8CC4 /* WaypointCardVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointCardVeiw.swift; sourceTree = "<group>"; };
 		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
 		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
@@ -346,6 +348,17 @@
 				B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		B639AC7D2AE8D46800060D96 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */,
+				B621A8EA29860163000B9DDF /* SettingsCardView.swift */,
+				B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */,
+				B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		B64192CF2AC29CEC006C8CC4 /* Notes */ = {
@@ -586,16 +599,14 @@
 		B6A772F22889947700436551 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B639AC7D2AE8D46800060D96 /* Main */,
 				B62AEA112AA946F1008B01CD /* Theme */,
-				B621A8EA29860163000B9DDF /* SettingsCardView.swift */,
 				B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */,
 				B6E3310F2AA80811001D7FF2 /* TrackingSettingsView.swift */,
 				B62AEA0B2AA9397E008B01CD /* ThemeSettingsView.swift */,
 				B683A1272ABD4A6800162E7C /* NotesSettingsView.swift */,
 				B6498D762AAC244D00230808 /* OverlaySettings.swift */,
 				B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */,
-				B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */,
-				B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -851,6 +862,7 @@
 			files = (
 				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
+				B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */,
@@ -1112,7 +1124,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231022e;
+				CURRENT_PROJECT_VERSION = 231025e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1146,7 +1158,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231022e;
+				CURRENT_PROJECT_VERSION = 231025e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

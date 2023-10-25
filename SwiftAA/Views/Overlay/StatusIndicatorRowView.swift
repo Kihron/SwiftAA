@@ -13,6 +13,11 @@ struct StatusIndicatorRowView: View {
     
     @State private var showStatusEditor: Bool = false
     
+    private var filteredStatusIndicators: [Binding<Indicator>] {
+        return $dataManager.stats.filter({ !overlayManager.nonActiveIndicators.contains($0.wrappedValue.id)
+        })
+    }
+    
     var alignment: Alignment {
         switch overlayManager.statisticsAlignment {
             case .leading:
@@ -27,7 +32,7 @@ struct StatusIndicatorRowView: View {
     var body: some View {
         HStack {
             if overlayManager.showStatistics {
-                ForEach($dataManager.stats, id: \.self.id) { adv in
+                ForEach(filteredStatusIndicators, id: \.self.wrappedValue.id) { adv in
                     if isAnimated(icon: adv.wrappedValue.icon) {
                         IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                     } else {
@@ -35,16 +40,16 @@ struct StatusIndicatorRowView: View {
                             .drawingGroup()
                     }
                 }
-            }
-            
-            if overlayManager.isHovering {
-                Button(action: { showStatusEditor.toggle() }) {
-                    Image(systemName: "pin.fill")
-                        .scaleEffect(1.5)
-                        .padding(.bottom, 14)
-                        .rotationEffect(.degrees(45))
+                
+                if overlayManager.isHovering {
+                    Button(action: { showStatusEditor.toggle() }) {
+                        Image(systemName: "pin.fill")
+                            .scaleEffect(1.5)
+                            .padding(.bottom, 14)
+                            .rotationEffect(.degrees(45))
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
         }
         .sheet(isPresented: $showStatusEditor, content: {

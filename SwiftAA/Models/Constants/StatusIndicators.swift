@@ -7,7 +7,15 @@
 
 import SwiftUI
 
-class GodApple: Indicator {
+class TransferableIndicator: Codable {}
+
+extension TransferableIndicator: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        CodableRepresentation(contentType: .item)
+    }
+}
+
+class GodApple: TransferableIndicator, Indicator {
     var id: String = "minecraft:recipes/misc/mojang_banner_pattern"
     var key: String = L10n.Statistic.GodApple.obtain
     var name: String = "Obtain God Apple"
@@ -22,7 +30,7 @@ class GodApple: Indicator {
     }
 }
 
-class Trident: Indicator {
+class Trident: TransferableIndicator, Indicator {
     var id: String = "minecraft:trident"
     var key: String = L10n.Statistic.Trident.obtain
     var name: String = "Obtain\nTrident"
@@ -38,7 +46,7 @@ class Trident: Indicator {
     }
 }
 
-class Shells: Indicator {
+class Shells: TransferableIndicator, Indicator {
     var id: String = "minecraft:nautilus_shell"
     var key: String = L10n.Statistic.shells(0)
     var name: String = "Shells\n0 / 8"
@@ -55,7 +63,7 @@ class Shells: Indicator {
     }
 }
 
-class WitherSkulls: Indicator {
+class WitherSkulls: TransferableIndicator, Indicator {
     var id: String = "minecraft:wither_skeleton_skull"
     var key: String = L10n.Statistic.Wither.skulls(0)
     var name: String = "Skulls\n0 / 3"
@@ -72,7 +80,7 @@ class WitherSkulls: Indicator {
     }
 }
 
-class AncientDebris: Indicator {
+class AncientDebris: TransferableIndicator, Indicator {
     var id: String = "minecraft:ancient_debris"
     var key: String = L10n.Statistic.ancientDebris(0, 0)
     var name: String = "Debris: 0\nTNT: 0"
@@ -93,7 +101,7 @@ class AncientDebris: Indicator {
     }
 }
 
-class Beehives: Indicator {
+class Beehives: TransferableIndicator, Indicator {
     var id: String = "minecraft:bee_nest"
     var key: String = L10n.Statistic.beehives(0)
     var name: String = "Hives: 0"

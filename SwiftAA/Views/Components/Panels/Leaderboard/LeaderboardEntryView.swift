@@ -40,7 +40,6 @@ struct LeaderboardEntryView: View {
                     
                     Text(entry.date)
                         .font(.custom("Minecraft-Regular", size: 10))
-                        .applyThemeText()
                 }
                 .applyThemeText()
                 

@@ -34,7 +34,6 @@ struct LeaderboardPlaceholderView: View {
                     
                     Text("--/--/--")
                         .font(.custom("Minecraft-Regular", size: 10))
-                        .applyThemeText()
                 }
                 
                 HStack {

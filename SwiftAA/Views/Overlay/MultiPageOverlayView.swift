@@ -88,7 +88,7 @@ struct MultiPageOverlayView: View {
                     }
                 }
                 .frame(width: screen.size.width)
-                .frame(maxHeight: .infinity)
+                .frame(maxHeight: .infinity, alignment: .top)
                 .padding(.trailing, 4)
                 
                 StatusIndicatorRowView()
