@@ -10,7 +10,7 @@ import SwiftUI
 struct L1_19: View {
     @ObservedObject private var dataManager = DataManager.shared
     @State private var topStats = Array(DataManager.shared.stats.prefix(3))
-    @State private var bottomStats = Array(DataManager.shared.stats.dropFirst(3).dropLast())
+    @State private var bottomStats = Array(DataManager.shared.stats.dropFirst(3).dropLast(2))
     
     var body: some View {
         HStack(spacing: 0) {

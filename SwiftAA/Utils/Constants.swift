@@ -14,6 +14,9 @@ class Constants {
         Shells(),
         WitherSkulls(),
         AncientDebris(),
-        Beehives()
+        Beehives(),
+        GoldBlocks()
     ]
+    
+    static let defaultActiveStatusIndicators: String = "minecraft:recipes/misc/mojang_banner_pattern,minecraft:trident,minecraft:nautilus_shell,minecraft:wither_skeleton_skull,minecraft:ancient_debris,minecraft:bee_nest"
 }

@@ -60,24 +60,18 @@ struct IndicatorView: View {
                     }
                 }
                 
-                if (isAnimated(icon: indicator.icon)) {
-                    QLImage(indicator.icon)
-                        .frame(width: 32, height: 32)
-                        .padding(.top, 6)
-                } else {
-                    Image(indicator.icon)
-                        .interpolation(.none)
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                        .padding(.top, 6)
-                        .onHover(perform: { hovering in
-                            if layoutManager.infoMode && !isOverlay {
-                                showTooltip = hovering
-                            } else {
-                                showTooltip = false
-                            }
-                        })
-                }
+                Image(indicator.icon)
+                    .interpolation(.none)
+                    .resizable()
+                    .frame(width: 32, height: 32)
+                    .padding(.top, 6)
+                    .onHover(perform: { hovering in
+                        if layoutManager.infoMode && !isOverlay {
+                            showTooltip = hovering
+                        } else {
+                            showTooltip = false
+                        }
+                    })
             }
             
             Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))
@@ -96,10 +90,6 @@ struct IndicatorView: View {
         .popover(isPresented: $showTooltip, content: {
             IndicatorInfoView(tooltip: indicator.tooltip)
         })
-    }
-    
-    func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
 }
 

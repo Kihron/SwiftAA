@@ -25,16 +25,10 @@ struct CriteriaTickerTapeView: View {
                         if let criterion = criterion {
                             ZStack {
                                 Group {
-                                    if !isAnimated(icon: criterion.icon) {
-                                        Image(criterion.icon)
-                                            .resizable()
-                                            .interpolation(.low)
-                                            .frame(width: 24, height: 24)
-                                            .drawingGroup()
-                                    } else {
-                                        QLImage(criterion.icon)
-                                            .frame(width: 24, height: 24)
-                                    }
+                                    Image(criterion.icon)
+                                        .resizable()
+                                        .interpolation(.low)
+                                        .frame(width: 24, height: 24)
                                 }
                                 .padding(8)
                                 
@@ -44,13 +38,13 @@ struct CriteriaTickerTapeView: View {
                                             .resizable()
                                             .interpolation(.none)
                                             .frame(width: 24, height: 24)
-                                            .drawingGroup()
                                             .offset(x: -8, y: -5)
                                     }
                                 }
                             }
                         }
                     }
+                    .drawingGroup()
                 }
             }
             .offset(x: xOffset, y: 0)
@@ -125,10 +119,6 @@ struct CriteriaTickerTapeView: View {
     
     private func getMaxOnScreen(width: CGFloat) -> Int {
         return Int(floor(width / 40))
-    }
-    
-    private func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
 }
 

@@ -18,11 +18,11 @@ class OverlayManager: ObservableObject {
     @AppStorage("overlayFrameStyle") var overlayFrameStyle: FrameStyle = .minecraft
     @AppStorage("syncOverlayFrame") var syncOverlayFrame: Bool = true
 
-    @AppStorage("nonActiveStatusIndicators") private var nonActiveStatusIndicators: String = ""
+    @AppStorage("activeStatusIndicators") private var activeStatusIndicators: String = Constants.defaultActiveStatusIndicators
     
-    var nonActiveIndicators: [String] {
-        get { nonActiveStatusIndicators.split(separator: ",").map { String($0) } }
-        set { nonActiveStatusIndicators = newValue.joined(separator: ",") }
+    var activeIndicators: [String] {
+        get { activeStatusIndicators.split(separator: ",").map { String($0) } }
+        set { activeStatusIndicators = newValue.joined(separator: ",") }
     }
     
     @Published var isHovering: Bool = false

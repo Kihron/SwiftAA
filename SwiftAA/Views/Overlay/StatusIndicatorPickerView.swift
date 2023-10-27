@@ -18,38 +18,36 @@ struct StatusIndicatorPickerView: View {
                 .font(.title2)
                 .fontWeight(.bold)
             
-            SettingsCardView {
+            SettingsCardView(padding: 0) {
                 ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: 6), spacing: 0) {
+                    LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: 6)) {
                         ForEach($dataManager.stats, id: \.self.id) { indicator in
-                            GeometryReader { geo in
-                                Button(action: {
-                                    withAnimation(.bouncy) {
-                                        toggleActiveIndicator(id: indicator.wrappedValue.id)
-                                    }
-                                }) {
-                                    ZStack(alignment: .topTrailing) {
-                                        IndicatorView(indicator: indicator, isOverlay: true, isStat: true)
-                                        
-                                        if !overlayManager.nonActiveIndicators.contains(indicator.wrappedValue.id) {
-                                            ZStack {
-                                                Circle()
-                                                    .fill(.green)
-                                                
-                                                Image(systemName: "checkmark")
-                                                    .resizable()
-                                                    .frame(width: 10, height: 10)
-                                                    .fontWeight(.bold)
-                                            }
-                                            .frame(width: 16, height: 16)
-                                            .offset(x: -6, y: 3)
-                                            .zIndex(1)
+                            Button(action: {
+                                withAnimation(.bouncy) {
+                                    toggleActiveIndicator(id: indicator.wrappedValue.id)
+                                }
+                            }) {
+                                ZStack(alignment: .topTrailing) {
+                                    IndicatorView(indicator: indicator, isOverlay: true, isStat: true)
+                                    
+                                    if overlayManager.activeIndicators.contains(indicator.wrappedValue.id) {
+                                        ZStack {
+                                            Circle()
+                                                .fill(.green)
+                                            
+                                            Image(systemName: "checkmark")
+                                                .resizable()
+                                                .frame(width: 10, height: 10)
+                                                .fontWeight(.bold)
                                         }
+                                        .frame(width: 16, height: 16)
+                                        .offset(x: -6, y: 3)
+                                        .zIndex(1)
                                     }
-                                }.buttonStyle(.plain)
-                            }
+                                }
+                            }.buttonStyle(.plain)
                         }
-                    }
+                    }.padding(10)
                 }
             }
             
@@ -62,12 +60,10 @@ struct StatusIndicatorPickerView: View {
     }
     
     private func toggleActiveIndicator(id: String) {
-        if let index = overlayManager.nonActiveIndicators.firstIndex(where: { $0 == id }) {
-            overlayManager.nonActiveIndicators.remove(at: index)
+        if let index = overlayManager.activeIndicators.firstIndex(where: { $0 == id }), overlayManager.activeIndicators.count - 1 > 0 {
+            overlayManager.activeIndicators.remove(at: index)
         } else {
-            if overlayManager.nonActiveIndicators.count < Constants.statusIndicators.count - 1 {
-                overlayManager.nonActiveIndicators.append(id)
-            }
+            overlayManager.activeIndicators.append(id)
         }
     }
 }

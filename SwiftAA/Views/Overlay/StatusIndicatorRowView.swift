@@ -14,18 +14,18 @@ struct StatusIndicatorRowView: View {
     @State private var showStatusEditor: Bool = false
     
     private var filteredStatusIndicators: [Binding<Indicator>] {
-        return $dataManager.stats.filter({ !overlayManager.nonActiveIndicators.contains($0.wrappedValue.id)
+        return $dataManager.stats.filter({ overlayManager.activeIndicators.contains($0.wrappedValue.id)
         })
     }
     
     var alignment: Alignment {
         switch overlayManager.statisticsAlignment {
             case .leading:
-                .leading
+                    .leading
             case .center:
-                .center
+                    .center
             case .trailing:
-                .trailing
+                    .trailing
         }
     }
     
@@ -33,12 +33,7 @@ struct StatusIndicatorRowView: View {
         HStack {
             if overlayManager.showStatistics {
                 ForEach(filteredStatusIndicators, id: \.self.wrappedValue.id) { adv in
-                    if isAnimated(icon: adv.wrappedValue.icon) {
-                        IndicatorView(indicator: adv, isOverlay: true, isStat: true)
-                    } else {
-                        IndicatorView(indicator: adv, isOverlay: true, isStat: true)
-                            .drawingGroup()
-                    }
+                    IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                 }
                 
                 if overlayManager.isHovering {
@@ -58,10 +53,6 @@ struct StatusIndicatorRowView: View {
         .animation(.spring, value: overlayManager.statisticsAlignment)
         .animation(.easeIn(duration: 0.2), value: overlayManager.isHovering)
         .frame(maxWidth: .infinity, alignment: alignment)
-    }
-    
-    private func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
 }
 

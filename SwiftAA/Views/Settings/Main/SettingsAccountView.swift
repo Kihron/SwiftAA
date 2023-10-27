@@ -29,7 +29,7 @@ struct SettingsAccountView: View {
                                     case .success(let image):
                                         image.interpolation(.none)
                                             .resizable()
-                                            .frame(width: 25, height: 25)
+                                            .frame(width: 26, height: 26)
                                     case .failure:
                                         EmptyView()
                                     @unknown default:
@@ -40,13 +40,13 @@ struct SettingsAccountView: View {
                             Image("steve")
                                 .interpolation(.none)
                                 .resizable()
-                                .frame(width: 25, height: 25)
+                                .frame(width: 26, height: 26)
                         }
                         
                         Text(player.name)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .padding(.horizontal, 14)
+                    .padding(.leading, 17)
                 }
             }
             .frame(height: 42)

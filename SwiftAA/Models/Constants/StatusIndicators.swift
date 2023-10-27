@@ -120,3 +120,19 @@ class Beehives: TransferableIndicator, Indicator {
         key = completed ? L10n.Statistic.Beehives.done : L10n.Statistic.beehives(count)
     }
 }
+
+class GoldBlocks: TransferableIndicator, Indicator {
+    var id: String = "minecraft:gold_block"
+    var key: String = L10n.Statistic.goldBlocks(0)
+    var name: String = "0 / 164"
+    var icon: String = "gold_block"
+    var frameStyle: String = "statistic"
+    var completed: Bool = false
+    var tooltip: String = ""
+    
+    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
+        let count = stats["minecraft:picked_up"]?[id] ?? 0
+        completed = count >= 164
+        key = L10n.Statistic.goldBlocks(count)
+    }
+}

@@ -12,23 +12,14 @@ struct CriterionView: View {
     
     var body: some View {
         HStack {
-            if (isAnimated(icon: criterion.icon)) {
-                QLImage(criterion.icon)
-                    .frame(width: 16, height: 16)
-            } else {
-                Image(criterion.icon)
-                    .frame(width: 16, height: 16)
-            }
+            Image(criterion.icon)
+                .frame(width: 16, height: 16)
             
             Text(calculateText())
                 .font(.custom("Minecraft-Regular", size: 10))
                 .applyThemeText()
         }
         .opacity(criterion.completed ? 1 : 0.3)
-    }
-    
-    func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
     
     func calculateText() -> String {

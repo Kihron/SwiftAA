@@ -21,14 +21,10 @@ struct IndicatorTickerTapeView: View {
             LazyHStack(spacing: 0) {
                 ForEach(buffer, id: \.?.id) { indicator in
                     if let indicator = indicator {
-                        if !isAnimated(icon: indicator.icon) {
-                            IndicatorView(indicator: .constant(indicator), isOverlay: true)
-                                .drawingGroup()
-                        } else {
-                            IndicatorView(indicator: .constant(indicator), isOverlay: true)
-                        }
+                        IndicatorView(indicator: .constant(indicator), isOverlay: true)
                     }
                 }
+                .drawingGroup()
             }
             .offset(x: xOffset, y: 0)
             .onAppear {
@@ -103,10 +99,6 @@ struct IndicatorTickerTapeView: View {
     
     private func getMaxOnScreen(width: CGFloat) -> Int {
         return Int(floor(width / 74))
-    }
-    
-    private func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
 }
 

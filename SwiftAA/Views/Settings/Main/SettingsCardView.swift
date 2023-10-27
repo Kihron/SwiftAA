@@ -13,7 +13,7 @@ struct SettingsCardView<Content: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             content()
-                .padding(10)
+                .padding(padding ?? 10)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .background(
                     ZStack {
@@ -25,7 +25,6 @@ struct SettingsCardView<Content: View>: View {
                     }
                 )
         }
-        .padding(padding ?? 0)
     }
 }
 

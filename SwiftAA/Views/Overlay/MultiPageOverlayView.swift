@@ -50,14 +50,10 @@ struct MultiPageOverlayView: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 20) {
                     ForEach(viewModel.getCriteriaSection(criteriaSection, screen: screen), id: \.self) { criterion in
                         ZStack {
-                            if (isAnimated(icon: criterion.icon)) {
-                                QLImage(criterion.icon)
-                                    .frame(width: 16, height: 16)
-                            } else {
-                                Image(criterion.icon)
-                                    .frame(width: 16, height: 16)
-                                    .drawingGroup()
-                            }
+                            Image(criterion.icon)
+                                .frame(width: 16, height: 16)
+                                .drawingGroup()
+                            
                             
                             if overlayManager.clarifyAmbigiousCriteria && dataManager.ambigiousCriteria.contains(criterion.icon) {
                                 if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
@@ -79,12 +75,8 @@ struct MultiPageOverlayView: View {
                 
                 LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: Int(floor(screen.size.width / 74))), spacing: 0) {
                     ForEach(viewModel.getSection(section, screen: screen), id: \.self) { adv in
-                        if isAnimated(icon: adv.icon) {
-                            IndicatorView(indicator: .constant(adv), isOverlay: true)
-                        } else {
-                            IndicatorView(indicator: .constant(adv), isOverlay: true)
-                                .drawingGroup()
-                        }
+                        IndicatorView(indicator: .constant(adv), isOverlay: true)
+                            .drawingGroup()
                     }
                 }
                 .frame(width: screen.size.width)
@@ -108,10 +100,6 @@ struct MultiPageOverlayView: View {
                 }
             }
         }
-    }
-    
-    func isAnimated(icon: String) -> Bool {
-        ["enchant_item", "enchanted_golden_apple", "summon_wither", "skulk_sensor"].contains(icon)
     }
 }
 

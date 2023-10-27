@@ -93,6 +93,7 @@
 "statistic.god_apple.obtained" = "Obtained God Apple";
 "statistic.beehives" = "Hives: %d";
 "statistic.beehives.done" = "Done With Bees";
+"statistic.gold_blocks" = "%d / 164";
 "statistic.shells" = "Shells\n%d / 8";
 "statistic.shells.crafted" = "Conduit Crafted";
 "statistic.trident.awaiting" = "Awaiting\nThunder";
