@@ -9,8 +9,9 @@ import SwiftUI
 
 struct L1_19: View {
     @ObservedObject private var dataManager = DataManager.shared
-    @State private var topStats = Array(DataManager.shared.stats.prefix(3))
-    @State private var bottomStats = Array(DataManager.shared.stats.dropFirst(3).dropLast(2))
+    
+    @State private var topStats = Utilities.getSpecificStats(types: [.godApple, .trident, .shells])
+    @State private var bottomStats = Utilities.getSpecificStats(types: [.witherSkulls, .ancientDebris])
     
     var body: some View {
         HStack(spacing: 0) {

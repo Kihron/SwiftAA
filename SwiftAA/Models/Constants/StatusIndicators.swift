@@ -7,15 +7,8 @@
 
 import SwiftUI
 
-class TransferableIndicator: Codable {}
-
-extension TransferableIndicator: Transferable {
-    static var transferRepresentation: some TransferRepresentation {
-        CodableRepresentation(contentType: .item)
-    }
-}
-
-class GodApple: TransferableIndicator, Indicator {
+class GodApple: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .godApple
     var id: String = "minecraft:recipes/misc/mojang_banner_pattern"
     var key: String = L10n.Statistic.GodApple.obtain
     var name: String = "Obtain God Apple"
@@ -30,7 +23,8 @@ class GodApple: TransferableIndicator, Indicator {
     }
 }
 
-class Trident: TransferableIndicator, Indicator {
+class Trident: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .trident
     var id: String = "minecraft:trident"
     var key: String = L10n.Statistic.Trident.obtain
     var name: String = "Obtain\nTrident"
@@ -46,7 +40,8 @@ class Trident: TransferableIndicator, Indicator {
     }
 }
 
-class Shells: TransferableIndicator, Indicator {
+class Shells: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .shells
     var id: String = "minecraft:nautilus_shell"
     var key: String = L10n.Statistic.shells(0)
     var name: String = "Shells\n0 / 8"
@@ -63,7 +58,8 @@ class Shells: TransferableIndicator, Indicator {
     }
 }
 
-class WitherSkulls: TransferableIndicator, Indicator {
+class WitherSkulls: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .witherSkulls
     var id: String = "minecraft:wither_skeleton_skull"
     var key: String = L10n.Statistic.Wither.skulls(0)
     var name: String = "Skulls\n0 / 3"
@@ -80,7 +76,8 @@ class WitherSkulls: TransferableIndicator, Indicator {
     }
 }
 
-class AncientDebris: TransferableIndicator, Indicator {
+class AncientDebris: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .ancientDebris
     var id: String = "minecraft:ancient_debris"
     var key: String = L10n.Statistic.ancientDebris(0, 0)
     var name: String = "Debris: 0\nTNT: 0"
@@ -101,7 +98,8 @@ class AncientDebris: TransferableIndicator, Indicator {
     }
 }
 
-class Beehives: TransferableIndicator, Indicator {
+class Beehives: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .beehives
     var id: String = "minecraft:bee_nest"
     var key: String = L10n.Statistic.beehives(0)
     var name: String = "Hives: 0"
@@ -121,17 +119,18 @@ class Beehives: TransferableIndicator, Indicator {
     }
 }
 
-class GoldBlocks: TransferableIndicator, Indicator {
+class GoldBlocks: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .goldBlocks
     var id: String = "minecraft:gold_block"
     var key: String = L10n.Statistic.goldBlocks(0)
-    var name: String = "0 / 164"
+    var name: String = "Gold Blocks\n0 / 164"
     var icon: String = "gold_block"
     var frameStyle: String = "statistic"
     var completed: Bool = false
     var tooltip: String = ""
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
+        let count: Int = stats["minecraft:picked_up"]?[id] ?? 0 - ((stats["minecraft:crafted"]?["minecraft:gold_ingot"] ?? 0) / 9) + (stats["minecraft:crafted"]?[id] ?? 0)
         completed = count >= 164
         key = L10n.Statistic.goldBlocks(count)
     }

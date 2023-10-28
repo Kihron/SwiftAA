@@ -1315,9 +1315,10 @@ internal enum L10n {
     internal static func beehives(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.beehives", p1, fallback: "Hives: %d")
     }
+    /// Gold Blocks
     /// %d / 164
     internal static func goldBlocks(_ p1: Int) -> String {
-      return L10n.tr("Localizable", "statistic.gold_blocks", p1, fallback: "%d / 164")
+      return L10n.tr("Localizable", "statistic.gold_blocks", p1, fallback: "Gold Blocks\n%d / 164")
     }
     /// Shells
     /// %d / 8

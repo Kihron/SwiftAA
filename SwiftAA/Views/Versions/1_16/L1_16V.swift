@@ -9,6 +9,7 @@ import SwiftUI
 
 struct L1_16V: View {
     @ObservedObject private var dataManager = DataManager.shared
+    @State private var stats = Utilities.getSpecificStats(types: [.godApple, .trident, .shells, .ancientDebris, .beehives, .goldBlocks])
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -19,7 +20,7 @@ struct L1_16V: View {
                 .frame(width: 370)
                 
                 VStack(spacing: 0) {
-                    AdvPanelView(indicators: $dataManager.stats, columnCount: 1, isStat: true)
+                    AdvPanelView(indicators: $stats, columnCount: 1, isStat: true)
                 }
                 .frame(width: 74)
                 

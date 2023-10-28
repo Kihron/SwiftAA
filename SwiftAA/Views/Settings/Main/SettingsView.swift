@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIIntrospect
 
 struct SettingsView: View {
     @State var sideBarVisibility: NavigationSplitViewVisibility = .doubleColumn

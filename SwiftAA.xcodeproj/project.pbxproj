@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
+		B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B600F5272AEB796F00283C59 /* SwiftUIIntrospect */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
 		B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */; };
@@ -96,6 +97,10 @@
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
+		B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF732AECA6B100C7B805 /* StatusType.swift */; };
+		B6A4AF762AECBEB600C7B805 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */; };
+		B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */; };
+		B6A4AF7A2AECC06E00C7B805 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF792AECC06E00C7B805 /* Utilities.swift */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
@@ -231,6 +236,10 @@
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
+		B6A4AF732AECA6B100C7B805 /* StatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusType.swift; sourceTree = "<group>"; };
+		B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableIndicator.swift; sourceTree = "<group>"; };
+		B6A4AF792AECC06E00C7B805 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -279,6 +288,7 @@
 				B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */,
 				B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */,
 				B6CDBA0128BDA6B60016D248 /* Sparkle in Frameworks */,
+				B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +393,7 @@
 			children = (
 				B6498D6E2AABDC4600230808 /* RingBuffer.swift */,
 				B6CD41CE2AE60D600024D4E4 /* Constants.swift */,
+				B6A4AF792AECC06E00C7B805 /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -478,6 +489,7 @@
 				B6E331172AA8131C001D7FF2 /* TrackingMode.swift */,
 				B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */,
 				B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */,
+				B6A4AF732AECA6B100C7B805 /* StatusType.swift */,
 				B624F3822AB8044D006D8719 /* ModularPanel.swift */,
 				B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */,
 				B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */,
@@ -669,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				B6FEFED4289991070095CF08 /* Indicator.swift */,
+				B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */,
 				B65AB3582AA98281001F4FE6 /* Theme.swift */,
 			);
 			path = Protocols;
@@ -682,6 +695,7 @@
 				B676BDA02AA78E12008BD8A9 /* UserTheme.swift */,
 				B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */,
 				B6A772FF28899D3900436551 /* JsonAdvancement.swift */,
+				B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */,
 				B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */,
 				B65AE1D32887032F006EC138 /* Advancement.swift */,
 				B66A07732887A32900DC0A2C /* Criterion.swift */,
@@ -769,6 +783,7 @@
 				B6CDBA0028BDA6B60016D248 /* Sparkle */,
 				B6CDBA0328BDA6BE0016D248 /* SWXMLHash */,
 				B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */,
+				B600F5272AEB796F00283C59 /* SwiftUIIntrospect */,
 			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
@@ -803,6 +818,7 @@
 				B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				B6CDBA0228BDA6BE0016D248 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6CDBA0528BDA6C60016D248 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				B600F5262AEB796F00283C59 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
@@ -873,6 +889,7 @@
 				B65FE5912AA6CFE900C30A8F /* UIThemeManager.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
+				B6A4AF7A2AECC06E00C7B805 /* Utilities.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
@@ -883,10 +900,12 @@
 				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
+				B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
 				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
+				B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
 				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
@@ -971,6 +990,7 @@
 				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
 				B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */,
+				B6A4AF762AECBEB600C7B805 /* StatusIndicator.swift in Sources */,
 				B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */,
 				B683A1162ABD3F4B00162E7C /* ThemeSampleView.swift in Sources */,
 				B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */,
@@ -1124,7 +1144,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231027e;
+				CURRENT_PROJECT_VERSION = 231028e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1158,7 +1178,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 231027e;
+				CURRENT_PROJECT_VERSION = 231028e;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1206,6 +1226,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B600F5262AEB796F00283C59 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 		B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
@@ -1233,6 +1261,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B600F5272AEB796F00283C59 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B600F5262AEB796F00283C59 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = SwiftUIIntrospect;
+		};
 		B6CDBA0028BDA6B60016D248 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */;

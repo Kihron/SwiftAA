@@ -20,12 +20,12 @@ class OverlayManager: ObservableObject {
 
     @AppStorage("activeStatusIndicators") private var activeStatusIndicators: String = Constants.defaultActiveStatusIndicators
     
+    @Published var isHovering: Bool = false
+    
     var activeIndicators: [String] {
         get { activeStatusIndicators.split(separator: ",").map { String($0) } }
         set { activeStatusIndicators = newValue.joined(separator: ",") }
     }
-    
-    @Published var isHovering: Bool = false
     
     static let shared = OverlayManager()
     
