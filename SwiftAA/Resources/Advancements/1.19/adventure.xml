@@ -28,6 +28,8 @@
     <advancement id="minecraft:adventure/hero_of_the_village" name="Hero of the Village" short_name="Hero" icon="pillager_banner" type="challenge" key="adventure-hero-of-the-village"/>
     <advancement id="minecraft:adventure/totem_of_undying" name="Postmortal" type="goal" key="adventure-totem-of-undying"/>
 
+    <advancement id="minecraft:adventure/avoid_vibration" name="Sneak 100" icon="skulk_sensor" key="adventure-avoid-vibration"/>
+    <advancement id="minecraft:adventure/kill_mob_near_sculk_catalyst" name="It Spreads" icon="skulk_catalyst" type="challenge" key="adventure-kill-mob-near-sculk-catalyst"/>
     <advancement id="minecraft:adventure/throw_trident" name="A Throwaway Joke" short_name="ATJ" key="adventure-throw-trident"/>
     <advancement id="minecraft:adventure/very_very_frightening" name="Very Very Frightening" short_name="VVF" key="adventure-very-very-frightening"/>
     <advancement id="minecraft:adventure/adventuring_time" name="Adventuring Time" short_name="Adventuring" type="challenge" key="adventure-adventuring-time">
@@ -127,6 +129,4 @@
             <criterion id="minecraft:ravager" key="adventure-monsters-killed-ravager"/>
         </criteria>
     </advancement>
-    <advancement id="minecraft:adventure/avoid_vibration" name="Sneak 100" icon="skulk_sensor" key="adventure-avoid-vibration"/>
-    <advancement id="minecraft:adventure/kill_mob_near_sculk_catalyst" name="It Spreads" icon="skulk_catalyst" type="challenge" key="adventure-kill-mob-near-sculk-catalyst"/>
 </group>

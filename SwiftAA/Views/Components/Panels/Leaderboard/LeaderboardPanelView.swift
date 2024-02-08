@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LeaderboardPanelView: View {
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     
@@ -59,7 +59,7 @@ struct LeaderboardPanelView: View {
                                     .padding(.bottom, 10)
                                     .padding(.top, 14)
                                 
-                                if entry.position < leaderboardManager.entries.count {
+                                if entry.position < max(leaderboardManager.entries.count, 8) {
                                     Divider()
                                         .frame(height: 2)
                                         .overlay(themeManager.border)
@@ -72,7 +72,7 @@ struct LeaderboardPanelView: View {
                                         .padding(.bottom, 10)
                                         .padding(.top, 14)
                                     
-                                    if idx < placeholderUsers {
+                                    if idx < placeholderUsers - 1 {
                                         Divider()
                                             .frame(height: 2)
                                             .overlay(themeManager.border)

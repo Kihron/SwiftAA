@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var context
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
     
     @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
@@ -25,6 +25,7 @@ struct ContentView: View {
                     switch TrackerManager.shared.gameVersion {
                         case .v1_16 : L1_16()
                         case .v1_19 : L1_19()
+                        case .v1_20: L1_20()
                     }
                     
                     RoundedCornersShape(radius: 10, corners: [.bottomLeft, .bottomRight])

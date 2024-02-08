@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IndicatorInfoView: View {
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     @State var tooltip: String
     
     var body: some View {

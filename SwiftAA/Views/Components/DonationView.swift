@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DonationView: View {
     @Environment(\.openURL) var openURL
-    @ObservedObject var themeManager = UIThemeManager.shared
+    @ObservedObject var themeManager = ThemeManager.shared
     @State private var window: NSWindow?
     @State var show = false
     

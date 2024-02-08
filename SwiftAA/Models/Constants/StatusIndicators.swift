@@ -135,3 +135,20 @@ class GoldBlocks: TransferableIndicator, StatusIndicator {
         key = L10n.Statistic.goldBlocks(count)
     }
 }
+
+class SnifferEggs: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .snifferEggs
+    var id: String = "minecraft:sniffer_egg"
+    var key: String = L10n.Statistic.snifferEggs(0)
+    var name: String = "Gold Blocks\n0 / 164"
+    var icon: String = "obtain_sniffer_egg"
+    var frameStyle: String = "statistic"
+    var completed: Bool = false
+    var tooltip: String = ""
+    
+    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
+        let count: Int = stats["minecraft:picked_up"]?[id] ?? 0
+        completed = count >= 3
+        key = L10n.Statistic.snifferEggs(count)
+    }
+}

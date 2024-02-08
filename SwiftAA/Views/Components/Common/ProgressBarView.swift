@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressBarView: View {
-    @ObservedObject var themeManager = UIThemeManager.shared
+    @ObservedObject var themeManager = ThemeManager.shared
     @Binding var value: Int
     @Binding var total: Int
     @State var title: String

@@ -31,6 +31,8 @@ class LeaderboardManager: ObservableObject {
                 await getV16()
             case .v1_19:
                 getEntriesForOtherVersions(version: .v1_19)
+            case .v1_20:
+                getEntriesForOtherVersions(version: .v1_20)
         }
     }
     

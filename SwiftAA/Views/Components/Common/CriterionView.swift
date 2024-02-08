@@ -35,5 +35,6 @@ struct CriterionView: View {
 struct CriterionView_Previews: PreviewProvider {
     static var previews: some View {
         CriterionView(criterion: .constant(Criterion(id: "plains", key: "adventure-biomes-visited-wooded-badlands-plateau", name: "Plains", icon: "plains", completed: false)))
+            .padding()
     }
 }

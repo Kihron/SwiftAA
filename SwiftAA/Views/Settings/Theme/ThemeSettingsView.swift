@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ThemeSettingsView: View {
     @Environment(\.managedObjectContext) private var context
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     @State private var showThemeEditor: Bool = false
     
     private let columns = Array(repeating: GridItem(.adaptive(minimum: 100), spacing: 20), count: 4)

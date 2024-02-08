@@ -15,4 +15,5 @@ enum StatusType {
     case ancientDebris
     case beehives
     case goldBlocks
+    case snifferEggs
 }

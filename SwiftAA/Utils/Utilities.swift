@@ -23,4 +23,15 @@ class Utilities {
         }
         return indicators
     }
+    
+    static func selectSavesFolder() {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = false
+        if panel.runModal() == .OK {
+            TrackerManager.shared.customSavesPath = panel.url?.path ?? ""
+        }
+        NSApp.keyWindow?.makeFirstResponder(nil)
+    }
 }

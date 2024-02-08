@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct ApplyTheme: ViewModifier {
-    @ObservedObject var themeManager = UIThemeManager.shared
+    @ObservedObject var themeManager = ThemeManager.shared
 
     func body(content: Content) -> some View {
         content
@@ -18,7 +18,7 @@ struct ApplyTheme: ViewModifier {
 }
 
 struct ApplyThemeText: ViewModifier {
-    @ObservedObject var themeManager = UIThemeManager.shared
+    @ObservedObject var themeManager = ThemeManager.shared
 
     func body(content: Content) -> some View {
         content
@@ -27,7 +27,7 @@ struct ApplyThemeText: ViewModifier {
 }
 
 struct ApplyThemeBackgrounds: ViewModifier {
-    @ObservedObject var themeManager = UIThemeManager.shared
+    @ObservedObject var themeManager = ThemeManager.shared
 
     func body(content: Content) -> some View {
         content

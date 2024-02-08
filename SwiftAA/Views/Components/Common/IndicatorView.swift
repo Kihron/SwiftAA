@@ -11,7 +11,7 @@ import Quartz
 struct IndicatorView: View {
     @ObservedObject private var overlayManager = OverlayManager.shared
     @ObservedObject private var layoutManager = LayoutManager.shared
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     
     @Binding var indicator: Indicator
     @State var isOverlay: Bool = false

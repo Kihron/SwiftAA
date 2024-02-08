@@ -45,6 +45,6 @@ struct ThemeSampleView: View {
 }
 
 #Preview {
-    ThemeSampleView(background: .constant(UIThemeManager.shared.background), border: .constant(UIThemeManager.shared.border), text: .constant(UIThemeManager.shared.text))
+    ThemeSampleView(background: .constant(ThemeManager.shared.background), border: .constant(ThemeManager.shared.border), text: .constant(ThemeManager.shared.text))
         .padding()
 }

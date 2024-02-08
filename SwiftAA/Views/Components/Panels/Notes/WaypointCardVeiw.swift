@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WaypointCardView: View {
     @Environment(\.managedObjectContext) private var context
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
     

@@ -9,8 +9,9 @@ import SwiftUI
 import SwiftUIIntrospect
 
 struct SettingsView: View {
-    @State var sideBarVisibility: NavigationSplitViewVisibility = .doubleColumn
-    @State var selectedSettingsBarItem: SettingsBarItem = .tracking
+    @State private var sideBarVisibility: NavigationSplitViewVisibility = .doubleColumn
+    @State private var selectedSettingsBarItem: SettingsBarItem = .tracking
+    @State private var disableCollapse: Bool = false
     
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
@@ -60,6 +61,18 @@ struct SettingsView: View {
         }
     }
 }
+
+//extension View {
+//    func preventSidebarCollapse() -> some View {
+//        return introspect(.navigationSplitView, on: .macOS(.v13, .v14)) { splitView in
+//            if let delegate = (splitView.delegate as? NSSplitViewController) {
+//                delegate.splitViewItems.first?.canCollapse = false
+//                delegate.splitViewItems.first?.maximumThickness = 200
+//                delegate.splitViewItems.first?.minimumThickness = 200
+//            }
+//        }
+//    }
+//}
 
 #Preview {
     SettingsView()

@@ -445,12 +445,15 @@ internal enum L10n {
       }
       internal enum Spyglass {
         internal enum At {
-          /// Is It a Plane?
-          internal static let dragon = L10n.tr("Localizable", "advancement.adventure.spyglass.at.dragon", fallback: "Is It a Plane?")
-          /// Is It a Balloon?
-          internal static let ghast = L10n.tr("Localizable", "advancement.adventure.spyglass.at.ghast", fallback: "Is It a Balloon?")
-          /// Is It a Bird?
-          internal static let parrot = L10n.tr("Localizable", "advancement.adventure.spyglass.at.parrot", fallback: "Is It a Bird?")
+          /// Is It a
+          /// Plane?
+          internal static let dragon = L10n.tr("Localizable", "advancement.adventure.spyglass.at.dragon", fallback: "Is It a\nPlane?")
+          /// Is It a
+          /// Balloon?
+          internal static let ghast = L10n.tr("Localizable", "advancement.adventure.spyglass.at.ghast", fallback: "Is It a\nBalloon?")
+          /// Is It a
+          /// Bird?
+          internal static let parrot = L10n.tr("Localizable", "advancement.adventure.spyglass.at.parrot", fallback: "Is It a\nBird?")
         }
       }
       internal enum Summon {
@@ -1125,6 +1128,8 @@ internal enum L10n {
     internal static let cats = L10n.tr("Localizable", "goal.cats", fallback: "Cats")
     /// Visited
     internal static let nether = L10n.tr("Localizable", "goal.nether", fallback: "Visited")
+    /// Trims Applied
+    internal static let trims = L10n.tr("Localizable", "goal.trims", fallback: "Trims Applied")
     internal enum Animals {
       /// Animals Bred
       internal static let bred = L10n.tr("Localizable", "goal.animals.bred", fallback: "Animals Bred")
@@ -1324,6 +1329,11 @@ internal enum L10n {
     /// %d / 8
     internal static func shells(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.shells", p1, fallback: "Shells\n%d / 8")
+    }
+    /// Sniffer Eggs
+    /// %d / 3
+    internal static func snifferEggs(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.sniffer_eggs", p1, fallback: "Sniffer Eggs\n%d / 3")
     }
     internal enum AncientDebris {
       /// Done With Netherite

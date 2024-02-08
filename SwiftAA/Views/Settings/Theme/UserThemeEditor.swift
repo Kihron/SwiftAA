@@ -10,12 +10,12 @@ import SwiftUI
 struct UserThemeEditor: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.managedObjectContext) private var context
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     
     @State private var name: String = ""
-    @State private var background: Color = UIThemeManager.shared.background
-    @State private var border: Color = UIThemeManager.shared.border
-    @State private var text: Color = UIThemeManager.shared.text
+    @State private var background: Color = ThemeManager.shared.background
+    @State private var border: Color = ThemeManager.shared.border
+    @State private var text: Color = ThemeManager.shared.text
     
     var body: some View {
         ZStack {
@@ -29,6 +29,7 @@ struct UserThemeEditor: View {
                         .focusable(false)
                         .labelsHidden()
                         .lineLimit(1)
+                        .textFieldStyle(.roundedBorder)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .roundedCorners(radius: 5, corners: [.allCorners])
                 }

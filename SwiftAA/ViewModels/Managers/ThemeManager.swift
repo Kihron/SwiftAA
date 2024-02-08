@@ -1,5 +1,5 @@
 //
-//  UIThemeManager.swift
+//  ThemeManager.swift
 //  SwiftAA
 //
 //  Created by Kihron on 9/4/23.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-class UIThemeManager: ObservableObject {
+class ThemeManager: ObservableObject {
     @AppStorage("currentPreset") var currentPreset: ThemePreset = .enderPearl
     @AppStorage("selectedUserTheme") private var selectedUserTheme: UUID?
     @AppStorage("themeMode") var themeMode: ThemeMode = .preset
     
-    static let shared = UIThemeManager()
+    static let shared = ThemeManager()
     
     @Published var userThemes: [UserTheme] = []
     

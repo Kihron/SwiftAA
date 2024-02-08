@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<group name="Husbandry">
+    <advancement id="minecraft:husbandry/root" name="Husbandry" icon="husbandry" key="husbandry-root"/>
+    <advancement id="minecraft:husbandry/plant_seed" name="A Seedy Place" short_name="Seedy Place" key="husbandry-plant-seed"/>
+    <advancement id="minecraft:husbandry/breed_an_animal" name="The Parrots and the Bats" short_name="Parrots" key="husbandry-breed-an-animal"/>
+    <advancement id="minecraft:husbandry/tame_an_animal" name="Best Friends Forever" short_name="BFF's" key="husbandry-tame-an-animal"/>
+    <advancement id="minecraft:husbandry/fishy_business" name="Fishy Business" short_name="Fishy Biz" key="husbandry-fishy-business"/>
+    <advancement id="minecraft:husbandry/tactical_fishing" name="Tactical Fishing" short_name="Tactical" key="husbandry-tactical-fishing"/>
+    <advancement id="minecraft:husbandry/axolotl_in_a_bucket" name="The Cutest Predator" short_name="Predator" key="husbandry-axolotl-in-a-bucket"/>
+    <advancement id="minecraft:husbandry/kill_axolotl_target" name="Healing Power of Friendship" short_name="Friendship" key="husbandry-kill-axolotl-target"/>
+    <advancement id="minecraft:husbandry/make_a_sign_glow" name="Glow and Behold!" short_name="Behold!" key="husbandry-make-a-sign-glow"/>
+    <advancement id="minecraft:husbandry/safely_harvest_honey" name="Bee Our Guest" short_name="Our Guest" key="husbandry-safely-harvest-honey"/>
+    <advancement id="minecraft:husbandry/wax_on" name="Wax On" key="husbandry-wax-on"/>
+    <advancement id="minecraft:husbandry/wax_off" name="Wax Off" key="husbandry-wax-off"/>
+    
+    <advancement id="minecraft:husbandry/silk_touch_nest" name="Total Beelocation" short_name="Beelocation" key="husbandry-silk-touch-nest"/>
+    <advancement id="minecraft:husbandry/ride_a_boat_with_a_goat" name="Whatever Floats Your Goat!" short_name="Goat Boat" key="husbandry-ride-a-boat-with-a-goat"/>
+    <advancement id="minecraft:husbandry/allay_deliver_item_to_player" name="You've Got a Friend in Me" short_name="A Friend" icon="cookie" key="husbandry-allay-deliver-item-to-player"/>
+    <advancement id="minecraft:husbandry/allay_deliver_cake_to_note_block" name="Birthday Song" short_name="Birthday" icon="birthday" type="challenge" key="husbandry-allay-deliver-cake-to-note-block"/>
+    <advancement id="minecraft:husbandry/obtain_sniffer_egg" name="Smells Interesting" short_name="Smells" icon="obtain_sniffer_egg" key="husbandry-obtain-sniffer-egg"/>
+    <advancement id="minecraft:husbandry/feed_snifflet" name="Little Sniffs" short_name="Lil Sniffs" icon="feed_snifflet" key="husbandry-feed-snifflet"/>
+    <advancement id="minecraft:husbandry/plant_any_sniffer_seed" name="Planting The Past" short_name="The Past" icon="plant_any_sniffer_seed" key="husbandry-plant-any-sniffer-seed"/>
+    
+    <advancement id="minecraft:husbandry/bred_all_animals" name="Two by Two" type="challenge" key="husbandry-bred-all-animals">
+        <criteria goal="Animals Bred">
+            <criterion id="minecraft:pig" key="husbandry-animals-bred-pig"/>
+            <criterion id="minecraft:sheep" key="husbandry-animals-bred-sheep"/>
+            <criterion id="minecraft:chicken" key="husbandry-animals-bred-chicken"/>
+            <criterion id="minecraft:cow" key="husbandry-animals-bred-cow"/>
+            <criterion id="minecraft:mooshroom" key="husbandry-animals-bred-mooshroom"/>
+            <criterion id="minecraft:cat" key="husbandry-animals-bred-cat"/>
+            <criterion id="minecraft:ocelot" key="husbandry-animals-bred-ocelot"/>
+            <criterion id="minecraft:wolf" key="husbandry-animals-bred-wolf"/>
+            <criterion id="minecraft:fox" key="husbandry-animals-bred-fox"/>
+            <criterion id="minecraft:rabbit" key="husbandry-animals-bred-rabbit"/>
+            <criterion id="minecraft:bee" key="husbandry-animals-bred-bee"/>
+            <criterion id="minecraft:horse" key="husbandry-animals-bred-horse"/>
+            <criterion id="minecraft:donkey" key="husbandry-animals-bred-donkey"/>
+            <criterion id="minecraft:mule" key="husbandry-animals-bred-mule"/>
+            <criterion id="minecraft:camel" key="husbandry-animals-bred-camel"/>
+            <criterion id="minecraft:llama" key="husbandry-animals-bred-llama"/>
+            <criterion id="minecraft:goat" key="husbandry-animals-bred-goat"/>
+            <criterion id="minecraft:panda" key="husbandry-animals-bred-panda"/>
+            <criterion id="minecraft:sniffer" key="husbandry-animals-bred-sniffer"/>
+            <criterion id="minecraft:turtle" key="husbandry-animals-bred-turtle"/>
+            <criterion id="minecraft:axolotl" key="husbandry-animals-bred-axolotl"/>
+            <criterion id="minecraft:frog" key="husbandry-animals-bred-frog"/>
+            <criterion id="minecraft:strider" key="husbandry-animals-bred-strider"/>
+            <criterion id="minecraft:hoglin" key="husbandry-animals-bred-hoglin"/>
+        </criteria>
+    </advancement>
+    <advancement id="minecraft:husbandry/balanced_diet" name="A Balanced Diet" short_name="ABD" type="challenge" key="husbandry-balanced-diet">
+        <criteria goal="Foods Eaten">
+            <criterion id="bread" key="husbandry-foods-eaten-bread"/>
+            <criterion id="cooked_porkchop" name="Porkchop" key="husbandry-foods-eaten-cooked-porkchop"/>
+            <criterion id="porkchop" name="Raw Porkchop" key="husbandry-foods-eaten-porkchop"/>
+            <criterion id="cooked_beef" name="Beef" key="husbandry-foods-eaten-cooked-beef"/>
+            <criterion id="beef" name="Raw Beef" key="husbandry-foods-eaten-beef"/>
+            <criterion id="cooked_chicken" name="Chicken" key="husbandry-foods-eaten-cooked-chicken"/>
+            <criterion id="chicken" name="Raw Chicken" icon="raw_chicken" key="husbandry-foods-eaten-chicken"/>
+            <criterion id="cooked_mutton" name="Mutton" key="husbandry-foods-eaten-cooked-mutton"/>
+            <criterion id="mutton" name="Raw Mutton" key="husbandry-foods-eaten-mutton"/>
+            <criterion id="cooked_rabbit" name="Rabbit" key="husbandry-foods-eaten-cooked-rabbit"/>
+            <criterion id="rabbit" name="Raw Rabbit" icon="raw_rabbit" key="husbandry-foods-eaten-rabbit"/>
+            <criterion id="cooked_cod" name="Cod" key="husbandry-foods-eaten-cooked-cod"/>
+            <criterion id="cod" name="Raw Cod" key="husbandry-foods-eaten-cod"/>
+            <criterion id="tropical_fish" key="husbandry-foods-eaten-tropical-fish"/>
+            <criterion id="cooked_salmon" name="Salmon" key="husbandry-foods-eaten-cooked-salmon"/>
+            <criterion id="salmon" name="Raw Salmon" key="husbandry-foods-eaten-salmon"/>
+            <criterion id="pufferfish" key="husbandry-foods-eaten-pufferfish"/>
+            <criterion id="cookie" key="husbandry-foods-eaten-cookie"/>
+            <criterion id="pumpkin_pie" key="husbandry-foods-eaten-pumpkin-pie"/>
+            <criterion id="apple" key="husbandry-foods-eaten-apple"/>
+            <criterion id="golden_apple" key="husbandry-foods-eaten-golden-apple"/>
+            <criterion id="enchanted_golden_apple" name="God Apple" key="husbandry-foods-eaten-enchanted-golden-apple"/>
+            <criterion id="golden_carrot" key="husbandry-foods-eaten-golden-carrot"/>
+            <criterion id="carrot" key="husbandry-foods-eaten-carrot"/>
+            <criterion id="melon_slice" key="husbandry-foods-eaten-melon-slice"/>
+            <criterion id="baked_potato" key="husbandry-foods-eaten-baked-potato"/>
+            <criterion id="potato" key="husbandry-foods-eaten-potato"/>
+            <criterion id="poisonous_potato" name="Poison Potato" key="husbandry-foods-eaten-poisonous-potato"/>
+            <criterion id="beetroot" key="husbandry-foods-eaten-beetroot"/>
+            <criterion id="sweet_berries" key="husbandry-foods-eaten-sweet-berries"/>
+            <criterion id="glow_berries" key="husbandry-foods-eaten-glow-berries"/>
+            <criterion id="chorus_fruit" key="husbandry-foods-eaten-chorus-fruit"/>
+            <criterion id="mushroom_stew" name="Shroom Stew" key="husbandry-foods-eaten-mushroom-stew"/>
+            <criterion id="suspicious_stew" name="Sus Stew" key="husbandry-foods-eaten-suspicious-stew"/>
+            <criterion id="rabbit_stew" key="husbandry-foods-eaten-rabbit-stew"/>
+            <criterion id="beetroot_soup" name="Beet Soup" key="husbandry-foods-eaten-beetroot-soup"/>
+            <criterion id="dried_kelp" key="husbandry-foods-eaten-dried-kelp"/>
+            <criterion id="honey_bottle" key="husbandry-foods-eaten-honey-bottle"/>
+            <criterion id="rotten_flesh" key="husbandry-foods-eaten-rotten-flesh"/>
+            <criterion id="spider_eye" key="husbandry-foods-eaten-spider-eye"/>
+        </criteria>
+    </advancement>
+    <advancement id="minecraft:husbandry/complete_catalogue" name="A Complete Catalogue" short_name="Catalogue" type="challenge" key="husbandry-complete-catalogue">
+        <criteria goal="Cats">
+            <criterion id="minecraft:jellie" name="Jellie" icon="jellie" key="husbandry-cats-jellie"/>
+            <criterion id="minecraft:calico" name="Calico" icon="calico" key="husbandry-cats-calico"/>
+            <criterion id="minecraft:red" name="Red" icon="red" key="husbandry-cats-red"/>
+            <criterion id="minecraft:black" name="Tuxedo" icon="tuxedo" key="husbandry-cats-black"/>
+            <criterion id="minecraft:white" name="White" icon="white" key="husbandry-cats-white"/>
+            <criterion id="minecraft:ragdoll" name="Ragdoll" icon="ragdoll" key="husbandry-cats-ragdoll"/>
+            <criterion id="minecraft:british_shorthair" name="British" icon="british_shorthair" key="husbandry-cats-british-shorthair"/>
+            <criterion id="minecraft:tabby" name="Tabby" icon="tabby" key="husbandry-cats-tabby"/>
+            <criterion id="minecraft:all_black" name="Black" icon="black" key="husbandry-cats-all-black"/>
+            <criterion id="minecraft:persian" name="Persian" icon="persian" key="husbandry-cats-persian"/>
+            <criterion id="minecraft:siamese" name="Siamese" icon="siamese" key="husbandry-cats-siamese"/>
+        </criteria>
+    </advancement>
+    <advancement id="minecraft:husbandry/obtain_netherite_hoe" name="Serious Dedication" short_name="Dedication" type="challenge" key="husbandry-obtain-netherite-hoe"/>
+
+    <advancement id="minecraft:husbandry/froglights" name="Our Powers Combined!" short_name="Froglights" type="challenge" key="husbandry-froglights"/>
+    <advancement id="minecraft:husbandry/leash_all_frog_variants" name="Squad Hops Into Town" short_name="The Squad" icon="tame_an_animal" key="husbandry-leash-all-frog-variants"/>
+    <advancement id="minecraft:husbandry/tadpole_in_a_bucket" name="Bukkit Bukkit" short_name="Bukkit" key="husbandry-tadpole-in-a-bucket"/>
+</group>

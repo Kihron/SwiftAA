@@ -73,7 +73,7 @@ struct LeaderboardEntryView: View {
             case .notSubmitted:
                 return .gray
             case .unknown:
-                return UIThemeManager.shared.text
+                return ThemeManager.shared.text
         }
     }
     

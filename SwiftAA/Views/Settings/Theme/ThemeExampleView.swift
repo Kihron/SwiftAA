@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ThemeExampleView: View {
-    @ObservedObject private var themeManager = UIThemeManager.shared
+    @ObservedObject private var themeManager = ThemeManager.shared
     
     var body: some View {
         ZStack {

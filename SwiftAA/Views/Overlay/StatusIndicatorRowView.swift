@@ -32,18 +32,16 @@ struct StatusIndicatorRowView: View {
     var body: some View {
         HStack {
             if overlayManager.showStatistics {
+                if alignment == .trailing {
+                    pinnedButton
+                }
+                
                 ForEach(filteredStatusIndicators, id: \.self.wrappedValue.id) { adv in
                     IndicatorView(indicator: adv, isOverlay: true, isStat: true)
                 }
                 
-                if overlayManager.isHovering {
-                    Button(action: { showStatusEditor.toggle() }) {
-                        Image(systemName: "pin.fill")
-                            .scaleEffect(1.5)
-                            .padding(.bottom, 14)
-                            .rotationEffect(.degrees(45))
-                    }
-                    .buttonStyle(.plain)
+                if alignment != .trailing {
+                    pinnedButton
                 }
             }
         }
@@ -53,6 +51,22 @@ struct StatusIndicatorRowView: View {
         .animation(.spring, value: overlayManager.statisticsAlignment)
         .animation(.easeIn(duration: 0.2), value: overlayManager.isHovering)
         .frame(maxWidth: .infinity, alignment: alignment)
+    }
+    
+    @ViewBuilder var pinnedButton: some View {
+        if overlayManager.isHovering {
+            Button(action: { showStatusEditor.toggle() }) {
+                Image(systemName: "pin.fill")
+                    .scaleEffect(1.5)
+                    .padding(.bottom, 14)
+                    .rotationEffect(.degrees(45))
+            }
+            .buttonStyle(.plain)
+        } else {
+            Rectangle()
+                .fill(.clear)
+                .frame(width: 16, height: 16)
+        }
     }
 }
 

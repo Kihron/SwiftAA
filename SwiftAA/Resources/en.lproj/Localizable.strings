@@ -22,6 +22,7 @@
 "goal.foods.eaten" = "Foods Eaten";
 "goal.monsters.killed" = "Monsters Killed";
 "goal.nether" = "Visited";
+"goal.trims" = "Trims Applied";
 
 "info.bullseye" = "Be at least **30 blocks** away horizontally when the center of a target is shot with a projectile by the player.";
 "info.sniper_duel" = "Be at least **50 blocks** away horizontally when a skeleton is killed by an arrow after the player has attacked it once.";
@@ -96,6 +97,7 @@
 "statistic.gold_blocks" = "Gold Blocks\n%d / 164";
 "statistic.shells" = "Shells\n%d / 8";
 "statistic.shells.crafted" = "Conduit Crafted";
+"statistic.sniffer_eggs" = "Sniffer Eggs\n%d / 3";
 "statistic.trident.awaiting" = "Awaiting\nThunder";
 "statistic.trident.obtain" = "Obtain\nTrident";
 "statistic.trident.thunder" = "Done With Thunder";
@@ -226,9 +228,9 @@
 "advancement.adventure.trade.at.world.height" = "Star Trader";
 "advancement.adventure.fall.from.world.height" = "Caves and Cliffs";
 "advancement.adventure.play.jukebox.in.meadows" = "Sound of Music";
-"advancement.adventure.spyglass.at.parrot" = "Is It a Bird?";
-"advancement.adventure.spyglass.at.ghast" = "Is It a Balloon?";
-"advancement.adventure.spyglass.at.dragon" = "Is It a Plane?";
+"advancement.adventure.spyglass.at.parrot" = "Is It a\nBird?";
+"advancement.adventure.spyglass.at.ghast" = "Is It a\nBalloon?";
+"advancement.adventure.spyglass.at.dragon" = "Is It a\nPlane?";
 "advancement.adventure.lightning.rod.with.villager.no.fire" = "Surge Protector";
 "advancement.adventure.walk.on.powder.snow.with.leather.boots" = "Light as a Rabbit";
 "advancement.adventure.biomes.visited.old.growth.birch.forest" = "Old Birch";
