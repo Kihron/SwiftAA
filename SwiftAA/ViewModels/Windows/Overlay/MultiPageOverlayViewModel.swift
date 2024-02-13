@@ -19,7 +19,7 @@ class MultiPageOverlayViewModel: ObservableObject {
     }
     
     var completedAdvancements: Int {
-        return dataManager.completedAdvancements
+        return dataManager.completedAdvancements.count
     }
 
     func getSection(_ section: Int, screen: GeometryProxy) -> [Advancement] {

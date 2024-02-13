@@ -16,11 +16,21 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     var criteria: [Criterion]
     var completed: Bool
     var tooltip: String
+    var timestamp: Date?
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        
         completed = advancements[id]?.done ?? false
+        timestamp = advancements[id]?.criteria.compactMap({dateFormatter.date(from: $0.value)}).max()
+        
         criteria.forEach { criterion in
-            criterion.completed = advancements[id]?.criteria[criterion.id] != nil
+            if let timestampString = advancements[id]?.criteria[criterion.id] {
+                criterion.timestamp = dateFormatter.date(from: timestampString)
+            } else {
+                criterion.timestamp = nil
+            }
         }
     }
     

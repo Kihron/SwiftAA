@@ -8,7 +8,7 @@
 import SwiftUI
 
 class OverlayManager: ObservableObject {
-    @AppStorage("overlayStyle") var overlayStyle: OverlayStyle = .tickerTape
+    @AppStorage("overlayStyle") var overlayStyle: OverlayStyle = .optimal
     @AppStorage("overlayOpen") var overlayOpen: Bool = false
     @AppStorage("showStatistics") var showStatistics: Bool = true
     @AppStorage("statisticsAlignment") var statisticsAlignment: HAlignment = .leading

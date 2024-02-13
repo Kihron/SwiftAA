@@ -42,8 +42,8 @@
             <criterion id="minecraft:swamp" key="adventure-biomes-visited-swamp"/>
             <criterion id="minecraft:mangrove_swamp" key="adventure-biomes-visited-mangrove-swamp"/>
             <criterion id="minecraft:taiga" key="adventure-biomes-visited-taiga"/>
-            <criterion id="minecraft:old_growth_pine_taiga" name="Old Pine" key="adventure-biomes-visited-old-growth-pine-taiga"/>
-            <criterion id="minecraft:old_growth_spruce_taiga" name="Old Spruce" key="adventure-biomes-visited-old-growth-spruce-taiga"/>
+            <criterion id="minecraft:old_growth_pine_taiga" name="Old Pine" key="adventure-biomes-visited-old-growth-pine-taiga-19"/>
+            <criterion id="minecraft:old_growth_spruce_taiga" name="Old Spruce" key="adventure-biomes-visited-old-growth-spruce-taiga-19"/>
             <criterion id="minecraft:snowy_taiga" key="adventure-biomes-visited-snowy-taiga"/>
             <criterion id="minecraft:grove" key="adventure-biomes-visited-grove"/>
 
@@ -65,7 +65,7 @@
             <criterion id="minecraft:beach" key="adventure-biomes-visited-beach"/>
             <criterion id="minecraft:desert" key="adventure-biomes-visited-desert"/>
             <criterion id="minecraft:savanna" key="adventure-biomes-visited-savanna"/>
-            <criterion id="minecraft:savanna_plateau" short_name="Savanna Plat" key="adventure-biomes-visited-savanna-plateau"/>
+            <criterion id="minecraft:savanna_plateau" short_name="Savanna Plat" key="adventure-biomes-visited-savanna-plateau-19"/>
             <criterion id="minecraft:windswept_savanna" short_name="WS Savanna" key="adventure-biomes-visited-windswept-savanna"/>
             <criterion id="minecraft:windswept_forest" short_name="WS Forest" key="adventure-biomes-visited-windswept-forest"/>
             <criterion id="minecraft:windswept_gravelly_hills" name="Windswept Gravel" short_name="WS Gravel" key="adventure-biomes-visited-windswept-gravelly-hills"/>
@@ -76,8 +76,8 @@
             <criterion id="minecraft:frozen_ocean" key="adventure-biomes-visited-frozen-ocean"/>
             <criterion id="minecraft:deep_ocean" key="adventure-biomes-visited-deep-ocean"/>
             <criterion id="minecraft:deep_cold_ocean" key="adventure-biomes-visited-deep-cold-ocean"/>
-            <criterion id="minecraft:deep_frozen_ocean" name="Deep Frozen Ocean" key="adventure-biomes-visited-deep-frozen-ocean"/>
-            <criterion id="minecraft:deep_lukewarm_ocean" name="Deep Lukewarm Ocean" key="adventure-biomes-visited-deep-lukewarm-ocean"/>
+            <criterion id="minecraft:deep_frozen_ocean" name="Deep Frozen Ocean" key="adventure-biomes-visited-deep-frozen-ocean-19"/>
+            <criterion id="minecraft:deep_lukewarm_ocean" name="Deep Lukewarm Ocean" key="adventure-biomes-visited-deep-lukewarm-ocean-19"/>
 
             <criterion id="minecraft:mushroom_fields" key="adventure-biomes-visited-mushroom-fields"/>
             <criterion id="minecraft:jungle" key="adventure-biomes-visited-jungle"/>

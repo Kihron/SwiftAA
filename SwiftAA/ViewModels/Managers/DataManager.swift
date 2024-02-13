@@ -34,8 +34,10 @@ class DataManager: ObservableObject {
         return map.values.flatMap({$0}).count
     }
     
-    var completedAdvancements: Int {
-        return map.values.flatMap({$0}).filter({$0.completed}).count
+    var completedAdvancements: [Advancement] {
+        return map.values.flatMap({$0}).filter({$0.completed}).sorted(by: {
+            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+        })
     }
     
     var incompleteAdvancements: [Advancement] {
@@ -44,6 +46,12 @@ class DataManager: ObservableObject {
     
     var incompleteCriteria: [Criterion] {
         return map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
+    }
+    
+    var completedCriteria: [Criterion] {
+        return map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{$0.completed}.sorted(by: {
+            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+        })
     }
     
     private var advancementsWithCriteria: [Advancement] {
@@ -97,7 +105,7 @@ class DataManager: ObservableObject {
                 let key = c.element!.attribute(by: "key")!.text
                 let name = c.element!.attribute(by: "name")?.text ?? getNameFromID(id: id, prefix: prefix)
                 let icon = c.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: ":")
-                return Criterion(id: id, key: key, name: name, icon: icon, completed: false)
+                return Criterion(id: id, key: key, name: name, icon: icon)
             })
             let current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
             fullList.append(current)

@@ -16,6 +16,8 @@ struct OverlayView: View {
             Group {
                 if !dataManager.allAdvancements {
                     switch overlayManager.overlayStyle {
+                        case .optimal:
+                            OptimalOverlayView()
                         case .tickerTape:
                             TickerTapeOverlayView()
                         case .multiPage:

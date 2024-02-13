@@ -7,19 +7,22 @@
 
 import SwiftUI
 
-class Criterion: NSObject, Codable {
+class Criterion: NSObject, Codable, Identifiable {
     var id: String
     var key: String
     var name: String
     var icon: String
-    var completed: Bool
+    var timestamp: Date?
     
-    init(id: String, key: String, name: String, icon: String, completed: Bool) {
+    var completed: Bool {
+        return timestamp != nil
+    }
+    
+    init(id: String, key: String, name: String, icon: String) {
         self.id = id
         self.key = "advancement.\(key.replacingOccurrences(of: "-", with: "."))"
         self.name = name
         self.icon = icon
-        self.completed = completed
     }
     
     public override var description: String {

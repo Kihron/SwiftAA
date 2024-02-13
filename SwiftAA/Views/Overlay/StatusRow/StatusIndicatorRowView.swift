@@ -30,7 +30,7 @@ struct StatusIndicatorRowView: View {
     }
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             if overlayManager.showStatistics {
                 if alignment == .trailing {
                     pinnedButton

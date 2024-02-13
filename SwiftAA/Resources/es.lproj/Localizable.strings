@@ -5,7 +5,7 @@
 
 "about.button" = "Acerca de SwiftAA";
 "about.description" = "Seguimiento de logros para macOS";
-"about.copyright" = "Copyright © 2023 Kihron, Slackow.";
+"about.copyright" = "Copyright © 2024 Kihron, Slackow.";
 
 "donate.message" = "Apóyanos en Ko-Fi";
 
@@ -204,8 +204,8 @@
 "advancement.adventure.fall.from.world.height" = "Cuevas Y Acantilados";
 "advancement.adventure.play.jukebox.in.meadows" = "El Dulce Cantar";
 "advancement.adventure.spyglass.at.parrot" = "¿Es Un Pájaro?";
-"advancement.adventure.spyglass.at.ghast" = "¿Es Un Globo?";
-"advancement.adventure.spyglass.at.dragon" = "¿Es Un Avión?";
+"advancement.adventure.spyglass.at.ghast" = "¿Es Un\nGlobo?";
+"advancement.adventure.spyglass.at.dragon" = "¿Es Un\nAvión?";
 "advancement.adventure.biomes.visited.old.growth.birch.forest" = "Abedular ancestral";
 "advancement.adventure.biomes.visited.mangrove.swamp" = "Manglar";
 "advancement.adventure.biomes.visited.old.growth.pine.taiga" = "Taiga de pinos ancestrales";

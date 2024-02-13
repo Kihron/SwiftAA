@@ -51,6 +51,21 @@ struct LayoutSettingsView: View {
                         .frame(maxWidth: 90)
                         .labelsHidden()
                     }
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Progress Bar Style")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Picker("", selection: $layoutManager.progressBarStyle) {
+                            ForEach(ProgressBarStyle.allCases, id: \.self) { item in
+                                Text(item.label.localized)
+                            }
+                        }
+                        .frame(maxWidth: 120)
+                        .labelsHidden()
+                    }
                 }
             }
         }

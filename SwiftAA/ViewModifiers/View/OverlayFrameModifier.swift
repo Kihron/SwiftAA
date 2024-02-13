@@ -14,6 +14,9 @@ struct OverlayFrameModifier: ViewModifier {
     func body(content: Content) -> some View {
         if !dataManager.allAdvancements {
             switch overlayManager.overlayStyle {
+                case .optimal:
+                    content
+                        .frame(minWidth: 600, maxWidth: 601, minHeight: 250, maxHeight: 250)
                 case .tickerTape:
                     content
                         .frame(minWidth: 600, maxWidth: 1000, minHeight: 250, maxHeight: 250)

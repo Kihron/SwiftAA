@@ -31,6 +31,8 @@
 		B62AEA102AA93F13008B01CD /* SettingsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */; };
 		B62AEA132AA9470E008B01CD /* ThemeExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA122AA9470E008B01CD /* ThemeExampleView.swift */; };
 		B62AEA172AA95FFD008B01CD /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA162AA95FFD008B01CD /* NoteManager.swift */; };
+		B62EA6542B797E1900EB66AC /* EnderDragonProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62EA6532B797E1900EB66AC /* EnderDragonProgressBar.swift */; };
+		B62EA6562B797F3700EB66AC /* ProgressBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62EA6552B797F3700EB66AC /* ProgressBarStyle.swift */; };
 		B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637DB3029634FA800A73F62 /* AppViewModel.swift */; };
 		B6397EDF2AC9E9B3007C8606 /* IndicatorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */; };
 		B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */; };
@@ -44,7 +46,7 @@
 		B6498D732AAC226400230808 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D722AAC226400230808 /* OverlayManager.swift */; };
 		B6498D752AAC23B300230808 /* HAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D742AAC23B300230808 /* HAlignment.swift */; };
 		B6498D772AAC244D00230808 /* OverlaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D762AAC244D00230808 /* OverlaySettings.swift */; };
-		B65180052B1593E600D9CC99 /* OptimizedOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65180042B1593E600D9CC99 /* OptimizedOverlayView.swift */; };
+		B65180052B1593E600D9CC99 /* OptimalOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65180042B1593E600D9CC99 /* OptimalOverlayView.swift */; };
 		B65AB3442AA965BB001F4FE6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65AB3422AA965BB001F4FE6 /* Model.xcdatamodeld */; };
 		B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB34E2AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift */; };
 		B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB34F2AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift */; };
@@ -96,6 +98,7 @@
 		B687E18D28B48079002CF5D7 /* skulk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* skulk_sensor.gif */; };
 		B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */; };
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
+		B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
 		B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF732AECA6B100C7B805 /* StatusType.swift */; };
@@ -170,6 +173,8 @@
 		B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabel.swift; sourceTree = "<group>"; };
 		B62AEA122AA9470E008B01CD /* ThemeExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeExampleView.swift; sourceTree = "<group>"; };
 		B62AEA162AA95FFD008B01CD /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		B62EA6532B797E1900EB66AC /* EnderDragonProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderDragonProgressBar.swift; sourceTree = "<group>"; };
+		B62EA6552B797F3700EB66AC /* ProgressBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarStyle.swift; sourceTree = "<group>"; };
 		B637DB3029634FA800A73F62 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorInfoView.swift; sourceTree = "<group>"; };
 		B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountView.swift; sourceTree = "<group>"; };
@@ -183,7 +188,7 @@
 		B6498D722AAC226400230808 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
 		B6498D742AAC23B300230808 /* HAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAlignment.swift; sourceTree = "<group>"; };
 		B6498D762AAC244D00230808 /* OverlaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySettings.swift; sourceTree = "<group>"; };
-		B65180042B1593E600D9CC99 /* OptimizedOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizedOverlayView.swift; sourceTree = "<group>"; };
+		B65180042B1593E600D9CC99 /* OptimalOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimalOverlayView.swift; sourceTree = "<group>"; };
 		B65AB3432AA965BB001F4FE6 /* UserThemes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserThemes.xcdatamodel; sourceTree = "<group>"; };
 		B65AB34E2AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserThemes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B65AB34F2AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserThemes+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -238,6 +243,7 @@
 		B687E18C28B48079002CF5D7 /* skulk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = skulk_sensor.gif; sourceTree = "<group>"; };
 		B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSidebar.swift; sourceTree = "<group>"; };
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
+		B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceProgressBarView.swift; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
 		B6A4AF732AECA6B100C7B805 /* StatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusType.swift; sourceTree = "<group>"; };
@@ -314,15 +320,12 @@
 		B616FAA3289B2314004E4A41 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				B65180012B1593B300D9CC99 /* StaticVariant */,
-				B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */,
-				B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */,
+				B6B6C92C2B7B355C00F15613 /* StatusRow */,
+				B6B6C92B2B7B353D00F15613 /* TickerTape */,
+				B65180042B1593E600D9CC99 /* OptimalOverlayView.swift */,
 				B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */,
-				B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */,
 				B69EB67828AC08450029B988 /* OverlayCompletedView.swift */,
 				B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */,
-				B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */,
-				B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */,
 				B6E7B0872AAA951700D83FA7 /* OverlayView.swift */,
 			);
 			path = Overlay;
@@ -396,14 +399,6 @@
 				B6A4AF792AECC06E00C7B805 /* Utilities.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		B65180012B1593B300D9CC99 /* StaticVariant */ = {
-			isa = PBXGroup;
-			children = (
-				B65180042B1593E600D9CC99 /* OptimizedOverlayView.swift */,
-			);
-			path = StaticVariant;
 			sourceTree = "<group>";
 		};
 		B65AB3412AA9659B001F4FE6 /* CoreData */ = {
@@ -500,6 +495,7 @@
 				B6A4AF732AECA6B100C7B805 /* StatusType.swift */,
 				B624F3822AB8044D006D8719 /* ModularPanel.swift */,
 				B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */,
+				B62EA6552B797F3700EB66AC /* ProgressBarStyle.swift */,
 				B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */,
 				B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */,
 				B608417C2AB3E37800E064E7 /* TrackerAlert.swift */,
@@ -578,7 +574,6 @@
 			children = (
 				B65AE1D02886F8C1006EC138 /* IndicatorView.swift */,
 				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
-				B6A772E128888B3600436551 /* ProgressBarView.swift */,
 				B6AAB57F28BA831E007B981B /* TransparentView.swift */,
 				B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */,
 			);
@@ -603,11 +598,22 @@
 			path = Versions;
 			sourceTree = "<group>";
 		};
+		B69B4A492B785FC4006E3969 /* ProgressBars */ = {
+			isa = PBXGroup;
+			children = (
+				B6A772E128888B3600436551 /* ProgressBarView.swift */,
+				B62EA6532B797E1900EB66AC /* EnderDragonProgressBar.swift */,
+				B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */,
+			);
+			path = ProgressBars;
+			sourceTree = "<group>";
+		};
 		B6A772F12889945F00436551 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				B6397EDD2AC9E9A2007C8606 /* Info */,
 				B60C6BB02ABA87D100A79D4E /* Frames */,
+				B69B4A492B785FC4006E3969 /* ProgressBars */,
 				B676BDA92AA7A81B008BD8A9 /* Common */,
 				B6A773112889BE4800436551 /* Gifs */,
 				B6FEFEE3289994B90095CF08 /* Panels */,
@@ -656,6 +662,25 @@
 				B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */,
 			);
 			path = Overlay;
+			sourceTree = "<group>";
+		};
+		B6B6C92B2B7B353D00F15613 /* TickerTape */ = {
+			isa = PBXGroup;
+			children = (
+				B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */,
+				B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */,
+				B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */,
+			);
+			path = TickerTape;
+			sourceTree = "<group>";
+		};
+		B6B6C92C2B7B355C00F15613 /* StatusRow */ = {
+			isa = PBXGroup;
+			children = (
+				B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */,
+				B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */,
+			);
+			path = StatusRow;
 			sourceTree = "<group>";
 		};
 		B6D67AE02B742D72007AA80C /* Tracking */ = {
@@ -923,6 +948,7 @@
 				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
+				B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */,
 				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
@@ -936,6 +962,7 @@
 				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
 				B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */,
+				B62EA6542B797E1900EB66AC /* EnderDragonProgressBar.swift in Sources */,
 				B676BDA62AA7A7B4008BD8A9 /* Date+Ext.swift in Sources */,
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */,
@@ -947,6 +974,7 @@
 				B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */,
 				B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */,
+				B62EA6562B797F3700EB66AC /* ProgressBarStyle.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */,
 				B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */,
 				B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */,
@@ -976,7 +1004,7 @@
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
 				B62AEA102AA93F13008B01CD /* SettingsLabel.swift in Sources */,
 				B676BDA82AA7A7D8008BD8A9 /* Dictionary+Ext.swift in Sources */,
-				B65180052B1593E600D9CC99 /* OptimizedOverlayView.swift in Sources */,
+				B65180052B1593E600D9CC99 /* OptimalOverlayView.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B6E331122AA80869001D7FF2 /* TrackerManager.swift in Sources */,
 				B65AB3442AA965BB001F4FE6 /* Model.xcdatamodeld in Sources */,
@@ -1174,7 +1202,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240207d;
+				CURRENT_PROJECT_VERSION = 240213d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1209,7 +1237,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240207d;
+				CURRENT_PROJECT_VERSION = 240213d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

@@ -19,8 +19,8 @@ internal enum L10n {
   internal enum About {
     /// About SwiftAA
     internal static let button = L10n.tr("Localizable", "about.button", fallback: "About SwiftAA")
-    /// Copyright © 2023 Kihron, Slackow.
-    internal static let copyright = L10n.tr("Localizable", "about.copyright", fallback: "Copyright © 2023 Kihron, Slackow.")
+    /// Copyright © 2024 Kihron, Slackow.
+    internal static let copyright = L10n.tr("Localizable", "about.copyright", fallback: "Copyright © 2024 Kihron, Slackow.")
     /// All Advancements Tracker for macOS
     internal static let description = L10n.tr("Localizable", "about.description", fallback: "All Advancements Tracker for macOS")
   }
@@ -112,10 +112,18 @@ internal enum L10n {
             internal enum Frozen {
               /// Deep Frozen
               internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.frozen.ocean", fallback: "Deep Frozen")
+              internal enum Ocean {
+                /// Deep Frozen Ocean
+                internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.frozen.ocean.19", fallback: "Deep Frozen Ocean")
+              }
             }
             internal enum Lukewarm {
               /// Deep Lukewarm
               internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.lukewarm.ocean", fallback: "Deep Lukewarm")
+              internal enum Ocean {
+                /// Deep Lukewarm Ocean
+                internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.lukewarm.ocean.19", fallback: "Deep Lukewarm Ocean")
+              }
             }
           }
           internal enum Desert {
@@ -195,16 +203,28 @@ internal enum L10n {
               internal enum Pine {
                 /// Old Pine
                 internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.pine.taiga", fallback: "Old Pine")
+                internal enum Taiga {
+                  /// Old Growth Pine
+                  internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.pine.taiga.19", fallback: "Old Growth Pine")
+                }
               }
               internal enum Spruce {
                 /// Old Spruce
                 internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.spruce.taiga", fallback: "Old Spruce")
+                internal enum Taiga {
+                  /// Old Growth Spruce
+                  internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.spruce.taiga.19", fallback: "Old Growth Spruce")
+                }
               }
             }
           }
           internal enum Savanna {
             /// Savanna Plat
             internal static let plateau = L10n.tr("Localizable", "advancement.adventure.biomes.visited.savanna.plateau", fallback: "Savanna Plat")
+            internal enum Plateau {
+              /// Savanna Plateau
+              internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.savanna.plateau.19", fallback: "Savanna Plateau")
+            }
           }
           internal enum Snowy {
             /// Snowy Beach
@@ -1210,6 +1230,8 @@ internal enum L10n {
     internal static let bar = L10n.tr("Localizable", "overlay.bar", fallback: "Show Page Bar")
     /// Multi-Page
     internal static let multipage = L10n.tr("Localizable", "overlay.multipage", fallback: "Multi-Page")
+    /// Optimal
+    internal static let optimal = L10n.tr("Localizable", "overlay.optimal", fallback: "Optimal")
     /// Show Statistics
     internal static let showstats = L10n.tr("Localizable", "overlay.showstats", fallback: "Show Statistics")
     /// Ticker Tape

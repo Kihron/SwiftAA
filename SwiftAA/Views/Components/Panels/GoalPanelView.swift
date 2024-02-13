@@ -33,9 +33,7 @@ struct GoalPanelView: View {
                 standard
             }
 
-            ProgressBarView(value: .constant($advancement.criteria.filter({ criterion in
-                    criterion.completed.wrappedValue
-            }).count), total: .constant(advancement.criteria.count), title: goal)
+            ProgressBarView(value: .constant($advancement.criteria.filter({$0.wrappedValue.completed}).count), total: .constant(advancement.criteria.count), title: goal)
         }
         .padding(4)
         .applyThemeModifiers()

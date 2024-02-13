@@ -11,7 +11,7 @@ struct ToolbarProgressView: View {
     @ObservedObject private var dataManager = DataManager.shared
     
     var body: some View {
-        ProgressBarView(value: .constant(dataManager.completedAdvancements), total: .constant(dataManager.totalAdvancements), title: L10n.Goal.advancements, message: .constant("      IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true)
+        ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.totalAdvancements), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true)
             .frame(width: 280)
     }
 }

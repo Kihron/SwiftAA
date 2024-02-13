@@ -5,7 +5,7 @@
 
 "about.button" = "About SwiftAA";
 "about.description" = "All Advancements Tracker for macOS";
-"about.copyright" = "Copyright © 2023 Kihron, Slackow.";
+"about.copyright" = "Copyright © 2024 Kihron, Slackow.";
 
 "donate.message" = "Support us on Ko-Fi";
 
@@ -58,6 +58,7 @@
 "overlay.complete.stats" = "Run Stats";
 "overlay.complete.time" = "%@\nApproximate IGT";
 "overlay.multipage" = "Multi-Page";
+"overlay.optimal" = "Optimal";
 "overlay.showstats" = "Show Statistics";
 "overlay.style.title" = "Overlay Style";
 "overlay.style.description" = "Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.";
@@ -270,7 +271,6 @@
 "advancement.end.dragon.egg" = "The Next Generation";
 "advancement.end.enter.end.gateway" = "Remote\nGetaway";
 "advancement.end.find.end.city" = "City at the End of the Game";
-"advancement.end.find.end.city.19" = "City at End\nof the Game";
 "advancement.end.dragon.breath" = "You Need a Mint";
 "advancement.end.respawn.dragon" = "The End... Again...";
 "advancement.end.elytra" = "Sky's the\nLimit";
@@ -419,3 +419,13 @@
 "advancement.nether.create.full.beacon" = "Beaconator";
 "advancement.nether.all.potions" = "A Furious Cocktail";
 "advancement.nether.all.effects" = "How Did We Get Here?";
+
+//Version Specific Changes
+
+//1.19
+"advancement.end.find.end.city.19" = "City at End\nof the Game";
+"advancement.adventure.biomes.visited.deep.lukewarm.ocean.19" = "Deep Lukewarm Ocean";
+"advancement.adventure.biomes.visited.deep.frozen.ocean.19" = "Deep Frozen Ocean";
+"advancement.adventure.biomes.visited.old.growth.pine.taiga.19" = "Old Growth Pine";
+"advancement.adventure.biomes.visited.old.growth.spruce.taiga.19" = "Old Growth Spruce";
+"advancement.adventure.biomes.visited.savanna.plateau.19" = "Savanna Plateau";

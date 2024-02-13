@@ -12,7 +12,7 @@ struct TickerTapeOverlayView: View {
     @ObservedObject private var dataManager = DataManager.shared
     
     var counter: String {
-        return "\(dataManager.completedAdvancements) / \(dataManager.totalAdvancements)"
+        return "\(dataManager.completedAdvancements.count) / \(dataManager.totalAdvancements)"
     }
     
     var body: some View {
