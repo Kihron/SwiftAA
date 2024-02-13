@@ -43,7 +43,7 @@ struct ProgressBarView: View {
                 }
             }
             .padding(.horizontal, 5)
-            .font(.custom("Minecraft-Regular", size: 10))
+            .minecraftFont()
             .foregroundColor(isToolbar ? Color.primary : themeManager.text)
             
             GeometryReader { item in

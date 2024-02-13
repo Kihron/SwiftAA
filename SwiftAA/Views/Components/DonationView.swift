@@ -35,7 +35,7 @@ struct DonationView: View {
                         .frame(width: 32, height: 32)
                         
                     Text(L10n.Donate.message)
-                        .font(.custom("Minecraft-Regular", size: 12))
+                        .minecraftFont(size: 12)
                         .foregroundColor(themeManager.text)
                     }
             }

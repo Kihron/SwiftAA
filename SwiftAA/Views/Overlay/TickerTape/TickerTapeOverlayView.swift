@@ -18,7 +18,7 @@ struct TickerTapeOverlayView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text(counter)
-                .font(.custom("Minecraft-Regular", size: 12))
+                .minecraftFont(size: 12)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)
             

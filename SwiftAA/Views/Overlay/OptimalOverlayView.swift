@@ -19,7 +19,7 @@ struct OptimalOverlayView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
                     Text(dataManager.completedAdvancements.isEmpty ? "Categories" : "Recently Completed")
-                        .font(.custom("Minecraft-Regular", size: 12))
+                        .minecraftFont(size: 12)
                         .padding(.horizontal)
                     
                     HStack(spacing: 0) {
@@ -41,7 +41,7 @@ struct OptimalOverlayView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     if !dataManager.completedCriteria.isEmpty {
                         Text(dataManager.completedAdvancements.isEmpty ? "" : "Criteria")
-                            .font(.custom("Minecraft-Regular", size: 12))
+                            .minecraftFont(size: 12)
                             .padding([.bottom, .leading], 8)
                         
                         LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 24), spacing: 0), count: 5), spacing: 10) {

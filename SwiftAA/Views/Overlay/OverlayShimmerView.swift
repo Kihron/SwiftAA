@@ -16,11 +16,11 @@ struct OverlayShimmerView: View {
             ZStack{
                 Text(message)
                     .foregroundColor(.purple)
-                    .font(.custom("Minecraft-Regular", size: 24))
+                    .minecraftFont(size: 24)
                     .multilineTextAlignment(.center)
                 
                 Text(message)
-                    .font(.custom("Minecraft-Regular", size: 24))
+                    .minecraftFont(size: 24)
                     .multilineTextAlignment(.center)
                     .mask(
                         Capsule()

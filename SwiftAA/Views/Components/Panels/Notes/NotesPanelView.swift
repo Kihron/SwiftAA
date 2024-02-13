@@ -19,7 +19,7 @@ struct NotesPanelView: View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 Text(L10n.Notes.Panel.View.Top.title)
-                    .font(.custom("Minecraft-Regular", size: 12))
+                    .minecraftFont(size: 12)
                 
                 VStack(spacing: 5) {
                     WaypointCardView(note: $currentNote, index: 0, icon: "elder_guardian")
@@ -31,14 +31,16 @@ struct NotesPanelView: View {
             
             VStack(alignment: .leading) {
                 Text(L10n.Notes.Panel.View.Bottom.title)
-                    .font(.custom("Minecraft-Regular", size: 12))
+                    .minecraftFont(size: 12)
                 
                 TextEditor(text: $currentNote.message)
-                    .font(.custom("Minecraft-Regular", size: 10))
+                    .minecraftFont()
                     .cornerRadius(5)
                     .padding(.bottom, 15)
                     .disabled(trackerManager.worldPath.isEmpty)
             }
+            // find . -type f -name "*.swift" -exec sed -i '' -e 's/\.font(\.custom("Minecraft-Regular", size: 10))/.minecraftFont()/g' -e 's/\.font(\.custom("Minecraft-Regular", size: \([0-9]*\)))/.minecraftFont(size: \1)/g' {} +
+
         }
         .padding()
         .applyThemeModifiers()

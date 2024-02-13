@@ -24,7 +24,7 @@ struct OverlayCompletedView: View {
                             .padding(.trailing, 5)
                         
                         Text(L10n.Overlay.Complete.title(viewModel.totalAdvancements))
-                            .font(.custom("Minecraft-Regular", size: 24))
+                            .minecraftFont(size: 24)
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             .padding(.top, 5)
                     }
@@ -62,7 +62,7 @@ struct OverlayCompletedView: View {
                         
                         
                         Text(L10n.Overlay.Complete.stats)
-                            .font(.custom("Minecraft-Regular", size: 24))
+                            .minecraftFont(size: 24)
                             .padding(.top, 5)
                     }
                     

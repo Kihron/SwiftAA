@@ -38,7 +38,7 @@ struct MultiPageOverlayView: View {
                     
                     HStack {
                         Text("\(viewModel.completedAdvancements)/\(viewModel.totalAdvancements)")
-                            .font(.custom("Minecraft-Regular", size: 12))
+                            .minecraftFont(size: 12)
                             .padding(.trailing)
                     }
                     .frame(maxWidth: .infinity, alignment: .topLeading)

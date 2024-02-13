@@ -32,7 +32,7 @@ struct PotionView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text("potion.\(name)".localized)
-                .font(.custom("Minecraft-Regular", size: 10))
+                .minecraftFont()
             
             HStack(spacing: 0) {
                 Image("potion_\(name)")

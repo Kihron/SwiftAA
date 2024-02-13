@@ -27,23 +27,23 @@ struct LeaderboardPlaceholderView: View {
             VStack(spacing: 3) {
                 HStack {
                     Text("----")
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                         .lineLimit(1)
                     
                     Spacer()
                     
                     Text("--/--/--")
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                 }
                 
                 HStack {
                     Text("--:--:--")
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                     
                     Spacer()
                     
                     Text("----")
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                 }
             }
             .applyThemeText()

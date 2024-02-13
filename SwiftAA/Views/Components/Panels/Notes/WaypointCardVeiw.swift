@@ -31,13 +31,13 @@ struct WaypointCardView: View {
             VStack(spacing: 5) {
                 HStack {
                     TextField("", text: $x, prompt: Text("X"))
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                         .disabled(trackerManager.worldPath.isEmpty)
                         .background(Color("frame_modern_background"))
                         .roundedCorners(radius: 2, corners: [.allCorners])
                     
                     TextField("", text: $z, prompt: Text("Z"))
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                         .disabled(trackerManager.worldPath.isEmpty)
                         .background(Color("frame_modern_background"))
                         .roundedCorners(radius: 2, corners: [.allCorners])
@@ -46,7 +46,7 @@ struct WaypointCardView: View {
                 HStack {
                     ZStack {
                         Text(x.toNether)
-                            .font(.custom("Minecraft-Regular", size: 10))
+                            .minecraftFont()
                             .lineLimit(1)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.vertical, 2)
@@ -57,7 +57,7 @@ struct WaypointCardView: View {
                     
                     ZStack {
                         Text(z.toNether)
-                            .font(.custom("Minecraft-Regular", size: 10))
+                            .minecraftFont()
                             .lineLimit(1)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.vertical, 2)

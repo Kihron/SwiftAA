@@ -41,11 +41,11 @@ struct StatsView: View {
         
             
             Text(statValue)
-                .font(.custom("Minecraft-Regular", size: 20))
+                .minecraftFont(size: 20)
             
             if (!stat.tooltip.isEmpty) {
                 Text(stat.tooltip.localized)
-                    .font(.custom("Minecraft-Regular", size: 12))
+                    .minecraftFont(size: 12)
                 
                 Spacer()
             }

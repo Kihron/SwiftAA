@@ -75,7 +75,7 @@ struct IndicatorView: View {
             }
             
             Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))
-                .font(.custom("Minecraft-Regular", size: 10))
+                .minecraftFont()
                 .tracking(0.1)
                 .foregroundColor(isOverlay ? .white : themeManager.text)
                 .lineLimit(2)

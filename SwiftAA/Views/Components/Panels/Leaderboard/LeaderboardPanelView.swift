@@ -22,7 +22,7 @@ struct LeaderboardPanelView: View {
                     .border(themeManager.border, width: 2)
                 
                 Text("MCSR Community")
-                    .font(.custom("Minecraft-Regular", size: 18))
+                    .minecraftFont(size: 18)
                     .applyThemeText()
             }
             .frame(height: 48)

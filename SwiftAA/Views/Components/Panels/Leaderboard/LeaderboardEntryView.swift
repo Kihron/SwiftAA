@@ -33,25 +33,25 @@ struct LeaderboardEntryView: View {
             VStack(spacing: 3) {
                 HStack {
                     Text(entry.name)
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                         .lineLimit(1)
                     
                     Spacer()
                     
                     Text(entry.date)
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                 }
                 .applyThemeText()
                 
                 HStack {
                     Text(entry.igt)
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                         .applyThemeText()
                     
                     Spacer()
                     
                     Text(entry.verification.label.localized)
-                        .font(.custom("Minecraft-Regular", size: 10))
+                        .minecraftFont()
                         .foregroundStyle(getVerificationColor())
                 }
             }

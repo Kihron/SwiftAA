@@ -32,7 +32,7 @@ struct SettingsCardView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsCardView() {
             Text("Hello")
-                .font(.custom("Minecraft-Regular", size: 10))
+                .minecraftFont()
         }
         .padding()
         .frame(width: 200, height: 200)
