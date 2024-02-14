@@ -152,3 +152,41 @@ class SnifferEggs: TransferableIndicator, StatusIndicator {
         key = L10n.Statistic.snifferEggs(count)
     }
 }
+
+class MajorBiomes: TransferableIndicator, StatusIndicator {
+    var type: StatusType = .majorBiomes
+    var id: String = "minecraft:biome"
+    var key: String = L10n.Statistic.majorBiomes(0, 5)
+    var name: String = "Major Biomes\n0 / 5"
+    var icon: String = "adventuring_time"
+    var frameStyle: String = "statistic"
+    var completed: Bool = false
+    var tooltip: String = ""
+    
+    private let biomeGroups: [String:[[String]]] = {
+        let file = "major_biomes"
+        let bundle = Bundle.main.url(forResource: file, withExtension: "json")!;
+        return try! JSONDecoder().decode([String:[[String]]].self, from: Data(contentsOf: bundle))
+    }()
+    
+    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
+        if let groups = biomeGroups[TrackerManager.shared.gameVersion.label] {
+            var count = 0
+            var index = 0
+            var icons = [String]()
+            for group in groups {
+                let adv = advancements["minecraft:adventure/adventuring_time"]
+                let groupComplete = group.allSatisfy { adv?.criteria["minecraft:\($0)"] != nil }
+                if groupComplete {
+                    count += 1
+                    icons.append(group[0])
+                }
+                index += 1
+            }
+            key = L10n.Statistic.majorBiomes(count, groups.count)
+            icon = count == groups.count || icons.isEmpty ? "adventuring_time" : icons.prefix(4).joined(separator: "+")
+            completed = count == groups.count
+            
+        }
+    }
+}

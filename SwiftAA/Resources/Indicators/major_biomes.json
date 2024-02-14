@@ -1,0 +1,25 @@
+{
+    "1.16": [
+        ["giant_tree_taiga", "giant_tree_taiga_hills"],
+        ["snowy_taiga", "snowy_taiga_hills", "snowy_tundra", "snowy_mountains", "snowy_beach", "frozen_river"],
+        ["jungle", "jungle_edge", "jungle_hills", "bamboo_jungle", "bamboo_jungle_hills"],
+        ["badlands", "badlands_plateau", "wooded_badlands_plateau"],
+        ["mushroom_fields", "mushroom_field_shore"]
+    ],
+    "1.19": [
+        ["old_growth_pine_taiga", "old_growth_spruce_taiga"],
+        ["snowy_taiga", "grove", "ice_spikes", "snowy_plains", "snowy_slopes",
+        "snowy_beach", "frozen_river"],
+        ["jungle", "sparse_jungle", "bamboo_jungle"],
+        ["badlands", "wooded_badlands", "eroded_badlands"],
+        ["mushroom_fields"]
+    ],
+    "1.20": [
+        ["old_growth_pine_taiga", "old_growth_spruce_taiga"],
+        ["snowy_taiga", "grove", "ice_spikes", "snowy_plains", "snowy_slopes",
+        "snowy_beach", "frozen_river"],
+        ["jungle", "sparse_jungle", "bamboo_jungle"],
+        ["badlands", "wooded_badlands", "eroded_badlands"],
+        ["mushroom_fields"]
+    ]
+}

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
 		49CCDF7E2B7C3A9D00DFE65D /* ComplexAdvancements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */; };
+		49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49CCDF802B7C4AF400DFE65D /* major_biomes.json */; };
 		B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B600F5272AEB796F00283C59 /* SwiftUIIntrospect */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
@@ -155,6 +156,7 @@
 		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
 		49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
 		49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAdvancements.swift; sourceTree = "<group>"; };
+		49CCDF802B7C4AF400DFE65D /* major_biomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = major_biomes.json; sourceTree = "<group>"; };
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
 		B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFrame.swift; sourceTree = "<group>"; };
@@ -312,6 +314,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49CCDF7F2B7C4A8500DFE65D /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				49CCDF802B7C4AF400DFE65D /* major_biomes.json */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
 		B60C6BB02ABA87D100A79D4E /* Frames */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +553,7 @@
 		B66A07752887B2A800DC0A2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49CCDF7F2B7C4A8500DFE65D /* Indicators */,
 				B6842B06296E59E7000B62DF /* Generated */,
 				B687E17C28B3E06C002CF5D7 /* Advancements */,
 				B65AE1D5288709E5006EC138 /* Fonts */,
@@ -898,6 +909,7 @@
 				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
 				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
 				B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */,
+				49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */,
 				B687E17D28B3E06D002CF5D7 /* Advancements in Resources */,
 				B64199F1288A73830064AF5B /* enchant_item.gif in Resources */,
 				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
@@ -1215,7 +1227,7 @@
 				CURRENT_PROJECT_VERSION = "240213d (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1250,7 +1262,7 @@
 				CURRENT_PROJECT_VERSION = "240213d (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

@@ -1351,6 +1351,11 @@ internal enum L10n {
     internal static func goldBlocks(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.gold_blocks", p1, fallback: "Gold Blocks\n%d / 164")
     }
+    /// Major Biomes
+    /// %d / %d
+    internal static func majorBiomes(_ p1: Int, _ p2: Int) -> String {
+      return L10n.tr("Localizable", "statistic.major_biomes", p1, p2, fallback: "Major Biomes\n%d / %d")
+    }
     /// Shells
     /// %d / 8
     internal static func shells(_ p1: Int) -> String {

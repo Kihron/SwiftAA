@@ -104,8 +104,7 @@ class ThemeManager: ObservableObject {
             }
             
             withAnimation {
-                let idx = userThemes.firstIndex(where: { $0.id == id })
-                if let idx = idx {
+                if let idx = userThemes.firstIndex(where: { $0.id == id }) {
                     if idx - 1 >= 0 {
                         selectUserTheme(theme: userThemes[idx - 1])
                     } else {

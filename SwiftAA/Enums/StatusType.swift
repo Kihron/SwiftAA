@@ -16,4 +16,5 @@ enum StatusType {
     case beehives
     case goldBlocks
     case snifferEggs
+    case majorBiomes
 }

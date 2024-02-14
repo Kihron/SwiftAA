@@ -21,13 +21,8 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         completed = advancements[id]?.done ?? false
         timestamp = advancements[id]?.criteria.compactMap({Utilities.convertToTimestamp($0.value)}).max()
-        
         criteria.forEach { criterion in
-            if let timestampString = advancements[id]?.criteria[criterion.id] {
-                criterion.timestamp = Utilities.convertToTimestamp(timestampString)
-            } else {
-                criterion.timestamp = nil
-            }
+            criterion.timestamp = advancements[id]?.criteria[criterion.id].flatMap(Utilities.convertToTimestamp)
         }
     }
     

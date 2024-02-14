@@ -59,19 +59,30 @@ struct IndicatorView: View {
                             .padding([.top, .leading, .trailing], 6)
                     }
                 }
-                
-                Image(indicator.icon)
-                    .interpolation(.none)
-                    .resizable()
-                    .frame(width: 32, height: 32)
-                    .padding(.top, 6)
-                    .onHover(perform: { hovering in
-                        if layoutManager.infoMode && !isOverlay {
-                            showTooltip = hovering
-                        } else {
-                            showTooltip = false
+                if indicator.icon.contains("+") {
+                    LazyVGrid(columns: [GridItem(.fixed(16)),GridItem(.fixed(16))], spacing: 0, content: {
+                        ForEach(indicator.icon.split(separator: "+"), id: \.self) {icon in
+                            Image(String(icon))
+                                .interpolation(.none)
+                                .resizable()
                         }
                     })
+                    .frame(width: 32, height: 32)
+                    .padding(.top, 6)
+                } else {
+                    Image(indicator.icon)
+                        .interpolation(.none)
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .padding(.top, 6)
+                        .onHover(perform: { hovering in
+                            if layoutManager.infoMode && !isOverlay {
+                                showTooltip = hovering
+                            } else {
+                                showTooltip = false
+                            }
+                        })
+                }
             }
             
             Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))

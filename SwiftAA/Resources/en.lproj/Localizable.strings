@@ -100,6 +100,7 @@
 "statistic.shells" = "Shells\n%d / 8";
 "statistic.shells.crafted" = "Conduit Crafted";
 "statistic.sniffer_eggs" = "Sniffer Eggs\n%d / 3";
+"statistic.major_biomes" = "Major Biomes\n%d / %d";
 "statistic.trident.awaiting" = "Awaiting\nThunder";
 "statistic.trident.obtain" = "Obtain\nTrident";
 "statistic.trident.thunder" = "Done With Thunder";
