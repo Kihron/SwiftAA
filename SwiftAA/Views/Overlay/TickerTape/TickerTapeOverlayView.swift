@@ -17,10 +17,18 @@ struct TickerTapeOverlayView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text(counter)
-                .minecraftFont(size: 12)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 10)
+            HStack {
+                Text(counter)
+                    .minecraftFont(size: 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 10)
+                
+                if overlayManager.showInGameTime {
+                    Text("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))")
+                        .minecraftFont(size: 12)
+                        .padding(.trailing, 10)
+                }
+            }
             
             CriteriaTickerTapeView()
                 .frame(height: 40)

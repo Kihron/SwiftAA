@@ -2,9 +2,10 @@
 //  ComplexAdvancements.swift
 //  SwiftAA
 //
-//  Created by Andrew on 2/13/24.
+//  Created by Slackow on 2/13/24.
 //
 
+import SwiftUI
 
 class TrimAdvancement: Advancement {
     required init(from decoder: Decoder) throws {
@@ -18,18 +19,17 @@ class TrimAdvancement: Advancement {
     override func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         super.update(advancements: advancements, stats: stats)
         criteria.forEach { criterion in
-            
             if let dual = criterion as? Criterion.DualCriterion {
                 if let timestampString = advancements[dual.recipe]?.criteria.values.first {
-                    dual.timestamp = dateFormatter.date(from: timestampString)
+                    dual.timestamp = Utilities.convertToTimestamp(timestampString)
                 } else {
                     dual.timestamp = nil
                 }
                 
                 if let timestampString = advancements[id]?.criteria[dual.id] {
-                    dual.timestamp2 = dateFormatter.date(from: timestampString)
+                    dual.secondaryTimestamp = Utilities.convertToTimestamp(timestampString)
                 } else {
-                    dual.timestamp2 = nil
+                    dual.secondaryTimestamp = nil
                 }
             }
         }

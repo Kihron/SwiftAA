@@ -13,7 +13,7 @@ struct OptimalOverlayView: View {
     
     var body: some View {
         VStack(spacing: 6) {
-            ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.totalAdvancements), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true)
+            ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.totalAdvancements), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true, isOverlay: true)
                 .padding(.horizontal)
             
             HStack {
@@ -67,7 +67,7 @@ struct OptimalOverlayView: View {
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .topLeading)
-                        .frame(height: 72)
+                        .frame(width: 205, height: 72)
                     }
                 }
                 .padding(.trailing)
@@ -78,6 +78,7 @@ struct OptimalOverlayView: View {
                 .frame(height: 70)
                 .padding(.bottom)
         }
+        .animation(.smooth, value: overlayManager.showOptimalProgressBar)
     }
     
     private func createIndicator(name: String, icon: String) -> IndicatorView {

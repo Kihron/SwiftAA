@@ -1270,8 +1270,10 @@ internal enum L10n {
       }
     }
     internal enum Style {
-      /// Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.
-      internal static let description = L10n.tr("Localizable", "overlay.style.description", fallback: "Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.")
+      /// • **Optimal** shows recently completed advancements and criteria.
+      /// • **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.
+      /// • **Multi-Page** separates them into a static set of pages.
+      internal static let description = L10n.tr("Localizable", "overlay.style.description", fallback: "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.\n• **Multi-Page** separates them into a static set of pages.")
       /// Overlay Style
       internal static let title = L10n.tr("Localizable", "overlay.style.title", fallback: "Overlay Style")
     }
@@ -1297,6 +1299,8 @@ internal enum L10n {
     internal static let weakness = L10n.tr("Localizable", "potion.weakness", fallback: "Potion of Weakness")
   }
   internal enum Settings {
+    /// Credits
+    internal static let credits = L10n.tr("Localizable", "settings.credits", fallback: "Credits")
     /// Layout
     internal static let layout = L10n.tr("Localizable", "settings.layout", fallback: "Layout")
     /// Notes

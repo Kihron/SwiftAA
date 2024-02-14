@@ -24,14 +24,6 @@ struct GoalPanelView: View {
     var columnSpacing: CGFloat {
         return isMinimal ? 10 : 5
     }
-    
-    func isCompleted(_ c: Criterion) -> Bool {
-        if let dual = c as? Criterion.DualCriterion {
-            return dual.completed && dual.completed2
-        } else {
-            return c.completed
-        }
-    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -40,6 +32,7 @@ struct GoalPanelView: View {
             } else {
                 standard
             }
+            
             ProgressBarView(value: .constant($advancement.criteria.filter({isCompleted($0.wrappedValue)}).count), total: .constant(advancement.criteria.count), title: goal)
         }
         .padding(4)
@@ -92,6 +85,14 @@ struct GoalPanelView: View {
             .padding(.leading, 5)
             .padding(.top, isMinimal ? 10 : 3)
             .padding(.bottom, isMinimal ? 10 : 0)
+        }
+    }
+    
+    private func isCompleted(_ criterion: Criterion) -> Bool {
+        if let dual = criterion as? Criterion.DualCriterion {
+            return dual.completed && dual.secondaryCompleted
+        } else {
+            return criterion.completed
         }
     }
 }

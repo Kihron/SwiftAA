@@ -19,7 +19,7 @@ struct OverlaySettings: View {
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(L10n.Overlay.Style.title)
                                 
-                                Text(L10n.Overlay.Style.description)
+                                Text(LocalizedStringKey(L10n.Overlay.Style.description))
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                                     .padding(.trailing, 2)
@@ -47,6 +47,37 @@ struct OverlaySettings: View {
                                     .toggleStyle(.switch)
                             }
                         }
+                        
+                        if case .optimal = overlayManager.overlayStyle {
+                            Divider()
+                            
+                            HStack {
+                                Text("Show Progress Bar")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Toggle("", isOn: $overlayManager.showOptimalProgressBar)
+                                    .labelsHidden()
+                                    .toggleStyle(.switch)
+                            }
+                        }
+                    }
+                }
+                
+                SettingsCardView {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Show In-Game Time")
+                            
+                            Text("Displays the in-game time for the currently tracked world.")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                                .padding(.trailing, 2)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Toggle("", isOn: $overlayManager.showInGameTime)
+                            .labelsHidden()
+                            .toggleStyle(.switch)
                     }
                 }
                 

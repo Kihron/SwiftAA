@@ -9,6 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 
 struct LeaderboardEntryView: View {
+    @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     @State var entry: LeaderboardEntry
     
@@ -73,7 +74,7 @@ struct LeaderboardEntryView: View {
             case .notSubmitted:
                 return .gray
             case .unknown:
-                return ThemeManager.shared.text
+                return themeManager.text
         }
     }
     

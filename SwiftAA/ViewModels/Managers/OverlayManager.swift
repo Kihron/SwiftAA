@@ -12,8 +12,10 @@ class OverlayManager: ObservableObject {
     @AppStorage("overlayOpen") var overlayOpen: Bool = false
     @AppStorage("showStatistics") var showStatistics: Bool = true
     @AppStorage("statisticsAlignment") var statisticsAlignment: HAlignment = .leading
+    @AppStorage("showOptimalProgressBar") var showOptimalProgressBar: Bool = true
     @AppStorage("showLegacyPageIndicator") var showLegacyPageIndicator: Bool = true
     @AppStorage("clarifyAmbigiousCriteria") var clarifyAmbigiousCriteria: Bool = true
+    @AppStorage("showInGameTime") var showInGameTime: Bool = true
     
     @AppStorage("overlayFrameStyle") var overlayFrameStyle: FrameStyle = .minecraft
     @AppStorage("syncOverlayFrame") var syncOverlayFrame: Bool = true

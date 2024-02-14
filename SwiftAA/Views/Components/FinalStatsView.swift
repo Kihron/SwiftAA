@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StatsView: View {
+struct FinalStatsView: View {
     @ObservedObject private var dataManager = DataManager.shared
     @State var stat: Statistic
     
@@ -61,7 +61,7 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"))
+        FinalStatsView(stat: Statistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"))
             .padding()
     }
 }

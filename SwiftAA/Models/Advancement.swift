@@ -19,13 +19,12 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     var timestamp: Date?
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        
         completed = advancements[id]?.done ?? false
-        timestamp = advancements[id]?.criteria.compactMap({dateFormatter.date(from: $0.value)}).max()
+        timestamp = advancements[id]?.criteria.compactMap({Utilities.convertToTimestamp($0.value)}).max()
         
         criteria.forEach { criterion in
             if let timestampString = advancements[id]?.criteria[criterion.id] {
-                criterion.timestamp = dateFormatter.date(from: timestampString)
+                criterion.timestamp = Utilities.convertToTimestamp(timestampString)
             } else {
                 criterion.timestamp = nil
             }
@@ -74,9 +73,3 @@ extension Advancement: Transferable {
         CodableRepresentation(contentType: .item)
     }
 }
-
-var dateFormatter: DateFormatter = {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-    return dateFormatter
-}()

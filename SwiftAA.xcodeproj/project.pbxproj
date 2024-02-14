@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
-		49CCDF7C2B7C1FD200DFE65D /* MinecraftFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */; };
 		49CCDF7E2B7C3A9D00DFE65D /* ComplexAdvancements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */; };
 		B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B600F5272AEB796F00283C59 /* SwiftUIIntrospect */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
@@ -91,7 +90,7 @@
 		B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */; };
 		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
 		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
-		B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* StatsView.swift */; };
+		B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */; };
 		B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* Statistic.swift */; };
 		B687E17D28B3E06D002CF5D7 /* Advancements in Resources */ = {isa = PBXBuildFile; fileRef = B687E17C28B3E06C002CF5D7 /* Advancements */; };
 		B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18628B3E457002CF5D7 /* L1_16.swift */; };
@@ -124,6 +123,7 @@
 		B6CDBA0128BDA6B60016D248 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0028BDA6B60016D248 /* Sparkle */; };
 		B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0328BDA6BE0016D248 /* SWXMLHash */; };
 		B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */; };
+		B6CFEAE32B7C266E0008542B /* MinecraftFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CFEAE22B7C266E0008542B /* MinecraftFont.swift */; };
 		B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3065728A2B150004D27E6 /* String+Ext.swift */; };
 		B6D67AE22B742E40007AA80C /* TrackingVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE12B742E40007AA80C /* TrackingVersionView.swift */; };
 		B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */; };
@@ -238,7 +238,7 @@
 		B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlayerHead.swift; sourceTree = "<group>"; };
-		B6872FB828AEBEB6003CEA95 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatsView.swift; sourceTree = "<group>"; };
 		B6872FC428AEDA4A003CEA95 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		B687E17C28B3E06C002CF5D7 /* Advancements */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Advancements; sourceTree = "<group>"; };
 		B687E18628B3E457002CF5D7 /* L1_16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16.swift; sourceTree = "<group>"; };
@@ -268,6 +268,7 @@
 		B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorRowView.swift; sourceTree = "<group>"; };
 		B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorPickerView.swift; sourceTree = "<group>"; };
 		B6CD41CE2AE60D600024D4E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6CFEAE22B7C266E0008542B /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
 		B6D3065428A2AD44004D27E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6D3065728A2B150004D27E6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B6D67AE12B742E40007AA80C /* TrackingVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingVersionView.swift; sourceTree = "<group>"; };
@@ -532,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				B65FE5952AA6DEE400C30A8F /* ApplyTheme.swift */,
+				B6CFEAE22B7C266E0008542B /* MinecraftFont.swift */,
 				B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */,
 				49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */,
 			);
@@ -623,7 +625,7 @@
 				B6A773112889BE4800436551 /* Gifs */,
 				B6FEFEE3289994B90095CF08 /* Panels */,
 				B6ABC3D728B8646000E6633D /* DonationView.swift */,
-				B6872FB828AEBEB6003CEA95 /* StatsView.swift */,
+				B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -775,8 +777,8 @@
 		B6FEFED82899926E0095CF08 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
-				B6B4A14B296E432600F43D4C /* Overlay */,
 				B637DB2F29634F7900A73F62 /* Main */,
+				B6B4A14B296E432600F43D4C /* Overlay */,
 			);
 			path = Windows;
 			sourceTree = "<group>";
@@ -932,6 +934,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6CFEAE32B7C266E0008542B /* MinecraftFont.swift in Sources */,
 				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
 				B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */,
@@ -962,7 +965,6 @@
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
-				49CCDF7C2B7C1FD200DFE65D /* MinecraftFont.swift in Sources */,
 				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
 				B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
@@ -978,7 +980,7 @@
 				B65AB3552AA97C89001F4FE6 /* CoreDataManager.swift in Sources */,
 				B65FE5962AA6DEE400C30A8F /* ApplyTheme.swift in Sources */,
 				B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */,
-				B6872FB928AEBEB6003CEA95 /* StatsView.swift in Sources */,
+				B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */,
 				B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */,
 				B62EA6562B797F3700EB66AC /* ProgressBarStyle.swift in Sources */,
@@ -1210,10 +1212,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240213d;
+				CURRENT_PROJECT_VERSION = "240213d (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1245,10 +1247,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240213d;
+				CURRENT_PROJECT_VERSION = "240213d (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

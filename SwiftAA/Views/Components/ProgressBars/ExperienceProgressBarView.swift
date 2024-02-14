@@ -12,6 +12,10 @@ struct ExperienceProgressBarView: View {
     @Binding var value: Int
     @Binding var total: Int
     
+    private var segmentCount: Int {
+        return Int((item.size.width - 40) / 20)
+    }
+    
     var body: some View {
         ZStack(alignment: .leading) {
             let leftOver = item.size.width.truncatingRemainder(dividingBy: 20) / 2
@@ -21,8 +25,7 @@ struct ExperienceProgressBarView: View {
                     .interpolation(.none)
                     .frame(width: leftOver + 20)
                 
-                let repeatCount = Int((item.size.width - 40) / 20)
-                ForEach(0..<repeatCount, id: \.self) { _ in
+                ForEach(0..<segmentCount, id: \.self) { _ in
                     Image("bar_experience_inactive_middle")
                         .resizable()
                         .interpolation(.none)
@@ -36,21 +39,20 @@ struct ExperienceProgressBarView: View {
             
             HStack(spacing: 0) {
                 if (value > 0) {
-                    let repeatCount = max(Int(ceil(CGFloat(Int(item.size.width) * value / total) - 40) / 20), 0)
+                    let activeSegments = max(0, min(segmentCount, (segmentCount + 1) * value / total))
                     
                     Image("bar_experience_active_left")
                         .resizable()
                         .interpolation(.none)
                         .frame(width: leftOver + 20)
-//                        .onAppear {
-//                            print("Width: \(item.size.width), Repeat: \(repeatCount)")
-//                        }
                     
-                    ForEach(0..<repeatCount, id: \.self) { _ in
-                        Image("bar_experience_active_middle")
-                            .resizable()
-                            .interpolation(.none)
-                            .frame(width: 20)
+                    if activeSegments >= 2 {
+                        ForEach(0..<activeSegments, id: \.self) { _ in
+                            Image("bar_experience_active_middle")
+                                .resizable()
+                                .interpolation(.none)
+                                .frame(width: 20)
+                        }
                     }
                     
                     if (value >= total) {

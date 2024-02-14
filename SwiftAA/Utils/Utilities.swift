@@ -10,6 +10,16 @@ import SwiftUI
 class Utilities {
     static private let indicators = DataManager.shared.stats
     
+    private static var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        return dateFormatter
+    }()
+    
+    static func convertToTimestamp(_ timestampString: String) -> Date? {
+        return dateFormatter.date(from: timestampString)
+    }
+    
     static func getSpecificStats(types: [StatusType]) -> [Indicator] {
         if let array = indicators as? [StatusIndicator] {
             return array.filter { indicator in

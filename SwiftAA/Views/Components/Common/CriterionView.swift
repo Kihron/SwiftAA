@@ -15,10 +15,11 @@ struct CriterionView: View {
             Image(criterion.icon)
                 .frame(width: 16, height: 16)
                 .opacity(criterion.completed ? 1 : 0.3)
-            if let dual = criterion as? Criterion.DualCriterion, dual.recipe.localizedStandardContains("trim") {
+            
+            if let dual = criterion as? Criterion.DualCriterion, dual.recipe.contains("trim") {
                 Image("smithing_table")
                     .frame(width: 16, height: 16)
-                    .opacity(dual.completed2 ? 1 : 0.3)
+                    .opacity(dual.secondaryCompleted ? 1 : 0.3)
             }
             
             Text(calculateText())
@@ -28,7 +29,7 @@ struct CriterionView: View {
         }
     }
     
-    func calculateText() -> String {
+    private func calculateText() -> String {
         let text = criterion.key.localized(value: criterion.name).capitalized
         if let languageCode = Locale.preferredLanguages.first, !languageCode.hasPrefix("en") {
             return (text.count > 14) ? String("\(String(text.prefix(13)).trimmingCharacters(in: .whitespaces))...") : text

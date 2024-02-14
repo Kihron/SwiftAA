@@ -61,7 +61,7 @@
 "overlay.optimal" = "Optimal";
 "overlay.showstats" = "Show Statistics";
 "overlay.style.title" = "Overlay Style";
-"overlay.style.description" = "Ticker Tape creates an infinite scrolling list of advancements and criteria. Multi-Page separates them into a static set of pages.";
+"overlay.style.description" = "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.\n• **Multi-Page** separates them into a static set of pages.";
 "overlay.tickertape" = "Ticker Tape";
 "overlay.toggle" = "Toggle Overlay";
 
@@ -79,6 +79,7 @@
 "settings.alignment.center" = "Center";
 "settings.alignment.leading" = "Left";
 "settings.alignment.trailing" = "Right";
+"settings.credits" = "Credits";
 "settings.layout" = "Layout";
 "settings.notes" = "Notes";
 "settings.overlay" = "Overlay";

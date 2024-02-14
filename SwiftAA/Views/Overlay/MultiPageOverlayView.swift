@@ -40,6 +40,14 @@ struct MultiPageOverlayView: View {
                         Text("\(viewModel.completedAdvancements)/\(viewModel.totalAdvancements)")
                             .minecraftFont(size: 12)
                             .padding(.trailing)
+                        
+                        if overlayManager.showInGameTime {
+                            Spacer()
+                            
+                            Text("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))")
+                                .minecraftFont(size: 12)
+                                .padding(.trailing)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     .padding(.leading)

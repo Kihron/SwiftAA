@@ -65,39 +65,39 @@ class MultiPageOverlayViewModel: ObservableObject {
     
     func getStatsArray() -> [AnyView] {
         return [
-            AnyView(StatsView(stat: Statistic(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: L10n.Overlay.Complete.Stat.elytra, flipped: true))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:aviate_one_cm", type: "minecraft:custom", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: L10n.Overlay.Complete.Stat.elytra, flipped: true))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: L10n.Overlay.Complete.Stat.bread))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:bread", type: "minecraft:used", icon: "heal", secondaryIcon: "bread", tooltip: L10n.Overlay.Complete.Stat.bread))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: L10n.Overlay.Complete.Stat.enchant))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:enchant_item", type: "minecraft:custom", icon: "lapis_lazuli", secondaryIcon: "enchantment_table", tooltip: L10n.Overlay.Complete.Stat.enchant))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: L10n.Overlay.Complete.Stat.pearl, flipped: true))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:ender_pearl", type: "minecraft:used", icon: "ender_pearl", secondaryIcon: "ender_pearl", tooltip: L10n.Overlay.Complete.Stat.pearl, flipped: true))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: L10n.Overlay.Complete.Stat.temples))),
-            
-            AnyView(Spacer()),
-            
-            AnyView(StatsView(stat: Statistic(id: "minecraft:creeper", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "creeper"))),
-            
-            AnyView(StatsView(stat: Statistic(id: "minecraft:drowned", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "drowned"))),
-            
-            AnyView(StatsView(stat: Statistic(id: "minecraft:wither_skeleton", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "wither_skeleton"))),
-            
-            AnyView(StatsView(stat: Statistic(id: "minecraft:cod", type: "minecraft:killed", icon: "diamond_axe", secondaryIcon: "cod"))),
-            
-            AnyView(StatsView(stat: Statistic(id: "minecraft:salmon", type: "minecraft:killed", icon: "diamond_axe", secondaryIcon: "salmon"))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:tnt", type: "minecraft:mined", factor: 9, icon: "tnt", secondaryIcon: "sandstone", tooltip: L10n.Overlay.Complete.Stat.temples))),
             
             AnyView(Spacer()),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:netherrack", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "netherrack"))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:creeper", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "creeper"))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:gold_block", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "gold_block"))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:drowned", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "drowned"))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:ender_chest", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "ender_chest"))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:wither_skeleton", type: "minecraft:killed", icon: "kill_all_mobs", secondaryIcon: "wither_skeleton"))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:lectern", type: "minecraft:mined", icon: "diamond_axe", secondaryIcon: "lectern"))),
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:cod", type: "minecraft:killed", icon: "diamond_axe", secondaryIcon: "cod"))),
             
-            AnyView(StatsView(stat: Statistic(id: "minecraft:sugar_cane", type: "minecraft:picked_up", icon: "diamond_axe", secondaryIcon: "sugarcane")))
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:salmon", type: "minecraft:killed", icon: "diamond_axe", secondaryIcon: "salmon"))),
+            
+            AnyView(Spacer()),
+            
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:netherrack", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "netherrack"))),
+            
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:gold_block", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "gold_block"))),
+            
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:ender_chest", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "ender_chest"))),
+            
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:lectern", type: "minecraft:mined", icon: "diamond_axe", secondaryIcon: "lectern"))),
+            
+            AnyView(FinalStatsView(stat: Statistic(id: "minecraft:sugar_cane", type: "minecraft:picked_up", icon: "diamond_axe", secondaryIcon: "sugarcane")))
         ]
     }
 }
