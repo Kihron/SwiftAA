@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
+		49CCDF7C2B7C1FD200DFE65D /* MinecraftFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */; };
+		49CCDF7E2B7C3A9D00DFE65D /* ComplexAdvancements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */; };
 		B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B600F5272AEB796F00283C59 /* SwiftUIIntrospect */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
@@ -151,6 +153,8 @@
 
 /* Begin PBXFileReference section */
 		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
+		49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
+		49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAdvancements.swift; sourceTree = "<group>"; };
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
 		B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFrame.swift; sourceTree = "<group>"; };
@@ -529,6 +533,7 @@
 			children = (
 				B65FE5952AA6DEE400C30A8F /* ApplyTheme.swift */,
 				B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */,
+				49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A772FB2889998700436551 /* StatusIndicators.swift */,
+				49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -956,6 +962,7 @@
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
+				49CCDF7C2B7C1FD200DFE65D /* MinecraftFont.swift in Sources */,
 				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
 				B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
@@ -990,6 +997,7 @@
 				B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */,
 				B6F1B48E2AAEB4CA00422D8E /* OverlayFrameModifier.swift in Sources */,
 				B6498D752AAC23B300230808 /* HAlignment.swift in Sources */,
+				49CCDF7E2B7C3A9D00DFE65D /* ComplexAdvancements.swift in Sources */,
 				B6397EDF2AC9E9B3007C8606 /* IndicatorInfoView.swift in Sources */,
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
@@ -1205,7 +1213,7 @@
 				CURRENT_PROJECT_VERSION = 240213d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1240,7 +1248,7 @@
 				CURRENT_PROJECT_VERSION = 240213d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

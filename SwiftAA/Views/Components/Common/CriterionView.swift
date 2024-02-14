@@ -14,12 +14,18 @@ struct CriterionView: View {
         HStack {
             Image(criterion.icon)
                 .frame(width: 16, height: 16)
+                .opacity(criterion.completed ? 1 : 0.3)
+            if let dual = criterion as? Criterion.DualCriterion, dual.recipe.localizedStandardContains("trim") {
+                Image("smithing_table")
+                    .frame(width: 16, height: 16)
+                    .opacity(dual.completed2 ? 1 : 0.3)
+            }
             
             Text(calculateText())
                 .minecraftFont()
                 .applyThemeText()
+                .opacity(criterion.completed ? 1 : 0.3)
         }
-        .opacity(criterion.completed ? 1 : 0.3)
     }
     
     func calculateText() -> String {

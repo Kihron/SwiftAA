@@ -93,21 +93,32 @@ class DataManager: ObservableObject {
         let xml = XMLHash.parse(contents)
         var addItems = start == ""
         for item in xml["group"]["advancement"].all {
-            let id = item.element!.attribute(by: "id")!.text
-            let key = item.element!.attribute(by: "key")!.text
-            let name = item.element!.attribute(by: "name")!.text
-            let icon = item.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
-            let frameStyle = item.element!.attribute(by: "type")?.text ?? "normal"
-            let tooltip = item.element!.attribute(by: "tooltip")?.text ?? ""
-            let prefix = item.element!.attribute(by: "prefix")?.text ?? "minecraft:"
+            let itemEl = item.element!
+            let id = itemEl.attribute(by: "id")!.text
+            let key = itemEl.attribute(by: "key")!.text
+            let name = itemEl.attribute(by: "name")!.text
+            let icon = itemEl.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
+            let frameStyle = itemEl.attribute(by: "type")?.text ?? "normal"
+            let tooltip = itemEl.attribute(by: "tooltip")?.text ?? ""
+            let prefix = itemEl.attribute(by: "prefix")?.text ?? "minecraft:"
             let criteria: [Criterion] = (item.children.isEmpty) ? [] : item["criteria"]["criterion"].all.map({ c in
-                let id = c.element!.attribute(by: "id")!.text
-                let key = c.element!.attribute(by: "key")!.text
-                let name = c.element!.attribute(by: "name")?.text ?? getNameFromID(id: id, prefix: prefix)
-                let icon = c.element!.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: ":")
-                return Criterion(id: id, key: key, name: name, icon: icon)
+                let c = c.element!
+                let id = c.attribute(by: "id")!.text
+                let key = c.attribute(by: "key")!.text
+                let name = c.attribute(by: "name")?.text ?? getNameFromID(id: id, prefix: prefix)
+                let icon = c.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: ":")
+                if let recipe = c.attribute(by: "recipe")?.text {
+                    return Criterion.DualCriterion(id: id, key: key, name: name, icon: icon, recipe: recipe)
+                } else {
+                    return Criterion(id: id, key: key, name: name, icon: icon)
+                }
             })
-            let current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
+            let current: Advancement
+            if let complex = itemEl.attribute(by: "complex")?.text, complex == "trim" {
+                current = TrimAdvancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
+            } else {
+                current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
+            }
             fullList.append(current)
             addItems = addItems || id == start
             if (addItems) {

@@ -19,8 +19,6 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     var timestamp: Date?
     
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         
         completed = advancements[id]?.done ?? false
         timestamp = advancements[id]?.criteria.compactMap({dateFormatter.date(from: $0.value)}).max()
@@ -60,7 +58,7 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         }
         
         required init(from decoder: Decoder) throws {
-            fatalError("init(from:) has not been implemented")
+            fatalError("init(from:) has not been implemented for DualAdvancement")
         }
         
         override func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
@@ -76,3 +74,9 @@ extension Advancement: Transferable {
         CodableRepresentation(contentType: .item)
     }
 }
+
+var dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+    return dateFormatter
+}()

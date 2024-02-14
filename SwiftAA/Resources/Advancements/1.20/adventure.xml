@@ -20,7 +20,7 @@
     <advancement id="minecraft:adventure/salvage_sherd" name="Respecting Remnants" short_name="Remnants" key="adventure-salvage-sherd"/>
     <advancement id="minecraft:adventure/craft_decorated_pot_using_only_sherds" name="Careful Restoration" short_name="Restoration" icon="craft_decorated_pot" key="adventure-craft-decorated-pot-using-only-sherds"/>
     <advancement id="minecraft:adventure/trim_with_any_armor_pattern" name="Crafting a New Look" short_name="New Look" icon="trim_dune" key="adventure-trim-with-any-armor-pattern"/>
-    <advancement id="minecraft:adventure/trim_with_all_exclusive_armor_patterns" name="Smithing With Style" short_name="With Style" icon="trim_silence" type="challenge" key="adventure-trim-with-all-exclusive-armor-patterns">
+    <advancement id="minecraft:adventure/trim_with_all_exclusive_armor_patterns" complex="trim" name="Smithing With Style" short_name="With Style" icon="trim_silence" type="challenge" key="adventure-trim-with-all-exclusive-armor-patterns">
         <criteria goal="Trims Applied">
             <criterion id="armor_trimmed_minecraft:snout_armor_trim_smithing_template_smithing_trim" name="Snout" icon="trim_snout" recipe="minecraft:recipes/misc/snout_armor_trim_smithing_template" key="adventure-trims-applied-snout"/>
             <criterion id="armor_trimmed_minecraft:rib_armor_trim_smithing_template_smithing_trim" name="Rib" icon="trim_rib" recipe="minecraft:recipes/misc/rib_armor_trim_smithing_template" key="adventure-trims-applied-rib"/>

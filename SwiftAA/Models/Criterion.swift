@@ -28,4 +28,20 @@ class Criterion: NSObject, Codable, Identifiable {
     public override var description: String {
         "\(name) \(completed)"
     }
+    
+    class DualCriterion: Criterion {
+        var recipe: String
+        var timestamp2: Date?
+        var completed2: Bool {
+            return timestamp2 != nil
+        }
+        required init(from decoder: Decoder) throws {
+            fatalError("init(from:) has not been implemented for DualCriterion")
+        }
+        init(id: String, key: String, name: String, icon: String, recipe: String) {
+            self.recipe = recipe
+            self.timestamp2 = nil
+            super.init(id: id, key: key, name: name, icon: icon)
+        }
+    }
 }
