@@ -7,19 +7,15 @@
         ["mushroom_fields", "mushroom_field_shore"]
     ],
     "1.19": [
-        ["old_growth_pine_taiga", "old_growth_spruce_taiga"],
-        ["snowy_taiga", "grove", "ice_spikes", "snowy_plains", "snowy_slopes",
-        "snowy_beach", "frozen_river"],
-        ["jungle", "sparse_jungle", "bamboo_jungle"],
-        ["badlands", "wooded_badlands", "eroded_badlands"],
+        ["windswept_gravelly_hills"],
+        ["stony_peaks"],
+        ["frozen_peaks", "jagged_peaks"],
         ["mushroom_fields"]
     ],
     "1.20": [
-        ["old_growth_pine_taiga", "old_growth_spruce_taiga"],
-        ["snowy_taiga", "grove", "ice_spikes", "snowy_plains", "snowy_slopes",
-        "snowy_beach", "frozen_river"],
-        ["jungle", "sparse_jungle", "bamboo_jungle"],
-        ["badlands", "wooded_badlands", "eroded_badlands"],
+        ["windswept_gravelly_hills"],
+        ["stony_peaks"],
+        ["frozen_peaks", "jagged_peaks"],
         ["mushroom_fields"]
     ]
 }
