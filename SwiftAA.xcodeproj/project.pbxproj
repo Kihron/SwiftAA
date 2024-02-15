@@ -22,6 +22,7 @@
 		B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */; };
 		B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3802AB803F9006D8719 /* LayoutManager.swift */; };
 		B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3822AB8044D006D8719 /* ModularPanel.swift */; };
+		B628EF7C2B7DAD7800B5D37C /* IndicatorIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */; };
 		B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */; };
 		B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */; };
 		B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */; };
@@ -168,6 +169,7 @@
 		B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSettingsView.swift; sourceTree = "<group>"; };
 		B624F3802AB803F9006D8719 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
 		B624F3822AB8044D006D8719 /* ModularPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularPanel.swift; sourceTree = "<group>"; };
+		B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorIconView.swift; sourceTree = "<group>"; };
 		B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardManager.swift; sourceTree = "<group>"; };
 		B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
 		B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPanelView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,15 @@
 				B6E7B0872AAA951700D83FA7 /* OverlayView.swift */,
 			);
 			path = Overlay;
+			sourceTree = "<group>";
+		};
+		B628EF7A2B7DAD6300B5D37C /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				B65AE1D02886F8C1006EC138 /* IndicatorView.swift */,
+				B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */,
+			);
+			path = Indicators;
 			sourceTree = "<group>";
 		};
 		B62A00F32AB6A468007F5B7A /* Leaderboard */ = {
@@ -590,7 +601,7 @@
 		B676BDA92AA7A81B008BD8A9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B65AE1D02886F8C1006EC138 /* IndicatorView.swift */,
+				B628EF7A2B7DAD6300B5D37C /* Indicators */,
 				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
 				B6AAB57F28BA831E007B981B /* TransparentView.swift */,
 				B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */,
@@ -1063,6 +1074,7 @@
 				B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */,
 				B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */,
 				B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */,
+				B628EF7C2B7DAD7800B5D37C /* IndicatorIconView.swift in Sources */,
 				B65AB3572AA97EB5001F4FE6 /* UUID+Ext.swift in Sources */,
 				B64192D12AC29D02006C8CC4 /* WaypointCardVeiw.swift in Sources */,
 				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
@@ -1224,10 +1236,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "240213d (b)";
+				CURRENT_PROJECT_VERSION = 240214d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1259,10 +1271,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "240213d (b)";
+				CURRENT_PROJECT_VERSION = 240214d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
