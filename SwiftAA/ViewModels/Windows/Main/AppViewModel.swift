@@ -164,6 +164,10 @@ class AppViewModel: ObservableObject {
             }
             
             if let arguments = dataManager.processArguments(pid: pid) {
+//                if let version = arguments.firstIndex(of: "--version") {
+//                    print(arguments[version + 1])
+//                }
+                
                 if let gameDirIndex = arguments.firstIndex(of: "--gameDir") {
                     let path = "\(arguments[gameDirIndex + 1])/saves"
                     activeWindows[pid] = path

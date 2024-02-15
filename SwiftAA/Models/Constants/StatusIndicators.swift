@@ -172,21 +172,20 @@ class MajorBiomes: TransferableIndicator, StatusIndicator {
     func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
         if let groups = biomeGroups[TrackerManager.shared.gameVersion.label] {
             var count = 0
-            var index = 0
             var icons = [String]()
+            
+            let adv = advancements["minecraft:adventure/adventuring_time"]
             for group in groups {
-                let adv = advancements["minecraft:adventure/adventuring_time"]
-                let groupComplete = group.allSatisfy { adv?.criteria["minecraft:\($0)"] != nil }
+                let groupComplete = group.allSatisfy({adv?.criteria["minecraft:\($0)"] != nil})
                 if groupComplete {
                     count += 1
                     icons.append(group[0])
                 }
-                index += 1
             }
+            
             key = L10n.Statistic.majorBiomes(count, groups.count)
             icon = count == groups.count || icons.isEmpty ? "adventuring_time" : icons.prefix(4).joined(separator: "+")
             completed = count == groups.count
-            
         }
     }
 }
