@@ -25,11 +25,6 @@ struct TrackingVersionView: View {
                     }
                     .frame(maxWidth: 75)
                     .labelsHidden()
-                    .onChange(of: trackerManager.gameVersion) { _ in
-                        if trackerManager.layoutStyle != .standard {
-                            dataManager.loadAllAdvancements()
-                        }
-                    }
                 }
                 
                 let availableStyles = LayoutStyle.getAvailableStyles(version: trackerManager.gameVersion)
@@ -55,13 +50,6 @@ struct TrackingVersionView: View {
                         }
                         .frame(maxWidth: 110)
                         .labelsHidden()
-                        .onChange(of: trackerManager.layoutStyle) { layout in
-                            dataManager.map.removeAll()
-                            
-                            if layout != .standard {
-                                dataManager.loadAllAdvancements()
-                            }
-                        }
                     }
                 }
             }

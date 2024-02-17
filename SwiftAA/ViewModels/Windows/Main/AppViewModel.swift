@@ -163,7 +163,7 @@ class AppViewModel: ObservableObject {
                 return path
             }
             
-            if let arguments = dataManager.processArguments(pid: pid) {
+            if let arguments = Utilities.processArguments(pid: pid) {
 //                if let version = arguments.firstIndex(of: "--version") {
 //                    print(arguments[version + 1])
 //                }
@@ -185,18 +185,15 @@ class AppViewModel: ObservableObject {
     }
     
     private func updateAll(advancements: [String:JsonAdvancement] = [:], statistics: [String:[String:Int]] = [:]) {
-        if (advancements.count == 0) {
-            if (wasCleared) {
-                return
-            }
+        if advancements.count == 0 && !wasCleared {
             wasCleared = true
             dataManager.lastModified = Date.now
-        } else {
+        } else if advancements.count > 0 {
             wasCleared = false
         }
         
-        let flatMap = dataManager.map.values.flatMap({$0})
-        flatMap.forEach { adv in
+        let allAdvancements = dataManager.allAdvancements
+        allAdvancements.forEach { adv in
             adv.update(advancements: advancements, stats: statistics)
         }
         
@@ -212,7 +209,7 @@ class AppViewModel: ObservableObject {
         
         dataManager.statsData = statistics
         dataManager.playTime = statistics["minecraft:custom"]?[timeStat] ?? 0
-        dataManager.allAdvancements = dataManager.map.values.flatMap({$0}).filter({$0.completed}).count >= dataManager.map.values.compactMap({$0.count}).reduce(0, +)
+        dataManager.completedAllAdvancements = dataManager.completedAdvancements.count >= dataManager.allAdvancements.count
         
         advancementsUpdated = true
     }

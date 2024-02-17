@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverlaySettings: View {
     @ObservedObject private var overlayManager = OverlayManager.shared
+    @State private var showStatusEditor: Bool = false
     
     var body: some View {
         ScrollView {
@@ -84,13 +85,32 @@ struct OverlaySettings: View {
                 SettingsCardView {
                     VStack {
                         HStack {
-                            Text(L10n.Overlay.showstats)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(L10n.Overlay.showstats)
+                                
+                                Text("Toggles the visibility of the statistics row at the bottom of the Overlay.")
+                                    .font(.caption)
+                                    .foregroundStyle(.gray)
+                                    .padding(.trailing, 2)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Toggle("", isOn: $overlayManager.showStatistics)
                                 .labelsHidden()
                                 .toggleStyle(.switch)
                         }
+                        
+                        Divider()
+                        
+                        HStack {
+                            Text("Statistics Row")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Button(action: { showStatusEditor.toggle() }) {
+                                Text("Open Editor")
+                            }
+                        }
+                        .disabled(!overlayManager.showStatistics)
                         
                         Divider()
                         
@@ -162,6 +182,9 @@ struct OverlaySettings: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .animation(.bouncy, value: overlayManager.overlayStyle)
+            .sheet(isPresented: $showStatusEditor, content: {
+                StatusIndicatorPickerView(isSettings: true)
+            })
             .onChange(of: overlayManager.syncOverlayFrame) { value in
                 if value {
                     overlayManager.overlayFrameStyle = LayoutManager.shared.frameStyle

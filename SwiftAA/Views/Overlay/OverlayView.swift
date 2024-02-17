@@ -14,7 +14,7 @@ struct OverlayView: View {
     var body: some View {
         if overlayManager.overlayOpen {
             Group {
-                if !dataManager.allAdvancements {
+                if !dataManager.completedAllAdvancements {
                     switch overlayManager.overlayStyle {
                         case .optimal:
                             OptimalOverlayView()

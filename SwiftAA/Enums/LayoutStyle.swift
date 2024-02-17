@@ -27,7 +27,7 @@ enum LayoutStyle: String, CaseIterable, Identifiable, Hashable {
             case .v1_19:
                 return [.standard]
             case .v1_20:
-                return [.standard]
+                return [.standard, .minimalist]
         }
     }
 }

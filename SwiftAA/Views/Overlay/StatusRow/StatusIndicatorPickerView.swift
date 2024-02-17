@@ -12,6 +12,8 @@ struct StatusIndicatorPickerView: View {
     @ObservedObject private var dataManager = DataManager.shared
     @ObservedObject private var overlayManager = OverlayManager.shared
     
+    @State var isSettings: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Status Indicators")
@@ -56,7 +58,7 @@ struct StatusIndicatorPickerView: View {
             }.frame(maxWidth: .infinity, alignment: .trailing)
         }
         .padding()
-        .frame(width: 550, height: 225)
+        .frame(width: 550, height: isSettings ? 400 : 225)
     }
     
     private func toggleActiveIndicator(id: String) {

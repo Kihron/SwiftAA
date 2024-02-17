@@ -12,7 +12,7 @@ struct OverlayFrameModifier: ViewModifier {
     @ObservedObject private var dataManager = DataManager.shared
     
     func body(content: Content) -> some View {
-        if !dataManager.allAdvancements {
+        if !dataManager.completedAllAdvancements {
             switch overlayManager.overlayStyle {
                 case .optimal:
                     content

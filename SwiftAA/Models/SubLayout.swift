@@ -13,5 +13,6 @@ struct SubLayout: Codable {
 }
 
 struct SubAdvancement: Codable {
-    let id, name: String
+    let id: String
+    let name: String?
 }

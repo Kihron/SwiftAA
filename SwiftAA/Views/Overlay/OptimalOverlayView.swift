@@ -13,7 +13,7 @@ struct OptimalOverlayView: View {
     
     var body: some View {
         VStack(spacing: 6) {
-            ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.totalAdvancements), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true, isOverlay: true)
+            ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.allAdvancements.count), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true, isOverlay: true)
                 .padding(.horizontal)
             
             HStack {

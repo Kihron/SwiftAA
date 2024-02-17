@@ -15,7 +15,7 @@ class MultiPageOverlayViewModel: ObservableObject {
     }
     
     var totalAdvancements: Int {
-        return dataManager.totalAdvancements
+        return dataManager.allAdvancements.count
     }
     
     var completedAdvancements: Int {
@@ -23,7 +23,7 @@ class MultiPageOverlayViewModel: ObservableObject {
     }
 
     func getSection(_ section: Int, screen: GeometryProxy) -> [Advancement] {
-        let values = dataManager.map.values.flatMap({$0}).filter({!$0.completed})
+        let values = dataManager.incompleteAdvancements
         
         let maxOnScreen = getMaxOnScreen(type: "indicator", width: screen.size.width)
         
@@ -34,11 +34,11 @@ class MultiPageOverlayViewModel: ObservableObject {
     }
     
     func totalSections(screen: GeometryProxy) -> Int {
-        (dataManager.map.values.flatMap({ $0 }).filter({ !$0.completed }).count / Int((floor(screen.size.width / 74))) + 1) / 2
+        (dataManager.incompleteAdvancements.count / Int((floor(screen.size.width / 74))) + 1) / 2
     }
     
     func getCriteriaSection(_ section: Int, screen: GeometryProxy) -> [Criterion] {
-        let values = dataManager.map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
+        let values = dataManager.incompleteCriteria
         
         let maxOnScreen = getMaxOnScreen(type: "criteria", width: screen.size.width)
         
@@ -49,7 +49,7 @@ class MultiPageOverlayViewModel: ObservableObject {
     }
     
     func totalCriteriaSections(screen: GeometryProxy) -> Int {
-        let count = dataManager.map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}.count
+        let count = dataManager.incompleteCriteria.count
         let maxOnScreen = getMaxOnScreen(type: "criteria", width: screen.size.width)
         let pages = max(1, (count - 0) / maxOnScreen + 1)
         return pages

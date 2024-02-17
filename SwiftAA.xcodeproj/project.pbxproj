@@ -18,6 +18,8 @@
 		B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB62ABA886800A79D4E /* ModernFrame.swift */; };
 		B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */; };
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
+		B62405A32B80167300CAA885 /* L1_20S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A22B80167300CAA885 /* L1_20S.swift */; };
+		B62405A52B80168900CAA885 /* L1_20M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A42B80168900CAA885 /* L1_20M.swift */; };
 		B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37C2AB7F784006D8719 /* NetworkManager.swift */; };
 		B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */; };
 		B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3802AB803F9006D8719 /* LayoutManager.swift */; };
@@ -165,6 +167,8 @@
 		B60C6BB62ABA886800A79D4E /* ModernFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernFrame.swift; sourceTree = "<group>"; };
 		B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayView.swift; sourceTree = "<group>"; };
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
+		B62405A22B80167300CAA885 /* L1_20S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20S.swift; sourceTree = "<group>"; };
+		B62405A42B80168900CAA885 /* L1_20M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20M.swift; sourceTree = "<group>"; };
 		B624F37C2AB7F784006D8719 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSettingsView.swift; sourceTree = "<group>"; };
 		B624F3802AB803F9006D8719 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
@@ -726,6 +730,8 @@
 			isa = PBXGroup;
 			children = (
 				B6D67AE62B744A97007AA80C /* L1_20.swift */,
+				B62405A22B80167300CAA885 /* L1_20S.swift */,
+				B62405A42B80168900CAA885 /* L1_20M.swift */,
 			);
 			path = 1_20;
 			sourceTree = "<group>";
@@ -971,6 +977,7 @@
 				B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */,
 				B65FE5912AA6CFE900C30A8F /* ThemeManager.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
+				B62405A32B80167300CAA885 /* L1_20S.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
 				B6A4AF7A2AECC06E00C7B805 /* Utilities.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
@@ -1086,6 +1093,7 @@
 				B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */,
 				B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */,
 				B6CD41CD2AE60C500024D4E4 /* StatusIndicatorPickerView.swift in Sources */,
+				B62405A52B80168900CAA885 /* L1_20M.swift in Sources */,
 				B62AEA0E2AA93A5B008B01CD /* ThemePreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1236,7 +1244,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240214d;
+				CURRENT_PROJECT_VERSION = "240216d (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1271,7 +1279,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240214d;
+				CURRENT_PROJECT_VERSION = "240216d (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

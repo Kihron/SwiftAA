@@ -12,8 +12,8 @@ class TrimAdvancement: Advancement {
         fatalError("init(from:) has not been implemented for ComplexAdvancement")
     }
     
-    init(id: String, key: String, name: String, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool) {
-        super.init(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: completed)
+    init(id: String, key: String, name: String, shortName: String? = nil, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool) {
+        super.init(id: id, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: completed)
     }
     
     override func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {

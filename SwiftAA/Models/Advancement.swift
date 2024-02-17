@@ -11,6 +11,7 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     var id: String
     var key: String
     var name: String
+    var shortName: String?
     var icon: String
     var frameStyle: String
     var criteria: [Criterion]
@@ -26,10 +27,11 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         }
     }
     
-    init(id: String, key: String, name: String, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool, tooltip: String = "") {
+    init(id: String, key: String, name: String, shortName: String? = nil, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool, tooltip: String = "") {
         self.id = id
         self.key = "advancement.\(key.replacingOccurrences(of: "-", with: "."))"
         self.name = name
+        self.shortName = shortName
         self.icon = icon
         self.frameStyle = frameStyle
         self.criteria = criteria
@@ -45,10 +47,10 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         let first: Advancement
         let second: Advancement
         
-        init(first: Advancement, second: Advancement) {
+        init(first: Advancement, second: Advancement, shortName: String? = nil) {
             self.first = first
             self.second = second
-            super.init(id: first.id, key: first.key, name: first.name, icon: first.icon, frameStyle: first.frameStyle, criteria: first.criteria, completed: first.completed && second.completed)
+            super.init(id: first.id, key: first.key, name: first.name, shortName: shortName, icon: first.icon, frameStyle: first.frameStyle, criteria: first.criteria, completed: first.completed && second.completed)
         }
         
         required init(from decoder: Decoder) throws {

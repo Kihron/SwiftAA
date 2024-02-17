@@ -19,6 +19,16 @@ struct IndicatorView: View {
     @State var isMinimal: Bool = false
     @State private var showTooltip: Bool = false
     
+    var name: String {
+        if isStat {
+            return indicator.key
+        } else if let shortName = (indicator as? Advancement)?.shortName, isMinimal {
+            return shortName
+        } else {
+            return indicator.key.localized(value: indicator.name)
+        }
+    }
+    
     private var frameStyle: FrameStyle {
         if isOverlay && !overlayManager.syncOverlayFrame {
             return overlayManager.overlayFrameStyle
@@ -64,7 +74,7 @@ struct IndicatorView: View {
                     .animation(.easeIn, value: indicator.icon)
             }
             
-            Text(isStat ? indicator.key : indicator.key.localized(value: indicator.name))
+            Text(name)
                 .minecraftFont()
                 .tracking(0.1)
                 .foregroundColor(isOverlay ? .white : themeManager.text)

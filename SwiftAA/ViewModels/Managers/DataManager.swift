@@ -11,15 +11,20 @@ import SWXMLHash
 class DataManager: ObservableObject {
     @ObservedObject private var versionManager = TrackerManager.shared
     
-    @Published var map = [String:[Advancement]]()
-    var minimalCache: [Indicator]? = nil
+    @Published var map = [String:[Advancement]]() {
+        didSet {
+            allAdvancements = map.values.flatMap({ $0 })
+        }
+    }
+    
+    @Published var allAdvancements: [Advancement] = []
     
     @Published var stats: [Indicator] = Constants.statusIndicators
     @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
     
     @Published var lastModified: Date = Date.now
     
-    @Published var allAdvancements: Bool = false
+    @Published var completedAllAdvancements: Bool = false
     @Published var playTime: Int = 0
     
     static let shared = DataManager()
@@ -28,34 +33,32 @@ class DataManager: ObservableObject {
         
     }
     
+    var minimalCache: [Indicator]? = nil
+    
     var uncounted = [Advancement]()
     
-    var totalAdvancements: Int {
-        return map.values.flatMap({$0}).count
-    }
-    
     var completedAdvancements: [Advancement] {
-        return map.values.flatMap({$0}).filter({$0.completed}).sorted(by: {
+        return allAdvancements.lazy.filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
-        })
+        }
     }
     
     var incompleteAdvancements: [Advancement] {
-        return map.values.flatMap({$0}).filter({!$0.completed})
+        return allAdvancements.filter({ !$0.completed })
     }
     
     var incompleteCriteria: [Criterion] {
-        return map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{!$0.completed}
+        return allAdvancements.lazy.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
     }
     
     var completedCriteria: [Criterion] {
-        return map.values.flatMap({$0}).filter({!$0.completed && !$0.criteria.isEmpty}).flatMap({$0.criteria}).filter{$0.completed}.sorted(by: {
+        return allAdvancements.lazy.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
-        })
+        }
     }
     
     private var advancementsWithCriteria: [Advancement] {
-        return map.values.flatMap({$0}).filter({!$0.criteria.isEmpty})
+        return allAdvancements.filter({ !$0.criteria.isEmpty })
     }
     
     let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
@@ -63,48 +66,44 @@ class DataManager: ObservableObject {
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
         let file = "Advancements/\(versionManager.gameVersion.label)/\(file)"
         
-        let cache = map[file]
-        if (cache != nil) {
-            var cache = cache!
+        if let cache = map[file] {
+            var filteredCache = cache
             if (!start.isEmpty) {
-                cache = Array(cache.drop(while: { $0.id != start }))
+                filteredCache = Array(filteredCache.drop(while: { $0.id != start }))
             }
             if (!end.isEmpty) {
                 if let index = cache.lastIndex(where: { $0.id == end }) {
-                    cache = cache.dropLast(cache.count - index - 1)
+                    filteredCache = filteredCache.dropLast(cache.count - index - 1)
                 }
             }
-            return .constant(cache)
+            return .constant(filteredCache)
         }
         
         var advancements = [Advancement]()
         var fullList = [Advancement]()
         
-        let url = Bundle.main.url(forResource: file, withExtension: "xml")
-        let contents: String
-        
-        do {
-            contents = try String(contentsOf: url!)
-        } catch {
-            print(error)
-            contents = "ERROR"
+        guard let url = Bundle.main.url(forResource: file, withExtension: "xml"),
+              let contents = try? String(contentsOf: url) else {
+            print("Error loading file: \(file)")
+            return .constant([])
         }
         
         let xml = XMLHash.parse(contents)
-        var addItems = start == ""
+        var addItems = start.isEmpty
         for item in xml["group"]["advancement"].all {
-            let element = item.element!
+            guard let element = item.element else { continue }
             
             let id = element.attribute(by: "id")!.text
             let key = element.attribute(by: "key")!.text
             let name = element.attribute(by: "name")!.text
+            let shortName = element.attribute(by: "short_name")?.text
             let icon = element.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
             let frameStyle = element.attribute(by: "type")?.text ?? "normal"
             let tooltip = element.attribute(by: "tooltip")?.text ?? ""
             let prefix = element.attribute(by: "prefix")?.text ?? "minecraft:"
             
-            let criteria: [Criterion] = (item.children.isEmpty) ? [] : item["criteria"]["criterion"].all.map({ c in
-                let c = c.element!
+            let criteria = item["criteria"]["criterion"].all.compactMap { c -> Criterion? in
+                guard let c = c.element else { return nil }
                 
                 let id = c.attribute(by: "id")!.text
                 let key = c.attribute(by: "key")!.text
@@ -116,18 +115,17 @@ class DataManager: ObservableObject {
                 } else {
                     return Criterion(id: id, key: key, name: name, icon: icon)
                 }
-            })
+            }
             
             let current: Advancement
             if let complex = element.attribute(by: "complex")?.text, complex == "trim" {
-                current = TrimAdvancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
+                current = TrimAdvancement(id: id, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
             } else {
-                current = Advancement(id: id, key: key, name: name, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
+                current = Advancement(id: id, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
             }
             
             fullList.append(current)
-            addItems = addItems || id == start
-            if (addItems) {
+            if (addItems || id == start) {
                 advancements.append(current)
             }
             if (end == id) {
@@ -136,13 +134,15 @@ class DataManager: ObservableObject {
         }
         
         DispatchQueue.main.async {
-            self.map[file] = fullList
-            self.removeOldVersion(gameVersion: self.versionManager.gameVersion.label)
+            if self.map[file] == nil {
+                self.map[file] = fullList
+            }
         }
+        
         return .constant(advancements)
     }
     
-    func getIconFromID(id: String, separator: Character) -> String {
+    private func getIconFromID(id: String, separator: Character) -> String {
         let idx = id.lastIndex(of: separator)
         if (idx == nil) {
             return id
@@ -150,7 +150,7 @@ class DataManager: ObservableObject {
         return String(id[idx!...].dropFirst())
     }
     
-    func getNameFromID(id: String, prefix: String) -> String {
+    private func getNameFromID(id: String, prefix: String) -> String {
         id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
     }
     
@@ -158,9 +158,16 @@ class DataManager: ObservableObject {
         advancementsWithCriteria.first(where: { $0.criteria.contains(criterion) })
     }
     
-    func removeOldVersion(gameVersion: String) {
+    func gameVersionChanged() {
+        minimalCache = nil
+        DispatchQueue.main.async {
+            self.removeOldVersionFiles()
+        }
+    }
+    
+    private func removeOldVersionFiles() {
         for key in map.keys {
-            if (!key.contains(gameVersion)) {
+            if (!key.contains(versionManager.gameVersion.label)) {
                 map.removeValue(forKey: key)
             }
         }
@@ -173,21 +180,6 @@ class DataManager: ObservableObject {
         dateFormatter.unitsStyle = .positional
         dateFormatter.zeroFormattingBehavior = .pad
         return dateFormatter.string(from: Double(ticks / 20)) ?? "0:00:00"
-    }
-    
-    func loadAllAdvancements() {
-        let file = "Advancements/\(versionManager.gameVersion.label)/minimal"
-        guard let url = Bundle.main.url(forResource: file, withExtension: "json") else { return }
-        
-        guard let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url)) else {
-            print("Error decoding sublayout")
-            return
-        }
-
-        minimalCache = nil
-        for category in sublayout.categories {
-            let _ = decode(file: category)
-        }
     }
     
     func getMinimalisticAdvancements() -> Binding<[Indicator]> {
@@ -205,30 +197,22 @@ class DataManager: ObservableObject {
         }
         
         var fulllist = [Indicator]()
-        let loaded = map.values.flatMap({$0})
-        if loaded.isEmpty {
-            for category in sublayout.categories {
-                fulllist += decode(file: category).wrappedValue
-            }
-        } else {
-            fulllist = loaded
+        let loaded = allAdvancements
+        for category in sublayout.categories {
+            fulllist += decode(file: category).wrappedValue
         }
-        
+
         advancements.reserveCapacity(sublayout.advancements.count)
         for adv in sublayout.advancements {
             if adv.id.contains("+") {
                 let ids = adv.id.split(separator: "+", maxSplits: 2)
                 guard let first = fulllist.first(where: { $0.id == "minecraft:\(ids[0])" })?.asAdvancement else { continue }
                 guard let second = fulllist.first(where: { $0.id == "minecraft:\(ids[1])" })?.asAdvancement else { continue }
-                first.name = adv.name
-                first.key = adv.name
-                let dual = Advancement.DualAdvancement(first: first, second: second)
+                let dual = Advancement.DualAdvancement(first: first, second: second, shortName: adv.name)
                 uncounted.append(dual)
                 advancements.append(dual)
             } else {
                 if let advFromMap = fulllist.first(where: { $0.id == "minecraft:\(adv.id)" })?.asAdvancement {
-                    advFromMap.name = adv.name
-                    advFromMap.key = adv.name
                     advancements.append(advFromMap)
                 }
             }
@@ -239,68 +223,5 @@ class DataManager: ObservableObject {
         }
         
         return .constant(advancements)
-    }
-    
-    //https://stackoverflow.com/questions/72443976/how-to-get-arguments-of-nsrunningapplication
-    func processArguments(pid: pid_t) -> [String]? {
-        
-        // Determine space for arguments:
-        var name : [CInt] = [ CTL_KERN, KERN_PROCARGS2, pid ]
-        var length: size_t = 0
-        if sysctl(&name, CUnsignedInt(name.count), nil, &length, nil, 0) == -1 {
-            return nil
-        }
-        
-        // Get raw arguments:
-        var buffer = [CChar](repeating: 0, count: length)
-        if sysctl(&name, CUnsignedInt(name.count), &buffer, &length, nil, 0) == -1 {
-            return nil
-        }
-        
-        // There should be at least the space for the argument count:
-        var argc : CInt = 0
-        if length < MemoryLayout.size(ofValue: argc) {
-            return nil
-        }
-        
-        var argv: [String] = []
-        
-        buffer.withUnsafeBufferPointer { bp in
-            
-            // Get argc:
-            memcpy(&argc, bp.baseAddress, MemoryLayout.size(ofValue: argc))
-            var pos = MemoryLayout.size(ofValue: argc)
-            
-            // Skip the saved exec_path.
-            while pos < bp.count && bp[pos] != 0 {
-                pos += 1
-            }
-            if pos == bp.count {
-                return
-            }
-            
-            // Skip trailing '\0' characters.
-            while pos < bp.count && bp[pos] == 0 {
-                pos += 1
-            }
-            if pos == bp.count {
-                return
-            }
-            
-            // Iterate through the '\0'-terminated strings.
-            for _ in 0..<argc {
-                let start = bp.baseAddress! + pos
-                while pos < bp.count && bp[pos] != 0 {
-                    pos += 1
-                }
-                if pos == bp.count {
-                    return
-                }
-                argv.append(String(cString: start))
-                pos += 1
-            }
-        }
-        
-        return argv.count == argc ? argv : nil
     }
 }
