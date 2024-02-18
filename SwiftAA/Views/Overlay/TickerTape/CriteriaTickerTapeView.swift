@@ -21,8 +21,8 @@ struct CriteriaTickerTapeView: View {
         GeometryReader { geometry in
             LazyHStack(spacing: 0) {
                 if !dataManager.incompleteCriteria.isEmpty {
-                    ForEach(buffer, id: \.?.id) { criterion in
-                        if let criterion = criterion {
+                    ForEach(buffer.indices.map({(buffer.readIndex + $0) % buffer.count}), id: \.self) { idx in
+                        if let criterion = buffer.array[idx] {
                             ZStack {
                                 Group {
                                     Image(criterion.icon)
@@ -32,7 +32,7 @@ struct CriteriaTickerTapeView: View {
                                 }
                                 .padding(8)
                                 
-                                if overlayManager.clarifyAmbigiousCriteria && dataManager.ambigiousCriteria.contains(criterion.icon) {
+                                if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon) {
                                     if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
                                         Image(adv.icon)
                                             .resizable()
@@ -43,6 +43,12 @@ struct CriteriaTickerTapeView: View {
                                 }
                             }
                         }
+                        else {
+                            Rectangle()
+                                .fill(.clear)
+                                .frame(width: 24)
+                                .padding(8)
+                        }
                     }
                     .drawingGroup()
                 }
@@ -50,9 +56,6 @@ struct CriteriaTickerTapeView: View {
             .offset(x: xOffset, y: 0)
             .onAppear {
                 calculateBuffer(width: geometry.size.width)
-                withAnimation(.spring(duration: 5)) {
-                    xOffset -= 40
-                }
             }
             .onChange(of: TrackerManager.shared.worldPath) { _ in
                 resetBuffer(width: geometry.size.width)
@@ -71,7 +74,7 @@ struct CriteriaTickerTapeView: View {
                     xOffset += 40
                     cycleIndicator()
                 }
-                withAnimation(.spring(duration: 5)) {
+                withAnimation(.linear(duration: 1)) {
                     xOffset -= 40
                 }
             }

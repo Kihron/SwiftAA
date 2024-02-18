@@ -14,7 +14,7 @@ struct StatusIndicatorRowView: View {
     @State private var showStatusEditor: Bool = false
     
     private var filteredStatusIndicators: [Binding<Indicator>] {
-        return $dataManager.stats.filter({ overlayManager.activeIndicators.contains($0.wrappedValue.id)
+        return $dataManager.statusIndicators.filter({ overlayManager.activeIndicators.contains($0.wrappedValue.id)
         })
     }
     

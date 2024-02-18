@@ -10,7 +10,9 @@ import SwiftUI
 struct L1_16M: View {
     @ObservedObject private var dataManager = DataManager.shared
     
-    @State private var stats = Utilities.getSpecificStats(types: [.godApple, .trident, .shells, .witherSkulls, .ancientDebris, .beehives, .goldBlocks])
+    @State private var statusIndicators = Utilities.getSpecificStats(types: [.godApple, .trident, .shells, .witherSkulls, .ancientDebris, .beehives, .goldBlocks])
+    
+    @State private var statistics: [StatisticIndicator] = [EnderPearls.shared, NetherWart.shared, GhastTears.shared, Pufferfish.shared, AzureBluet.shared, FermentedEye.shared]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -21,7 +23,7 @@ struct L1_16M: View {
                 .frame(width: 518)
                 
                 VStack {
-                    AdvPanelView(indicators: $stats, columnCount: 2, isStat: true)
+                    AdvPanelView(indicators: $statusIndicators, columnCount: 2, isStat: true)
                 }
                 .frame(width: 148)
                 
@@ -42,8 +44,15 @@ struct L1_16M: View {
                     .frame(width: 186)
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[11].asAdvancement, rowCount: 14, goal: L10n.Goal.cats, isMinimal: true)
                     .frame(width: 159)
-                GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 14, goal: L10n.Goal.nether, isMinimal: true)
-                    .frame(width: 149)
+                
+                VStack(spacing: 0) {
+                    StatisticPanelView(statistics: $statistics)
+                        .frame(height: 125)
+                    
+                    GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 7, goal: L10n.Goal.nether, isMinimal: true)
+                        .frame(height: 185)
+                }
+                .frame(width: 149)
             }
             .frame(width: 1192, height: 310)
         }

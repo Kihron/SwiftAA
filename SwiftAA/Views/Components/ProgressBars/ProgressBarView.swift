@@ -69,6 +69,7 @@ struct ProgressBarView: View {
                     }
                 }
                 .animation(.easeIn, value: layoutManager.progressBarStyle)
+                .animation(.linear, value: value)
                 .frame(height: 10)
             }
         }

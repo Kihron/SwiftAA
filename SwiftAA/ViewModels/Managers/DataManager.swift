@@ -17,12 +17,24 @@ class DataManager: ObservableObject {
         }
     }
     
+    @Published var lastModified: Date = Date.now {
+        didSet {
+            DispatchQueue.main.async {
+                self.updateAdvancements()
+            }
+        }
+    }
+    
     @Published var allAdvancements: [Advancement] = []
+    @Published var completedAdvancements: [Advancement] = []
+    @Published var incompleteAdvancements: [Advancement] = []
+    @Published var incompleteCriteria: [Criterion] = []
+    @Published var completedCriteria: [Criterion] = []
+    @Published var advancementsWithCriteria: [Advancement] = []
     
-    @Published var stats: [Indicator] = Constants.statusIndicators
+    @Published var statusIndicators: [Indicator] = Constants.statusIndicators
+    @Published var statisticIndicators: [Indicator] = Constants.statisticIndicators
     @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
-    
-    @Published var lastModified: Date = Date.now
     
     @Published var completedAllAdvancements: Bool = false
     @Published var playTime: Int = 0
@@ -35,33 +47,19 @@ class DataManager: ObservableObject {
     
     var minimalCache: [Indicator]? = nil
     
-    var uncounted = [Advancement]()
+    var uncounted: [Indicator] = []
     
-    var completedAdvancements: [Advancement] {
-        return allAdvancements.lazy.filter({ $0.completed }).sorted {
+    private func updateAdvancements() {
+        completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
-    }
-    
-    var incompleteAdvancements: [Advancement] {
-        return allAdvancements.filter({ !$0.completed })
-    }
-    
-    var incompleteCriteria: [Criterion] {
-        return allAdvancements.lazy.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
-    }
-    
-    var completedCriteria: [Criterion] {
-        return allAdvancements.lazy.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
+        incompleteAdvancements = allAdvancements.filter({ !$0.completed })
+        incompleteCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
+        completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
+        advancementsWithCriteria = allAdvancements.filter({ !$0.criteria.isEmpty })
     }
-    
-    private var advancementsWithCriteria: [Advancement] {
-        return allAdvancements.filter({ !$0.criteria.isEmpty })
-    }
-    
-    let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
         let file = "Advancements/\(versionManager.gameVersion.label)/\(file)"
@@ -125,7 +123,8 @@ class DataManager: ObservableObject {
             }
             
             fullList.append(current)
-            if (addItems || id == start) {
+            addItems = addItems || id == start
+            if (addItems) {
                 advancements.append(current)
             }
             if (end == id) {
@@ -160,11 +159,12 @@ class DataManager: ObservableObject {
     
     func gameVersionChanged() {
         minimalCache = nil
+        uncounted.removeAll()
         DispatchQueue.main.async {
             self.removeOldVersionFiles()
         }
     }
-    
+
     private func removeOldVersionFiles() {
         for key in map.keys {
             if (!key.contains(versionManager.gameVersion.label)) {

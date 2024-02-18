@@ -192,13 +192,16 @@ class AppViewModel: ObservableObject {
             wasCleared = false
         }
         
-        let allAdvancements = dataManager.allAdvancements
-        allAdvancements.forEach { adv in
+        dataManager.allAdvancements.forEach { adv in
             adv.update(advancements: advancements, stats: statistics)
         }
         
-        dataManager.stats.forEach { stat in
-            stat.update(advancements: advancements, stats: statistics)
+        dataManager.statusIndicators.forEach { status in
+            status.update(advancements: advancements, stats: statistics)
+        }
+        
+        dataManager.statisticIndicators.forEach { statistic in
+            statistic.update(advancements: advancements, stats: statistics)
         }
         
         dataManager.uncounted.forEach { adv in

@@ -1342,9 +1342,21 @@ internal enum L10n {
     internal static func ancientDebris(_ p1: Int, _ p2: Int) -> String {
       return L10n.tr("Localizable", "statistic.ancient_debris", p1, p2, fallback: "Debris: %d\nTNT: %d")
     }
+    /// Azure Bluet
+    internal static let azureBluet = L10n.tr("Localizable", "statistic.azure_bluet", fallback: "Azure Bluet")
     /// Hives: %d
     internal static func beehives(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.beehives", p1, fallback: "Hives: %d")
+    }
+    /// %d Pearls
+    internal static func enderPearl(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.ender_pearl", p1, fallback: "%d Pearls")
+    }
+    /// Fermented Eye
+    internal static let fermentedEye = L10n.tr("Localizable", "statistic.fermented_eye", fallback: "Fermented Eye")
+    /// %d / 4 Tears
+    internal static func ghastTears(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.ghast_tears", p1, fallback: "%d / 4 Tears")
     }
     /// Gold Blocks
     /// %d / 164
@@ -1355,6 +1367,14 @@ internal enum L10n {
     /// %d / %d
     internal static func majorBiomes(_ p1: Int, _ p2: Int) -> String {
       return L10n.tr("Localizable", "statistic.major_biomes", p1, p2, fallback: "Major Biomes\n%d / %d")
+    }
+    /// %d Wart
+    internal static func netherWart(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.nether_wart", p1, fallback: "%d Wart")
+    }
+    /// %d / 2 Puffers
+    internal static func pufferfish(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.pufferfish", p1, fallback: "%d / 2 Puffers")
     }
     /// Shells
     /// %d / 8

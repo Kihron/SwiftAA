@@ -23,7 +23,7 @@ struct StatusIndicatorPickerView: View {
             SettingsCardView(padding: 0) {
                 ScrollView {
                     LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: 6)) {
-                        ForEach($dataManager.stats, id: \.self.id) { indicator in
+                        ForEach($dataManager.statusIndicators, id: \.self.id) { indicator in
                             Button(action: {
                                 withAnimation(.bouncy) {
                                     toggleActiveIndicator(id: indicator.wrappedValue.id)

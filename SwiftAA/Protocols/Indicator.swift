@@ -12,9 +12,9 @@ protocol Indicator {
     var key: String { get set }
     var name: String { get set }
     var icon: String { get set }
-    var frameStyle: String { get set }
+    var frameStyle: String { get }
     var completed: Bool { get set }
-    var tooltip: String { get set }
+    var tooltip: String { get }
     
     func update(advancements: [String:JsonAdvancement], stats: [String:[String:Int]])
 }

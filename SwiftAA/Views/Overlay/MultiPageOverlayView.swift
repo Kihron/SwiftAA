@@ -63,7 +63,7 @@ struct MultiPageOverlayView: View {
                                 .drawingGroup()
                             
                             
-                            if overlayManager.clarifyAmbigiousCriteria && dataManager.ambigiousCriteria.contains(criterion.icon) {
+                            if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon) {
                                 if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
                                     Image(adv.icon)
                                         .resizable()

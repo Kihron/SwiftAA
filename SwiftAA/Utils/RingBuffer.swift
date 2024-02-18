@@ -18,14 +18,14 @@
  tested this...
  */
 struct RingBuffer<T>: RandomAccessCollection {
-    private var array: [T?]
-    private var readIndex = 0
+    var array: [T?]
+    var readIndex = 0
 
     init(size: Int) {
         array = Array(repeating: nil, count: size)
     }
 
-    mutating func write(_ element: T) {
+    mutating func write(_ element: T?) {
         array[readIndex] = element
         readIndex = (readIndex + 1) % array.count
     }

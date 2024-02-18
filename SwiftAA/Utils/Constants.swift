@@ -20,5 +20,16 @@ class Constants {
         MajorBiomes()
     ]
     
+    static let statisticIndicators: [StatisticIndicator] = [
+        EnderPearls.shared,
+        NetherWart.shared,
+        GhastTears.shared,
+        Pufferfish.shared,
+        AzureBluet.shared,
+        FermentedEye.shared
+    ]
+    
+    static let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
+    
     static let defaultActiveStatusIndicators: String = "minecraft:recipes/misc/mojang_banner_pattern,minecraft:trident,minecraft:nautilus_shell,minecraft:wither_skeleton_skull,minecraft:ancient_debris,minecraft:bee_nest"
 }

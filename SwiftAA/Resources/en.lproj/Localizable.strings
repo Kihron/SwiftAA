@@ -92,15 +92,21 @@
 
 "statistic.ancient_debris" = "Debris: %d\nTNT: %d";
 "statistic.ancient_debris.done" = "Done With Netherite";
-"statistic.god_apple.obtain" = "Obtain God Apple";
-"statistic.god_apple.obtained" = "Obtained God Apple";
+"statistic.azure_bluet" = "Azure Bluet";
 "statistic.beehives" = "Hives: %d";
 "statistic.beehives.done" = "Done With Bees";
+"statistic.ender_pearl" = "%d Pearls";
+"statistic.fermented_eye" = "Fermented Eye";
+"statistic.ghast_tears" = "%d / 4 Tears";
+"statistic.god_apple.obtain" = "Obtain God Apple";
+"statistic.god_apple.obtained" = "Obtained God Apple";
 "statistic.gold_blocks" = "Gold Blocks\n%d / 164";
+"statistic.major_biomes" = "Major Biomes\n%d / %d";
+"statistic.nether_wart" = "%d Wart";
+"statistic.pufferfish" = "%d / 2 Puffers";
 "statistic.shells" = "Shells\n%d / 8";
 "statistic.shells.crafted" = "Conduit Crafted";
 "statistic.sniffer_eggs" = "Sniffer Eggs\n%d / 3";
-"statistic.major_biomes" = "Major Biomes\n%d / %d";
 "statistic.trident.awaiting" = "Awaiting\nThunder";
 "statistic.trident.obtain" = "Obtain\nTrident";
 "statistic.trident.thunder" = "Done With Thunder";

@@ -19,9 +19,13 @@ struct IndicatorTickerTapeView: View {
     var body: some View {
         GeometryReader { geometry in
             LazyHStack(spacing: 0) {
-                ForEach(buffer, id: \.?.id) { indicator in
-                    if let indicator = indicator {
+                ForEach(buffer.indices.map({(buffer.readIndex + $0) % buffer.count}), id: \.self) { idx in
+                    if let indicator = buffer.array[idx] {
                         IndicatorView(indicator: .constant(indicator), isOverlay: true)
+                    } else {
+                        Rectangle()
+                            .fill(.clear)
+                            .frame(width: 74)
                     }
                 }
                 .drawingGroup()
@@ -29,9 +33,6 @@ struct IndicatorTickerTapeView: View {
             .offset(x: xOffset, y: 0)
             .onAppear {
                 calculateBuffer(width: geometry.size.width)
-                withAnimation(.spring(duration: 5)) {
-                    xOffset -= 74
-                }
             }
             .onChange(of: TrackerManager.shared.worldPath) { _ in
                 resetBuffer(width: geometry.size.width)
@@ -50,7 +51,7 @@ struct IndicatorTickerTapeView: View {
                     xOffset += 74
                     cycleIndicator()
                 }
-                withAnimation(.spring(duration: 5)) {
+                withAnimation(.linear(duration: 1)) {
                     xOffset -= 74
                 }
             }

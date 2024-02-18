@@ -20,6 +20,10 @@
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
 		B62405A32B80167300CAA885 /* L1_20S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A22B80167300CAA885 /* L1_20S.swift */; };
 		B62405A52B80168900CAA885 /* L1_20M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A42B80168900CAA885 /* L1_20M.swift */; };
+		B62405A72B81A67700CAA885 /* StatisticIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A62B81A67700CAA885 /* StatisticIndicator.swift */; };
+		B62405A92B81A80800CAA885 /* StatisticIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A82B81A80800CAA885 /* StatisticIndicators.swift */; };
+		B62405AB2B81AD9A00CAA885 /* StatisticPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405AA2B81AD9A00CAA885 /* StatisticPanelView.swift */; };
+		B62405AD2B81BC1E00CAA885 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405AC2B81BC1E00CAA885 /* StatisticView.swift */; };
 		B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37C2AB7F784006D8719 /* NetworkManager.swift */; };
 		B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */; };
 		B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3802AB803F9006D8719 /* LayoutManager.swift */; };
@@ -95,7 +99,7 @@
 		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
 		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
 		B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */; };
-		B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* Statistic.swift */; };
+		B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */; };
 		B687E17D28B3E06D002CF5D7 /* Advancements in Resources */ = {isa = PBXBuildFile; fileRef = B687E17C28B3E06C002CF5D7 /* Advancements */; };
 		B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18628B3E457002CF5D7 /* L1_16.swift */; };
 		B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */; };
@@ -169,6 +173,10 @@
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		B62405A22B80167300CAA885 /* L1_20S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20S.swift; sourceTree = "<group>"; };
 		B62405A42B80168900CAA885 /* L1_20M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20M.swift; sourceTree = "<group>"; };
+		B62405A62B81A67700CAA885 /* StatisticIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticIndicator.swift; sourceTree = "<group>"; };
+		B62405A82B81A80800CAA885 /* StatisticIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticIndicators.swift; sourceTree = "<group>"; };
+		B62405AA2B81AD9A00CAA885 /* StatisticPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticPanelView.swift; sourceTree = "<group>"; };
+		B62405AC2B81BC1E00CAA885 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		B624F37C2AB7F784006D8719 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSettingsView.swift; sourceTree = "<group>"; };
 		B624F3802AB803F9006D8719 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
@@ -247,7 +255,7 @@
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlayerHead.swift; sourceTree = "<group>"; };
 		B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatsView.swift; sourceTree = "<group>"; };
-		B6872FC428AEDA4A003CEA95 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatistic.swift; sourceTree = "<group>"; };
 		B687E17C28B3E06C002CF5D7 /* Advancements */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Advancements; sourceTree = "<group>"; };
 		B687E18628B3E457002CF5D7 /* L1_16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16.swift; sourceTree = "<group>"; };
 		B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionFrameModifier.swift; sourceTree = "<group>"; };
@@ -606,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				B628EF7A2B7DAD6300B5D37C /* Indicators */,
+				B62405AC2B81BC1E00CAA885 /* StatisticView.swift */,
 				B66A07712887A2C900DC0A2C /* CriterionView.swift */,
 				B6AAB57F28BA831E007B981B /* TransparentView.swift */,
 				B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */,
@@ -740,6 +749,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A772FB2889998700436551 /* StatusIndicators.swift */,
+				B62405A82B81A80800CAA885 /* StatisticIndicators.swift */,
 				49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */,
 			);
 			path = Constants;
@@ -769,6 +779,7 @@
 			children = (
 				B6FEFED4289991070095CF08 /* Indicator.swift */,
 				B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */,
+				B62405A62B81A67700CAA885 /* StatisticIndicator.swift */,
 				B65AB3582AA98281001F4FE6 /* Theme.swift */,
 			);
 			path = Protocols;
@@ -785,8 +796,8 @@
 				B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */,
 				B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */,
 				B65AE1D32887032F006EC138 /* Advancement.swift */,
+				B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */,
 				B66A07732887A32900DC0A2C /* Criterion.swift */,
-				B6872FC428AEDA4A003CEA95 /* Statistic.swift */,
 				B6872FB428AEAA45003CEA95 /* Player.swift */,
 				B683A1292ABD4D7700162E7C /* Note.swift */,
 			);
@@ -844,6 +855,7 @@
 				B67424B0288C419100EB8C16 /* InfoPanelView.swift */,
 				B65AE1C22886F401006EC138 /* AdvPanelView.swift */,
 				B6A772E3288892BD00436551 /* GoalPanelView.swift */,
+				B62405AA2B81AD9A00CAA885 /* StatisticPanelView.swift */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -969,6 +981,7 @@
 				B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */,
+				B62405A92B81A80800CAA885 /* StatisticIndicators.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
@@ -986,8 +999,10 @@
 				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
 				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
+				B62405AB2B81AD9A00CAA885 /* StatisticPanelView.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
 				B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */,
+				B62405A72B81A67700CAA885 /* StatisticIndicator.swift in Sources */,
 				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
@@ -1034,7 +1049,7 @@
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */,
-				B6872FC528AEDA4A003CEA95 /* Statistic.swift in Sources */,
+				B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */,
 				B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */,
 				B6CD41CF2AE60D600024D4E4 /* Constants.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
@@ -1049,6 +1064,7 @@
 				B6E331122AA80869001D7FF2 /* TrackerManager.swift in Sources */,
 				B65AB3442AA965BB001F4FE6 /* Model.xcdatamodeld in Sources */,
 				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
+				B62405AD2B81BC1E00CAA885 /* StatisticView.swift in Sources */,
 				B6D67AE72B744A97007AA80C /* L1_20.swift in Sources */,
 				B6FEFED5289991070095CF08 /* Indicator.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
@@ -1244,7 +1260,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "240216d (b)";
+				CURRENT_PROJECT_VERSION = 240217d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1279,7 +1295,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "240216d (b)";
+				CURRENT_PROJECT_VERSION = 240217d;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
