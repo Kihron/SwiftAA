@@ -13,7 +13,7 @@ struct ToolbarPlayerHead: View {
     
     var body: some View {
         if playerManager.playerHasLoaded {
-            CachedAsyncImage(url: playerManager.imageURL) { phase in
+            CachedAsyncImage(url: playerManager.imageURL, urlCache: .imageCache) { phase in
                 switch phase {
                     case .empty:
                         ProgressView()

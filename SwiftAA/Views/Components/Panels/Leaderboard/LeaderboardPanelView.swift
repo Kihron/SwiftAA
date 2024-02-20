@@ -12,7 +12,7 @@ struct LeaderboardPanelView: View {
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     
-    let placeholderUsers = 8
+    private let placeholderUsers = 8
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -35,17 +35,16 @@ struct LeaderboardPanelView: View {
             ZStack {
                 if leaderboardManager.entries.isEmpty {
                     ScrollView {
-                        VStack(alignment: .leading, spacing: 0) {
-                            ForEach(1..<placeholderUsers + 1, id: \.self) { idx in
-                                LeaderboardPlaceholderView(placement: idx)
+                        LazyVStack(alignment: .leading, spacing: 0) {
+                            ForEach(0..<max(0, placeholderUsers), id: \.self) { idx in
+                                LeaderboardPlaceholderView(placement: idx + 1)
                                     .padding(.bottom, 10)
                                     .padding(.top, 14)
                                 
-                                if idx < placeholderUsers {
-                                    Divider()
-                                        .frame(height: 2)
-                                        .overlay(themeManager.border)
-                                }
+                                Divider()
+                                    .frame(height: 2)
+                                    .overlay(themeManager.border)
+                                    .opacity(idx < max(0, placeholderUsers) - 1 ? 1 : 0)
                             }
                         }
                     }
@@ -53,31 +52,26 @@ struct LeaderboardPanelView: View {
                 } else {
                     ScrollView(.vertical) {
                         LazyVStack(alignment: .leading, spacing: 0) {
-                            ForEach(leaderboardManager.entries.indices, id: \.self) { idx in
-                                let entry = leaderboardManager.entries[idx]
+                            ForEach(leaderboardManager.entries, id: \.id) { entry in
                                 LeaderboardEntryView(entry: entry)
                                     .padding(.bottom, 10)
                                     .padding(.top, 14)
                                 
-                                if entry.position < max(leaderboardManager.entries.count, 8) {
-                                    Divider()
-                                        .frame(height: 2)
-                                        .overlay(themeManager.border)
-                                }
+                                Divider()
+                                    .frame(height: 2)
+                                    .overlay(themeManager.border)
+                                    .opacity(entry.position < max(leaderboardManager.entries.count, 8) ? 1 : 0)
                             }
                             
-                            if leaderboardManager.entries.count < placeholderUsers {
-                                ForEach(leaderboardManager.entries.count..<placeholderUsers, id: \.self) { idx in
-                                    LeaderboardPlaceholderView(placement: idx + 1)
-                                        .padding(.bottom, 10)
-                                        .padding(.top, 14)
-                                    
-                                    if idx < placeholderUsers - 1 {
-                                        Divider()
-                                            .frame(height: 2)
-                                            .overlay(themeManager.border)
-                                    }
-                                }
+                            ForEach(0..<max(0, placeholderUsers - leaderboardManager.entries.count), id: \.self) { idx in
+                                LeaderboardPlaceholderView(placement: leaderboardManager.entries.count + idx + 1)
+                                    .padding(.bottom, 10)
+                                    .padding(.top, 14)
+                                
+                                Divider()
+                                    .frame(height: 2)
+                                    .overlay(themeManager.border)
+                                    .opacity(idx < max(0, placeholderUsers - leaderboardManager.entries.count) - 1 ? 1 : 0)
                             }
                         }
                         .padding(.horizontal, 8)
@@ -89,9 +83,7 @@ struct LeaderboardPanelView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .applyThemeBackgroundAndBorder()
         .onChange(of: trackerManager.gameVersion) { value in
-            Task {
-                await leaderboardManager.getLeaderboardEntries()
-            }
+            leaderboardManager.getLeaderboardEntries()
         }
     }
 }

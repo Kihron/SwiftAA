@@ -12,23 +12,24 @@ class LeaderboardManager: ObservableObject {
     @Published var entries: [LeaderboardEntry] = []
     
     private var otherVersionData: [String] = []
+    private var v16Data: [String] = []
     var nicknames: [String:String] = [:]
     
     static let shared = LeaderboardManager()
     
     init() {
+        loadSavedData()
+        
         Task {
-            await fetchNicknames()
-            await fetchOtherVersionData()
-            await getLeaderboardEntries()
+            await fetchAllLeaderboardData()
+            getLeaderboardEntries()
         }
     }
     
-    func getLeaderboardEntries() async {
-        entries.removeAll()
+    func getLeaderboardEntries() {
         switch TrackerManager.shared.gameVersion {
             case .v1_16:
-                await getV16()
+                getV16Entries()
             case .v1_19:
                 getEntriesForOtherVersions(version: .v1_19)
             case .v1_20:
@@ -36,17 +37,90 @@ class LeaderboardManager: ObservableObject {
         }
     }
     
-    private func getV16() async {
+    private func saveData() {
+        UserDefaults.standard.set(nicknames, forKey: "nicknames")
+        UserDefaults.standard.set(v16Data, forKey: "v16Data")
+        UserDefaults.standard.set(otherVersionData, forKey: "otherVersionData")
+    }
+    
+    private func loadSavedData() {
+        nicknames = UserDefaults.standard.dictionary(forKey: "nicknames") as? [String: String] ?? [:]
+        v16Data = UserDefaults.standard.stringArray(forKey: "v16Data") ?? []
+        otherVersionData = UserDefaults.standard.stringArray(forKey: "otherVersionData") ?? []
+        
+        getLeaderboardEntries()
+    }
+    
+    private func fetchAllLeaderboardData() async {
+        async let fetchNicknamesTask: () = fetchNicknames()
+        async let fetchV16DataTask: () = fetchV16Data()
+        async let fetchOtherVersionDataTask: () =  fetchOtherVersionData()
+        
+        await fetchNicknamesTask
+        await fetchV16DataTask
+        await fetchOtherVersionDataTask
+        
+        saveData()
+    }
+    
+    private func fetchV16Data() async {
         if let url = URL(string: getSpreadsheet(page: "1706556435")) {
             if let raw = await networkManager.getRawData(url: url) {
-                let lines = raw.components(separatedBy: "\n").dropFirst(2)
-                
-                DispatchQueue.main.async {
-                    withAnimation {
-                        self.entries = lines.map({ $0.components(separatedBy: ",") }).map({ LeaderboardEntry(position: Int($0[0]) ?? 0, name: $0[2], igt: $0[3], date: $0[1], verification: self.getVerificationStatus(status: $0[4])) })
-                    }
-                }
+                v16Data = Array(raw.components(separatedBy: "\n").dropFirst(2))
             }
+        }
+    }
+    
+    private func fetchOtherVersionData() async {
+        if let url = URL(string: getSpreadsheet(page: "1283472797")) {
+            if let raw = await networkManager.getRawData(url: url) {
+                self.otherVersionData = raw.components(separatedBy: "\n")
+            }
+        }
+    }
+    
+    private func updateEntries(newEntries: [LeaderboardEntry]) {
+        if !newEntries.isEmpty && entries != newEntries {
+            entries = newEntries
+        }
+    }
+    
+    private func getV16Entries() {
+        let newEntries = v16Data.compactMap({ createEntry(from: $0) })
+        updateEntries(newEntries: newEntries)
+    }
+    
+    private func getEntriesForOtherVersions(version: Version) {
+        let versions = otherVersionData.map({ $0.components(separatedBy: ",") })[0]
+        if let index = versions.firstIndex(of: "\(version.label) RSG") {
+            let newEntries = otherVersionData.dropFirst(2).compactMap({ createEntry(from: $0, index: index) }).filter({ !$0.name.isEmpty })
+            updateEntries(newEntries: newEntries)
+        }
+    }
+    
+    private func createEntry(from rawData: String, index: Int? = nil) -> LeaderboardEntry? {
+        let components = rawData.components(separatedBy: ",")
+        
+        if let index = index {
+            // Handle other versions
+            guard components.count > index + 3 else { return nil }
+            return LeaderboardEntry(
+                position: Int(components[index]) ?? 0,
+                name: components[index + 2],
+                igt: components[index + 3],
+                date: components[index + 1],
+                verification: .unknown
+            )
+        } else {
+            // Handle v16 data
+            guard components.count > 4 else { return nil }
+            return LeaderboardEntry(
+                position: Int(components[0]) ?? 0,
+                name: components[2],
+                igt: components[3],
+                date: components[1],
+                verification: getVerificationStatus(status: components[4])
+            )
         }
     }
     
@@ -64,24 +138,7 @@ class LeaderboardManager: ObservableObject {
         }
     }
     
-    private func getEntriesForOtherVersions(version: Version) {
-        let versions = otherVersionData.map({ $0.components(separatedBy: ",") })[0]
-        if let index = versions.firstIndex(of: "\(version.label) RSG") {
-            withAnimation {
-                self.entries = otherVersionData.dropFirst(2).map({ $0.components(separatedBy: ",") }).map({ LeaderboardEntry(position: Int($0[index]) ?? 0, name: $0[index+2], igt: $0[index+3], date: $0[index+1], verification: .unknown) }).filter({ !$0.name.isEmpty })
-            }
-        }
-    }
-    
-    func fetchOtherVersionData() async {
-        if let url = URL(string: getSpreadsheet(page: "1283472797")) {
-            if let raw = await networkManager.getRawData(url: url) {
-                self.otherVersionData = raw.components(separatedBy: "\n")
-            }
-        }
-    }
-    
-    func fetchNicknames() async {
+    private func fetchNicknames() async {
         if let url = URL(string: "https://docs.google.com/spreadsheets/d/16VS6VkitZdyrfVAFd-UdkVSrXO0nhdMyNeueIFoqvZY/export?gid=0&format=csv") {
             if let raw = await networkManager.getRawData(url: url) {
                 let lines = raw.components(separatedBy: "\n").dropFirst(2)

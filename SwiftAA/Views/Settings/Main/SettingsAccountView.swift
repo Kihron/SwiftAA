@@ -22,7 +22,7 @@ struct SettingsAccountView: View {
                     
                     HStack(alignment: .center) {
                         if playerManager.playerHasLoaded {
-                            CachedAsyncImage(url: playerManager.imageURL) { phase in
+                            CachedAsyncImage(url: playerManager.imageURL, urlCache: .imageCache) { phase in
                                 switch phase {
                                     case .empty:
                                         ProgressView()

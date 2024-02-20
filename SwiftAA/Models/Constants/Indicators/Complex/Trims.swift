@@ -1,11 +1,11 @@
 //
-//  ComplexAdvancements.swift
+//  Trims.swift
 //  SwiftAA
 //
-//  Created by Slackow on 2/13/24.
+//  Created by Kihron on 2/19/24.
 //
 
-import SwiftUI
+import Foundation
 
 class TrimAdvancement: Advancement {
     required init(from decoder: Decoder) throws {

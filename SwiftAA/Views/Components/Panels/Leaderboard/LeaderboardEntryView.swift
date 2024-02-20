@@ -16,7 +16,7 @@ struct LeaderboardEntryView: View {
     var body: some View {
         HStack {
             ZStack {
-                CachedAsyncImage(url: getAvatarURL()) { image in
+                CachedAsyncImage(url: getAvatarURL(), urlCache: .imageCache) { image in
                     image
                 } placeholder: {
                     Image("steve_avatar")

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OverlayCompletedView: View {
-    @ObservedObject private var viewModel = MultiPageOverlayViewModel()
+    @ObservedObject private var dataManager = DataManager.shared
     @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var playerManager = PlayerManager.shared
     
@@ -24,7 +24,7 @@ struct OverlayCompletedView: View {
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             .padding(.trailing, 5)
                         
-                        Text(L10n.Overlay.Complete.title(viewModel.totalAdvancements))
+                        Text(L10n.Overlay.Complete.title(dataManager.allAdvancements.count))
                             .minecraftFont(size: 24)
                             .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             .padding(.top, 5)
@@ -75,9 +75,8 @@ struct OverlayCompletedView: View {
                             .padding(.bottom)
                         
                         LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 32), spacing: 2, alignment: .leading), count: 3), spacing: 10) {
-                            let array = viewModel.getStatsArray()
-                            ForEach(array.indices, id: \.self) { index in
-                                array[index]
+                            ForEach(Constants.finalStatistics) { statistic in
+                                FinalStatsView(statistic: statistic)
                             }
                         }
                         .padding(.top)

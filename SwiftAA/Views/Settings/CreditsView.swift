@@ -14,12 +14,13 @@ struct CreditsView: View {
             SettingsCardView {
                 VStack {
                     HStack {
-                        CachedAsyncImage(url: getAvatarURL("Kihron")) { image in
+                        CachedAsyncImage(url: getAvatarURL("Kihron"), urlCache: .imageCache) { image in
                             image
                         } placeholder: {
                             Image("Kihron")
                         }
                         .frame(width: 32)
+                        .clipShape(RoundedRectangle(cornerRadius: 2))
                         
                         Text("Kihron - Developer")
                         
@@ -29,12 +30,13 @@ struct CreditsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     HStack {
-                        CachedAsyncImage(url: getAvatarURL("Slackow")) { image in
+                        CachedAsyncImage(url: getAvatarURL("Slackow"), urlCache: .imageCache) { image in
                             image
                         } placeholder: {
                             Image("Slackow")
                         }
                         .frame(width: 32)
+                        .clipShape(RoundedRectangle(cornerRadius: 2))
                         
                         Text("Slackow - Developer")
                         
@@ -44,12 +46,13 @@ struct CreditsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     HStack {
-                        CachedAsyncImage(url: getAvatarURL("nealxm")) { image in
+                        CachedAsyncImage(url: getAvatarURL("nealxm"), urlCache: .imageCache) { image in
                             image
                         } placeholder: {
                             Image("nealxm")
                         }
                         .frame(width: 32)
+                        .clipShape(RoundedRectangle(cornerRadius: 2))
                         
                         Text("nealxm - Beta Tester")
                         
@@ -66,12 +69,13 @@ struct CreditsView: View {
             
             SettingsCardView {
                 HStack {
-                    CachedAsyncImage(url: getAvatarURL("_CTM")) { image in
+                    CachedAsyncImage(url: getAvatarURL("_CTM"), urlCache: .imageCache) { image in
                         image
                     } placeholder: {
                         Image("steve_avatar")
                     }
                     .frame(width: 32)
+                    .clipShape(RoundedRectangle(cornerRadius: 2))
                     
                     Image("aatool")
                         .resizable()

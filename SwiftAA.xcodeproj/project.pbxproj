@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
-		49CCDF7E2B7C3A9D00DFE65D /* ComplexAdvancements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */; };
 		49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49CCDF802B7C4AF400DFE65D /* major_biomes.json */; };
 		B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B600F5272AEB796F00283C59 /* SwiftUIIntrospect */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
@@ -21,7 +20,6 @@
 		B62405A32B80167300CAA885 /* L1_20S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A22B80167300CAA885 /* L1_20S.swift */; };
 		B62405A52B80168900CAA885 /* L1_20M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A42B80168900CAA885 /* L1_20M.swift */; };
 		B62405A72B81A67700CAA885 /* StatisticIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A62B81A67700CAA885 /* StatisticIndicator.swift */; };
-		B62405A92B81A80800CAA885 /* StatisticIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A82B81A80800CAA885 /* StatisticIndicators.swift */; };
 		B62405AB2B81AD9A00CAA885 /* StatisticPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405AA2B81AD9A00CAA885 /* StatisticPanelView.swift */; };
 		B62405AD2B81BC1E00CAA885 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405AC2B81BC1E00CAA885 /* StatisticView.swift */; };
 		B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37C2AB7F784006D8719 /* NetworkManager.swift */; };
@@ -109,6 +107,26 @@
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
 		B697E0E42B83EE6B00932278 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E32B83EE6B00932278 /* ProgressManager.swift */; };
 		B697E0E62B84194A00932278 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E52B84194A00932278 /* CreditsView.swift */; };
+		B697E0E92B844B7600932278 /* GodApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E82B844B7600932278 /* GodApple.swift */; };
+		B697E0EB2B844B9700932278 /* Trident.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0EA2B844B9700932278 /* Trident.swift */; };
+		B697E0ED2B844BD100932278 /* Shells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0EC2B844BD100932278 /* Shells.swift */; };
+		B697E0EF2B844BFC00932278 /* WitherSkulls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0EE2B844BFC00932278 /* WitherSkulls.swift */; };
+		B697E0F12B844C3300932278 /* AncientDebris.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0F02B844C3300932278 /* AncientDebris.swift */; };
+		B697E0F32B844C4600932278 /* Beehives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0F22B844C4600932278 /* Beehives.swift */; };
+		B697E0F52B844C6200932278 /* GoldBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0F42B844C6200932278 /* GoldBlocks.swift */; };
+		B697E0F72B844C7A00932278 /* SnifferEggs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0F62B844C7A00932278 /* SnifferEggs.swift */; };
+		B697E0F92B844C9400932278 /* MajorBiomes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0F82B844C9400932278 /* MajorBiomes.swift */; };
+		B697E1002B844D2300932278 /* Trims.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0FF2B844D2300932278 /* Trims.swift */; };
+		B697E1022B844D5500932278 /* EnderPearls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1012B844D5500932278 /* EnderPearls.swift */; };
+		B697E1042B844D6F00932278 /* NetherWart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1032B844D6F00932278 /* NetherWart.swift */; };
+		B697E1062B844D8300932278 /* GhastTears.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1052B844D8300932278 /* GhastTears.swift */; };
+		B697E1082B844D9B00932278 /* Pufferfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1072B844D9B00932278 /* Pufferfish.swift */; };
+		B697E10A2B844DAB00932278 /* AzureBluet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1092B844DAB00932278 /* AzureBluet.swift */; };
+		B697E10C2B844DC800932278 /* FermentedEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E10B2B844DC800932278 /* FermentedEye.swift */; };
+		B697E10E2B844DDB00932278 /* GoldyApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E10D2B844DDB00932278 /* GoldyApple.swift */; };
+		B697E1102B844DF100932278 /* NetheriteUpgrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E10F2B844DF100932278 /* NetheriteUpgrade.swift */; };
+		B697E1122B844E0300932278 /* PotterySherds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1112B844E0300932278 /* PotterySherds.swift */; };
+		B697E1142B84709800932278 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1132B84709800932278 /* ImageCache.swift */; };
 		B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
@@ -120,7 +138,6 @@
 		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
 		B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E72888FCE100436551 /* PotionPanelView.swift */; };
-		B6A772FC2889998700436551 /* StatusIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FB2889998700436551 /* StatusIndicators.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 		B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAB57F28BA831E007B981B /* TransparentView.swift */; };
 		B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABC3D728B8646000E6633D /* DonationView.swift */; };
@@ -164,7 +181,6 @@
 /* Begin PBXFileReference section */
 		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
 		49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
-		49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAdvancements.swift; sourceTree = "<group>"; };
 		49CCDF802B7C4AF400DFE65D /* major_biomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = major_biomes.json; sourceTree = "<group>"; };
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
@@ -176,7 +192,6 @@
 		B62405A22B80167300CAA885 /* L1_20S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20S.swift; sourceTree = "<group>"; };
 		B62405A42B80168900CAA885 /* L1_20M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20M.swift; sourceTree = "<group>"; };
 		B62405A62B81A67700CAA885 /* StatisticIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticIndicator.swift; sourceTree = "<group>"; };
-		B62405A82B81A80800CAA885 /* StatisticIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticIndicators.swift; sourceTree = "<group>"; };
 		B62405AA2B81AD9A00CAA885 /* StatisticPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticPanelView.swift; sourceTree = "<group>"; };
 		B62405AC2B81BC1E00CAA885 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		B624F37C2AB7F784006D8719 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -267,6 +282,26 @@
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
 		B697E0E32B83EE6B00932278 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
 		B697E0E52B84194A00932278 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		B697E0E82B844B7600932278 /* GodApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodApple.swift; sourceTree = "<group>"; };
+		B697E0EA2B844B9700932278 /* Trident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trident.swift; sourceTree = "<group>"; };
+		B697E0EC2B844BD100932278 /* Shells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shells.swift; sourceTree = "<group>"; };
+		B697E0EE2B844BFC00932278 /* WitherSkulls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitherSkulls.swift; sourceTree = "<group>"; };
+		B697E0F02B844C3300932278 /* AncientDebris.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AncientDebris.swift; sourceTree = "<group>"; };
+		B697E0F22B844C4600932278 /* Beehives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beehives.swift; sourceTree = "<group>"; };
+		B697E0F42B844C6200932278 /* GoldBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldBlocks.swift; sourceTree = "<group>"; };
+		B697E0F62B844C7A00932278 /* SnifferEggs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnifferEggs.swift; sourceTree = "<group>"; };
+		B697E0F82B844C9400932278 /* MajorBiomes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorBiomes.swift; sourceTree = "<group>"; };
+		B697E0FF2B844D2300932278 /* Trims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trims.swift; sourceTree = "<group>"; };
+		B697E1012B844D5500932278 /* EnderPearls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderPearls.swift; sourceTree = "<group>"; };
+		B697E1032B844D6F00932278 /* NetherWart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetherWart.swift; sourceTree = "<group>"; };
+		B697E1052B844D8300932278 /* GhastTears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhastTears.swift; sourceTree = "<group>"; };
+		B697E1072B844D9B00932278 /* Pufferfish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pufferfish.swift; sourceTree = "<group>"; };
+		B697E1092B844DAB00932278 /* AzureBluet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureBluet.swift; sourceTree = "<group>"; };
+		B697E10B2B844DC800932278 /* FermentedEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermentedEye.swift; sourceTree = "<group>"; };
+		B697E10D2B844DDB00932278 /* GoldyApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldyApple.swift; sourceTree = "<group>"; };
+		B697E10F2B844DF100932278 /* NetheriteUpgrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetheriteUpgrade.swift; sourceTree = "<group>"; };
+		B697E1112B844E0300932278 /* PotterySherds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotterySherds.swift; sourceTree = "<group>"; };
+		B697E1132B84709800932278 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceProgressBarView.swift; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
@@ -278,7 +313,6 @@
 		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6A772E72888FCE100436551 /* PotionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionPanelView.swift; sourceTree = "<group>"; };
-		B6A772FB2889998700436551 /* StatusIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicators.swift; sourceTree = "<group>"; };
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
 		B6AAB57F28BA831E007B981B /* TransparentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentView.swift; sourceTree = "<group>"; };
 		B6ABC3D728B8646000E6633D /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
@@ -645,6 +679,56 @@
 			path = Versions;
 			sourceTree = "<group>";
 		};
+		B697E0FB2B844CE700932278 /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				B697E0FE2B844D0E00932278 /* Complex */,
+				B697E0FD2B844CEF00932278 /* Statistic */,
+				B697E0FC2B844CEB00932278 /* Status */,
+			);
+			path = Indicators;
+			sourceTree = "<group>";
+		};
+		B697E0FC2B844CEB00932278 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				B697E0E82B844B7600932278 /* GodApple.swift */,
+				B697E0EE2B844BFC00932278 /* WitherSkulls.swift */,
+				B697E0F02B844C3300932278 /* AncientDebris.swift */,
+				B697E0F82B844C9400932278 /* MajorBiomes.swift */,
+				B697E0F62B844C7A00932278 /* SnifferEggs.swift */,
+				B697E0F42B844C6200932278 /* GoldBlocks.swift */,
+				B697E0F22B844C4600932278 /* Beehives.swift */,
+				B697E0EA2B844B9700932278 /* Trident.swift */,
+				B697E0EC2B844BD100932278 /* Shells.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		B697E0FD2B844CEF00932278 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				B697E1012B844D5500932278 /* EnderPearls.swift */,
+				B697E1032B844D6F00932278 /* NetherWart.swift */,
+				B697E1052B844D8300932278 /* GhastTears.swift */,
+				B697E1072B844D9B00932278 /* Pufferfish.swift */,
+				B697E1092B844DAB00932278 /* AzureBluet.swift */,
+				B697E10B2B844DC800932278 /* FermentedEye.swift */,
+				B697E10F2B844DF100932278 /* NetheriteUpgrade.swift */,
+				B697E1112B844E0300932278 /* PotterySherds.swift */,
+				B697E10D2B844DDB00932278 /* GoldyApple.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		B697E0FE2B844D0E00932278 /* Complex */ = {
+			isa = PBXGroup;
+			children = (
+				B697E0FF2B844D2300932278 /* Trims.swift */,
+			);
+			path = Complex;
+			sourceTree = "<group>";
+		};
 		B69B4A492B785FC4006E3969 /* ProgressBars */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,9 +838,7 @@
 		B6E331192AA836AB001D7FF2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				B6A772FB2889998700436551 /* StatusIndicators.swift */,
-				B62405A82B81A80800CAA885 /* StatisticIndicators.swift */,
-				49CCDF7D2B7C3A9D00DFE65D /* ComplexAdvancements.swift */,
+				B697E0FB2B844CE700932278 /* Indicators */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -832,6 +914,7 @@
 			isa = PBXGroup;
 			children = (
 				B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */,
+				B697E1132B84709800932278 /* ImageCache.swift */,
 				B676BDA32AA79937008BD8A9 /* Color+Ext.swift */,
 				B6D3065728A2B150004D27E6 /* String+Ext.swift */,
 				B676BDA52AA7A7B4008BD8A9 /* Date+Ext.swift */,
@@ -984,32 +1067,37 @@
 				B6CFEAE32B7C266E0008542B /* MinecraftFont.swift in Sources */,
 				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
+				B697E1082B844D9B00932278 /* Pufferfish.swift in Sources */,
 				B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */,
-				B62405A92B81A80800CAA885 /* StatisticIndicators.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
-				B6A772FC2889998700436551 /* StatusIndicators.swift in Sources */,
 				B65FE5982AA6E5FE00C30A8F /* Potion.swift in Sources */,
+				B697E10E2B844DDB00932278 /* GoldyApple.swift in Sources */,
 				B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */,
 				B65FE5912AA6CFE900C30A8F /* ThemeManager.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B62405A32B80167300CAA885 /* L1_20S.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
 				B6A4AF7A2AECC06E00C7B805 /* Utilities.swift in Sources */,
+				B697E0F92B844C9400932278 /* MajorBiomes.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
+				B697E0E92B844B7600932278 /* GodApple.swift in Sources */,
 				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
 				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
+				B697E1042B844D6F00932278 /* NetherWart.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B62405AB2B81AD9A00CAA885 /* StatisticPanelView.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
+				B697E1122B844E0300932278 /* PotterySherds.swift in Sources */,
 				B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */,
 				B62405A72B81A67700CAA885 /* StatisticIndicator.swift in Sources */,
 				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
+				B697E0EB2B844B9700932278 /* Trident.swift in Sources */,
 				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */,
@@ -1020,6 +1108,7 @@
 				B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
 				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
+				B697E1022B844D5500932278 /* EnderPearls.swift in Sources */,
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
 				B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */,
 				B62EA6542B797E1900EB66AC /* EnderDragonProgressBar.swift in Sources */,
@@ -1030,6 +1119,7 @@
 				B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */,
 				B65AB3552AA97C89001F4FE6 /* CoreDataManager.swift in Sources */,
 				B65FE5962AA6DEE400C30A8F /* ApplyTheme.swift in Sources */,
+				B697E1142B84709800932278 /* ImageCache.swift in Sources */,
 				B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */,
 				B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */,
 				B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */,
@@ -1050,10 +1140,10 @@
 				B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */,
 				B6F1B48E2AAEB4CA00422D8E /* OverlayFrameModifier.swift in Sources */,
 				B6498D752AAC23B300230808 /* HAlignment.swift in Sources */,
-				49CCDF7E2B7C3A9D00DFE65D /* ComplexAdvancements.swift in Sources */,
 				B6397EDF2AC9E9B3007C8606 /* IndicatorInfoView.swift in Sources */,
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
+				B697E10A2B844DAB00932278 /* AzureBluet.swift in Sources */,
 				B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */,
 				B697E0E62B84194A00932278 /* CreditsView.swift in Sources */,
@@ -1071,14 +1161,18 @@
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B6E331122AA80869001D7FF2 /* TrackerManager.swift in Sources */,
 				B65AB3442AA965BB001F4FE6 /* Model.xcdatamodeld in Sources */,
+				B697E0F52B844C6200932278 /* GoldBlocks.swift in Sources */,
 				B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */,
 				B62405AD2B81BC1E00CAA885 /* StatisticView.swift in Sources */,
+				B697E1102B844DF100932278 /* NetheriteUpgrade.swift in Sources */,
 				B6D67AE72B744A97007AA80C /* L1_20.swift in Sources */,
 				B6FEFED5289991070095CF08 /* Indicator.swift in Sources */,
 				B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */,
 				B6E331182AA8131C001D7FF2 /* TrackingMode.swift in Sources */,
 				B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */,
 				B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */,
+				B697E1062B844D8300932278 /* GhastTears.swift in Sources */,
+				B697E0F32B844C4600932278 /* Beehives.swift in Sources */,
 				B64827282889C74B00B44855 /* QLImage.swift in Sources */,
 				B65B074D28AFDD1600E10EC5 /* UpdateManager.swift in Sources */,
 				B6A772E62888FBA600436551 /* ContentView.swift in Sources */,
@@ -1091,8 +1185,10 @@
 				B6D67AE22B742E40007AA80C /* TrackingVersionView.swift in Sources */,
 				B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */,
 				B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */,
+				B697E0ED2B844BD100932278 /* Shells.swift in Sources */,
 				B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */,
 				B683A12A2ABD4D7700162E7C /* Note.swift in Sources */,
+				B697E0F72B844C7A00932278 /* SnifferEggs.swift in Sources */,
 				B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */,
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
@@ -1101,10 +1197,14 @@
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				B65AB3532AA96D66001F4FE6 /* CustomThemeView.swift in Sources */,
 				B6E331102AA80811001D7FF2 /* TrackingSettingsView.swift in Sources */,
+				B697E0F12B844C3300932278 /* AncientDebris.swift in Sources */,
 				B66A077028879ED900DC0A2C /* DataManager.swift in Sources */,
+				B697E0EF2B844BFC00932278 /* WitherSkulls.swift in Sources */,
 				B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */,
 				B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */,
+				B697E10C2B844DC800932278 /* FermentedEye.swift in Sources */,
 				B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */,
+				B697E1002B844D2300932278 /* Trims.swift in Sources */,
 				B628EF7C2B7DAD7800B5D37C /* IndicatorIconView.swift in Sources */,
 				B65AB3572AA97EB5001F4FE6 /* UUID+Ext.swift in Sources */,
 				B64192D12AC29D02006C8CC4 /* WaypointCardVeiw.swift in Sources */,
@@ -1268,7 +1368,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240219c;
+				CURRENT_PROJECT_VERSION = "240219c (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1303,7 +1403,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240219c;
+				CURRENT_PROJECT_VERSION = "240219c (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

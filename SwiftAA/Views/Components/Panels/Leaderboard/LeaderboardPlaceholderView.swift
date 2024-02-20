@@ -14,7 +14,7 @@ struct LeaderboardPlaceholderView: View {
         HStack {
             ZStack {
                 Image("steve_avatar")
-                    .frame(width: 32)
+                    .frame(width: 32, height: 32)
                     .padding(.leading, 10)
                     .shadow(color: getColor().opacity(0.5), radius: 10)
                 

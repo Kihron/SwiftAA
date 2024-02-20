@@ -9,42 +9,32 @@ import SwiftUI
 
 struct FinalStatsView: View {
     @ObservedObject private var progressManager = ProgressManager.shared
-    @State var stat: FinalStatistic
-    
-    private var statValue: String {
-        let value = Double(progressManager.statisticsState[stat.type]?[stat.id] ?? 0)
-        if stat.factor > 1 {
-            return String(format: stat.factor >= 10 ? "%.1f" : "%.0f", value / Double(stat.factor))
-        } else {
-            return value >= 1000 ? String(format: "%.1fk", value / 1000) : "\(Int(value))"
-        }
-    }
+    @State var statistic: FinalStatistic
     
     var body: some View {
         HStack {
             ZStack {
-                Image(stat.icon)
+                Image(statistic.icon)
                     .interpolation(.none)
                     .resizable()
                     .frame(width: 32, height: 32)
                     .offset(x: -12)
-                    .zIndex(stat.flipped ? 0 : 1)
+                    .zIndex(statistic.flipped ? 0 : 1)
                 
-                Image(stat.secondaryIcon)
+                Image(statistic.secondaryIcon)
                     .interpolation(.none)
                     .resizable()
                     .frame(width: 32, height: 32)
                     .offset(x: 5)
-                    .padding(.trailing, stat.tooltip.isEmpty ? 10 : 0)
+                    .padding(.trailing, statistic.tooltip.isEmpty ? 10 : 0)
             }
             .padding(.trailing, 5)
         
-            
-            Text(statValue)
+            Text(statistic.getValue(progress: progressManager))
                 .minecraftFont(size: 20)
             
-            if (!stat.tooltip.isEmpty) {
-                Text(stat.tooltip.localized)
+            if (!statistic.tooltip.isEmpty) {
+                Text(statistic.tooltip.localized)
                     .minecraftFont(size: 12)
                 
                 Spacer()
@@ -57,7 +47,7 @@ struct FinalStatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        FinalStatsView(stat: FinalStatistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"))
+        FinalStatsView(statistic: FinalStatistic(id: "minecraft:stat", type: "", factor: 100_000, icon: "rockets", secondaryIcon: "elytra", tooltip: "KM"))
             .padding()
     }
 }

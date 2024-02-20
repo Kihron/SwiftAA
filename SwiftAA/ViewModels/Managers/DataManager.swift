@@ -11,7 +11,7 @@ import SWXMLHash
 class DataManager: ObservableObject {
     @ObservedObject private var versionManager = TrackerManager.shared
     
-    @Published var map = [String:[Advancement]]() {
+    @Published private var map = [String:[Advancement]]() {
         didSet {
             allAdvancements = map.values.flatMap({ $0 })
         }

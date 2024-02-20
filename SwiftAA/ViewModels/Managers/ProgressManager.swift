@@ -77,6 +77,10 @@ class ProgressManager: ObservableObject {
         return statisticsState["minecraft:killed"]?[id] ?? 0 > 0
     }
     
+    func getSpecialStatistic(type: String, id: String) -> Int {
+        return statisticsState[type]?[id] ?? 0
+    }
+    
     func getInGameTime() -> String {
         let dateFormatter = DateComponentsFormatter()
         dateFormatter.allowedUnits = [.hour, .minute, .second]
@@ -103,7 +107,9 @@ class ProgressManager: ObservableObject {
         }
         
         dataManager.updateAdvancementFields()
-        updateInGameTime()
+        if !dataManager.completedAllAdvancements {
+            updateInGameTime()
+        }
     }
     
     private func updateInGameTime() {
