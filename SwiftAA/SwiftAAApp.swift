@@ -25,7 +25,7 @@ struct SwiftAAApp: App {
                 .navigationTitle("SwiftAA")
                 .toolbar {
                     ToolbarItem(placement: .automatic) {
-                        ToolbarRefreshView(visible: $viewModel.advancementsUpdated)
+                        ToolbarRefreshView()
                     }
                     ToolbarItem(placement: .automatic) {
                         HStack {

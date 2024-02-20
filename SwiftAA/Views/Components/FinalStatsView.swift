@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct FinalStatsView: View {
-    @ObservedObject private var dataManager = DataManager.shared
+    @ObservedObject private var progressManager = ProgressManager.shared
     @State var stat: FinalStatistic
     
     private var statValue: String {
-        let value = Double(dataManager.statsData[stat.type]?[stat.id] ?? 0)
+        let value = Double(progressManager.statisticsState[stat.type]?[stat.id] ?? 0)
         if stat.factor > 1 {
             return String(format: stat.factor >= 10 ? "%.1f" : "%.0f", value / Double(stat.factor))
         } else {
@@ -52,10 +52,6 @@ struct FinalStatsView: View {
         }
         .frame(maxWidth: 160)
         .padding(.trailing, -3)
-    }
-    
-    func getStatValue() -> Int {
-        dataManager.statsData[stat.type]?[stat.id] ?? 0
     }
 }
 

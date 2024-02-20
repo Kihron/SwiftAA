@@ -16,6 +16,7 @@ struct GoalPanelView: View {
     @State var goal: String
     @State var isMinimal: Bool = false
     @State var isAdjacent: Bool = false
+    @State var hidePercentage: Bool = false
     
     var horizontalSpacing: CGFloat {
         return isMinimal ? 16 : 2
@@ -33,7 +34,7 @@ struct GoalPanelView: View {
                 standard
             }
             
-            ProgressBarView(value: .constant($advancement.criteria.filter({isCompleted($0.wrappedValue)}).count), total: .constant(advancement.criteria.count), title: goal)
+            ProgressBarView(value: .constant($advancement.criteria.filter({isCompleted($0.wrappedValue)}).count), total: .constant(advancement.criteria.count), title: goal, hidePercentage: hidePercentage)
         }
         .padding(4)
         .applyThemeModifiers()

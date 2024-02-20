@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TickerTapeOverlayView: View {
     @ObservedObject private var overlayManager = OverlayManager.shared
+    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var dataManager = DataManager.shared
     
     var counter: String {
@@ -24,7 +25,7 @@ struct TickerTapeOverlayView: View {
                     .padding(.leading, 10)
                 
                 if overlayManager.showInGameTime {
-                    Text("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))")
+                    Text("IGT: \(progressManager.getInGameTime())")
                         .minecraftFont(size: 12)
                         .padding(.trailing, 10)
                 }

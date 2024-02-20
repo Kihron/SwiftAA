@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverlayCompletedView: View {
     @ObservedObject private var viewModel = MultiPageOverlayViewModel()
+    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var playerManager = PlayerManager.shared
     
     var body: some View {
@@ -42,7 +43,7 @@ struct OverlayCompletedView: View {
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
                             
-                            OverlayShimmerView(message: L10n.Overlay.Complete.time(viewModel.dataManager.ticksToIGT(ticks: viewModel.dataManager.playTime)))
+                            OverlayShimmerView(message: L10n.Overlay.Complete.time(progressManager.getInGameTime()))
                                 .padding(.top)
                                 .frame(width: screen.size.width / 1.7)
                                 .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)

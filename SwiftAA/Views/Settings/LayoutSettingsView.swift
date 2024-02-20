@@ -69,7 +69,6 @@ struct LayoutSettingsView: View {
                 }
             }
         }
-        
         .frame(maxHeight: .infinity, alignment: .topLeading)
         .onChange(of: layoutManager.frameStyle) { _ in
             if OverlayManager.shared.syncOverlayFrame {

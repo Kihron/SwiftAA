@@ -17,8 +17,8 @@ class GodApple: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        completed = advancements[id] != nil
+    func update(progress: ProgressManager) {
+        completed = progress.advancementCompleted(id)
         key = completed ? L10n.Statistic.GodApple.obtained : L10n.Statistic.GodApple.obtain
     }
 }
@@ -33,9 +33,11 @@ class Trident: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        completed = (stats["minecraft:picked_up"]?[id] ?? 0) > 0
-        let thunderDone = advancements["minecraft:adventure/very_very_frightening"]?.done ?? false
+    private let veryFrightening = "minecraft:adventure/very_very_frightening"
+    
+    func update(progress: ProgressManager) {
+        let thunderDone = progress.advancementCompleted(veryFrightening)
+        completed = progress.timesPickedUp(id) > 0
         key = thunderDone ? L10n.Statistic.Trident.thunder : ((completed) ? L10n.Statistic.Trident.awaiting : L10n.Statistic.Trident.obtain)
     }
 }
@@ -50,9 +52,11 @@ class Shells: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
-        let conduitCrafted = (stats["minecraft:crafted"]?["minecraft:conduit"] ?? 0) > 0
+    private let conduit = "minecraft:conduit"
+    
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
+        let conduitCrafted = progress.timesCrafted(conduit) > 0
         completed = count >= 8 || conduitCrafted
         key = conduitCrafted ? L10n.Statistic.Shells.crafted : L10n.Statistic.shells(count)
     }
@@ -68,9 +72,11 @@ class WitherSkulls: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
-        let witherKilled = (stats["minecraft:killed"]?["minecraft:wither"] ?? 0) > 0
+    private let wither = "minecraft:wither"
+    
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
+        let witherKilled = progress.wasKilled(wither)
         completed = count >= 3
         key = witherKilled ? L10n.Statistic.Wither.killed : L10n.Statistic.Wither.skulls(count)
     }
@@ -84,14 +90,15 @@ class AncientDebris: TransferableIndicator, StatusIndicator {
     var icon: String = "obtain_ancient_debris"
     var frameStyle: String = "statistic"
     var completed: Bool = false
-    var offset: Int = 0
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = (stats["minecraft:picked_up"]?[id] ?? 0) + offset
-        let countTNT = (stats["minecraft:mined"]?["minecraft:tnt"] ?? 0) - (stats["minecraft:used"]?["minecraft:tnt"] ?? 0)
-        let netheriteAdvs = ["minecraft:nether/obtain_ancient_debris", "minecraft:nether/netherite_armor", "minecraft:husbandry/obtain_netherite_hoe"]
-        let doneWithNetherite = netheriteAdvs.allSatisfy({ adv in advancements[adv]?.done ?? false })
+    private let netheriteAdvs = ["minecraft:nether/obtain_ancient_debris", "minecraft:nether/netherite_armor", "minecraft:husbandry/obtain_netherite_hoe"]
+    private let tnt = "minecraft:tnt"
+    
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
+        let countTNT = progress.timesMined(tnt) - progress.timesUsed(tnt)
+        let doneWithNetherite = netheriteAdvs.allSatisfy({ adv in progress.advancementCompleted(adv) })
 
         completed = count >= 20 || doneWithNetherite
         key = (doneWithNetherite) ? L10n.Statistic.AncientDebris.done : L10n.Statistic.ancientDebris(count, countTNT)
@@ -108,11 +115,14 @@ class Beehives: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
-        let honeyAdvs = ["minecraft:husbandry/safely_harvest_honey", "minecraft:adventure/honey_block_slide", "minecraft:husbandry/silk_touch_nest"]
-        let doneWithDiet = advancements["minecraft:husbandry/balanced_diet"]?.criteria["honey_bottle"] != nil
-        let doneWithHoney = honeyAdvs.allSatisfy({ adv in advancements[adv]?.done ?? false })
+    private let honeyAdvs = ["minecraft:husbandry/safely_harvest_honey", "minecraft:adventure/honey_block_slide", "minecraft:husbandry/silk_touch_nest"]
+    private let balancedDiet = "minecraft:husbandry/balanced_diet"
+    private let honeyBottle = "honey_bottle"
+    
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
+        let doneWithDiet = progress.criterionCompleted(advancement: balancedDiet, criterion: honeyBottle) != nil
+        let doneWithHoney = honeyAdvs.allSatisfy({ adv in progress.advancementCompleted(adv) })
         
         completed = doneWithHoney && doneWithDiet
         key = completed ? L10n.Statistic.Beehives.done : L10n.Statistic.beehives(count)
@@ -129,8 +139,10 @@ class GoldBlocks: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count: Int = stats["minecraft:picked_up"]?[id] ?? 0 - ((stats["minecraft:crafted"]?["minecraft:gold_ingot"] ?? 0) / 9) + (stats["minecraft:crafted"]?[id] ?? 0)
+    private let goldIngot = "minecraft:gold_ingot"
+    
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id) - (progress.timesCrafted(goldIngot) / 9) + progress.timesCrafted(id)
         completed = count >= 164
         key = L10n.Statistic.goldBlocks(count)
     }
@@ -146,8 +158,8 @@ class SnifferEggs: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count: Int = stats["minecraft:picked_up"]?[id] ?? 0
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
         completed = count >= 3
         key = L10n.Statistic.snifferEggs(count)
     }
@@ -169,14 +181,15 @@ class MajorBiomes: TransferableIndicator, StatusIndicator {
         return try! JSONDecoder().decode([String:[[String]]].self, from: Data(contentsOf: bundle))
     }()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
+    let adventuringTime = "minecraft:adventure/adventuring_time"
+    
+    func update(progress: ProgressManager) {
         if let groups = biomeGroups[TrackerManager.shared.gameVersion.label] {
             var count = 0
             var icons = [String]()
             
-            let adv = advancements["minecraft:adventure/adventuring_time"]
             for group in groups {
-                let groupComplete = group.allSatisfy({adv?.criteria["minecraft:\($0)"] != nil})
+                let groupComplete = group.allSatisfy({progress.criterionCompleted(advancement: adventuringTime, criterion: "minecraft:\($0)") != nil})
                 if groupComplete {
                     count += 1
                     icons.append(group[0])
@@ -184,7 +197,7 @@ class MajorBiomes: TransferableIndicator, StatusIndicator {
             }
             
             key = L10n.Statistic.majorBiomes(count, groups.count)
-            icon = count == groups.count || icons.isEmpty ? "adventuring_time" : icons.prefix(4).joined(separator: "+")
+            icon = count == groups.count ? "explore_nether" : icons.isEmpty ? "adventuring_time" : icons.prefix(4).joined(separator: "+")
             completed = count == groups.count
         }
     }

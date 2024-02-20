@@ -51,7 +51,7 @@ struct L1_19: View {
                     GoalPanelView(advancement: dataManager.decode(file: "adventure")[28].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
                         .frame(width: 521)
                     GoalPanelView(advancement: dataManager.decode(file: "adventure")[29].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
-                        .frame(width: 362)
+                        .frame(width: 352)
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[15].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
                         .frame(width: 325)
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[14].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
@@ -59,7 +59,7 @@ struct L1_19: View {
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[16].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
                         .frame(width: 141)
                     GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 16, goal: L10n.Goal.nether)
-                        .frame(width: 130)
+                        .frame(width: 140)
                 }
                 .frame(width: 1672, height: 333)
             }

@@ -15,6 +15,8 @@
 "alert.no_directory" = "No directory selected";
 "alert.no_worlds" = "No worlds found";
 
+"credits.attribution" = "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).";
+
 "goal.advancements" = "Advancements";
 "goal.animals.bred" = "Animals Bred";
 "goal.biomes.visited" = "Biomes Visited";
@@ -98,11 +100,13 @@
 "statistic.ender_pearl" = "%d Pearls";
 "statistic.fermented_eye" = "Fermented Eye";
 "statistic.ghast_tears" = "%d / 4 Tears";
+"statistic.god_apple" = "God Apple";
 "statistic.god_apple.obtain" = "Obtain God Apple";
 "statistic.god_apple.obtained" = "Obtained God Apple";
 "statistic.gold_blocks" = "Gold Blocks\n%d / 164";
 "statistic.major_biomes" = "Major Biomes\n%d / %d";
 "statistic.nether_wart" = "%d Wart";
+"statistic.pottery_sherds" = "%d / 4 Sherds";
 "statistic.pufferfish" = "%d / 2 Puffers";
 "statistic.shells" = "Shells\n%d / 8";
 "statistic.shells.crafted" = "Conduit Crafted";
@@ -110,6 +114,7 @@
 "statistic.trident.awaiting" = "Awaiting\nThunder";
 "statistic.trident.obtain" = "Obtain\nTrident";
 "statistic.trident.thunder" = "Done With Thunder";
+"statistic.upgrade_netherite" = "Netherite Up";
 "statistic.wither.killed" = "Wither Has Been Killed";
 "statistic.wither.skulls" = "Skulls\n%d / 3";
 
@@ -128,7 +133,6 @@
 "theme.presets.light" = "Light";
 "theme.text.color" = "Text Color";
 
-"tracking.attribution" = "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.";
 "tracking.browse" = "...";
 "tracking.custom.saves" = "Custom Saves Folder";
 "tracking.enter.directory" = "Enter Directory";

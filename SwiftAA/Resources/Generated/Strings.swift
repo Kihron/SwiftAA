@@ -1137,6 +1137,10 @@ internal enum L10n {
     /// SwiftAA
     internal static let title = L10n.tr("Localizable", "app.title", fallback: "SwiftAA")
   }
+  internal enum Credits {
+    /// This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).
+    internal static let attribution = L10n.tr("Localizable", "credits.attribution", fallback: "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).")
+  }
   internal enum Donate {
     /// Support us on Ko-Fi
     internal static let message = L10n.tr("Localizable", "donate.message", fallback: "Support us on Ko-Fi")
@@ -1358,6 +1362,8 @@ internal enum L10n {
     internal static func ghastTears(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.ghast_tears", p1, fallback: "%d / 4 Tears")
     }
+    /// God Apple
+    internal static let godApple = L10n.tr("Localizable", "statistic.god_apple", fallback: "God Apple")
     /// Gold Blocks
     /// %d / 164
     internal static func goldBlocks(_ p1: Int) -> String {
@@ -1371,6 +1377,10 @@ internal enum L10n {
     /// %d Wart
     internal static func netherWart(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.nether_wart", p1, fallback: "%d Wart")
+    }
+    /// %d / 4 Sherds
+    internal static func potterySherds(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "statistic.pottery_sherds", p1, fallback: "%d / 4 Sherds")
     }
     /// %d / 2 Puffers
     internal static func pufferfish(_ p1: Int) -> String {
@@ -1386,6 +1396,8 @@ internal enum L10n {
     internal static func snifferEggs(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.sniffer_eggs", p1, fallback: "Sniffer Eggs\n%d / 3")
     }
+    /// Netherite Up
+    internal static let upgradeNetherite = L10n.tr("Localizable", "statistic.upgrade_netherite", fallback: "Netherite Up")
     internal enum AncientDebris {
       /// Done With Netherite
       internal static let done = L10n.tr("Localizable", "statistic.ancient_debris.done", fallback: "Done With Netherite")
@@ -1469,8 +1481,6 @@ internal enum L10n {
     }
   }
   internal enum Tracking {
-    /// This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.
-    internal static let attribution = L10n.tr("Localizable", "tracking.attribution", fallback: "This application was heavily inspired by and utilizes assets from CTM's AATool for Windows.")
     /// ...
     internal static let browse = L10n.tr("Localizable", "tracking.browse", fallback: "...")
     /// Minimalistic

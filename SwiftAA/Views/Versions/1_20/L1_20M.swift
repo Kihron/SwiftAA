@@ -10,7 +10,9 @@ import SwiftUI
 struct L1_20M: View {
     @ObservedObject private var dataManager = DataManager.shared
     
-    @State private var stats = Utilities.getSpecificStats(types: [.trident, .snifferEggs, .shells, .goldBlocks, .witherSkulls, .beehives, .ancientDebris])
+    @State private var statusIndicators = Utilities.getSpecificStats(types: [.trident, .snifferEggs, .shells, .goldBlocks, .witherSkulls, .beehives, .ancientDebris])
+
+    @State private var statisticIndicators: [StatisticIndicator] = [GodlyApple.shared, EnderPearls.shared, NetherWart.shared, GhastTears.shared, Pufferfish.shared, AzureBluet.shared, FermentedEye.shared, NetheriteUpgrade.shared, PotterySherds.shared]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -21,7 +23,7 @@ struct L1_20M: View {
                 .frame(width: 814)
                 
                 VStack {
-                    AdvPanelView(indicators: $stats, columnCount: 2, isStat: true)
+                    AdvPanelView(indicators: $statusIndicators, columnCount: 2, isStat: true)
                 }
                 .frame(width: 148)
                 
@@ -37,15 +39,21 @@ struct L1_20M: View {
                 GoalPanelView(advancement: dataManager.decode(file: "adventure")[33].asAdvancement, rowCount: 14, goal: L10n.Goal.Biomes.visited, isMinimal: true)
                     .frame(width: 534)
                 GoalPanelView(advancement: dataManager.decode(file: "adventure")[34].asAdvancement, rowCount: 14, goal: L10n.Goal.Monsters.killed, isMinimal: true)
-                    .frame(width: 345)
+                    .frame(width: 335)
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[19].asAdvancement, rowCount: 14, goal: L10n.Goal.Animals.bred, isMinimal: true)
                     .frame(width: 201)
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[21].asAdvancement, rowCount: 14, goal: L10n.Goal.cats, isMinimal: true)
-                    .frame(width: 129)
+                    .frame(width: 139)
                 
                 VStack(spacing: 0) {
-                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 8, goal: L10n.Goal.trims, isMinimal: true)
-                        .frame(height: 193)
+                    HStack(spacing: 0) {
+                        GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 8, goal: L10n.Goal.trims, isMinimal: true, hidePercentage: true)
+                            .frame(width: 145)
+                        
+                        StatisticPanelView(statistics: $statisticIndicators)
+                            .frame(width: 134)
+                    }
+                    .frame(height: 193)
                     
                     GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 3, goal: L10n.Goal.nether, isMinimal: true)
                         .frame(height: 117)

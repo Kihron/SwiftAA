@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ToolbarProgressView: View {
     @ObservedObject private var dataManager = DataManager.shared
+    @ObservedObject private var progressManager = ProgressManager.shared
     
     var body: some View {
-        ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.allAdvancements.count), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true)
+        ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.allAdvancements.count), title: L10n.Goal.advancements, message: .constant("IGT: \(progressManager.getInGameTime())"), isToolbar: true)
             .frame(width: 280)
     }
 }

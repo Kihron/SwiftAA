@@ -57,6 +57,8 @@ struct SettingsView: View {
                     NotesSettingsView()
                 case .updates:
                     UpdateSettings()
+                case .credits:
+                    CreditsView()
             }
         }
     }

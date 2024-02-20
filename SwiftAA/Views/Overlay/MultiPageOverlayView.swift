@@ -10,6 +10,7 @@ import SwiftUI
 struct MultiPageOverlayView: View {
     @ObservedObject private var viewModel = MultiPageOverlayViewModel()
     @ObservedObject private var overlayManager = OverlayManager.shared
+    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var dataManager = DataManager.shared
     
     @State private var section = 0
@@ -44,7 +45,7 @@ struct MultiPageOverlayView: View {
                         if overlayManager.showInGameTime {
                             Spacer()
                             
-                            Text("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))")
+                            Text("IGT: \(progressManager.getInGameTime())")
                                 .minecraftFont(size: 12)
                                 .padding(.trailing)
                         }

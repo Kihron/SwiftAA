@@ -16,7 +16,7 @@ protocol Indicator {
     var completed: Bool { get set }
     var tooltip: String { get }
     
-    func update(advancements: [String:JsonAdvancement], stats: [String:[String:Int]])
+    func update(progress: ProgressManager)
 }
 
 extension Indicator {

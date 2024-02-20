@@ -17,27 +17,21 @@ class DataManager: ObservableObject {
         }
     }
     
-    @Published var lastModified: Date = Date.now {
-        didSet {
-            DispatchQueue.main.async {
-                self.updateAdvancements()
-            }
-        }
-    }
+    @Published var lastModified: Date = Date.now
     
     @Published var allAdvancements: [Advancement] = []
     @Published var completedAdvancements: [Advancement] = []
     @Published var incompleteAdvancements: [Advancement] = []
     @Published var incompleteCriteria: [Criterion] = []
     @Published var completedCriteria: [Criterion] = []
-    @Published var advancementsWithCriteria: [Advancement] = []
+    @Published var goalAdvancements: [Advancement] = []
     
     @Published var statusIndicators: [Indicator] = Constants.statusIndicators
     @Published var statisticIndicators: [Indicator] = Constants.statisticIndicators
-    @Published var statsData: [String:[String:Int]] = [String:[String:Int]]()
     
-    @Published var completedAllAdvancements: Bool = false
-    @Published var playTime: Int = 0
+    var completedAllAdvancements: Bool {
+        return incompleteAdvancements.isEmpty
+    }
     
     static let shared = DataManager()
     
@@ -49,7 +43,7 @@ class DataManager: ObservableObject {
     
     var uncounted: [Indicator] = []
     
-    private func updateAdvancements() {
+    func updateAdvancementFields() {
         completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
@@ -58,7 +52,7 @@ class DataManager: ObservableObject {
         completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
-        advancementsWithCriteria = allAdvancements.filter({ !$0.criteria.isEmpty })
+        goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
     }
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
@@ -154,7 +148,7 @@ class DataManager: ObservableObject {
     }
     
     func getAdvancementForCriteria(criterion: Criterion) -> Advancement? {
-        advancementsWithCriteria.first(where: { $0.criteria.contains(criterion) })
+        goalAdvancements.first(where: { $0.criteria.contains(criterion) })
     }
     
     func gameVersionChanged() {
@@ -171,15 +165,8 @@ class DataManager: ObservableObject {
                 map.removeValue(forKey: key)
             }
         }
+        updateAdvancementFields()
         lastModified = Date.now
-    }
-    
-    func ticksToIGT(ticks: Int) -> String {
-        let dateFormatter = DateComponentsFormatter()
-        dateFormatter.allowedUnits = [.hour, .minute, .second]
-        dateFormatter.unitsStyle = .positional
-        dateFormatter.zeroFormattingBehavior = .pad
-        return dateFormatter.string(from: Double(ticks / 20)) ?? "0:00:00"
     }
     
     func getMinimalisticAdvancements() -> Binding<[Indicator]> {

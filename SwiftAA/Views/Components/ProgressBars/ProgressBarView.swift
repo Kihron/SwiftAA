@@ -18,18 +18,22 @@ struct ProgressBarView: View {
     @Binding var message: String
     @State var isToolbar: Bool
     @State var isOverlay: Bool
+    @State var hidePercentage: Bool
     
-    init(value: Binding<Int>, total: Binding<Int>, title: String, message: Binding<String> = .constant(""), isToolbar: Bool = false, isOverlay: Bool = false) {
+    init(value: Binding<Int>, total: Binding<Int>, title: String, message: Binding<String> = .constant(""), isToolbar: Bool = false, isOverlay: Bool = false, hidePercentage: Bool = false) {
         _value = value
         _total = total
         self.title = title
         _message = message
         self.isToolbar = isToolbar
         self.isOverlay = isOverlay
+        self.hidePercentage = hidePercentage
     }
     
     private var header: String {
-        return "\(value) / \(total) \(title) (\(total == 0 ? 0 : (value * 100 / total))%)"
+        let progress = "\(value) / \(total) \(title)"
+        let percentage = "(\(total == 0 ? 0 : (value * 100 / total))%)"
+        return "\(progress) \(hidePercentage ? "" : percentage)"
     }
     
     private var alignment: HorizontalAlignment {

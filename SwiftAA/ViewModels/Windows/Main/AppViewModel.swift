@@ -9,9 +9,8 @@ import SwiftUI
 
 class AppViewModel: ObservableObject {
     @ObservedObject var dataManager = DataManager.shared
+    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
-    
-    @Published var advancementsUpdated: Bool = false
     
     private var lastWorking = ""
     private var activeWindows = [pid_t:String]()
@@ -28,8 +27,6 @@ class AppViewModel: ObservableObject {
     }
     
     private func refreshData() {
-        advancementsUpdated = false
-        
         let saves: String
         if trackerManager.trackingMode == .directory {
             saves = trackerManager.customSavesPath
@@ -42,7 +39,7 @@ class AppViewModel: ObservableObject {
             } else {
                 saves = lastWorking
                 if (saves.isEmpty) {
-                    updateAll()
+                    progressManager.clearProgressState()
                     trackerManager.alert = .enterMinecraft
                     return
                 }
@@ -59,12 +56,12 @@ class AppViewModel: ObservableObject {
                 let world = getWorldPath(fileManager: fileManager, saves: saves)
                 
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {
-                    updateAll()
+                    progressManager.clearProgressState()
                     return .none
                 }
                 
                 if (try fileManager.contentsOfDirectory(atPath: "\(world)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(world)/stats").isEmpty) {
-                    updateAll()
+                    progressManager.clearProgressState()
                     return TrackerAlert.invalidDirectory
                 }
                 
@@ -81,17 +78,16 @@ class AppViewModel: ObservableObject {
                     let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(world)/stats/\(fileName)")))
                     
                     updatePlayerInfo(fileName: fileName)
-                    updateAll(advancements: advancements, statistics: statistics.stats)
+                    progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
                 }
             } catch {
                 print(error.localizedDescription)
             }
         } else {
+            progressManager.clearProgressState()
             if (saves.isEmpty) {
-                updateAll()
                 return TrackerAlert.noWorlds
             }
-            updateAll()
             return TrackerAlert.directoryNotFound
         }
         return .none
@@ -121,7 +117,7 @@ class AppViewModel: ObservableObject {
                     folder != ".DS_Store"
                 })
                 if (contents.isEmpty) {
-                    updateAll()
+                    progressManager.clearProgressState()
                     throw TrackerAlert.noWorlds
                 }
                 
@@ -182,39 +178,6 @@ class AppViewModel: ObservableObject {
             }
         }
         return nil
-    }
-    
-    private func updateAll(advancements: [String:JsonAdvancement] = [:], statistics: [String:[String:Int]] = [:]) {
-        if advancements.count == 0 && !wasCleared {
-            wasCleared = true
-            dataManager.lastModified = Date.now
-        } else if advancements.count > 0 {
-            wasCleared = false
-        }
-        
-        dataManager.allAdvancements.forEach { adv in
-            adv.update(advancements: advancements, stats: statistics)
-        }
-        
-        dataManager.statusIndicators.forEach { status in
-            status.update(advancements: advancements, stats: statistics)
-        }
-        
-        dataManager.statisticIndicators.forEach { statistic in
-            statistic.update(advancements: advancements, stats: statistics)
-        }
-        
-        dataManager.uncounted.forEach { adv in
-            adv.update(advancements: advancements, stats: statistics)
-        }
-        
-        let timeStat = TrackerManager.shared.gameVersion == .v1_16 ? "minecraft:play_one_minute" : "minecraft:play_time"
-        
-        dataManager.statsData = statistics
-        dataManager.playTime = statistics["minecraft:custom"]?[timeStat] ?? 0
-        dataManager.completedAllAdvancements = dataManager.completedAdvancements.count >= dataManager.allAdvancements.count
-        
-        advancementsUpdated = true
     }
     
     private func readLastLine(ofFileAtPath path: String) -> String? {

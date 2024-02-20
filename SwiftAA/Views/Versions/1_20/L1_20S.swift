@@ -53,13 +53,13 @@ struct L1_20S: View {
                     GoalPanelView(advancement: dataManager.decode(file: "adventure")[33].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
                         .frame(width: 521)
                     GoalPanelView(advancement: dataManager.decode(file: "adventure")[34].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
-                        .frame(width: 362)
+                        .frame(width: 337)
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[20].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
                         .frame(width: 325)
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
                         .frame(width: 193)
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[21].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
-                        .frame(width: 113)
+                        .frame(width: 138)
                     
                     VStack(spacing: 0) {
                         GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 8, goal: L10n.Goal.trims, isAdjacent: true)

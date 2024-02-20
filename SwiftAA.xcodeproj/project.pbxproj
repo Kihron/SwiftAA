@@ -107,6 +107,8 @@
 		B687E18D28B48079002CF5D7 /* skulk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* skulk_sensor.gif */; };
 		B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */; };
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
+		B697E0E42B83EE6B00932278 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E32B83EE6B00932278 /* ProgressManager.swift */; };
+		B697E0E62B84194A00932278 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E52B84194A00932278 /* CreditsView.swift */; };
 		B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
@@ -263,6 +265,8 @@
 		B687E18C28B48079002CF5D7 /* skulk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = skulk_sensor.gif; sourceTree = "<group>"; };
 		B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSidebar.swift; sourceTree = "<group>"; };
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
+		B697E0E32B83EE6B00932278 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
+		B697E0E52B84194A00932278 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceProgressBarView.swift; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
@@ -556,6 +560,7 @@
 				B6498D722AAC226400230808 /* OverlayManager.swift */,
 				B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */,
 				B66A076F28879ED900DC0A2C /* DataManager.swift */,
+				B697E0E32B83EE6B00932278 /* ProgressManager.swift */,
 				B624F3802AB803F9006D8719 /* LayoutManager.swift */,
 				B62AEA162AA95FFD008B01CD /* NoteManager.swift */,
 			);
@@ -675,6 +680,7 @@
 				B683A1272ABD4A6800162E7C /* NotesSettingsView.swift */,
 				B6498D762AAC244D00230808 /* OverlaySettings.swift */,
 				B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */,
+				B697E0E52B84194A00932278 /* CreditsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1050,7 +1056,9 @@
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */,
+				B697E0E62B84194A00932278 /* CreditsView.swift in Sources */,
 				B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */,
+				B697E0E42B83EE6B00932278 /* ProgressManager.swift in Sources */,
 				B6CD41CF2AE60D600024D4E4 /* Constants.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
 				B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */,
@@ -1260,7 +1268,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240217d;
+				CURRENT_PROJECT_VERSION = 240219c;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1295,7 +1303,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240217d;
+				CURRENT_PROJECT_VERSION = 240219c;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

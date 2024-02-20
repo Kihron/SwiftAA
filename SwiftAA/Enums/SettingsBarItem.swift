@@ -14,6 +14,7 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
     case overlay = "settings.overlay"
     case notes = "settings.notes"
     case updates = "settings.updater"
+    case credits = "settings.credits"
     
     var id: Self {
         return self
@@ -37,6 +38,8 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
                 "note.text"
             case .updates:
                 "gear.badge"
+            case .credits:
+                "hands.and.sparkles.fill"
         }
     }
     
@@ -54,6 +57,8 @@ enum SettingsBarItem: String, CaseIterable, Identifiable, Hashable {
                 .orange
             case .updates:
                 .gray
+            case .credits:
+                .brown
         }
     }
 }

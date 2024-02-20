@@ -16,21 +16,12 @@ class TrimAdvancement: Advancement {
         super.init(id: id, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: completed)
     }
     
-    override func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        super.update(advancements: advancements, stats: stats)
+    override func update(progress: ProgressManager) {
+        super.update(progress: progress)
         criteria.forEach { criterion in
             if let dual = criterion as? Criterion.DualCriterion {
-                if let timestampString = advancements[dual.recipe]?.criteria.values.first {
-                    dual.timestamp = Utilities.convertToTimestamp(timestampString)
-                } else {
-                    dual.timestamp = nil
-                }
-                
-                if let timestampString = advancements[id]?.criteria[dual.id] {
-                    dual.secondaryTimestamp = Utilities.convertToTimestamp(timestampString)
-                } else {
-                    dual.secondaryTimestamp = nil
-                }
+                dual.timestamp = progress.advancementTimestamp(dual.recipe)
+                dual.secondaryTimestamp = progress.criterionCompleted(advancement: id, criterion: dual.id)
             }
         }
     }

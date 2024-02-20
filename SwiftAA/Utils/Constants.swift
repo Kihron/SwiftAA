@@ -21,12 +21,15 @@ class Constants {
     ]
     
     static let statisticIndicators: [StatisticIndicator] = [
+        GodlyApple.shared,
         EnderPearls.shared,
         NetherWart.shared,
         GhastTears.shared,
         Pufferfish.shared,
         AzureBluet.shared,
-        FermentedEye.shared
+        FermentedEye.shared,
+        NetheriteUpgrade.shared,
+        PotterySherds.shared
     ]
     
     static let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]

@@ -9,11 +9,12 @@ import SwiftUI
 
 struct OptimalOverlayView: View {
     @ObservedObject private var dataManager = DataManager.shared
+    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var overlayManager = OverlayManager.shared
     
     var body: some View {
         VStack(spacing: 6) {
-            ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.allAdvancements.count), title: L10n.Goal.advancements, message: .constant("IGT: \(dataManager.ticksToIGT(ticks: dataManager.playTime))"), isToolbar: true, isOverlay: true)
+            ProgressBarView(value: .constant(dataManager.completedAdvancements.count), total: .constant(dataManager.allAdvancements.count), title: L10n.Goal.advancements, message: .constant("IGT: \(progressManager.getInGameTime())"), isToolbar: true, isOverlay: true)
                 .padding(.horizontal)
             
             HStack {

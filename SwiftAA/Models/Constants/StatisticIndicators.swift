@@ -16,13 +16,10 @@ class EnderPearls: StatisticIndicator {
     
     static let shared = EnderPearls()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let pickedUp = stats["minecraft:picked_up"]?[id] ?? 0
-        let used = stats["minecraft:used"]?[id] ?? 0
-        let dropped = stats["minecraft:dropped"]?[id] ?? 0
-        let crafted = stats["minecraft:crafted"]?["minecraft:ender_eye"] ?? 0
-        
-        let estimate = max(0, pickedUp - used - dropped - crafted)
+    private let enderEye = "minecraft:ender_eye"
+    
+    func update(progress: ProgressManager) {
+        let estimate = max(0, progress.timesPickedUp(id) - progress.timesUsed(id) - progress.timesDropped(id) - progress.timesCrafted(enderEye))
         completed = estimate > 0
         key = L10n.Statistic.enderPearl(estimate)
     }
@@ -37,8 +34,8 @@ class NetherWart: StatisticIndicator {
     
     static let shared = NetherWart()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
         completed = count >= 3
         key = L10n.Statistic.netherWart(count)
     }
@@ -53,8 +50,8 @@ class GhastTears: StatisticIndicator {
     
     static let shared = GhastTears()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
         completed = count >= 4
         key = L10n.Statistic.ghastTears(count)
     }
@@ -69,8 +66,8 @@ class Pufferfish: StatisticIndicator {
     
     static let shared = Pufferfish()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
         completed = count >= 2
         key = L10n.Statistic.pufferfish(count)
     }
@@ -85,10 +82,9 @@ class AzureBluet: StatisticIndicator {
     
     static let shared = AzureBluet()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:picked_up"]?[id] ?? 0
+    func update(progress: ProgressManager) {
+        let count = progress.timesPickedUp(id)
         completed = count > 0
-        key = L10n.Statistic.azureBluet
     }
 }
 
@@ -101,9 +97,79 @@ class FermentedEye: StatisticIndicator {
     
     static let shared = FermentedEye()
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        let count = stats["minecraft:crafted"]?[id] ?? 0
+    func update(progress: ProgressManager) {
+        let count = progress.timesCrafted(id)
         completed = count > 0
-        key = L10n.Statistic.fermentedEye
+    }
+}
+
+class GodlyApple: StatisticIndicator {
+    var id: String = "minecraft:recipes/misc/mojang_banner_pattern"
+    var key: String = L10n.Statistic.godApple
+    var name: String = "God Apple"
+    var icon: String = "enchanted_golden_apple"
+    var completed: Bool = false
+    
+    static let shared = GodlyApple()
+    
+    func update(progress: ProgressManager) {
+        completed = progress.advancementCompleted(id)
+    }
+}
+
+class NetheriteUpgrade: StatisticIndicator {
+    var id: String = "minecraft:recipes/misc/netherite_upgrade_smithing_template"
+    var key: String = L10n.Statistic.upgradeNetherite
+    var name: String = "Netherite Up"
+    var icon: String = "upgrade_netherite"
+    var completed: Bool = false
+    
+    static let shared = NetheriteUpgrade()
+    
+    func update(progress: ProgressManager) {
+        completed = progress.advancementCompleted(id)
+    }
+}
+
+class PotterySherds: StatisticIndicator {
+    var id: String = "minecraft:pottery_sherd"
+    var key: String = L10n.Statistic.potterySherds(0)
+    var name: String = "0 / 4 Sherds"
+    var icon: String = "pottery_sherd"
+    var completed: Bool = false
+    
+    static let shared = PotterySherds()
+    
+    private let sherds = [
+        "minecraft:angler_pottery_sherd",
+        "minecraft:archer_pottery_sherd",
+        "minecraft:arms_up_pottery_sherd",
+        "minecraft:blade_pottery_sherd",
+        "minecraft:brewer_pottery_sherd",
+        "minecraft:burn_pottery_sherd",
+        "minecraft:danger_pottery_sherd",
+        "minecraft:explorer_pottery_sherd",
+        "minecraft:friend_pottery_sherd",
+        "minecraft:heart_pottery_sherd",
+        "minecraft:heartbreak_pottery_sherd",
+        "minecraft:howl_pottery_sherd",
+        "minecraft:miner_pottery_sherd",
+        "minecraft:mourner_pottery_sherd",
+        "minecraft:plenty_pottery_sherd",
+        "minecraft:prize_pottery_sherd",
+        "minecraft:sheaf_pottery_sherd",
+        "minecraft:shelter_pottery_sherd",
+        "minecraft:skull_pottery_sherd",
+        "minecraft:snort_pottery_sherd"
+    ]
+    
+    func update(progress: ProgressManager) {
+        let count = sherds.map({ getCount(id: $0, progress: progress) }).reduce(0, +)
+        completed = count >= 4
+        key = L10n.Statistic.potterySherds(count)
+    }
+    
+    private func getCount(id: String, progress: ProgressManager) -> Int {
+        return max(0, progress.timesPickedUp(id) - progress.timesDropped(id))
     }
 }

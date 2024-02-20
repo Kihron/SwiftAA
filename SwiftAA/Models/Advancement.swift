@@ -19,11 +19,11 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     var tooltip: String
     var timestamp: Date?
     
-    func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-        completed = advancements[id]?.done ?? false
-        timestamp = advancements[id]?.criteria.compactMap({Utilities.convertToTimestamp($0.value)}).max()
+    func update(progress: ProgressManager) {
+        completed = progress.advancementCompleted(id)
+        timestamp = progress.advancementTimestamp(id)
         criteria.forEach { criterion in
-            criterion.timestamp = advancements[id]?.criteria[criterion.id].flatMap(Utilities.convertToTimestamp)
+            criterion.timestamp = progress.criterionCompleted(advancement: id, criterion: criterion.id)
         }
     }
     
@@ -57,9 +57,9 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
             fatalError("init(from:) has not been implemented for DualAdvancement")
         }
         
-        override func update(advancements: [String : JsonAdvancement], stats: [String : [String : Int]]) {
-            let firstDone = advancements[first.id]?.done ?? false
-            let secondDone = advancements[second.id]?.done ?? false
+        override func update(progress: ProgressManager) {
+            let firstDone = progress.advancementCompleted(first.id)
+            let secondDone = progress.advancementCompleted(second.id)
             completed = firstDone && secondDone
         }
     }
