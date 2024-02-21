@@ -81,6 +81,7 @@ class LeaderboardManager: ObservableObject {
     
     private func updateEntries(newEntries: [LeaderboardEntry]) {
         if !newEntries.isEmpty && entries != newEntries {
+            entries.removeAll()
             entries = newEntries
         }
     }

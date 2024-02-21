@@ -46,7 +46,7 @@ struct L1_16M: View {
                     .frame(width: 159)
                 
                 VStack(spacing: 0) {
-                    StatisticPanelView(statistics: $statistics)
+                    StatisticPanelView(statistics: $statistics, rowCount: 6)
                         .frame(height: 125)
                     
                     GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 7, goal: L10n.Goal.nether, isMinimal: true)

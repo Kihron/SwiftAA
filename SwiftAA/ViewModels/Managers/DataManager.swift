@@ -30,7 +30,7 @@ class DataManager: ObservableObject {
     @Published var statisticIndicators: [Indicator] = Constants.statisticIndicators
     
     var completedAllAdvancements: Bool {
-        return incompleteAdvancements.isEmpty
+        return incompleteAdvancements.isEmpty && !completedAdvancements.isEmpty
     }
     
     static let shared = DataManager()
@@ -86,7 +86,7 @@ class DataManager: ObservableObject {
             guard let element = item.element else { continue }
             
             let id = element.attribute(by: "id")!.text
-            let key = element.attribute(by: "key")!.text
+            let key = generateAdvancementKey(id: id, element: element)
             let name = element.attribute(by: "name")!.text
             let shortName = element.attribute(by: "short_name")?.text
             let icon = element.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
@@ -94,11 +94,12 @@ class DataManager: ObservableObject {
             let tooltip = element.attribute(by: "tooltip")?.text ?? ""
             let prefix = element.attribute(by: "prefix")?.text ?? "minecraft:"
             
+            let goal = item["criteria"].element?.attribute(by: "goal")?.text
             let criteria = item["criteria"]["criterion"].all.compactMap { c -> Criterion? in
-                guard let c = c.element else { return nil }
+                guard let c = c.element, let goal else { return nil }
                 
                 let id = c.attribute(by: "id")!.text
-                let key = c.attribute(by: "key")!.text
+                let key = generateCriterionKey(id: id, goal: goal, element: c, prefix: prefix)
                 let name = c.attribute(by: "name")?.text ?? getNameFromID(id: id, prefix: prefix)
                 let icon = c.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: ":")
                 
@@ -135,6 +136,24 @@ class DataManager: ObservableObject {
         return .constant(advancements)
     }
     
+    private func generateAdvancementKey(id: String, element: SWXMLHash.XMLElement) -> String {
+        let generatedKey = "advancement." + id.replacingOccurrences(of: "minecraft:", with: "").replacingOccurrences(of: "/", with: ".")
+        if let override = element.attribute(by: "version")?.text {
+            return generatedKey + ".\(override)"
+        } else {
+            return generatedKey
+        }
+    }
+    
+    private func generateCriterionKey(id: String, goal: String, element: SWXMLHash.XMLElement, prefix: String) -> String {
+        let generatedKey = "advancement.goal." + "\(goal.lowercased().replacingOccurrences(of: " ", with: "_"))." + id.replacingOccurrences(of: "minecraft:", with: "")
+        if let override = element.attribute(by: "version")?.text {
+            return generatedKey + ".\(override)"
+        } else {
+            return generatedKey
+        }
+    }
+    
     private func getIconFromID(id: String, separator: Character) -> String {
         let idx = id.lastIndex(of: separator)
         if (idx == nil) {
@@ -144,7 +163,11 @@ class DataManager: ObservableObject {
     }
     
     private func getNameFromID(id: String, prefix: String) -> String {
-        id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+        if id.contains(prefix) {
+            id.dropFirst(prefix.count).replacingOccurrences(of: "_", with: " ").capitalized
+        } else {
+            id.replacingOccurrences(of: "_", with: " ").capitalized
+        }
     }
     
     func getAdvancementForCriteria(criterion: Criterion) -> Advancement? {

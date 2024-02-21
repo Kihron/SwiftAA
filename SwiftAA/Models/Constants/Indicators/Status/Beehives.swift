@@ -23,7 +23,7 @@ class Beehives: TransferableIndicator, StatusIndicator {
     
     func update(progress: ProgressManager) {
         let count = progress.timesPickedUp(id)
-        let doneWithDiet = progress.criterionCompleted(advancement: balancedDiet, criterion: honeyBottle) != nil
+        let doneWithDiet = progress.criterionCompleted(balancedDiet, honeyBottle) != nil
         let doneWithHoney = honeyAdvs.allSatisfy({ adv in progress.advancementCompleted(adv) })
         
         completed = doneWithHoney && doneWithDiet

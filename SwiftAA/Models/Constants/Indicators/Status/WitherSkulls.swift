@@ -18,11 +18,12 @@ class WitherSkulls: TransferableIndicator, StatusIndicator {
     var tooltip: String = ""
     
     private let wither = "minecraft:wither"
+    private let mobsKilled = "minecraft:adventure/kill_all_mobs"
     
     func update(progress: ProgressManager) {
         let count = progress.timesPickedUp(id)
-        let witherKilled = progress.wasKilled(wither)
-        completed = count >= 3
+        let witherKilled = progress.criterionCompleted(mobsKilled, wither) != nil
+        completed = count >= 3 || witherKilled
         key = witherKilled ? L10n.Statistic.Wither.killed : L10n.Statistic.Wither.skulls(count)
     }
 }

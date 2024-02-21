@@ -46,7 +46,9 @@ struct TrackingModeView: View {
             }
         }
         .onChange(of: trackerManager.trackingMode) { _ in
-            trackerManager.resetWorldPath()
+            withAnimation {
+                trackerManager.resetWorldPath()
+            }
         }
     }
 }

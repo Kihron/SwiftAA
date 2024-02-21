@@ -49,7 +49,7 @@ class ProgressManager: ObservableObject {
         return advancementsState[id]?.criteria.compactMap({Utilities.convertToTimestamp($0.value)}).max()
     }
     
-    func criterionCompleted(advancement: String, criterion: String) -> Date? {
+    func criterionCompleted(_ advancement: String, _ criterion: String) -> Date? {
         return advancementsState[advancement]?.criteria[criterion].flatMap(Utilities.convertToTimestamp)
     }
     

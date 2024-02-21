@@ -17,26 +17,24 @@ struct SettingsView: View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
             VStack {
                 List(SettingsBarItem.allCases, selection: $selectedSettingsBarItem) { item in
-                    NavigationLink(value: item) {
-                        HStack(alignment: .center, spacing: 10) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .fill(item.color.gradient)
-                                    .frame(width: 25, height: 25)
-                                
-                                Image(systemName: item.icon)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(width: 20, alignment: .center)
-                            }
+                    HStack(alignment: .center, spacing: 10) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(item.color.gradient)
+                                .frame(width: 25, height: 25)
                             
-                            Text(item.label.localized)
-                                .tint(.primary)
+                            Image(systemName: item.icon)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 20, alignment: .center)
                         }
-                        .frame(height: 20)
-                        .padding(.vertical, 5)
-                        .contentShape(Rectangle())
+                        
+                        Text(item.label.localized)
+                            .tint(.primary)
                     }
+                    .frame(height: 20)
+                    .padding(.vertical, 5)
+                    .contentShape(Rectangle())
                 }
                 .frame(width: 200)
                 .removeSidebar()

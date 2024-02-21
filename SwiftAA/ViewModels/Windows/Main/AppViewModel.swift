@@ -15,11 +15,12 @@ class AppViewModel: ObservableObject {
     private var lastWorking = ""
     private var activeWindows = [pid_t:String]()
     private var wasCleared: Bool = true
+    private let fileManager = FileManager.default
     
     private let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     init() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             withAnimation {
                 self.refreshData()
             }
@@ -45,38 +46,40 @@ class AppViewModel: ObservableObject {
                 }
             }
         }
-        
-        trackerManager.alert = readAllFileData(saves: saves)
+
+        readAllFileData(saves: saves)
     }
     
-    private func readAllFileData(saves: String) -> TrackerAlert? {
-        let fileManager = FileManager.default
+    private func readAllFileData(saves: String) {
         if (fileManager.fileExists(atPath: saves)) {
             do {
-                let world = getWorldPath(fileManager: fileManager, saves: saves)
+                let worldPath = getWorldPath(fileManager: fileManager, saves: saves)
                 
-                if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: world).contains)) {
+                if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
                     progressManager.clearProgressState()
-                    return .none
+                    trackerManager.alert = .none
+                    return
                 }
                 
-                if (try fileManager.contentsOfDirectory(atPath: "\(world)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(world)/stats").isEmpty) {
+                if (try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats").isEmpty) {
                     progressManager.clearProgressState()
-                    return TrackerAlert.invalidDirectory
+                    trackerManager.alert = .invalidDirectory
+                    return
                 }
                 
-                let fileName = try fileManager.contentsOfDirectory(atPath: "\(world)/advancements")[0]
-                let lastUpdate = try getModifiedTime("\(world)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
+                let fileName = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")[0]
+                let lastUpdate = try getModifiedTime("\(worldPath)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
                 
                 if (dataManager.lastModified != lastUpdate) {
                     dataManager.lastModified = lastUpdate
-                    var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(world)/advancements/\(fileName)"))
+                    var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(worldPath)/advancements/\(fileName)"))
                     let advRange = NSRange(location: 0, length: advFileContents.count)
                     advFileContents = regex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
                     
                     let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
-                    let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(world)/stats/\(fileName)")))
+                    let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(worldPath)/stats/\(fileName)")))
                     
+                    trackerManager.alert = .none
                     updatePlayerInfo(fileName: fileName)
                     progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
                 }
@@ -86,11 +89,11 @@ class AppViewModel: ObservableObject {
         } else {
             progressManager.clearProgressState()
             if (saves.isEmpty) {
-                return TrackerAlert.noWorlds
+                trackerManager.alert = .noWorlds
+                return
             }
-            return TrackerAlert.directoryNotFound
+            trackerManager.alert = .directoryNotFound
         }
-        return .none
     }
     
     private func getWorldPath(fileManager: FileManager, saves: String) -> String {

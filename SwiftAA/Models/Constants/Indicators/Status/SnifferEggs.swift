@@ -17,9 +17,16 @@ class SnifferEggs: TransferableIndicator, StatusIndicator {
     var completed: Bool = false
     var tooltip: String = ""
     
+    private let sniffer = "minecraft:sniffer"
+    private let feedSnifflet = "minecraft:husbandry/feed_snifflet"
+    private let plantingThePast = "minecraft:husbandry/plant_any_sniffer_seed"
+    private let twoByTwo = "minecraft:husbandry/bred_all_animals"
+    
     func update(progress: ProgressManager) {
         let count = progress.timesPickedUp(id)
-        completed = count >= 3
-        key = L10n.Statistic.snifferEggs(count)
+        let advancementsComplete = progress.advancementCompleted(feedSnifflet) && progress.advancementCompleted(plantingThePast) && progress.criterionCompleted(twoByTwo, sniffer) != nil
+        
+        completed = count >= 3 || advancementsComplete
+        key = completed ? L10n.Statistic.SnifferEggs.done : L10n.Statistic.snifferEggs(count)
     }
 }

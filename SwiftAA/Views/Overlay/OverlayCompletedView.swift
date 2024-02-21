@@ -74,12 +74,13 @@ struct OverlayCompletedView: View {
                             .padding(.top, -8)
                             .padding(.bottom)
                         
-                        LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 32), spacing: 2, alignment: .leading), count: 3), spacing: 10) {
+                        LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 32), spacing: 0, alignment: .leading), count: 5), spacing: 14) {
                             ForEach(Constants.finalStatistics) { statistic in
                                 FinalStatsView(statistic: statistic)
                             }
                         }
-                        .padding(.top)
+                        .padding(.vertical)
+                        .offset(y: -10)
                     }
                     
                     Spacer()

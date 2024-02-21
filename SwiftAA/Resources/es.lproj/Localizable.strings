@@ -4,12 +4,18 @@
 "app.title" = "SwiftAA";
 
 "about.button" = "Acerca de SwiftAA";
-"about.description" = "Seguimiento de logros para macOS";
+"about.description" = "Seguimiento de Todos los Logros para macOS";
 "about.copyright" = "Copyright © 2024 Kihron, Slackow.";
 
 "donate.message" = "Apóyanos en Ko-Fi";
 
-"error.enter_minecraft" = "Entra a Minecraft para comenzar a trackear";
+"alert.enter_minecraft" = "Abre Minecraft para empezar a rastrear";
+"alert.invalid_directory" = "Directorio inválido";
+"alert.directory_not_found" = "Directorio no encontrado";
+"alert.no_directory" = "Ningún directorio seleccionado";
+"alert.no_worlds" = "No se encontraron mundos";
+
+"credits.attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de [AATool para Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7) de CTM.";
 
 "goal.advancements" = "Logros";
 "goal.animals.bred" = "Animales Criados";
@@ -18,33 +24,46 @@
 "goal.foods.eaten" = "Alimentos Consumidos";
 "goal.monsters.killed" = "Monstruos Asesinados";
 "goal.nether" = "Visitados";
+"goal.trims" = "Adornos Aplicados";
 
-"leaderboard.verified" = "Verified";
-"leaderboard.awaiting_verification" = "Awaiting";
-"leaderboard.not_submitted" = "Not Submitted";
+"info.bullseye" = "Estar al menos **30 bloques** de distancia horizontalmente cuando el centro de un blanco es disparado con un proyectil por el jugador.";
+"info.sniper_duel" = "Estar al menos **50 bloques** de distancia horizontalmente cuando un esqueleto es asesinado por una flecha después de que el jugador lo haya atacado una vez.";
+"info.subspace_bubble" = "Usa el Nether para viajar entre dos puntos en el Mundo Superior con una distancia de **7000 bloques** entre ellos, que son **875 bloques** en el Nether.";
+"info.feels_like_home" = "Mientras montas un strider, viaja **50 bloques** sobre lava en el Mundo Superior. Solo se cuenta el desplazamiento horizontal. \n\n*Viajar en círculo por más de 50 bloques no cuenta.*";
+"info.great_view" = "Mueve una distancia de **50 bloques** verticalmente con el efecto de Levitación aplicado, sin importar la dirección o si es causado por el efecto.";
+"info.surge_protector" = "Estar dentro de **30 bloques** de un rayo que no prende fuego a ningún bloque, mientras un aldeano ileso esté dentro o hasta seis bloques por encima de un volumen de **30×30×30** centrado en el rayo.";
+"info.arbalistic" = "Mata **cinco mobs únicos** con un solo disparo de ballesta.";
+
+"leaderboard.verified" = "Verificado";
+"leaderboard.awaiting_verification" = "Esperando...";
+"leaderboard.not_submitted" = "No Enviado";
 "leaderboard.unknown" = "???";
 
+"modular.leaderboard" = "Tabla de Líderes";
+"modular.potion_panel" = "Panel de Pociones";
+
 "notes.clear.all" = "Borrar Todo";
-"notes.none" = "No Hay Notas Disponibles";
+"notes.none" = "Sin Notas Registradas";
 "notes.panel.view.bottom.title" = "Notas";
 "notes.panel.view.top.title" = "Puntos de Referencia";
-"notes.select.world" = "Elige un mundo para ver sus notas...";
+"notes.select.world" = "Selecciona un mundo para ver sus notas...";
 
 "overlay" = "Overlay";
-"overlay.bar" = "Alternar Barra de Páginas";
-"overlay.complete.title" = "¡Los %d Logros Completos!";
-"overlay.complete.message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos Los Logros";
+"overlay.bar" = "Mostrar Barra de Páginas";
+"overlay.complete.title" = "¡Todos los %d Logros Completos!";
+"overlay.complete.message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos los Logros";
 "overlay.complete.stat.elytra" = "KM";
 "overlay.complete.stat.bread" = "Comido";
-"overlay.complete.stat.enchant" = "Ench'ed";
-"overlay.complete.stat.pearl" = "Tirado";
+"overlay.complete.stat.enchant" = "Encantado";
+"overlay.complete.stat.pearl" = "Lanzado";
 "overlay.complete.stat.temples" = "Templos";
-"overlay.complete.stats" = "Run Estadísticas";
-"overlay.complete.time" = "%@\nIGT Aproximado";
+"overlay.complete.stats" = "Estadísticas de la Partida";
+"overlay.complete.time" = "%@\nTiempo IGT Aproximado";
 "overlay.multipage" = "Multi-Página";
+"overlay.optimal" = "Óptimo";
 "overlay.showstats" = "Mostrar Estadísticas";
 "overlay.style.title" = "Estilo de Overlay";
-"overlay.style.description" = "Cinta Animada crea una lista infinita de logros y criterios que se desplazan constantemente. Multi-Página los divide en un conjunto estático de páginas.";
+"overlay.style.description" = "• **Óptimo** muestra los logros y criterios completados recientemente.\n• **Cinta Animada** crea una lista infinita que se desplaza constantemente pero es *intensiva en CPU*.\n• **Multi-Página** los separa en un conjunto estático de páginas.";
 "overlay.tickertape" = "Cinta Animada";
 "overlay.toggle" = "Alternar Overlay";
 
@@ -54,56 +73,78 @@
 "potion.slow_falling" = "Poción de Caída Lenta";
 "potion.slowness" = "Poción de Lentitud";
 "potion.strength" = "Poción de Fuerza";
-"potion.swiftness" = "Poción de Velocidad";
-"potion.water_breathing" = "Poción de Apnea";
+"potion.swiftness" = "Poción de Rapidez";
+"potion.water_breathing" = "Poción de Respiración Acuática";
 "potion.weakness" = "Poción de Debilidad";
 
 "settings.alignment.title" = "Alineación";
 "settings.alignment.center" = "Centro";
 "settings.alignment.leading" = "Izquierda";
 "settings.alignment.trailing" = "Derecha";
+"settings.credits" = "Créditos";
+"settings.layout" = "Diseño";
 "settings.notes" = "Notas";
 "settings.overlay" = "Overlay";
 "settings.theme" = "Tema";
-"settings.tracking" = "Seguimiento";
+"settings.tracking" = "Rastreo";
 "settings.updater" = "Actualizaciones";
-"settings.updater.auto.check" = "Revisar las Actualizaciones\nAutomaticamente";
+"settings.updater.auto.check" = "Buscar Actualizaciones Automáticamente";
 "settings.updater.check" = "Buscar Actualizaciones";
-"settings.updater.last.checked" = "Revisado Por Ultima Vez:";
+"settings.updater.last.checked" = "Última Revisión:";
 
 "statistic.ancient_debris" = "Escombros: %d\nTNT: %d";
-"statistic.ancient_debris.done" = "Hecho Con Netherita";
-"statistic.god_apple.obtain" = "Obtenlo";
-"statistic.god_apple.obtained" = "Obtenido";
+"statistic.ancient_debris.done" = "Listo con Netherita";
+"statistic.azure_bluet" = "Botón Azul";
+"statistic.beehives" = "Colmenas: %d";
+"statistic.beehives.done" = "Listo con Abejas";
+"statistic.ender_pearl" = "%d Perlas";
+"statistic.fermented_eye" = "Ojo Fermentado";
+"statistic.ghast_tears" = "%d / 4 Lágrimas";
+"statistic.god_apple" = "God Apple";
+"statistic.god_apple.obtain" = "Obtener God Apple";
+"statistic.god_apple.obtained" = "God Apple Obtenida";
+"statistic.gold_blocks" = "Bloques de Oro\n%d / 164";
+"statistic.gold_blocks.beaconator" = "Beaconator Completado";
+"statistic.major_biomes" = "Biomas Principales\n%d / %d";
+"statistic.nether_wart" = "%d Verruga del Nether";
+"statistic.pottery_sherds" = "%d / 4 Fragmentos";
+"statistic.pufferfish" = "%d / 2 Peces Globo";
 "statistic.shells" = "Conchas\n%d / 8";
-"statistic.shells.crafted" = "Conducto Crafteado";
-"statistic.trident.awaiting" = "Sin Trueno";
-"statistic.trident.obtain" = "Obten\nUn Tridente";
-"statistic.trident.thunder" = "Con Trueno";
+"statistic.shells.crafted" = "Conducto Creado";
+"statistic.shells.hdwgh" = "HDWGH Completado";
+"statistic.sniffer_eggs" = "Huevos de Sniffer\n%d / 3";
+"statistic.sniffer_eggs.done" = "Sniffers\nListo";
+"statistic.trident.awaiting" = "Esperando\nTrueno";
+"statistic.trident.obtain" = "Obtener\nTridente";
+"statistic.trident.thunder" = "Listo con Trueno";
+"statistic.upgrade_netherite" = "Netherita Mejorada";
 "statistic.wither.killed" = "Ha Sido Asesinado";
 "statistic.wither.skulls" = "Calaveras\n%d / 3";
 
-"theme.background.color" = "Color del Fondo";
-"theme.copy" = "Copiar al Personalizado";
+"theme.background.color" = "Color de Fondo";
+"theme.copy" = "Copiar a Personalizado";
 "theme.custom" = "Personalizado";
-"theme.foreground.color" = "Color del Frente";
-"theme.presets" = "Predeterminados";
+"theme.foreground.color" = "Color de Primer Plano";
+"theme.presets" = "Preajustes";
 "theme.presets.berry" = "Baya";
-"theme.presets.blazed" = "Fuego";
+"theme.presets.blazed" = "Llama";
 "theme.presets.brick" = "Ladrillo";
-"theme.presets.dark.mode" = "Obscuro";
+"theme.presets.dark" = "Oscuro";
 "theme.presets.ender.pearl" = "Perla de Ender";
-"theme.presets.github.dark" = "Obscuro del GitHub";
+"theme.presets.github.dark" = "GitHub Oscuro";
 "theme.presets.high.contrast" = "Alto Contraste";
-"theme.presets.light.mode" = "Claro";
+"theme.presets.light" = "Claro";
 "theme.text.color" = "Color del Texto";
 
-"tracking.attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de AATool de CTM para Windows.";
 "tracking.browse" = "...";
 "tracking.custom.saves" = "Carpeta de Mundos Personalizada";
-"tracking.enter.directory" = "Ingresar la dirección a la Carpeta";
+"tracking.enter.directory" = "Ingresar Directorio";
 "tracking.game.version" = "Versión del Juego";
 "tracking.seamless" = "Rastreo Automático";
+
+"tracking.standard" = "Estándar";
+"tracking.vertical" = "Vertical";
+"tracking.minimalistic" = "Minimalista";
 
 "advancement.adventure.root" = "Aventura";
 "advancement.adventure.kill.a.mob" = "Cazamonstruos";

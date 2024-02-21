@@ -18,11 +18,14 @@ class Shells: TransferableIndicator, StatusIndicator {
     var tooltip: String = ""
     
     private let conduit = "minecraft:conduit"
+    private let allEffects = "minecraft:nether/all_effects"
     
     func update(progress: ProgressManager) {
         let count = progress.timesPickedUp(id)
         let conduitCrafted = progress.timesCrafted(conduit) > 0
-        completed = count >= 8 || conduitCrafted
-        key = conduitCrafted ? L10n.Statistic.Shells.crafted : L10n.Statistic.shells(count)
+        let allEffectsComplete = progress.advancementCompleted(allEffects)
+        
+        completed = count >= 8 || conduitCrafted || allEffectsComplete
+        key = allEffectsComplete ? L10n.Statistic.Shells.hdwgh : conduitCrafted ? L10n.Statistic.Shells.crafted : L10n.Statistic.shells(count)
     }
 }

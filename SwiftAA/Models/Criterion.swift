@@ -20,7 +20,7 @@ class Criterion: NSObject, Codable, Identifiable {
     
     init(id: String, key: String, name: String, icon: String) {
         self.id = id
-        self.key = "advancement.\(key.replacingOccurrences(of: "-", with: "."))"
+        self.key = key
         self.name = name
         self.icon = icon
     }

@@ -21,7 +21,7 @@ class TrimAdvancement: Advancement {
         criteria.forEach { criterion in
             if let dual = criterion as? Criterion.DualCriterion {
                 dual.timestamp = progress.advancementTimestamp(dual.recipe)
-                dual.secondaryTimestamp = progress.criterionCompleted(advancement: id, criterion: dual.id)
+                dual.secondaryTimestamp = progress.criterionCompleted(id, dual.id)
             }
         }
     }

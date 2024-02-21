@@ -23,13 +23,13 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         completed = progress.advancementCompleted(id)
         timestamp = progress.advancementTimestamp(id)
         criteria.forEach { criterion in
-            criterion.timestamp = progress.criterionCompleted(advancement: id, criterion: criterion.id)
+            criterion.timestamp = progress.criterionCompleted(id, criterion.id)
         }
     }
     
     init(id: String, key: String, name: String, shortName: String? = nil, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool, tooltip: String = "") {
         self.id = id
-        self.key = "advancement.\(key.replacingOccurrences(of: "-", with: "."))"
+        self.key = key
         self.name = name
         self.shortName = shortName
         self.icon = icon

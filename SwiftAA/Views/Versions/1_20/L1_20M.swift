@@ -50,7 +50,7 @@ struct L1_20M: View {
                         GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 8, goal: L10n.Goal.trims, isMinimal: true, hidePercentage: true)
                             .frame(width: 145)
                         
-                        StatisticPanelView(statistics: $statisticIndicators)
+                        StatisticPanelView(statistics: $statisticIndicators, rowCount: 9)
                             .frame(width: 134)
                     }
                     .frame(height: 193)

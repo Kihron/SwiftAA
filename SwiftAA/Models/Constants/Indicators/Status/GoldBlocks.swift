@@ -18,10 +18,13 @@ class GoldBlocks: TransferableIndicator, StatusIndicator {
     var tooltip: String = ""
     
     private let goldIngot = "minecraft:gold_ingot"
+    private let beaconator = "minecraft:nether/create_full_beacon"
     
     func update(progress: ProgressManager) {
         let count = progress.timesPickedUp(id) - (progress.timesCrafted(goldIngot) / 9) + progress.timesCrafted(id)
-        completed = count >= 164
-        key = L10n.Statistic.goldBlocks(count)
+        let beaconatorComplete = progress.advancementCompleted(beaconator)
+        
+        completed = count >= 164 || beaconatorComplete
+        key = beaconatorComplete ? L10n.Statistic.GoldBlocks.beaconator : L10n.Statistic.goldBlocks(count)
     }
 }

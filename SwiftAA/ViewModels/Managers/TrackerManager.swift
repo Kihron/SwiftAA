@@ -38,5 +38,6 @@ class TrackerManager: ObservableObject {
     func resetWorldPath() {
         worldPath = ""
         lastDirectoryUpdate = Date.now
+        ProgressManager.shared.clearProgressState()
     }
 }

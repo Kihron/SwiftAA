@@ -31,7 +31,7 @@ class MajorBiomes: TransferableIndicator, StatusIndicator {
             var icons = [String]()
             
             for group in groups {
-                let groupComplete = group.allSatisfy({progress.criterionCompleted(advancement: adventuringTime, criterion: "minecraft:\($0)") != nil})
+                let groupComplete = group.allSatisfy({progress.criterionCompleted(adventuringTime, "minecraft:\($0)") != nil})
                 if groupComplete {
                     count += 1
                     icons.append(group[0])

@@ -26,1099 +26,639 @@ internal enum L10n {
   }
   internal enum Advancement {
     internal enum Adventure {
+      /// Adventuring Time
+      internal static let adventuringTime = L10n.tr("Localizable", "advancement.adventure.adventuring_time", fallback: "Adventuring Time")
       /// Arbalistic
       internal static let arbalistic = L10n.tr("Localizable", "advancement.adventure.arbalistic", fallback: "Arbalistic")
+      /// Sneak 100
+      internal static let avoidVibration = L10n.tr("Localizable", "advancement.adventure.avoid_vibration", fallback: "Sneak 100")
       /// Bullseye
       internal static let bullseye = L10n.tr("Localizable", "advancement.adventure.bullseye", fallback: "Bullseye")
+      /// Careful Restoration
+      internal static let craftDecoratedPotUsingOnlySherds = L10n.tr("Localizable", "advancement.adventure.craft_decorated_pot_using_only_sherds", fallback: "Careful Restoration")
+      /// Caves and Cliffs
+      internal static let fallFromWorldHeight = L10n.tr("Localizable", "advancement.adventure.fall_from_world_height", fallback: "Caves and Cliffs")
+      /// Hero of the Village
+      internal static let heroOfTheVillage = L10n.tr("Localizable", "advancement.adventure.hero_of_the_village", fallback: "Hero of the Village")
+      /// Sticky Situation
+      internal static let honeyBlockSlide = L10n.tr("Localizable", "advancement.adventure.honey_block_slide", fallback: "Sticky Situation")
+      /// Monster Hunter
+      internal static let killAMob = L10n.tr("Localizable", "advancement.adventure.kill_a_mob", fallback: "Monster Hunter")
+      /// Monsters Hunted
+      internal static let killAllMobs = L10n.tr("Localizable", "advancement.adventure.kill_all_mobs", fallback: "Monsters Hunted")
+      /// It Spreads
+      internal static let killMobNearSculkCatalyst = L10n.tr("Localizable", "advancement.adventure.kill_mob_near_sculk_catalyst", fallback: "It Spreads")
+      /// Surge Protector
+      internal static let lightningRodWithVillagerNoFire = L10n.tr("Localizable", "advancement.adventure.lightning_rod_with_villager_no_fire", fallback: "Surge Protector")
+      /// Ol' Betsy
+      internal static let olBetsy = L10n.tr("Localizable", "advancement.adventure.ol_betsy", fallback: "Ol' Betsy")
+      /// Sound of Music
+      internal static let playJukeboxInMeadows = L10n.tr("Localizable", "advancement.adventure.play_jukebox_in_meadows", fallback: "Sound of Music")
+      /// The Power of Books
+      internal static let readPowerOfChiseledBookshelf = L10n.tr("Localizable", "advancement.adventure.read_power_of_chiseled_bookshelf", fallback: "The Power of Books")
       /// Adventure
       internal static let root = L10n.tr("Localizable", "advancement.adventure.root", fallback: "Adventure")
+      /// Respecting Remnants
+      internal static let salvageSherd = L10n.tr("Localizable", "advancement.adventure.salvage_sherd", fallback: "Respecting Remnants")
+      /// Take Aim
+      internal static let shootArrow = L10n.tr("Localizable", "advancement.adventure.shoot_arrow", fallback: "Take Aim")
+      /// Sweet
+      /// Dreams
+      internal static let sleepInBed = L10n.tr("Localizable", "advancement.adventure.sleep_in_bed", fallback: "Sweet\nDreams")
+      /// Sniper Duel
+      internal static let sniperDuel = L10n.tr("Localizable", "advancement.adventure.sniper_duel", fallback: "Sniper Duel")
+      /// Is It a
+      /// Plane?
+      internal static let spyglassAtDragon = L10n.tr("Localizable", "advancement.adventure.spyglass_at_dragon", fallback: "Is It a\nPlane?")
+      /// Is It a
+      /// Balloon?
+      internal static let spyglassAtGhast = L10n.tr("Localizable", "advancement.adventure.spyglass_at_ghast", fallback: "Is It a\nBalloon?")
+      /// Is It a
+      /// Bird?
+      internal static let spyglassAtParrot = L10n.tr("Localizable", "advancement.adventure.spyglass_at_parrot", fallback: "Is It a\nBird?")
+      /// Hired Help
+      internal static let summonIronGolem = L10n.tr("Localizable", "advancement.adventure.summon_iron_golem", fallback: "Hired Help")
+      /// A Throwaway Joke
+      internal static let throwTrident = L10n.tr("Localizable", "advancement.adventure.throw_trident", fallback: "A Throwaway Joke")
+      /// Postmortal
+      internal static let totemOfUndying = L10n.tr("Localizable", "advancement.adventure.totem_of_undying", fallback: "Postmortal")
       /// What a Deal!
       internal static let trade = L10n.tr("Localizable", "advancement.adventure.trade", fallback: "What a Deal!")
-      internal enum Adventuring {
-        /// Adventuring Time
-        internal static let time = L10n.tr("Localizable", "advancement.adventure.adventuring.time", fallback: "Adventuring Time")
-      }
-      internal enum Avoid {
-        /// Sneak 100
-        internal static let vibration = L10n.tr("Localizable", "advancement.adventure.avoid.vibration", fallback: "Sneak 100")
-      }
-      internal enum Biomes {
-        internal enum Visited {
-          /// Badlands
-          internal static let badlands = L10n.tr("Localizable", "advancement.adventure.biomes.visited.badlands", fallback: "Badlands")
-          /// Beach
-          internal static let beach = L10n.tr("Localizable", "advancement.adventure.biomes.visited.beach", fallback: "Beach")
-          /// Desert
-          internal static let desert = L10n.tr("Localizable", "advancement.adventure.biomes.visited.desert", fallback: "Desert")
-          /// Forest
-          internal static let forest = L10n.tr("Localizable", "advancement.adventure.biomes.visited.forest", fallback: "Forest")
-          /// Grove
-          internal static let grove = L10n.tr("Localizable", "advancement.adventure.biomes.visited.grove", fallback: "Grove")
-          /// Jungle
-          internal static let jungle = L10n.tr("Localizable", "advancement.adventure.biomes.visited.jungle", fallback: "Jungle")
-          /// Meadow
-          internal static let meadow = L10n.tr("Localizable", "advancement.adventure.biomes.visited.meadow", fallback: "Meadow")
-          /// Mountains
-          internal static let mountains = L10n.tr("Localizable", "advancement.adventure.biomes.visited.mountains", fallback: "Mountains")
-          /// Ocean
-          internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.ocean", fallback: "Ocean")
-          /// Plains
-          internal static let plains = L10n.tr("Localizable", "advancement.adventure.biomes.visited.plains", fallback: "Plains")
-          /// River
-          internal static let river = L10n.tr("Localizable", "advancement.adventure.biomes.visited.river", fallback: "River")
-          /// Savanna
-          internal static let savanna = L10n.tr("Localizable", "advancement.adventure.biomes.visited.savanna", fallback: "Savanna")
-          /// Swamp
-          internal static let swamp = L10n.tr("Localizable", "advancement.adventure.biomes.visited.swamp", fallback: "Swamp")
-          /// Taiga
-          internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.taiga", fallback: "Taiga")
-          internal enum Badlands {
-            /// Badlands Plateau
-            internal static let plateau = L10n.tr("Localizable", "advancement.adventure.biomes.visited.badlands.plateau", fallback: "Badlands Plateau")
-          }
-          internal enum Bamboo {
-            /// Bamboo Jungle
-            internal static let jungle = L10n.tr("Localizable", "advancement.adventure.biomes.visited.bamboo.jungle", fallback: "Bamboo Jungle")
-            internal enum Jungle {
-              /// Bamboo Hills
-              internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.bamboo.jungle.hills", fallback: "Bamboo Hills")
-            }
-          }
-          internal enum Birch {
-            /// Birch Forest
-            internal static let forest = L10n.tr("Localizable", "advancement.adventure.biomes.visited.birch.forest", fallback: "Birch Forest")
-            internal enum Forest {
-              /// Birch Hills
-              internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.birch.forest.hills", fallback: "Birch Hills")
-            }
-          }
-          internal enum Cold {
-            /// Cold Ocean
-            internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.cold.ocean", fallback: "Cold Ocean")
-          }
-          internal enum Dark {
-            /// Dark Forest
-            internal static let forest = L10n.tr("Localizable", "advancement.adventure.biomes.visited.dark.forest", fallback: "Dark Forest")
-          }
-          internal enum Deep {
-            /// Deep Dark
-            internal static let dark = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.dark", fallback: "Deep Dark")
-            /// Deep Ocean
-            internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.ocean", fallback: "Deep Ocean")
-            internal enum Cold {
-              /// Deep Cold Ocean
-              internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.cold.ocean", fallback: "Deep Cold Ocean")
-            }
-            internal enum Frozen {
-              /// Deep Frozen
-              internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.frozen.ocean", fallback: "Deep Frozen")
-              internal enum Ocean {
-                /// Deep Frozen Ocean
-                internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.frozen.ocean.19", fallback: "Deep Frozen Ocean")
-              }
-            }
-            internal enum Lukewarm {
-              /// Deep Lukewarm
-              internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.lukewarm.ocean", fallback: "Deep Lukewarm")
-              internal enum Ocean {
-                /// Deep Lukewarm Ocean
-                internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.deep.lukewarm.ocean.19", fallback: "Deep Lukewarm Ocean")
-              }
-            }
-          }
-          internal enum Desert {
-            /// Desert Hills
-            internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.desert.hills", fallback: "Desert Hills")
-          }
-          internal enum Dripstone {
-            /// Dripstone Caves
-            internal static let caves = L10n.tr("Localizable", "advancement.adventure.biomes.visited.dripstone.caves", fallback: "Dripstone Caves")
-          }
-          internal enum Eroded {
-            /// Eroded Badlands
-            internal static let badlands = L10n.tr("Localizable", "advancement.adventure.biomes.visited.eroded.badlands", fallback: "Eroded Badlands")
-          }
-          internal enum Flower {
-            /// Flower Forest
-            internal static let forest = L10n.tr("Localizable", "advancement.adventure.biomes.visited.flower.forest", fallback: "Flower Forest")
-          }
-          internal enum Frozen {
-            /// Frozen Ocean
-            internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.frozen.ocean", fallback: "Frozen Ocean")
-            /// Frozen Peaks
-            internal static let peaks = L10n.tr("Localizable", "advancement.adventure.biomes.visited.frozen.peaks", fallback: "Frozen Peaks")
-            /// Frozen River
-            internal static let river = L10n.tr("Localizable", "advancement.adventure.biomes.visited.frozen.river", fallback: "Frozen River")
-          }
-          internal enum Giant {
-            internal enum Tree {
-              /// Mega Taiga
-              internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.giant.tree.taiga", fallback: "Mega Taiga")
-              internal enum Taiga {
-                /// Mega Taiga Hill
-                internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.giant.tree.taiga.hills", fallback: "Mega Taiga Hill")
-              }
-            }
-          }
-          internal enum Ice {
-            /// Ice Spikes
-            internal static let spikes = L10n.tr("Localizable", "advancement.adventure.biomes.visited.ice.spikes", fallback: "Ice Spikes")
-          }
-          internal enum Jagged {
-            /// Jagged Peaks
-            internal static let peaks = L10n.tr("Localizable", "advancement.adventure.biomes.visited.jagged.peaks", fallback: "Jagged Peaks")
-          }
-          internal enum Jungle {
-            /// Jungle Edge
-            internal static let edge = L10n.tr("Localizable", "advancement.adventure.biomes.visited.jungle.edge", fallback: "Jungle Edge")
-            /// Jungle Hills
-            internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.jungle.hills", fallback: "Jungle Hills")
-          }
-          internal enum Lukewarm {
-            /// Lukewarm Ocean
-            internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.lukewarm.ocean", fallback: "Lukewarm Ocean")
-          }
-          internal enum Lush {
-            /// Lush Caves
-            internal static let caves = L10n.tr("Localizable", "advancement.adventure.biomes.visited.lush.caves", fallback: "Lush Caves")
-          }
-          internal enum Mangrove {
-            /// Mangrove Swamp
-            internal static let swamp = L10n.tr("Localizable", "advancement.adventure.biomes.visited.mangrove.swamp", fallback: "Mangrove Swamp")
-          }
-          internal enum Mushroom {
-            /// Mushroom Fields
-            internal static let fields = L10n.tr("Localizable", "advancement.adventure.biomes.visited.mushroom.fields", fallback: "Mushroom Fields")
-            internal enum Field {
-              /// Mushroom Shore
-              internal static let shore = L10n.tr("Localizable", "advancement.adventure.biomes.visited.mushroom.field.shore", fallback: "Mushroom Shore")
-            }
-          }
-          internal enum Old {
-            internal enum Growth {
-              internal enum Birch {
-                /// Old Birch
-                internal static let forest = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.birch.forest", fallback: "Old Birch")
-              }
-              internal enum Pine {
-                /// Old Pine
-                internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.pine.taiga", fallback: "Old Pine")
-                internal enum Taiga {
-                  /// Old Growth Pine
-                  internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.pine.taiga.19", fallback: "Old Growth Pine")
-                }
-              }
-              internal enum Spruce {
-                /// Old Spruce
-                internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.spruce.taiga", fallback: "Old Spruce")
-                internal enum Taiga {
-                  /// Old Growth Spruce
-                  internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.old.growth.spruce.taiga.19", fallback: "Old Growth Spruce")
-                }
-              }
-            }
-          }
-          internal enum Savanna {
-            /// Savanna Plat
-            internal static let plateau = L10n.tr("Localizable", "advancement.adventure.biomes.visited.savanna.plateau", fallback: "Savanna Plat")
-            internal enum Plateau {
-              /// Savanna Plateau
-              internal static let _19 = L10n.tr("Localizable", "advancement.adventure.biomes.visited.savanna.plateau.19", fallback: "Savanna Plateau")
-            }
-          }
-          internal enum Snowy {
-            /// Snowy Beach
-            internal static let beach = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.beach", fallback: "Snowy Beach")
-            /// Snowy Mountain
-            internal static let mountains = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.mountains", fallback: "Snowy Mountain")
-            /// Snowy Plains
-            internal static let plains = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.plains", fallback: "Snowy Plains")
-            /// Snowy Slopes
-            internal static let slopes = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.slopes", fallback: "Snowy Slopes")
-            /// Snowy Taiga
-            internal static let taiga = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.taiga", fallback: "Snowy Taiga")
-            /// Snowy Tundra
-            internal static let tundra = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.tundra", fallback: "Snowy Tundra")
-            internal enum Taiga {
-              /// Snowy Taiga Hill
-              internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.snowy.taiga.hills", fallback: "Snowy Taiga Hill")
-            }
-          }
-          internal enum Sparse {
-            /// Sparse Jungle
-            internal static let jungle = L10n.tr("Localizable", "advancement.adventure.biomes.visited.sparse.jungle", fallback: "Sparse Jungle")
-          }
-          internal enum Stone {
-            /// Stone Shore
-            internal static let shore = L10n.tr("Localizable", "advancement.adventure.biomes.visited.stone.shore", fallback: "Stone Shore")
-          }
-          internal enum Stony {
-            /// Stony Peaks
-            internal static let peaks = L10n.tr("Localizable", "advancement.adventure.biomes.visited.stony.peaks", fallback: "Stony Peaks")
-            /// Stony Shore
-            internal static let shore = L10n.tr("Localizable", "advancement.adventure.biomes.visited.stony.shore", fallback: "Stony Shore")
-          }
-          internal enum Sunflower {
-            /// Sunflowers
-            internal static let plains = L10n.tr("Localizable", "advancement.adventure.biomes.visited.sunflower.plains", fallback: "Sunflowers")
-          }
-          internal enum Taiga {
-            /// Taiga Hills
-            internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.taiga.hills", fallback: "Taiga Hills")
-          }
-          internal enum Warm {
-            /// Warm Ocean
-            internal static let ocean = L10n.tr("Localizable", "advancement.adventure.biomes.visited.warm.ocean", fallback: "Warm Ocean")
-          }
-          internal enum Windswept {
-            /// Windswept Forest
-            internal static let forest = L10n.tr("Localizable", "advancement.adventure.biomes.visited.windswept.forest", fallback: "Windswept Forest")
-            /// Windswept Hills
-            internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.windswept.hills", fallback: "Windswept Hills")
-            /// Windswept Savanna
-            internal static let savanna = L10n.tr("Localizable", "advancement.adventure.biomes.visited.windswept.savanna", fallback: "Windswept Savanna")
-            internal enum Gravelly {
-              /// Windswept Gravel
-              internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.windswept.gravelly.hills", fallback: "Windswept Gravel")
-            }
-          }
-          internal enum Wooded {
-            /// Wooded Badlands
-            internal static let badlands = L10n.tr("Localizable", "advancement.adventure.biomes.visited.wooded.badlands", fallback: "Wooded Badlands")
-            /// Wooded Hills
-            internal static let hills = L10n.tr("Localizable", "advancement.adventure.biomes.visited.wooded.hills", fallback: "Wooded Hills")
-            /// Wooded Mtn
-            internal static let mountains = L10n.tr("Localizable", "advancement.adventure.biomes.visited.wooded.mountains", fallback: "Wooded Mtn")
-            internal enum Badlands {
-              /// Wooded Plateau
-              internal static let plateau = L10n.tr("Localizable", "advancement.adventure.biomes.visited.wooded.badlands.plateau", fallback: "Wooded Plateau")
-            }
-          }
-        }
-      }
-      internal enum Fall {
-        internal enum From {
-          internal enum World {
-            /// Caves and Cliffs
-            internal static let height = L10n.tr("Localizable", "advancement.adventure.fall.from.world.height", fallback: "Caves and Cliffs")
-          }
-        }
-      }
-      internal enum Hero {
-        internal enum Of {
-          internal enum The {
-            /// Hero of the Village
-            internal static let village = L10n.tr("Localizable", "advancement.adventure.hero.of.the.village", fallback: "Hero of the Village")
-          }
-        }
-      }
-      internal enum Honey {
-        internal enum Block {
-          /// Sticky Situation
-          internal static let slide = L10n.tr("Localizable", "advancement.adventure.honey.block.slide", fallback: "Sticky Situation")
-        }
-      }
-      internal enum Kill {
-        internal enum A {
-          /// Monster Hunter
-          internal static let mob = L10n.tr("Localizable", "advancement.adventure.kill.a.mob", fallback: "Monster Hunter")
-        }
-        internal enum All {
-          /// Monsters Hunted
-          internal static let mobs = L10n.tr("Localizable", "advancement.adventure.kill.all.mobs", fallback: "Monsters Hunted")
-        }
-        internal enum Mob {
-          internal enum Near {
-            internal enum Sculk {
-              /// It Spreads
-              internal static let catalyst = L10n.tr("Localizable", "advancement.adventure.kill.mob.near.sculk.catalyst", fallback: "It Spreads")
-            }
-          }
-        }
-      }
-      internal enum Lightning {
-        internal enum Rod {
-          internal enum With {
-            internal enum Villager {
-              internal enum No {
-                /// Surge Protector
-                internal static let fire = L10n.tr("Localizable", "advancement.adventure.lightning.rod.with.villager.no.fire", fallback: "Surge Protector")
-              }
-            }
-          }
-        }
-      }
-      internal enum Monsters {
-        internal enum Killed {
-          /// Blaze
-          internal static let blaze = L10n.tr("Localizable", "advancement.adventure.monsters.killed.blaze", fallback: "Blaze")
-          /// Creeper
-          internal static let creeper = L10n.tr("Localizable", "advancement.adventure.monsters.killed.creeper", fallback: "Creeper")
-          /// Drowned
-          internal static let drowned = L10n.tr("Localizable", "advancement.adventure.monsters.killed.drowned", fallback: "Drowned")
-          /// Enderman
-          internal static let enderman = L10n.tr("Localizable", "advancement.adventure.monsters.killed.enderman", fallback: "Enderman")
-          /// Endermite
-          internal static let endermite = L10n.tr("Localizable", "advancement.adventure.monsters.killed.endermite", fallback: "Endermite")
-          /// Evoker
-          internal static let evoker = L10n.tr("Localizable", "advancement.adventure.monsters.killed.evoker", fallback: "Evoker")
-          /// Ghast
-          internal static let ghast = L10n.tr("Localizable", "advancement.adventure.monsters.killed.ghast", fallback: "Ghast")
-          /// Guardian
-          internal static let guardian = L10n.tr("Localizable", "advancement.adventure.monsters.killed.guardian", fallback: "Guardian")
-          /// Hoglin
-          internal static let hoglin = L10n.tr("Localizable", "advancement.adventure.monsters.killed.hoglin", fallback: "Hoglin")
-          /// Husk
-          internal static let husk = L10n.tr("Localizable", "advancement.adventure.monsters.killed.husk", fallback: "Husk")
-          /// Phantom
-          internal static let phantom = L10n.tr("Localizable", "advancement.adventure.monsters.killed.phantom", fallback: "Phantom")
-          /// Piglin
-          internal static let piglin = L10n.tr("Localizable", "advancement.adventure.monsters.killed.piglin", fallback: "Piglin")
-          /// Pillager
-          internal static let pillager = L10n.tr("Localizable", "advancement.adventure.monsters.killed.pillager", fallback: "Pillager")
-          /// Ravager
-          internal static let ravager = L10n.tr("Localizable", "advancement.adventure.monsters.killed.ravager", fallback: "Ravager")
-          /// Shulker
-          internal static let shulker = L10n.tr("Localizable", "advancement.adventure.monsters.killed.shulker", fallback: "Shulker")
-          /// Silverfish
-          internal static let silverfish = L10n.tr("Localizable", "advancement.adventure.monsters.killed.silverfish", fallback: "Silverfish")
-          /// Skeleton
-          internal static let skeleton = L10n.tr("Localizable", "advancement.adventure.monsters.killed.skeleton", fallback: "Skeleton")
-          /// Slime
-          internal static let slime = L10n.tr("Localizable", "advancement.adventure.monsters.killed.slime", fallback: "Slime")
-          /// Spider
-          internal static let spider = L10n.tr("Localizable", "advancement.adventure.monsters.killed.spider", fallback: "Spider")
-          /// Stray
-          internal static let stray = L10n.tr("Localizable", "advancement.adventure.monsters.killed.stray", fallback: "Stray")
-          /// Vex
-          internal static let vex = L10n.tr("Localizable", "advancement.adventure.monsters.killed.vex", fallback: "Vex")
-          /// Vindicator
-          internal static let vindicator = L10n.tr("Localizable", "advancement.adventure.monsters.killed.vindicator", fallback: "Vindicator")
-          /// Witch
-          internal static let witch = L10n.tr("Localizable", "advancement.adventure.monsters.killed.witch", fallback: "Witch")
-          /// Wither
-          internal static let wither = L10n.tr("Localizable", "advancement.adventure.monsters.killed.wither", fallback: "Wither")
-          /// Zoglin
-          internal static let zoglin = L10n.tr("Localizable", "advancement.adventure.monsters.killed.zoglin", fallback: "Zoglin")
-          /// Zombie
-          internal static let zombie = L10n.tr("Localizable", "advancement.adventure.monsters.killed.zombie", fallback: "Zombie")
-          internal enum Cave {
-            /// Cave Spider
-            internal static let spider = L10n.tr("Localizable", "advancement.adventure.monsters.killed.cave.spider", fallback: "Cave Spider")
-          }
-          internal enum Elder {
-            /// Elder Guardian
-            internal static let guardian = L10n.tr("Localizable", "advancement.adventure.monsters.killed.elder.guardian", fallback: "Elder Guardian")
-          }
-          internal enum Ender {
-            /// Ender Dragon
-            internal static let dragon = L10n.tr("Localizable", "advancement.adventure.monsters.killed.ender.dragon", fallback: "Ender Dragon")
-          }
-          internal enum Magma {
-            /// Magma Cube
-            internal static let cube = L10n.tr("Localizable", "advancement.adventure.monsters.killed.magma.cube", fallback: "Magma Cube")
-          }
-          internal enum Piglin {
-            /// Piglin Brute
-            internal static let brute = L10n.tr("Localizable", "advancement.adventure.monsters.killed.piglin.brute", fallback: "Piglin Brute")
-          }
-          internal enum Wither {
-            /// Wither Skeleton
-            internal static let skeleton = L10n.tr("Localizable", "advancement.adventure.monsters.killed.wither.skeleton", fallback: "Wither Skeleton")
-          }
-          internal enum Zombie {
-            /// Zombie Villager
-            internal static let villager = L10n.tr("Localizable", "advancement.adventure.monsters.killed.zombie.villager", fallback: "Zombie Villager")
-          }
-          internal enum Zombified {
-            /// Zombie Piglin
-            internal static let piglin = L10n.tr("Localizable", "advancement.adventure.monsters.killed.zombified.piglin", fallback: "Zombie Piglin")
-          }
-        }
-      }
-      internal enum Ol {
-        /// Ol' Betsy
-        internal static let betsy = L10n.tr("Localizable", "advancement.adventure.ol.betsy", fallback: "Ol' Betsy")
-      }
-      internal enum Play {
-        internal enum Jukebox {
-          internal enum In {
-            /// Sound of Music
-            internal static let meadows = L10n.tr("Localizable", "advancement.adventure.play.jukebox.in.meadows", fallback: "Sound of Music")
-          }
-        }
-      }
-      internal enum Shoot {
-        /// Take Aim
-        internal static let arrow = L10n.tr("Localizable", "advancement.adventure.shoot.arrow", fallback: "Take Aim")
-      }
-      internal enum Sleep {
-        internal enum In {
-          /// Sweet
-          /// Dreams
-          internal static let bed = L10n.tr("Localizable", "advancement.adventure.sleep.in.bed", fallback: "Sweet\nDreams")
-        }
-      }
-      internal enum Sniper {
-        /// Sniper Duel
-        internal static let duel = L10n.tr("Localizable", "advancement.adventure.sniper.duel", fallback: "Sniper Duel")
-      }
-      internal enum Spyglass {
-        internal enum At {
-          /// Is It a
-          /// Plane?
-          internal static let dragon = L10n.tr("Localizable", "advancement.adventure.spyglass.at.dragon", fallback: "Is It a\nPlane?")
-          /// Is It a
-          /// Balloon?
-          internal static let ghast = L10n.tr("Localizable", "advancement.adventure.spyglass.at.ghast", fallback: "Is It a\nBalloon?")
-          /// Is It a
-          /// Bird?
-          internal static let parrot = L10n.tr("Localizable", "advancement.adventure.spyglass.at.parrot", fallback: "Is It a\nBird?")
-        }
-      }
-      internal enum Summon {
-        internal enum Iron {
-          /// Hired Help
-          internal static let golem = L10n.tr("Localizable", "advancement.adventure.summon.iron.golem", fallback: "Hired Help")
-        }
-      }
-      internal enum Throw {
-        /// A Throwaway Joke
-        internal static let trident = L10n.tr("Localizable", "advancement.adventure.throw.trident", fallback: "A Throwaway Joke")
-      }
-      internal enum Totem {
-        internal enum Of {
-          /// Postmortal
-          internal static let undying = L10n.tr("Localizable", "advancement.adventure.totem.of.undying", fallback: "Postmortal")
-        }
-      }
-      internal enum Trade {
-        internal enum At {
-          internal enum World {
-            /// Star Trader
-            internal static let height = L10n.tr("Localizable", "advancement.adventure.trade.at.world.height", fallback: "Star Trader")
-          }
-        }
-      }
-      internal enum Two {
-        internal enum Birds {
-          internal enum One {
-            /// Two Birds,
-            /// One Arrow
-            internal static let arrow = L10n.tr("Localizable", "advancement.adventure.two.birds.one.arrow", fallback: "Two Birds,\nOne Arrow")
-          }
-        }
-      }
-      internal enum Very {
-        internal enum Very {
-          /// Very Very Frightening
-          internal static let frightening = L10n.tr("Localizable", "advancement.adventure.very.very.frightening", fallback: "Very Very Frightening")
-        }
-      }
-      internal enum Voluntary {
-        /// Voluntary Exile
-        internal static let exile = L10n.tr("Localizable", "advancement.adventure.voluntary.exile", fallback: "Voluntary Exile")
-      }
-      internal enum Walk {
-        internal enum On {
-          internal enum Powder {
-            internal enum Snow {
-              internal enum With {
-                internal enum Leather {
-                  /// Light as a Rabbit
-                  internal static let boots = L10n.tr("Localizable", "advancement.adventure.walk.on.powder.snow.with.leather.boots", fallback: "Light as a Rabbit")
-                }
-              }
-            }
-          }
-        }
-      }
-      internal enum Whos {
-        internal enum The {
-          internal enum Pillager {
-            /// Who's the Pillager Now?
-            internal static let now = L10n.tr("Localizable", "advancement.adventure.whos.the.pillager.now", fallback: "Who's the Pillager Now?")
-          }
-        }
-      }
+      /// Star Trader
+      internal static let tradeAtWorldHeight = L10n.tr("Localizable", "advancement.adventure.trade_at_world_height", fallback: "Star Trader")
+      /// Smithing With Style
+      internal static let trimWithAllExclusiveArmorPatterns = L10n.tr("Localizable", "advancement.adventure.trim_with_all_exclusive_armor_patterns", fallback: "Smithing With Style")
+      /// Crafting a New Look
+      internal static let trimWithAnyArmorPattern = L10n.tr("Localizable", "advancement.adventure.trim_with_any_armor_pattern", fallback: "Crafting a New Look")
+      /// Two Birds,
+      /// One Arrow
+      internal static let twoBirdsOneArrow = L10n.tr("Localizable", "advancement.adventure.two_birds_one_arrow", fallback: "Two Birds,\nOne Arrow")
+      /// Very Very Frightening
+      internal static let veryVeryFrightening = L10n.tr("Localizable", "advancement.adventure.very_very_frightening", fallback: "Very Very Frightening")
+      /// Voluntary Exile
+      internal static let voluntaryExile = L10n.tr("Localizable", "advancement.adventure.voluntary_exile", fallback: "Voluntary Exile")
+      /// Light as a Rabbit
+      internal static let walkOnPowderSnowWithLeatherBoots = L10n.tr("Localizable", "advancement.adventure.walk_on_powder_snow_with_leather_boots", fallback: "Light as a Rabbit")
+      /// Who's the Pillager Now?
+      internal static let whosThePillagerNow = L10n.tr("Localizable", "advancement.adventure.whos_the_pillager_now", fallback: "Who's the Pillager Now?")
     }
     internal enum End {
+      /// You Need a Mint
+      internal static let dragonBreath = L10n.tr("Localizable", "advancement.end.dragon_breath", fallback: "You Need a Mint")
+      /// The Next Generation
+      internal static let dragonEgg = L10n.tr("Localizable", "advancement.end.dragon_egg", fallback: "The Next Generation")
       /// Sky's the
       /// Limit
       internal static let elytra = L10n.tr("Localizable", "advancement.end.elytra", fallback: "Sky's the\nLimit")
+      /// Remote
+      /// Getaway
+      internal static let enterEndGateway = L10n.tr("Localizable", "advancement.end.enter_end_gateway", fallback: "Remote\nGetaway")
+      /// City at End of the Game
+      internal static let findEndCity = L10n.tr("Localizable", "advancement.end.find_end_city", fallback: "City at End of the Game")
+      /// Free the
+      /// End
+      internal static let killDragon = L10n.tr("Localizable", "advancement.end.kill_dragon", fallback: "Free the\nEnd")
       /// Great View From Here
       internal static let levitate = L10n.tr("Localizable", "advancement.end.levitate", fallback: "Great View From Here")
+      /// The End... Again...
+      internal static let respawnDragon = L10n.tr("Localizable", "advancement.end.respawn_dragon", fallback: "The End... Again...")
       /// The End
       internal static let root = L10n.tr("Localizable", "advancement.end.root", fallback: "The End")
-      internal enum Dragon {
-        /// You Need a Mint
-        internal static let breath = L10n.tr("Localizable", "advancement.end.dragon.breath", fallback: "You Need a Mint")
-        /// The Next Generation
-        internal static let egg = L10n.tr("Localizable", "advancement.end.dragon.egg", fallback: "The Next Generation")
-      }
-      internal enum Enter {
-        internal enum End {
-          /// Remote
-          /// Getaway
-          internal static let gateway = L10n.tr("Localizable", "advancement.end.enter.end.gateway", fallback: "Remote\nGetaway")
-        }
-      }
-      internal enum Find {
-        internal enum End {
-          /// City at the End of the Game
-          internal static let city = L10n.tr("Localizable", "advancement.end.find.end.city", fallback: "City at the End of the Game")
-          internal enum City {
-            /// City at End
-            /// of the Game
-            internal static let _19 = L10n.tr("Localizable", "advancement.end.find.end.city.19", fallback: "City at End\nof the Game")
-          }
-        }
-      }
-      internal enum Kill {
-        ///  Free the
-        /// End
-        internal static let dragon = L10n.tr("Localizable", "advancement.end.kill.dragon", fallback: " Free the\nEnd")
-      }
-      internal enum Respawn {
-        /// The End... Again...
-        internal static let dragon = L10n.tr("Localizable", "advancement.end.respawn.dragon", fallback: "The End... Again...")
+      internal enum FindEndCity {
+        /// City at End
+        /// of the Game
+        internal static let _19 = L10n.tr("Localizable", "advancement.end.find_end_city.19", fallback: "City at End\nof the Game")
       }
     }
-    internal enum Husbandry {
-      /// Our Powers Combined!
-      internal static let froglights = L10n.tr("Localizable", "advancement.husbandry.froglights", fallback: "Our Powers Combined!")
-      /// Husbandry
-      internal static let root = L10n.tr("Localizable", "advancement.husbandry.root", fallback: "Husbandry")
-      internal enum Allay {
-        internal enum Deliver {
-          internal enum Cake {
-            internal enum To {
-              internal enum Note {
-                /// Birthday
-                /// Song
-                internal static let block = L10n.tr("Localizable", "advancement.husbandry.allay.deliver.cake.to.note.block", fallback: "Birthday\nSong")
-              }
-            }
-          }
-          internal enum Item {
-            internal enum To {
-              /// You've Got a Friend in Me
-              internal static let player = L10n.tr("Localizable", "advancement.husbandry.allay.deliver.item.to.player", fallback: "You've Got a Friend in Me")
-            }
-          }
+    internal enum Goal {
+      internal enum AnimalsBred {
+        /// Axolotl
+        internal static let axolotl = L10n.tr("Localizable", "advancement.goal.animals_bred.axolotl", fallback: "Axolotl")
+        /// Bee
+        internal static let bee = L10n.tr("Localizable", "advancement.goal.animals_bred.bee", fallback: "Bee")
+        /// Camel
+        internal static let camel = L10n.tr("Localizable", "advancement.goal.animals_bred.camel", fallback: "Camel")
+        /// Cat
+        internal static let cat = L10n.tr("Localizable", "advancement.goal.animals_bred.cat", fallback: "Cat")
+        /// Chicken
+        internal static let chicken = L10n.tr("Localizable", "advancement.goal.animals_bred.chicken", fallback: "Chicken")
+        /// Cow
+        internal static let cow = L10n.tr("Localizable", "advancement.goal.animals_bred.cow", fallback: "Cow")
+        /// Donkey
+        internal static let donkey = L10n.tr("Localizable", "advancement.goal.animals_bred.donkey", fallback: "Donkey")
+        /// Fox
+        internal static let fox = L10n.tr("Localizable", "advancement.goal.animals_bred.fox", fallback: "Fox")
+        /// Frog
+        internal static let frog = L10n.tr("Localizable", "advancement.goal.animals_bred.frog", fallback: "Frog")
+        /// Goat
+        internal static let goat = L10n.tr("Localizable", "advancement.goal.animals_bred.goat", fallback: "Goat")
+        /// Hoglin
+        internal static let hoglin = L10n.tr("Localizable", "advancement.goal.animals_bred.hoglin", fallback: "Hoglin")
+        /// Horse
+        internal static let horse = L10n.tr("Localizable", "advancement.goal.animals_bred.horse", fallback: "Horse")
+        /// Llama
+        internal static let llama = L10n.tr("Localizable", "advancement.goal.animals_bred.llama", fallback: "Llama")
+        /// Mooshroom
+        internal static let mooshroom = L10n.tr("Localizable", "advancement.goal.animals_bred.mooshroom", fallback: "Mooshroom")
+        /// Mule
+        internal static let mule = L10n.tr("Localizable", "advancement.goal.animals_bred.mule", fallback: "Mule")
+        /// Ocelot
+        internal static let ocelot = L10n.tr("Localizable", "advancement.goal.animals_bred.ocelot", fallback: "Ocelot")
+        /// Panda
+        internal static let panda = L10n.tr("Localizable", "advancement.goal.animals_bred.panda", fallback: "Panda")
+        /// Pig
+        internal static let pig = L10n.tr("Localizable", "advancement.goal.animals_bred.pig", fallback: "Pig")
+        /// Rabbit
+        internal static let rabbit = L10n.tr("Localizable", "advancement.goal.animals_bred.rabbit", fallback: "Rabbit")
+        /// Sheep
+        internal static let sheep = L10n.tr("Localizable", "advancement.goal.animals_bred.sheep", fallback: "Sheep")
+        /// Sniffer
+        internal static let sniffer = L10n.tr("Localizable", "advancement.goal.animals_bred.sniffer", fallback: "Sniffer")
+        /// Strider
+        internal static let strider = L10n.tr("Localizable", "advancement.goal.animals_bred.strider", fallback: "Strider")
+        /// Turtle
+        internal static let turtle = L10n.tr("Localizable", "advancement.goal.animals_bred.turtle", fallback: "Turtle")
+        /// Wolf
+        internal static let wolf = L10n.tr("Localizable", "advancement.goal.animals_bred.wolf", fallback: "Wolf")
+      }
+      internal enum BiomesVisited {
+        /// Badlands
+        internal static let badlands = L10n.tr("Localizable", "advancement.goal.biomes_visited.badlands", fallback: "Badlands")
+        /// Bamboo Jungle
+        internal static let bambooJungle = L10n.tr("Localizable", "advancement.goal.biomes_visited.bamboo_jungle", fallback: "Bamboo Jungle")
+        /// Beach
+        internal static let beach = L10n.tr("Localizable", "advancement.goal.biomes_visited.beach", fallback: "Beach")
+        /// Birch Forest
+        internal static let birchForest = L10n.tr("Localizable", "advancement.goal.biomes_visited.birch_forest", fallback: "Birch Forest")
+        /// Cherry Grove
+        internal static let cherryGrove = L10n.tr("Localizable", "advancement.goal.biomes_visited.cherry_grove", fallback: "Cherry Grove")
+        /// Cold Ocean
+        internal static let coldOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.cold_ocean", fallback: "Cold Ocean")
+        /// Dark Forest
+        internal static let darkForest = L10n.tr("Localizable", "advancement.goal.biomes_visited.dark_forest", fallback: "Dark Forest")
+        /// Deep Cold Ocean
+        internal static let deepColdOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_cold_ocean", fallback: "Deep Cold Ocean")
+        /// Deep Dark
+        internal static let deepDark = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_dark", fallback: "Deep Dark")
+        /// Deep Frozen
+        internal static let deepFrozenOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_frozen_ocean", fallback: "Deep Frozen")
+        /// Deep Lukewarm
+        internal static let deepLukewarmOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_lukewarm_ocean", fallback: "Deep Lukewarm")
+        /// Deep Ocean
+        internal static let deepOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_ocean", fallback: "Deep Ocean")
+        /// Desert
+        internal static let desert = L10n.tr("Localizable", "advancement.goal.biomes_visited.desert", fallback: "Desert")
+        /// Dripstone Caves
+        internal static let dripstoneCaves = L10n.tr("Localizable", "advancement.goal.biomes_visited.dripstone_caves", fallback: "Dripstone Caves")
+        /// Eroded Badlands
+        internal static let erodedBadlands = L10n.tr("Localizable", "advancement.goal.biomes_visited.eroded_badlands", fallback: "Eroded Badlands")
+        /// Flower Forest
+        internal static let flowerForest = L10n.tr("Localizable", "advancement.goal.biomes_visited.flower_forest", fallback: "Flower Forest")
+        /// Forest
+        internal static let forest = L10n.tr("Localizable", "advancement.goal.biomes_visited.forest", fallback: "Forest")
+        /// Frozen Ocean
+        internal static let frozenOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.frozen_ocean", fallback: "Frozen Ocean")
+        /// Frozen Peaks
+        internal static let frozenPeaks = L10n.tr("Localizable", "advancement.goal.biomes_visited.frozen_peaks", fallback: "Frozen Peaks")
+        /// Frozen River
+        internal static let frozenRiver = L10n.tr("Localizable", "advancement.goal.biomes_visited.frozen_river", fallback: "Frozen River")
+        /// Grove
+        internal static let grove = L10n.tr("Localizable", "advancement.goal.biomes_visited.grove", fallback: "Grove")
+        /// Ice Spikes
+        internal static let iceSpikes = L10n.tr("Localizable", "advancement.goal.biomes_visited.ice_spikes", fallback: "Ice Spikes")
+        /// Jagged Peaks
+        internal static let jaggedPeaks = L10n.tr("Localizable", "advancement.goal.biomes_visited.jagged_peaks", fallback: "Jagged Peaks")
+        /// Jungle
+        internal static let jungle = L10n.tr("Localizable", "advancement.goal.biomes_visited.jungle", fallback: "Jungle")
+        /// Lukewarm Ocean
+        internal static let lukewarmOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.lukewarm_ocean", fallback: "Lukewarm Ocean")
+        /// Lush Caves
+        internal static let lushCaves = L10n.tr("Localizable", "advancement.goal.biomes_visited.lush_caves", fallback: "Lush Caves")
+        /// Mangrove Swamp
+        internal static let mangroveSwamp = L10n.tr("Localizable", "advancement.goal.biomes_visited.mangrove_swamp", fallback: "Mangrove Swamp")
+        /// Meadow
+        internal static let meadow = L10n.tr("Localizable", "advancement.goal.biomes_visited.meadow", fallback: "Meadow")
+        /// Mushroom Fields
+        internal static let mushroomFields = L10n.tr("Localizable", "advancement.goal.biomes_visited.mushroom_fields", fallback: "Mushroom Fields")
+        /// Ocean
+        internal static let ocean = L10n.tr("Localizable", "advancement.goal.biomes_visited.ocean", fallback: "Ocean")
+        /// Old Birch
+        internal static let oldGrowthBirchForest = L10n.tr("Localizable", "advancement.goal.biomes_visited.old_growth_birch_forest", fallback: "Old Birch")
+        /// Old Pine
+        internal static let oldGrowthPineTaiga = L10n.tr("Localizable", "advancement.goal.biomes_visited.old_growth_pine_taiga", fallback: "Old Pine")
+        /// Old Spruce
+        internal static let oldGrowthSpruceTaiga = L10n.tr("Localizable", "advancement.goal.biomes_visited.old_growth_spruce_taiga", fallback: "Old Spruce")
+        /// Plains
+        internal static let plains = L10n.tr("Localizable", "advancement.goal.biomes_visited.plains", fallback: "Plains")
+        /// River
+        internal static let river = L10n.tr("Localizable", "advancement.goal.biomes_visited.river", fallback: "River")
+        /// Savanna
+        internal static let savanna = L10n.tr("Localizable", "advancement.goal.biomes_visited.savanna", fallback: "Savanna")
+        /// Savanna Plat
+        internal static let savannaPlateau = L10n.tr("Localizable", "advancement.goal.biomes_visited.savanna_plateau", fallback: "Savanna Plat")
+        /// Snowy Beach
+        internal static let snowyBeach = L10n.tr("Localizable", "advancement.goal.biomes_visited.snowy_beach", fallback: "Snowy Beach")
+        /// Snowy Plains
+        internal static let snowyPlains = L10n.tr("Localizable", "advancement.goal.biomes_visited.snowy_plains", fallback: "Snowy Plains")
+        /// Snowy Slopes
+        internal static let snowySlopes = L10n.tr("Localizable", "advancement.goal.biomes_visited.snowy_slopes", fallback: "Snowy Slopes")
+        /// Snowy Taiga
+        internal static let snowyTaiga = L10n.tr("Localizable", "advancement.goal.biomes_visited.snowy_taiga", fallback: "Snowy Taiga")
+        /// Sparse Jungle
+        internal static let sparseJungle = L10n.tr("Localizable", "advancement.goal.biomes_visited.sparse_jungle", fallback: "Sparse Jungle")
+        /// Stony Peaks
+        internal static let stonyPeaks = L10n.tr("Localizable", "advancement.goal.biomes_visited.stony_peaks", fallback: "Stony Peaks")
+        /// Stony Shore
+        internal static let stonyShore = L10n.tr("Localizable", "advancement.goal.biomes_visited.stony_shore", fallback: "Stony Shore")
+        /// Sunflowers
+        internal static let sunflowerPlains = L10n.tr("Localizable", "advancement.goal.biomes_visited.sunflower_plains", fallback: "Sunflowers")
+        /// Swamp
+        internal static let swamp = L10n.tr("Localizable", "advancement.goal.biomes_visited.swamp", fallback: "Swamp")
+        /// Taiga
+        internal static let taiga = L10n.tr("Localizable", "advancement.goal.biomes_visited.taiga", fallback: "Taiga")
+        /// Warm Ocean
+        internal static let warmOcean = L10n.tr("Localizable", "advancement.goal.biomes_visited.warm_ocean", fallback: "Warm Ocean")
+        /// Windswept Forest
+        internal static let windsweptForest = L10n.tr("Localizable", "advancement.goal.biomes_visited.windswept_forest", fallback: "Windswept Forest")
+        /// Windswept Gravel
+        internal static let windsweptGravellyHills = L10n.tr("Localizable", "advancement.goal.biomes_visited.windswept_gravelly_hills", fallback: "Windswept Gravel")
+        /// Windswept Hills
+        internal static let windsweptHills = L10n.tr("Localizable", "advancement.goal.biomes_visited.windswept_hills", fallback: "Windswept Hills")
+        /// Windswept Savanna
+        internal static let windsweptSavanna = L10n.tr("Localizable", "advancement.goal.biomes_visited.windswept_savanna", fallback: "Windswept Savanna")
+        /// Wooded Badlands
+        internal static let woodedBadlands = L10n.tr("Localizable", "advancement.goal.biomes_visited.wooded_badlands", fallback: "Wooded Badlands")
+        internal enum DeepFrozenOcean {
+          /// Deep Frozen Ocean
+          internal static let _19 = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_frozen_ocean.19", fallback: "Deep Frozen Ocean")
         }
-      }
-      internal enum Animals {
-        internal enum Bred {
-          /// Axolotl
-          internal static let axolotl = L10n.tr("Localizable", "advancement.husbandry.animals.bred.axolotl", fallback: "Axolotl")
-          /// Bee
-          internal static let bee = L10n.tr("Localizable", "advancement.husbandry.animals.bred.bee", fallback: "Bee")
-          /// Cat
-          internal static let cat = L10n.tr("Localizable", "advancement.husbandry.animals.bred.cat", fallback: "Cat")
-          /// Chicken
-          internal static let chicken = L10n.tr("Localizable", "advancement.husbandry.animals.bred.chicken", fallback: "Chicken")
-          /// Cow
-          internal static let cow = L10n.tr("Localizable", "advancement.husbandry.animals.bred.cow", fallback: "Cow")
-          /// Donkey
-          internal static let donkey = L10n.tr("Localizable", "advancement.husbandry.animals.bred.donkey", fallback: "Donkey")
-          /// Fox
-          internal static let fox = L10n.tr("Localizable", "advancement.husbandry.animals.bred.fox", fallback: "Fox")
-          /// Frog
-          internal static let frog = L10n.tr("Localizable", "advancement.husbandry.animals.bred.frog", fallback: "Frog")
-          /// Goat
-          internal static let goat = L10n.tr("Localizable", "advancement.husbandry.animals.bred.goat", fallback: "Goat")
-          /// Hoglin
-          internal static let hoglin = L10n.tr("Localizable", "advancement.husbandry.animals.bred.hoglin", fallback: "Hoglin")
-          /// Horse
-          internal static let horse = L10n.tr("Localizable", "advancement.husbandry.animals.bred.horse", fallback: "Horse")
-          /// Llama
-          internal static let llama = L10n.tr("Localizable", "advancement.husbandry.animals.bred.llama", fallback: "Llama")
-          /// Mooshroom
-          internal static let mooshroom = L10n.tr("Localizable", "advancement.husbandry.animals.bred.mooshroom", fallback: "Mooshroom")
-          /// Mule
-          internal static let mule = L10n.tr("Localizable", "advancement.husbandry.animals.bred.mule", fallback: "Mule")
-          /// Ocelot
-          internal static let ocelot = L10n.tr("Localizable", "advancement.husbandry.animals.bred.ocelot", fallback: "Ocelot")
-          /// Panda
-          internal static let panda = L10n.tr("Localizable", "advancement.husbandry.animals.bred.panda", fallback: "Panda")
-          /// Pig
-          internal static let pig = L10n.tr("Localizable", "advancement.husbandry.animals.bred.pig", fallback: "Pig")
-          /// Rabbit
-          internal static let rabbit = L10n.tr("Localizable", "advancement.husbandry.animals.bred.rabbit", fallback: "Rabbit")
-          /// Sheep
-          internal static let sheep = L10n.tr("Localizable", "advancement.husbandry.animals.bred.sheep", fallback: "Sheep")
-          /// Strider
-          internal static let strider = L10n.tr("Localizable", "advancement.husbandry.animals.bred.strider", fallback: "Strider")
-          /// Turtle
-          internal static let turtle = L10n.tr("Localizable", "advancement.husbandry.animals.bred.turtle", fallback: "Turtle")
-          /// Wolf
-          internal static let wolf = L10n.tr("Localizable", "advancement.husbandry.animals.bred.wolf", fallback: "Wolf")
+        internal enum DeepLukewarmOcean {
+          /// Deep Lukewarm Ocean
+          internal static let _19 = L10n.tr("Localizable", "advancement.goal.biomes_visited.deep_lukewarm_ocean.19", fallback: "Deep Lukewarm Ocean")
         }
-      }
-      internal enum Axolotl {
-        internal enum In {
-          internal enum A {
-            /// The Cutest Predator
-            internal static let bucket = L10n.tr("Localizable", "advancement.husbandry.axolotl.in.a.bucket", fallback: "The Cutest Predator")
-          }
+        internal enum OldGrowthPineTaiga {
+          /// Old Growth Pine
+          internal static let _19 = L10n.tr("Localizable", "advancement.goal.biomes_visited.old_growth_pine_taiga.19", fallback: "Old Growth Pine")
         }
-      }
-      internal enum Balanced {
-        /// A Balanced Diet
-        internal static let diet = L10n.tr("Localizable", "advancement.husbandry.balanced.diet", fallback: "A Balanced Diet")
-      }
-      internal enum Bred {
-        internal enum All {
-          /// Two by Two
-          internal static let animals = L10n.tr("Localizable", "advancement.husbandry.bred.all.animals", fallback: "Two by Two")
+        internal enum OldGrowthSpruceTaiga {
+          /// Old Growth Spruce
+          internal static let _19 = L10n.tr("Localizable", "advancement.goal.biomes_visited.old_growth_spruce_taiga.19", fallback: "Old Growth Spruce")
         }
-      }
-      internal enum Breed {
-        internal enum An {
-          /// The Parrots
-          /// and the Bats
-          internal static let animal = L10n.tr("Localizable", "advancement.husbandry.breed.an.animal", fallback: "The Parrots\nand the Bats")
+        internal enum SavannaPlateau {
+          /// Savanna Plateau
+          internal static let _19 = L10n.tr("Localizable", "advancement.goal.biomes_visited.savanna_plateau.19", fallback: "Savanna Plateau")
         }
       }
       internal enum Cats {
+        /// Black
+        internal static let allBlack = L10n.tr("Localizable", "advancement.goal.cats.all_black", fallback: "Black")
         /// Tuxedo
-        internal static let black = L10n.tr("Localizable", "advancement.husbandry.cats.black", fallback: "Tuxedo")
+        internal static let black = L10n.tr("Localizable", "advancement.goal.cats.black", fallback: "Tuxedo")
+        /// British
+        internal static let britishShorthair = L10n.tr("Localizable", "advancement.goal.cats.british_shorthair", fallback: "British")
         /// Calico
-        internal static let calico = L10n.tr("Localizable", "advancement.husbandry.cats.calico", fallback: "Calico")
+        internal static let calico = L10n.tr("Localizable", "advancement.goal.cats.calico", fallback: "Calico")
         /// Jellie
-        internal static let jellie = L10n.tr("Localizable", "advancement.husbandry.cats.jellie", fallback: "Jellie")
+        internal static let jellie = L10n.tr("Localizable", "advancement.goal.cats.jellie", fallback: "Jellie")
         /// Persian
-        internal static let persian = L10n.tr("Localizable", "advancement.husbandry.cats.persian", fallback: "Persian")
+        internal static let persian = L10n.tr("Localizable", "advancement.goal.cats.persian", fallback: "Persian")
         /// Ragdoll
-        internal static let ragdoll = L10n.tr("Localizable", "advancement.husbandry.cats.ragdoll", fallback: "Ragdoll")
+        internal static let ragdoll = L10n.tr("Localizable", "advancement.goal.cats.ragdoll", fallback: "Ragdoll")
         /// Red
-        internal static let red = L10n.tr("Localizable", "advancement.husbandry.cats.red", fallback: "Red")
+        internal static let red = L10n.tr("Localizable", "advancement.goal.cats.red", fallback: "Red")
         /// Siamese
-        internal static let siamese = L10n.tr("Localizable", "advancement.husbandry.cats.siamese", fallback: "Siamese")
+        internal static let siamese = L10n.tr("Localizable", "advancement.goal.cats.siamese", fallback: "Siamese")
         /// Tabby
-        internal static let tabby = L10n.tr("Localizable", "advancement.husbandry.cats.tabby", fallback: "Tabby")
+        internal static let tabby = L10n.tr("Localizable", "advancement.goal.cats.tabby", fallback: "Tabby")
         /// White
-        internal static let white = L10n.tr("Localizable", "advancement.husbandry.cats.white", fallback: "White")
-        internal enum All {
-          /// Black
-          internal static let black = L10n.tr("Localizable", "advancement.husbandry.cats.all.black", fallback: "Black")
-        }
-        internal enum British {
-          /// British
-          internal static let shorthair = L10n.tr("Localizable", "advancement.husbandry.cats.british.shorthair", fallback: "British")
-        }
+        internal static let white = L10n.tr("Localizable", "advancement.goal.cats.white", fallback: "White")
       }
-      internal enum Complete {
-        /// A Complete Catalogue
-        internal static let catalogue = L10n.tr("Localizable", "advancement.husbandry.complete.catalogue", fallback: "A Complete Catalogue")
+      internal enum FoodsEaten {
+        /// Apple
+        internal static let apple = L10n.tr("Localizable", "advancement.goal.foods_eaten.apple", fallback: "Apple")
+        /// Baked Potato
+        internal static let bakedPotato = L10n.tr("Localizable", "advancement.goal.foods_eaten.baked_potato", fallback: "Baked Potato")
+        /// Raw Beef
+        internal static let beef = L10n.tr("Localizable", "advancement.goal.foods_eaten.beef", fallback: "Raw Beef")
+        /// Beetroot
+        internal static let beetroot = L10n.tr("Localizable", "advancement.goal.foods_eaten.beetroot", fallback: "Beetroot")
+        /// Beet Soup
+        internal static let beetrootSoup = L10n.tr("Localizable", "advancement.goal.foods_eaten.beetroot_soup", fallback: "Beet Soup")
+        /// Bread
+        internal static let bread = L10n.tr("Localizable", "advancement.goal.foods_eaten.bread", fallback: "Bread")
+        /// Carrot
+        internal static let carrot = L10n.tr("Localizable", "advancement.goal.foods_eaten.carrot", fallback: "Carrot")
+        /// Raw Chicken
+        internal static let chicken = L10n.tr("Localizable", "advancement.goal.foods_eaten.chicken", fallback: "Raw Chicken")
+        /// Chorus Fruit
+        internal static let chorusFruit = L10n.tr("Localizable", "advancement.goal.foods_eaten.chorus_fruit", fallback: "Chorus Fruit")
+        /// Raw Cod
+        internal static let cod = L10n.tr("Localizable", "advancement.goal.foods_eaten.cod", fallback: "Raw Cod")
+        /// Beef
+        internal static let cookedBeef = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_beef", fallback: "Beef")
+        /// Chicken
+        internal static let cookedChicken = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_chicken", fallback: "Chicken")
+        /// Cod
+        internal static let cookedCod = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_cod", fallback: "Cod")
+        /// Mutton
+        internal static let cookedMutton = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_mutton", fallback: "Mutton")
+        /// Porkchop
+        internal static let cookedPorkchop = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_porkchop", fallback: "Porkchop")
+        /// Rabbit
+        internal static let cookedRabbit = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_rabbit", fallback: "Rabbit")
+        /// Salmon
+        internal static let cookedSalmon = L10n.tr("Localizable", "advancement.goal.foods_eaten.cooked_salmon", fallback: "Salmon")
+        /// Cookie
+        internal static let cookie = L10n.tr("Localizable", "advancement.goal.foods_eaten.cookie", fallback: "Cookie")
+        /// Dried Kelp
+        internal static let driedKelp = L10n.tr("Localizable", "advancement.goal.foods_eaten.dried_kelp", fallback: "Dried Kelp")
+        /// God Apple
+        internal static let enchantedGoldenApple = L10n.tr("Localizable", "advancement.goal.foods_eaten.enchanted_golden_apple", fallback: "God Apple")
+        /// Glow Berries
+        internal static let glowBerries = L10n.tr("Localizable", "advancement.goal.foods_eaten.glow_berries", fallback: "Glow Berries")
+        /// Golden Apple
+        internal static let goldenApple = L10n.tr("Localizable", "advancement.goal.foods_eaten.golden_apple", fallback: "Golden Apple")
+        /// Golden Carrot
+        internal static let goldenCarrot = L10n.tr("Localizable", "advancement.goal.foods_eaten.golden_carrot", fallback: "Golden Carrot")
+        /// Honey Bottle
+        internal static let honeyBottle = L10n.tr("Localizable", "advancement.goal.foods_eaten.honey_bottle", fallback: "Honey Bottle")
+        /// Melon Slice
+        internal static let melonSlice = L10n.tr("Localizable", "advancement.goal.foods_eaten.melon_slice", fallback: "Melon Slice")
+        /// Shroom Stew
+        internal static let mushroomStew = L10n.tr("Localizable", "advancement.goal.foods_eaten.mushroom_stew", fallback: "Shroom Stew")
+        /// Raw Mutton
+        internal static let mutton = L10n.tr("Localizable", "advancement.goal.foods_eaten.mutton", fallback: "Raw Mutton")
+        /// Poison Potato
+        internal static let poisonousPotato = L10n.tr("Localizable", "advancement.goal.foods_eaten.poisonous_potato", fallback: "Poison Potato")
+        /// Raw Porkchop
+        internal static let porkchop = L10n.tr("Localizable", "advancement.goal.foods_eaten.porkchop", fallback: "Raw Porkchop")
+        /// Potato
+        internal static let potato = L10n.tr("Localizable", "advancement.goal.foods_eaten.potato", fallback: "Potato")
+        /// Pufferfish
+        internal static let pufferfish = L10n.tr("Localizable", "advancement.goal.foods_eaten.pufferfish", fallback: "Pufferfish")
+        /// Pumpkin Pie
+        internal static let pumpkinPie = L10n.tr("Localizable", "advancement.goal.foods_eaten.pumpkin_pie", fallback: "Pumpkin Pie")
+        /// Raw Rabbit
+        internal static let rabbit = L10n.tr("Localizable", "advancement.goal.foods_eaten.rabbit", fallback: "Raw Rabbit")
+        /// Rabbit Stew
+        internal static let rabbitStew = L10n.tr("Localizable", "advancement.goal.foods_eaten.rabbit_stew", fallback: "Rabbit Stew")
+        /// Rotten Flesh
+        internal static let rottenFlesh = L10n.tr("Localizable", "advancement.goal.foods_eaten.rotten_flesh", fallback: "Rotten Flesh")
+        /// Raw Salmon
+        internal static let salmon = L10n.tr("Localizable", "advancement.goal.foods_eaten.salmon", fallback: "Raw Salmon")
+        /// Spider Eye
+        internal static let spiderEye = L10n.tr("Localizable", "advancement.goal.foods_eaten.spider_eye", fallback: "Spider Eye")
+        /// Sus Stew
+        internal static let suspiciousStew = L10n.tr("Localizable", "advancement.goal.foods_eaten.suspicious_stew", fallback: "Sus Stew")
+        /// Sweet Berries
+        internal static let sweetBerries = L10n.tr("Localizable", "advancement.goal.foods_eaten.sweet_berries", fallback: "Sweet Berries")
+        /// Tropical Fish
+        internal static let tropicalFish = L10n.tr("Localizable", "advancement.goal.foods_eaten.tropical_fish", fallback: "Tropical Fish")
       }
-      internal enum Fishy {
-        /// Fishy
-        /// Business
-        internal static let business = L10n.tr("Localizable", "advancement.husbandry.fishy.business", fallback: "Fishy\nBusiness")
+      internal enum MonstersKilled {
+        /// Blaze
+        internal static let blaze = L10n.tr("Localizable", "advancement.goal.monsters_killed.blaze", fallback: "Blaze")
+        /// Cave Spider
+        internal static let caveSpider = L10n.tr("Localizable", "advancement.goal.monsters_killed.cave_spider", fallback: "Cave Spider")
+        /// Creeper
+        internal static let creeper = L10n.tr("Localizable", "advancement.goal.monsters_killed.creeper", fallback: "Creeper")
+        /// Drowned
+        internal static let drowned = L10n.tr("Localizable", "advancement.goal.monsters_killed.drowned", fallback: "Drowned")
+        /// Elder Guardian
+        internal static let elderGuardian = L10n.tr("Localizable", "advancement.goal.monsters_killed.elder_guardian", fallback: "Elder Guardian")
+        /// Ender Dragon
+        internal static let enderDragon = L10n.tr("Localizable", "advancement.goal.monsters_killed.ender_dragon", fallback: "Ender Dragon")
+        /// Enderman
+        internal static let enderman = L10n.tr("Localizable", "advancement.goal.monsters_killed.enderman", fallback: "Enderman")
+        /// Endermite
+        internal static let endermite = L10n.tr("Localizable", "advancement.goal.monsters_killed.endermite", fallback: "Endermite")
+        /// Evoker
+        internal static let evoker = L10n.tr("Localizable", "advancement.goal.monsters_killed.evoker", fallback: "Evoker")
+        /// Ghast
+        internal static let ghast = L10n.tr("Localizable", "advancement.goal.monsters_killed.ghast", fallback: "Ghast")
+        /// Guardian
+        internal static let guardian = L10n.tr("Localizable", "advancement.goal.monsters_killed.guardian", fallback: "Guardian")
+        /// Hoglin
+        internal static let hoglin = L10n.tr("Localizable", "advancement.goal.monsters_killed.hoglin", fallback: "Hoglin")
+        /// Husk
+        internal static let husk = L10n.tr("Localizable", "advancement.goal.monsters_killed.husk", fallback: "Husk")
+        /// Magma Cube
+        internal static let magmaCube = L10n.tr("Localizable", "advancement.goal.monsters_killed.magma_cube", fallback: "Magma Cube")
+        /// Phantom
+        internal static let phantom = L10n.tr("Localizable", "advancement.goal.monsters_killed.phantom", fallback: "Phantom")
+        /// Piglin
+        internal static let piglin = L10n.tr("Localizable", "advancement.goal.monsters_killed.piglin", fallback: "Piglin")
+        /// Piglin Brute
+        internal static let piglinBrute = L10n.tr("Localizable", "advancement.goal.monsters_killed.piglin_brute", fallback: "Piglin Brute")
+        /// Pillager
+        internal static let pillager = L10n.tr("Localizable", "advancement.goal.monsters_killed.pillager", fallback: "Pillager")
+        /// Ravager
+        internal static let ravager = L10n.tr("Localizable", "advancement.goal.monsters_killed.ravager", fallback: "Ravager")
+        /// Shulker
+        internal static let shulker = L10n.tr("Localizable", "advancement.goal.monsters_killed.shulker", fallback: "Shulker")
+        /// Silverfish
+        internal static let silverfish = L10n.tr("Localizable", "advancement.goal.monsters_killed.silverfish", fallback: "Silverfish")
+        /// Skeleton
+        internal static let skeleton = L10n.tr("Localizable", "advancement.goal.monsters_killed.skeleton", fallback: "Skeleton")
+        /// Slime
+        internal static let slime = L10n.tr("Localizable", "advancement.goal.monsters_killed.slime", fallback: "Slime")
+        /// Spider
+        internal static let spider = L10n.tr("Localizable", "advancement.goal.monsters_killed.spider", fallback: "Spider")
+        /// Stray
+        internal static let stray = L10n.tr("Localizable", "advancement.goal.monsters_killed.stray", fallback: "Stray")
+        /// Vex
+        internal static let vex = L10n.tr("Localizable", "advancement.goal.monsters_killed.vex", fallback: "Vex")
+        /// Vindicator
+        internal static let vindicator = L10n.tr("Localizable", "advancement.goal.monsters_killed.vindicator", fallback: "Vindicator")
+        /// Witch
+        internal static let witch = L10n.tr("Localizable", "advancement.goal.monsters_killed.witch", fallback: "Witch")
+        /// Wither
+        internal static let wither = L10n.tr("Localizable", "advancement.goal.monsters_killed.wither", fallback: "Wither")
+        /// Wither Skeleton
+        internal static let witherSkeleton = L10n.tr("Localizable", "advancement.goal.monsters_killed.wither_skeleton", fallback: "Wither Skeleton")
+        /// Zoglin
+        internal static let zoglin = L10n.tr("Localizable", "advancement.goal.monsters_killed.zoglin", fallback: "Zoglin")
+        /// Zombie
+        internal static let zombie = L10n.tr("Localizable", "advancement.goal.monsters_killed.zombie", fallback: "Zombie")
+        /// Zombie Villager
+        internal static let zombieVillager = L10n.tr("Localizable", "advancement.goal.monsters_killed.zombie_villager", fallback: "Zombie Villager")
+        /// Zombie Piglin
+        internal static let zombifiedPiglin = L10n.tr("Localizable", "advancement.goal.monsters_killed.zombified_piglin", fallback: "Zombie Piglin")
       }
-      internal enum Foods {
-        internal enum Eaten {
-          /// Apple
-          internal static let apple = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.apple", fallback: "Apple")
-          /// Raw Beef
-          internal static let beef = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.beef", fallback: "Raw Beef")
-          /// Beetroot
-          internal static let beetroot = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.beetroot", fallback: "Beetroot")
-          /// Bread
-          internal static let bread = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.bread", fallback: "Bread")
-          /// Carrot
-          internal static let carrot = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.carrot", fallback: "Carrot")
-          /// Raw Chicken
-          internal static let chicken = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.chicken", fallback: "Raw Chicken")
-          /// Raw Cod
-          internal static let cod = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cod", fallback: "Raw Cod")
-          /// Cookie
-          internal static let cookie = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cookie", fallback: "Cookie")
-          /// Raw Mutton
-          internal static let mutton = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.mutton", fallback: "Raw Mutton")
-          /// Raw Porkchop
-          internal static let porkchop = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.porkchop", fallback: "Raw Porkchop")
-          /// Potato
-          internal static let potato = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.potato", fallback: "Potato")
-          /// Pufferfish
-          internal static let pufferfish = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.pufferfish", fallback: "Pufferfish")
-          /// Raw Rabbit
-          internal static let rabbit = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.rabbit", fallback: "Raw Rabbit")
-          /// Raw Salmon
-          internal static let salmon = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.salmon", fallback: "Raw Salmon")
-          internal enum Baked {
-            /// Baked Potato
-            internal static let potato = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.baked.potato", fallback: "Baked Potato")
-          }
-          internal enum Beetroot {
-            /// Beet Soup
-            internal static let soup = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.beetroot.soup", fallback: "Beet Soup")
-          }
-          internal enum Chorus {
-            /// Chorus Fruit
-            internal static let fruit = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.chorus.fruit", fallback: "Chorus Fruit")
-          }
-          internal enum Cooked {
-            /// Beef
-            internal static let beef = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.beef", fallback: "Beef")
-            /// Chicken
-            internal static let chicken = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.chicken", fallback: "Chicken")
-            /// Cod
-            internal static let cod = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.cod", fallback: "Cod")
-            /// Mutton
-            internal static let mutton = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.mutton", fallback: "Mutton")
-            /// Porkchop
-            internal static let porkchop = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.porkchop", fallback: "Porkchop")
-            /// Rabbit
-            internal static let rabbit = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.rabbit", fallback: "Rabbit")
-            /// Salmon
-            internal static let salmon = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.cooked.salmon", fallback: "Salmon")
-          }
-          internal enum Dried {
-            /// Dried Kelp
-            internal static let kelp = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.dried.kelp", fallback: "Dried Kelp")
-          }
-          internal enum Enchanted {
-            internal enum Golden {
-              /// God Apple
-              internal static let apple = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.enchanted.golden.apple", fallback: "God Apple")
-            }
-          }
-          internal enum Glow {
-            /// Glow Berries
-            internal static let berries = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.glow.berries", fallback: "Glow Berries")
-          }
-          internal enum Golden {
-            /// Golden Apple
-            internal static let apple = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.golden.apple", fallback: "Golden Apple")
-            /// Golden Carrot
-            internal static let carrot = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.golden.carrot", fallback: "Golden Carrot")
-          }
-          internal enum Honey {
-            /// Honey Bottle
-            internal static let bottle = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.honey.bottle", fallback: "Honey Bottle")
-          }
-          internal enum Melon {
-            /// Melon Slice
-            internal static let slice = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.melon.slice", fallback: "Melon Slice")
-          }
-          internal enum Mushroom {
-            /// Shroom Stew
-            internal static let stew = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.mushroom.stew", fallback: "Shroom Stew")
-          }
-          internal enum Poisonous {
-            /// Poison Potato
-            internal static let potato = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.poisonous.potato", fallback: "Poison Potato")
-          }
-          internal enum Pumpkin {
-            /// Pumpkin Pie
-            internal static let pie = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.pumpkin.pie", fallback: "Pumpkin Pie")
-          }
-          internal enum Rabbit {
-            /// Rabbit Stew
-            internal static let stew = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.rabbit.stew", fallback: "Rabbit Stew")
-          }
-          internal enum Rotten {
-            /// Rotten Flesh
-            internal static let flesh = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.rotten.flesh", fallback: "Rotten Flesh")
-          }
-          internal enum Spider {
-            /// Spider Eye
-            internal static let eye = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.spider.eye", fallback: "Spider Eye")
-          }
-          internal enum Suspicious {
-            /// Sus Stew
-            internal static let stew = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.suspicious.stew", fallback: "Sus Stew")
-          }
-          internal enum Sweet {
-            /// Sweet Berries
-            internal static let berries = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.sweet.berries", fallback: "Sweet Berries")
-          }
-          internal enum Tropical {
-            /// Tropical Fish
-            internal static let fish = L10n.tr("Localizable", "advancement.husbandry.foods.eaten.tropical.fish", fallback: "Tropical Fish")
-          }
-        }
-      }
-      internal enum Kill {
-        internal enum Axolotl {
-          /// Healing Power of Friendship
-          internal static let target = L10n.tr("Localizable", "advancement.husbandry.kill.axolotl.target", fallback: "Healing Power of Friendship")
-        }
-      }
-      internal enum Leash {
-        internal enum All {
-          internal enum Frog {
-            /// Squad Hops Into Town
-            internal static let variants = L10n.tr("Localizable", "advancement.husbandry.leash.all.frog.variants", fallback: "Squad Hops Into Town")
-          }
-        }
-      }
-      internal enum Make {
-        internal enum A {
-          internal enum Sign {
-            /// Glow and Behold!
-            internal static let glow = L10n.tr("Localizable", "advancement.husbandry.make.a.sign.glow", fallback: "Glow and Behold!")
-          }
-        }
-      }
-      internal enum Obtain {
-        internal enum Netherite {
-          /// Serious Dedication
-          internal static let hoe = L10n.tr("Localizable", "advancement.husbandry.obtain.netherite.hoe", fallback: "Serious Dedication")
-        }
-      }
-      internal enum Plant {
-        /// A Seedy
-        /// Place
-        internal static let seed = L10n.tr("Localizable", "advancement.husbandry.plant.seed", fallback: "A Seedy\nPlace")
-      }
-      internal enum Ride {
-        internal enum A {
-          internal enum Boat {
-            internal enum With {
-              internal enum A {
-                /// Whatever Floats Your Goat!
-                internal static let goat = L10n.tr("Localizable", "advancement.husbandry.ride.a.boat.with.a.goat", fallback: "Whatever Floats Your Goat!")
-              }
-            }
-          }
-        }
-      }
-      internal enum Safely {
-        internal enum Harvest {
-          /// Bee Our
-          /// Guest
-          internal static let honey = L10n.tr("Localizable", "advancement.husbandry.safely.harvest.honey", fallback: "Bee Our\nGuest")
-        }
-      }
-      internal enum Silk {
-        internal enum Touch {
-          /// Total Beelocation
-          internal static let nest = L10n.tr("Localizable", "advancement.husbandry.silk.touch.nest", fallback: "Total Beelocation")
-        }
-      }
-      internal enum Tactical {
-        /// Tactical Fishing
-        internal static let fishing = L10n.tr("Localizable", "advancement.husbandry.tactical.fishing", fallback: "Tactical Fishing")
-      }
-      internal enum Tadpole {
-        internal enum In {
-          internal enum A {
-            /// Bukkit Bukkit
-            internal static let bucket = L10n.tr("Localizable", "advancement.husbandry.tadpole.in.a.bucket", fallback: "Bukkit Bukkit")
-          }
-        }
-      }
-      internal enum Tame {
-        internal enum An {
-          /// Best Friends Forever
-          internal static let animal = L10n.tr("Localizable", "advancement.husbandry.tame.an.animal", fallback: "Best Friends Forever")
-        }
-      }
-      internal enum Wax {
-        /// Wax Off
-        internal static let off = L10n.tr("Localizable", "advancement.husbandry.wax.off", fallback: "Wax Off")
-        /// Wax On
-        internal static let on = L10n.tr("Localizable", "advancement.husbandry.wax.on", fallback: "Wax On")
-      }
-    }
-    internal enum Minecraft {
-      /// Minecraft
-      internal static let root = L10n.tr("Localizable", "advancement.minecraft.root", fallback: "Minecraft")
-      internal enum Cure {
-        internal enum Zombie {
-          /// Zombie
-          /// Doctor
-          internal static let villager = L10n.tr("Localizable", "advancement.minecraft.cure.zombie.villager", fallback: "Zombie\nDoctor")
-        }
-      }
-      internal enum Deflect {
-        /// Not Today, Thank You
-        internal static let arrow = L10n.tr("Localizable", "advancement.minecraft.deflect.arrow", fallback: "Not Today, Thank You")
-      }
-      internal enum Enchant {
-        /// Enchanter
-        internal static let item = L10n.tr("Localizable", "advancement.minecraft.enchant.item", fallback: "Enchanter")
-      }
-      internal enum Enter {
-        internal enum The {
-          /// The End?
-          internal static let end = L10n.tr("Localizable", "advancement.minecraft.enter.the.end", fallback: "The End?")
-          /// We Need to Go Deeper
-          internal static let nether = L10n.tr("Localizable", "advancement.minecraft.enter.the.nether", fallback: "We Need to Go Deeper")
-        }
-      }
-      internal enum Follow {
-        internal enum Ender {
-          /// Eye Spy
-          internal static let eye = L10n.tr("Localizable", "advancement.minecraft.follow.ender.eye", fallback: "Eye Spy")
-        }
-      }
-      internal enum Form {
-        /// Ice Bucket Challenge
-        internal static let obsidian = L10n.tr("Localizable", "advancement.minecraft.form.obsidian", fallback: "Ice Bucket Challenge")
-      }
-      internal enum Iron {
-        /// Isn't It Iron Pick
-        internal static let tools = L10n.tr("Localizable", "advancement.minecraft.iron.tools", fallback: "Isn't It Iron Pick")
-      }
-      internal enum Lava {
-        /// Hot Stuff
-        internal static let bucket = L10n.tr("Localizable", "advancement.minecraft.lava.bucket", fallback: "Hot Stuff")
-      }
-      internal enum Mine {
-        /// Diamonds!
-        internal static let diamond = L10n.tr("Localizable", "advancement.minecraft.mine.diamond", fallback: "Diamonds!")
-        /// Stone Age
-        internal static let stone = L10n.tr("Localizable", "advancement.minecraft.mine.stone", fallback: "Stone Age")
-      }
-      internal enum Obtain {
-        /// Suit Up
-        internal static let armor = L10n.tr("Localizable", "advancement.minecraft.obtain.armor", fallback: "Suit Up")
-      }
-      internal enum Shiny {
-        /// Cover Me With Diamonds
-        internal static let gear = L10n.tr("Localizable", "advancement.minecraft.shiny.gear", fallback: "Cover Me With Diamonds")
-      }
-      internal enum Smelt {
-        /// Acquire Hardware
-        internal static let iron = L10n.tr("Localizable", "advancement.minecraft.smelt.iron", fallback: "Acquire Hardware")
-      }
-      internal enum Upgrade {
-        /// Getting an Upgrade
-        internal static let tools = L10n.tr("Localizable", "advancement.minecraft.upgrade.tools", fallback: "Getting an Upgrade")
-      }
-    }
-    internal enum Nether {
-      /// Nether
-      internal static let root = L10n.tr("Localizable", "advancement.nether.root", fallback: "Nether")
-      internal enum All {
-        /// How Did We Get Here?
-        internal static let effects = L10n.tr("Localizable", "advancement.nether.all.effects", fallback: "How Did We Get Here?")
-        /// A Furious Cocktail
-        internal static let potions = L10n.tr("Localizable", "advancement.nether.all.potions", fallback: "A Furious Cocktail")
-      }
-      internal enum Brew {
-        /// Local Brewery
-        internal static let potion = L10n.tr("Localizable", "advancement.nether.brew.potion", fallback: "Local Brewery")
-      }
-      internal enum Charge {
-        internal enum Respawn {
-          /// Not Quite "9" Lives
-          internal static let anchor = L10n.tr("Localizable", "advancement.nether.charge.respawn.anchor", fallback: "Not Quite \"9\" Lives")
-        }
-      }
-      internal enum Create {
-        /// Bring Home the Beacon
-        internal static let beacon = L10n.tr("Localizable", "advancement.nether.create.beacon", fallback: "Bring Home the Beacon")
-        internal enum Full {
-          /// Beaconator
-          internal static let beacon = L10n.tr("Localizable", "advancement.nether.create.full.beacon", fallback: "Beaconator")
-        }
-      }
-      internal enum Distract {
-        /// Oh Shiny
-        internal static let piglin = L10n.tr("Localizable", "advancement.nether.distract.piglin", fallback: "Oh Shiny")
-      }
-      internal enum Explore {
-        /// Hot Tourist Destinations
-        internal static let nether = L10n.tr("Localizable", "advancement.nether.explore.nether", fallback: "Hot Tourist Destinations")
-      }
-      internal enum Fast {
-        /// Subspace Bubble
-        internal static let travel = L10n.tr("Localizable", "advancement.nether.fast.travel", fallback: "Subspace Bubble")
-      }
-      internal enum Find {
-        /// Those Were the Days
-        internal static let bastion = L10n.tr("Localizable", "advancement.nether.find.bastion", fallback: "Those Were the Days")
-        /// A Terrible Fortress
-        internal static let fortress = L10n.tr("Localizable", "advancement.nether.find.fortress", fallback: "A Terrible Fortress")
-      }
-      internal enum Get {
-        internal enum Wither {
-          /// Spooky Scary Skeleton
-          internal static let skull = L10n.tr("Localizable", "advancement.nether.get.wither.skull", fallback: "Spooky Scary Skeleton")
-        }
-      }
-      internal enum Loot {
-        /// War Pigs
-        internal static let bastion = L10n.tr("Localizable", "advancement.nether.loot.bastion", fallback: "War Pigs")
-      }
-      internal enum Netherite {
-        /// Cover Me in Debris
-        internal static let armor = L10n.tr("Localizable", "advancement.nether.netherite.armor", fallback: "Cover Me in Debris")
-      }
-      internal enum Obtain {
-        internal enum Ancient {
-          /// Hidden in the Depths
-          internal static let debris = L10n.tr("Localizable", "advancement.nether.obtain.ancient.debris", fallback: "Hidden in the Depths")
-        }
-        internal enum Blaze {
-          /// Into Fire
-          internal static let rod = L10n.tr("Localizable", "advancement.nether.obtain.blaze.rod", fallback: "Into Fire")
-        }
-        internal enum Crying {
-          /// Who's Cutting Onions?
-          internal static let obsidian = L10n.tr("Localizable", "advancement.nether.obtain.crying.obsidian", fallback: "Who's Cutting Onions?")
-        }
-      }
-      internal enum Return {
-        internal enum To {
-          /// Return to Sender
-          internal static let sender = L10n.tr("Localizable", "advancement.nether.return.to.sender", fallback: "Return to Sender")
-        }
-      }
-      internal enum Ride {
-        /// This Boat Has Legs
-        internal static let strider = L10n.tr("Localizable", "advancement.nether.ride.strider", fallback: "This Boat Has Legs")
-        internal enum Strider {
-          internal enum In {
-            internal enum Overworld {
-              /// Feels Like Home
-              internal static let lava = L10n.tr("Localizable", "advancement.nether.ride.strider.in.overworld.lava", fallback: "Feels Like Home")
-            }
-          }
-        }
-      }
-      internal enum Summon {
-        /// Withering Heights
-        internal static let wither = L10n.tr("Localizable", "advancement.nether.summon.wither", fallback: "Withering Heights")
-      }
-      internal enum Uneasy {
-        /// Uneasy Alliance
-        internal static let alliance = L10n.tr("Localizable", "advancement.nether.uneasy.alliance", fallback: "Uneasy Alliance")
-      }
-      internal enum Use {
-        /// Country Lode, Take Me Home
-        internal static let lodestone = L10n.tr("Localizable", "advancement.nether.use.lodestone", fallback: "Country Lode, Take Me Home")
+      internal enum TrimsApplied {
+        /// Rib
+        internal static let armorTrimmedRibArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_rib_armor_trim_smithing_template_smithing_trim", fallback: "Rib")
+        /// Silence
+        internal static let armorTrimmedSilenceArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_silence_armor_trim_smithing_template_smithing_trim", fallback: "Silence")
+        /// Snout
+        internal static let armorTrimmedSnoutArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_snout_armor_trim_smithing_template_smithing_trim", fallback: "Snout")
+        /// Spire
+        internal static let armorTrimmedSpireArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_spire_armor_trim_smithing_template_smithing_trim", fallback: "Spire")
+        /// Tide
+        internal static let armorTrimmedTideArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_tide_armor_trim_smithing_template_smithing_trim", fallback: "Tide")
+        /// Vex
+        internal static let armorTrimmedVexArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_vex_armor_trim_smithing_template_smithing_trim", fallback: "Vex")
+        /// Ward
+        internal static let armorTrimmedWardArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_ward_armor_trim_smithing_template_smithing_trim", fallback: "Ward")
+        /// Wayfinder
+        internal static let armorTrimmedWayfinderArmorTrimSmithingTemplateSmithingTrim = L10n.tr("Localizable", "advancement.goal.trims_applied.armor_trimmed_wayfinder_armor_trim_smithing_template_smithing_trim", fallback: "Wayfinder")
       }
       internal enum Visited {
-        internal enum Basalt {
-          /// Basalt Deltas
-          internal static let deltas = L10n.tr("Localizable", "advancement.nether.visited.basalt.deltas", fallback: "Basalt Deltas")
-        }
-        internal enum Crimson {
-          /// Crimson Forest
-          internal static let forest = L10n.tr("Localizable", "advancement.nether.visited.crimson.forest", fallback: "Crimson Forest")
-        }
-        internal enum Nether {
-          /// Nether Wastes
-          internal static let wastes = L10n.tr("Localizable", "advancement.nether.visited.nether.wastes", fallback: "Nether Wastes")
-        }
-        internal enum Soul {
-          internal enum Sand {
-            /// Soul Sand Valley
-            internal static let valley = L10n.tr("Localizable", "advancement.nether.visited.soul.sand.valley", fallback: "Soul Sand Valley")
-          }
-        }
-        internal enum Warped {
-          /// Warped Forest
-          internal static let forest = L10n.tr("Localizable", "advancement.nether.visited.warped.forest", fallback: "Warped Forest")
-        }
+        /// Basalt Deltas
+        internal static let basaltDeltas = L10n.tr("Localizable", "advancement.goal.visited.basalt_deltas", fallback: "Basalt Deltas")
+        /// Crimson Forest
+        internal static let crimsonForest = L10n.tr("Localizable", "advancement.goal.visited.crimson_forest", fallback: "Crimson Forest")
+        /// Nether Wastes
+        internal static let netherWastes = L10n.tr("Localizable", "advancement.goal.visited.nether_wastes", fallback: "Nether Wastes")
+        /// Soul Sand Valley
+        internal static let soulSandValley = L10n.tr("Localizable", "advancement.goal.visited.soul_sand_valley", fallback: "Soul Sand Valley")
+        /// Warped Forest
+        internal static let warpedForest = L10n.tr("Localizable", "advancement.goal.visited.warped_forest", fallback: "Warped Forest")
       }
+    }
+    internal enum Husbandry {
+      /// Birthday
+      /// Song
+      internal static let allayDeliverCakeToNoteBlock = L10n.tr("Localizable", "advancement.husbandry.allay_deliver_cake_to_note_block", fallback: "Birthday\nSong")
+      /// You've Got a Friend in Me
+      internal static let allayDeliverItemToPlayer = L10n.tr("Localizable", "advancement.husbandry.allay_deliver_item_to_player", fallback: "You've Got a Friend in Me")
+      /// The Cutest Predator
+      internal static let axolotlInABucket = L10n.tr("Localizable", "advancement.husbandry.axolotl_in_a_bucket", fallback: "The Cutest Predator")
+      /// A Balanced Diet
+      internal static let balancedDiet = L10n.tr("Localizable", "advancement.husbandry.balanced_diet", fallback: "A Balanced Diet")
+      /// Two by Two
+      internal static let bredAllAnimals = L10n.tr("Localizable", "advancement.husbandry.bred_all_animals", fallback: "Two by Two")
+      /// The Parrots
+      /// and the Bats
+      internal static let breedAnAnimal = L10n.tr("Localizable", "advancement.husbandry.breed_an_animal", fallback: "The Parrots\nand the Bats")
+      /// A Complete Catalogue
+      internal static let completeCatalogue = L10n.tr("Localizable", "advancement.husbandry.complete_catalogue", fallback: "A Complete Catalogue")
+      /// Little Sniffs
+      internal static let feedSnifflet = L10n.tr("Localizable", "advancement.husbandry.feed_snifflet", fallback: "Little Sniffs")
+      /// Fishy
+      /// Business
+      internal static let fishyBusiness = L10n.tr("Localizable", "advancement.husbandry.fishy_business", fallback: "Fishy\nBusiness")
+      /// Our Powers Combined!
+      internal static let froglights = L10n.tr("Localizable", "advancement.husbandry.froglights", fallback: "Our Powers Combined!")
+      /// Healing Power of Friendship
+      internal static let killAxolotlTarget = L10n.tr("Localizable", "advancement.husbandry.kill_axolotl_target", fallback: "Healing Power of Friendship")
+      /// Squad Hops Into Town
+      internal static let leashAllFrogVariants = L10n.tr("Localizable", "advancement.husbandry.leash_all_frog_variants", fallback: "Squad Hops Into Town")
+      /// Glow and Behold!
+      internal static let makeASignGlow = L10n.tr("Localizable", "advancement.husbandry.make_a_sign_glow", fallback: "Glow and Behold!")
+      /// Serious Dedication
+      internal static let obtainNetheriteHoe = L10n.tr("Localizable", "advancement.husbandry.obtain_netherite_hoe", fallback: "Serious Dedication")
+      /// Smells Interesting
+      internal static let obtainSnifferEgg = L10n.tr("Localizable", "advancement.husbandry.obtain_sniffer_egg", fallback: "Smells Interesting")
+      /// Planting The Past
+      internal static let plantAnySnifferSeed = L10n.tr("Localizable", "advancement.husbandry.plant_any_sniffer_seed", fallback: "Planting The Past")
+      /// A Seedy
+      /// Place
+      internal static let plantSeed = L10n.tr("Localizable", "advancement.husbandry.plant_seed", fallback: "A Seedy\nPlace")
+      /// Whatever Floats Your Goat!
+      internal static let rideABoatWithAGoat = L10n.tr("Localizable", "advancement.husbandry.ride_a_boat_with_a_goat", fallback: "Whatever Floats Your Goat!")
+      /// Husbandry
+      internal static let root = L10n.tr("Localizable", "advancement.husbandry.root", fallback: "Husbandry")
+      /// Bee Our
+      /// Guest
+      internal static let safelyHarvestHoney = L10n.tr("Localizable", "advancement.husbandry.safely_harvest_honey", fallback: "Bee Our\nGuest")
+      /// Total Beelocation
+      internal static let silkTouchNest = L10n.tr("Localizable", "advancement.husbandry.silk_touch_nest", fallback: "Total Beelocation")
+      /// Tactical Fishing
+      internal static let tacticalFishing = L10n.tr("Localizable", "advancement.husbandry.tactical_fishing", fallback: "Tactical Fishing")
+      /// Bukkit Bukkit
+      internal static let tadpoleInABucket = L10n.tr("Localizable", "advancement.husbandry.tadpole_in_a_bucket", fallback: "Bukkit Bukkit")
+      /// Best Friends Forever
+      internal static let tameAnAnimal = L10n.tr("Localizable", "advancement.husbandry.tame_an_animal", fallback: "Best Friends Forever")
+      /// Wax Off
+      internal static let waxOff = L10n.tr("Localizable", "advancement.husbandry.wax_off", fallback: "Wax Off")
+      /// Wax On
+      internal static let waxOn = L10n.tr("Localizable", "advancement.husbandry.wax_on", fallback: "Wax On")
+    }
+    internal enum Nether {
+      /// How Did We Get Here?
+      internal static let allEffects = L10n.tr("Localizable", "advancement.nether.all_effects", fallback: "How Did We Get Here?")
+      /// A Furious Cocktail
+      internal static let allPotions = L10n.tr("Localizable", "advancement.nether.all_potions", fallback: "A Furious Cocktail")
+      /// Local Brewery
+      internal static let brewPotion = L10n.tr("Localizable", "advancement.nether.brew_potion", fallback: "Local Brewery")
+      /// Not Quite "9" Lives
+      internal static let chargeRespawnAnchor = L10n.tr("Localizable", "advancement.nether.charge_respawn_anchor", fallback: "Not Quite \"9\" Lives")
+      /// Bring Home the Beacon
+      internal static let createBeacon = L10n.tr("Localizable", "advancement.nether.create_beacon", fallback: "Bring Home the Beacon")
+      /// Beaconator
+      internal static let createFullBeacon = L10n.tr("Localizable", "advancement.nether.create_full_beacon", fallback: "Beaconator")
+      /// Oh Shiny
+      internal static let distractPiglin = L10n.tr("Localizable", "advancement.nether.distract_piglin", fallback: "Oh Shiny")
+      /// Hot Tourist Destinations
+      internal static let exploreNether = L10n.tr("Localizable", "advancement.nether.explore_nether", fallback: "Hot Tourist Destinations")
+      /// Subspace Bubble
+      internal static let fastTravel = L10n.tr("Localizable", "advancement.nether.fast_travel", fallback: "Subspace Bubble")
+      /// Those Were the Days
+      internal static let findBastion = L10n.tr("Localizable", "advancement.nether.find_bastion", fallback: "Those Were the Days")
+      /// A Terrible Fortress
+      internal static let findFortress = L10n.tr("Localizable", "advancement.nether.find_fortress", fallback: "A Terrible Fortress")
+      /// Spooky Scary Skeleton
+      internal static let getWitherSkull = L10n.tr("Localizable", "advancement.nether.get_wither_skull", fallback: "Spooky Scary Skeleton")
+      /// War Pigs
+      internal static let lootBastion = L10n.tr("Localizable", "advancement.nether.loot_bastion", fallback: "War Pigs")
+      /// Cover Me in Debris
+      internal static let netheriteArmor = L10n.tr("Localizable", "advancement.nether.netherite_armor", fallback: "Cover Me in Debris")
+      /// Hidden in the Depths
+      internal static let obtainAncientDebris = L10n.tr("Localizable", "advancement.nether.obtain_ancient_debris", fallback: "Hidden in the Depths")
+      /// Into Fire
+      internal static let obtainBlazeRod = L10n.tr("Localizable", "advancement.nether.obtain_blaze_rod", fallback: "Into Fire")
+      /// Who's Cutting Onions?
+      internal static let obtainCryingObsidian = L10n.tr("Localizable", "advancement.nether.obtain_crying_obsidian", fallback: "Who's Cutting Onions?")
+      /// Return to Sender
+      internal static let returnToSender = L10n.tr("Localizable", "advancement.nether.return_to_sender", fallback: "Return to Sender")
+      /// This Boat Has Legs
+      internal static let rideStrider = L10n.tr("Localizable", "advancement.nether.ride_strider", fallback: "This Boat Has Legs")
+      /// Feels Like Home
+      internal static let rideStriderInOverworldLava = L10n.tr("Localizable", "advancement.nether.ride_strider_in_overworld_lava", fallback: "Feels Like Home")
+      /// Nether
+      internal static let root = L10n.tr("Localizable", "advancement.nether.root", fallback: "Nether")
+      /// Withering Heights
+      internal static let summonWither = L10n.tr("Localizable", "advancement.nether.summon_wither", fallback: "Withering Heights")
+      /// Uneasy Alliance
+      internal static let uneasyAlliance = L10n.tr("Localizable", "advancement.nether.uneasy_alliance", fallback: "Uneasy Alliance")
+      /// Country Lode, Take Me Home
+      internal static let useLodestone = L10n.tr("Localizable", "advancement.nether.use_lodestone", fallback: "Country Lode, Take Me Home")
+    }
+    internal enum Story {
+      /// Zombie
+      /// Doctor
+      internal static let cureZombieVillager = L10n.tr("Localizable", "advancement.story.cure_zombie_villager", fallback: "Zombie\nDoctor")
+      /// Not Today, Thank You
+      internal static let deflectArrow = L10n.tr("Localizable", "advancement.story.deflect_arrow", fallback: "Not Today, Thank You")
+      /// Enchanter
+      internal static let enchantItem = L10n.tr("Localizable", "advancement.story.enchant_item", fallback: "Enchanter")
+      /// The End?
+      internal static let enterTheEnd = L10n.tr("Localizable", "advancement.story.enter_the_end", fallback: "The End?")
+      /// We Need to Go Deeper
+      internal static let enterTheNether = L10n.tr("Localizable", "advancement.story.enter_the_nether", fallback: "We Need to Go Deeper")
+      /// Eye Spy
+      internal static let followEnderEye = L10n.tr("Localizable", "advancement.story.follow_ender_eye", fallback: "Eye Spy")
+      /// Ice Bucket Challenge
+      internal static let formObsidian = L10n.tr("Localizable", "advancement.story.form_obsidian", fallback: "Ice Bucket Challenge")
+      /// Isn't It Iron Pick
+      internal static let ironTools = L10n.tr("Localizable", "advancement.story.iron_tools", fallback: "Isn't It Iron Pick")
+      /// Hot Stuff
+      internal static let lavaBucket = L10n.tr("Localizable", "advancement.story.lava_bucket", fallback: "Hot Stuff")
+      /// Diamonds!
+      internal static let mineDiamond = L10n.tr("Localizable", "advancement.story.mine_diamond", fallback: "Diamonds!")
+      /// Stone Age
+      internal static let mineStone = L10n.tr("Localizable", "advancement.story.mine_stone", fallback: "Stone Age")
+      /// Suit Up
+      internal static let obtainArmor = L10n.tr("Localizable", "advancement.story.obtain_armor", fallback: "Suit Up")
+      /// Minecraft
+      internal static let root = L10n.tr("Localizable", "advancement.story.root", fallback: "Minecraft")
+      /// Cover Me With Diamonds
+      internal static let shinyGear = L10n.tr("Localizable", "advancement.story.shiny_gear", fallback: "Cover Me With Diamonds")
+      /// Acquire Hardware
+      internal static let smeltIron = L10n.tr("Localizable", "advancement.story.smelt_iron", fallback: "Acquire Hardware")
+      /// Getting an Upgrade
+      internal static let upgradeTools = L10n.tr("Localizable", "advancement.story.upgrade_tools", fallback: "Getting an Upgrade")
     }
   }
   internal enum Alert {
@@ -1412,9 +952,20 @@ internal enum L10n {
       /// Obtained God Apple
       internal static let obtained = L10n.tr("Localizable", "statistic.god_apple.obtained", fallback: "Obtained God Apple")
     }
+    internal enum GoldBlocks {
+      /// Beaconator Complete
+      internal static let beaconator = L10n.tr("Localizable", "statistic.gold_blocks.beaconator", fallback: "Beaconator Complete")
+    }
     internal enum Shells {
       /// Conduit Crafted
       internal static let crafted = L10n.tr("Localizable", "statistic.shells.crafted", fallback: "Conduit Crafted")
+      /// HDWGH Complete
+      internal static let hdwgh = L10n.tr("Localizable", "statistic.shells.hdwgh", fallback: "HDWGH Complete")
+    }
+    internal enum SnifferEggs {
+      /// Sniffers
+      /// Done
+      internal static let done = L10n.tr("Localizable", "statistic.sniffer_eggs.done", fallback: "Sniffers\nDone")
     }
     internal enum Trident {
       /// Awaiting
