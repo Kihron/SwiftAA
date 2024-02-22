@@ -8,9 +8,9 @@
 import SwiftUI
 
 enum ThemePreset: String, CaseIterable, Identifiable, Hashable, Theme {
-    case enderPearl = "ender.pearl"
-    case githubDark = "github.dark"
-    case highContrast = "high.contrast"
+    case enderPearl = "ender_pearl"
+    case githubDark = "github_dark"
+    case highContrast = "high_contrast"
     case blazed = "blazed"
     case brick = "brick"
     case berry = "berry"

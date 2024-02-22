@@ -8,9 +8,9 @@
 import SwiftUI
 
 enum FrameStyle: String, CaseIterable, Identifiable, Hashable {
-    case minecraft = "Minecraft"
-    case geode = "Geode"
-    case modern = "Modern"
+    case minecraft = "layout.appearance.frame_style.minecraft"
+    case geode = "layout.appearance.frame_style.geode"
+    case modern = "layout.appearance.frame_style.modern"
     
     var id: Self {
         return self

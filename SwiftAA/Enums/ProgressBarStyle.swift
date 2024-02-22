@@ -8,8 +8,8 @@
 import Foundation
 
 enum ProgressBarStyle: String, CaseIterable, Identifiable, Hashable {
-    case enderDragon = "Ender Dragon"
-    case experience = "Experience"
+    case enderDragon = "layout.appearance.progress_bar_style.ender_dragon"
+    case experience = "layout.appearance.progress_bar_style.experience"
 
     var id: Self {
         return self

@@ -8,9 +8,9 @@
 import SwiftUI
 
 enum LayoutStyle: String, CaseIterable, Identifiable, Hashable {
-    case standard = "tracking.standard"
-    case vertical = "tracking.vertical"
-    case minimalist = "tracking.minimalistic"
+    case standard = "tracking.view_style.standard"
+    case vertical = "tracking.view_style.vertical"
+    case minimalist = "tracking.view_style.minimalistic"
     
     var id: Self {
         return self

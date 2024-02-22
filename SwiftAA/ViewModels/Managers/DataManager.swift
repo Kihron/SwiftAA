@@ -44,15 +44,17 @@ class DataManager: ObservableObject {
     var uncounted: [Indicator] = []
     
     func updateAdvancementFields() {
-        completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
-            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+        if !versionManager.worldPath.isEmpty {
+            completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
+                ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+            }
+            incompleteAdvancements = allAdvancements.filter({ !$0.completed })
+            incompleteCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
+            completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
+                ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+            }
+            goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
         }
-        incompleteAdvancements = allAdvancements.filter({ !$0.completed })
-        incompleteCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
-        completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
-            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
-        }
-        goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
     }
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
@@ -88,7 +90,7 @@ class DataManager: ObservableObject {
             let id = element.attribute(by: "id")!.text
             let key = generateAdvancementKey(id: id, element: element)
             let name = element.attribute(by: "name")!.text
-            let shortName = element.attribute(by: "short_name")?.text
+            let shortName = generateShortKey(id: id, element: element)
             let icon = element.attribute(by: "icon")?.text ?? getIconFromID(id: id, separator: "/")
             let frameStyle = element.attribute(by: "type")?.text ?? "normal"
             let tooltip = element.attribute(by: "tooltip")?.text ?? ""
@@ -136,13 +138,22 @@ class DataManager: ObservableObject {
         return .constant(advancements)
     }
     
+    private func generateBaseKey(id: String) -> String {
+        return "advancement." + id.replacingOccurrences(of: "minecraft:", with: "").replacingOccurrences(of: "/", with: ".")
+    }
+    
     private func generateAdvancementKey(id: String, element: SWXMLHash.XMLElement) -> String {
-        let generatedKey = "advancement." + id.replacingOccurrences(of: "minecraft:", with: "").replacingOccurrences(of: "/", with: ".")
+        let generatedKey = generateBaseKey(id: id)
         if let override = element.attribute(by: "version")?.text {
             return generatedKey + ".\(override)"
         } else {
             return generatedKey
         }
+    }
+    
+    private func generateShortKey(id: String, element: SWXMLHash.XMLElement) -> String? {
+        let shortKey = generateBaseKey(id: id) + ".short"
+        return element.attribute(by: "short_name") != nil ? shortKey : nil
     }
     
     private func generateCriterionKey(id: String, goal: String, element: SWXMLHash.XMLElement, prefix: String) -> String {

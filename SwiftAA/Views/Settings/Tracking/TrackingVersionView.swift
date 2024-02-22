@@ -15,7 +15,7 @@ struct TrackingVersionView: View {
         SettingsCardView {
             VStack {
                 HStack {
-                    Text(L10n.Tracking.Game.version)
+                    Text(L10n.Tracking.gameVersion)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Picker("", selection: $trackerManager.gameVersion) {
@@ -34,9 +34,9 @@ struct TrackingVersionView: View {
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("View Style")
+                            Text(L10n.Tracking.viewStyle)
                             
-                            Text("Standard shows all advancements horizontally. Both Vertical and Minimalistic remove redundant advancements.")
+                            Text(L10n.Tracking.ViewStyle.info)
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                                 .padding(.trailing, 2)

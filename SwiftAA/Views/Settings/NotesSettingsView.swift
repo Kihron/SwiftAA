@@ -49,7 +49,7 @@ struct NotesSettingsView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     if !selected.path.isEmpty {
-                        Text("Waypoints")
+                        Text(L10n.Notes.PanelView.waypoints)
                             .fontWeight(.bold)
                         
                         SettingsCardView {
@@ -61,7 +61,7 @@ struct NotesSettingsView: View {
                         }
                         .disabled(true)
                         
-                        Text("Notes")
+                        Text(L10n.Notes.PanelView.notes)
                             .fontWeight(.bold)
                             .padding(.top, 10)
                         
@@ -70,7 +70,7 @@ struct NotesSettingsView: View {
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         }
                         
-                        Text("Path")
+                        Text(L10n.Notes.path)
                             .fontWeight(.bold)
                             .padding(.top, 10)
                         
@@ -98,7 +98,7 @@ struct NotesSettingsView: View {
                             Button(action: { showInFinder() }) {
                                 Image(systemName: "folder")
                             }
-                            .help("Show in folder")
+                            .help(L10n.Notes.Button.showInFolder)
                         }
                     }
                     .frame(width: 32, height: 32)
@@ -109,7 +109,7 @@ struct NotesSettingsView: View {
                     Button(action: { deleteNote(note: selected) }) {
                         Image(systemName: "trash")
                     }
-                    .help("Delete selected note")
+                    .help(L10n.Notes.Button.deleteSelectedNote)
                 }
             }
         }

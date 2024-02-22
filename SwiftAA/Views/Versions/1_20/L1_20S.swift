@@ -50,13 +50,13 @@ struct L1_20S: View {
                 }
                 
                 HStack(spacing: 0) {
-                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[33].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
+                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[33].asAdvancement, rowCount: 16, goal: L10n.Goal.biomesVisited)
                         .frame(width: 521)
-                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[34].asAdvancement, rowCount: 16, goal: L10n.Goal.Monsters.killed)
+                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[34].asAdvancement, rowCount: 16, goal: L10n.Goal.monstersKilled)
                         .frame(width: 337)
-                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[20].asAdvancement, rowCount: 16, goal: L10n.Goal.Foods.eaten)
+                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[20].asAdvancement, rowCount: 16, goal: L10n.Goal.foodsEaten)
                         .frame(width: 325)
-                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.Animals.bred)
+                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.animalsBred)
                         .frame(width: 193)
                     GoalPanelView(advancement: dataManager.decode(file: "husbandry")[21].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
                         .frame(width: 138)

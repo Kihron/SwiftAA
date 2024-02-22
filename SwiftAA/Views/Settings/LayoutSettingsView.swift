@@ -15,9 +15,9 @@ struct LayoutSettingsView: View {
             SettingsCardView {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("Modular Panel")
+                        Text(L10n.Layout.modularPanel)
                         
-                        Text("Switch between multiple panels to display different types of information located on the far right.")
+                        Text(L10n.Layout.ModularPanel.info)
                             .font(.caption)
                             .foregroundStyle(.gray)
                             .padding(.trailing, 2)
@@ -34,13 +34,13 @@ struct LayoutSettingsView: View {
                 }
             }
             
-            SettingsLabel(title: "Appearance")
+            SettingsLabel(title: L10n.Layout.appearance)
                 .padding(.top, 5)
             
             SettingsCardView {
                 VStack {
                     HStack {
-                        Text("Frame Style")
+                        Text(L10n.Layout.Appearance.frameStyle)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Picker("", selection: $layoutManager.frameStyle) {
@@ -55,7 +55,7 @@ struct LayoutSettingsView: View {
                     Divider()
                     
                     HStack {
-                        Text("Progress Bar Style")
+                        Text(L10n.Layout.Appearance.progressBarStyle)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Picker("", selection: $layoutManager.progressBarStyle) {

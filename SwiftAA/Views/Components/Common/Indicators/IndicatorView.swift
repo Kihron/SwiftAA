@@ -23,7 +23,7 @@ struct IndicatorView: View {
         if isStat {
             return indicator.key
         } else if let shortName = (indicator as? Advancement)?.shortName, isMinimal {
-            return shortName
+            return shortName.localized
         } else {
             return indicator.key.localized(value: indicator.name)
         }

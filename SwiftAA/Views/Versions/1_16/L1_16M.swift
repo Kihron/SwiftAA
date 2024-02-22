@@ -27,7 +27,7 @@ struct L1_16M: View {
                 }
                 .frame(width: 148)
                 
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 15, goal: L10n.Goal.Foods.eaten, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 15, goal: L10n.Goal.foodsEaten, isMinimal: true)
                 .frame(width: 330)
                 
                 InfoPanelView()
@@ -36,11 +36,11 @@ struct L1_16M: View {
             .frame(height: 364)
             
             HStack(spacing: 0) {
-                GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 14, goal: L10n.Goal.Biomes.visited, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 14, goal: L10n.Goal.biomesVisited, isMinimal: true)
                     .frame(width: 368)
-                GoalPanelView(advancement: dataManager.decode(file: "adventure")[19].asAdvancement, rowCount: 14, goal: L10n.Goal.Monsters.killed, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "adventure")[19].asAdvancement, rowCount: 14, goal: L10n.Goal.monstersKilled, isMinimal: true)
                     .frame(width: 330)
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[9].asAdvancement, rowCount: 14, goal: L10n.Goal.Animals.bred, isMinimal: true)
+                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[9].asAdvancement, rowCount: 14, goal: L10n.Goal.animalsBred, isMinimal: true)
                     .frame(width: 186)
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[11].asAdvancement, rowCount: 14, goal: L10n.Goal.cats, isMinimal: true)
                     .frame(width: 159)

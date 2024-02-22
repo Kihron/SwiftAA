@@ -40,7 +40,7 @@ struct OverlaySettings: View {
                             Divider()
                             
                             HStack {
-                                Text("Show Page Indicator")
+                                Text(L10n.Overlay.Appearance.showLegacyPageBar)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 Toggle("", isOn: $overlayManager.showLegacyPageIndicator)
@@ -53,7 +53,7 @@ struct OverlaySettings: View {
                             Divider()
                             
                             HStack {
-                                Text("Show Progress Bar")
+                                Text(L10n.Overlay.Appearance.showProgressBar)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 Toggle("", isOn: $overlayManager.showOptimalProgressBar)
@@ -67,9 +67,9 @@ struct OverlaySettings: View {
                 SettingsCardView {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Show In-Game Time")
+                            Text(L10n.Overlay.Appearance.showTime)
                             
-                            Text("Displays the in-game time for the currently tracked world.")
+                            Text(L10n.Overlay.Appearance.ShowTime.info)
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                                 .padding(.trailing, 2)
@@ -86,9 +86,9 @@ struct OverlaySettings: View {
                     VStack {
                         HStack {
                             VStack(alignment: .leading, spacing: 3) {
-                                Text(L10n.Overlay.showstats)
+                                Text(L10n.Overlay.Appearance.showStatistics)
                                 
-                                Text("Toggles the visibility of the statistics row at the bottom of the Overlay.")
+                                Text(L10n.Overlay.Appearance.ShowStatistics.info)
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                                     .padding(.trailing, 2)
@@ -103,11 +103,11 @@ struct OverlaySettings: View {
                         Divider()
                         
                         HStack {
-                            Text("Statistics Row")
+                            Text(L10n.Overlay.Appearance.statisticsRow)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Button(action: { showStatusEditor.toggle() }) {
-                                Text("Open Editor")
+                                Text(L10n.Overlay.Appearance.StatisticsRow.button)
                             }
                         }
                         .disabled(!overlayManager.showStatistics)
@@ -133,9 +133,9 @@ struct OverlaySettings: View {
                 SettingsCardView {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Clarify Ambigious Criteria")
+                            Text(L10n.Overlay.Appearance.clarifyAmbiguousCriteria)
                             
-                            Text("Displays the advancement a criteria belongs to if it's icon is used more than once.")
+                            Text(L10n.Overlay.Appearance.ClarifyAmbiguousCriteria.info)
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                                 .padding(.trailing, 2)
@@ -148,13 +148,13 @@ struct OverlaySettings: View {
                     }
                 }
                 
-                SettingsLabel(title: "Appearance", description: "Change the style of the frames, keep them in sync or mix and match.")
+                SettingsLabel(title: L10n.Overlay.Appearance.title, description: L10n.Overlay.Appearance.info)
                     .padding(.top, 5)
                 
                 SettingsCardView {
                     VStack {
                         HStack {
-                            Text("Sync Overlay")
+                            Text(L10n.Overlay.Appearance.syncOverlay)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Toggle("", isOn: $overlayManager.syncOverlayFrame)
@@ -165,7 +165,7 @@ struct OverlaySettings: View {
                         Divider()
                         
                         HStack {
-                            Text("Frame Style")
+                            Text(L10n.Overlay.Appearance.frameStyle)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Picker("", selection: $overlayManager.overlayFrameStyle) {

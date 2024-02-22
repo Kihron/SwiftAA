@@ -19,7 +19,7 @@ struct LeaderboardEntryRank: View {
     
     var body: some View {
         VStack {
-            Text(placement == 1 ? "WR" : rank)
+            Text(placement == 1 ? L10n.Leaderboard.worldRecord : rank)
                 .minecraftFont()
                 .padding(.horizontal, 2)
                 .frame(height: 15)

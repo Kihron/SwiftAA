@@ -9,7 +9,7 @@ import SwiftUI
 
 enum TrackingMode: String, CaseIterable, Identifiable, Hashable {
     case seamless = "tracking.seamless"
-    case directory = "tracking.custom.saves"
+    case directory = "tracking.custom_saves"
     
     var id: Self {
         return self

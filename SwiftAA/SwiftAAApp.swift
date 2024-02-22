@@ -62,7 +62,7 @@ struct SwiftAAApp: App {
                 }
             }
             CommandGroup(after: .appInfo, addition: {
-                Button("\(L10n.Settings.Updater.check)...") {
+                Button("\(L10n.Settings.Updater.checkForUpdates)...") {
                     UpdateManager.shared.checkForUpdates()
                 }
             })
@@ -96,7 +96,7 @@ struct SwiftAAApp: App {
         .windowStyle(HiddenTitleBarWindowStyle())
         .windowResizability(.contentSize)
         
-        Window("Settings", id: "settings-window") {
+        Window(L10n.Settings.windowTitle, id: "settings-window") {
             SettingsView()
                 .frame(minWidth: 700, maxWidth: 700, minHeight: 435, alignment: .center)
                 .environment(\.managedObjectContext, coreDataManager.container.viewContext)

@@ -15,7 +15,7 @@ struct UpdateSettings: View {
             SettingsCardView {
                 VStack {
                     HStack {
-                        Text("Check Automatically")
+                        Text(L10n.Settings.Updater.autoCheck)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Toggle("", isOn: $updateManager.checkAutomatically)
@@ -26,7 +26,7 @@ struct UpdateSettings: View {
                     Divider()
                     
                     HStack {
-                        Text("Download Automatically")
+                        Text(L10n.Settings.Updater.autoDownload)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Toggle("", isOn: $updateManager.downloadAutomatically)
@@ -42,7 +42,7 @@ struct UpdateSettings: View {
                 
                 if let lastUpdateCheck = updateManager.getLastUpdateCheckDate() {
                     HStack(spacing: 0) {
-                        Text("Last checked: ")
+                        Text(L10n.Settings.Updater.lastChecked)
                         
                         Text(lastUpdateCheck, formatter: updateManager.lastUpdateFormatter)
                     }
@@ -60,7 +60,7 @@ struct UpdateSettings: View {
                 Button(action: { updateManager.checkForUpdates() }) {
                     Image(systemName: "arrow.clockwise")
                 }
-                .help("Check for updates")
+                .help(L10n.Settings.Updater.checkForUpdates)
             }
         }
     }

@@ -18,7 +18,7 @@ struct NotesPanelView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text(L10n.Notes.Panel.View.Top.title)
+                Text(L10n.Notes.PanelView.waypoints)
                     .minecraftFont(size: 12)
                 
                 VStack(spacing: 5) {
@@ -30,7 +30,7 @@ struct NotesPanelView: View {
             .frame(maxHeight: .infinity, alignment: .top)
             
             VStack(alignment: .leading) {
-                Text(L10n.Notes.Panel.View.Bottom.title)
+                Text(L10n.Notes.PanelView.notes)
                     .minecraftFont(size: 12)
                 
                 TextEditor(text: $currentNote.message)
@@ -39,8 +39,6 @@ struct NotesPanelView: View {
                     .padding(.bottom, 15)
                     .disabled(trackerManager.worldPath.isEmpty)
             }
-            // find . -type f -name "*.swift" -exec sed -i '' -e 's/\.font(\.custom("Minecraft-Regular", size: 10))/.minecraftFont()/g' -e 's/\.font(\.custom("Minecraft-Regular", size: \([0-9]*\)))/.minecraftFont(size: \1)/g' {} +
-
         }
         .padding()
         .applyThemeModifiers()

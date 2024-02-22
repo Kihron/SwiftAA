@@ -87,7 +87,7 @@ class AppViewModel: ObservableObject {
                 print(error.localizedDescription)
             }
         } else {
-            progressManager.clearProgressState()
+            trackerManager.resetWorldPath()
             if (saves.isEmpty) {
                 trackerManager.alert = .noWorlds
                 return

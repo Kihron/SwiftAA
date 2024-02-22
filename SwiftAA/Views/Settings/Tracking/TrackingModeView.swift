@@ -13,7 +13,7 @@ struct TrackingModeView: View {
     
     var body: some View {
         VStack {
-            SettingsLabel(title: "Mode", description: "Switch between automatic window tracking or manually specifying a saves directory.")
+            SettingsLabel(title: L10n.Tracking.mode, description: L10n.Tracking.Mode.info)
             
             SettingsCardView {
                 VStack {

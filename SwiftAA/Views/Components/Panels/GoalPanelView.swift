@@ -99,6 +99,6 @@ struct GoalPanelView: View {
 }
 
 #Preview {
-    GoalPanelView(advancement: DataManager.shared.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.Biomes.visited)
+    GoalPanelView(advancement: DataManager.shared.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.biomesVisited)
         .frame(width: 350)
 }

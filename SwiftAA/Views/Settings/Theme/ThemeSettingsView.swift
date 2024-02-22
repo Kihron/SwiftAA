@@ -30,7 +30,7 @@ struct ThemeSettingsView: View {
             
             VStack {
                 ScrollView {
-                    SettingsLabel(title: "Custom")
+                    SettingsLabel(title: L10n.Theme.custom)
                         .padding(.top, 10)
                     
                     LazyVGrid(columns: columns, spacing: 15) {
@@ -48,7 +48,7 @@ struct ThemeSettingsView: View {
                         }
                     }
                     
-                    SettingsLabel(title: "Presets")
+                    SettingsLabel(title: L10n.Theme.presets)
                         .padding(.top, 10)
                     
                     LazyVGrid(columns: columns, spacing: 15) {
@@ -73,7 +73,7 @@ struct ThemeSettingsView: View {
                         Button(action: { themeManager.deleteUserTheme(context: context) }) {
                             Image(systemName: "trash")
                         }
-                        .help("Delete selected theme")
+                        .help(L10n.Theme.Button.deleteSelectedTheme)
                     }
                 }
                 .frame(width: 32, height: 32)
