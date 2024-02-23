@@ -19,7 +19,7 @@ struct OptimalOverlayView: View {
             
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(dataManager.completedAdvancements.isEmpty ? "Categories" : "Recently Completed")
+                    Text(dataManager.completedAdvancements.isEmpty ? L10n.Overlay.Optimal.categories : L10n.Overlay.Optimal.recentlyCompleted)
                         .minecraftFont(size: 12)
                         .padding(.horizontal)
                     
@@ -41,7 +41,7 @@ struct OptimalOverlayView: View {
                 
                 VStack(alignment: .leading, spacing: 0) {
                     if !dataManager.completedCriteria.isEmpty {
-                        Text(dataManager.completedAdvancements.isEmpty ? "" : "Criteria")
+                        Text(dataManager.completedAdvancements.isEmpty ? "" : L10n.Overlay.Optimal.criteria)
                             .minecraftFont(size: 12)
                             .padding([.bottom, .leading], 8)
                         

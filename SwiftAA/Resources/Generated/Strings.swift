@@ -1068,6 +1068,8 @@ internal enum L10n {
     internal static let invalidDirectory = L10n.tr("Localizable", "alert.invalid_directory", fallback: "Invalid directory")
     /// No directory selected
     internal static let noDirectory = L10n.tr("Localizable", "alert.no_directory", fallback: "No directory selected")
+    /// No files to track
+    internal static let noFiles = L10n.tr("Localizable", "alert.no_files", fallback: "No files to track")
     /// No worlds found
     internal static let noWorlds = L10n.tr("Localizable", "alert.no_worlds", fallback: "No worlds found")
   }
@@ -1076,8 +1078,18 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "app.title", fallback: "SwiftAA")
   }
   internal enum Credits {
-    /// This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).
-    internal static let attribution = L10n.tr("Localizable", "credits.attribution", fallback: "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).")
+    internal enum Attribution {
+      /// This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).
+      internal static let info = L10n.tr("Localizable", "credits.attribution.info", fallback: "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).")
+      /// Attribution
+      internal static let title = L10n.tr("Localizable", "credits.attribution.title", fallback: "Attribution")
+    }
+    internal enum Role {
+      /// Beta Tester
+      internal static let betaTester = L10n.tr("Localizable", "credits.role.beta_tester", fallback: "Beta Tester")
+      /// Developer
+      internal static let developer = L10n.tr("Localizable", "credits.role.developer", fallback: "Developer")
+    }
   }
   internal enum Donate {
     /// Support us on Ko-Fi
@@ -1127,6 +1139,8 @@ internal enum L10n {
     internal enum Appearance {
       /// Frame Style
       internal static let frameStyle = L10n.tr("Localizable", "layout.appearance.frame_style", fallback: "Frame Style")
+      /// Match Theme Color
+      internal static let matchThemeColor = L10n.tr("Localizable", "layout.appearance.match_theme_color", fallback: "Match Theme Color")
       /// Progress Bar Style
       internal static let progressBarStyle = L10n.tr("Localizable", "layout.appearance.progress_bar_style", fallback: "Progress Bar Style")
       internal enum FrameStyle {
@@ -1136,6 +1150,10 @@ internal enum L10n {
         internal static let minecraft = L10n.tr("Localizable", "layout.appearance.frame_style.minecraft", fallback: "Minecraft")
         /// Modern
         internal static let modern = L10n.tr("Localizable", "layout.appearance.frame_style.modern", fallback: "Modern")
+      }
+      internal enum MatchThemeColor {
+        /// Color matches all menu and toggle switches in settings to the border color of the selected theme.
+        internal static let info = L10n.tr("Localizable", "layout.appearance.match_theme_color.info", fallback: "Color matches all menu and toggle switches in settings to the border color of the selected theme.")
       }
       internal enum ProgressBarStyle {
         /// Ender Dragon
@@ -1262,6 +1280,14 @@ internal enum L10n {
         /// Temples
         internal static let temples = L10n.tr("Localizable", "overlay.complete.stat.temples", fallback: "Temples")
       }
+    }
+    internal enum Optimal {
+      /// Categories
+      internal static let categories = L10n.tr("Localizable", "overlay.optimal.categories", fallback: "Categories")
+      /// Criteria
+      internal static let criteria = L10n.tr("Localizable", "overlay.optimal.criteria", fallback: "Criteria")
+      /// Recently Completed
+      internal static let recentlyCompleted = L10n.tr("Localizable", "overlay.optimal.recently_completed", fallback: "Recently Completed")
     }
     internal enum Style {
       /// • **Optimal** shows recently completed advancements and criteria.
@@ -1489,8 +1515,14 @@ internal enum L10n {
     /// View Style
     internal static let viewStyle = L10n.tr("Localizable", "tracking.view_style", fallback: "View Style")
     internal enum Mode {
+      /// Automatic Version Detection
+      internal static let automaticVersionDetection = L10n.tr("Localizable", "tracking.mode.automatic_version_detection", fallback: "Automatic Version Detection")
       /// Switch between automatic window tracking or manually specifying a saves directory.
       internal static let info = L10n.tr("Localizable", "tracking.mode.info", fallback: "Switch between automatic window tracking or manually specifying a saves directory.")
+      internal enum AutomaticVersionDetection {
+        /// Automatically switches to the detected game version of the targeted instance.
+        internal static let info = L10n.tr("Localizable", "tracking.mode.automatic_version_detection.info", fallback: "Automatically switches to the detected game version of the targeted instance.")
+      }
     }
     internal enum ViewStyle {
       /// Standard shows all advancements horizontally. Both Vertical and Minimalistic remove redundant advancements.

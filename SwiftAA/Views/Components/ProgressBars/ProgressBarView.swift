@@ -59,6 +59,7 @@ struct ProgressBarView: View {
                     Text(message)
                 }
             }
+            .lineLimit(1)
             .padding(.horizontal, adjustForOverlay ? 5 : 0)
             .minecraftFont()
             .foregroundColor(isToolbar ? Color.primary : themeManager.text)

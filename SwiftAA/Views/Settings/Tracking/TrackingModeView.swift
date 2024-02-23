@@ -12,7 +12,7 @@ struct TrackingModeView: View {
     @ObservedObject private var dataManager = DataManager.shared
     
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             SettingsLabel(title: L10n.Tracking.mode, description: L10n.Tracking.Mode.info)
             
             SettingsCardView {
@@ -32,19 +32,39 @@ struct TrackingModeView: View {
                         }
                     }
                     
-                    HStack {
-                        TextField("", text: $trackerManager.customSavesPath)
-                            .textFieldStyle(.roundedBorder)
-                            .autocorrectionDisabled()
-                        
-                        Button(action: { Utilities.selectSavesFolder() }) {
-                            Text(L10n.Tracking.browse)
+                    Divider()
+                    
+                    if trackerManager.trackingMode == .seamless {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(L10n.Tracking.Mode.automaticVersionDetection)
+                                
+                                Text(L10n.Tracking.Mode.AutomaticVersionDetection.info)
+                                    .font(.caption)
+                                    .foregroundStyle(.gray)
+                                    .padding(.trailing, 2)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Toggle("", isOn: $trackerManager.automaticVersionDetection)
+                                .labelsHidden()
+                                .toggleStyle(.switch)
+                        }
+                    } else {
+                        HStack {
+                            TextField("", text: $trackerManager.customSavesPath)
+                                .textFieldStyle(.roundedBorder)
+                                .autocorrectionDisabled()
+                            
+                            Button(action: { Utilities.selectSavesFolder() }) {
+                                Text(L10n.Tracking.browse)
+                            }
                         }
                     }
-                    .disabled(trackerManager.trackingMode == .seamless)
                 }
             }
         }
+        .animation(.easeInOut, value: trackerManager.trackingMode)
         .onChange(of: trackerManager.trackingMode) { _ in
             withAnimation {
                 trackerManager.resetWorldPath()
@@ -55,4 +75,5 @@ struct TrackingModeView: View {
 
 #Preview {
     TrackingModeView()
+        .padding()
 }

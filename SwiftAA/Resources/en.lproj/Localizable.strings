@@ -11,8 +11,12 @@
 "alert.directory_not_found" = "Directory not found";
 "alert.no_directory" = "No directory selected";
 "alert.no_worlds" = "No worlds found";
+"alert.no_files" = "No files to track";
 
-"credits.attribution" = "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).";
+"credits.attribution.title" = "Attribution";
+"credits.attribution.info" = "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).";
+"credits.role.developer" = "Developer";
+"credits.role.beta_tester" = "Beta Tester";
 
 "goal.advancements" = "Advancements";
 "goal.animals_bred" = "Animals Bred";
@@ -32,6 +36,8 @@
 "info.arbalistic" = "Kill **five unique mobs** with one crossbow shot.";
 
 "layout.appearance" = "Appearance";
+"layout.appearance.match_theme_color" = "Match Theme Color";
+"layout.appearance.match_theme_color.info" = "Color matches all menu and toggle switches in settings to the border color of the selected theme.";
 "layout.appearance.frame_style" = "Frame Style";
 "layout.appearance.frame_style.minecraft" = "Minecraft";
 "layout.appearance.frame_style.geode" = "Geode";
@@ -84,6 +90,9 @@
 "overlay.complete.time" = "%@\nApproximate IGT";
 "overlay.multipage" = "Multi-Page";
 "overlay.optimal" = "Optimal";
+"overlay.optimal.categories" = "Categories";
+"overlay.optimal.criteria" = "Criteria";
+"overlay.optimal.recently_completed" = "Recently Completed";
 "overlay.style.title" = "Overlay Style";
 "overlay.style.description" = "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.\n• **Multi-Page** separates them into a static set of pages.";
 "overlay.tickertape" = "Ticker Tape";
@@ -139,6 +148,8 @@
 "tracking.seamless" = "Seamless Tracking";
 "tracking.mode" = "Mode";
 "tracking.mode.info" = "Switch between automatic window tracking or manually specifying a saves directory.";
+"tracking.mode.automatic_version_detection" = "Automatic Version Detection";
+"tracking.mode.automatic_version_detection.info" = "Automatically switches to the detected game version of the targeted instance.";
 "tracking.view_style" = "View Style";
 "tracking.view_style.info" = "Standard shows all advancements horizontally. Both Vertical and Minimalistic remove redundant advancements.";
 "tracking.view_style.standard" = "Standard";

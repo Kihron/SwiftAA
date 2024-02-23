@@ -13,6 +13,7 @@ enum TrackerAlert: Error, CaseIterable, Identifiable, Hashable {
     case directoryNotFound
     case noDirectory
     case noWorlds
+    case noFiles
     
     var id: Self {
         return self
@@ -30,6 +31,8 @@ enum TrackerAlert: Error, CaseIterable, Identifiable, Hashable {
                 "alert.no_directory"
             case .noWorlds:
                 "alert.no_worlds"
+            case .noFiles:
+                "alert.no_files"
         }
     }
 }

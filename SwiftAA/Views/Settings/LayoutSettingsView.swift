@@ -11,7 +11,7 @@ struct LayoutSettingsView: View {
     @ObservedObject private var layoutManager = LayoutManager.shared
     
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             SettingsCardView {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 3) {
@@ -66,6 +66,24 @@ struct LayoutSettingsView: View {
                         .frame(maxWidth: 120)
                         .labelsHidden()
                     }
+                }
+            }
+            
+            SettingsCardView {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(L10n.Layout.Appearance.matchThemeColor)
+                        
+                        Text(L10n.Layout.Appearance.MatchThemeColor.info)
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                            .padding(.trailing, 2)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Toggle("", isOn: $layoutManager.matchThemeColor)
+                        .labelsHidden()
+                        .toggleStyle(.switch)
                 }
             }
         }

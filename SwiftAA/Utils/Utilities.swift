@@ -107,4 +107,31 @@ class Utilities {
         
         return argv.count == argc ? argv : nil
     }
+    
+    static func readLastLine(ofFileAtPath path: String) -> String? {
+        guard let fileHandle = FileHandle(forReadingAtPath: path) else {
+            return nil
+        }
+        
+        var offset: UInt64 = 0
+        let fileSize = fileHandle.seekToEndOfFile()
+        
+        if fileSize == 0 { return nil }
+        
+        var data = Data()
+        
+        repeat {
+            offset += 1
+            fileHandle.seek(toFileOffset: fileSize - offset)
+            let byteData = fileHandle.readData(ofLength: 1)
+            if byteData[0] == 10 && offset != 1 { // 10 is ASCII for '\n'
+                break
+            }
+            data.insert(contentsOf: byteData, at: 0)
+        } while offset < fileSize
+        
+        fileHandle.closeFile()
+        
+        return String(data: data, encoding: .utf8)
+    }
 }

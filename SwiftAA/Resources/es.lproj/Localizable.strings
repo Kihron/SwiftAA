@@ -1,7 +1,7 @@
 "app.title" = "SwiftAA";
 
 "about.button" = "Acerca de SwiftAA";
-"about.description" = "Seguimiento de Todos los Logros para macOS";
+"about.description" = "Rastreador de todos los progresos para macOS";
 "about.copyright" = "Copyright © 2024 Kihron, Slackow.";
 
 "donate.message" = "Apóyanos en Ko-Fi";
@@ -11,10 +11,14 @@
 "alert.directory_not_found" = "Directorio no encontrado";
 "alert.no_directory" = "Ningún directorio seleccionado";
 "alert.no_worlds" = "No se encontraron mundos";
+"alert.no_files" = "No hay archivos para rastrear";
 
-"credits.attribution" = "Esta aplicación se inspiró en gran medida y utiliza activos de [AATool para Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7) de CTM.";
+"credits.attribution.title" = "Atribución";
+"credits.attribution.info" = "Esta aplicación se inspiró en gran medida y utiliza activos de [AATool para Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7) de CTM.";
+"credits.role.developer" = "Desarrollador";
+"credits.role.beta_tester" = "Probador Beta";
 
-"goal.advancements" = "Logros";
+"goal.advancements" = "Progresos";
 "goal.animals_bred" = "Animales Criados";
 "goal.biomes_visited" = "Biomas Visitados";
 "goal.cats" = "Gatos";
@@ -32,6 +36,8 @@
 "info.arbalistic" = "Mata **cinco mobs únicos** con un solo disparo de ballesta.";
 
 "layout.appearance" = "Apariencia";
+"layout.appearance.match_theme_color" = "Coincidir con el Color del Tema";
+"layout.appearance.match_theme_color.info" = "El color coincide con todos los menús y los interruptores de palanca en la configuración con el color del borde del tema seleccionado.";
 "layout.appearance.frame_style" = "Estilo de Marco";
 "layout.appearance.frame_style.minecraft" = "Minecraft";
 "layout.appearance.frame_style.geode" = "Geoda";
@@ -73,8 +79,8 @@
 "overlay.appearance.clarify_ambiguous_criteria.info" = "Muestra el logro al que pertenece un criterio si su ícono se usa más de una vez.";
 "overlay.appearance.sync_overlay" = "Sincronizar Overlay";
 "overlay.appearance.frame_style" = "Estilo de Marco";
-"overlay.complete.title" = "¡Todos los %d Logros Completos!";
-"overlay.complete.message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos los Logros";
+"overlay.complete.title" = "¡Todos los %d Progresos Completos!";
+"overlay.complete.message" = "%@ ha completado\nMinecraft: Java Edition (%@)\nTodos los Progresos";
 "overlay.complete.stat.elytra" = "KM";
 "overlay.complete.stat.bread" = "Comido";
 "overlay.complete.stat.enchant" = "Encantado";
@@ -84,8 +90,11 @@
 "overlay.complete.time" = "%@\nTiempo IGT Aproximado";
 "overlay.multipage" = "Multi-Página";
 "overlay.optimal" = "Óptimo";
+"overlay.optimal.categories" = "Categorías";
+"overlay.optimal.criteria" = "Criterios";
+"overlay.optimal.recently_completed" = "Recién Completado";
 "overlay.style.title" = "Estilo de Overlay";
-"overlay.style.description" = "• **Óptimo** muestra los logros y criterios completados recientemente.\n• **Cinta Animada** crea una lista infinita que se desplaza constantemente pero es *intensiva en CPU*.\n• **Multi-Página** los separa en un conjunto estático de páginas.";
+"overlay.style.description" = "• **Óptimo** muestra los progresos y criterios completados recientemente.\n• **Cinta Animada** crea una lista infinita que se desplaza constantemente pero es *intensiva en CPU*.\n• **Multi-Página** los separa en un conjunto estático de páginas.";
 "overlay.tickertape" = "Cinta Animada";
 "overlay.toggle" = "Alternar Overlay";
 
@@ -139,8 +148,10 @@
 "tracking.seamless" = "Rastreo Automático";
 "tracking.mode" = "Modo de Rastreo";
 "tracking.mode.info" = "Cambia entre el rastreo automático de ventanas o la especificación manual de un directorio de guardados.";
+"tracking.mode.automatic_version_detection" = "Detección Automática de Versión";
+"tracking.mode.automatic_version_detection.info" = "Cambia automáticamente a la versión del juego detectada de la instancia objetivo.";
 "tracking.view_style" = "Estilo de Vista";
-"tracking.view_style.info" = "El estilo Estándar muestra todos los logros horizontalmente. Los estilos Vertical y Minimalista eliminan logros redundantes.";
+"tracking.view_style.info" = "El estilo Estándar muestra todos los progresos horizontalmente. Los estilos Vertical y Minimalista eliminan progresos redundantes.";
 "tracking.view_style.standard" = "Estándar";
 "tracking.view_style.vertical" = "Vertical";
 "tracking.view_style.minimalistic" = "Minimalista";
@@ -157,14 +168,14 @@
 "statistic.god_apple.obtain" = "Obtener God Apple";
 "statistic.god_apple.obtained" = "God Apple Obtenida";
 "statistic.gold_blocks" = "Bloques\n%d / 164";
-"statistic.gold_blocks.beaconator" = "Beaconator Completado";
+"statistic.gold_blocks.beaconator" = "Faroneitor Completado";
 "statistic.major_biomes" = "Biomas\n%d / %d";
 "statistic.nether_wart" = "%d Verrugas";
 "statistic.pottery_sherds" = "%d / 4 Fragmentos";
 "statistic.pufferfish" = "%d / 2 Peces Globo";
 "statistic.shells" = "Conchas\n%d / 8";
 "statistic.shells.crafted" = "Conducto Creado";
-"statistic.shells.hdwgh" = "HDWGH Completado";
+"statistic.shells.hdwgh" = "Llegamos Hasta Aquí";
 "statistic.sniffer_eggs" = "Huevos\n%d / 3";
 "statistic.sniffer_eggs.done" = "Sniffers\nListo";
 "statistic.trident.awaiting" = "Esperando\nTrueno";
@@ -183,20 +194,20 @@
 "advancement.adventure.two_birds_one_arrow" = "Dos Pájaros De Un Tiro";
 "advancement.adventure.arbalistic" = "Ballestería Avanzada";
 "advancement.adventure.honey_block_slide" = "Situación Pegajosa";
-"advancement.adventure.bullseye" = "¡Ojo De Halcón!";
+"advancement.adventure.bullseye" = "En El Blanco";
 "advancement.adventure.shoot_arrow" = "En El Punto De Mira";
 "advancement.adventure.sniper_duel" = "Duelo De Francocazadores";
 "advancement.adventure.voluntary_exile" = "Exilio Voluntario";
 "advancement.adventure.hero_of_the_village" = "Héroe De La Aldea";
 "advancement.adventure.throw_trident" = "Jugada Maestra";
 "advancement.adventure.very_very_frightening" = "Impactrueno";
-"advancement.adventure.summon_iron_golem" = "Ayuda Contratada";
+"advancement.adventure.summon_iron_golem" = "Sicario";
 "advancement.adventure.totem_of_undying" = "Post Mortem";
 "advancement.adventure.avoid_vibration" = "Discreción\n100";
 "advancement.adventure.kill_mob_near_sculk_catalyst" = "Se Propaga";
 "advancement.adventure.lightning_rod_with_villager_no_fire" = "Protector De Sobretensión";
 "advancement.adventure.walk_on_powder_snow_with_leather_boots" = "Ligero Como Conejo";
-"advancement.adventure.trade_at_world_height" = "Comerciante Estrella";
+"advancement.adventure.trade_at_world_height" = "Vendedor Estelar";
 "advancement.adventure.fall_from_world_height" = "Cuevas Y Acantilados";
 "advancement.adventure.play_jukebox_in_meadows" = "El Dulce Cantar";
 "advancement.adventure.spyglass_at_parrot" = "¿Es Un Pájaro?";
@@ -204,8 +215,8 @@
 "advancement.adventure.spyglass_at_dragon" = "¿Es Un\nAvión?";
 "advancement.adventure.salvage_sherd" = "Respetando Restos";
 "advancement.adventure.craft_decorated_pot_using_only_sherds" = "Restauración Cuidadosa";
-"advancement.adventure.trim_with_any_armor_pattern" = "Creando Un Nuevo Estilo";
-"advancement.adventure.trim_with_all_exclusive_armor_patterns" = "Herrería Con Estilo";
+"advancement.adventure.trim_with_any_armor_pattern" = "Forjando Un Nuevo Estilo";
+"advancement.adventure.trim_with_all_exclusive_armor_patterns" = "Forjando Con Estilo";
 "advancement.adventure.read_power_of_chiseled_bookshelf" = "El Poder De Los Libros";
 "advancement.adventure.adventuring_time" = "Hora De Aventura";
 "advancement.adventure.kill_all_mobs" = "Falta Daño";
@@ -226,8 +237,8 @@
 "advancement.husbandry.tame_an_animal" = "Mejores Amigos Para Siempre";
 "advancement.husbandry.fishy_business" = "Un Asunto Escamoso";
 "advancement.husbandry.tactical_fishing" = "Pesca\nTáctica";
-"advancement.husbandry.axolotl_in_a_bucket" = "El Depredador Más Lindo";
-"advancement.husbandry.kill_axolotl_target" = "¡El Poder Curativo De La Amistad!";
+"advancement.husbandry.axolotl_in_a_bucket" = "Depredador Más Lindo";
+"advancement.husbandry.kill_axolotl_target" = "¡Poder Curativo De La Amistad!";
 "advancement.husbandry.make_a_sign_glow" = "¡Brillante\nIdea!";
 "advancement.husbandry.safely_harvest_honey" = "Abelante,\nEsta Es Tu\nCasa";
 "advancement.husbandry.wax_on" = "Dar Cera";
@@ -237,22 +248,22 @@
 "advancement.husbandry.allay_deliver_item_to_player" = "Yo Soy Tu Amigo Fiel";
 "advancement.husbandry.allay_deliver_cake_to_note_block" = "¡Cumpleaños Feliz!";
 "advancement.husbandry.obtain_sniffer_egg" = "Huele Interesante";
-"advancement.husbandry.feed_snifflet" = "Pequeñas Narices";
-"advancement.husbandry.plant_any_sniffer_seed" = "Plantando El Pasado";
+"advancement.husbandry.feed_snifflet" = "Pequeños Olfateos";
+"advancement.husbandry.plant_any_sniffer_seed" = "Sembrando El Pasado";
 "advancement.husbandry.bred_all_animals" = "De Dos\nEn Dos";
 "advancement.husbandry.balanced_diet" = "Una Dieta Balanceada";
 "advancement.husbandry.complete_catalogue" = "Un Gatálogo Completo";
 "advancement.husbandry.obtain_netherite_hoe" = "Dedicación Seria";
 "advancement.husbandry.froglights" = "¡Combinando Nuestros\nPoderes!";
 "advancement.husbandry.leash_all_frog_variants" = "Los Tres Mosqueteros";
-"advancement.husbandry.tadpole_in_a_bucket" = "Croac.croac";
+"advancement.husbandry.tadpole_in_a_bucket" = "Renacuajo Al Cubo";
 
 "advancement.story.root" = "Minecraft";
 "advancement.story.mine_stone" = "La Edad De Piedra";
 "advancement.story.upgrade_tools" = "Mejorando Herramientas";
 "advancement.story.iron_tools" = "¿No Es Hierrónico?";
 "advancement.story.smelt_iron" = "La Edad De Hierro";
-"advancement.story.mine_diamond" = "¡DIAMANTES!";
+"advancement.story.mine_diamond" = "¡Diamantes!";
 "advancement.story.lava_bucket" = "¡La Cosa Está Que Arde!";
 "advancement.story.form_obsidian" = "Mente\nFría";
 "advancement.story.enter_the_nether" = "Tenemos Que Ir Más Profundo";
@@ -275,7 +286,7 @@
 "advancement.nether.netherite_armor" = "Cúbreme Con Netherita";
 "advancement.nether.explore_nether" = "Turismo Infernal";
 "advancement.nether.obtain_ancient_debris" = "Oculto En\nLas Profundidades";
-"advancement.nether.distract_piglin" = "Mi Precioso...";
+"advancement.nether.distract_piglin" = "Mi Tesoro...";
 "advancement.nether.obtain_blaze_rod" = "Jugando Con Fuego";
 "advancement.nether.brew_potion" = "Destilería Local";
 "advancement.nether.fast_travel" = "Burbuja Subespacial";
@@ -295,7 +306,7 @@
 "advancement.goal.trims_applied.armor_trimmed_tide_armor_trim_smithing_template_smithing_trim" = "Marea";
 "advancement.goal.trims_applied.armor_trimmed_wayfinder_armor_trim_smithing_template_smithing_trim" = "Guía";
 "advancement.goal.trims_applied.armor_trimmed_vex_armor_trim_smithing_template_smithing_trim" = "Vex";
-"advancement.goal.trims_applied.armor_trimmed_ward_armor_trim_smithing_template_smithing_trim" = "Guarda";
+"advancement.goal.trims_applied.armor_trimmed_ward_armor_trim_smithing_template_smithing_trim" = "Warden";
 "advancement.goal.trims_applied.armor_trimmed_silence_armor_trim_smithing_template_smithing_trim" = "Silencio";
 
 "advancement.goal.biomes_visited.plains" = "Llanuras";
@@ -423,7 +434,7 @@
 "advancement.goal.animals_bred.llama" = "Llama";
 "advancement.goal.animals_bred.goat" = "Cabra";
 "advancement.goal.animals_bred.panda" = "Panda";
-"advancement.goal.animals_bred.sniffer" = "Fisgón";
+"advancement.goal.animals_bred.sniffer" = "Sniffer";
 "advancement.goal.animals_bred.turtle" = "Tortuga";
 "advancement.goal.animals_bred.axolotl" = "Ajolote";
 "advancement.goal.animals_bred.frog" = "Rana";

@@ -11,13 +11,11 @@ class AppViewModel: ObservableObject {
     @ObservedObject var dataManager = DataManager.shared
     @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
+    @ObservedObject private var playerManager = PlayerManager.shared
     
     private var lastWorking = ""
-    private var activeWindows = [pid_t:String]()
-    private var wasCleared: Bool = true
+    private var activeWindows = [pid_t:(String, Version?)]()
     private let fileManager = FileManager.default
-    
-    private let regex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
     
     init() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -32,21 +30,25 @@ class AppViewModel: ObservableObject {
         if trackerManager.trackingMode == .directory {
             saves = trackerManager.customSavesPath
         } else {
-            if let dir = getSavesFromActiveInstance(), !dir.isEmpty {
-                saves = dir
+            if let info = getInstanceInfo(), !info.0.isEmpty {
+                saves = info.0
+                
                 if (saves != lastWorking) {
                     lastWorking = saves
                 }
+                
+                if let version = info.1, trackerManager.automaticVersionDetection {
+                    trackerManager.updateGameVersion(version: version)
+                }
             } else {
                 saves = lastWorking
-                if (saves.isEmpty) {
+                if saves.isEmpty && trackerManager.updateErrorAlert(alert: .enterMinecraft) {
                     progressManager.clearProgressState()
-                    trackerManager.alert = .enterMinecraft
-                    return
                 }
+                return
             }
         }
-
+        
         readAllFileData(saves: saves)
     }
     
@@ -56,14 +58,16 @@ class AppViewModel: ObservableObject {
                 let worldPath = getWorldPath(fileManager: fileManager, saves: saves)
                 
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
-                    progressManager.clearProgressState()
-                    trackerManager.alert = .none
+                    if trackerManager.updateErrorAlert(alert: .noFiles) {
+                        progressManager.clearProgressState()
+                    }
                     return
                 }
                 
                 if (try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats").isEmpty) {
-                    progressManager.clearProgressState()
-                    trackerManager.alert = .invalidDirectory
+                    if trackerManager.updateErrorAlert(alert: .invalidDirectory) {
+                        progressManager.clearProgressState()
+                    }
                     return
                 }
                 
@@ -74,14 +78,15 @@ class AppViewModel: ObservableObject {
                     dataManager.lastModified = lastUpdate
                     var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(worldPath)/advancements/\(fileName)"))
                     let advRange = NSRange(location: 0, length: advFileContents.count)
-                    advFileContents = regex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
+                    advFileContents = Constants.dataVersionRegex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
                     
                     let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
                     let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(worldPath)/stats/\(fileName)")))
+                    let uuid = String(fileName.dropLast(5))
                     
-                    trackerManager.alert = .none
-                    updatePlayerInfo(fileName: fileName)
+                    playerManager.updatePlayerUUID(uuid: uuid)
                     progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
+                    trackerManager.updateErrorAlert(alert: .none)
                 }
             } catch {
                 print(error.localizedDescription)
@@ -89,10 +94,10 @@ class AppViewModel: ObservableObject {
         } else {
             trackerManager.resetWorldPath()
             if (saves.isEmpty) {
-                trackerManager.alert = .noWorlds
+                trackerManager.updateErrorAlert(alert: .noDirectory)
                 return
             }
-            trackerManager.alert = .directoryNotFound
+            trackerManager.updateErrorAlert(alert: .directoryNotFound)
         }
     }
     
@@ -108,7 +113,7 @@ class AppViewModel: ObservableObject {
             if (trackerManager.lastLogUpdate != logUpdated) {
                 trackerManager.lastLogUpdate = logUpdated
                 
-                if let line = readLastLine(ofFileAtPath: logFile), line.contains("Loaded") && line.contains("advancements") {
+                if let line = Utilities.readLastLine(ofFileAtPath: logFile), line.contains("Loaded") && line.contains("advancements") {
                     isNewWorld = true
                 }
             }
@@ -142,71 +147,53 @@ class AppViewModel: ObservableObject {
         }
     }
     
-    private func updatePlayerInfo(fileName: String) {
-        Task {
-            let uuid = String(fileName.dropLast(5))
-            await PlayerManager.shared.updatePlayer(uuid: uuid)
-        }
-    }
-    
     private func getModifiedTime(_ filePath: String, fileManager: FileManager) throws -> Date? {
         try fileManager.attributesOfItem(atPath: filePath)[FileAttributeKey.modificationDate] as? Date
     }
     
-    private func getSavesFromActiveInstance() -> String? {
+    private func getInstanceInfo() -> (String, Version?)? {
         let workspace = NSWorkspace.shared
-        let apps = workspace.runningApplications.filter{  $0.activationPolicy == .regular }
-        if let currentApp = apps.first(where: {$0.isActive}) {
-            let pid = currentApp.processIdentifier
-            if let path = activeWindows[pid] {
-                return path
-            }
-            
-            if let arguments = Utilities.processArguments(pid: pid) {
-//                if let version = arguments.firstIndex(of: "--version") {
-//                    print(arguments[version + 1])
-//                }
-                
-                if let gameDirIndex = arguments.firstIndex(of: "--gameDir") {
-                    let path = "\(arguments[gameDirIndex + 1])/saves"
-                    activeWindows[pid] = path
-                    return path
-                }
-                if let nativesArg = arguments.first(where: {$0.starts(with: "-Djava.library.path=")}) {
-                    let path = "\(nativesArg.dropFirst(20).dropLast("natives".count)).minecraft/saves"
-                    activeWindows[pid] = path
-                    return path
-                }
-                activeWindows[pid] = ""
-            }
+        let apps = workspace.runningApplications.filter { $0.activationPolicy == .regular }
+        guard let currentApp = apps.first(where: { $0.isActive }) else { return nil }
+        
+        let pid = currentApp.processIdentifier
+        if let info = activeWindows[pid] {
+            return (info.0, info.1)
         }
+        
+        guard let arguments = Utilities.processArguments(pid: pid) else { return nil }
+        let version = extractGameVersion(from: arguments)
+        
+        if let gameDirIndex = arguments.firstIndex(of: "--gameDir") {
+            let info = "\(arguments[gameDirIndex + 1])/saves"
+            activeWindows[pid] = (info, version)
+            return (info, version)
+        }
+        
+        if let nativesArg = arguments.first(where: { $0.starts(with: "-Djava.library.path=") }) {
+            let info = "\(nativesArg.dropFirst(20).dropLast("natives".count)).minecraft/saves"
+            activeWindows[pid] = (info, version)
+            return (info, version)
+        }
+        
+        activeWindows[pid] = ("", nil)
         return nil
     }
     
-    private func readLastLine(ofFileAtPath path: String) -> String? {
-        guard let fileHandle = FileHandle(forReadingAtPath: path) else {
-            return nil
+    private func extractGameVersion(from processArguments: [String]) -> Version? {
+        if let gameVersionIndex = processArguments.firstIndex(of: "--version") {
+            let baseVersion = processArguments[gameVersionIndex + 1].components(separatedBy: ".").prefix(2).joined(separator: ".")
+            return Version(rawValue: baseVersion)
         }
         
-        var offset: UInt64 = 0
-        let fileSize = fileHandle.seekToEndOfFile()
+        if let argument = processArguments.first(where: { Constants.versionRegex.firstMatch(in: $0, range: NSRange($0.startIndex..., in: $0)) != nil }),
+           let match = Constants.versionRegex.firstMatch(in: argument, range: NSRange(argument.startIndex..., in: argument)),
+           let range = Range(match.range(at: 1), in: argument) {
+            let extractedVersion = String(argument[range])
+            let baseVersion = extractedVersion.components(separatedBy: ".").prefix(2).joined(separator: ".")
+            return Version(rawValue: baseVersion)
+        }
         
-        if fileSize == 0 { return nil }
-        
-        var data = Data()
-        
-        repeat {
-            offset += 1
-            fileHandle.seek(toFileOffset: fileSize - offset)
-            let byteData = fileHandle.readData(ofLength: 1)
-            if byteData[0] == 10 && offset != 1 { // 10 is ASCII for '\n'
-                break
-            }
-            data.insert(contentsOf: byteData, at: 0)
-        } while offset < fileSize
-        
-        fileHandle.closeFile()
-        
-        return String(data: data, encoding: .utf8)
+        return nil
     }
 }

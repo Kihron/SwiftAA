@@ -12,6 +12,7 @@ class TrackerManager: ObservableObject {
     @AppStorage("trackingMode") var trackingMode: TrackingMode = .seamless
     @AppStorage("layoutStyle") var layoutStyle: LayoutStyle = .standard
     
+    @AppStorage("automaticVersionDetection") var automaticVersionDetection: Bool = true
     @AppStorage("gameVersion") var gameVersion: Version = .v1_16 {
         didSet {
             DataManager.shared.gameVersionChanged()
@@ -39,5 +40,22 @@ class TrackerManager: ObservableObject {
         worldPath = ""
         lastDirectoryUpdate = Date.now
         ProgressManager.shared.clearProgressState()
+    }
+    
+    func updateGameVersion(version: Version) {
+        if gameVersion != version {
+            DispatchQueue.main.async {
+                self.gameVersion = version
+            }
+        }
+    }
+    
+    @discardableResult func updateErrorAlert(alert: TrackerAlert?) -> Bool {
+        if self.alert != alert {
+            self.alert = alert
+            return true
+        } else {
+            return false
+        }
     }
 }

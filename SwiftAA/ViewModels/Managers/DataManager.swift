@@ -44,17 +44,15 @@ class DataManager: ObservableObject {
     var uncounted: [Indicator] = []
     
     func updateAdvancementFields() {
-        if !versionManager.worldPath.isEmpty {
-            completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
-                ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
-            }
-            incompleteAdvancements = allAdvancements.filter({ !$0.completed })
-            incompleteCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
-            completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
-                ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
-            }
-            goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
+        completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
+            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
+        incompleteAdvancements = allAdvancements.filter({ !$0.completed })
+        incompleteCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
+        completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
+            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+        }
+        goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
     }
     
     func decode(file: String, start: String = "", end: String = "") -> Binding<[Indicator]> {
@@ -212,7 +210,7 @@ class DataManager: ObservableObject {
         let url = Bundle.main.url(forResource: file, withExtension: "json")
         var advancements = [Advancement]()
         
-        guard let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url!)) else {
+        guard let url, let sublayout: SubLayout = try? JSONDecoder().decode(SubLayout.self, from: Data(contentsOf: url)) else {
             print("Error decoding sublayout")
             return .constant([])
         }

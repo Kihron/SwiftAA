@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
 		49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49CCDF802B7C4AF400DFE65D /* major_biomes.json */; };
-		B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B600F5272AEB796F00283C59 /* SwiftUIIntrospect */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
 		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
 		B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */; };
 		B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */; };
 		B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB62ABA886800A79D4E /* ModernFrame.swift */; };
 		B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */; };
+		B61D9A732B881804007A35CE /* CreditsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D9A722B881804007A35CE /* CreditsEntryView.swift */; };
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
 		B62405A32B80167300CAA885 /* L1_20S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A22B80167300CAA885 /* L1_20S.swift */; };
 		B62405A52B80168900CAA885 /* L1_20M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A42B80168900CAA885 /* L1_20M.swift */; };
@@ -188,6 +188,7 @@
 		B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeodeFrame.swift; sourceTree = "<group>"; };
 		B60C6BB62ABA886800A79D4E /* ModernFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernFrame.swift; sourceTree = "<group>"; };
 		B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayView.swift; sourceTree = "<group>"; };
+		B61D9A722B881804007A35CE /* CreditsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsEntryView.swift; sourceTree = "<group>"; };
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		B62405A22B80167300CAA885 /* L1_20S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20S.swift; sourceTree = "<group>"; };
 		B62405A42B80168900CAA885 /* L1_20M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20M.swift; sourceTree = "<group>"; };
@@ -359,7 +360,6 @@
 				B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */,
 				B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */,
 				B6CDBA0128BDA6B60016D248 /* Sparkle in Frameworks */,
-				B600F5282AEB796F00283C59 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +396,15 @@
 				B6E7B0872AAA951700D83FA7 /* OverlayView.swift */,
 			);
 			path = Overlay;
+			sourceTree = "<group>";
+		};
+		B61D9A712B881723007A35CE /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				B697E0E52B84194A00932278 /* CreditsView.swift */,
+				B61D9A722B881804007A35CE /* CreditsEntryView.swift */,
+			);
+			path = Credits;
 			sourceTree = "<group>";
 		};
 		B628EF7A2B7DAD6300B5D37C /* Indicators */ = {
@@ -760,11 +769,11 @@
 				B639AC7D2AE8D46800060D96 /* Main */,
 				B6D67AE02B742D72007AA80C /* Tracking */,
 				B62AEA112AA946F1008B01CD /* Theme */,
+				B61D9A712B881723007A35CE /* Credits */,
 				B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */,
 				B683A1272ABD4A6800162E7C /* NotesSettingsView.swift */,
 				B6498D762AAC244D00230808 /* OverlaySettings.swift */,
 				B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */,
-				B697E0E52B84194A00932278 /* CreditsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -970,7 +979,6 @@
 				B6CDBA0028BDA6B60016D248 /* Sparkle */,
 				B6CDBA0328BDA6BE0016D248 /* SWXMLHash */,
 				B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */,
-				B600F5272AEB796F00283C59 /* SwiftUIIntrospect */,
 			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
@@ -1005,7 +1013,6 @@
 				B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				B6CDBA0228BDA6BE0016D248 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6CDBA0528BDA6C60016D248 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
-				B600F5262AEB796F00283C59 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
@@ -1112,6 +1119,7 @@
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
 				B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */,
 				B62EA6542B797E1900EB66AC /* EnderDragonProgressBar.swift in Sources */,
+				B61D9A732B881804007A35CE /* CreditsEntryView.swift in Sources */,
 				B676BDA62AA7A7B4008BD8A9 /* Date+Ext.swift in Sources */,
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */,
@@ -1368,7 +1376,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240221c;
+				CURRENT_PROJECT_VERSION = 240222c;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1403,7 +1411,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240221c;
+				CURRENT_PROJECT_VERSION = 240222c;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1452,14 +1460,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B600F5262AEB796F00283C59 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.1;
-			};
-		};
 		B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
@@ -1487,11 +1487,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B600F5272AEB796F00283C59 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B600F5262AEB796F00283C59 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = SwiftUIIntrospect;
-		};
 		B6CDBA0028BDA6B60016D248 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */;

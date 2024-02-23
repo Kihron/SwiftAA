@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrackingSettingsView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             TrackingVersionView()
                 .padding(.bottom, 5)
             
@@ -22,5 +22,5 @@ struct TrackingSettingsView: View {
 
 #Preview {
     TrackingSettingsView()
-        .frame(width: 400, height: 500)
+        .frame(width: 600, height: 500)
 }

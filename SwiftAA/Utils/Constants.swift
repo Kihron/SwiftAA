@@ -53,4 +53,8 @@ class Constants {
     static let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
     
     static let defaultActiveStatusIndicators: String = "minecraft:recipes/misc/mojang_banner_pattern,minecraft:trident,minecraft:nautilus_shell,minecraft:wither_skeleton_skull,minecraft:ancient_debris,minecraft:bee_nest"
+    
+    static let dataVersionRegex = try! NSRegularExpression(pattern: ",\\s*\"DataVersion\"\\s*:\\s*\\d*|\"DataVersion\"\\s*:\\s*\\d*\\s*,?")
+    
+    static let versionRegex = try! NSRegularExpression(pattern: "minecraft-(.*?)-client\\.jar")
 }
