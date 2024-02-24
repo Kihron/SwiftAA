@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum HAlignment: String, CaseIterable, Identifiable, Hashable {
+enum HAlignment: String, SettingsOption {
     case leading = "settings.alignment.leading"
     case center = "settings.alignment.center"
     case trailing = "settings.alignment.trailing"

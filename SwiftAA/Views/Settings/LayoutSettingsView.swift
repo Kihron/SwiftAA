@@ -9,82 +9,39 @@ import SwiftUI
 
 struct LayoutSettingsView: View {
     @ObservedObject private var layoutManager = LayoutManager.shared
+    @ObservedObject private var trackerManager = TrackerManager.shared
+    
+    private var availableStyles: [LayoutStyle] {
+        return LayoutStyle.getAvailableStyles(version: trackerManager.gameVersion)
+    }
     
     var body: some View {
         VStack(spacing: 12) {
             SettingsCardView {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(L10n.Layout.modularPanel)
-                        
-                        Text(L10n.Layout.ModularPanel.info)
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                            .padding(.trailing, 2)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Picker("", selection: $layoutManager.modularPanel) {
-                        ForEach(ModularPanel.allCases, id: \.self) { item in
-                            Text(item.label.localized)
-                        }
-                    }
-                    .frame(maxWidth: 110)
-                    .labelsHidden()
-                }
+                SettingsPickerView(title: L10n.Layout.modularPanel, description: L10n.Layout.ModularPanel.info, width: 110, selection: $layoutManager.modularPanel)
             }
             
             SettingsLabel(title: L10n.Layout.appearance)
                 .padding(.top, 5)
             
-            SettingsCardView {
-                VStack {
-                    HStack {
-                        Text(L10n.Layout.Appearance.frameStyle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Picker("", selection: $layoutManager.frameStyle) {
-                            ForEach(FrameStyle.allCases, id: \.self) { item in
-                                Text(item.label.localized)
-                            }
-                        }
-                        .frame(maxWidth: 90)
-                        .labelsHidden()
-                    }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text(L10n.Layout.Appearance.progressBarStyle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Picker("", selection: $layoutManager.progressBarStyle) {
-                            ForEach(ProgressBarStyle.allCases, id: \.self) { item in
-                                Text(item.label.localized)
-                            }
-                        }
-                        .frame(maxWidth: 120)
-                        .labelsHidden()
-                    }
+            if availableStyles.count > 1 {
+                SettingsCardView {
+                    SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $trackerManager.layoutStyle)
                 }
             }
             
             SettingsCardView {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(L10n.Layout.Appearance.matchThemeColor)
-                        
-                        Text(L10n.Layout.Appearance.MatchThemeColor.info)
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                            .padding(.trailing, 2)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack {
+                    SettingsPickerView(title: L10n.Layout.Appearance.frameStyle, width: 90, selection: $layoutManager.frameStyle)
                     
-                    Toggle("", isOn: $layoutManager.matchThemeColor)
-                        .labelsHidden()
-                        .toggleStyle(.switch)
+                    Divider()
+                    
+                    SettingsPickerView(title: L10n.Layout.Appearance.progressBarStyle, width: 120, selection: $layoutManager.progressBarStyle)
                 }
+            }
+            
+            SettingsCardView {
+                SettingsToggleView(title: L10n.Layout.Appearance.matchThemeColor, description: L10n.Layout.Appearance.MatchThemeColor.info, option: $layoutManager.matchThemeColor)
             }
         }
         .frame(maxHeight: .infinity, alignment: .topLeading)

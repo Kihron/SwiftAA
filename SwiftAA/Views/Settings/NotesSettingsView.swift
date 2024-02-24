@@ -58,6 +58,7 @@ struct NotesSettingsView: View {
                                 WaypointCardView(note: $selected, index: 1, icon: "pillager")
                                 WaypointCardView(note: $selected, index: 2, icon: "silverfish")
                             }
+                            .contentTransition(.numericText())
                         }
                         .disabled(true)
                         
@@ -84,6 +85,7 @@ struct NotesSettingsView: View {
                 .padding()
             }
         }
+        .animation(.bouncy, value: selected)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .onAppear {
             if let note = noteManager.worldNotes.first {
@@ -115,7 +117,7 @@ struct NotesSettingsView: View {
         }
     }
     
-    func showInFinder() {
+    private func showInFinder() {
         let url = URL(filePath: selected.path)
         NSWorkspace.shared.activateFileViewerSelecting([url])
     }

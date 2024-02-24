@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ModularPanel: String, CaseIterable, Identifiable, Hashable {
+enum ModularPanel: String, SettingsOption {
     case leaderboard = "modular.leaderboard"
     case potionPanel = "modular.potion_panel"
     

@@ -9,7 +9,6 @@ import SwiftUI
 
 class NoteManager: ObservableObject {
     @ObservedObject private var trackerManager = TrackerManager.shared
-    @AppStorage("notes") var notes: [String:[String]] = [:]
     @Published var worldNotes: [Note] = []
     
     static let shared = NoteManager()
@@ -92,15 +91,15 @@ class NoteManager: ObservableObject {
         
         do {
             let objects = try context.fetch(fetchRequest)
-            if let object = objects.first {
-                context.delete(object)
-                try context.save()
-                
-                withAnimation {
-                    worldNotes.removeAll(where: { $0.id == note.id })
-                }
-            } else {
-                print("Object not found")
+            guard !objects.isEmpty, let object = objects.first else {
+                return
+            }
+            
+            context.delete(object)
+            try context.save()
+            
+            withAnimation {
+                worldNotes.removeAll(where: { $0.id == note.id })
             }
         } catch {
             print("Failed to delete object")

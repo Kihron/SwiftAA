@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum LayoutStyle: String, CaseIterable, Identifiable, Hashable {
+enum LayoutStyle: String, SettingsOption {
     case standard = "tracking.view_style.standard"
     case vertical = "tracking.view_style.vertical"
     case minimalist = "tracking.view_style.minimalistic"

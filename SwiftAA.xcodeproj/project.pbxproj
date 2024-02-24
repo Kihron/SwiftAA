@@ -16,6 +16,9 @@
 		B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB62ABA886800A79D4E /* ModernFrame.swift */; };
 		B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */; };
 		B61D9A732B881804007A35CE /* CreditsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D9A722B881804007A35CE /* CreditsEntryView.swift */; };
+		B61D9A812B899580007A35CE /* SettingsToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D9A802B899580007A35CE /* SettingsToggleView.swift */; };
+		B61D9A832B899FBC007A35CE /* SettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D9A822B899FBC007A35CE /* SettingsOption.swift */; };
+		B61D9A852B89A0BF007A35CE /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61D9A842B89A0BF007A35CE /* SettingsPickerView.swift */; };
 		B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621A8EA29860163000B9DDF /* SettingsCardView.swift */; };
 		B62405A32B80167300CAA885 /* L1_20S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A22B80167300CAA885 /* L1_20S.swift */; };
 		B62405A52B80168900CAA885 /* L1_20M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62405A42B80168900CAA885 /* L1_20M.swift */; };
@@ -83,8 +86,6 @@
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
 		B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA02AA78E12008BD8A9 /* UserTheme.swift */; };
 		B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA32AA79937008BD8A9 /* Color+Ext.swift */; };
-		B676BDA62AA7A7B4008BD8A9 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA52AA7A7B4008BD8A9 /* Date+Ext.swift */; };
-		B676BDA82AA7A7D8008BD8A9 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA72AA7A7D8008BD8A9 /* Dictionary+Ext.swift */; };
 		B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */; };
 		B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A1132ABD2BDE00162E7C /* UserThemeEditor.swift */; };
 		B683A1162ABD3F4B00162E7C /* ThemeSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683A1152ABD3F4B00162E7C /* ThemeSampleView.swift */; };
@@ -189,6 +190,9 @@
 		B60C6BB62ABA886800A79D4E /* ModernFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernFrame.swift; sourceTree = "<group>"; };
 		B616FAA4289B232F004E4A41 /* MultiPageOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayView.swift; sourceTree = "<group>"; };
 		B61D9A722B881804007A35CE /* CreditsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsEntryView.swift; sourceTree = "<group>"; };
+		B61D9A802B899580007A35CE /* SettingsToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggleView.swift; sourceTree = "<group>"; };
+		B61D9A822B899FBC007A35CE /* SettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOption.swift; sourceTree = "<group>"; };
+		B61D9A842B89A0BF007A35CE /* SettingsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
 		B621A8EA29860163000B9DDF /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		B62405A22B80167300CAA885 /* L1_20S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20S.swift; sourceTree = "<group>"; };
 		B62405A42B80168900CAA885 /* L1_20M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20M.swift; sourceTree = "<group>"; };
@@ -259,8 +263,6 @@
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
 		B676BDA02AA78E12008BD8A9 /* UserTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
 		B676BDA32AA79937008BD8A9 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		B676BDA52AA7A7B4008BD8A9 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		B676BDA72AA7A7D8008BD8A9 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		B683A1132ABD2BDE00162E7C /* UserThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserThemeEditor.swift; sourceTree = "<group>"; };
 		B683A1152ABD3F4B00162E7C /* ThemeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSampleView.swift; sourceTree = "<group>"; };
@@ -462,6 +464,8 @@
 				B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */,
 				B621A8EA29860163000B9DDF /* SettingsCardView.swift */,
 				B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */,
+				B61D9A802B899580007A35CE /* SettingsToggleView.swift */,
+				B61D9A842B89A0BF007A35CE /* SettingsPickerView.swift */,
 				B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */,
 			);
 			path = Main;
@@ -877,6 +881,7 @@
 				B6FEFED4289991070095CF08 /* Indicator.swift */,
 				B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */,
 				B62405A62B81A67700CAA885 /* StatisticIndicator.swift */,
+				B61D9A822B899FBC007A35CE /* SettingsOption.swift */,
 				B65AB3582AA98281001F4FE6 /* Theme.swift */,
 			);
 			path = Protocols;
@@ -926,8 +931,6 @@
 				B697E1132B84709800932278 /* ImageCache.swift */,
 				B676BDA32AA79937008BD8A9 /* Color+Ext.swift */,
 				B6D3065728A2B150004D27E6 /* String+Ext.swift */,
-				B676BDA52AA7A7B4008BD8A9 /* Date+Ext.swift */,
-				B676BDA72AA7A7D8008BD8A9 /* Dictionary+Ext.swift */,
 				B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */,
 				B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */,
 				B65AB3562AA97EB5001F4FE6 /* UUID+Ext.swift */,
@@ -1073,8 +1076,10 @@
 			files = (
 				B6CFEAE32B7C266E0008542B /* MinecraftFont.swift in Sources */,
 				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
+				B61D9A812B899580007A35CE /* SettingsToggleView.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
 				B697E1082B844D9B00932278 /* Pufferfish.swift in Sources */,
+				B61D9A832B899FBC007A35CE /* SettingsOption.swift in Sources */,
 				B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */,
@@ -1085,6 +1090,7 @@
 				B697E10E2B844DDB00932278 /* GoldyApple.swift in Sources */,
 				B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */,
 				B65FE5912AA6CFE900C30A8F /* ThemeManager.swift in Sources */,
+				B61D9A852B89A0BF007A35CE /* SettingsPickerView.swift in Sources */,
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B62405A32B80167300CAA885 /* L1_20S.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
@@ -1120,7 +1126,6 @@
 				B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */,
 				B62EA6542B797E1900EB66AC /* EnderDragonProgressBar.swift in Sources */,
 				B61D9A732B881804007A35CE /* CreditsEntryView.swift in Sources */,
-				B676BDA62AA7A7B4008BD8A9 /* Date+Ext.swift in Sources */,
 				B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */,
 				B616FAA5289B232F004E4A41 /* MultiPageOverlayView.swift in Sources */,
 				B62AEA132AA9470E008B01CD /* ThemeExampleView.swift in Sources */,
@@ -1164,7 +1169,6 @@
 				B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */,
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
 				B62AEA102AA93F13008B01CD /* SettingsLabel.swift in Sources */,
-				B676BDA82AA7A7D8008BD8A9 /* Dictionary+Ext.swift in Sources */,
 				B65180052B1593E600D9CC99 /* OptimalOverlayView.swift in Sources */,
 				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B6E331122AA80869001D7FF2 /* TrackerManager.swift in Sources */,
@@ -1376,7 +1380,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240222c;
+				CURRENT_PROJECT_VERSION = 240223b;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1411,7 +1415,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240222c;
+				CURRENT_PROJECT_VERSION = 240223b;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

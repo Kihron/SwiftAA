@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum OverlayStyle: String, CaseIterable, Identifiable, Hashable {
+enum OverlayStyle: String, SettingsOption {
     case optimal = "overlay.optimal"
     case tickerTape = "overlay.tickertape"
     case multiPage = "overlay.multipage"

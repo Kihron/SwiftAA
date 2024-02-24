@@ -39,14 +39,18 @@ class TrackerManager: ObservableObject {
     func resetWorldPath() {
         worldPath = ""
         lastDirectoryUpdate = Date.now
+        DataManager.shared.lastModified = Date.now
         ProgressManager.shared.clearProgressState()
     }
     
-    func updateGameVersion(version: Version) {
+    @discardableResult func updateGameVersion(version: Version) -> Bool {
         if gameVersion != version {
             DispatchQueue.main.async {
                 self.gameVersion = version
             }
+            return true
+        } else {
+            return false
         }
     }
     

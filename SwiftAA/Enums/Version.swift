@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Version: String, CaseIterable, Identifiable, Hashable {
+enum Version: String, SettingsOption {
     case v1_16 = "1.16"
     case v1_19 = "1.19"
     case v1_20 = "1.20"

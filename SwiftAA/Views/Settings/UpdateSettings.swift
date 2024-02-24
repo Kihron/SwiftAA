@@ -14,26 +14,12 @@ struct UpdateSettings: View {
         VStack {
             SettingsCardView {
                 VStack {
-                    HStack {
-                        Text(L10n.Settings.Updater.autoCheck)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Toggle("", isOn: $updateManager.checkAutomatically)
-                            .labelsHidden()
-                            .toggleStyle(.switch)
-                    }
+                    SettingsToggleView(title: L10n.Settings.Updater.autoCheck, option: $updateManager.checkAutomatically)
                     
                     Divider()
                     
-                    HStack {
-                        Text(L10n.Settings.Updater.autoDownload)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Toggle("", isOn: $updateManager.downloadAutomatically)
-                            .labelsHidden()
-                            .toggleStyle(.switch)
-                    }
-                    .disabled(!updateManager.checkAutomatically)
+                    SettingsToggleView(title: L10n.Settings.Updater.autoDownload, option: $updateManager.downloadAutomatically)
+                        .disabled(!updateManager.checkAutomatically)
                 }
             }
             

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum FrameStyle: String, CaseIterable, Identifiable, Hashable {
+enum FrameStyle: String, SettingsOption {
     case minecraft = "layout.appearance.frame_style.minecraft"
     case geode = "layout.appearance.frame_style.geode"
     case modern = "layout.appearance.frame_style.modern"

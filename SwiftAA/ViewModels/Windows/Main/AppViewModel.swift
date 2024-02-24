@@ -38,14 +38,18 @@ class AppViewModel: ObservableObject {
                 }
                 
                 if let version = info.1, trackerManager.automaticVersionDetection {
-                    trackerManager.updateGameVersion(version: version)
+                    if trackerManager.updateGameVersion(version: version) {
+                        return
+                    }
                 }
             } else {
                 saves = lastWorking
-                if saves.isEmpty && trackerManager.updateErrorAlert(alert: .enterMinecraft) {
-                    progressManager.clearProgressState()
+                if saves.isEmpty {
+                    if trackerManager.updateErrorAlert(alert: .enterMinecraft) {
+                        progressManager.clearProgressState()
+                    }
+                    return
                 }
-                return
             }
         }
         

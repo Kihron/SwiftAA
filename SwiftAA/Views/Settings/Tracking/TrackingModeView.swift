@@ -35,21 +35,7 @@ struct TrackingModeView: View {
                     Divider()
                     
                     if trackerManager.trackingMode == .seamless {
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text(L10n.Tracking.Mode.automaticVersionDetection)
-                                
-                                Text(L10n.Tracking.Mode.AutomaticVersionDetection.info)
-                                    .font(.caption)
-                                    .foregroundStyle(.gray)
-                                    .padding(.trailing, 2)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Toggle("", isOn: $trackerManager.automaticVersionDetection)
-                                .labelsHidden()
-                                .toggleStyle(.switch)
-                        }
+                        SettingsToggleView(title: L10n.Tracking.Mode.automaticVersionDetection, description: L10n.Tracking.Mode.AutomaticVersionDetection.info, option: $trackerManager.automaticVersionDetection)
                     } else {
                         HStack {
                             TextField("", text: $trackerManager.customSavesPath)
