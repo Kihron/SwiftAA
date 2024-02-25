@@ -20,7 +20,7 @@ struct SwiftAAApp: App {
             ContentView()
                 .applyVersionFrame()
                 .onAppear {
-                    closeOverlay()
+                    OverlayManager.shared.closeOverlay()
                 }
                 .navigationTitle("SwiftAA")
                 .toolbar {
@@ -69,13 +69,13 @@ struct SwiftAAApp: App {
         }
         .windowResizability(.contentSize)
         
-        Window("OverlayWindow", id: "overlay-window") {
+        Window("Overlay Window", id: "overlay-window") {
             OverlayView()
                 .applyOverlayFrame()
                 .onAppear {
                     Task {
                         let windows = NSApplication.shared.windows.filter({ window in
-                            window.title == "OverlayWindow"
+                            window.title == "Overlay Window"
                         })
                         windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
                     }
@@ -117,22 +117,8 @@ struct SwiftAAApp: App {
             OverlayManager.shared.overlayOpen = true
             openWindow(id: "overlay-window")
         } else {
-            closeOverlay()
+            OverlayManager.shared.closeOverlay()
         }
-    }
-    
-    private func closeOverlay() {
-        let windows = NSApplication.shared.windows.filter({ window in
-            window.title == "OverlayWindow"
-        })
-        
-        guard let _ = windows.first else {
-            OverlayManager.shared.overlayOpen = false
-            return
-        }
-        
-        OverlayManager.shared.overlayOpen = false
-        windows.first!.close()
     }
 }
 

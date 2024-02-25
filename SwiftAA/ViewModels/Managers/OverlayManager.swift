@@ -9,7 +9,6 @@ import SwiftUI
 
 class OverlayManager: ObservableObject {
     @AppStorage("overlayStyle") var overlayStyle: OverlayStyle = .optimal
-    @AppStorage("overlayOpen") var overlayOpen: Bool = false
     @AppStorage("showStatistics") var showStatistics: Bool = true
     @AppStorage("statisticsAlignment") var statisticsAlignment: HAlignment = .leading
     @AppStorage("showOptimalProgressBar") var showOptimalProgressBar: Bool = true
@@ -22,6 +21,14 @@ class OverlayManager: ObservableObject {
 
     @AppStorage("activeStatusIndicators") private var activeStatusIndicators: String = Constants.defaultActiveStatusIndicators
     
+    @AppStorage("overlayOpen") var overlayOpen: Bool = false {
+        didSet {
+            if !overlayOpen {
+                closeOverlayWindow()
+            }
+        }
+    }
+    
     @Published var isHovering: Bool = false
     
     var activeIndicators: [String] {
@@ -33,5 +40,21 @@ class OverlayManager: ObservableObject {
     
     init() {
         
+    }
+    
+    func closeOverlay() {
+        overlayOpen = false
+    }
+    
+    private func closeOverlayWindow() {
+        let windows = NSApplication.shared.windows.filter({ window in
+            window.title == "Overlay Window"
+        })
+        
+        guard let window = windows.first else {
+            return
+        }
+        
+        window.close()
     }
 }

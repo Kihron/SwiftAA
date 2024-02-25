@@ -46,6 +46,7 @@
 		B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637DB3029634FA800A73F62 /* AppViewModel.swift */; };
 		B6397EDF2AC9E9B3007C8606 /* IndicatorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */; };
 		B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */; };
+		B63B87652B8AFC1500B3A3C6 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = B63B87642B8AFC1500B3A3C6 /* SwiftUIIntrospect */; };
 		B64192D12AC29D02006C8CC4 /* WaypointCardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64192D02AC29D02006C8CC4 /* WaypointCardVeiw.swift */; };
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
@@ -362,6 +363,7 @@
 				B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */,
 				B6CDBA0428BDA6BE0016D248 /* SWXMLHash in Frameworks */,
 				B6CDBA0128BDA6B60016D248 /* Sparkle in Frameworks */,
+				B63B87652B8AFC1500B3A3C6 /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,6 +984,7 @@
 				B6CDBA0028BDA6B60016D248 /* Sparkle */,
 				B6CDBA0328BDA6BE0016D248 /* SWXMLHash */,
 				B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */,
+				B63B87642B8AFC1500B3A3C6 /* SwiftUIIntrospect */,
 			);
 			productName = SwiftAA;
 			productReference = B65AE1BD2886F401006EC138 /* SwiftAA.app */;
@@ -1016,6 +1019,7 @@
 				B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				B6CDBA0228BDA6BE0016D248 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 				B6CDBA0528BDA6C60016D248 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				B63B87632B8AFC1500B3A3C6 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = B65AE1BE2886F401006EC138 /* Products */;
 			projectDirPath = "";
@@ -1380,7 +1384,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240223b;
+				CURRENT_PROJECT_VERSION = 240224b;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1415,7 +1419,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240223b;
+				CURRENT_PROJECT_VERSION = 240224b;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1464,6 +1468,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B63B87632B8AFC1500B3A3C6 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
 		B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
@@ -1491,6 +1503,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B63B87642B8AFC1500B3A3C6 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B63B87632B8AFC1500B3A3C6 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
 		B6CDBA0028BDA6B60016D248 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6CDB9FF28BDA6B60016D248 /* XCRemoteSwiftPackageReference "Sparkle" */;

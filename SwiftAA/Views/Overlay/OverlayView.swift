@@ -8,30 +8,45 @@
 import SwiftUI
 
 struct OverlayView: View {
+    @Environment(\.controlActiveState) private var controlActiveState
+    
     @ObservedObject private var overlayManager = OverlayManager.shared
     @ObservedObject private var dataManager = DataManager.shared
     
     var body: some View {
-        if overlayManager.overlayOpen {
-            Group {
-                if !dataManager.completedAllAdvancements {
-                    switch overlayManager.overlayStyle {
-                        case .optimal:
-                            OptimalOverlayView()
-                        case .tickerTape:
-                            TickerTapeOverlayView()
-                        case .multiPage:
-                            MultiPageOverlayView()
+        VStack {
+            if overlayManager.overlayOpen {
+                Group {
+                    if !dataManager.completedAllAdvancements {
+                        switch overlayManager.overlayStyle {
+                            case .optimal:
+                                OptimalOverlayView()
+                            case .tickerTape:
+                                TickerTapeOverlayView()
+                            case .multiPage:
+                                MultiPageOverlayView()
+                        }
+                    } else {
+                        OverlayCompletedView()
                     }
-                } else {
-                    OverlayCompletedView()
                 }
+                .onHover(perform: { hovering in
+                    overlayManager.isHovering = hovering
+                })
+            } else {
+                ProgressView()
             }
-            .onHover(perform: { hovering in
-                overlayManager.isHovering = hovering
-            })
-        } else {
-            ProgressView()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { newValue in
+            overlayManager.closeOverlay()
+        }
+        .onChange(of: controlActiveState) { newValue in
+            switch newValue {
+                case .key, .active:
+                    overlayManager.overlayOpen = true
+                default:
+                    break
+            }
         }
     }
 }

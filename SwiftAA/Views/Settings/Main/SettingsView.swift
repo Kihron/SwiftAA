@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIIntrospect
 
 struct SettingsView: View {
     @ObservedObject private var themeManager = ThemeManager.shared
@@ -16,7 +17,7 @@ struct SettingsView: View {
     @State private var disableCollapse: Bool = false
     
     private var tintColor: Color {
-        return layoutManager.matchThemeColor ? themeManager.border : .blue
+        return layoutManager.matchThemeColor ? themeManager.border : .accentColor
     }
     
     var body: some View {
@@ -36,14 +37,26 @@ struct SettingsView: View {
                         }
                         
                         Text(item.label.localized)
-                            .tint(.primary)
                     }
                     .frame(height: 20)
                     .padding(.vertical, 5)
                     .contentShape(Rectangle())
+                    .listRowBackground(Group {
+                        if selectedSettingsBarItem == item {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(tintColor)
+                                .opacity(0.8)
+                                .padding(.horizontal, 10)
+                        }
+                    })
                 }
                 .frame(width: 200)
                 .removeSidebar()
+                .introspect(.list, on: .macOS(.v13, .v14)) { listView in
+                    DispatchQueue.main.async {
+                        listView.selectionHighlightStyle = .none
+                    }
+                }
                 
                 SettingsAccountView()
             }

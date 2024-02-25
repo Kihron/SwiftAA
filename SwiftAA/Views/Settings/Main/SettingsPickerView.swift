@@ -15,6 +15,15 @@ struct SettingsPickerView<T: SettingsOption>: View {
     @Binding var selection: T
     @State private var textHeight: CGFloat = 0
     
+    var filter: [T]?
+    var options: [T] {
+        if let filter = filter {
+            return filter
+        } else {
+            return Array(T.allCases)
+        }
+    }
+    
     var body: some View {
         HStack(alignment: description != nil && textHeight > 20 ? .top : .center) {
             VStack(alignment: .leading, spacing: 3) {
@@ -35,7 +44,7 @@ struct SettingsPickerView<T: SettingsOption>: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Picker("", selection: $selection) {
-                ForEach(Array(T.allCases), id: \.id) { item in
+                ForEach(options, id: \.id) { item in
                     Text(item.label.localized)
                 }
             }

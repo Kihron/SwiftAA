@@ -26,7 +26,7 @@ struct LayoutSettingsView: View {
             
             if availableStyles.count > 1 {
                 SettingsCardView {
-                    SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $trackerManager.layoutStyle)
+                    SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $trackerManager.layoutStyle, filter: availableStyles)
                 }
             }
             
