@@ -50,7 +50,6 @@ struct CriteriaTickerTapeView: View {
                                 .padding(8)
                         }
                     }
-                    .drawingGroup()
                 }
             }
             .offset(x: xOffset, y: 0)

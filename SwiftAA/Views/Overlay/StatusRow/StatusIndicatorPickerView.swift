@@ -10,13 +10,13 @@ import SwiftUI
 struct StatusIndicatorPickerView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var dataManager = DataManager.shared
-    @ObservedObject private var overlayManager = OverlayManager.shared
+    @StateObject private var overlayManager = OverlayManager.shared
     
     @State var isSettings: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Status Indicators")
+            Text(L10n.Overlay.Appearance.StatisticsRow.editor)
                 .font(.title2)
                 .fontWeight(.bold)
             
@@ -54,7 +54,7 @@ struct StatusIndicatorPickerView: View {
             }
             
             Button(action: { dismiss() }) {
-                Text("Close")
+                Text(L10n.Button.close)
             }.frame(maxWidth: .infinity, alignment: .trailing)
         }
         .padding()

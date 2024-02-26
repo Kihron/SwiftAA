@@ -27,7 +27,10 @@ struct VersionFrameModifier: ViewModifier {
             case (.v1_20, .standard):
                 content
                     .frame(minWidth: 350, idealWidth: 1746, maxWidth: 1746, minHeight: 260, idealHeight: 769, maxHeight: 769, alignment: .center)
-            case (.v1_20, _):
+            case (.v1_20, .vertical):
+                content
+                    .frame(minWidth: 350, idealWidth: 680, maxWidth: 680, minHeight: 260, idealHeight: 1391, maxHeight: 1391, alignment: .center)
+            case (.v1_20, .minimalist):
                 content
                     .frame(minWidth: 350, idealWidth: 1488, maxWidth: 1488, minHeight: 260, idealHeight: 674, maxHeight: 674, alignment: .center)
         }

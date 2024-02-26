@@ -12,15 +12,7 @@ struct CriterionView: View {
     
     var body: some View {
         HStack {
-            Image(criterion.icon)
-                .frame(width: 16, height: 16)
-                .opacity(criterion.completed ? 1 : 0.3)
-            
-            if let dual = criterion as? Criterion.DualCriterion, dual.recipe.contains("trim") {
-                Image("smithing_table")
-                    .frame(width: 16, height: 16)
-                    .opacity(dual.secondaryCompleted ? 1 : 0.3)
-            }
+            CriterionIconView(criterion: $criterion)
             
             Text(calculateText())
                 .minecraftFont()

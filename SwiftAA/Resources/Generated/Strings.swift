@@ -1077,6 +1077,14 @@ internal enum L10n {
     /// SwiftAA
     internal static let title = L10n.tr("Localizable", "app.title", fallback: "SwiftAA")
   }
+  internal enum Button {
+    /// Cancel
+    internal static let cancel = L10n.tr("Localizable", "button.cancel", fallback: "Cancel")
+    /// Close
+    internal static let close = L10n.tr("Localizable", "button.close", fallback: "Close")
+    /// Save
+    internal static let save = L10n.tr("Localizable", "button.save", fallback: "Save")
+  }
   internal enum Credits {
     internal enum Attribution {
       /// This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).
@@ -1143,6 +1151,8 @@ internal enum L10n {
       internal static let matchThemeColor = L10n.tr("Localizable", "layout.appearance.match_theme_color", fallback: "Match Theme Color")
       /// Progress Bar Style
       internal static let progressBarStyle = L10n.tr("Localizable", "layout.appearance.progress_bar_style", fallback: "Progress Bar Style")
+      /// Refresh Indicator Style
+      internal static let refreshStyle = L10n.tr("Localizable", "layout.appearance.refresh_style", fallback: "Refresh Indicator Style")
       internal enum FrameStyle {
         /// Geode
         internal static let geode = L10n.tr("Localizable", "layout.appearance.frame_style.geode", fallback: "Geode")
@@ -1160,6 +1170,16 @@ internal enum L10n {
         internal static let enderDragon = L10n.tr("Localizable", "layout.appearance.progress_bar_style.ender_dragon", fallback: "Ender Dragon")
         /// Experience
         internal static let experience = L10n.tr("Localizable", "layout.appearance.progress_bar_style.experience", fallback: "Experience")
+      }
+      internal enum RefreshStyle {
+        /// Clock
+        internal static let clock = L10n.tr("Localizable", "layout.appearance.refresh_style.clock", fallback: "Clock")
+        /// Compass
+        internal static let compass = L10n.tr("Localizable", "layout.appearance.refresh_style.compass", fallback: "Compass")
+        /// Orb
+        internal static let orb = L10n.tr("Localizable", "layout.appearance.refresh_style.orb", fallback: "Orb")
+        /// Animation Speed
+        internal static let speed = L10n.tr("Localizable", "layout.appearance.refresh_style.speed", fallback: "Animation Speed")
       }
     }
     internal enum ModularPanel {
@@ -1248,6 +1268,8 @@ internal enum L10n {
       internal enum StatisticsRow {
         /// Open Editor
         internal static let button = L10n.tr("Localizable", "overlay.appearance.statistics_row.button", fallback: "Open Editor")
+        /// Status Indicators
+        internal static let editor = L10n.tr("Localizable", "overlay.appearance.statistics_row.editor", fallback: "Status Indicators")
       }
     }
     internal enum Complete {
@@ -1464,21 +1486,25 @@ internal enum L10n {
     }
   }
   internal enum Theme {
-    /// Background Color
-    internal static let backgroundColor = L10n.tr("Localizable", "theme.background_color", fallback: "Background Color")
-    /// Copy to Custom
-    internal static let copy = L10n.tr("Localizable", "theme.copy", fallback: "Copy to Custom")
+    /// Background
+    internal static let backgroundColor = L10n.tr("Localizable", "theme.background_color", fallback: "Background")
+    /// Border
+    internal static let borderColor = L10n.tr("Localizable", "theme.border_color", fallback: "Border")
     /// Custom
     internal static let custom = L10n.tr("Localizable", "theme.custom", fallback: "Custom")
-    /// Foreground Color
-    internal static let foregroundColor = L10n.tr("Localizable", "theme.foreground_color", fallback: "Foreground Color")
+    /// Theme Editor
+    internal static let editor = L10n.tr("Localizable", "theme.editor", fallback: "Theme Editor")
     /// Presets
     internal static let presets = L10n.tr("Localizable", "theme.presets", fallback: "Presets")
-    /// Text Color
-    internal static let textColor = L10n.tr("Localizable", "theme.text_color", fallback: "Text Color")
+    /// Text
+    internal static let textColor = L10n.tr("Localizable", "theme.text_color", fallback: "Text")
     internal enum Button {
       /// Delete Selected Theme
       internal static let deleteSelectedTheme = L10n.tr("Localizable", "theme.button.delete_selected_theme", fallback: "Delete Selected Theme")
+    }
+    internal enum Editor {
+      /// Name
+      internal static let name = L10n.tr("Localizable", "theme.editor.name", fallback: "Name")
     }
     internal enum Presets {
       /// Berry

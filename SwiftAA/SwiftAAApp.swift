@@ -72,14 +72,6 @@ struct SwiftAAApp: App {
         Window("Overlay Window", id: "overlay-window") {
             OverlayView()
                 .applyOverlayFrame()
-                .onAppear {
-                    Task {
-                        let windows = NSApplication.shared.windows.filter({ window in
-                            window.title == "Overlay Window"
-                        })
-                        windows.first?.standardWindowButton(NSWindow.ButtonType.closeButton)!.isEnabled = false
-                    }
-                }
                 .background(TransparentWindow())
         }.commands {
             CommandGroup(after: .sidebar, addition: {

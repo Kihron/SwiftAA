@@ -22,13 +22,15 @@ class Utilities {
     
     static func getSpecificStats(types: [StatusType]) -> [Indicator] {
         if let array = indicators as? [StatusIndicator] {
-            return array.filter { indicator in
-                for type in types {
-                    if indicator.type == type {
-                        return true
-                    }
+            let filteredIndicators = array.filter { indicator in
+                types.contains(indicator.type)
+            }
+            
+            return filteredIndicators.sorted { (indicator1, indicator2) -> Bool in
+                guard let index1 = types.firstIndex(of: indicator1.type), let index2 = types.firstIndex(of: indicator2.type) else {
+                    return false
                 }
-                return false
+                return index1 < index2
             }
         }
         return indicators

@@ -26,6 +26,13 @@ struct IndicatorIconView: View {
             }
             .frame(width: 32, height: 32)
             .padding(.top, 6)
+        } else if !isOverlay && Constants.animatedIcons.contains(indicator.icon) {
+            AnimatedIconView(icon: indicator.icon)
+                .frame(width: 32, height: 32)
+                .padding(.top, 6)
+                .onHover(perform: { hovering in
+                    showTooltip = layoutManager.infoMode && !isOverlay && hovering
+                })
         } else {
             Image(indicator.icon)
                 .interpolation(.none)

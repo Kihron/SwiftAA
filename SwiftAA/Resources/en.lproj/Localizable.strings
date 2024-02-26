@@ -13,6 +13,10 @@
 "alert.no_worlds" = "No worlds found";
 "alert.no_files" = "No files to track";
 
+"button.cancel" = "Cancel";
+"button.close" = "Close";
+"button.save" = "Save";
+
 "credits.attribution.title" = "Attribution";
 "credits.attribution.info" = "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).";
 "credits.role.developer" = "Developer";
@@ -45,6 +49,11 @@
 "layout.appearance.progress_bar_style" = "Progress Bar Style";
 "layout.appearance.progress_bar_style.ender_dragon" = "Ender Dragon";
 "layout.appearance.progress_bar_style.experience" = "Experience";
+"layout.appearance.refresh_style" = "Refresh Indicator Style";
+"layout.appearance.refresh_style.clock" = "Clock";
+"layout.appearance.refresh_style.compass" = "Compass";
+"layout.appearance.refresh_style.orb" = "Orb";
+"layout.appearance.refresh_style.speed" = "Animation Speed";
 "layout.modular_panel" = "Modular Panel";
 "layout.modular_panel.info" = "Switch between multiple panels to display different types of information located on the far right.";
 
@@ -75,6 +84,7 @@
 "overlay.appearance.show_time.info" = "Displays the in-game time for the currently tracked world.";
 "overlay.appearance.statistics_row" = "Statistics Row";
 "overlay.appearance.statistics_row.button" = "Open Editor";
+"overlay.appearance.statistics_row.editor" = "Status Indicators";
 "overlay.appearance.clarify_ambiguous_criteria" = "Clarify Ambiguous Criteria";
 "overlay.appearance.clarify_ambiguous_criteria.info" = "Displays the advancement a criteria belongs to if it's icon is used more than once.";
 "overlay.appearance.sync_overlay" = "Sync Overlay";
@@ -125,11 +135,12 @@
 "settings.updater.last_checked" = "Last Checked: ";
 "settings.window_title" = "Settings";
 
-"theme.background_color" = "Background Color";
+"theme.background_color" = "Background";
+"theme.border_color" = "Border";
 "theme.button.delete_selected_theme" = "Delete Selected Theme";
-"theme.copy" = "Copy to Custom";
 "theme.custom" = "Custom";
-"theme.foreground_color" = "Foreground Color";
+"theme.editor" = "Theme Editor";
+"theme.editor.name" = "Name";
 "theme.presets" = "Presets";
 "theme.presets.berry" = "Berry";
 "theme.presets.blazed" = "Blazed";
@@ -139,7 +150,7 @@
 "theme.presets.github_dark" = "GitHub Dark";
 "theme.presets.high_contrast" = "High Contrast";
 "theme.presets.light" = "Light";
-"theme.text_color" = "Text Color";
+"theme.text_color" = "Text";
 
 "tracking.browse" = "...";
 "tracking.custom_saves" = "Custom Saves Folder";

@@ -13,6 +13,10 @@
 "alert.no_worlds" = "No se encontraron mundos";
 "alert.no_files" = "No hay archivos para rastrear";
 
+"button.cancel" = "Cancelar";
+"button.close" = "Cerrar";
+"button.save" = "Guardar";
+
 "credits.attribution.title" = "Atribución";
 "credits.attribution.info" = "Esta aplicación se inspiró en gran medida y utiliza activos de [AATool para Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7) de CTM.";
 "credits.role.developer" = "Desarrollador";
@@ -45,6 +49,11 @@
 "layout.appearance.progress_bar_style" = "Estilo de Barra de Progreso";
 "layout.appearance.progress_bar_style.ender_dragon" = "Enderdragón";
 "layout.appearance.progress_bar_style.experience" = "Experiencia";
+"layout.appearance.refresh_style" = "Estilo del Icono de Actualización";
+"layout.appearance.refresh_style.clock" = "Reloj";
+"layout.appearance.refresh_style.compass" = "Brújula";
+"layout.appearance.refresh_style.orb" = "Esfera";
+"layout.appearance.refresh_style.speed" = "Velocidad de Animación";
 "layout.modular_panel" = "Panel Modular";
 "layout.modular_panel.info" = "Cambia entre múltiples paneles para mostrar diferentes tipos de información ubicados en el extremo derecho.";
 
@@ -75,6 +84,7 @@
 "overlay.appearance.show_time.info" = "Muestra el tiempo de juego para el mundo que se está rastreando actualmente.";
 "overlay.appearance.statistics_row" = "Fila de Estadísticas";
 "overlay.appearance.statistics_row.button" = "Abrir Editor";
+"overlay.appearance.statistics_row.editor" = "Indicadores de Estado";
 "overlay.appearance.clarify_ambiguous_criteria" = "Aclarar Criterios Ambiguos";
 "overlay.appearance.clarify_ambiguous_criteria.info" = "Muestra el logro al que pertenece un criterio si su ícono se usa más de una vez.";
 "overlay.appearance.sync_overlay" = "Sincronizar Overlay";
@@ -126,10 +136,11 @@
 "settings.window_title" = "Ajustes";
 
 "theme.background_color" = "Color de Fondo";
+"theme.border_color" = "Color de Borde";
 "theme.button.delete_selected_theme" = "Eliminar Tema Seleccionado";
-"theme.copy" = "Copiar a Personalizado";
 "theme.custom" = "Personalizado";
-"theme.foreground_color" = "Color de Primer Plano";
+"theme.editor" = "Editor de Temas";
+"theme.editor.name" = "Nombre";
 "theme.presets" = "Preajustes";
 "theme.presets.berry" = "Baya";
 "theme.presets.blazed" = "Llama";

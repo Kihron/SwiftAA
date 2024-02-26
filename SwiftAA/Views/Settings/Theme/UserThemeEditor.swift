@@ -20,12 +20,12 @@ struct UserThemeEditor: View {
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
-                Text("Theme Editor")
+                Text(L10n.Theme.editor)
                     .font(.title2)
                     .fontWeight(.bold)
                 
                 SettingsCardView {
-                    TextField("", text: $name, prompt: Text("Name"))
+                    TextField("", text: $name, prompt: Text(L10n.Theme.Editor.name))
                         .focusable(false)
                         .labelsHidden()
                         .lineLimit(1)
@@ -41,19 +41,19 @@ struct UserThemeEditor: View {
                                 HStack {
                                     ColorPicker("", selection: $background, supportsOpacity: false)
                                     
-                                    Text("Background")
+                                    Text(L10n.Theme.backgroundColor)
                                 }
                                 
                                 HStack {
                                     ColorPicker("", selection: $border, supportsOpacity: false)
                                     
-                                    Text("Border")
+                                    Text(L10n.Theme.borderColor)
                                 }
                                 
                                 HStack {
                                     ColorPicker("", selection: $text, supportsOpacity: false)
                                     
-                                    Text("Text")
+                                    Text(L10n.Theme.textColor)
                                 }
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -70,11 +70,11 @@ struct UserThemeEditor: View {
                 
                 HStack {
                     Button(action: { dismiss() }) {
-                        Text("Cancel")
+                        Text(L10n.Button.cancel)
                     }
                     
                     Button(action: { saveTheme() }) {
-                        Text("Save")
+                        Text(L10n.Button.save)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .bottomTrailing)
@@ -87,7 +87,7 @@ struct UserThemeEditor: View {
     }
     
     private func saveTheme() {
-        let name = name.isEmpty ? "Custom" : name
+        let name = name.isEmpty ? L10n.Theme.custom : name
         
         themeManager.saveUserTheme(name: name, background: background, border: border, text: text, context: context)
         dismiss()

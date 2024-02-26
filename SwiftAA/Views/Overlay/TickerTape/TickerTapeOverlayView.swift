@@ -31,15 +31,17 @@ struct TickerTapeOverlayView: View {
                 }
             }
             
-            CriteriaTickerTapeView()
-                .frame(height: 40)
-            
-            IndicatorTickerTapeView()
-                .frame(height: 90)
-            
-            StatusIndicatorRowView()
-                .frame(height: 70)
-                .padding(.bottom)
+            if overlayManager.overlayOpen {
+                CriteriaTickerTapeView()
+                    .frame(height: 40)
+                
+                IndicatorTickerTapeView()
+                    .frame(height: 90)
+                
+                StatusIndicatorRowView()
+                    .frame(height: 70)
+                    .padding(.bottom)
+            }
         }
     }
 }

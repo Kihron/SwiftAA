@@ -41,6 +41,27 @@ struct LayoutSettingsView: View {
             }
             
             SettingsCardView {
+                VStack {
+                    SettingsPickerView(title: L10n.Layout.Appearance.refreshStyle, width: 90, selection: $layoutManager.refreshStyle)
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text(L10n.Layout.Appearance.RefreshStyle.speed)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        HStack {
+                            Image(systemName: "figure.walk")
+                            
+                            Slider(value: $layoutManager.refreshSpeed, in: 0.5...2.5, step: 0.25)
+                            
+                            Image(systemName: "figure.walk.motion")
+                        }
+                    }
+                }
+            }
+            
+            SettingsCardView {
                 SettingsToggleView(title: L10n.Layout.Appearance.matchThemeColor, description: L10n.Layout.Appearance.MatchThemeColor.info, option: $layoutManager.matchThemeColor)
             }
         }

@@ -12,8 +12,7 @@ struct StatisticView: View {
     
     var body: some View {
         HStack {
-            Image(statistic.icon)
-                .frame(width: 16, height: 16)
+            StatisticIconView(statistic: $statistic)
             
             Text(statistic.key)
                 .minecraftFont()

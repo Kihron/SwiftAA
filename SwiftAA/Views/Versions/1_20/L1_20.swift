@@ -15,7 +15,9 @@ struct L1_20: View {
             switch trackerManager.layoutStyle {
                 case .standard:
                     L1_20S()
-                default:
+                case .vertical:
+                    L1_20V()
+                case .minimalist:
                     L1_20M()
             }
         }

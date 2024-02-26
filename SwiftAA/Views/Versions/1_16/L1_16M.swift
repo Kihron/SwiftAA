@@ -17,18 +17,14 @@ struct L1_16M: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
-                VStack(alignment: .leading, spacing: 0) {
-                    AdvPanelView(indicators: dataManager.getMinimalisticAdvancements(), columnCount: 7, isMinimal: true)
-                }
-                .frame(width: 518)
+                AdvPanelView(indicators: dataManager.getMinimalisticAdvancements(), columnCount: 7, isMinimal: true)
+                    .frame(width: 518)
                 
-                VStack {
-                    AdvPanelView(indicators: $statusIndicators, columnCount: 2, isStat: true)
-                }
-                .frame(width: 148)
+                AdvPanelView(indicators: $statusIndicators, columnCount: 2, isStat: true)
+                    .frame(width: 148)
                 
                 GoalPanelView(advancement: dataManager.decode(file: "husbandry")[10].asAdvancement, rowCount: 15, goal: L10n.Goal.foodsEaten, isMinimal: true)
-                .frame(width: 330)
+                    .frame(width: 330)
                 
                 InfoPanelView()
                     .frame(width: 196)
