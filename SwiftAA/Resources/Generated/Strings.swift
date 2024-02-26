@@ -1178,6 +1178,8 @@ internal enum L10n {
         internal static let compass = L10n.tr("Localizable", "layout.appearance.refresh_style.compass", fallback: "Compass")
         /// Orb
         internal static let orb = L10n.tr("Localizable", "layout.appearance.refresh_style.orb", fallback: "Orb")
+        /// Sculk
+        internal static let sculk = L10n.tr("Localizable", "layout.appearance.refresh_style.sculk", fallback: "Sculk")
         /// Animation Speed
         internal static let speed = L10n.tr("Localizable", "layout.appearance.refresh_style.speed", fallback: "Animation Speed")
       }

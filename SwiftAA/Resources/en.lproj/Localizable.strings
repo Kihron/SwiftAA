@@ -53,6 +53,7 @@
 "layout.appearance.refresh_style.clock" = "Clock";
 "layout.appearance.refresh_style.compass" = "Compass";
 "layout.appearance.refresh_style.orb" = "Orb";
+"layout.appearance.refresh_style.sculk" = "Sculk";
 "layout.appearance.refresh_style.speed" = "Animation Speed";
 "layout.modular_panel" = "Modular Panel";
 "layout.modular_panel.info" = "Switch between multiple panels to display different types of information located on the far right.";

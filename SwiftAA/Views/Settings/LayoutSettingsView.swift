@@ -16,62 +16,64 @@ struct LayoutSettingsView: View {
     }
     
     var body: some View {
-        VStack(spacing: 12) {
-            SettingsCardView {
-                SettingsPickerView(title: L10n.Layout.modularPanel, description: L10n.Layout.ModularPanel.info, width: 110, selection: $layoutManager.modularPanel)
-            }
-            
-            SettingsLabel(title: L10n.Layout.appearance)
-                .padding(.top, 5)
-            
-            if availableStyles.count > 1 {
+        ScrollView {
+            VStack(spacing: 12) {
                 SettingsCardView {
-                    SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $trackerManager.layoutStyle, filter: availableStyles)
+                    SettingsPickerView(title: L10n.Layout.modularPanel, description: L10n.Layout.ModularPanel.info, width: 110, selection: $layoutManager.modularPanel)
                 }
-            }
-            
-            SettingsCardView {
-                VStack {
-                    SettingsPickerView(title: L10n.Layout.Appearance.frameStyle, width: 90, selection: $layoutManager.frameStyle)
-                    
-                    Divider()
-                    
-                    SettingsPickerView(title: L10n.Layout.Appearance.progressBarStyle, width: 120, selection: $layoutManager.progressBarStyle)
+                
+                SettingsLabel(title: L10n.Layout.appearance)
+                    .padding(.top, 5)
+                
+                if availableStyles.count > 1 {
+                    SettingsCardView {
+                        SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $trackerManager.layoutStyle, filter: availableStyles)
+                    }
                 }
-            }
-            
-            SettingsCardView {
-                VStack {
-                    SettingsPickerView(title: L10n.Layout.Appearance.refreshStyle, width: 90, selection: $layoutManager.refreshStyle)
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text(L10n.Layout.Appearance.RefreshStyle.speed)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                
+                SettingsCardView {
+                    VStack {
+                        SettingsPickerView(title: L10n.Layout.Appearance.frameStyle, width: 90, selection: $layoutManager.frameStyle)
+                        
+                        Divider()
+                        
+                        SettingsPickerView(title: L10n.Layout.Appearance.progressBarStyle, width: 120, selection: $layoutManager.progressBarStyle)
+                    }
+                }
+                
+                SettingsCardView {
+                    VStack {
+                        SettingsPickerView(title: L10n.Layout.Appearance.refreshStyle, width: 90, selection: $layoutManager.refreshStyle)
+                        
+                        Divider()
                         
                         HStack {
-                            Image(systemName: "figure.walk")
+                            Text(L10n.Layout.Appearance.RefreshStyle.speed)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Slider(value: $layoutManager.refreshSpeed, in: 0.5...2.5, step: 0.25)
-                            
-                            Image(systemName: "figure.walk.motion")
+                            HStack {
+                                Image(systemName: "figure.walk")
+                                
+                                Slider(value: $layoutManager.refreshSpeed, in: 0.5...2.5, step: 0.25)
+                                
+                                Image(systemName: "figure.walk.motion")
+                            }
                         }
                     }
                 }
+                
+                SettingsCardView {
+                    SettingsToggleView(title: L10n.Layout.Appearance.matchThemeColor, description: L10n.Layout.Appearance.MatchThemeColor.info, option: $layoutManager.matchThemeColor)
+                }
             }
-            
-            SettingsCardView {
-                SettingsToggleView(title: L10n.Layout.Appearance.matchThemeColor, description: L10n.Layout.Appearance.MatchThemeColor.info, option: $layoutManager.matchThemeColor)
+            .frame(maxHeight: .infinity, alignment: .topLeading)
+            .onChange(of: layoutManager.frameStyle) { _ in
+                if OverlayManager.shared.syncOverlayFrame {
+                    OverlayManager.shared.overlayFrameStyle = layoutManager.frameStyle
+                }
             }
+            .padding()
         }
-        .frame(maxHeight: .infinity, alignment: .topLeading)
-        .onChange(of: layoutManager.frameStyle) { _ in
-            if OverlayManager.shared.syncOverlayFrame {
-                OverlayManager.shared.overlayFrameStyle = layoutManager.frameStyle
-            }
-        }
-        .padding()
     }
 }
 

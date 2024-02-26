@@ -53,6 +53,7 @@
 "layout.appearance.refresh_style.clock" = "Reloj";
 "layout.appearance.refresh_style.compass" = "Brújula";
 "layout.appearance.refresh_style.orb" = "Esfera";
+"layout.appearance.refresh_style.sculk" = "Sculk";
 "layout.appearance.refresh_style.speed" = "Velocidad de Animación";
 "layout.modular_panel" = "Panel Modular";
 "layout.modular_panel.info" = "Cambia entre múltiples paneles para mostrar diferentes tipos de información ubicados en el extremo derecho.";

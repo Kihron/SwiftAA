@@ -28,18 +28,18 @@ struct ToolbarRefreshView: View {
                 .onChange(of: dataManager.lastModified) { _ in
                     refreshVisibility()
                 }
-                .onChange(of: layoutManager.refreshStyle) { value in
-                    refreshVisibility()
+                .onChange(of: layoutManager.refreshStyle) { _ in
+                    refreshVisibility(settingChanged: true)
                 }
-                .onChange(of: layoutManager.refreshSpeed) { value in
-                    refreshVisibility()
+                .onChange(of: layoutManager.refreshSpeed) { _ in
+                    refreshVisibility(settingChanged: true)
                 }
         }
     }
     
-    private func refreshVisibility() {
+    private func refreshVisibility(settingChanged: Bool = false) {
         isVisible = false
-        if !progressManager.advancementsState.isEmpty {
+        if !progressManager.advancementsState.isEmpty || settingChanged {
             isVisible = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 isVisible = false

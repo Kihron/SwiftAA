@@ -12,6 +12,7 @@ enum RefreshStyle: String, SettingsOption {
     case orb = "layout.appearance.refresh_style.orb"
     case compass = "layout.appearance.refresh_style.compass"
     case clock = "layout.appearance.refresh_style.clock"
+    case sculk = "layout.appearance.refresh_style.sculk"
     
     var id: Self {
         return self
@@ -29,6 +30,8 @@ enum RefreshStyle: String, SettingsOption {
                 "compass"
             case .clock:
                 "clock"
+            case .sculk:
+                "sculk_pulse"
         }
     }
 }

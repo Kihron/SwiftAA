@@ -103,7 +103,7 @@
 		B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18628B3E457002CF5D7 /* L1_16.swift */; };
 		B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */; };
 		B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18A28B3E996002CF5D7 /* L1_19.swift */; };
-		B687E18D28B48079002CF5D7 /* skulk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* skulk_sensor.gif */; };
+		B687E18D28B48079002CF5D7 /* sculk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* sculk_sensor.gif */; };
 		B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */; };
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
 		B697E0E42B83EE6B00932278 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E32B83EE6B00932278 /* ProgressManager.swift */; };
@@ -165,6 +165,7 @@
 		B6DFEE402B8C3A370009C541 /* xp_orb.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6DFEE3F2B8C3A370009C541 /* xp_orb.gif */; };
 		B6DFEE422B8C3B5F0009C541 /* clock.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6DFEE412B8C3B5F0009C541 /* clock.gif */; };
 		B6DFEE442B8C3EEC0009C541 /* RefreshStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFEE432B8C3EEC0009C541 /* RefreshStyle.swift */; };
+		B6DFEE462B8C563E0009C541 /* sculk_pulse.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6DFEE452B8C563E0009C541 /* sculk_pulse.gif */; };
 		B6E1493128A17F260084A529 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E1492F28A17F260084A529 /* Localizable.strings */; };
 		B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */; };
 		B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */; };
@@ -287,7 +288,7 @@
 		B687E18628B3E457002CF5D7 /* L1_16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16.swift; sourceTree = "<group>"; };
 		B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionFrameModifier.swift; sourceTree = "<group>"; };
 		B687E18A28B3E996002CF5D7 /* L1_19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_19.swift; sourceTree = "<group>"; };
-		B687E18C28B48079002CF5D7 /* skulk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = skulk_sensor.gif; sourceTree = "<group>"; };
+		B687E18C28B48079002CF5D7 /* sculk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sculk_sensor.gif; sourceTree = "<group>"; };
 		B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSidebar.swift; sourceTree = "<group>"; };
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
 		B697E0E32B83EE6B00932278 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
@@ -347,6 +348,7 @@
 		B6DFEE3F2B8C3A370009C541 /* xp_orb.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = xp_orb.gif; sourceTree = "<group>"; };
 		B6DFEE412B8C3B5F0009C541 /* clock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = clock.gif; sourceTree = "<group>"; };
 		B6DFEE432B8C3EEC0009C541 /* RefreshStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshStyle.swift; sourceTree = "<group>"; };
+		B6DFEE452B8C563E0009C541 /* sculk_pulse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sculk_pulse.gif; sourceTree = "<group>"; };
 		B6E1493028A17F260084A529 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6E331072AA7F3C2001D7FF2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6E3310C2AA7FF1F001D7FF2 /* SettingsBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBarItem.swift; sourceTree = "<group>"; };
@@ -806,7 +808,8 @@
 				B6DFEE3D2B8C38790009C541 /* compass.gif */,
 				B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */,
 				B64199F0288A73830064AF5B /* enchant_item.gif */,
-				B687E18C28B48079002CF5D7 /* skulk_sensor.gif */,
+				B6DFEE452B8C563E0009C541 /* sculk_pulse.gif */,
+				B687E18C28B48079002CF5D7 /* sculk_sensor.gif */,
 				B64199EE288A72C10064AF5B /* summon_wither.gif */,
 				B6DFEE3F2B8C3A370009C541 /* xp_orb.gif */,
 			);
@@ -1074,7 +1077,8 @@
 			files = (
 				B6DFEE422B8C3B5F0009C541 /* clock.gif in Resources */,
 				B6DFEE402B8C3A370009C541 /* xp_orb.gif in Resources */,
-				B687E18D28B48079002CF5D7 /* skulk_sensor.gif in Resources */,
+				B687E18D28B48079002CF5D7 /* sculk_sensor.gif in Resources */,
+				B6DFEE462B8C563E0009C541 /* sculk_pulse.gif in Resources */,
 				B6E1493128A17F260084A529 /* Localizable.strings in Resources */,
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
 				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
@@ -1428,7 +1432,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240225a;
+				CURRENT_PROJECT_VERSION = "240225a (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1463,7 +1467,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240225a;
+				CURRENT_PROJECT_VERSION = "240225a (b)";
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
