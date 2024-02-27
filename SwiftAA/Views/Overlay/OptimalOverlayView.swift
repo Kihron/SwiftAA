@@ -41,7 +41,7 @@ struct OptimalOverlayView: View {
                 
                 VStack(alignment: .leading, spacing: 0) {
                     if !dataManager.completedCriteria.isEmpty {
-                        Text(dataManager.completedAdvancements.isEmpty ? "" : L10n.Overlay.Optimal.criteria)
+                        Text(L10n.Overlay.Optimal.criteria)
                             .minecraftFont(size: 12)
                             .padding([.bottom, .leading], 8)
                         

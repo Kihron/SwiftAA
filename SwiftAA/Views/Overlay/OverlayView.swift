@@ -37,8 +37,10 @@ struct OverlayView: View {
                 ProgressView()
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { newValue in
-            overlayManager.closeOverlay()
+        .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { notification in
+            if let window = notification.object as? NSWindow, window.title == "Overlay Window" {
+                overlayManager.closeOverlay()
+            }
         }
         .onChange(of: controlActiveState) { newValue in
             switch newValue {

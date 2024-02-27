@@ -1308,8 +1308,8 @@ internal enum L10n {
     internal enum Optimal {
       /// Categories
       internal static let categories = L10n.tr("Localizable", "overlay.optimal.categories", fallback: "Categories")
-      /// Criteria
-      internal static let criteria = L10n.tr("Localizable", "overlay.optimal.criteria", fallback: "Criteria")
+      /// Recent Criteria
+      internal static let criteria = L10n.tr("Localizable", "overlay.optimal.criteria", fallback: "Recent Criteria")
       /// Recently Completed
       internal static let recentlyCompleted = L10n.tr("Localizable", "overlay.optimal.recently_completed", fallback: "Recently Completed")
     }

@@ -102,7 +102,7 @@
 "overlay.multipage" = "Multi-Page";
 "overlay.optimal" = "Optimal";
 "overlay.optimal.categories" = "Categories";
-"overlay.optimal.criteria" = "Criteria";
+"overlay.optimal.criteria" = "Recent Criteria";
 "overlay.optimal.recently_completed" = "Recently Completed";
 "overlay.style.title" = "Overlay Style";
 "overlay.style.description" = "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.\n• **Multi-Page** separates them into a static set of pages.";

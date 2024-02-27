@@ -102,7 +102,7 @@
 "overlay.multipage" = "Multi-Página";
 "overlay.optimal" = "Óptimo";
 "overlay.optimal.categories" = "Categorías";
-"overlay.optimal.criteria" = "Criterios";
+"overlay.optimal.criteria" = "Recién Criterios";
 "overlay.optimal.recently_completed" = "Recién Completado";
 "overlay.style.title" = "Estilo de Overlay";
 "overlay.style.description" = "• **Óptimo** muestra los progresos y criterios completados recientemente.\n• **Cinta Animada** crea una lista infinita que se desplaza constantemente pero es *intensiva en CPU*.\n• **Multi-Página** los separa en un conjunto estático de páginas.";
