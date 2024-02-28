@@ -76,16 +76,20 @@
 
 "overlay" = "Overlay";
 "overlay.appearance.title" = "Apariencia";
-"overlay.appearance.info" = "Cambia el estilo de los marcos, manténlos sincronizados o combínalos.";
+"overlay.appearance.info" = "Cambia el estilo de los marcos, así como la configuración específica del Overlay.";
 "overlay.appearance.show_legacy_page_bar" = "Mostrar Indicador de Página";
 "overlay.appearance.show_progress_bar" = "Mostrar Barra de Progreso";
 "overlay.appearance.show_statistics" = "Mostrar Estadísticas";
 "overlay.appearance.show_statistics.info" = "Alterna la visibilidad de la fila de estadísticas en la parte inferior del Overlay.";
 "overlay.appearance.show_time" = "Mostrar Tiempo de Juego";
 "overlay.appearance.show_time.info" = "Muestra el tiempo de juego para el mundo que se está rastreando actualmente.";
+"overlay.appearance.scrolling_direction" = "Dirección de Desplazamiento";
+"overlay.appearance.scrolling_direction.left" = "De Izquierda a Derecha";
+"overlay.appearance.scrolling_direction.right" = "De Derecha a Izquierda";
 "overlay.appearance.statistics_row" = "Fila de Estadísticas";
 "overlay.appearance.statistics_row.button" = "Abrir Editor";
 "overlay.appearance.statistics_row.editor" = "Indicadores de Estado";
+"overlay.appearance.ticker_tape_speed" = "Velocidad de la Cinta Animada";
 "overlay.appearance.clarify_ambiguous_criteria" = "Aclarar Criterios Ambiguos";
 "overlay.appearance.clarify_ambiguous_criteria.info" = "Muestra el logro al que pertenece un criterio si su ícono se usa más de una vez.";
 "overlay.appearance.sync_overlay" = "Sincronizar Overlay";
@@ -105,7 +109,7 @@
 "overlay.optimal.criteria" = "Recién Criterios";
 "overlay.optimal.recently_completed" = "Recién Completado";
 "overlay.style.title" = "Estilo de Overlay";
-"overlay.style.description" = "• **Óptimo** muestra los progresos y criterios completados recientemente.\n• **Cinta Animada** crea una lista infinita que se desplaza constantemente pero es *intensiva en CPU*.\n• **Multi-Página** los separa en un conjunto estático de páginas.";
+"overlay.style.description" = "• **Óptimo** muestra los progresos y criterios completados recientemente.\n• **Cinta Animada** crea una lista infinita que se desplaza constantemente.\n• **Multi-Página** los separa en un conjunto estático de páginas.";
 "overlay.tickertape" = "Cinta Animada";
 "overlay.toggle" = "Alternar Overlay";
 

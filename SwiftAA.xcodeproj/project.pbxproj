@@ -51,10 +51,8 @@
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
 		B64199F1288A73830064AF5B /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199F0288A73830064AF5B /* enchant_item.gif */; };
-		B641CB512B8DACAC00656D6C /* CACriteriaTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641CB502B8DACAC00656D6C /* CACriteriaTickerTapeView.swift */; };
+		B641CB512B8DACAC00656D6C /* CriteriaTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641CB502B8DACAC00656D6C /* CriteriaTickerTapeView.swift */; };
 		B641CB532B8DACF500656D6C /* CALayerHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641CB522B8DACF500656D6C /* CALayerHosting.swift */; };
-		B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D6E2AABDC4600230808 /* RingBuffer.swift */; };
-		B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */; };
 		B6498D732AAC226400230808 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D722AAC226400230808 /* OverlayManager.swift */; };
 		B6498D752AAC23B300230808 /* HAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D742AAC23B300230808 /* HAlignment.swift */; };
 		B6498D772AAC244D00230808 /* OverlaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D762AAC244D00230808 /* OverlaySettings.swift */; };
@@ -176,7 +174,6 @@
 		B6E331142AA808D5001D7FF2 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331132AA808D5001D7FF2 /* Version.swift */; };
 		B6E331182AA8131C001D7FF2 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331172AA8131C001D7FF2 /* TrackingMode.swift */; };
 		B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */; };
-		B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */; };
 		B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0872AAA951700D83FA7 /* OverlayView.swift */; };
 		B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */; };
 		B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */; };
@@ -184,6 +181,12 @@
 		B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */; };
 		B6F1B48E2AAEB4CA00422D8E /* OverlayFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48D2AAEB4CA00422D8E /* OverlayFrameModifier.swift */; };
 		B6F1B4902AAEC34500422D8E /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */; };
+		B6F2088A2B8E978B0025A914 /* IndicatorTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F208892B8E978B0025A914 /* IndicatorTickerTapeView.swift */; };
+		B6F2088C2B8EC0D90025A914 /* NSImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2088B2B8EC0D90025A914 /* NSImage+Ext.swift */; };
+		B6F208912B8EC18C0025A914 /* IndicatorTickerTapeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F208902B8EC18C0025A914 /* IndicatorTickerTapeViewModel.swift */; };
+		B6F208942B8EC27B0025A914 /* IndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F208932B8EC27B0025A914 /* IndicatorLayer.swift */; };
+		B6F208972B8EC33B0025A914 /* CriteriaTickerTapeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F208962B8EC33B0025A914 /* CriteriaTickerTapeViewModel.swift */; };
+		B6F2089A2B8EE7400025A914 /* SettingsSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F208992B8EE7400025A914 /* SettingsSliderView.swift */; };
 		B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */; };
 		B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */; };
 		B6FEFED5289991070095CF08 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FEFED4289991070095CF08 /* Indicator.swift */; };
@@ -235,10 +238,8 @@
 		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
 		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
 		B64199F0288A73830064AF5B /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
-		B641CB502B8DACAC00656D6C /* CACriteriaTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CACriteriaTickerTapeView.swift; sourceTree = "<group>"; };
+		B641CB502B8DACAC00656D6C /* CriteriaTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTickerTapeView.swift; sourceTree = "<group>"; };
 		B641CB522B8DACF500656D6C /* CALayerHosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerHosting.swift; sourceTree = "<group>"; };
-		B6498D6E2AABDC4600230808 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTickerTapeView.swift; sourceTree = "<group>"; };
 		B6498D722AAC226400230808 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
 		B6498D742AAC23B300230808 /* HAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAlignment.swift; sourceTree = "<group>"; };
 		B6498D762AAC244D00230808 /* OverlaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySettings.swift; sourceTree = "<group>"; };
@@ -361,7 +362,6 @@
 		B6E331132AA808D5001D7FF2 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		B6E331172AA8131C001D7FF2 /* TrackingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
 		B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettings.swift; sourceTree = "<group>"; };
-		B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTickerTapeView.swift; sourceTree = "<group>"; };
 		B6E7B0872AAA951700D83FA7 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16S.swift; sourceTree = "<group>"; };
 		B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyle.swift; sourceTree = "<group>"; };
@@ -369,6 +369,12 @@
 		B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTapeOverlayView.swift; sourceTree = "<group>"; };
 		B6F1B48D2AAEB4CA00422D8E /* OverlayFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayFrameModifier.swift; sourceTree = "<group>"; };
 		B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		B6F208892B8E978B0025A914 /* IndicatorTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTickerTapeView.swift; sourceTree = "<group>"; };
+		B6F2088B2B8EC0D90025A914 /* NSImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Ext.swift"; sourceTree = "<group>"; };
+		B6F208902B8EC18C0025A914 /* IndicatorTickerTapeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTickerTapeViewModel.swift; sourceTree = "<group>"; };
+		B6F208932B8EC27B0025A914 /* IndicatorLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLayer.swift; sourceTree = "<group>"; };
+		B6F208962B8EC33B0025A914 /* CriteriaTickerTapeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTickerTapeViewModel.swift; sourceTree = "<group>"; };
+		B6F208992B8EE7400025A914 /* SettingsSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSliderView.swift; sourceTree = "<group>"; };
 		B6F2489D2AB93E58000FAF1D /* FrameStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameStyle.swift; sourceTree = "<group>"; };
 		B6F92E9C28B739C9000B6D06 /* OverlayShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayShimmerView.swift; sourceTree = "<group>"; };
 		B6FEFED4289991070095CF08 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -488,6 +494,7 @@
 				B639AC7B2AE8D45900060D96 /* SettingsAccountView.swift */,
 				B61D9A802B899580007A35CE /* SettingsToggleView.swift */,
 				B61D9A842B89A0BF007A35CE /* SettingsPickerView.swift */,
+				B6F208992B8EE7400025A914 /* SettingsSliderView.swift */,
 				B62AEA0F2AA93F13008B01CD /* SettingsLabel.swift */,
 			);
 			path = Main;
@@ -502,18 +509,9 @@
 			path = Notes;
 			sourceTree = "<group>";
 		};
-		B641CB4F2B8DAC9400656D6C /* Variants */ = {
-			isa = PBXGroup;
-			children = (
-				B641CB502B8DACAC00656D6C /* CACriteriaTickerTapeView.swift */,
-			);
-			path = Variants;
-			sourceTree = "<group>";
-		};
 		B6498D6D2AABDC3900230808 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B6498D6E2AABDC4600230808 /* RingBuffer.swift */,
 				B6CD41CE2AE60D600024D4E4 /* Constants.swift */,
 				B6A4AF792AECC06E00C7B805 /* Utilities.swift */,
 			);
@@ -840,6 +838,7 @@
 		B6B4A14B296E432600F43D4C /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
+				B6F2088F2B8EC16A0025A914 /* TickerTape */,
 				B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */,
 			);
 			path = Overlay;
@@ -848,9 +847,8 @@
 		B6B6C92B2B7B353D00F15613 /* TickerTape */ = {
 			isa = PBXGroup;
 			children = (
-				B641CB4F2B8DAC9400656D6C /* Variants */,
-				B6E7B0852AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift */,
-				B6498D702AAC0A3400230808 /* CriteriaTickerTapeView.swift */,
+				B641CB502B8DACAC00656D6C /* CriteriaTickerTapeView.swift */,
+				B6F208892B8E978B0025A914 /* IndicatorTickerTapeView.swift */,
 				B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */,
 			);
 			path = TickerTape;
@@ -931,6 +929,31 @@
 			path = 1_19;
 			sourceTree = "<group>";
 		};
+		B6F2088F2B8EC16A0025A914 /* TickerTape */ = {
+			isa = PBXGroup;
+			children = (
+				B6F208962B8EC33B0025A914 /* CriteriaTickerTapeViewModel.swift */,
+				B6F208902B8EC18C0025A914 /* IndicatorTickerTapeViewModel.swift */,
+			);
+			path = TickerTape;
+			sourceTree = "<group>";
+		};
+		B6F208922B8EC26C0025A914 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				B6F208952B8EC2A50025A914 /* Overlay */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		B6F208952B8EC2A50025A914 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				B6F208932B8EC27B0025A914 /* IndicatorLayer.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
 		B6FEFED3289990D40095CF08 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,6 +971,7 @@
 			children = (
 				B65AB3412AA9659B001F4FE6 /* CoreData */,
 				B6E331192AA836AB001D7FF2 /* Constants */,
+				B6F208922B8EC26C0025A914 /* CoreAnimation */,
 				B676BDA02AA78E12008BD8A9 /* UserTheme.swift */,
 				B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */,
 				B6A772FF28899D3900436551 /* JsonAdvancement.swift */,
@@ -987,6 +1011,7 @@
 				B697E1132B84709800932278 /* ImageCache.swift */,
 				B676BDA32AA79937008BD8A9 /* Color+Ext.swift */,
 				B6D3065728A2B150004D27E6 /* String+Ext.swift */,
+				B6F2088B2B8EC0D90025A914 /* NSImage+Ext.swift */,
 				B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */,
 				B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */,
 				B65AB3562AA97EB5001F4FE6 /* UUID+Ext.swift */,
@@ -1143,11 +1168,13 @@
 				B697E1082B844D9B00932278 /* Pufferfish.swift in Sources */,
 				B6DFEE322B8BDD840009C541 /* L1_20V.swift in Sources */,
 				B61D9A832B899FBC007A35CE /* SettingsOption.swift in Sources */,
+				B6F2088C2B8EC0D90025A914 /* NSImage+Ext.swift in Sources */,
 				B639AC7C2AE8D45900060D96 /* SettingsAccountView.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */,
 				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B641CB532B8DACF500656D6C /* CALayerHosting.swift in Sources */,
+				B6F208972B8EC33B0025A914 /* CriteriaTickerTapeViewModel.swift in Sources */,
 				B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */,
 				B6FEFEDE289993750095CF08 /* RemoveFocusOnTap.swift in Sources */,
 				B65FE5982AA6E5FE00C30A8F /* Potion.swift in Sources */,
@@ -1162,11 +1189,13 @@
 				B697E0F92B844C9400932278 /* MajorBiomes.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
+				B6F2088A2B8E978B0025A914 /* IndicatorTickerTapeView.swift in Sources */,
 				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
 				B697E0E92B844B7600932278 /* GodApple.swift in Sources */,
 				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
 				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
-				B641CB512B8DACAC00656D6C /* CACriteriaTickerTapeView.swift in Sources */,
+				B641CB512B8DACAC00656D6C /* CriteriaTickerTapeView.swift in Sources */,
+				B6F2089A2B8EE7400025A914 /* SettingsSliderView.swift in Sources */,
 				B697E1042B844D6F00932278 /* NetherWart.swift in Sources */,
 				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B62405AB2B81AD9A00CAA885 /* StatisticPanelView.swift in Sources */,
@@ -1176,7 +1205,6 @@
 				B62405A72B81A67700CAA885 /* StatisticIndicator.swift in Sources */,
 				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
 				B697E0EB2B844B9700932278 /* Trident.swift in Sources */,
-				B6498D712AAC0A3400230808 /* CriteriaTickerTapeView.swift in Sources */,
 				B621A8EB29860163000B9DDF /* SettingsCardView.swift in Sources */,
 				B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */,
 				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
@@ -1201,7 +1229,6 @@
 				B697E1142B84709800932278 /* ImageCache.swift in Sources */,
 				B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */,
 				B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */,
-				B6498D6F2AABDC4600230808 /* RingBuffer.swift in Sources */,
 				B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */,
 				B62EA6562B797F3700EB66AC /* ProgressBarStyle.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */,
@@ -1273,9 +1300,11 @@
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
 				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
 				B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */,
+				B6F208942B8EC27B0025A914 /* IndicatorLayer.swift in Sources */,
 				B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */,
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				B65AB3532AA96D66001F4FE6 /* CustomThemeView.swift in Sources */,
+				B6F208912B8EC18C0025A914 /* IndicatorTickerTapeViewModel.swift in Sources */,
 				B6E331102AA80811001D7FF2 /* TrackingSettingsView.swift in Sources */,
 				B697E0F12B844C3300932278 /* AncientDebris.swift in Sources */,
 				B66A077028879ED900DC0A2C /* DataManager.swift in Sources */,
@@ -1292,7 +1321,6 @@
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
 				B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */,
 				B6A4AF762AECBEB600C7B805 /* StatusIndicator.swift in Sources */,
-				B6E7B0862AAA94FB00D83FA7 /* IndicatorTickerTapeView.swift in Sources */,
 				B683A1162ABD3F4B00162E7C /* ThemeSampleView.swift in Sources */,
 				B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */,
 				B65AB3512AA96AA4001F4FE6 /* UserThemes+CoreDataProperties.swift in Sources */,
@@ -1448,7 +1476,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240226a;
+				CURRENT_PROJECT_VERSION = 240227a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1483,7 +1511,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240226a;
+				CURRENT_PROJECT_VERSION = 240227a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

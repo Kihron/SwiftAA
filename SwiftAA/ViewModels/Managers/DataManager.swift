@@ -14,12 +14,15 @@ class DataManager: ObservableObject {
     @Published private var map = [String:[Advancement]]() {
         didSet {
             allAdvancements = map.values.flatMap({ $0 })
+            allCriteria = allAdvancements.filter({ !$0.criteria.isEmpty }).flatMap({ $0.criteria })
         }
     }
     
     @Published var lastModified: Date = Date.now
     
     @Published var allAdvancements: [Advancement] = []
+    @Published var allCriteria: [Criterion] = []
+    
     @Published var completedAdvancements: [Advancement] = []
     @Published var incompleteAdvancements: [Advancement] = []
     @Published var incompleteCriteria: [Criterion] = []
@@ -48,8 +51,8 @@ class DataManager: ObservableObject {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
         incompleteAdvancements = allAdvancements.filter({ !$0.completed })
-        incompleteCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ !$0.completed })
-        completedCriteria = allAdvancements.filter({ !$0.completed && !$0.criteria.isEmpty }).flatMap({ $0.criteria }).filter({ $0.completed }).sorted {
+        incompleteCriteria = allCriteria.filter({ !$0.completed })
+        completedCriteria = allCriteria.filter({ $0.completed }).sorted {
             ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
         }
         goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })

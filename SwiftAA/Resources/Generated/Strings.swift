@@ -1239,8 +1239,10 @@ internal enum L10n {
       internal static let clarifyAmbiguousCriteria = L10n.tr("Localizable", "overlay.appearance.clarify_ambiguous_criteria", fallback: "Clarify Ambiguous Criteria")
       /// Frame Style
       internal static let frameStyle = L10n.tr("Localizable", "overlay.appearance.frame_style", fallback: "Frame Style")
-      /// Change the style of the frames, keep them in sync or mix and match.
-      internal static let info = L10n.tr("Localizable", "overlay.appearance.info", fallback: "Change the style of the frames, keep them in sync or mix and match.")
+      /// Change the style of the frames as well as overlay specific settings.
+      internal static let info = L10n.tr("Localizable", "overlay.appearance.info", fallback: "Change the style of the frames as well as overlay specific settings.")
+      /// Scrolling Direction
+      internal static let scrollingDirection = L10n.tr("Localizable", "overlay.appearance.scrolling_direction", fallback: "Scrolling Direction")
       /// Show Page Indicator
       internal static let showLegacyPageBar = L10n.tr("Localizable", "overlay.appearance.show_legacy_page_bar", fallback: "Show Page Indicator")
       /// Show Progress Bar
@@ -1253,11 +1255,19 @@ internal enum L10n {
       internal static let statisticsRow = L10n.tr("Localizable", "overlay.appearance.statistics_row", fallback: "Statistics Row")
       /// Sync Overlay
       internal static let syncOverlay = L10n.tr("Localizable", "overlay.appearance.sync_overlay", fallback: "Sync Overlay")
+      /// Ticker Tape Speed
+      internal static let tickerTapeSpeed = L10n.tr("Localizable", "overlay.appearance.ticker_tape_speed", fallback: "Ticker Tape Speed")
       /// Appearance
       internal static let title = L10n.tr("Localizable", "overlay.appearance.title", fallback: "Appearance")
       internal enum ClarifyAmbiguousCriteria {
         /// Displays the advancement a criteria belongs to if it's icon is used more than once.
         internal static let info = L10n.tr("Localizable", "overlay.appearance.clarify_ambiguous_criteria.info", fallback: "Displays the advancement a criteria belongs to if it's icon is used more than once.")
+      }
+      internal enum ScrollingDirection {
+        /// Left to Right
+        internal static let `left` = L10n.tr("Localizable", "overlay.appearance.scrolling_direction.left", fallback: "Left to Right")
+        /// Right to Left
+        internal static let `right` = L10n.tr("Localizable", "overlay.appearance.scrolling_direction.right", fallback: "Right to Left")
       }
       internal enum ShowStatistics {
         /// Toggles the visibility of the statistics row at the bottom of the Overlay.
@@ -1315,9 +1325,9 @@ internal enum L10n {
     }
     internal enum Style {
       /// • **Optimal** shows recently completed advancements and criteria.
-      /// • **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.
+      /// • **Ticker Tape** creates an infinite scrolling list.
       /// • **Multi-Page** separates them into a static set of pages.
-      internal static let description = L10n.tr("Localizable", "overlay.style.description", fallback: "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.\n• **Multi-Page** separates them into a static set of pages.")
+      internal static let description = L10n.tr("Localizable", "overlay.style.description", fallback: "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list.\n• **Multi-Page** separates them into a static set of pages.")
       /// Overlay Style
       internal static let title = L10n.tr("Localizable", "overlay.style.title", fallback: "Overlay Style")
     }

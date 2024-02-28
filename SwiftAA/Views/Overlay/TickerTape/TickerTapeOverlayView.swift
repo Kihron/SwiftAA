@@ -38,6 +38,8 @@ struct TickerTapeOverlayView: View {
                 IndicatorTickerTapeView()
                     .frame(height: 90)
                 
+                Spacer()
+                
                 StatusIndicatorRowView()
                     .frame(height: 70)
                     .padding(.bottom)

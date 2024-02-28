@@ -15,21 +15,7 @@ struct OverlaySettings: View {
         ScrollView {
             VStack(spacing: 12) {
                 SettingsCardView {
-                    VStack {
-                        SettingsPickerView(title: L10n.Overlay.Style.title, description: L10n.Overlay.Style.description, width: 105, selection: $overlayManager.overlayStyle)
-                        
-                        if case .multiPage = overlayManager.overlayStyle {
-                            Divider()
-                            
-                            SettingsToggleView(title: L10n.Overlay.Appearance.showLegacyPageBar, option: $overlayManager.showLegacyPageIndicator)
-                        }
-                        
-                        if case .optimal = overlayManager.overlayStyle {
-                            Divider()
-                            
-                            SettingsToggleView(title: L10n.Overlay.Appearance.showProgressBar, option: $overlayManager.showOptimalProgressBar)
-                        }
-                    }
+                    SettingsPickerView(title: L10n.Overlay.Style.title, description: L10n.Overlay.Style.description, width: 105, selection: $overlayManager.overlayStyle)
                 }
                 
                 SettingsCardView {
@@ -74,6 +60,35 @@ struct OverlaySettings: View {
                         
                         SettingsPickerView(title: L10n.Overlay.Appearance.frameStyle, width: 90, selection: $overlayManager.overlayFrameStyle)
                             .disabled(overlayManager.syncOverlayFrame)
+                    }
+                }
+                
+                SettingsCardView {
+                    VStack {
+                        switch overlayManager.overlayStyle {
+                            case .optimal:
+                                SettingsToggleView(title: L10n.Overlay.Appearance.showProgressBar, option: $overlayManager.showOptimalProgressBar)
+                            case .tickerTape:
+                                VStack {
+                                    HStack(alignment: .center) {
+                                        Text(L10n.Overlay.Appearance.scrollingDirection)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        
+                                        Picker("", selection: $overlayManager.invertScrollDirection) {
+                                            Text(L10n.Overlay.Appearance.ScrollingDirection.right).tag(false)
+                                            Text(L10n.Overlay.Appearance.ScrollingDirection.left).tag(true)
+                                        }
+                                        .labelsHidden()
+                                        .frame(width: 110)
+                                    }
+                                    
+                                    Divider()
+                                    
+                                    SettingsSliderView(title: L10n.Overlay.Appearance.tickerTapeSpeed, leftIcon: "figure.walk", rightIcon: "figure.walk.motion", value: $overlayManager.tickerTapeSpeed, range: 30...120, step: 30)
+                                }
+                            case .multiPage:
+                                SettingsToggleView(title: L10n.Overlay.Appearance.showLegacyPageBar, option: $overlayManager.showLegacyPageIndicator)
+                        }
                     }
                 }
             }

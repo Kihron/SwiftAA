@@ -76,16 +76,20 @@
 
 "overlay" = "Overlay";
 "overlay.appearance.title" = "Appearance";
-"overlay.appearance.info" = "Change the style of the frames, keep them in sync or mix and match.";
+"overlay.appearance.info" = "Change the style of the frames as well as overlay specific settings.";
 "overlay.appearance.show_legacy_page_bar" = "Show Page Indicator";
 "overlay.appearance.show_progress_bar" = "Show Progress Bar";
 "overlay.appearance.show_statistics" = "Show Statistics";
 "overlay.appearance.show_statistics.info" = "Toggles the visibility of the statistics row at the bottom of the Overlay.";
 "overlay.appearance.show_time" = "Show In-Game Time";
 "overlay.appearance.show_time.info" = "Displays the in-game time for the currently tracked world.";
+"overlay.appearance.scrolling_direction" = "Scrolling Direction";
+"overlay.appearance.scrolling_direction.left" = "Left to Right";
+"overlay.appearance.scrolling_direction.right" = "Right to Left";
 "overlay.appearance.statistics_row" = "Statistics Row";
 "overlay.appearance.statistics_row.button" = "Open Editor";
 "overlay.appearance.statistics_row.editor" = "Status Indicators";
+"overlay.appearance.ticker_tape_speed" = "Ticker Tape Speed";
 "overlay.appearance.clarify_ambiguous_criteria" = "Clarify Ambiguous Criteria";
 "overlay.appearance.clarify_ambiguous_criteria.info" = "Displays the advancement a criteria belongs to if it's icon is used more than once.";
 "overlay.appearance.sync_overlay" = "Sync Overlay";
@@ -105,7 +109,7 @@
 "overlay.optimal.criteria" = "Recent Criteria";
 "overlay.optimal.recently_completed" = "Recently Completed";
 "overlay.style.title" = "Overlay Style";
-"overlay.style.description" = "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list but is *CPU intensive*.\n• **Multi-Page** separates them into a static set of pages.";
+"overlay.style.description" = "• **Optimal** shows recently completed advancements and criteria.\n• **Ticker Tape** creates an infinite scrolling list.\n• **Multi-Page** separates them into a static set of pages.";
 "overlay.tickertape" = "Ticker Tape";
 "overlay.toggle" = "Toggle Overlay";
 

@@ -2,108 +2,54 @@
 //  IndicatorTickerTapeView.swift
 //  SwiftAA
 //
-//  Created by Kihron on 9/7/23.
+//  Created by Kihron on 2/27/24.
 //
 
 import SwiftUI
 
 struct IndicatorTickerTapeView: View {
+    @ObservedObject private var overlayManager = OverlayManager.shared
     @ObservedObject private var dataManager = DataManager.shared
-    @State private var buffer: RingBuffer<Indicator> = RingBuffer(size: 0)
-    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var xOffset: CGFloat = 0
-    @State private var index = 0
-    
-    @State private var copy: [Advancement] = []
-    
+    @StateObject private var viewModel = IndicatorTickerTapeViewModel()
+
     var body: some View {
         GeometryReader { geometry in
-            LazyHStack(spacing: 0) {
-                ForEach(buffer.indices.map({(buffer.readIndex + $0) % buffer.count}), id: \.self) { idx in
-                    if let indicator = buffer.array[idx] {
-                        IndicatorView(indicator: .constant(indicator), isOverlay: true)
-                    } else {
-                        Rectangle()
-                            .fill(.clear)
-                            .frame(width: 74)
+            VStack {
+                CALayerHosting(layer: viewModel.containerLayer)
+                    .frame(width: geometry.size.width, height: 74)
+                    .onAppear {
+                        viewModel.setupLayers(width: geometry.size.width)
+                        viewModel.startAnimation(width: geometry.size.width)
                     }
-                }
-                .drawingGroup()
-            }
-            .offset(x: xOffset, y: 0)
-            .onAppear {
-                calculateBuffer(width: geometry.size.width)
-            }
-            .onChange(of: TrackerManager.shared.worldPath) { _ in
-                resetBuffer(width: geometry.size.width)
-            }
-            .onChange(of: TrackerManager.shared.gameVersion) { _ in
-                resetBuffer(width: geometry.size.width)
-            }
-            .onChange(of: TrackerManager.shared.trackingMode) { _ in
-                resetBuffer(width: geometry.size.width)
-            }
-            .onChange(of: geometry.size.width) { value in
-                calculateBuffer(width: value)
-            }
-            .onReceive(timer) { _ in
-                if xOffset < -74 {
-                    xOffset += 74
-                    cycleIndicator()
-                }
-                withAnimation(.linear(duration: 1)) {
-                    xOffset -= 74
-                }
+                    .onChange(of: dataManager.lastModified) { _ in
+                        viewModel.resetLayers(width: geometry.size.width, override: false)
+                    }
+                    .onChange(of: TrackerManager.shared.worldPath) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: TrackerManager.shared.gameVersion) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: TrackerManager.shared.trackingMode) { _ in
+                        viewModel.resetLayers(width: geometry.size.width, override: false)
+                    }
+                    .onChange(of: overlayManager.overlayFrameStyle) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: overlayManager.invertScrollDirection) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: overlayManager.tickerTapeSpeed) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: geometry.size.width) { width in
+                        viewModel.debounceResetLayers(width: width)
+                    }
             }
         }
-    }
-    
-    private func resetBuffer(width: CGFloat) {
-        index = 0
-        calculateBuffer(width: width)
-    }
-    
-    private func calculateBuffer(width: CGFloat) {
-        let count = getMaxOnScreen(width: width) + 3
-        buffer = count == buffer.count ? buffer : RingBuffer<Indicator>(size: count)
-        populateBuffer()
-    }
-    
-    private func populateBuffer() {
-        let current = dataManager.incompleteAdvancements
-        guard !current.isEmpty else { return }
-        
-        index = 0
-        for idx in 0..<buffer.count {
-            if idx < current.count - 1 {
-                buffer.write(current[index])
-                index = (index + 1) % current.count
-            }
-        }
-    }
-    
-    private func cycleIndicator() {
-        let current = dataManager.incompleteAdvancements
-        guard !current.isEmpty else { return }
-        
-        if copy.count != current.count {
-            let set = Set(current)
-            let difference = copy.enumerated().filter({ $0.offset < index && !set.contains($0.element) }).count
-            
-            index -= difference
-            copy = current
-        }
-        
-        buffer.write(current[index % current.count])
-        index = (index + 1) % current.count
-    }
-    
-    private func getMaxOnScreen(width: CGFloat) -> Int {
-        return Int(floor(width / 74))
     }
 }
 
 #Preview {
     IndicatorTickerTapeView()
-        .frame(width: 592, height: 150)
 }

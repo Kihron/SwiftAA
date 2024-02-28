@@ -47,18 +47,7 @@ struct LayoutSettingsView: View {
                         
                         Divider()
                         
-                        HStack {
-                            Text(L10n.Layout.Appearance.RefreshStyle.speed)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            HStack {
-                                Image(systemName: "figure.walk")
-                                
-                                Slider(value: $layoutManager.refreshSpeed, in: 0.5...2.5, step: 0.25)
-                                
-                                Image(systemName: "figure.walk.motion")
-                            }
-                        }
+                        SettingsSliderView(title: L10n.Layout.Appearance.RefreshStyle.speed, leftIcon: "figure.walk", rightIcon: "figure.walk.motion", value: $layoutManager.refreshSpeed, range: 0.5...2.5, step: 0.25)
                     }
                 }
                 

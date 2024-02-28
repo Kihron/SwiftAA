@@ -2,7 +2,7 @@
 //  CriteriaTickerTapeView.swift
 //  SwiftAA
 //
-//  Created by Kihron on 9/8/23.
+//  Created by Kihron on 2/27/24.
 //
 
 import SwiftUI
@@ -10,121 +10,46 @@ import SwiftUI
 struct CriteriaTickerTapeView: View {
     @ObservedObject private var dataManager = DataManager.shared
     @ObservedObject private var overlayManager = OverlayManager.shared
-    @State private var buffer: RingBuffer<Criterion> = RingBuffer(size: 0)
-    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var xOffset: CGFloat = 0
-    @State private var index = 0
-    
-    @State private var copy: [Criterion] = []
+    @StateObject private var viewModel = CriteriaTickerTapeViewModel()
     
     var body: some View {
         GeometryReader { geometry in
-            LazyHStack(spacing: 0) {
-                if !dataManager.incompleteCriteria.isEmpty {
-                    ForEach(buffer.indices.map({(buffer.readIndex + $0) % buffer.count}), id: \.self) { idx in
-                        if let criterion = buffer.array[idx] {
-                            ZStack {
-                                Group {
-                                    Image(criterion.icon)
-                                        .resizable()
-                                        .interpolation(.low)
-                                        .frame(width: 24, height: 24)
-                                }
-                                .padding(8)
-                                
-                                if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon) {
-                                    if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
-                                        Image(adv.icon)
-                                            .resizable()
-                                            .interpolation(.none)
-                                            .frame(width: 24, height: 24)
-                                            .offset(x: -8, y: -5)
-                                    }
-                                }
-                            }
-                        }
-                        else {
-                            Rectangle()
-                                .fill(.clear)
-                                .frame(width: 24)
-                                .padding(8)
-                        }
+            VStack {
+                CALayerHosting(layer: viewModel.containerLayer)
+                    .frame(width: geometry.size.width, height: 40)
+                    .onAppear {
+                        viewModel.setupLayers(width: geometry.size.width)
+                        viewModel.startAnimation(width: geometry.size.width)
                     }
-                }
-            }
-            .offset(x: xOffset, y: 0)
-            .onAppear {
-                calculateBuffer(width: geometry.size.width)
-            }
-            .onChange(of: TrackerManager.shared.worldPath) { _ in
-                resetBuffer(width: geometry.size.width)
-            }
-            .onChange(of: TrackerManager.shared.gameVersion) { _ in
-                resetBuffer(width: geometry.size.width)
-            }
-            .onChange(of: TrackerManager.shared.trackingMode) { _ in
-                resetBuffer(width: geometry.size.width)
-            }
-            .onChange(of: geometry.size.width) { value in
-                calculateBuffer(width: value)
-            }
-            .onReceive(timer) { _ in
-                if xOffset < -40 {
-                    xOffset += 40
-                    cycleIndicator()
-                }
-                withAnimation(.linear(duration: 1)) {
-                    xOffset -= 40
-                }
+                    .onChange(of: dataManager.lastModified) { _ in
+                        viewModel.resetLayers(width: geometry.size.width, override: false)
+                    }
+                    .onChange(of: TrackerManager.shared.worldPath) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: TrackerManager.shared.gameVersion) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: TrackerManager.shared.trackingMode) { _ in
+                        viewModel.resetLayers(width: geometry.size.width, override: false)
+                    }
+                    .onChange(of: overlayManager.clarifyAmbigiousCriteria) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: overlayManager.invertScrollDirection) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: overlayManager.tickerTapeSpeed) { _ in
+                        viewModel.resetLayers(width: geometry.size.width)
+                    }
+                    .onChange(of: geometry.size.width) { width in
+                        viewModel.debounceResetLayers(width: width)
+                    }
             }
         }
-    }
-    
-    private func resetBuffer(width: CGFloat) {
-        index = 0
-        calculateBuffer(width: width)
-    }
-    
-    private func calculateBuffer(width: CGFloat) {
-        let count = getMaxOnScreen(width: width) + 3
-        buffer = count == buffer.count ? buffer : RingBuffer<Criterion>(size: count)
-        populateBuffer()
-    }
-    
-    private func populateBuffer() {
-        let current = dataManager.incompleteCriteria
-        guard !current.isEmpty else { return }
-        
-        for idx in 0..<buffer.count {
-            if idx < current.count - 1 {
-                buffer.write(current[idx])
-                index = (index + 1) % current.count
-            }
-        }
-    }
-    
-    private func cycleIndicator() {
-        let current = dataManager.incompleteCriteria
-        guard !current.isEmpty else { return }
-        
-        if copy.count != current.count {
-            let set = Set(current)
-            let difference = copy.enumerated().filter({ $0.offset < index && !set.contains($0.element) }).count
-            
-            index -= difference
-            copy = current
-        }
-        
-        buffer.write(current[index % current.count])
-        index = (index + 1) % current.count
-    }
-    
-    private func getMaxOnScreen(width: CGFloat) -> Int {
-        return Int(floor(width / 40))
     }
 }
 
 #Preview {
     CriteriaTickerTapeView()
-        .frame(width: 592, height: 150)
 }
