@@ -13,9 +13,9 @@ class AppViewModel: ObservableObject {
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var playerManager = PlayerManager.shared
     
-    private var lastWorking = ""
     private var activeWindows = [pid_t:(String, Version?)]()
     private let fileManager = FileManager.default
+    
     
     init() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -33,8 +33,8 @@ class AppViewModel: ObservableObject {
             if let info = getInstanceInfo(), !info.0.isEmpty {
                 saves = info.0
                 
-                if (saves != lastWorking) {
-                    lastWorking = saves
+                if (saves != trackerManager.lastWorking) {
+                    trackerManager.lastWorking = saves
                 }
                 
                 if let version = info.1, trackerManager.automaticVersionDetection {
@@ -43,7 +43,7 @@ class AppViewModel: ObservableObject {
                     }
                 }
             } else {
-                saves = lastWorking
+                saves = trackerManager.lastWorking
                 if saves.isEmpty {
                     if trackerManager.updateErrorAlert(alert: .enterMinecraft) {
                         progressManager.clearProgressState()

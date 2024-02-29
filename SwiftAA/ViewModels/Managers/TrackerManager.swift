@@ -25,6 +25,9 @@ class TrackerManager: ObservableObject {
     @Published var worldPath: String = ""
     @Published var alert: TrackerAlert? = .none
     
+    
+    var lastWorking = ""
+    
     var worldShortPath: String {
         let name = worldPath.lastIndex(of: "/") ?? worldPath.startIndex
         return String(worldPath.suffix(from: name))
