@@ -16,6 +16,14 @@ class Utilities {
         return dateFormatter
     }()
     
+    static var playTimeFormatter: DateComponentsFormatter {
+        let dateFormatter = DateComponentsFormatter()
+        dateFormatter.allowedUnits = [.hour, .minute, .second]
+        dateFormatter.unitsStyle = .positional
+        dateFormatter.zeroFormattingBehavior = .pad
+        return dateFormatter
+    }
+    
     static func convertToTimestamp(_ timestampString: String) -> Date? {
         return dateFormatter.date(from: timestampString)
     }

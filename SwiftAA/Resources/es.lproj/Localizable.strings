@@ -76,7 +76,7 @@
 
 "overlay" = "Overlay";
 "overlay.appearance.title" = "Apariencia";
-"overlay.appearance.info" = "Cambia el estilo de los marcos, así como la configuración específica del Overlay.";
+"overlay.appearance.info" = "Cambia el estilo de los marcos, así como la configuración específica del estilo del Overlay.";
 "overlay.appearance.show_legacy_page_bar" = "Mostrar Indicador de Página";
 "overlay.appearance.show_progress_bar" = "Mostrar Barra de Progreso";
 "overlay.appearance.show_statistics" = "Mostrar Estadísticas";

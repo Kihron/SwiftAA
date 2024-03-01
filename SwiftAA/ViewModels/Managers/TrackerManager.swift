@@ -46,6 +46,14 @@ class TrackerManager: ObservableObject {
         ProgressManager.shared.clearProgressState()
     }
     
+    func getInstanceNumber() -> String {
+        guard trackingMode == .seamless, let lastSave = lastWorking.split(separator: "/").dropLast(2).last else {
+            return ""
+        }
+        let instanceNumber = lastSave.suffix(2).filter({ $0.isNumber })
+        return instanceNumber.count >= 1 ? "(\(instanceNumber)) " : ""
+    }
+    
     @discardableResult func updateGameVersion(version: Version) -> Bool {
         if gameVersion != version {
             DispatchQueue.main.async {

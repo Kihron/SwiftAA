@@ -46,14 +46,16 @@ class DataManager: ObservableObject {
     
     var uncounted: [Indicator] = []
     
+    private var baseTimeInterval = Date(timeIntervalSince1970: 0)
+    
     func updateAdvancementFields() {
         completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {
-            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+            ($0.timestamp ?? baseTimeInterval, $0.id) < ($1.timestamp ?? baseTimeInterval, $1.id)
         }
         incompleteAdvancements = allAdvancements.filter({ !$0.completed })
         incompleteCriteria = allCriteria.filter({ !$0.completed })
         completedCriteria = allCriteria.filter({ $0.completed }).sorted {
-            ($0.timestamp ?? Date(timeIntervalSince1970: 0), $0.id) < ($1.timestamp ?? Date(timeIntervalSince1970: 0), $1.id)
+            ($0.timestamp ?? baseTimeInterval, $0.id) < ($1.timestamp ?? baseTimeInterval, $1.id)
         }
         goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
     }

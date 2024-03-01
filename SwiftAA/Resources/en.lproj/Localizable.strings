@@ -76,7 +76,7 @@
 
 "overlay" = "Overlay";
 "overlay.appearance.title" = "Appearance";
-"overlay.appearance.info" = "Change the style of the frames as well as overlay specific settings.";
+"overlay.appearance.info" = "Change the style of the frames as well as overlay style specific settings.";
 "overlay.appearance.show_legacy_page_bar" = "Show Page Indicator";
 "overlay.appearance.show_progress_bar" = "Show Progress Bar";
 "overlay.appearance.show_statistics" = "Show Statistics";

@@ -56,13 +56,11 @@ struct MultiPageOverlayView: View {
                 .frame(height: 10)
                 .padding(.bottom, 5)
                 
-                LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 20) {
+                LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 0, alignment: .leading), count: Int(floor((screen.size.width - 40) / 26))), spacing: 15) {
                     ForEach(viewModel.getCriteriaSection(criteriaSection, screen: screen), id: \.self) { criterion in
                         ZStack {
                             Image(criterion.icon)
                                 .frame(width: 16, height: 16)
-                                .drawingGroup()
-                            
                             
                             if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon) {
                                 if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
@@ -70,7 +68,6 @@ struct MultiPageOverlayView: View {
                                         .resizable()
                                         .interpolation(.none)
                                         .frame(width: 16, height: 16)
-                                        .drawingGroup()
                                         .offset(x: -8, y: -5)
                                 }
                             }
@@ -85,7 +82,6 @@ struct MultiPageOverlayView: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.adaptive(minimum: 74), spacing: 0), count: Int(floor(screen.size.width / 74))), spacing: 0) {
                     ForEach(viewModel.getSection(section, screen: screen), id: \.self) { adv in
                         IndicatorView(indicator: .constant(adv), isOverlay: true)
-                            .drawingGroup()
                     }
                 }
                 .frame(width: screen.size.width)

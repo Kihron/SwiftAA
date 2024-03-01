@@ -9,10 +9,16 @@ import SwiftUI
 
 struct IndicatorIconView: View {
     @ObservedObject private var layoutManager = LayoutManager.shared
-    
     @Binding var indicator: Indicator
-    @Binding var showTooltip: Bool
+    
+    @State private var isVisible: Bool = false
     var isOverlay: Bool
+    var isStat: Bool
+    
+    private var isAnimated: Bool {
+        guard Constants.animatedIcons.contains(indicator.icon) else { return false }
+        return (isStat || !isOverlay) || OverlayManager.shared.overlayStyle != .multiPage
+    }
     
     var body: some View {
         if indicator.icon.contains("+") {
@@ -26,22 +32,26 @@ struct IndicatorIconView: View {
             }
             .frame(width: 32, height: 32)
             .padding(.top, 6)
-        } else if !isOverlay && Constants.animatedIcons.contains(indicator.icon) {
-            AnimatedIconView(icon: indicator.icon)
-                .frame(width: 32, height: 32)
-                .padding(.top, 6)
-                .onHover(perform: { hovering in
-                    showTooltip = layoutManager.infoMode && !isOverlay && hovering
-                })
+        } else if isAnimated {
+            VStack {
+                if isVisible {
+                    AnimatedIconView(icon: indicator.icon)
+                        .frame(width: 32, height: 32)
+                        .padding(.top, 6)
+                }
+            }
+            .onAppear {
+                isVisible = true
+            }
+            .onDisappear {
+                isVisible = false
+            }
         } else {
             Image(indicator.icon)
                 .interpolation(.none)
                 .resizable()
                 .frame(width: 32, height: 32)
                 .padding(.top, 6)
-                .onHover(perform: { hovering in
-                    showTooltip = layoutManager.infoMode && !isOverlay && hovering
-                })
         }
     }
 }

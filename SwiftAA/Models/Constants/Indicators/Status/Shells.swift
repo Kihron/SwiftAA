@@ -26,6 +26,7 @@ class Shells: TransferableIndicator, StatusIndicator {
         let allEffectsComplete = progress.advancementCompleted(allEffects)
         
         completed = count >= 8 || conduitCrafted || allEffectsComplete
+        icon = completed ? "conduit" : "nautilus_shell"
         key = allEffectsComplete ? L10n.Statistic.Shells.hdwgh : conduitCrafted ? L10n.Statistic.Shells.crafted : L10n.Statistic.shells(count)
     }
 }

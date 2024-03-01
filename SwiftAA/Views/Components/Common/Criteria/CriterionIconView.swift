@@ -10,6 +10,11 @@ import SwiftUI
 struct CriterionIconView: View {
     @Binding var criterion: Criterion
     @State private var isVisible: Bool = false
+    var isOverlay: Bool = false
+    
+    var opacity: Double {
+        return criterion.completed || isOverlay ? 1 : 0.3
+    }
     
     var body: some View {
         if Constants.animatedIcons.contains(criterion.icon) {
@@ -17,7 +22,7 @@ struct CriterionIconView: View {
                 if isVisible {
                     AnimatedIconView(icon: criterion.icon)
                         .frame(width: 16, height: 16)
-                        .opacity(criterion.completed ? 1 : 0.3)
+                        .opacity(opacity)
                 }
             }
             .onAppear {
@@ -29,7 +34,7 @@ struct CriterionIconView: View {
         } else {
             Image(criterion.icon)
                 .frame(width: 16, height: 16)
-                .opacity(criterion.completed ? 1 : 0.3)
+                .opacity(opacity)
             
             if let dual = criterion as? Criterion.DualCriterion, dual.recipe.contains("trim") {
                 Image("smithing_table")

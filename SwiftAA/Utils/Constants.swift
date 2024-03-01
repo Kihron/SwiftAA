@@ -52,7 +52,7 @@ class Constants {
     
     static let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
     
-    static let animatedIcons = ["enchanted_golden_apple", "enchant_item", "sculk_sensor", "summon_wither"]
+    static let animatedIcons = ["conduit", "enchanted_golden_apple", "enchant_item", "sculk_sensor", "summon_wither"]
     
     static var gifCache: [String: (frames: [NSImage], durations: [TimeInterval])] = [:]
     

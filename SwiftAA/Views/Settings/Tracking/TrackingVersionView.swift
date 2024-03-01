@@ -19,6 +19,7 @@ struct TrackingVersionView: View {
         SettingsCardView {
             VStack {
                 SettingsPickerView(title: L10n.Tracking.gameVersion, width: 75, selection: $trackerManager.gameVersion)
+                    .disabled(trackerManager.automaticVersionDetection && trackerManager.trackingMode == .seamless)
                 
                 if availableStyles.count > 1 {
                     Divider()

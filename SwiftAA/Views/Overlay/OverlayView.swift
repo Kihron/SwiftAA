@@ -38,7 +38,7 @@ struct OverlayView: View {
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { notification in
-            if let window = notification.object as? NSWindow, window.title == "Overlay Window" {
+            if overlayManager.overlayOpen, let window = notification.object as? NSWindow, window.title == "Overlay Window" {
                 overlayManager.closeOverlay()
             }
         }

@@ -19,9 +19,6 @@ struct SwiftAAApp: App {
         Window("SwiftAA", id: "swiftaa-window") {
             ContentView()
                 .applyVersionFrame()
-                .onAppear {
-                    OverlayManager.shared.closeOverlay()
-                }
                 .navigationTitle("SwiftAA")
                 .toolbar {
                     ToolbarItem(placement: .automatic) {
@@ -41,6 +38,11 @@ struct SwiftAAApp: App {
                 .removeFocusOnTap()
                 .preferredColorScheme(.dark)
                 .environment(\.managedObjectContext, coreDataManager.container.viewContext)
+                .onAppear {
+                    if OverlayManager.shared.overlayOpen {
+                        openWindow(id: "overlay-window")
+                    }
+                }
         }
         .commands {
             CommandGroup(replacing: .appInfo) {

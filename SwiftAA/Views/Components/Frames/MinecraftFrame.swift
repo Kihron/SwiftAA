@@ -12,7 +12,7 @@ struct MinecraftFrame: View {
     @Binding var indicator: Indicator
     
     private var isCompleted: Bool {
-        return indicator.completed && !layoutManager.infoMode
+        return indicator.completed && (!layoutManager.infoMode || !indicator.tooltip.isEmpty)
     }
     
     var body: some View {

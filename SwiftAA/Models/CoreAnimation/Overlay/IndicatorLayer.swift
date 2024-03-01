@@ -32,12 +32,18 @@ class IndicatorLayer: CALayer {
         self.addSublayer(frameLayer)
         
         // Add the icon layer
-        let iconLayer = CALayer()
-        iconLayer.frame = CGRect(x: 16, y: 16, width: 32, height: 32).integral
-        iconLayer.contents = NSImage(named: indicator.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
-        iconLayer.contentsGravity = .resizeAspect
-        iconLayer.magnificationFilter = .nearest
-        self.addSublayer(iconLayer)
+        if Constants.animatedIcons.contains(indicator.icon) {
+            let iconLayer = AnimatedIconLayer(icon: indicator.icon)
+            iconLayer.frame = CGRect(x: 16, y: 16, width: 32, height: 32).integral
+            self.addSublayer(iconLayer)
+        } else {
+            let iconLayer = CALayer()
+            iconLayer.frame = CGRect(x: 16, y: 16, width: 32, height: 32).integral
+            iconLayer.contents = NSImage(named: indicator.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
+            iconLayer.contentsGravity = .resizeAspect
+            iconLayer.magnificationFilter = .nearest
+            self.addSublayer(iconLayer)
+        }
         
         // Add the name label
         let textLayer = CATextLayer()

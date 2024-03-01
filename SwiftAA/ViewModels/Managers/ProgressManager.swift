@@ -82,11 +82,7 @@ class ProgressManager: ObservableObject {
     }
     
     func getInGameTime() -> String {
-        let dateFormatter = DateComponentsFormatter()
-        dateFormatter.allowedUnits = [.hour, .minute, .second]
-        dateFormatter.unitsStyle = .positional
-        dateFormatter.zeroFormattingBehavior = .pad
-        return dateFormatter.string(from: Double(playTime / 20)) ?? "0:00:00"
+        return Utilities.playTimeFormatter.string(from: Double(playTime / 20)) ?? "0:00:00"
     }
     
     private func updateIndicators() {

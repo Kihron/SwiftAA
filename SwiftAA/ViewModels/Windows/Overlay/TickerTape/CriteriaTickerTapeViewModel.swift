@@ -36,21 +36,28 @@ class CriteriaTickerTapeViewModel: ObservableObject {
         for i in 0..<totalItemCount {
             let index = i % criteria.count
             let criterion = criteria[index]
-            let layer = CALayer()
-            layer.contents = NSImage(named: criterion.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
-            layer.frame = CGRect(x: CGFloat(i) * totalItemWidth, y: 0, width: itemWidth, height: itemWidth)
-            layer.contentsGravity = .resizeAspect
-            layer.magnificationFilter = .nearest
+            
+            var iconLayer: CALayer
+            if Constants.animatedIcons.contains(criterion.icon) {
+                iconLayer = AnimatedIconLayer(icon: criterion.icon)
+                iconLayer.frame = CGRect(x: CGFloat(i) * totalItemWidth, y: 0, width: itemWidth, height: itemWidth)
+            } else {
+                iconLayer = CALayer()
+                iconLayer.contents = NSImage(named: criterion.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
+                iconLayer.frame = CGRect(x: CGFloat(i) * totalItemWidth, y: 0, width: itemWidth, height: itemWidth)
+                iconLayer.contentsGravity = .resizeAspect
+                iconLayer.magnificationFilter = .nearest
+            }
             
             if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon),
                let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
                 let overlayLayer = CALayer()
                 overlayLayer.contents = NSImage(named: adv.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
                 overlayLayer.frame = CGRect(x: -5, y: itemWidth - 12, width: 16, height: 16)
-                layer.addSublayer(overlayLayer)
+                iconLayer.addSublayer(overlayLayer)
             }
             
-            containerLayer.addSublayer(layer)
+            containerLayer.addSublayer(iconLayer)
         }
         
         animationDuration = CFTimeInterval((totalItemWidth * CGFloat(criteria.count)) / overlayManager.tickerTapeSpeed)

@@ -1239,8 +1239,8 @@ internal enum L10n {
       internal static let clarifyAmbiguousCriteria = L10n.tr("Localizable", "overlay.appearance.clarify_ambiguous_criteria", fallback: "Clarify Ambiguous Criteria")
       /// Frame Style
       internal static let frameStyle = L10n.tr("Localizable", "overlay.appearance.frame_style", fallback: "Frame Style")
-      /// Change the style of the frames as well as overlay specific settings.
-      internal static let info = L10n.tr("Localizable", "overlay.appearance.info", fallback: "Change the style of the frames as well as overlay specific settings.")
+      /// Change the style of the frames as well as overlay style specific settings.
+      internal static let info = L10n.tr("Localizable", "overlay.appearance.info", fallback: "Change the style of the frames as well as overlay style specific settings.")
       /// Scrolling Direction
       internal static let scrollingDirection = L10n.tr("Localizable", "overlay.appearance.scrolling_direction", fallback: "Scrolling Direction")
       /// Show Page Indicator

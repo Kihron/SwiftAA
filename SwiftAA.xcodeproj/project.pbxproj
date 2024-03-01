@@ -50,7 +50,6 @@
 		B64192D12AC29D02006C8CC4 /* WaypointCardVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64192D02AC29D02006C8CC4 /* WaypointCardVeiw.swift */; };
 		B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */; };
 		B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199EE288A72C10064AF5B /* summon_wither.gif */; };
-		B64199F1288A73830064AF5B /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B64199F0288A73830064AF5B /* enchant_item.gif */; };
 		B641CB512B8DACAC00656D6C /* CriteriaTickerTapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641CB502B8DACAC00656D6C /* CriteriaTickerTapeView.swift */; };
 		B641CB532B8DACF500656D6C /* CALayerHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641CB522B8DACF500656D6C /* CALayerHosting.swift */; };
 		B6498D732AAC226400230808 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6498D722AAC226400230808 /* OverlayManager.swift */; };
@@ -84,6 +83,7 @@
 		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
+		B6743EFC2B91035E000EEC78 /* conduit.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6743EFB2B91035E000EEC78 /* conduit.gif */; };
 		B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA02AA78E12008BD8A9 /* UserTheme.swift */; };
 		B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDA32AA79937008BD8A9 /* Color+Ext.swift */; };
 		B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */; };
@@ -145,6 +145,8 @@
 		B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */; };
 		B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */; };
 		B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */; };
+		B6C387E72B90431F007BA7D4 /* AnimatedIconLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C387E62B90431F007BA7D4 /* AnimatedIconLayer.swift */; };
+		B6C387EB2B905E03007BA7D4 /* enchant_item.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6C387EA2B905E03007BA7D4 /* enchant_item.gif */; };
 		B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */; };
 		B6CD41CD2AE60C500024D4E4 /* StatusIndicatorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */; };
 		B6CD41CF2AE60D600024D4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CD41CE2AE60D600024D4E4 /* Constants.swift */; };
@@ -237,7 +239,6 @@
 		B64192D02AC29D02006C8CC4 /* WaypointCardVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointCardVeiw.swift; sourceTree = "<group>"; };
 		B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_golden_apple.gif; sourceTree = "<group>"; };
 		B64199EE288A72C10064AF5B /* summon_wither.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = summon_wither.gif; sourceTree = "<group>"; };
-		B64199F0288A73830064AF5B /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
 		B641CB502B8DACAC00656D6C /* CriteriaTickerTapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTickerTapeView.swift; sourceTree = "<group>"; };
 		B641CB522B8DACF500656D6C /* CALayerHosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerHosting.swift; sourceTree = "<group>"; };
 		B6498D722AAC226400230808 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
@@ -274,6 +275,7 @@
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
+		B6743EFB2B91035E000EEC78 /* conduit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conduit.gif; sourceTree = "<group>"; };
 		B676BDA02AA78E12008BD8A9 /* UserTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
 		B676BDA32AA79937008BD8A9 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B676BDAA2AA7A85B008BD8A9 /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
@@ -335,6 +337,8 @@
 		B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarInfoView.swift; sourceTree = "<group>"; };
 		B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLayout.swift; sourceTree = "<group>"; };
 		B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayViewModel.swift; sourceTree = "<group>"; };
+		B6C387E62B90431F007BA7D4 /* AnimatedIconLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIconLayer.swift; sourceTree = "<group>"; };
+		B6C387EA2B905E03007BA7D4 /* enchant_item.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchant_item.gif; sourceTree = "<group>"; };
 		B6C90F942ADF7B2E00143070 /* StatusIndicatorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorRowView.swift; sourceTree = "<group>"; };
 		B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicatorPickerView.swift; sourceTree = "<group>"; };
 		B6CD41CE2AE60D600024D4E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -817,8 +821,9 @@
 			children = (
 				B6DFEE412B8C3B5F0009C541 /* clock.gif */,
 				B6DFEE3D2B8C38790009C541 /* compass.gif */,
+				B6743EFB2B91035E000EEC78 /* conduit.gif */,
+				B6C387EA2B905E03007BA7D4 /* enchant_item.gif */,
 				B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */,
-				B64199F0288A73830064AF5B /* enchant_item.gif */,
 				B6DFEE452B8C563E0009C541 /* sculk_pulse.gif */,
 				B687E18C28B48079002CF5D7 /* sculk_sensor.gif */,
 				B64199EE288A72C10064AF5B /* summon_wither.gif */,
@@ -861,6 +866,14 @@
 				B6CD41CC2AE60C500024D4E4 /* StatusIndicatorPickerView.swift */,
 			);
 			path = StatusRow;
+			sourceTree = "<group>";
+		};
+		B6C387E52B904310007BA7D4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B6C387E62B90431F007BA7D4 /* AnimatedIconLayer.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B6D67AE02B742D72007AA80C /* Tracking */ = {
@@ -941,6 +954,7 @@
 		B6F208922B8EC26C0025A914 /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				B6C387E52B904310007BA7D4 /* Common */,
 				B6F208952B8EC2A50025A914 /* Overlay */,
 			);
 			path = CoreAnimation;
@@ -1122,12 +1136,13 @@
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
 				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
 				B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */,
+				B6743EFC2B91035E000EEC78 /* conduit.gif in Resources */,
 				B64199ED288A71300064AF5B /* enchanted_golden_apple.gif in Resources */,
 				49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */,
 				B6DFEE3E2B8C38790009C541 /* compass.gif in Resources */,
 				B687E17D28B3E06D002CF5D7 /* Advancements in Resources */,
-				B64199F1288A73830064AF5B /* enchant_item.gif in Resources */,
 				B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */,
+				B6C387EB2B905E03007BA7D4 /* enchant_item.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,6 +1303,7 @@
 				B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */,
 				B6498D772AAC244D00230808 /* OverlaySettings.swift in Sources */,
 				B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */,
+				B6C387E72B90431F007BA7D4 /* AnimatedIconLayer.swift in Sources */,
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
 				B6D67AE22B742E40007AA80C /* TrackingVersionView.swift in Sources */,
 				B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */,
@@ -1476,10 +1492,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240227a;
+				CURRENT_PROJECT_VERSION = 240229a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1511,10 +1527,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240227a;
+				CURRENT_PROJECT_VERSION = 240229a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;

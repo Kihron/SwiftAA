@@ -70,8 +70,11 @@ struct IndicatorView: View {
                     }
                 }
                 
-                IndicatorIconView(indicator: $indicator, showTooltip: $showTooltip, isOverlay: isOverlay)
+                IndicatorIconView(indicator: $indicator, isOverlay: isOverlay, isStat: isStat)
                     .animation(.easeIn, value: indicator.icon)
+                    .onHover(perform: { hovering in
+                        showTooltip = layoutManager.infoMode && !isOverlay && hovering
+                    })
             }
             
             Text(name)
