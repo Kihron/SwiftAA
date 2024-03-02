@@ -1538,6 +1538,8 @@ internal enum L10n {
     }
   }
   internal enum Tracking {
+    /// Automatic Expansion
+    internal static let automaticExpansion = L10n.tr("Localizable", "tracking.automatic_expansion", fallback: "Automatic Expansion")
     /// ...
     internal static let browse = L10n.tr("Localizable", "tracking.browse", fallback: "...")
     /// Custom Saves Folder
@@ -1552,6 +1554,10 @@ internal enum L10n {
     internal static let seamless = L10n.tr("Localizable", "tracking.seamless", fallback: "Seamless Tracking")
     /// View Style
     internal static let viewStyle = L10n.tr("Localizable", "tracking.view_style", fallback: "View Style")
+    internal enum AutomaticExpansion {
+      /// Automatically expands the window to its maximum size if the layout dimensions are changed, ensuring optimal visibility of content.
+      internal static let info = L10n.tr("Localizable", "tracking.automatic_expansion.info", fallback: "Automatically expands the window to its maximum size if the layout dimensions are changed, ensuring optimal visibility of content.")
+    }
     internal enum Mode {
       /// Automatic Version Detection
       internal static let automaticVersionDetection = L10n.tr("Localizable", "tracking.mode.automatic_version_detection", fallback: "Automatic Version Detection")

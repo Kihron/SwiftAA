@@ -157,6 +157,8 @@
 "theme.presets.light" = "Light";
 "theme.text_color" = "Text";
 
+"tracking.automatic_expansion" = "Automatic Expansion";
+"tracking.automatic_expansion.info" = "Automatically expands the window to its maximum size if the layout dimensions are changed, ensuring optimal visibility of content.";
 "tracking.browse" = "...";
 "tracking.custom_saves" = "Custom Saves Folder";
 "tracking.enter_directory" = "Enter Directory";

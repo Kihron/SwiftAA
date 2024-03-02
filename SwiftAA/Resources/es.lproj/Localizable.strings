@@ -157,6 +157,8 @@
 "theme.presets.light" = "Claro";
 "theme.text_color" = "Color del Texto";
 
+"tracking.automatic_expansion" = "Expansión Automática";
+"tracking.automatic_expansion.info" = "Expande automáticamente la ventana a su tamaño máximo si las dimensiones del diseño cambian, asegurando una visibilidad óptima del contenido.";
 "tracking.browse" = "...";
 "tracking.custom_saves" = "Carpeta de Mundos Personalizada";
 "tracking.enter_directory" = "Ingresar Directorio";

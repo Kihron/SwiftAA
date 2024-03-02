@@ -13,7 +13,7 @@ struct SettingsPickerView<T: SettingsOption>: View {
     let width: CGFloat
     
     @Binding var selection: T
-    @State private var textHeight: CGFloat = 0
+    @State private var textHeight: CGSize = .zero
     
     var filter: [T]?
     var options: [T] {
@@ -25,7 +25,7 @@ struct SettingsPickerView<T: SettingsOption>: View {
     }
     
     var body: some View {
-        HStack(alignment: description != nil && textHeight > 20 ? .top : .center) {
+        HStack(alignment: description != nil && textHeight.height > 20 ? .top : .center) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
                 
@@ -34,11 +34,7 @@ struct SettingsPickerView<T: SettingsOption>: View {
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .padding(.trailing, 2)
-                        .background(GeometryReader { geometryProxy in
-                            Color.clear.onAppear {
-                                self.textHeight = geometryProxy.size.height
-                            }
-                        })
+                        .modifier(SizeReader(size: $textHeight))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -51,6 +47,7 @@ struct SettingsPickerView<T: SettingsOption>: View {
             .frame(maxWidth: width)
             .labelsHidden()
         }
+        .animation(nil, value: textHeight)
     }
 }
 

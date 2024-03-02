@@ -128,6 +128,7 @@
 		B697E1102B844DF100932278 /* NetheriteUpgrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E10F2B844DF100932278 /* NetheriteUpgrade.swift */; };
 		B697E1122B844E0300932278 /* PotterySherds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1112B844E0300932278 /* PotterySherds.swift */; };
 		B697E1142B84709800932278 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E1132B84709800932278 /* ImageCache.swift */; };
+		B699E5172B92FDB600B9A4A5 /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B699E5162B92FDB600B9A4A5 /* SizeReader.swift */; };
 		B69B4A482B785FBF006E3969 /* ExperienceProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */; };
 		B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67828AC08450029B988 /* OverlayCompletedView.swift */; };
 		B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */; };
@@ -155,7 +156,6 @@
 		B6CDBA0728BDA6C70016D248 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = B6CDBA0628BDA6C70016D248 /* CachedAsyncImage */; };
 		B6CFEAE32B7C266E0008542B /* MinecraftFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CFEAE22B7C266E0008542B /* MinecraftFont.swift */; };
 		B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3065728A2B150004D27E6 /* String+Ext.swift */; };
-		B6D67AE22B742E40007AA80C /* TrackingVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE12B742E40007AA80C /* TrackingVersionView.swift */; };
 		B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */; };
 		B6D67AE72B744A97007AA80C /* L1_20.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE62B744A97007AA80C /* L1_20.swift */; };
 		B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD06252AC515F3005D1B2A /* L1_16M.swift */; };
@@ -320,6 +320,7 @@
 		B697E10F2B844DF100932278 /* NetheriteUpgrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetheriteUpgrade.swift; sourceTree = "<group>"; };
 		B697E1112B844E0300932278 /* PotterySherds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotterySherds.swift; sourceTree = "<group>"; };
 		B697E1132B84709800932278 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		B699E5162B92FDB600B9A4A5 /* SizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeReader.swift; sourceTree = "<group>"; };
 		B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceProgressBarView.swift; sourceTree = "<group>"; };
 		B69EB67828AC08450029B988 /* OverlayCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCompletedView.swift; sourceTree = "<group>"; };
 		B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
@@ -345,7 +346,6 @@
 		B6CFEAE22B7C266E0008542B /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
 		B6D3065428A2AD44004D27E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B6D3065728A2B150004D27E6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		B6D67AE12B742E40007AA80C /* TrackingVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingVersionView.swift; sourceTree = "<group>"; };
 		B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModeView.swift; sourceTree = "<group>"; };
 		B6D67AE62B744A97007AA80C /* L1_20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20.swift; sourceTree = "<group>"; };
 		B6DD06252AC515F3005D1B2A /* L1_16M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16M.swift; sourceTree = "<group>"; };
@@ -676,7 +676,6 @@
 		B66DB3D428A29F47006BE9D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */,
 				B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */,
 				B6F1B48D2AAEB4CA00422D8E /* OverlayFrameModifier.swift */,
 			);
@@ -774,6 +773,15 @@
 				B697E0FF2B844D2300932278 /* Trims.swift */,
 			);
 			path = Complex;
+			sourceTree = "<group>";
+		};
+		B699E5152B92FD1000B9A4A5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B6FEFEDD289993750095CF08 /* RemoveFocusOnTap.swift */,
+				B699E5162B92FDB600B9A4A5 /* SizeReader.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B69B4A492B785FC4006E3969 /* ProgressBars */ = {
@@ -880,7 +888,6 @@
 			isa = PBXGroup;
 			children = (
 				B6E3310F2AA80811001D7FF2 /* TrackingSettingsView.swift */,
-				B6D67AE12B742E40007AA80C /* TrackingVersionView.swift */,
 				B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */,
 			);
 			path = Tracking;
@@ -1036,6 +1043,7 @@
 		B6FEFEDC2899933D0095CF08 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				B699E5152B92FD1000B9A4A5 /* Utils */,
 				B65FE5942AA6DECF00C30A8F /* Style */,
 				B66DB3D428A29F47006BE9D9 /* View */,
 			);
@@ -1180,6 +1188,7 @@
 				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
 				B61D9A812B899580007A35CE /* SettingsToggleView.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
+				B699E5172B92FDB600B9A4A5 /* SizeReader.swift in Sources */,
 				B697E1082B844D9B00932278 /* Pufferfish.swift in Sources */,
 				B6DFEE322B8BDD840009C541 /* L1_20V.swift in Sources */,
 				B61D9A832B899FBC007A35CE /* SettingsOption.swift in Sources */,
@@ -1305,7 +1314,6 @@
 				B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */,
 				B6C387E72B90431F007BA7D4 /* AnimatedIconLayer.swift in Sources */,
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
-				B6D67AE22B742E40007AA80C /* TrackingVersionView.swift in Sources */,
 				B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */,
 				B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */,
 				B697E0ED2B844BD100932278 /* Shells.swift in Sources */,
@@ -1492,7 +1500,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240229a;
+				CURRENT_PROJECT_VERSION = 240301a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1527,7 +1535,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240229a;
+				CURRENT_PROJECT_VERSION = 240301a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

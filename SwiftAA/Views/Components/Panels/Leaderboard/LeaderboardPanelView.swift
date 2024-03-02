@@ -76,7 +76,14 @@ struct LeaderboardPanelView: View {
                         }
                         .padding(.horizontal, 8)
                     }
-                    .animation(.bouncy, value: leaderboardManager.entries)
+                    .animation(.snappy, value: leaderboardManager.entries)
+                    .background {
+                        GeometryReader { geo in
+                            Color.clear.onChange(of: geo.size.height) { value in
+                                print("Value:", value)
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -12,10 +12,10 @@ struct SettingsToggleView: View {
     var description: String?
     
     @Binding var option: Bool
-    @State private var textHeight: CGFloat = 0
+    @State private var textHeight: CGSize = .zero
     
     var body: some View {
-        HStack(alignment: description != nil && textHeight > 20 ? .top : .center) {
+        HStack(alignment: description != nil && textHeight.height > 20 ? .top : .center) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
                 
@@ -24,11 +24,7 @@ struct SettingsToggleView: View {
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .padding(.trailing, 2)
-                        .background(GeometryReader { geometryProxy in
-                            Color.clear.onAppear {
-                                self.textHeight = geometryProxy.size.height
-                            }
-                        })
+                        .modifier(SizeReader(size: $textHeight))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -38,6 +34,7 @@ struct SettingsToggleView: View {
                 .toggleStyle(.switch)
                 .padding(.leading)
         }
+        .animation(nil, value: textHeight)
     }
 }
 

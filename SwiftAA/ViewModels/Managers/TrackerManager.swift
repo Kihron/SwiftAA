@@ -19,6 +19,8 @@ class TrackerManager: ObservableObject {
         }
     }
     
+    @AppStorage("automaticExpansion") var automaticExpansion: Bool = true
+    
     @Published var lastDirectoryUpdate: Date? = Date.now
     @Published var lastLogUpdate: Date? = Date.now
     

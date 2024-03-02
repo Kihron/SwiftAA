@@ -16,7 +16,6 @@ class AppViewModel: ObservableObject {
     private var activeWindows = [pid_t:(String, Version?)]()
     private let fileManager = FileManager.default
     
-    
     init() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             withAnimation {
@@ -59,7 +58,8 @@ class AppViewModel: ObservableObject {
     private func readAllFileData(saves: String) {
         if (fileManager.fileExists(atPath: saves)) {
             do {
-                let worldPath = getWorldPath(fileManager: fileManager, saves: saves)
+                let worldPath = getWorldPath(fileManager: fileManager, saves: saves) ?? trackerManager.worldPath
+                guard !worldPath.isEmpty else { return }
                 
                 if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
                     if trackerManager.updateErrorAlert(alert: .noFiles) {
@@ -105,7 +105,7 @@ class AppViewModel: ObservableObject {
         }
     }
     
-    private func getWorldPath(fileManager: FileManager, saves: String) -> String {
+    private func getWorldPath(fileManager: FileManager, saves: String) -> String? {
         do {
             let savesDirectoryUpdated = try getModifiedTime(saves, fileManager: fileManager)
             var world: String
@@ -129,8 +129,10 @@ class AppViewModel: ObservableObject {
                     folder != ".DS_Store"
                 })
                 if (contents.isEmpty) {
-                    progressManager.clearProgressState()
-                    throw TrackerAlert.noWorlds
+                    if trackerManager.updateErrorAlert(alert: .noWorlds) {
+                        trackerManager.resetWorldPath()
+                    }
+                    return nil
                 }
                 
                 world = try contents.max { a, b in
@@ -143,11 +145,11 @@ class AppViewModel: ObservableObject {
                 trackerManager.worldPath = world
                 return world
             } else {
-                return trackerManager.worldPath
+                return nil
             }
         } catch {
             print(error.localizedDescription)
-            return trackerManager.worldPath
+            return nil
         }
     }
     

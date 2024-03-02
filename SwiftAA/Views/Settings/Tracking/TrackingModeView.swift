@@ -50,7 +50,7 @@ struct TrackingModeView: View {
                 }
             }
         }
-        .animation(.easeInOut, value: trackerManager.trackingMode)
+        .animation(.bouncy, value: trackerManager.trackingMode)
         .onChange(of: trackerManager.trackingMode) { _ in
             withAnimation {
                 trackerManager.resetWorldPath()
