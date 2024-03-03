@@ -188,6 +188,7 @@
 "statistic.gold_blocks" = "Bloques\n%d / 164";
 "statistic.gold_blocks.beaconator" = "Faroneitor Completado";
 "statistic.major_biomes" = "Biomas\n%d / %d";
+"statistic.biomes_completed" = "Todos los Biomas";
 "statistic.nether_wart" = "%d Verrugas";
 "statistic.pottery_sherds" = "%d / 4 Fragmentos";
 "statistic.pufferfish" = "%d / 2 Peces Globo";

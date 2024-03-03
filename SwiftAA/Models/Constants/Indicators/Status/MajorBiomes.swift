@@ -37,10 +37,14 @@ class MajorBiomes: TransferableIndicator, StatusIndicator {
                     icons.append(group[0])
                 }
             }
+            let allBiomesFound = progress.advancementCompleted(adventuringTime)
+            key = allBiomesFound ? L10n.Statistic.biomesCompleted : L10n.Statistic.majorBiomes(count, groups.count)
+            icon = allBiomesFound ? "enchanted_netherite_boots" :
+                    count == groups.count ? "explore_nether" :
+                    icons.isEmpty ? "adventuring_time" :
+                    icons.prefix(4).joined(separator: "+")
+            completed = count == groups.count || allBiomesFound
             
-            key = L10n.Statistic.majorBiomes(count, groups.count)
-            icon = count == groups.count ? "explore_nether" : icons.isEmpty ? "adventuring_time" : icons.prefix(4).joined(separator: "+")
-            completed = count == groups.count
         }
     }
 }

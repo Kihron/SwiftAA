@@ -188,6 +188,7 @@
 "statistic.gold_blocks" = "Gold Blocks\n%d / 164";
 "statistic.gold_blocks.beaconator" = "Beaconator Complete";
 "statistic.major_biomes" = "Major Biomes\n%d / %d";
+"statistic.biomes_completed" = "All Biomes Found";
 "statistic.nether_wart" = "%d Wart";
 "statistic.pottery_sherds" = "%d / 4 Sherds";
 "statistic.pufferfish" = "%d / 2 Puffers";

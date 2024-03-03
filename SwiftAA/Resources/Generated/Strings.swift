@@ -1402,6 +1402,8 @@ internal enum L10n {
     internal static func beehives(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.beehives", p1, fallback: "Hives: %d")
     }
+    /// All Biomes Found
+    internal static let biomesCompleted = L10n.tr("Localizable", "statistic.biomes_completed", fallback: "All Biomes Found")
     /// %d Pearls
     internal static func enderPearl(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.ender_pearl", p1, fallback: "%d Pearls")

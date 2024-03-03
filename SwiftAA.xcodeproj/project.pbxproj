@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490D35042B942F7300342D04 /* enchanted_netherite_boots.gif in Resources */ = {isa = PBXBuildFile; fileRef = 490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */; };
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
 		49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49CCDF802B7C4AF400DFE65D /* major_biomes.json */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
@@ -196,6 +197,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_netherite_boots.gif; sourceTree = "<group>"; };
 		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
 		49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
 		49CCDF802B7C4AF400DFE65D /* major_biomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = major_biomes.json; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 			isa = PBXGroup;
 			children = (
 				B6DFEE412B8C3B5F0009C541 /* clock.gif */,
+				490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */,
 				B6DFEE3D2B8C38790009C541 /* compass.gif */,
 				B6743EFB2B91035E000EEC78 /* conduit.gif */,
 				B6C387EA2B905E03007BA7D4 /* enchant_item.gif */,
@@ -1140,6 +1143,7 @@
 				B6DFEE402B8C3A370009C541 /* xp_orb.gif in Resources */,
 				B687E18D28B48079002CF5D7 /* sculk_sensor.gif in Resources */,
 				B6DFEE462B8C563E0009C541 /* sculk_pulse.gif in Resources */,
+				490D35042B942F7300342D04 /* enchanted_netherite_boots.gif in Resources */,
 				B6E1493128A17F260084A529 /* Localizable.strings in Resources */,
 				B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */,
 				B64199EF288A72C10064AF5B /* summon_wither.gif in Resources */,
@@ -1503,7 +1507,7 @@
 				CURRENT_PROJECT_VERSION = 240301a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1538,7 +1542,7 @@
 				CURRENT_PROJECT_VERSION = 240301a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = D64G2TTYWM;
+				DEVELOPMENT_TEAM = 94CLS492CD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
