@@ -4,8 +4,6 @@
 "about.description" = "All Advancements Tracker for macOS";
 "about.copyright" = "Copyright © 2024 Kihron, Slackow.";
 
-"donate.message" = "Support us on Ko-Fi";
-
 "alert.enter_minecraft" = "Open Minecraft to start tracking";
 "alert.invalid_directory" = "Invalid directory";
 "alert.directory_not_found" = "Directory not found";
@@ -19,6 +17,8 @@
 
 "credits.attribution.title" = "Attribution";
 "credits.attribution.info" = "This application was heavily inspired by and utilizes assets from CTM's [AATool for Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7).";
+"credits.donate.title" = "Support Us";
+"credits.donate.message" = "If you're finding SwiftAA helpful and would like to support its development, consider making a donation on our [Ko-fi](https://ko-fi.com/kscode).";
 "credits.role.developer" = "Developer";
 "credits.role.beta_tester" = "Beta Tester";
 

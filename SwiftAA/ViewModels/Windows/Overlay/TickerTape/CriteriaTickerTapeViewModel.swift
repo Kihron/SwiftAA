@@ -24,7 +24,7 @@ class CriteriaTickerTapeViewModel: ObservableObject {
     func setupLayers(width: CGFloat) {
         containerLayer.sublayers?.forEach { $0.removeFromSuperlayer() }
         
-        let criteria = dataManager.incompleteCriteria.isEmpty ? dataManager.allCriteria : dataManager.incompleteCriteria
+        let criteria = dataManager.incompleteCriteria.isEmpty && dataManager.completedCriteria.isEmpty ? dataManager.allCriteria : dataManager.incompleteCriteria
         guard !criteria.isEmpty else { return }
         
         let itemWidth: CGFloat = 24

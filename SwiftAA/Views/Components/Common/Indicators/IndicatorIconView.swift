@@ -21,37 +21,37 @@ struct IndicatorIconView: View {
     }
     
     var body: some View {
-        if indicator.icon.contains("+") {
-            LazyVGrid(columns: [GridItem(.fixed(16), spacing: 2), GridItem(.fixed(16), spacing: 2)], spacing: 2) {
-                ForEach(indicator.icon.split(separator: "+"), id: \.self) {icon in
-                    Image(String(icon))
-                        .resizable()
-                        .interpolation(.none)
-                        .clipShape(RoundedRectangle(cornerRadius: 2))
+        VStack {
+            if indicator.icon.contains("+") {
+                LazyVGrid(columns: [GridItem(.fixed(16), spacing: 2), GridItem(.fixed(16), spacing: 2)], spacing: 2) {
+                    ForEach(indicator.icon.split(separator: "+"), id: \.self) {icon in
+                        Image(String(icon))
+                            .resizable()
+                            .interpolation(.none)
+                            .clipShape(RoundedRectangle(cornerRadius: 2))
+                    }
                 }
-            }
-            .frame(width: 32, height: 32)
-            .padding(.top, 6)
-        } else if isAnimated {
-            VStack {
+                .frame(width: 32, height: 32)
+                .padding(.top, 6)
+            } else if isAnimated {
                 if isVisible {
                     AnimatedIconView(icon: indicator.icon)
                         .frame(width: 32, height: 32)
                         .padding(.top, 6)
                 }
+            } else {
+                Image(indicator.icon)
+                    .interpolation(.none)
+                    .resizable()
+                    .frame(width: 32, height: 32)
+                    .padding(.top, 6)
             }
-            .onAppear {
-                isVisible = true
-            }
-            .onDisappear {
-                isVisible = false
-            }
-        } else {
-            Image(indicator.icon)
-                .interpolation(.none)
-                .resizable()
-                .frame(width: 32, height: 32)
-                .padding(.top, 6)
+        }
+        .onAppear {
+            isVisible = true
+        }
+        .onDisappear {
+            isVisible = false
         }
     }
 }

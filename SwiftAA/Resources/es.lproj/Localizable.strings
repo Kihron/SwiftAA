@@ -4,8 +4,6 @@
 "about.description" = "Rastreador de todos los progresos para macOS";
 "about.copyright" = "Copyright © 2024 Kihron, Slackow.";
 
-"donate.message" = "Apóyanos en Ko-Fi";
-
 "alert.enter_minecraft" = "Abre Minecraft para empezar a rastrear";
 "alert.invalid_directory" = "Directorio inválido";
 "alert.directory_not_found" = "Directorio no encontrado";
@@ -19,6 +17,8 @@
 
 "credits.attribution.title" = "Atribución";
 "credits.attribution.info" = "Esta aplicación se inspiró en gran medida y utiliza activos de [AATool para Windows](https://github.com/DarwinBaker/AATool/tree/b250cf938e569bbb506ddf0f70a34528497907b7) de CTM.";
+"credits.donate.title" = "Apóyanos";
+"credits.donate.message" = "Si encuentras SwiftAA útil y te gustaría apoyar su desarrollo, considera hacer una donación en nuestro [Ko-fi](https://ko-fi.com/kscode).";
 "credits.role.developer" = "Desarrollador";
 "credits.role.beta_tester" = "Probador Beta";
 

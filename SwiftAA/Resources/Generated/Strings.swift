@@ -1092,16 +1092,18 @@ internal enum L10n {
       /// Attribution
       internal static let title = L10n.tr("Localizable", "credits.attribution.title", fallback: "Attribution")
     }
+    internal enum Donate {
+      /// If you're finding SwiftAA helpful and would like to support its development, consider making a donation on our [Ko-fi](https://ko-fi.com/kscode).
+      internal static let message = L10n.tr("Localizable", "credits.donate.message", fallback: "If you're finding SwiftAA helpful and would like to support its development, consider making a donation on our [Ko-fi](https://ko-fi.com/kscode).")
+      /// Support Us
+      internal static let title = L10n.tr("Localizable", "credits.donate.title", fallback: "Support Us")
+    }
     internal enum Role {
       /// Beta Tester
       internal static let betaTester = L10n.tr("Localizable", "credits.role.beta_tester", fallback: "Beta Tester")
       /// Developer
       internal static let developer = L10n.tr("Localizable", "credits.role.developer", fallback: "Developer")
     }
-  }
-  internal enum Donate {
-    /// Support us on Ko-Fi
-    internal static let message = L10n.tr("Localizable", "donate.message", fallback: "Support us on Ko-Fi")
   }
   internal enum Goal {
     /// Advancements

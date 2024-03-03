@@ -143,7 +143,6 @@
 		B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E72888FCE100436551 /* PotionPanelView.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 		B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAB57F28BA831E007B981B /* TransparentView.swift */; };
-		B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABC3D728B8646000E6633D /* DonationView.swift */; };
 		B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */; };
 		B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */; };
 		B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */; };
@@ -336,7 +335,6 @@
 		B6A772E72888FCE100436551 /* PotionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionPanelView.swift; sourceTree = "<group>"; };
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
 		B6AAB57F28BA831E007B981B /* TransparentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentView.swift; sourceTree = "<group>"; };
-		B6ABC3D728B8646000E6633D /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
 		B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarInfoView.swift; sourceTree = "<group>"; };
 		B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLayout.swift; sourceTree = "<group>"; };
 		B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayViewModel.swift; sourceTree = "<group>"; };
@@ -805,7 +803,6 @@
 				B676BDA92AA7A81B008BD8A9 /* Common */,
 				B6A773112889BE4800436551 /* Gifs */,
 				B6FEFEE3289994B90095CF08 /* Panels */,
-				B6ABC3D728B8646000E6633D /* DonationView.swift */,
 				B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */,
 			);
 			path = Components;
@@ -830,11 +827,11 @@
 			isa = PBXGroup;
 			children = (
 				B6DFEE412B8C3B5F0009C541 /* clock.gif */,
-				490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */,
 				B6DFEE3D2B8C38790009C541 /* compass.gif */,
 				B6743EFB2B91035E000EEC78 /* conduit.gif */,
 				B6C387EA2B905E03007BA7D4 /* enchant_item.gif */,
 				B64199EC288A71300064AF5B /* enchanted_golden_apple.gif */,
+				490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */,
 				B6DFEE452B8C563E0009C541 /* sculk_pulse.gif */,
 				B687E18C28B48079002CF5D7 /* sculk_sensor.gif */,
 				B64199EE288A72C10064AF5B /* summon_wither.gif */,
@@ -1315,7 +1312,6 @@
 				B62AEA172AA95FFD008B01CD /* NoteManager.swift in Sources */,
 				B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */,
 				B6498D772AAC244D00230808 /* OverlaySettings.swift in Sources */,
-				B6ABC3D828B8646000E6633D /* DonationView.swift in Sources */,
 				B6C387E72B90431F007BA7D4 /* AnimatedIconLayer.swift in Sources */,
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
 				B624F37D2AB7F784006D8719 /* NetworkManager.swift in Sources */,
@@ -1504,10 +1500,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240301a;
+				CURRENT_PROJECT_VERSION = 240302a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1539,10 +1535,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240301a;
+				CURRENT_PROJECT_VERSION = 240302a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 94CLS492CD;
+				DEVELOPMENT_TEAM = D64G2TTYWM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1600,8 +1596,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.1;
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.5.2;
 			};
 		};
 		B6CDBA0228BDA6BE0016D248 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {

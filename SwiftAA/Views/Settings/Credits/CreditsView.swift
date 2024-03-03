@@ -45,6 +45,21 @@ struct CreditsView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
+            
+            SettingsLabel(title: L10n.Credits.Donate.title)
+                .padding(.top, 5)
+            
+            SettingsCardView {
+                HStack {
+                    Image(systemName: "heart.fill")
+                        .font(.title)
+                        .foregroundStyle(.pink)
+                    
+                    Text(.init(L10n.Credits.Donate.message))
+                        .tint(.pink)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .padding()
