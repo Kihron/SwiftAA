@@ -17,30 +17,30 @@ struct CriterionIconView: View {
     }
     
     var body: some View {
-        if Constants.animatedIcons.contains(criterion.icon) {
-            VStack {
+        VStack {
+            if Constants.animatedIcons.contains(criterion.icon) {
                 if isVisible {
                     AnimatedIconView(icon: criterion.icon)
                         .frame(width: 16, height: 16)
                         .opacity(opacity)
                 }
-            }
-            .onAppear {
-                isVisible = true
-            }
-            .onDisappear {
-                isVisible = false
-            }
-        } else {
-            Image(criterion.icon)
-                .frame(width: 16, height: 16)
-                .opacity(opacity)
-            
-            if let dual = criterion as? Criterion.DualCriterion, dual.recipe.contains("trim") {
-                Image("smithing_table")
+            } else {
+                Image(criterion.icon)
                     .frame(width: 16, height: 16)
-                    .opacity(dual.secondaryCompleted ? 1 : 0.3)
+                    .opacity(opacity)
+                
+                if let dual = criterion as? Criterion.DualCriterion, dual.recipe.contains("trim") {
+                    Image("smithing_table")
+                        .frame(width: 16, height: 16)
+                        .opacity(dual.secondaryCompleted ? 1 : 0.3)
+                }
             }
+        }
+        .onAppear {
+            isVisible = true
+        }
+        .onDisappear {
+            isVisible = false
         }
     }
 }

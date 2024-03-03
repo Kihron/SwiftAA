@@ -17,7 +17,7 @@ class Constants {
         Beehives(),
         GoldBlocks(),
         SnifferEggs(),
-        MajorBiomes(),
+        MajorBiomes()
     ]
     
     static let statisticIndicators: [StatisticIndicator] = [
@@ -29,7 +29,7 @@ class Constants {
         AzureBluet.shared,
         FermentedEye.shared,
         NetheriteUpgrade.shared,
-        PotterySherds.shared,
+        PotterySherds.shared
     ]
     
     static let finalStatistics: [FinalStatistic] = [
@@ -47,10 +47,14 @@ class Constants {
         FinalStatistic(id: "minecraft:gold_block", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "gold_block"),
         FinalStatistic(id: "minecraft:ender_chest", type: "minecraft:mined", icon: "diamond_pickaxe", secondaryIcon: "ender_chest"),
         FinalStatistic(id: "minecraft:lectern", type: "minecraft:mined", icon: "diamond_axe", secondaryIcon: "lectern"),
-        FinalStatistic(id: "minecraft:sugar_cane", type: "minecraft:picked_up", icon: "diamond_axe", secondaryIcon: "sugarcane"),
+        FinalStatistic(id: "minecraft:sugar_cane", type: "minecraft:picked_up", icon: "diamond_axe", secondaryIcon: "sugarcane")
     ]
     
-    static let ambigiousCriteria = ["hoglin", "tuxedo", "cat"]
+    static let ambigiousCriteria = [
+        "hoglin",
+        "tuxedo",
+        "cat"
+    ]
     
     static let animatedIcons = [
         "conduit",
@@ -58,7 +62,7 @@ class Constants {
         "enchant_item",
         "sculk_sensor",
         "summon_wither",
-        "enchanted_netherite_boots",
+        "enchanted_netherite_boots"
     ]
     
     static var gifCache: [String: (frames: [NSImage], durations: [TimeInterval])] = [:]
