@@ -30,6 +30,7 @@
 		B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */; };
 		B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3802AB803F9006D8719 /* LayoutManager.swift */; };
 		B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3822AB8044D006D8719 /* ModularPanel.swift */; };
+		B62889502B96D12400C5C45D /* CriterionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628894F2B96D12400C5C45D /* CriterionLayer.swift */; };
 		B628EF7C2B7DAD7800B5D37C /* IndicatorIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */; };
 		B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */; };
 		B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */; };
@@ -220,6 +221,7 @@
 		B624F37E2AB802C0006D8719 /* LayoutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSettingsView.swift; sourceTree = "<group>"; };
 		B624F3802AB803F9006D8719 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
 		B624F3822AB8044D006D8719 /* ModularPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularPanel.swift; sourceTree = "<group>"; };
+		B628894F2B96D12400C5C45D /* CriterionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionLayer.swift; sourceTree = "<group>"; };
 		B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorIconView.swift; sourceTree = "<group>"; };
 		B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardManager.swift; sourceTree = "<group>"; };
 		B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F208932B8EC27B0025A914 /* IndicatorLayer.swift */,
+				B628894F2B96D12400C5C45D /* CriterionLayer.swift */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B6F2088A2B8E978B0025A914 /* IndicatorTickerTapeView.swift in Sources */,
+				B62889502B96D12400C5C45D /* CriterionLayer.swift in Sources */,
 				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
 				B697E0E92B844B7600932278 /* GodApple.swift in Sources */,
 				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
@@ -1500,7 +1504,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240302a;
+				CURRENT_PROJECT_VERSION = 240304a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1535,7 +1539,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240302a;
+				CURRENT_PROJECT_VERSION = 240304a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

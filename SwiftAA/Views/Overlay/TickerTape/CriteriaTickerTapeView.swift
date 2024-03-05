@@ -33,7 +33,7 @@ struct CriteriaTickerTapeView: View {
                     .onChange(of: TrackerManager.shared.trackingMode) { _ in
                         viewModel.resetLayers(width: geometry.size.width, override: false)
                     }
-                    .onChange(of: overlayManager.clarifyAmbigiousCriteria) { _ in
+                    .onChange(of: overlayManager.clarifyAmbiguousCriteria) { _ in
                         viewModel.resetLayers(width: geometry.size.width)
                     }
                     .onChange(of: overlayManager.invertScrollDirection) { _ in

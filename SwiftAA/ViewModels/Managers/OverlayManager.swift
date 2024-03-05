@@ -13,7 +13,7 @@ class OverlayManager: ObservableObject {
     @AppStorage("statisticsAlignment") var statisticsAlignment: HAlignment = .leading
     @AppStorage("showOptimalProgressBar") var showOptimalProgressBar: Bool = true
     @AppStorage("showLegacyPageIndicator") var showLegacyPageIndicator: Bool = true
-    @AppStorage("clarifyAmbigiousCriteria") var clarifyAmbigiousCriteria: Bool = true
+    @AppStorage("clarifyAmbiguousCriteria") var clarifyAmbiguousCriteria: Bool = true
     @AppStorage("showInGameTime") var showInGameTime: Bool = true
     
     @AppStorage("invertScrollingDirection") var invertScrollDirection: Bool = false

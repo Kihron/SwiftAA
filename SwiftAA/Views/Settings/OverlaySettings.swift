@@ -46,7 +46,7 @@ struct OverlaySettings: View {
                 }
                 
                 SettingsCardView {
-                    SettingsToggleView(title: L10n.Overlay.Appearance.clarifyAmbiguousCriteria, description: L10n.Overlay.Appearance.ClarifyAmbiguousCriteria.info, option: $overlayManager.clarifyAmbigiousCriteria)
+                    SettingsToggleView(title: L10n.Overlay.Appearance.clarifyAmbiguousCriteria, description: L10n.Overlay.Appearance.ClarifyAmbiguousCriteria.info, option: $overlayManager.clarifyAmbiguousCriteria)
                 }
                 
                 SettingsLabel(title: L10n.Overlay.Appearance.title, description: L10n.Overlay.Appearance.info)

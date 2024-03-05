@@ -50,7 +50,7 @@ class Constants {
         FinalStatistic(id: "minecraft:sugar_cane", type: "minecraft:picked_up", icon: "diamond_axe", secondaryIcon: "sugarcane")
     ]
     
-    static let ambigiousCriteria = [
+    static let ambiguousCriteria = [
         "hoglin",
         "tuxedo",
         "cat"

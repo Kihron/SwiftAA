@@ -36,28 +36,9 @@ class CriteriaTickerTapeViewModel: ObservableObject {
         for i in 0..<totalItemCount {
             let index = i % criteria.count
             let criterion = criteria[index]
-            
-            var iconLayer: CALayer
-            if Constants.animatedIcons.contains(criterion.icon) {
-                iconLayer = AnimatedIconLayer(icon: criterion.icon)
-                iconLayer.frame = CGRect(x: CGFloat(i) * totalItemWidth, y: 0, width: itemWidth, height: itemWidth)
-            } else {
-                iconLayer = CALayer()
-                iconLayer.contents = NSImage(named: criterion.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
-                iconLayer.frame = CGRect(x: CGFloat(i) * totalItemWidth, y: 0, width: itemWidth, height: itemWidth)
-                iconLayer.contentsGravity = .resizeAspect
-                iconLayer.magnificationFilter = .nearest
-            }
-            
-            if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon),
-               let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
-                let overlayLayer = CALayer()
-                overlayLayer.contents = NSImage(named: adv.icon)?.cgImage(forProposedRect: nil, context: nil, hints: nil)
-                overlayLayer.frame = CGRect(x: -5, y: itemWidth - 12, width: 16, height: 16)
-                iconLayer.addSublayer(overlayLayer)
-            }
-            
-            containerLayer.addSublayer(iconLayer)
+            let layer = CriterionLayer(criterion: criterion)
+            layer.frame = CGRect(x: CGFloat(i) * totalItemWidth, y: 0, width: itemWidth, height: itemWidth)
+            containerLayer.addSublayer(layer)
         }
         
         animationDuration = CFTimeInterval((totalItemWidth * CGFloat(criteria.count)) / overlayManager.tickerTapeSpeed)

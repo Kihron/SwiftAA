@@ -13,78 +13,86 @@ struct OverlayCompletedView: View {
     @ObservedObject private var playerManager = PlayerManager.shared
     
     var body: some View {
-        GeometryReader { screen in
-            HStack(spacing: 0) {
-                VStack(spacing: 0) {
+        HStack {
+            VStack {
+                ZStack {
+                    Group {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color("overlay_dark"))
+                        
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(.gray.opacity(0.4), lineWidth: 1)
+                    }
+                    .padding(1)
+                    
                     ZStack {
-                        RoundedCornersShape(radius: 5, corners: [.topLeft, .topRight])
-                            .fill(Color("overlay_completed"))
-                            .frame(width: screen.size.width / 1.7, height: 50)
-                            .padding(.top)
-                            .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
-                            .padding(.trailing, 5)
+                        Group {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color("overlay_completed"))
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(.black, lineWidth: 0.5)
+                        }
+                        .frame(height: 50)
+                        .shadow(color: .black, radius: 10)
+                        .mask(RoundedRectangle(cornerRadius: 5).padding(.bottom, -25))
                         
                         Text(L10n.Overlay.Complete.title(dataManager.allAdvancements.count))
                             .minecraftFont(size: 24)
-                            .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
-                            .padding(.top, 5)
+                            .shadow(color: .black, radius: 1, x: 2, y: 2)
                     }
+                    .frame(maxHeight: .infinity, alignment: .top)
                     
-                    ZStack {
-                        RoundedCornersShape(radius: 5, corners: [.bottomLeft, .bottomRight])
-                            .fill(Color("overlay_dark"))
-                            .frame(width: screen.size.width / 1.7)
-                            .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
-                            .padding(.top, -8)
-                            .padding(.trailing, 5)
+                    VStack {
+                        OverlayShimmerView(message: L10n.Overlay.Complete.message(playerManager.player?.name ?? "Player", TrackerManager.shared.gameVersion.label))
                         
-                        VStack {
-                            OverlayShimmerView(message: L10n.Overlay.Complete.message(playerManager.player?.name ?? "Player", TrackerManager.shared.gameVersion.label))
-                                .frame(width: screen.size.width / 1.7)
-                                .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
-                            
-                            OverlayShimmerView(message: L10n.Overlay.Complete.time(progressManager.getInGameTime()))
-                                .padding(.top)
-                                .frame(width: screen.size.width / 1.7)
-                                .padding(.leading, (screen.size.width - (screen.size.width / 1.7 + screen.size.width / 2.5) - 5) / 2)
-                        }
-                    }
-                    .padding(.bottom)
-                    
-                    Spacer()
-                }
-                
-                VStack(spacing: 0) {
-                    ZStack {
-                        RoundedCornersShape(radius: 5, corners: [.topLeft, .topRight])
-                            .fill(Color("overlay_completed"))
-                            .frame(width: screen.size.width / 2.5, height: 50)
+                        OverlayShimmerView(message: L10n.Overlay.Complete.time(progressManager.getInGameTime()))
                             .padding(.top)
+                    }
+                    .padding(.top)
+                }
+                .frame(width: 550)
+                .padding(.vertical, 20)
+            }
+            
+            VStack {
+                ZStack {
+                    Group {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color("overlay_dark"))
                         
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(.gray.opacity(0.4), lineWidth: 1)
+                    }
+                    .padding(1)
+                    
+                    ZStack {
+                        Group {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color("overlay_completed"))
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(.black, lineWidth: 0.5)
+                        }
+                        .frame(height: 50)
+                        .shadow(color: .black, radius: 10)
+                        .mask(RoundedRectangle(cornerRadius: 5).padding(.bottom, -25))
                         
                         Text(L10n.Overlay.Complete.stats)
                             .minecraftFont(size: 24)
-                            .padding(.top, 5)
+                            .shadow(color: .black, radius: 1, x: 2, y: 2)
                     }
+                    .frame(maxHeight: .infinity, alignment: .top)
                     
-                    ZStack {
-                        RoundedCornersShape(radius: 5, corners: [.bottomLeft, .bottomRight])
-                            .fill(Color("overlay_dark"))
-                            .frame(width: screen.size.width / 2.5)
-                            .padding(.top, -8)
-                            .padding(.bottom)
-                        
-                        LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 32), spacing: 0, alignment: .leading), count: 5), spacing: 14) {
-                            ForEach(Constants.finalStatistics) { statistic in
-                                FinalStatsView(statistic: statistic)
-                            }
+                    LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 32), spacing: 0, alignment: .leading), count: 5), spacing: 20) {
+                        ForEach(Constants.finalStatistics) { statistic in
+                            FinalStatsView(statistic: statistic)
                         }
-                        .padding(.vertical)
-                        .offset(y: -10)
                     }
-                    
-                    Spacer()
+                    .padding(.top, 60)
+                    .padding(.bottom)
                 }
+                .padding(.vertical, 20)
             }
         }
         .padding(.horizontal, 15)

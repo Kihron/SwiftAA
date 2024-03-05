@@ -55,7 +55,7 @@ struct OptimalOverlayView: View {
                                             .frame(width: 24, height: 24)
                                     }
                                     
-                                    if overlayManager.clarifyAmbigiousCriteria && Constants.ambigiousCriteria.contains(criterion.icon) {
+                                    if overlayManager.clarifyAmbiguousCriteria && Constants.ambiguousCriteria.contains(criterion.icon) {
                                         if let adv = dataManager.getAdvancementForCriteria(criterion: criterion) {
                                             Image(adv.icon)
                                                 .resizable()
