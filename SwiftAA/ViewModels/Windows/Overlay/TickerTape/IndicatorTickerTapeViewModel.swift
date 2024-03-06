@@ -49,26 +49,45 @@ class IndicatorTickerTapeViewModel: ObservableObject {
         guard !indicators.isEmpty else { return }
         
         let padding: CGFloat = 4
-        let animation = CAKeyframeAnimation(keyPath: "position.x")
+        let animation = CABasicAnimation(keyPath: "position.x")
         let totalItemWidth = 74 + padding
         let distance = -totalItemWidth * CGFloat(indicators.count) // Distance for one set of items
         
-        animation.values = overlayManager.invertScrollDirection ? [distance, 0] : [0, distance]
-        animation.keyTimes = [0, 1]
+        animation.fromValue = overlayManager.invertScrollDirection ? distance : 0
+        animation.toValue = overlayManager.invertScrollDirection ? 0 : distance
         animation.duration = animationDuration
         animation.repeatCount = .infinity
         animation.timingFunction = CAMediaTimingFunction(name: .linear)
+        
+        // Adjust the begin time to maintain continuity
+        let currentPresentationLayer = containerLayer.presentation()
+        let currentOffset = currentPresentationLayer?.position.x ?? 0
+        let adjustedOffset = overlayManager.invertScrollDirection ? distance - currentOffset : currentOffset
+        var elapsed = CGFloat(adjustedOffset / distance) * CGFloat(animationDuration)
+        
+        // Ensure elapsed time is within a valid range
+        elapsed = max(0, min(elapsed, CGFloat(animationDuration)))
+        animation.beginTime = CACurrentMediaTime() - CFTimeInterval(elapsed)
+        
         containerLayer.add(animation, forKey: "tickerAnimation")
     }
     
     func resetLayers(width: CGFloat, override: Bool = true) {
+        guard !dataManager.completedAllAdvancements else { return }
         let currentIndicators = dataManager.incompleteAdvancements.isEmpty ? dataManager.allAdvancements : dataManager.incompleteAdvancements
+        
         if currentIndicators != previousIndicators || override {
+            // Begin a transaction to update the layers without animation
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            
             containerLayer.removeAllAnimations()
             setupLayers(width: width)
+            
+            CATransaction.commit()
             startAnimation(width: width)
+            previousIndicators = currentIndicators
         }
-        previousIndicators = currentIndicators
     }
     
     func debounceResetLayers(width: CGFloat, override: Bool = true) {
