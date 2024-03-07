@@ -31,7 +31,7 @@ struct OverlayShimmerView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.default.speed(0.05).delay(0).repeatForever(autoreverses: false)){
+            withAnimation(Animation.default.speed(0.05).repeatForever(autoreverses: false)){
                 self.show.toggle()
             }
         }

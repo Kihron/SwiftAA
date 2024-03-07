@@ -49,7 +49,7 @@ struct OverlayCompletedView: View {
                         OverlayShimmerView(message: L10n.Overlay.Complete.time(progressManager.getInGameTime()))
                             .padding(.top)
                     }
-                    .padding(.top)
+                    .padding(.top, 40)
                 }
                 .frame(width: 550)
                 .padding(.vertical, 20)
