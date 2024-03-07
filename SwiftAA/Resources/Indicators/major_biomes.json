@@ -1,0 +1,21 @@
+{
+    "1.16": [
+        ["giant_tree_taiga", "giant_tree_taiga_hills"],
+        ["snowy_taiga", "snowy_taiga_hills", "snowy_tundra", "snowy_mountains", "snowy_beach", "frozen_river"],
+        ["jungle", "jungle_edge", "jungle_hills", "bamboo_jungle", "bamboo_jungle_hills"],
+        ["badlands", "badlands_plateau", "wooded_badlands_plateau"],
+        ["mushroom_fields", "mushroom_field_shore"]
+    ],
+    "1.19": [
+        ["windswept_gravelly_hills"],
+        ["stony_peaks"],
+        ["frozen_peaks", "jagged_peaks"],
+        ["mushroom_fields"]
+    ],
+    "1.20": [
+        ["windswept_gravelly_hills"],
+        ["stony_peaks"],
+        ["frozen_peaks", "jagged_peaks"],
+        ["mushroom_fields"]
+    ]
+}

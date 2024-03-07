@@ -8,23 +8,55 @@
 import SwiftUI
 
 struct GoalPanelView: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject private var dataManager = DataManager.shared
+    
     @Binding var advancement: Advancement
     @State var completedTotal: Int = 0
     @State var rowCount: Int
     @State var goal: String
+    @State var isMinimal: Bool = false
+    @State var isAdjacent: Bool = false
+    @State var hidePercentage: Bool = false
+    
+    var horizontalSpacing: CGFloat {
+        return isMinimal ? 16 : 2
+    }
+    
+    var columnSpacing: CGFloat {
+        return isMinimal ? 10 : 5
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
-            LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: 2, alignment: .leading), count: rowCount), spacing: 5) {
-                Spacer()
-                Spacer()
-
+            if isAdjacent {
+                adjacent
+            } else {
+                standard
+            }
+            
+            ProgressBarView(value: .constant($advancement.criteria.filter({isCompleted($0.wrappedValue)}).count), total: .constant(advancement.criteria.count), title: goal, hidePercentage: hidePercentage)
+        }
+        .padding(4)
+        .applyThemeModifiers()
+    }
+    
+    var standard: some View {
+        ZStack(alignment: .leading) {
+            if !isMinimal {
                 IndicatorView(indicator: $advancement.asIndicator)
-
-                Spacer()
-                Spacer()
-
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            }
+            
+            LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: horizontalSpacing, alignment: .leading), count: rowCount), spacing: columnSpacing) {
+                
+                if !isMinimal {
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                }
+                
                 ForEach($advancement.criteria, id: \.self.id) { item in
                     CriterionView(criterion: item)
                 }
@@ -32,24 +64,41 @@ struct GoalPanelView: View {
             }
             .frame(maxHeight: .infinity)
             .padding(.leading, 5)
-
-            ProgressBarView(value: .constant($advancement.criteria.filter({ criterion in
-                    criterion.completed.wrappedValue
-            }).count), total: .constant(advancement.criteria.count), title: goal)
+            .padding(.top, isMinimal ? 10 : 3)
+            .padding(.bottom, isMinimal ? 10 : 0)
         }
-        .padding(4)
-        .background(settings.backgroudColor)
-        .border(settings.borderColor, width: 2)
+    }
+    
+    var adjacent: some View {
+        HStack(alignment: .top) {
+            if !isMinimal {
+                IndicatorView(indicator: $advancement.asIndicator)
+            }
+            
+            LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: horizontalSpacing, alignment: .leading), count: rowCount), spacing: columnSpacing) {
+                
+                ForEach($advancement.criteria, id: \.self.id) { item in
+                    CriterionView(criterion: item)
+                }
+                .frame(alignment: .leading)
+            }
+            .frame(maxHeight: .infinity, alignment: .topLeading)
+            .padding(.leading, 5)
+            .padding(.top, isMinimal ? 10 : 3)
+            .padding(.bottom, isMinimal ? 10 : 0)
+        }
+    }
+    
+    private func isCompleted(_ criterion: Criterion) -> Bool {
+        if let dual = criterion as? Criterion.DualCriterion {
+            return dual.completed && dual.secondaryCompleted
+        } else {
+            return criterion.completed
+        }
     }
 }
 
-struct GoalPanelViewView_Previews: PreviewProvider {
-    @ObservedObject static var dataHandler = DataHandler()
-    @StateObject static var settings = AppSettings()
-
-    static var previews: some View {
-        GoalPanelView(advancement: dataHandler.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: "Biomes Visited")
-            .frame(width: 500, height: 400)
-            .environmentObject(settings)
-    }
+#Preview {
+    GoalPanelView(advancement: DataManager.shared.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.biomesVisited)
+        .frame(width: 350)
 }

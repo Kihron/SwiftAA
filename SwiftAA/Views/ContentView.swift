@@ -6,45 +6,45 @@
 //
 
 import SwiftUI
-import Cocoa
 
 struct ContentView: View {
-    @EnvironmentObject var settings: AppSettings
-    @ObservedObject var dataHandler: DataHandler
-    @Binding var changed: Bool
+    @Environment(\.managedObjectContext) private var context
+    @ObservedObject private var themeManager = ThemeManager.shared
+    @ObservedObject private var noteManager = NoteManager.shared
+    
+    @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
+    private var themeFetch: FetchedResults<UserThemes>
+    
+    @FetchRequest(entity: WorldNote.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \WorldNote.path, ascending: true)])
+    private var noteFetch: FetchedResults<WorldNote>
     
     var body: some View {
         ScrollView(.vertical) {
             ScrollView(.horizontal) {
-                VStack(alignment: .leading, spacing: 0) {
-                    switch settings.gameVersion {
-                    case "1.16" : L1_16(dataHandler: dataHandler)
-                    case "1.19" : L1_19(dataHandler: dataHandler)
-                    default:
-                        L1_16(dataHandler: dataHandler)
+                ZStack {
+                    switch TrackerManager.shared.gameVersion {
+                        case .v1_16 : L1_16()
+                        case .v1_19 : L1_19()
+                        case .v1_20: L1_20()
                     }
+                    
+                    RoundedCornersShape(radius: 10, corners: [.bottomLeft, .bottomRight])
+                        .stroke(themeManager.border, lineWidth: 1.5)
+                        .padding(.top, 1)
+                        .padding(1)
                 }
             }
         }
         .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
-                if (changed) {
-                    withAnimation {
-                        changed = false
-                    }
-                }
-            }
+            themeManager.getUserThemesFromFetch(fetch: themeFetch)
+            noteManager.getWorldNotesFromFetch(fetch: noteFetch, context: context)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @ObservedObject static var dataHandler = DataHandler()
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
-        ContentView(dataHandler: dataHandler, changed: .constant(false))
+        ContentView()
             .frame(width: 1431, height: 754)
-            .environmentObject(settings)
     }
 }

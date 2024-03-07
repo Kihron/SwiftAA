@@ -2,80 +2,138 @@
 //  NotesSettingsView.swift
 //  SwiftAA
 //
-//  Created by Kihron on 7/26/22.
+//  Created by Kihron on 9/22/23.
 //
 
 import SwiftUI
 
 struct NotesSettingsView: View {
-    @EnvironmentObject var settings: AppSettings
-    @State var selected: [String]? = nil
-    @State var selectedWorld: String = ""
+    @Environment(\.managedObjectContext) private var context
+    @ObservedObject private var noteManager = NoteManager.shared
+    
+    @State private var selected: Note = Note.newNote
+    
+    private var folderExists: Bool {
+        let fileManager = FileManager.default
+        return fileManager.fileExists(atPath: selected.path)
+    }
     
     var body: some View {
-        if (!settings.notes.isEmpty) {
-            HStack {
-                VStack {
-                    ScrollView {
-                        VStack(alignment: .center, spacing: 5) {
-                            ForEach(Array(settings.notes).sorted(by: { $0.key.lowercased() < $1.key.lowercased()}), id: \.self.key) { item in
-                                Button {
-                                    selected = item.value
-                                    selectedWorld = item.key
-                                } label: {
-                                    Text(item.key.suffix(from: (item.key.lastIndex(of: "/") ?? item.key.firstIndex(of: "/"))!).dropFirst())
-                                        .font(.custom("Minecraft-Regular", size: 12))
-                                        .frame(width: 100)
-                                }
-                                .background((selectedWorld == item.key) ? .blue : .clear)
-                                .cornerRadius(5)
-                            }
+        HStack(spacing: 0) {
+            ScrollView {
+                VStack(spacing: 0) {
+                    ForEach(noteManager.worldNotes) { note in
+                        let idx = noteManager.worldNotes.firstIndex(where: { $0.id == note.id })
+                        Button(action: { selected = note }) {
+                            Text(getShortName(path: note.path))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical)
+                                .background(note == selected ? .blue.opacity(0.2) : .black.opacity(0.001))
+                        }
+                        .buttonStyle(.plain)
+                        
+                        if idx ?? 0 < noteManager.worldNotes.count - 1 {
+                            Divider()
                         }
                     }
-                    .padding()
-                    
-                    HStack {
-                        Button {
-                            settings.notes.removeValue(forKey: selectedWorld)
-                            selected = nil
-                            selectedWorld = ""
-                        } label: {
-                            Image(systemName: "trash")
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .frame(width: 175)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .animation(.bouncy, value: noteManager.worldNotes)
+            .background(.black.opacity(0.2))
+            
+            Divider()
+            
+            ScrollView {
+                VStack(alignment: .leading) {
+                    if !selected.path.isEmpty {
+                        Text(L10n.Notes.PanelView.waypoints)
+                            .fontWeight(.bold)
+                        
+                        SettingsCardView {
+                            VStack {
+                                WaypointCardView(note: $selected, index: 0, icon: "elder_guardian")
+                                WaypointCardView(note: $selected, index: 1, icon: "pillager")
+                                WaypointCardView(note: $selected, index: 2, icon: "silverfish")
+                            }
+                            .contentTransition(.numericText())
+                        }
+                        .disabled(true)
+                        
+                        Text(L10n.Notes.PanelView.notes)
+                            .fontWeight(.bold)
+                            .padding(.top, 10)
+                        
+                        SettingsCardView {
+                            Text(selected.message)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         }
                         
-                        Button {
-                            settings.notes.removeAll()
-                            selected = nil
-                            selectedWorld = ""
-                        } label: {
-                            Text("notes-clear-all", comment: "Button: delete all notes")
-                                .font(.custom("Minecraft-Regular", size: 12))
+                        Text(L10n.Notes.path)
+                            .fontWeight(.bold)
+                            .padding(.top, 10)
+                        
+                        SettingsCardView {
+                            Text(selected.path)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
-                    .padding(.bottom)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .padding()
+            }
+        }
+        .animation(.bouncy, value: selected)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .onAppear {
+            if let note = noteManager.worldNotes.first {
+                selected = note
+            }
+        }
+        .toolbar {
+            if !selected.path.isEmpty {
+                ToolbarItem(placement: .automatic) {
+                    VStack {
+                        if folderExists {
+                            Button(action: { showInFinder() }) {
+                                Image(systemName: "folder")
+                            }
+                            .help(L10n.Notes.Button.showInFolder)
+                        }
+                    }
+                    .frame(width: 32, height: 32)
+                    .animation(.linear(duration: 0.2), value: folderExists)
                 }
                 
-                TextEditor(text: .constant((selected ?? ["notes-select-world".localized]).joined(separator: "\n")))
-                    .font(.custom("Minecraft-Regular", size: 10))
-                    .disabled(true)
-                    .cornerRadius(5)
-                    .padding([.top, .bottom, .trailing])
-                
-                Spacer()
+                ToolbarItem(placement: .automatic) {
+                    Button(action: { deleteNote(note: selected) }) {
+                        Image(systemName: "trash")
+                    }
+                    .help(L10n.Notes.Button.deleteSelectedNote)
+                }
             }
-        } else {
-            Text("notes-none", comment: "Title: no notes available/recorded")
-                .font(.custom("Minecraft-Regular", size: 24))
         }
+    }
+    
+    private func showInFinder() {
+        let url = URL(filePath: selected.path)
+        NSWorkspace.shared.activateFileViewerSelecting([url])
+    }
+    
+    private func deleteNote(note: Note) {
+        noteManager.deleteNote(note: note, context: context)
+        selected = noteManager.worldNotes.first ?? Note.newNote
+    }
+    
+    private func getShortName(path: String) -> String {
+        let name = path.lastIndex(of: "/") ?? path.startIndex
+        return String(path.suffix(from: name)).replacingOccurrences(of: "/", with: "")
     }
 }
 
-struct NotesSettingsView_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
-    static var previews: some View {
-        NotesSettingsView()
-            .frame(width: 500, height: 300)
-            .environmentObject(settings)
-    }
+#Preview {
+    NotesSettingsView()
+        .frame(width: 600, height: 500)
 }

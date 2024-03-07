@@ -9,11 +9,11 @@ import SwiftUI
 import CachedAsyncImage
 
 struct ToolbarPlayerHead: View {
-    @EnvironmentObject var settings: AppSettings
+    @ObservedObject private var playerManager = PlayerManager.shared
     
     var body: some View {
-        if (settings.player != nil && !settings.player!.id.isEmpty) {
-            CachedAsyncImage(url: URL(string: "https://cravatar.eu/helmhead/\(settings.player!.id)/64.png")) { phase in
+        if playerManager.playerHasLoaded {
+            CachedAsyncImage(url: playerManager.imageURL, urlCache: .imageCache) { phase in
                 switch phase {
                     case .empty:
                         ProgressView()
@@ -37,10 +37,7 @@ struct ToolbarPlayerHead: View {
 }
 
 struct ToolbarPlayerHead_Previews: PreviewProvider {
-    @StateObject static var settings = AppSettings()
-    
     static var previews: some View {
         ToolbarPlayerHead()
-            .environmentObject(settings)
     }
 }

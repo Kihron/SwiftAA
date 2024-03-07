@@ -9,18 +9,18 @@ import SwiftUI
 
 struct OverlayShimmerView: View {
     @State var message: String
-    @State var show = false
+    @State private var show = false
     
     var body : some View{
         ZStack{
             ZStack{
                 Text(message)
                     .foregroundColor(.purple)
-                    .font(.custom("Minecraft-Regular", size: 24))
+                    .minecraftFont(size: 24)
                     .multilineTextAlignment(.center)
                 
                 Text(message)
-                    .font(.custom("Minecraft-Regular", size: 24))
+                    .minecraftFont(size: 24)
                     .multilineTextAlignment(.center)
                     .mask(
                         Capsule()
@@ -31,7 +31,7 @@ struct OverlayShimmerView: View {
             }
         }
         .onAppear {
-            withAnimation(Animation.default.speed(0.05).delay(0).repeatForever(autoreverses: false)){
+            withAnimation(Animation.default.speed(0.05).repeatForever(autoreverses: false)){
                 self.show.toggle()
             }
         }
@@ -41,5 +41,6 @@ struct OverlayShimmerView: View {
 struct OverlayShimmerView_Previews: PreviewProvider {
     static var previews: some View {
         OverlayShimmerView(message: "This is a test!\nThis is a longer test to see how well this works")
+            .frame(width: 800, height: 300)
     }
 }
