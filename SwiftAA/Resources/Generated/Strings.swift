@@ -923,8 +923,8 @@ internal enum L10n {
         internal static let short = L10n.tr("Localizable", "advancement.nether.brew_potion.short", fallback: "Brewery")
       }
       internal enum ChargeRespawnAnchor {
-        /// "Nine" Lives
-        internal static let short = L10n.tr("Localizable", "advancement.nether.charge_respawn_anchor.short", fallback: "\"Nine\" Lives")
+        /// "9" Lives
+        internal static let short = L10n.tr("Localizable", "advancement.nether.charge_respawn_anchor.short", fallback: "\"9\" Lives")
       }
       internal enum CreateBeacon {
         /// Beacon
@@ -1215,10 +1215,10 @@ internal enum L10n {
     /// Path
     internal static let path = L10n.tr("Localizable", "notes.path", fallback: "Path")
     internal enum Button {
-      /// Delete Selected Note
-      internal static let deleteSelectedNote = L10n.tr("Localizable", "notes.button.delete_selected_note", fallback: "Delete Selected Note")
-      /// Show in Folder
-      internal static let showInFolder = L10n.tr("Localizable", "notes.button.show_in_folder", fallback: "Show in Folder")
+      /// Delete selected note
+      internal static let deleteSelectedNote = L10n.tr("Localizable", "notes.button.delete_selected_note", fallback: "Delete selected note")
+      /// Show in folder
+      internal static let showInFolder = L10n.tr("Localizable", "notes.button.show_in_folder", fallback: "Show in folder")
     }
     internal enum PanelView {
       /// Notes
@@ -1381,16 +1381,6 @@ internal enum L10n {
       /// Right
       internal static let trailing = L10n.tr("Localizable", "settings.alignment.trailing", fallback: "Right")
     }
-    internal enum Updater {
-      /// Check Automatically
-      internal static let autoCheck = L10n.tr("Localizable", "settings.updater.auto_check", fallback: "Check Automatically")
-      /// Download Automatically
-      internal static let autoDownload = L10n.tr("Localizable", "settings.updater.auto_download", fallback: "Download Automatically")
-      /// Check For Updates
-      internal static let checkForUpdates = L10n.tr("Localizable", "settings.updater.checkForUpdates", fallback: "Check For Updates")
-      /// Last Checked: 
-      internal static let lastChecked = L10n.tr("Localizable", "settings.updater.last_checked", fallback: "Last Checked: ")
-    }
   }
   internal enum Statistic {
     /// Debris: %d
@@ -1515,8 +1505,8 @@ internal enum L10n {
     /// Text
     internal static let textColor = L10n.tr("Localizable", "theme.text_color", fallback: "Text")
     internal enum Button {
-      /// Delete Selected Theme
-      internal static let deleteSelectedTheme = L10n.tr("Localizable", "theme.button.delete_selected_theme", fallback: "Delete Selected Theme")
+      /// Delete selected theme
+      internal static let deleteSelectedTheme = L10n.tr("Localizable", "theme.button.delete_selected_theme", fallback: "Delete selected theme")
     }
     internal enum Editor {
       /// Name
@@ -1581,6 +1571,30 @@ internal enum L10n {
       internal static let standard = L10n.tr("Localizable", "tracking.view_style.standard", fallback: "Standard")
       /// Vertical
       internal static let vertical = L10n.tr("Localizable", "tracking.view_style.vertical", fallback: "Vertical")
+    }
+  }
+  internal enum Updater {
+    /// Check Automatically
+    internal static let autoCheck = L10n.tr("Localizable", "updater.auto_check", fallback: "Check Automatically")
+    /// Download Automatically
+    internal static let autoDownload = L10n.tr("Localizable", "updater.auto_download", fallback: "Download Automatically")
+    /// Last Checked: 
+    internal static let lastChecked = L10n.tr("Localizable", "updater.last_checked", fallback: "Last Checked: ")
+    internal enum Button {
+      /// Check for updates
+      internal static let checkForUpdates = L10n.tr("Localizable", "updater.button.checkForUpdates", fallback: "Check for updates")
+      /// Show release notes
+      internal static let showReleaseNotes = L10n.tr("Localizable", "updater.button.show_release_notes", fallback: "Show release notes")
+    }
+    internal enum ReleaseNotes {
+      /// App Updated
+      internal static let appUpdated = L10n.tr("Localizable", "updater.release_notes.app_updated", fallback: "App Updated")
+      /// Current Release
+      internal static let currentRelease = L10n.tr("Localizable", "updater.release_notes.current_release", fallback: "Current Release")
+      /// There are no release notes available at this time.
+      internal static let `none` = L10n.tr("Localizable", "updater.release_notes.none", fallback: "There are no release notes available at this time.")
+      /// Release Notes
+      internal static let title = L10n.tr("Localizable", "updater.release_notes.title", fallback: "Release Notes")
     }
   }
 }

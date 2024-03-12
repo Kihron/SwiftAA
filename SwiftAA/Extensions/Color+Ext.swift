@@ -59,7 +59,8 @@ extension Color {
     }
     
     var hex: String? {
-        guard let components = cgColor?.components, components.count >= 3 else {
+        let nsColor = NSColor(self)
+        guard let components = nsColor.cgColor.components, components.count >= 3 else {
             print("Failed")
             return nil
         }

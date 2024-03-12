@@ -134,10 +134,6 @@
 "settings.theme" = "Tema";
 "settings.tracking" = "Rastreo";
 "settings.updater" = "Actualizaciones";
-"settings.updater.auto_check" = "Buscar Actualizaciones Automáticamente";
-"settings.updater.auto_download" = "Descargar Automáticamente";
-"settings.updater.checkForUpdates" = "Buscar Actualizaciones";
-"settings.updater.last_checked" = "Última Revisión: ";
 "settings.window_title" = "Ajustes";
 
 "theme.background_color" = "Color de Fondo";
@@ -173,6 +169,16 @@
 "tracking.view_style.standard" = "Estándar";
 "tracking.view_style.vertical" = "Vertical";
 "tracking.view_style.minimalistic" = "Minimalista";
+
+"updater.auto_check" = "Buscar Actualizaciones Automáticamente";
+"updater.auto_download" = "Descargar Automáticamente";
+"updater.button.checkForUpdates" = "Buscar actualizaciones";
+"updater.button.show_release_notes" = "Mostrar notas de lanzamiento";
+"updater.last_checked" = "Última Revisión: ";
+"updater.release_notes.app_updated" = "Aplicación Actualizada";
+"updater.release_notes.current_release" = "Versión Actual";
+"updater.release_notes.none" = "No hay notas de lanzamiento disponibles en este momento.";
+"updater.release_notes.title" = "Notas de Lanzamiento";
 
 "statistic.ancient_debris" = "Escombros: %d\nTNT: %d";
 "statistic.ancient_debris.done" = "Listo con Netherita";

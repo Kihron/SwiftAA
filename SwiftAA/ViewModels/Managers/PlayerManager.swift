@@ -40,14 +40,12 @@ class PlayerManager: ObservableObject {
         }
     }
     
-    private func updatePlayer(uuid: String) async {
+    @MainActor private func updatePlayer(uuid: String) async {
         guard let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)") else { return }
         
         do {
             let player = try await URLSession.shared.decode(Player.self, from: url)
-            DispatchQueue.main.async {
-                self.player = player
-            }
+            self.player = player
         } catch {
             print(error.localizedDescription)
         }

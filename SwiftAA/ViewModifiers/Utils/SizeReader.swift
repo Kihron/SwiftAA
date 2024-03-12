@@ -11,22 +11,17 @@ struct SizeReader: ViewModifier {
     @Binding var size: CGSize
     
     func body(content: Content) -> some View {
-        content.background(
+        content.overlay(
             GeometryReader { geometryProxy in
                 Color.clear
-                    .preference(key: SizePreferenceKey.self, value: geometryProxy.size)
+                    .onAppear {
+                        size = geometryProxy.size
+                    }
+                    .onChange(of: geometryProxy.size) { newSize in
+                        size = newSize
+                    }
+                
             }
         )
-        .onPreferenceChange(SizePreferenceKey.self) { newSize in
-            self.size = newSize
-        }
-    }
-}
-
-private struct SizePreferenceKey: PreferenceKey {
-    static var defaultValue: CGSize = .zero
-    
-    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
-        value = nextValue()
     }
 }

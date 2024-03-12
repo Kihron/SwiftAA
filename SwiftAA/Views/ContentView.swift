@@ -11,6 +11,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var context
     @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
+    @ObservedObject private var updateManager = UpdateManager.shared
     
     @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
     private var themeFetch: FetchedResults<UserThemes>
@@ -38,6 +39,9 @@ struct ContentView: View {
         .onAppear {
             themeManager.getUserThemesFromFetch(fetch: themeFetch)
             noteManager.getWorldNotesFromFetch(fetch: noteFetch, context: context)
+        }
+        .sheet(isPresented: $updateManager.appWasUpdated) {
+            UpdateMessageView(title: L10n.Updater.ReleaseNotes.appUpdated)
         }
     }
 }

@@ -12,6 +12,7 @@ import Sparkle
 final class UpdateManager: ObservableObject {
     @AppStorage("checkAutomatically") var checkAutomatically: Bool = true
     @AppStorage("downloadAutomatically") var downloadAutomatically: Bool = true
+    @AppStorage("lastAppVersion") var lastAppVersion: String = ""
     
     private let updaterController: SPUStandardUpdaterController
     
@@ -21,27 +22,36 @@ final class UpdateManager: ObservableObject {
     
     let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
     
-    @Published var canCheckForUpdates = false
+    @Published private var canCheckForUpdates = false
+    
+    @Published var appWasUpdated: Bool = false
+    
+    @Published var readyToInstallUpdate: Bool = false
+    
+    private var currentReleaseNotes: String = ""
+    private var majorReleaseNotes: String = ""
+    
+    @Published var releaseNotes: [ReleaseEntry] = []
     
     var automaticallyCheckForUpdates: Bool {
         get {
-            let isAutomatic = updaterController.updater.automaticallyChecksForUpdates
-            UserDefaults.standard.set(isAutomatic, forKey: "checkAutomatically")
-            return isAutomatic
+            updaterController.updater.automaticallyChecksForUpdates = checkAutomatically
+            return checkAutomatically
         }
         set(newValue) {
             updaterController.updater.automaticallyChecksForUpdates = newValue
+            checkAutomatically = newValue
         }
     }
     
     var automaticallyDownloadUpdates: Bool {
         get {
-            let isAutomatic = updaterController.updater.automaticallyDownloadsUpdates
-            UserDefaults.standard.set(isAutomatic, forKey: "downloadAutomatically")
-            return isAutomatic
+            updaterController.updater.automaticallyDownloadsUpdates = downloadAutomatically
+            return downloadAutomatically
         }
         set(newValue) {
             updaterController.updater.automaticallyDownloadsUpdates = newValue
+            downloadAutomatically = newValue
         }
     }
     
@@ -61,8 +71,14 @@ final class UpdateManager: ObservableObject {
         updaterController.updater.publisher(for: \.canCheckForUpdates)
             .assign(to: &$canCheckForUpdates)
         
+        let _ = automaticallyDownloadUpdates
         if automaticallyCheckForUpdates {
             updaterController.updater.checkForUpdatesInBackground()
+        }
+        
+        Task {
+            await fetchLatestReleaseNotes()
+            await checkForAppUpdated()
         }
     }
     
@@ -73,21 +89,36 @@ final class UpdateManager: ObservableObject {
     func getLastUpdateCheckDate() -> Date? {
         return updaterController.updater.lastUpdateCheckDate
     }
-}
-
-struct CheckForUpdatesView: View {
-    @ObservedObject var updateManager: UpdateManager
     
-    var body: some View {
-        Button("Check for Updates…", action: updateManager.checkForUpdates)
-            .disabled(!updateManager.canCheckForUpdates)
+    @MainActor private func checkForAppUpdated() {
+        if let currentVersion = appVersion, lastAppVersion != currentVersion {
+            appWasUpdated = true
+            lastAppVersion = currentVersion
+        }
     }
-}
-
-struct CheckForUpdatesViewView_Preview: PreviewProvider {
-    @ObservedObject static var updater = UpdateManager()
-
-    static var previews: some View {
-        CheckForUpdatesView(updateManager: updater)
+    
+    @MainActor private func fetchLatestReleaseNotes() async {
+        guard let url = URL(string: "https://api.github.com/repos/Kihron/SwiftAA/releases?per_page=10") else { return }
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let allReleaseNotes = try decoder.decode([ReleaseEntry].self, from: data)
+            
+            guard let appVersionComponents = appVersion?.split(separator: ".").map(String.init), appVersionComponents.count >= 2 else { return }
+            let minorVersion = appVersionComponents[1]
+            
+            // Filter releases with the same minor version
+            let filteredReleaseNotes = allReleaseNotes.filter { releaseEntry in
+                let versionComponents = releaseEntry.tagName.split(separator: ".").map(String.init)
+                return versionComponents.count >= 2 && versionComponents[1] == minorVersion
+            }
+            
+            self.releaseNotes = filteredReleaseNotes
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }

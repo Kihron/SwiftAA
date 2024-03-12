@@ -11,9 +11,9 @@ import SwiftUI
 struct SwiftAAApp: App {
     @Environment(\.openWindow) private var openWindow
     @ObservedObject private var coreDataManager = CoreDataManager.shared
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
-    @ObservedObject var viewModel = AppViewModel()
+    @ObservedObject private var viewModel = AppViewModel()
     
     var body: some Scene {
         Window("SwiftAA", id: "swiftaa-window") {
@@ -21,17 +21,14 @@ struct SwiftAAApp: App {
                 .applyVersionFrame()
                 .navigationTitle("SwiftAA")
                 .toolbar {
-                    ToolbarItem(placement: .automatic) {
+                    ToolbarItemGroup {
                         ToolbarRefreshView()
-                    }
-                    ToolbarItem(placement: .automatic) {
+                        
                         HStack {
                             ToolbarPlayerHead()
-                            
                             ToolbarProgressView()
                         }
-                    }
-                    ToolbarItem(placement: .automatic) {
+                        
                         ToolbarAlertView()
                     }
                 }
@@ -64,7 +61,7 @@ struct SwiftAAApp: App {
                 }
             }
             CommandGroup(after: .appInfo, addition: {
-                Button("\(L10n.Settings.Updater.checkForUpdates)...") {
+                Button("\(L10n.Updater.Button.checkForUpdates)...") {
                     UpdateManager.shared.checkForUpdates()
                 }
             })
