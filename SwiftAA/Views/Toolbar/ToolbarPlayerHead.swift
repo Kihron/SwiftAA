@@ -19,8 +19,9 @@ struct ToolbarPlayerHead: View {
                         case .empty:
                             ProgressView()
                         case .success(let image):
-                            image.interpolation(.none)
+                            image
                                 .resizable()
+                                .interpolation(.none)
                                 .frame(width: 32, height: 32)
                         case .failure:
                             EmptyView()
@@ -30,8 +31,8 @@ struct ToolbarPlayerHead: View {
                 }
             } else {
                 Image("steve")
-                    .interpolation(.none)
                     .resizable()
+                    .interpolation(.none)
                     .frame(width: 32, height: 32)
             }
         }

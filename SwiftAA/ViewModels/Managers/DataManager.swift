@@ -46,7 +46,7 @@ class DataManager: ObservableObject {
     
     var uncounted: [Indicator] = []
     
-    private var baseTimeInterval = Date(timeIntervalSince1970: 0)
+    private let baseTimeInterval = Date(timeIntervalSince1970: 0)
     
     func updateAdvancementFields() {
         completedAdvancements = allAdvancements.filter({ $0.completed }).sorted {

@@ -30,6 +30,7 @@ struct TickerTapeOverlayView: View {
                         .padding(.trailing, 10)
                 }
             }
+            .contentTransition(.numericText())
             
             if overlayManager.overlayOpen {
                 CriteriaTickerTapeView()
