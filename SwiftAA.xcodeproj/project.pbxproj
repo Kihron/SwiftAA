@@ -1524,7 +1524,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240312;
+				CURRENT_PROJECT_VERSION = 240314;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1534,7 +1534,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftAA/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023 KIHRON, SLACKOW";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2024 KIHRON, SLACKOW";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1559,7 +1559,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240312;
+				CURRENT_PROJECT_VERSION = 240314;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1569,7 +1569,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftAA/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2023 KIHRON, SLACKOW";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2024 KIHRON, SLACKOW";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
