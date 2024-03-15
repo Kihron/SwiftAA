@@ -57,12 +57,13 @@ struct ProgressBarView: View {
                 
                 if !message.isEmpty && showMessage {
                     Text(message)
+                        .contentTransition(.numericText())
                 }
             }
             .lineLimit(1)
             .padding(.horizontal, adjustForOverlay ? 5 : 0)
-            .minecraftFont()
             .foregroundColor(isToolbar ? Color.primary : themeManager.text)
+            .minecraftFont()
             
             if adjustForOverlay {
                 GeometryReader { item in

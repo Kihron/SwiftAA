@@ -9,16 +9,17 @@ import SwiftUI
 
 struct UpdateSettings: View {
     @ObservedObject private var updateManager = UpdateManager.shared
+    @State private var showReleaseNotes: Bool = false
     
     var body: some View {
         VStack {
             SettingsCardView {
                 VStack {
-                    SettingsToggleView(title: L10n.Settings.Updater.autoCheck, option: $updateManager.checkAutomatically)
+                    SettingsToggleView(title: L10n.Updater.autoCheck, option: $updateManager.checkAutomatically)
                     
                     Divider()
                     
-                    SettingsToggleView(title: L10n.Settings.Updater.autoDownload, option: $updateManager.downloadAutomatically)
+                    SettingsToggleView(title: L10n.Updater.autoDownload, option: $updateManager.downloadAutomatically)
                         .disabled(!updateManager.checkAutomatically)
                 }
             }
@@ -28,7 +29,7 @@ struct UpdateSettings: View {
                 
                 if let lastUpdateCheck = updateManager.getLastUpdateCheckDate() {
                     HStack(spacing: 0) {
-                        Text(L10n.Settings.Updater.lastChecked)
+                        Text(L10n.Updater.lastChecked)
                         
                         Text(lastUpdateCheck, formatter: updateManager.lastUpdateFormatter)
                     }
@@ -41,12 +42,25 @@ struct UpdateSettings: View {
         .onChange(of: updateManager.checkAutomatically) { value in
             updateManager.automaticallyCheckForUpdates = value
         }
+        .onChange(of: updateManager.downloadAutomatically) { value in
+            updateManager.automaticallyDownloadUpdates = value
+        }
+        .sheet(isPresented: $showReleaseNotes) {
+            UpdateMessageView(title: L10n.Updater.ReleaseNotes.title)
+        }
         .toolbar {
+            ToolbarItem {
+                Button(action: { showReleaseNotes.toggle() }) {
+                    Image(systemName: "doc.plaintext")
+                }
+                .help(L10n.Updater.Button.showReleaseNotes)
+            }
+            
             ToolbarItem(placement: .primaryAction) {
                 Button(action: { updateManager.checkForUpdates() }) {
                     Image(systemName: "arrow.clockwise")
                 }
-                .help(L10n.Settings.Updater.checkForUpdates)
+                .help(L10n.Updater.Button.checkForUpdates)
             }
         }
     }

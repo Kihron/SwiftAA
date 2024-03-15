@@ -10,7 +10,7 @@ import SwiftUI
 struct StatusIndicatorPickerView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var dataManager = DataManager.shared
-    @StateObject private var overlayManager = OverlayManager.shared
+    @ObservedObject private var overlayManager = OverlayManager.shared
     
     @State var isSettings: Bool = false
     

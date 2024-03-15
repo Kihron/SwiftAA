@@ -71,8 +71,8 @@
 "notes.panel_view.notes" = "Notes";
 "notes.panel_view.waypoints" = "Waypoints";
 "notes.path" = "Path";
-"notes.button.show_in_folder" = "Show in Folder";
-"notes.button.delete_selected_note" = "Delete Selected Note";
+"notes.button.show_in_folder" = "Show in folder";
+"notes.button.delete_selected_note" = "Delete selected note";
 
 "overlay" = "Overlay";
 "overlay.appearance.title" = "Appearance";
@@ -134,15 +134,11 @@
 "settings.theme" = "Theme";
 "settings.tracking" = "Tracking";
 "settings.updater" = "Updates";
-"settings.updater.auto_check" = "Check Automatically";
-"settings.updater.auto_download" = "Download Automatically";
-"settings.updater.checkForUpdates" = "Check For Updates";
-"settings.updater.last_checked" = "Last Checked: ";
 "settings.window_title" = "Settings";
 
 "theme.background_color" = "Background";
 "theme.border_color" = "Border";
-"theme.button.delete_selected_theme" = "Delete Selected Theme";
+"theme.button.delete_selected_theme" = "Delete selected theme";
 "theme.custom" = "Custom";
 "theme.editor" = "Theme Editor";
 "theme.editor.name" = "Name";
@@ -173,6 +169,16 @@
 "tracking.view_style.standard" = "Standard";
 "tracking.view_style.vertical" = "Vertical";
 "tracking.view_style.minimalistic" = "Minimalistic";
+
+"updater.auto_check" = "Check Automatically";
+"updater.auto_download" = "Download Automatically";
+"updater.button.checkForUpdates" = "Check for updates";
+"updater.button.show_release_notes" = "Show release notes";
+"updater.last_checked" = "Last Checked: ";
+"updater.release_notes.app_updated" = "App Updated";
+"updater.release_notes.current_release" = "Current Release";
+"updater.release_notes.none" = "There are no release notes available at this time.";
+"updater.release_notes.title" = "Release Notes";
 
 "statistic.ancient_debris" = "Debris: %d\nTNT: %d";
 "statistic.ancient_debris.done" = "Done With Netherite";
@@ -584,7 +590,7 @@
 "advancement.nether.find_fortress.short" = "Fortress";
 "advancement.nether.find_bastion.short" = "The Days";
 "advancement.nether.obtain_crying_obsidian.short" = "Onions?";
-"advancement.nether.charge_respawn_anchor.short" = "\"Nine\" Lives";
+"advancement.nether.charge_respawn_anchor.short" = "\"9\" Lives";
 "advancement.nether.use_lodestone.short" = "Lode Home";
 "advancement.nether.return_to_sender.short" = "Sender";
 "advancement.nether.netherite_armor.short" = "In Debris";

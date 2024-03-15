@@ -12,27 +12,31 @@ struct ToolbarPlayerHead: View {
     @ObservedObject private var playerManager = PlayerManager.shared
     
     var body: some View {
-        if playerManager.playerHasLoaded {
-            CachedAsyncImage(url: playerManager.imageURL, urlCache: .imageCache) { phase in
-                switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                    image.interpolation(.none)
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                    case .failure:
-                        EmptyView()
-                    @unknown default:
-                        EmptyView()
+        VStack {
+            if playerManager.playerHasLoaded {
+                CachedAsyncImage(url: playerManager.imageURL, urlCache: .imageCache) { phase in
+                    switch phase {
+                        case .empty:
+                            ProgressView()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .interpolation(.none)
+                                .frame(width: 32, height: 32)
+                        case .failure:
+                            EmptyView()
+                        @unknown default:
+                            EmptyView()
+                    }
                 }
+            } else {
+                Image("steve")
+                    .resizable()
+                    .interpolation(.none)
+                    .frame(width: 32, height: 32)
             }
-        } else {
-            Image("steve")
-                .interpolation(.none)
-                .resizable()
-                .frame(width: 32, height: 32)
         }
+        .animation(.linear, value: playerManager.playerHasLoaded)
     }
 }
 

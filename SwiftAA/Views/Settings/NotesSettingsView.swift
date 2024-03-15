@@ -41,7 +41,7 @@ struct NotesSettingsView: View {
             }
             .frame(width: 175)
             .frame(maxHeight: .infinity, alignment: .top)
-            .animation(.bouncy, value: noteManager.worldNotes)
+            .animation(.snappy, value: noteManager.worldNotes)
             .background(.black.opacity(0.2))
             
             Divider()
@@ -85,7 +85,7 @@ struct NotesSettingsView: View {
                 .padding()
             }
         }
-        .animation(.bouncy, value: selected)
+        .animation(.snappy, value: selected)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .onAppear {
             if let note = noteManager.worldNotes.first {

@@ -88,8 +88,8 @@ struct IndicatorView: View {
                 .padding(.top, -2)
         }
         .frame(width: 74)
-        .animation(.easeIn, value: frameStyle)
         .opacity(layoutManager.infoMode && indicator.tooltip.isEmpty && !isOverlay ? 0.5 : 1)
+        .animation(.easeIn, value: frameStyle)
         .animation(.easeIn, value: layoutManager.infoMode)
         .popover(isPresented: $showTooltip, content: {
             IndicatorInfoView(tooltip: indicator.tooltip)
