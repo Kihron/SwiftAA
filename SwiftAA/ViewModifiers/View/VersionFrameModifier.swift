@@ -19,13 +19,13 @@ struct VersionFrameModifier: ViewModifier {
     func body(content: Content) -> some View {
         Group {
             switch (trackerManager.gameVersion, trackerManager.layoutStyle)  {
-                case (.v1_16, .standard):
+                case (.v1_16, .standard), (.v1_16_5, .standard):
                     content
                         .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 764, maxHeight: 764, alignment: .center)
-                case (.v1_16, .vertical):
+                case (.v1_16, .vertical), (.v1_16_5, .vertical):
                     content
                         .frame(minWidth: 350, idealWidth: 680, maxWidth: 680, minHeight: 260, idealHeight: 1126, maxHeight: 1126, alignment: .center)
-                case (.v1_16, .minimalist):
+                case (.v1_16, .minimalist), (.v1_16_5, .minimalist):
                     content
                         .frame(minWidth: 350, idealWidth: 1192, maxWidth: 1192, minHeight: 260, idealHeight: 674, maxHeight: 674, alignment: .center)
                 case (.v1_19, _):

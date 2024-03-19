@@ -198,7 +198,7 @@ class DataManager: ObservableObject {
 
     private func removeOldVersionFiles() {
         for key in map.keys {
-            if (!key.contains(versionManager.gameVersion.label)) {
+            if (key != versionManager.gameVersion.label) {
                 map.removeValue(forKey: key)
             }
         }

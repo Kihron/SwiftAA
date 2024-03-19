@@ -28,7 +28,7 @@ class LeaderboardManager: ObservableObject {
     
     func getLeaderboardEntries() {
         switch TrackerManager.shared.gameVersion {
-            case .v1_16:
+            case .v1_16, .v1_16_5:
                 getV16Entries()
             case .v1_19:
                 getEntriesForOtherVersions(version: .v1_19)

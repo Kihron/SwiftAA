@@ -187,17 +187,23 @@ class AppViewModel: ObservableObject {
     }
     
     private func extractGameVersion(from processArguments: [String]) -> Version? {
+        if let extractedVersion = extractGameVersionString(from: processArguments) {
+            let baseVersion = extractedVersion.components(separatedBy: ".").prefix(2).joined(separator: ".")
+            return Version(rawValue: extractedVersion) ?? Version(rawValue: baseVersion)
+        }
+
+        return nil
+    }
+    
+    private func extractGameVersionString(from processArguments: [String]) -> String? {
         if let gameVersionIndex = processArguments.firstIndex(of: "--version") {
-            let baseVersion = processArguments[gameVersionIndex + 1].components(separatedBy: ".").prefix(2).joined(separator: ".")
-            return Version(rawValue: baseVersion)
+            return processArguments[gameVersionIndex + 1]
         }
         
         if let argument = processArguments.first(where: { Constants.versionRegex.firstMatch(in: $0, range: NSRange($0.startIndex..., in: $0)) != nil }),
-           let match = Constants.versionRegex.firstMatch(in: argument, range: NSRange(argument.startIndex..., in: argument)),
-           let range = Range(match.range(at: 1), in: argument) {
-            let extractedVersion = String(argument[range])
-            let baseVersion = extractedVersion.components(separatedBy: ".").prefix(2).joined(separator: ".")
-            return Version(rawValue: baseVersion)
+                  let match = Constants.versionRegex.firstMatch(in: argument, range: NSRange(argument.startIndex..., in: argument)),
+                  let range = Range(match.range(at: 1), in: argument) {
+            return String(argument[range])
         }
         
         return nil

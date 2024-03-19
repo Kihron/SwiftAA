@@ -22,7 +22,7 @@ enum LayoutStyle: String, SettingsOption {
     
     static func getAvailableStyles(version: Version) -> [LayoutStyle] {
         switch version {
-            case .v1_16:
+            case .v1_16, .v1_16_5:
                 return LayoutStyle.allCases
             case .v1_19:
                 return [.standard]

@@ -1,0 +1,46 @@
+{
+    "categories": [
+        "adventure", "end", "husbandry", "minecraft", "nether"
+    ],
+    "advancements": [
+        {"id":"story/upgrade_tools"},
+        {"id":"story/iron_tools"},
+        {"id":"story/lava_bucket"},
+        {"id":"nether/distract_piglin"},
+        {"id":"nether/charge_respawn_anchor"},
+        {"id":"end/dragon_breath"},
+        {"id":"end/kill_dragon"},
+        
+        {"id":"story/obtain_armor"},
+        {"id":"end/levitate"},
+        {"id":"end/dragon_egg"},
+        {"id":"story/enchant_item"},
+        {"id":"adventure/trade"},
+        {"id":"adventure/sniper_duel"},
+        {"id":"husbandry/silk_touch_nest"},
+        
+        {"id":"adventure/bullseye"},
+        {"id":"adventure/summon_iron_golem"},
+        {"id":"story/cure_zombie_villager"},
+        {"id":"adventure/throw_trident+adventure/very_very_frightening","name":"ATJ + VVF"},
+        {"id":"husbandry/tactical_fishing"},
+        {"id":"adventure/arbalistic"},
+        {"id":"adventure/two_birds_one_arrow"},
+        
+        {"id":"husbandry/fishy_business"},
+        {"id":"nether/ride_strider"},
+        {"id":"nether/return_to_sender"},
+        {"id":"nether/fast_travel"},
+        {"id":"nether/uneasy_alliance"},
+        {"id":"nether/use_lodestone"},
+        {"id":"adventure/sleep_in_bed"},
+        
+        {"id":"nether/create_full_beacon"},
+        {"id":"adventure/whos_the_pillager_now"},
+        {"id":"story/deflect_arrow"},
+        {"id":"nether/all_effects"},
+        {"id":"adventure/totem_of_undying"},
+        {"id":"adventure/honey_block_slide"},
+        {"id":"end/respawn_dragon"}
+    ]
+}
