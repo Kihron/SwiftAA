@@ -99,6 +99,5 @@ struct GoalPanelView: View {
 }
 
 #Preview {
-    GoalPanelView(advancement: DataManager.shared.decode(file: "adventure")[18].asAdvancement, rowCount: 16, goal: L10n.Goal.biomesVisited)
-        .frame(width: 350)
+    GoalPanelView(advancement: DataManager.shared.getGoalAdvancement(id: "minecraft:adventure/adventuring_time"), rowCount: 16, goal: L10n.Goal.biomesVisited)
 }

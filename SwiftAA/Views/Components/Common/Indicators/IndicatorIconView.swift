@@ -28,7 +28,7 @@ struct IndicatorIconView: View {
                         Image(String(icon))
                             .resizable()
                             .interpolation(.none)
-                            .clipShape(RoundedRectangle(cornerRadius: 2))
+                            .clipShape(.rect(cornerRadius: 2))
                     }
                 }
                 .frame(width: 32, height: 32)

@@ -8,7 +8,8 @@
 import SwiftUI
 
 class LeaderboardManager: ObservableObject {
-    @ObservedObject private var networkManager = NetworkManager.shared
+    private var networkManager = NetworkManager.shared
+    
     @Published var entries: [LeaderboardEntry] = []
     
     private var otherVersionData: [String] = []

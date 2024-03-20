@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct L1_20M: View {
-    @ObservedObject private var dataManager = DataManager.shared
+    private var dataManager = DataManager.shared
     
     @State private var statusIndicators = Utilities.getSpecificStats(types: [.trident, .snifferEggs, .shells, .goldBlocks, .witherSkulls, .beehives, .ancientDebris])
 
@@ -17,13 +17,13 @@ struct L1_20M: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
-                AdvPanelView(indicators: dataManager.getMinimalisticAdvancements(), columnCount: 11, isMinimal: true)
+                AdvPanelView(indicators: .constant(dataManager.minimalisticAdvancements), columnCount: 11, isMinimal: true)
                     .frame(width: 814)
                 
                 AdvPanelView(indicators: $statusIndicators, columnCount: 2, isStat: true)
                     .frame(width: 148)
                 
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[20].asAdvancement, rowCount: 15, goal: L10n.Goal.foodsEaten, isMinimal: true)
+                GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/balanced_diet"), rowCount: 15, goal: L10n.Goal.foodsEaten, isMinimal: true)
                     .frame(width: 330)
                 
                 InfoPanelView()
@@ -32,18 +32,18 @@ struct L1_20M: View {
             .frame(height: 364)
             
             HStack(spacing: 0) {
-                GoalPanelView(advancement: dataManager.decode(file: "adventure")[33].asAdvancement, rowCount: 14, goal: L10n.Goal.biomesVisited, isMinimal: true)
+                GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/adventuring_time"), rowCount: 14, goal: L10n.Goal.biomesVisited, isMinimal: true)
                     .frame(width: 534)
-                GoalPanelView(advancement: dataManager.decode(file: "adventure")[34].asAdvancement, rowCount: 14, goal: L10n.Goal.monstersKilled, isMinimal: true)
+                GoalPanelView(advancement:  dataManager.getGoalAdvancement(id: "minecraft:adventure/kill_all_mobs"), rowCount: 14, goal: L10n.Goal.monstersKilled, isMinimal: true)
                     .frame(width: 335)
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[19].asAdvancement, rowCount: 14, goal: L10n.Goal.animalsBred, isMinimal: true)
+                GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/bred_all_animals"), rowCount: 14, goal: L10n.Goal.animalsBred, isMinimal: true)
                     .frame(width: 201)
-                GoalPanelView(advancement: dataManager.decode(file: "husbandry")[21].asAdvancement, rowCount: 14, goal: L10n.Goal.cats, isMinimal: true)
+                GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/complete_catalogue"), rowCount: 14, goal: L10n.Goal.cats, isMinimal: true)
                     .frame(width: 139)
                 
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 8, goal: L10n.Goal.trims, isMinimal: true, hidePercentage: true)
+                        GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/trim_with_all_exclusive_armor_patterns"), rowCount: 8, goal: L10n.Goal.trims, isMinimal: true, hidePercentage: true)
                             .frame(width: 145)
                         
                         StatisticPanelView(statistics: $statisticIndicators, rowCount: 9)
@@ -51,7 +51,7 @@ struct L1_20M: View {
                     }
                     .frame(height: 193)
                     
-                    GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 3, goal: L10n.Goal.nether, isMinimal: true)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:nether/explore_nether"), rowCount: 3, goal: L10n.Goal.nether, isMinimal: true)
                         .frame(height: 117)
                 }
                 .frame(width: 279)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 class MultiPageOverlayViewModel: ObservableObject {
-    @ObservedObject var dataManager = DataManager.shared
+    private var dataManager = DataManager.shared
     
     init() {
         

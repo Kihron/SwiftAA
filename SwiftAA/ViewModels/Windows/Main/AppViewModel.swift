@@ -8,10 +8,10 @@
 import SwiftUI
 
 class AppViewModel: ObservableObject {
-    @ObservedObject var dataManager = DataManager.shared
-    @ObservedObject private var progressManager = ProgressManager.shared
-    @ObservedObject private var trackerManager = TrackerManager.shared
-    @ObservedObject private var playerManager = PlayerManager.shared
+    private var dataManager = DataManager.shared
+    private var progressManager = ProgressManager.shared
+    private var playerManager = PlayerManager.shared
+    private var trackerManager = TrackerManager.shared
     
     private var activeWindows = [pid_t:(String, Version?)]()
     private let fileManager = FileManager.default
@@ -191,19 +191,17 @@ class AppViewModel: ObservableObject {
             let baseVersion = extractedVersion.components(separatedBy: ".").prefix(2).joined(separator: ".")
             return Version(rawValue: extractedVersion) ?? Version(rawValue: baseVersion)
         }
-
+        
         return nil
     }
     
     private func extractGameVersionString(from processArguments: [String]) -> String? {
-        if let gameVersionIndex = processArguments.firstIndex(of: "--version") {
-            return processArguments[gameVersionIndex + 1]
-        }
-        
-        if let argument = processArguments.first(where: { Constants.versionRegex.firstMatch(in: $0, range: NSRange($0.startIndex..., in: $0)) != nil }),
-                  let match = Constants.versionRegex.firstMatch(in: argument, range: NSRange(argument.startIndex..., in: argument)),
-                  let range = Range(match.range(at: 1), in: argument) {
-            return String(argument[range])
+        for (index, argument) in processArguments.enumerated() {
+            if argument == "--version", index + 1 < processArguments.count {
+                return processArguments[index + 1]
+            } else if let match = Constants.versionRegex.firstMatch(in: argument, range: NSRange(argument.startIndex..., in: argument)), let range = Range(match.range(at: 1), in: argument) {
+                return String(argument[range])
+            }
         }
         
         return nil

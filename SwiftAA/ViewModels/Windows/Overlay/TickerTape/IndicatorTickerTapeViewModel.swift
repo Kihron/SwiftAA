@@ -8,10 +8,10 @@
 import SwiftUI
 
 class IndicatorTickerTapeViewModel: ObservableObject {
+    @Published var containerLayer = CALayer()
+    
     @ObservedObject private var overlayManager = OverlayManager.shared
     @ObservedObject private var dataManager = DataManager.shared
-    
-    @Published var containerLayer = CALayer()
     
     private var animationDuration: CFTimeInterval = 0
     private var previousIndicators: [Advancement] = []

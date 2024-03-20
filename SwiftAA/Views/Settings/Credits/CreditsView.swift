@@ -33,7 +33,7 @@ struct CreditsView: View {
                         Image("steve_avatar")
                     }
                     .frame(width: 32)
-                    .clipShape(RoundedRectangle(cornerRadius: 2))
+                    .clipShape(.rect(cornerRadius: 2))
                     
                     Image("aatool")
                         .resizable()

@@ -1,15 +1,15 @@
 //
-//  L1_20S.swift
+//  L1_19S.swift
 //  SwiftAA
 //
-//  Created by Kihron on 2/16/24.
+//  Created by Kihron on 3/19/24.
 //
 
 import SwiftUI
 
-struct L1_20S: View {
-    @State private var topStats = Utilities.getSpecificStats(types: [.trident, .shells, .snifferEggs])
-    @State private var bottomStats = Utilities.getSpecificStats(types: [.witherSkulls, .goldBlocks])
+struct L1_19S: View {
+    @State private var topStats = Utilities.getSpecificStats(types: [.godApple, .trident, .shells])
+    @State private var bottomStats = Utilities.getSpecificStats(types: [.witherSkulls, .ancientDebris])
     
     private var dataManager = DataManager.shared
     
@@ -25,9 +25,7 @@ struct L1_20S: View {
                                 .frame(width: 540)
                             AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "husbandry", start: "minecraft:husbandry/froglights"), columnCount: 1)
                                 .frame(width: 74)
-                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", start: "minecraft:adventure/spyglass_at_parrot", end: "minecraft:adventure/spyglass_at_dragon"), columnCount: 1)
-                                .frame(width: 74)
-                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", start: "minecraft:adventure/sleep_in_bed", end: "minecraft:adventure/trim_with_all_exclusive_armor_patterns"), columnCount: 6)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", end: "minecraft:adventure/spyglass_at_dragon"), columnCount: 6)
                                 .frame(width: 437)
                             AdvPanelView(indicators: $topStats, columnCount: 1, isStat: true)
                                 .frame(width: 75)
@@ -36,8 +34,8 @@ struct L1_20S: View {
                         HStack(spacing: 0) {
                             AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "end", start: "minecraft:end/kill_dragon"), columnCount: 4)
                                 .frame(width: 276)
-                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "husbandry", start: "minecraft:husbandry/plant_seed", end: "minecraft:husbandry/obtain_netherite_hoe"), columnCount: 11)
-                                .frame(width: 762)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "husbandry", end: "minecraft:husbandry/allay_deliver_cake_to_note_block"), columnCount: 10)
+                                .frame(width: 688)
                             AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", start: "minecraft:adventure/honey_block_slide"), columnCount: 6)
                                 .frame(width: 437)
                             AdvPanelView(indicators: $bottomStats, columnCount: 1, isStat: true)
@@ -53,29 +51,22 @@ struct L1_20S: View {
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/adventuring_time"), rowCount: 16, goal: L10n.Goal.biomesVisited)
                         .frame(width: 521)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/kill_all_mobs"), rowCount: 16, goal: L10n.Goal.monstersKilled)
-                        .frame(width: 337)
+                        .frame(width: 352)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/balanced_diet"), rowCount: 16, goal: L10n.Goal.foodsEaten)
                         .frame(width: 325)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/bred_all_animals"), rowCount: 16, goal: L10n.Goal.animalsBred)
                         .frame(width: 193)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/complete_catalogue"), rowCount: 16, goal: L10n.Goal.cats)
-                        .frame(width: 138)
-                    
-                    VStack(spacing: 0) {
-                        GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/trim_with_all_exclusive_armor_patterns"), rowCount: 8, goal: L10n.Goal.trims, isAdjacent: true)
-                            .frame(height: 193)
-                        
-                        GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:nether/explore_nether"), rowCount: 5, goal: L10n.Goal.nether, isAdjacent: true)
-                            .frame(height: 145)
-                    }
-                    .frame(width: 232)
+                        .frame(width: 141)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:nether/explore_nether"), rowCount: 16, goal: L10n.Goal.nether)
+                        .frame(width: 140)
                 }
-                .frame(width: 1746, height: 338)
+                .frame(width: 1672, height: 333)
             }
         }
     }
 }
 
 #Preview {
-    L1_20S()
+    L1_19S()
 }

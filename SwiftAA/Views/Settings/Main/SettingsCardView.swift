@@ -14,7 +14,7 @@ struct SettingsCardView<Content: View>: View {
         VStack(alignment: .leading, spacing: 4) {
             content()
                 .padding(padding ?? 10)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .clipShape(.rect(cornerRadius: 5))
                 .background(
                     ZStack {
                         RoundedRectangle(cornerRadius: 5)

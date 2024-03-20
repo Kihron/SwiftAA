@@ -31,6 +31,6 @@ class Trident: TransferableIndicator, StatusIndicator {
             return false
         }
         
-        return TrackerManager.shared.gameVersion == .v1_16 || progress.advancementCompleted(surge)
+        return [.v1_16, .v1_16_5].contains(TrackerManager.shared.gameVersion) || progress.advancementCompleted(surge)
     }
 }

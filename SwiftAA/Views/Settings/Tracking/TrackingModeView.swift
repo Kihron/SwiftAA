@@ -42,7 +42,7 @@ struct TrackingModeView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .autocorrectionDisabled()
                             
-                            Button(action: { Utilities.selectSavesFolder() }) {
+                            Button(action: Utilities.selectSavesFolder) {
                                 Text(L10n.Tracking.browse)
                             }
                         }
