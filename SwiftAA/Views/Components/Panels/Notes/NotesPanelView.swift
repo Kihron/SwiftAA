@@ -84,5 +84,6 @@ struct NotesPanelView_Previews: PreviewProvider {
     static var previews: some View {
         NotesPanelView()
             .frame(width: 300, height: 800)
+            .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
     }
 }

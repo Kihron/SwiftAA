@@ -25,11 +25,6 @@ struct TrackingModeView: View {
                         }
                         .pickerStyle(.segmented)
                         .labelsHidden()
-                        .onChange(of: trackerManager.trackingMode) { _ in
-                            if trackerManager.layoutStyle != .standard {
-                                dataManager.minimalCache = nil
-                            }
-                        }
                     }
                     
                     Divider()

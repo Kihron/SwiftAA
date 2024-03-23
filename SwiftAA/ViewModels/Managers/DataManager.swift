@@ -44,8 +44,6 @@ class DataManager: ObservableObject {
         loadAllAdvancements()
     }
     
-    var minimalCache: [Indicator]? = nil
-    
     var uncounted: [Indicator] = []
     
     private let baseTimeInterval = Date(timeIntervalSince1970: 0)
@@ -65,8 +63,7 @@ class DataManager: ObservableObject {
         let fileManager = FileManager.default
         let folderPath = "Advancements/\(trackerManager.gameVersion.label)"
         
-        guard let categoriesPath = Bundle.main.path(forResource: folderPath, ofType: nil),
-              let categories = try? fileManager.contentsOfDirectory(atPath: categoriesPath) else {
+        guard let categoriesPath = Bundle.main.path(forResource: folderPath, ofType: nil), let categories = try? fileManager.contentsOfDirectory(atPath: categoriesPath) else {
             print("Error loading category files...")
             return
         }
@@ -223,7 +220,6 @@ class DataManager: ObservableObject {
     }
     
     func gameVersionChanged() {
-        minimalCache = nil
         uncounted.removeAll()
         removeOldVersionFiles()
         loadAllAdvancements()

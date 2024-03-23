@@ -164,6 +164,7 @@
 		B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */; };
 		B6D67AE72B744A97007AA80C /* L1_20.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE62B744A97007AA80C /* L1_20.swift */; };
 		B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD06252AC515F3005D1B2A /* L1_16M.swift */; };
+		B6DD182B2BAE778600C963AE /* ModernProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD182A2BAE778600C963AE /* ModernProgressBar.swift */; };
 		B6DFEE322B8BDD840009C541 /* L1_20V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFEE312B8BDD840009C541 /* L1_20V.swift */; };
 		B6DFEE342B8C15910009C541 /* AnimatedIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFEE332B8C15910009C541 /* AnimatedIconView.swift */; };
 		B6DFEE372B8C19650009C541 /* CriterionIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFEE362B8C19650009C541 /* CriterionIconView.swift */; };
@@ -359,6 +360,7 @@
 		B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModeView.swift; sourceTree = "<group>"; };
 		B6D67AE62B744A97007AA80C /* L1_20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20.swift; sourceTree = "<group>"; };
 		B6DD06252AC515F3005D1B2A /* L1_16M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16M.swift; sourceTree = "<group>"; };
+		B6DD182A2BAE778600C963AE /* ModernProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernProgressBar.swift; sourceTree = "<group>"; };
 		B6DFEE312B8BDD840009C541 /* L1_20V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20V.swift; sourceTree = "<group>"; };
 		B6DFEE332B8C15910009C541 /* AnimatedIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIconView.swift; sourceTree = "<group>"; };
 		B6DFEE362B8C19650009C541 /* CriterionIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionIconView.swift; sourceTree = "<group>"; };
@@ -810,6 +812,7 @@
 				B6A772E128888B3600436551 /* ProgressBarView.swift */,
 				B62EA6532B797E1900EB66AC /* EnderDragonProgressBar.swift */,
 				B69B4A472B785FBF006E3969 /* ExperienceProgressBarView.swift */,
+				B6DD182A2BAE778600C963AE /* ModernProgressBar.swift */,
 			);
 			path = ProgressBars;
 			sourceTree = "<group>";
@@ -1353,6 +1356,7 @@
 				B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */,
 				B6F208942B8EC27B0025A914 /* IndicatorLayer.swift in Sources */,
 				B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */,
+				B6DD182B2BAE778600C963AE /* ModernProgressBar.swift in Sources */,
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				B65AB3532AA96D66001F4FE6 /* CustomThemeView.swift in Sources */,
 				B6F208912B8EC18C0025A914 /* IndicatorTickerTapeViewModel.swift in Sources */,
@@ -1528,7 +1532,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240319;
+				CURRENT_PROJECT_VERSION = 240322a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1549,6 +1553,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1563,7 +1568,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240319;
+				CURRENT_PROJECT_VERSION = 240322a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1584,6 +1589,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

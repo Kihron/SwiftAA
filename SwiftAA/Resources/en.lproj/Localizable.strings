@@ -49,6 +49,7 @@
 "layout.appearance.progress_bar_style" = "Progress Bar Style";
 "layout.appearance.progress_bar_style.ender_dragon" = "Ender Dragon";
 "layout.appearance.progress_bar_style.experience" = "Experience";
+"layout.appearance.progress_bar_style.modern" = "Modern";
 "layout.appearance.refresh_style" = "Refresh Indicator Style";
 "layout.appearance.refresh_style.clock" = "Clock";
 "layout.appearance.refresh_style.compass" = "Compass";

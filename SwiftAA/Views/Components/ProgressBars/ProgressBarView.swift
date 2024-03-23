@@ -72,6 +72,8 @@ struct ProgressBarView: View {
                             EnderDragonProgressBar(item: item, value: $value, total: $total)
                         case .experience:
                             ExperienceProgressBarView(item: item, value: $value, total: $total)
+                        case .modern:
+                            ModernProgressBar(item: item, value: $value, total: $total)
                     }
                 }
                 .animation(.easeIn, value: layoutManager.progressBarStyle)
