@@ -183,6 +183,7 @@
 		B6E331182AA8131C001D7FF2 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E331172AA8131C001D7FF2 /* TrackingMode.swift */; };
 		B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */; };
 		B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0872AAA951700D83FA7 /* OverlayView.swift */; };
+		B6E96CE02BBF800100FB59F2 /* FallbackCachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96CDF2BBF800100FB59F2 /* FallbackCachedAsyncImage.swift */; };
 		B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */; };
 		B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */; };
 		B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */; };
@@ -379,6 +380,7 @@
 		B6E331172AA8131C001D7FF2 /* TrackingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
 		B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettings.swift; sourceTree = "<group>"; };
 		B6E7B0872AAA951700D83FA7 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		B6E96CDF2BBF800100FB59F2 /* FallbackCachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCachedAsyncImage.swift; sourceTree = "<group>"; };
 		B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16S.swift; sourceTree = "<group>"; };
 		B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyle.swift; sourceTree = "<group>"; };
 		B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStyle.swift; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 				B6DFEE382B8C330C0009C541 /* Statistic */,
 				B6DFEE352B8C19560009C541 /* Criteria */,
 				B628EF7A2B7DAD6300B5D37C /* Indicators */,
+				B6E96CDE2BBF7F9900FB59F2 /* Utils */,
 				B6AAB57F28BA831E007B981B /* TransparentView.swift */,
 				B69EB67F28AC92860029B988 /* RoundedCornersShape.swift */,
 				B641CB522B8DACF500656D6C /* CALayerHosting.swift */,
@@ -951,6 +954,14 @@
 				B697E0FB2B844CE700932278 /* Indicators */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		B6E96CDE2BBF7F9900FB59F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B6E96CDF2BBF800100FB59F2 /* FallbackCachedAsyncImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B6EEBAD22AC4F854001CF4D0 /* 1_16 */ = {
@@ -1244,6 +1255,7 @@
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B6F2088A2B8E978B0025A914 /* IndicatorTickerTapeView.swift in Sources */,
 				B62889502B96D12400C5C45D /* CriterionLayer.swift in Sources */,
+				B6E96CE02BBF800100FB59F2 /* FallbackCachedAsyncImage.swift in Sources */,
 				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
 				B697E0E92B844B7600932278 /* GodApple.swift in Sources */,
 				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
@@ -1532,7 +1544,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240322a;
+				CURRENT_PROJECT_VERSION = 240404a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1568,7 +1580,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 240322a;
+				CURRENT_PROJECT_VERSION = 240404a;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;

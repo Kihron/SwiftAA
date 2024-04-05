@@ -28,15 +28,19 @@ struct ModernProgressBar: View {
                 if value > 0 {
                     HStack(spacing: 0) {
                         Image("bar_modern_active_left")
+                            .interpolation(.none)
                         
                         Image("bar_modern_active_middle")
                             .resizable()
+                            .interpolation(.none)
                             .frame(width: CGFloat(max(0, (Int(item.size.width) * value / total) - (value >= total ? 40 : 20))))
                         
                         if value >= total {
                             Image("bar_modern_active_right")
+                                .interpolation(.none)
                         } else {
                             Image("bar_modern_active_edge")
+                                .interpolation(.none)
                         }
                     }
                     .brightness(0.1)
