@@ -146,7 +146,7 @@ class LeaderboardManager: ObservableObject {
                 let lines = raw.components(separatedBy: "\n").dropFirst(2)
                 
                 self.nicknames = lines.map({ $0.components(separatedBy: ",") }).reduce(into: [String:String]()) {
-                    $0[$1[0]] = $1[2].trimmingCharacters(in: .newlines)
+                    $0[$1[0]] = $1[2].trimmingCharacters(in: .newlines).replacingOccurrences(of: "-", with: "")
                 }
             }
         }
