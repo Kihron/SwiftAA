@@ -80,6 +80,7 @@ struct OptimalOverlayView: View {
                 .padding(.bottom)
         }
         .animation(.smooth, value: overlayManager.showOptimalProgressBar)
+        .tracking(0.2)
     }
     
     private func createIndicator(name: String, icon: String) -> IndicatorView {

@@ -1172,6 +1172,8 @@ internal enum L10n {
         internal static let enderDragon = L10n.tr("Localizable", "layout.appearance.progress_bar_style.ender_dragon", fallback: "Ender Dragon")
         /// Experience
         internal static let experience = L10n.tr("Localizable", "layout.appearance.progress_bar_style.experience", fallback: "Experience")
+        /// Modern
+        internal static let modern = L10n.tr("Localizable", "layout.appearance.progress_bar_style.modern", fallback: "Modern")
       }
       internal enum RefreshStyle {
         /// Clock

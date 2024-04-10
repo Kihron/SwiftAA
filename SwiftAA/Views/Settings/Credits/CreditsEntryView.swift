@@ -22,7 +22,7 @@ struct CreditsEntryView: View {
                 Image(name)
             }
             .frame(width: 32)
-            .clipShape(RoundedRectangle(cornerRadius: 2))
+            .clipShape(.rect(cornerRadius: 2))
             
             Text("\(name) - \(role)")
             

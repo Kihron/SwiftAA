@@ -8,10 +8,10 @@
 import SwiftUI
 
 class CriteriaTickerTapeViewModel: ObservableObject {
-    @ObservedObject private var dataManager = DataManager.shared
-    @ObservedObject private var overlayManager = OverlayManager.shared
-    
     @Published var containerLayer = CALayer()
+    
+    private var dataManager = DataManager.shared
+    private var overlayManager = OverlayManager.shared
     
     private var animationDuration: CFTimeInterval = 10
     private var previousCriteria: [Criterion] = []

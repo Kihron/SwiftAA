@@ -8,7 +8,8 @@
 import SwiftUI
 
 class LeaderboardManager: ObservableObject {
-    @ObservedObject private var networkManager = NetworkManager.shared
+    private var networkManager = NetworkManager.shared
+    
     @Published var entries: [LeaderboardEntry] = []
     
     private var otherVersionData: [String] = []
@@ -28,7 +29,7 @@ class LeaderboardManager: ObservableObject {
     
     func getLeaderboardEntries() {
         switch TrackerManager.shared.gameVersion {
-            case .v1_16:
+            case .v1_16, .v1_16_5:
                 getV16Entries()
             case .v1_19:
                 getEntriesForOtherVersions(version: .v1_19)
@@ -145,7 +146,7 @@ class LeaderboardManager: ObservableObject {
                 let lines = raw.components(separatedBy: "\n").dropFirst(2)
                 
                 self.nicknames = lines.map({ $0.components(separatedBy: ",") }).reduce(into: [String:String]()) {
-                    $0[$1[0]] = $1[2].trimmingCharacters(in: .newlines)
+                    $0[$1[0]] = $1[2].trimmingCharacters(in: .newlines).replacingOccurrences(of: "-", with: "")
                 }
             }
         }

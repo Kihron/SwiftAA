@@ -14,7 +14,6 @@ struct SettingsView: View {
     
     @State private var sideBarVisibility: NavigationSplitViewVisibility = .doubleColumn
     @State private var selectedSettingsBarItem: SettingsBarItem = .tracking
-    @State private var disableCollapse: Bool = false
     
     private var tintColor: Color {
         return layoutManager.matchThemeColor ? themeManager.border : .accentColor

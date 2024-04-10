@@ -16,9 +16,7 @@ struct LeaderboardEntryView: View {
     var body: some View {
         HStack {
             ZStack {
-                CachedAsyncImage(url: getAvatarURL(), urlCache: .imageCache) { image in
-                    image
-                } placeholder: {
+                FallbackCachedAsyncImage(urls: [getAvatarURL(), getFallbackAvatarURL()]) {
                     Image("steve_avatar")
                 }
                 .frame(width: 32)
@@ -63,6 +61,11 @@ struct LeaderboardEntryView: View {
     private func getAvatarURL() -> URL? {
         let name = leaderboardManager.nicknames[entry.name] ?? entry.name
         return URL(string: "https://minotar.net/helm/\(name)/32")
+    }
+    
+    private func getFallbackAvatarURL() -> URL? {
+        let name = leaderboardManager.nicknames[entry.name] ?? entry.name
+        return URL(string: "https://cravatar.eu/helmavatar/\(name)")
     }
     
     private func getVerificationColor() -> Color {

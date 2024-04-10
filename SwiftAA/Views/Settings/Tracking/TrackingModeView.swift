@@ -25,11 +25,6 @@ struct TrackingModeView: View {
                         }
                         .pickerStyle(.segmented)
                         .labelsHidden()
-                        .onChange(of: trackerManager.trackingMode) { _ in
-                            if trackerManager.layoutStyle != .standard {
-                                dataManager.minimalCache = nil
-                            }
-                        }
                     }
                     
                     Divider()
@@ -42,7 +37,7 @@ struct TrackingModeView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .autocorrectionDisabled()
                             
-                            Button(action: { Utilities.selectSavesFolder() }) {
+                            Button(action: Utilities.selectSavesFolder) {
                                 Text(L10n.Tracking.browse)
                             }
                         }

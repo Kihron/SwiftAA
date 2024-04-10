@@ -10,6 +10,7 @@ import Foundation
 enum ProgressBarStyle: String, SettingsOption {
     case enderDragon = "layout.appearance.progress_bar_style.ender_dragon"
     case experience = "layout.appearance.progress_bar_style.experience"
+    case modern = "layout.appearance.progress_bar_style.modern"
 
     var id: Self {
         return self

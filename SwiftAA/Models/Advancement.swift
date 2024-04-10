@@ -69,4 +69,6 @@ extension Advancement: Transferable {
     static var transferRepresentation: some TransferRepresentation {
         CodableRepresentation(contentType: .item)
     }
+    
+    static let defaultValue = Advancement(id: "", key: "", name: "", icon: "", frameStyle: "", criteria: [], completed: false)
 }

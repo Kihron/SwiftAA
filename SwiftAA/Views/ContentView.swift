@@ -24,7 +24,7 @@ struct ContentView: View {
             ScrollView(.horizontal) {
                 ZStack {
                     switch TrackerManager.shared.gameVersion {
-                        case .v1_16 : L1_16()
+                        case .v1_16, .v1_16_5 : L1_16()
                         case .v1_19 : L1_19()
                         case .v1_20: L1_20()
                     }

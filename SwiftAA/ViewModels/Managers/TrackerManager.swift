@@ -15,18 +15,19 @@ class TrackerManager: ObservableObject {
     @AppStorage("automaticVersionDetection") var automaticVersionDetection: Bool = true
     @AppStorage("gameVersion") var gameVersion: Version = .v1_16 {
         didSet {
-            DataManager.shared.gameVersionChanged()
+            if gameVersion != oldValue {
+                DataManager.shared.gameVersionChanged()
+            }
         }
     }
     
     @AppStorage("automaticExpansion") var automaticExpansion: Bool = true
     
-    @Published var lastDirectoryUpdate: Date? = Date.now
-    @Published var lastLogUpdate: Date? = Date.now
+    var lastDirectoryUpdate: Date? = Date.now
+    var lastLogUpdate: Date? = Date.now
     
     @Published var worldPath: String = ""
     @Published var alert: TrackerAlert? = .none
-    
     
     var lastWorking = ""
     

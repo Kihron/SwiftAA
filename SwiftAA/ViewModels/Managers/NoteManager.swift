@@ -8,8 +8,9 @@
 import SwiftUI
 
 class NoteManager: ObservableObject {
-    @ObservedObject private var trackerManager = TrackerManager.shared
     @Published var worldNotes: [Note] = []
+    
+    private var trackerManager = TrackerManager.shared
     
     static let shared = NoteManager()
     

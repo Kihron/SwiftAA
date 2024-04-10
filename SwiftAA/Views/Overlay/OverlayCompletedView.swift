@@ -102,6 +102,6 @@ struct OverlayCompletedView: View {
 struct OverlayCompletedView_Previews: PreviewProvider {
     static var previews: some View {
         OverlayCompletedView()
-            .frame(width: 820, height: 345)
+            .frame(width: 820, height: 300)
     }
 }

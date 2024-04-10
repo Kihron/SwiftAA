@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct L1_20S: View {
-    @ObservedObject private var dataManager = DataManager.shared
-    
     @State private var topStats = Utilities.getSpecificStats(types: [.trident, .shells, .snifferEggs])
     @State private var bottomStats = Utilities.getSpecificStats(types: [.witherSkulls, .goldBlocks])
+    
+    private var dataManager = DataManager.shared
     
     var body: some View {
         HStack(spacing: 0) {
@@ -19,26 +19,26 @@ struct L1_20S: View {
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {
                         HStack(spacing: 0) {
-                            AdvPanelView(indicators: dataManager.decode(file: "minecraft", start: "minecraft:story/mine_stone"), columnCount: 5)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "minecraft", start: "minecraft:story/mine_stone"), columnCount: 5)
                                 .frame(width: 350)
-                            AdvPanelView(indicators: dataManager.decode(file: "nether"), columnCount: 8)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "nether"), columnCount: 8)
                                 .frame(width: 540)
-                            AdvPanelView(indicators: dataManager.decode(file: "husbandry", start: "minecraft:husbandry/froglights"), columnCount: 1)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "husbandry", start: "minecraft:husbandry/froglights"), columnCount: 1)
                                 .frame(width: 74)
-                            AdvPanelView(indicators: dataManager.decode(file: "adventure", start: "minecraft:adventure/spyglass_at_parrot", end: "minecraft:adventure/spyglass_at_dragon"), columnCount: 1)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", start: "minecraft:adventure/spyglass_at_parrot", end: "minecraft:adventure/spyglass_at_dragon"), columnCount: 1)
                                 .frame(width: 74)
-                            AdvPanelView(indicators: dataManager.decode(file: "adventure", start: "minecraft:adventure/sleep_in_bed", end: "minecraft:adventure/trim_with_all_exclusive_armor_patterns"), columnCount: 6)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", start: "minecraft:adventure/sleep_in_bed", end: "minecraft:adventure/trim_with_all_exclusive_armor_patterns"), columnCount: 6)
                                 .frame(width: 437)
                             AdvPanelView(indicators: $topStats, columnCount: 1, isStat: true)
                                 .frame(width: 75)
                         }
                         
                         HStack(spacing: 0) {
-                            AdvPanelView(indicators: dataManager.decode(file: "end", start: "minecraft:end/kill_dragon"), columnCount: 4)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "end", start: "minecraft:end/kill_dragon"), columnCount: 4)
                                 .frame(width: 276)
-                            AdvPanelView(indicators: dataManager.decode(file: "husbandry", start: "minecraft:husbandry/plant_seed", end: "minecraft:husbandry/obtain_netherite_hoe"), columnCount: 11)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "husbandry", start: "minecraft:husbandry/plant_seed", end: "minecraft:husbandry/obtain_netherite_hoe"), columnCount: 11)
                                 .frame(width: 762)
-                            AdvPanelView(indicators: dataManager.decode(file: "adventure", start: "minecraft:adventure/honey_block_slide"), columnCount: 6)
+                            AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure", start: "minecraft:adventure/honey_block_slide"), columnCount: 6)
                                 .frame(width: 437)
                             AdvPanelView(indicators: $bottomStats, columnCount: 1, isStat: true)
                                 .frame(width: 75)
@@ -50,22 +50,22 @@ struct L1_20S: View {
                 }
                 
                 HStack(spacing: 0) {
-                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[33].asAdvancement, rowCount: 16, goal: L10n.Goal.biomesVisited)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/adventuring_time"), rowCount: 16, goal: L10n.Goal.biomesVisited)
                         .frame(width: 521)
-                    GoalPanelView(advancement: dataManager.decode(file: "adventure")[34].asAdvancement, rowCount: 16, goal: L10n.Goal.monstersKilled)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/kill_all_mobs"), rowCount: 16, goal: L10n.Goal.monstersKilled)
                         .frame(width: 337)
-                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[20].asAdvancement, rowCount: 16, goal: L10n.Goal.foodsEaten)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/balanced_diet"), rowCount: 16, goal: L10n.Goal.foodsEaten)
                         .frame(width: 325)
-                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[19].asAdvancement, rowCount: 16, goal: L10n.Goal.animalsBred)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/bred_all_animals"), rowCount: 16, goal: L10n.Goal.animalsBred)
                         .frame(width: 193)
-                    GoalPanelView(advancement: dataManager.decode(file: "husbandry")[21].asAdvancement, rowCount: 16, goal: L10n.Goal.cats)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/complete_catalogue"), rowCount: 16, goal: L10n.Goal.cats)
                         .frame(width: 138)
                     
                     VStack(spacing: 0) {
-                        GoalPanelView(advancement: dataManager.decode(file: "adventure")[18].asAdvancement, rowCount: 8, goal: L10n.Goal.trims, isAdjacent: true)
+                        GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/trim_with_all_exclusive_armor_patterns"), rowCount: 8, goal: L10n.Goal.trims, isAdjacent: true)
                             .frame(height: 193)
                         
-                        GoalPanelView(advancement: dataManager.decode(file: "nether")[9].asAdvancement, rowCount: 5, goal: L10n.Goal.nether, isAdjacent: true)
+                        GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:nether/explore_nether"), rowCount: 5, goal: L10n.Goal.nether, isAdjacent: true)
                             .frame(height: 145)
                     }
                     .frame(width: 232)

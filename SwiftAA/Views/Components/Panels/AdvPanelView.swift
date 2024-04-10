@@ -31,7 +31,7 @@ struct AdvPanelViewView_Previews: PreviewProvider {
     @ObservedObject static var dataManager = DataManager()
     
     static var previews: some View {
-        AdvPanelView(indicators: dataManager.decode(file: "adventure"), columnCount: 2)
+        AdvPanelView(indicators: dataManager.getCategoryAdvancements(category: "adventure"), columnCount: 2)
             .frame(width: 300, height: 500)
     }
 }

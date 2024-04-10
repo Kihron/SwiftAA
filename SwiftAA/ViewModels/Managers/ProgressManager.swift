@@ -8,10 +8,10 @@
 import SwiftUI
 
 class ProgressManager: ObservableObject {
-    @ObservedObject private var dataManager = DataManager.shared
-    
     @Published var advancementsState: [String:JsonAdvancement] = [:]
     @Published var statisticsState: [String:[String:Int]] = [:]
+    
+    private var dataManager = DataManager.shared
     
     private var playTime: Int = 0
     private var wasCleared: Bool = false
@@ -109,7 +109,8 @@ class ProgressManager: ObservableObject {
     }
     
     private func updateInGameTime() {
-        let timeStatistic = TrackerManager.shared.gameVersion == .v1_16 ? "minecraft:play_one_minute" : "minecraft:play_time"
+        let isPreviousKey = [.v1_16, .v1_16_5].contains(TrackerManager.shared.gameVersion)
+        let timeStatistic = isPreviousKey ? "minecraft:play_one_minute" : "minecraft:play_time"
         playTime = statisticsState["minecraft:custom"]?[timeStatistic] ?? 0
     }
 }
