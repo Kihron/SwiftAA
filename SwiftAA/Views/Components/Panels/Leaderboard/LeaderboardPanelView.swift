@@ -11,6 +11,7 @@ struct LeaderboardPanelView: View {
     @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var trackerManager = TrackerManager.shared
     @ObservedObject private var leaderboardManager = LeaderboardManager.shared
+    @Namespace private var leaderboard
     
     private let placeholderUsers = 8
     
@@ -54,6 +55,7 @@ struct LeaderboardPanelView: View {
                         LazyVStack(alignment: .leading, spacing: 0) {
                             ForEach(leaderboardManager.entries, id: \.id) { entry in
                                 LeaderboardEntryView(entry: entry)
+                                    .matchedGeometryEffect(id: entry.name, in: leaderboard)
                                     .padding(.bottom, 10)
                                     .padding(.top, 14)
                                 
@@ -76,7 +78,7 @@ struct LeaderboardPanelView: View {
                         }
                         .padding(.horizontal, 8)
                     }
-                    .animation(.snappy, value: leaderboardManager.entries)
+                    .animation(.easeInOut, value: leaderboardManager.entries)
                 }
             }
         }

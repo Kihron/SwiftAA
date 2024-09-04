@@ -11,7 +11,7 @@ class SnifferEggs: TransferableIndicator, StatusIndicator {
     var type: StatusType = .snifferEggs
     var id: String = "minecraft:sniffer_egg"
     var key: String = L10n.Statistic.snifferEggs(0)
-    var name: String = "Gold Blocks\n0 / 164"
+    var name: String = "Sniffer Eggs\n0 / 3"
     var icon: String = "obtain_sniffer_egg"
     var frameStyle: String = "statistic"
     var completed: Bool = false

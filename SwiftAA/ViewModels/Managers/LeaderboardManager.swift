@@ -82,8 +82,10 @@ class LeaderboardManager: ObservableObject {
     
     private func updateEntries(newEntries: [LeaderboardEntry]) {
         if !newEntries.isEmpty && entries != newEntries {
-            entries.removeAll()
-            entries = newEntries
+            Task { @MainActor in
+                entries.removeAll()
+                entries = newEntries
+            }
         }
     }
     
@@ -93,8 +95,7 @@ class LeaderboardManager: ObservableObject {
     }
     
     private func getEntriesForOtherVersions(version: Version) {
-        let versions = otherVersionData.map({ $0.components(separatedBy: ",") })[0]
-        if let index = versions.firstIndex(of: "\(version.label) RSG") {
+        if let versions = otherVersionData.first?.components(separatedBy: ","), let index = versions.firstIndex(of: "\(version.label) RSG") {
             let newEntries = otherVersionData.dropFirst(2).compactMap({ createEntry(from: $0, index: index) }).filter({ !$0.name.isEmpty })
             updateEntries(newEntries: newEntries)
         }

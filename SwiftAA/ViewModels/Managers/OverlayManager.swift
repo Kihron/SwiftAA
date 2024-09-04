@@ -50,14 +50,6 @@ class OverlayManager: ObservableObject {
     }
     
     private func closeOverlayWindow() {
-        let windows = NSApplication.shared.windows.filter({ window in
-            window.title == "Overlay Window"
-        })
-        
-        guard let window = windows.first else {
-            return
-        }
-        
-        window.close()
+        NSApplication.shared.windows.filter({ $0.title == "Overlay Window" }).first?.close()
     }
 }

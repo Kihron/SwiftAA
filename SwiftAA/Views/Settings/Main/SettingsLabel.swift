@@ -12,7 +12,7 @@ struct SettingsLabel: View {
     @State var description: String?
     
     var body: some View {
-        VStack(spacing: 2) {
+        VStack(spacing: 3) {
             Text(title)
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)

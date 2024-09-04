@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Quartz
 
 struct IndicatorView: View {
     @ObservedObject private var overlayManager = OverlayManager.shared
