@@ -34,6 +34,8 @@ class LeaderboardManager: ObservableObject {
                 getEntriesForOtherVersions(version: .v1_19)
             case .v1_20:
                 getEntriesForOtherVersions(version: .v1_20)
+            case .v1_21, .v1_21_4:
+                getEntriesForOtherVersions(version: .v1_21)
         }
     }
 

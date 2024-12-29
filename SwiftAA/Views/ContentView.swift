@@ -27,6 +27,7 @@ struct ContentView: View {
                         case .v1_16, .v1_16_5 : L1_16()
                         case .v1_19 : L1_19()
                         case .v1_20: L1_20()
+                        case .v1_21, .v1_21_4: L1_21()
                     }
                     
                     RoundedCornersShape(radius: 10, corners: [.bottomLeft, .bottomRight])

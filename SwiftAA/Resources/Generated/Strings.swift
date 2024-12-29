@@ -753,8 +753,9 @@ internal enum L10n {
       /// A Seedy
       /// Place
       internal static let plantSeed = L10n.tr("Localizable", "advancement.husbandry.plant_seed", fallback: "A Seedy\nPlace")
-      /// Whatever Floats Your Goat!
-      internal static let rideABoatWithAGoat = L10n.tr("Localizable", "advancement.husbandry.ride_a_boat_with_a_goat", fallback: "Whatever Floats Your Goat!")
+      /// What Floats
+      /// Your Goat!
+      internal static let rideABoatWithAGoat = L10n.tr("Localizable", "advancement.husbandry.ride_a_boat_with_a_goat", fallback: "What Floats\nYour Goat!")
       /// Husbandry
       internal static let root = L10n.tr("Localizable", "advancement.husbandry.root", fallback: "Husbandry")
       /// Bee Our
@@ -1114,6 +1115,8 @@ internal enum L10n {
     internal static let biomesVisited = L10n.tr("Localizable", "goal.biomes_visited", fallback: "Biomes Visited")
     /// Cats
     internal static let cats = L10n.tr("Localizable", "goal.cats", fallback: "Cats")
+    /// Dogs
+    internal static let dogs = L10n.tr("Localizable", "goal.dogs", fallback: "Dogs")
     /// Foods Eaten
     internal static let foodsEaten = L10n.tr("Localizable", "goal.foods_eaten", fallback: "Foods Eaten")
     /// Monsters Killed
@@ -1415,6 +1418,8 @@ internal enum L10n {
     internal static func goldBlocks(_ p1: Int) -> String {
       return L10n.tr("Localizable", "statistic.gold_blocks", p1, fallback: "Gold Blocks\n%d / 164")
     }
+    /// Heavy Core
+    internal static let heavyCore = L10n.tr("Localizable", "statistic.heavy_core", fallback: "Heavy Core")
     /// Major Biomes
     /// %d / %d
     internal static func majorBiomes(_ p1: Int, _ p2: Int) -> String {
@@ -1461,6 +1466,13 @@ internal enum L10n {
     internal enum GoldBlocks {
       /// Beaconator Complete
       internal static let beaconator = L10n.tr("Localizable", "statistic.gold_blocks.beaconator", fallback: "Beaconator Complete")
+    }
+    internal enum HeavyCore {
+      /// Obtain
+      /// Heavy Core
+      internal static let obtain = L10n.tr("Localizable", "statistic.heavy_core.obtain", fallback: "Obtain\nHeavy Core")
+      /// Obtained Heavy Core
+      internal static let obtained = L10n.tr("Localizable", "statistic.heavy_core.obtained", fallback: "Obtained Heavy Core")
     }
     internal enum Shells {
       /// Conduit Crafted

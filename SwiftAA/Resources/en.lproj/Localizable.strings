@@ -26,6 +26,7 @@
 "goal.animals_bred" = "Animals Bred";
 "goal.biomes_visited" = "Biomes Visited";
 "goal.cats" = "Cats";
+"goal.dogs" = "Dogs";
 "goal.foods_eaten" = "Foods Eaten";
 "goal.monsters_killed" = "Monsters Killed";
 "goal.nether" = "Visited";
@@ -210,6 +211,9 @@
 "statistic.upgrade_netherite" = "Netherite Up";
 "statistic.wither.killed" = "Wither Has Been Killed";
 "statistic.wither.skulls" = "Skulls\n%d / 3";
+"statistic.heavy_core" = "Heavy Core";
+"statistic.heavy_core.obtain" = "Obtain\nHeavy Core";
+"statistic.heavy_core.obtained" = "Obtained Heavy Core";
 
 "advancement.adventure.root" = "Adventure";
 "advancement.adventure.sleep_in_bed" = "Sweet\nDreams";
@@ -270,7 +274,7 @@
 "advancement.husbandry.wax_on" = "Wax On";
 "advancement.husbandry.wax_off" = "Wax Off";
 "advancement.husbandry.silk_touch_nest" = "Total Beelocation";
-"advancement.husbandry.ride_a_boat_with_a_goat" = "Whatever Floats Your Goat!";
+"advancement.husbandry.ride_a_boat_with_a_goat" = "What Floats\nYour Goat!";
 "advancement.husbandry.allay_deliver_item_to_player" = "You've Got a Friend in Me";
 "advancement.husbandry.allay_deliver_cake_to_note_block" = "Birthday\nSong";
 "advancement.husbandry.obtain_sniffer_egg" = "Smells Interesting";
