@@ -145,7 +145,7 @@ struct WaypointCardView: View {
     }
 }
 
-private extension String {
+extension String {
     var toNether: String {
         get {
             if let num = Int(self) {
