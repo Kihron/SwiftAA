@@ -177,7 +177,9 @@ class AppViewModel: ObservableObject {
         }
         
         if let nativesArg = arguments.first(where: { $0.starts(with: "-Djava.library.path=") }) {
-            let info = "\(nativesArg.dropFirst(20).dropLast("natives".count)).minecraft/saves"
+            var info = "\(nativesArg.dropFirst(20).dropLast("natives".count))/.minecraft/saves"
+            let info2 = "\(nativesArg.dropFirst(20).dropLast("natives".count))/minecraft/saves"
+            info = fileManager.fileExists(atPath: info) ? info : info2
             activeWindows[pid] = (info, version)
             return (info, version)
         }
