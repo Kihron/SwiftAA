@@ -1545,9 +1545,9 @@ internal enum L10n {
       return L10n.tr("Localizable", "statistic.shells", p1, fallback: "Shells\n%d / 8")
     }
     /// Sniffer Eggs
-    /// %d / 3
+    /// %d / 2
     internal static func snifferEggs(_ p1: Int) -> String {
-      return L10n.tr("Localizable", "statistic.sniffer_eggs", p1, fallback: "Sniffer Eggs\n%d / 3")
+      return L10n.tr("Localizable", "statistic.sniffer_eggs", p1, fallback: "Sniffer Eggs\n%d / 2")
     }
     /// Netherite Up
     internal static let upgradeNetherite = L10n.tr("Localizable", "statistic.upgrade_netherite", fallback: "Netherite Up")

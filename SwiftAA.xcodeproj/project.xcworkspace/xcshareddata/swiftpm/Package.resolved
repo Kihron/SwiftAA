@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",
       "state" : {
-        "revision" : "47d3d90aee3c52b6f61d04ceae426e607df62347",
-        "version" : "2.5.2"
+        "revision" : "0ef1ee0220239b3776f433314515fd849025673f",
+        "version" : "2.6.4"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/lorenzofiamingo/swiftui-cached-async-image",
       "state" : {
         "branch" : "main",
-        "revision" : "f94be38411297c71aa8df69c6875127e6d8d7a92"
+        "revision" : "4f111f2b7aab7ec52a60716cedb673df5203743c"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/siteline/swiftui-introspect",
       "state" : {
-        "revision" : "0cd2a5a5895306bc21d54a2254302d24a9a571e4",
-        "version" : "1.1.3"
+        "revision" : "807f73ce09a9b9723f12385e592b4e0aaebd3336",
+        "version" : "1.3.0"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/drmohundro/SWXMLHash.git",
       "state" : {
         "branch" : "main",
-        "revision" : "eacfa68203c7595f7988e36a037a0decfc74dc33"
+        "revision" : "6ae7b83692c4a2ed53ea2cb0e6cda20768800a99"
       }
     }
   ],

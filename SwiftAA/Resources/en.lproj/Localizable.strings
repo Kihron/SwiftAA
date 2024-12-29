@@ -203,7 +203,7 @@
 "statistic.shells" = "Shells\n%d / 8";
 "statistic.shells.crafted" = "Conduit Crafted";
 "statistic.shells.hdwgh" = "HDWGH Complete";
-"statistic.sniffer_eggs" = "Sniffer Eggs\n%d / 3";
+"statistic.sniffer_eggs" = "Sniffer Eggs\n%d / 2";
 "statistic.sniffer_eggs.done" = "Sniffers\nDone";
 "statistic.trident.awaiting" = "Awaiting\nThunder";
 "statistic.trident.obtain" = "Obtain\nTrident";

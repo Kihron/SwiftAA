@@ -11,7 +11,7 @@ class SnifferEggs: TransferableIndicator, StatusIndicator {
     var type: StatusType = .snifferEggs
     var id: String = "minecraft:sniffer_egg"
     var key: String = L10n.Statistic.snifferEggs(0)
-    var name: String = "Sniffer Eggs\n0 / 3"
+    var name: String = "Sniffer Eggs\n0 / 2"
     var icon: String = "obtain_sniffer_egg"
     var frameStyle: String = "statistic"
     var completed: Bool = false
@@ -26,7 +26,7 @@ class SnifferEggs: TransferableIndicator, StatusIndicator {
         let count = progress.timesPickedUp(id)
         let advancementsComplete = progress.advancementCompleted(feedSnifflet) && progress.advancementCompleted(plantingThePast) && progress.criterionCompleted(twoByTwo, sniffer) != nil
         
-        completed = count >= 3 || advancementsComplete
+        completed = count >= 2 || advancementsComplete
         key = completed ? L10n.Statistic.SnifferEggs.done : L10n.Statistic.snifferEggs(count)
     }
 }
