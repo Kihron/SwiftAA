@@ -56,7 +56,7 @@ struct L1_21S: View {
                         .frame(width: 306)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/balanced_diet"), rowCount: 16, goal: L10n.Goal.foodsEaten)
                         .frame(width: 315)
-                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/bred_all_animals"), rowCount: 16, goal: L10n.Goal.animalsBred)
+                    GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/bred_all_animals"), rowCount: 16, goal: L10n.Goal.animalsBred, hidePercentage: true)
                         .frame(width: 168)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/complete_catalogue"), rowCount: 16, goal: "", hidePercentage: true)
                         .frame(width: 90)

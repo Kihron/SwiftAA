@@ -17,7 +17,7 @@ struct L1_21V: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
-                AdvPanelView(indicators: .constant(dataManager.minimalisticAdvancements), columnCount: 5, isMinimal: true)
+                AdvPanelView(indicators: .constant(dataManager.minimalisticAdvancements), columnCount: 6, isMinimal: true)
                     .frame(width: 370)
                 
                 VStack(spacing: 0) {
@@ -34,7 +34,7 @@ struct L1_21V: View {
                         }
                         .frame(width: 236)
                     }
-                    .frame(height: 431)
+                    .frame(height: 505)
                     
                     HStack(spacing: 0) {
                         GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/complete_catalogue"), rowCount: 6, goal: L10n.Goal.cats, isMinimal: true)
@@ -50,7 +50,7 @@ struct L1_21V: View {
                 }
                 .frame(width: 310)
             }
-            .frame(height: 796)
+            .frame(height: 870)
             
             HStack(spacing: 0) {
                 GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/adventuring_time"), rowCount: 14, goal: L10n.Goal.biomesVisited, isMinimal: true)
