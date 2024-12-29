@@ -67,17 +67,20 @@ class AppViewModel: ObservableObject {
                     }
                     return
                 }
-                
-                if (try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements").isEmpty || fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats").isEmpty) {
+
+                let files = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")
+                let stats = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats")
+
+                if (files.isEmpty || stats.isEmpty) {
                     if trackerManager.updateErrorAlert(alert: .invalidDirectory) {
                         progressManager.clearProgressState()
                     }
                     return
                 }
-                
-                let fileName = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")[0]
+
+                let fileName = playerManager.player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
                 let lastUpdate = try getModifiedTime("\(worldPath)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
-                
+
                 if (dataManager.lastModified != lastUpdate) {
                     dataManager.lastModified = lastUpdate
                     var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(worldPath)/advancements/\(fileName)"))
@@ -89,6 +92,7 @@ class AppViewModel: ObservableObject {
                     let uuid = String(fileName.dropLast(5))
                     
                     playerManager.updatePlayerUUID(uuid: uuid)
+                    playerManager.updateAvailablePlayers(uuids: files.map({ ($0 as NSString).deletingPathExtension }))
                     progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
                     trackerManager.updateErrorAlert(alert: .none)
                 }
@@ -175,13 +179,15 @@ class AppViewModel: ObservableObject {
             activeWindows[pid] = (info, version)
             return (info, version)
         }
-        
+
         if let nativesArg = arguments.first(where: { $0.starts(with: "-Djava.library.path=") }) {
-            var info = "\(nativesArg.dropFirst(20).dropLast("natives".count))/.minecraft/saves"
-            let info2 = "\(nativesArg.dropFirst(20).dropLast("natives".count))/minecraft/saves"
-            info = fileManager.fileExists(atPath: info) ? info : info2
-            activeWindows[pid] = (info, version)
-            return (info, version)
+            let basePath = nativesArg.dropFirst(20).replacingOccurrences(of: "natives", with: "")
+            let possiblePaths = ["\(basePath).minecraft/saves", "\(basePath)/minecraft/saves"]
+
+            if let validPath = possiblePaths.first(where: { fileManager.fileExists(atPath: $0) }) {
+                activeWindows[pid] = (validPath, version)
+                return (validPath, version)
+            }
         }
         
         activeWindows[pid] = ("", nil)
