@@ -45,6 +45,7 @@ struct GoalPanelView: View {
             if !isMinimal {
                 IndicatorView(indicator: $advancement.asIndicator)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .id(advancement.completed)
             }
             
             LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: horizontalSpacing, alignment: .leading), count: rowCount), spacing: columnSpacing) {
@@ -57,7 +58,7 @@ struct GoalPanelView: View {
                     Spacer()
                 }
                 
-                ForEach($advancement.criteria, id: \.self.id) { item in
+                ForEach($advancement.criteria, id: \.self) { item in
                     CriterionView(criterion: item)
                 }
                 .frame(alignment: .leading)
@@ -73,11 +74,12 @@ struct GoalPanelView: View {
         HStack(alignment: .top) {
             if !isMinimal {
                 IndicatorView(indicator: $advancement.asIndicator)
+                    .id(advancement.completed)
             }
             
             LazyHGrid(rows: Array(repeating: GridItem(.adaptive(minimum: 16), spacing: horizontalSpacing, alignment: .leading), count: rowCount), spacing: columnSpacing) {
                 
-                ForEach($advancement.criteria, id: \.self.id) { item in
+                ForEach($advancement.criteria, id: \.self) { item in
                     CriterionView(criterion: item)
                 }
                 .frame(alignment: .leading)
