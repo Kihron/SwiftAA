@@ -51,7 +51,7 @@ struct L1_21S: View {
                 
                 HStack(spacing: 0) {
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/adventuring_time"), rowCount: 16, goal: L10n.Goal.biomesVisited)
-                        .frame(width: 497)
+                        .frame(width: 494)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:adventure/kill_all_mobs"), rowCount: 16, goal: L10n.Goal.monstersKilled)
                         .frame(width: 306)
                     GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:husbandry/balanced_diet"), rowCount: 16, goal: L10n.Goal.foodsEaten)
@@ -70,7 +70,7 @@ struct L1_21S: View {
                         GoalPanelView(advancement: dataManager.getGoalAdvancement(id: "minecraft:nether/explore_nether"), rowCount: 5, goal: L10n.Goal.nether, isAdjacent: true)
                             .frame(height: 145)
                     }
-                    .frame(width: 206)
+                    .frame(width: 209)
                 }
                 .frame(width: 1672, height: 338)
             }

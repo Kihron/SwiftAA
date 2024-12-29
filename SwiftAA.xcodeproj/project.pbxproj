@@ -215,7 +215,6 @@
 		498A3E882D21153100F0A345 /* L1_21M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21M.swift; sourceTree = "<group>"; };
 		498A3E892D21153100F0A345 /* L1_21V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21V.swift; sourceTree = "<group>"; };
 		498A3E8D2D21191300F0A345 /* HeavyCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavyCore.swift; sourceTree = "<group>"; };
-		49CCDF7B2B7C1FD200DFE65D /* MinecraftFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFont.swift; sourceTree = "<group>"; };
 		49CCDF802B7C4AF400DFE65D /* major_biomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = major_biomes.json; sourceTree = "<group>"; };
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
 		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
@@ -763,10 +762,10 @@
 		B687E17E28B3E37F002CF5D7 /* Versions */ = {
 			isa = PBXGroup;
 			children = (
-				498A3E822D20FA2D00F0A345 /* 1_21 */,
 				B6EEBAD22AC4F854001CF4D0 /* 1_16 */,
 				B6EEBAD32AC4F8B1001CF4D0 /* 1_19 */,
 				B6D67AE52B744A61007AA80C /* 1_20 */,
+				498A3E822D20FA2D00F0A345 /* 1_21 */,
 			);
 			path = Versions;
 			sourceTree = "<group>";

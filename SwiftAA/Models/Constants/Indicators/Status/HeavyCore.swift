@@ -14,9 +14,13 @@ class HeavyCore: TransferableIndicator, StatusIndicator {
     var frameStyle: String = "statistic"
     var completed: Bool = false
     var tooltip: String = ""
-    
+
+    private let overkill = "minecraft:adventure/overoverkill"
+
     func update(progress: ProgressManager) {
-        completed = progress.timesPickedUp(id) > 0
+        let overkillCompleted = progress.advancementCompleted(overkill)
+
+        completed = overkillCompleted || progress.timesPickedUp(id) > 0
         key = completed ? L10n.Statistic.HeavyCore.obtained : L10n.Statistic.HeavyCore.obtain
     }
 }
