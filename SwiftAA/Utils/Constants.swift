@@ -31,6 +31,7 @@ class Constants {
         FermentedEye.shared,
         NetheriteUpgrade.shared,
         PotterySherds.shared,
+        HeavilyCore.shared,
     ]
     
     static let finalStatistics: [FinalStatistic] = [
