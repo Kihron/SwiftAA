@@ -16,6 +16,5 @@ class HeavilyCore: StatisticIndicator {
     
     func update(progress: ProgressManager) {
         completed = progress.timesPickedUp(id) >= 1
-        print("Updated", completed)
     }
 }
