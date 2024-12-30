@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 @MainActor @Observable class Settings {
     private let filemanager = FileManager.default
@@ -14,8 +13,6 @@ import Combine
     static let shared = Settings()
 
     var preferences: Preferences
-
-    private var storeTask: AnyCancellable!
 
     private init() {
         self.preferences = .init()
@@ -31,6 +28,15 @@ import Combine
                 try? await self?.savePreferences()
                 await self?.observePreferences()
             }
+        }
+    }
+
+    static subscript<T>(_ path: WritableKeyPath<Preferences, T>, suite: Settings = .shared) -> T {
+        get {
+            suite.preferences[keyPath: path]
+        }
+        set {
+            suite.preferences[keyPath: path] = newValue
         }
     }
 

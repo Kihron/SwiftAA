@@ -7,6 +7,6 @@
 
 import SwiftUI
 
-class RefreshEngine: SettingsObserver {
-    
+@MainActor class RefreshEngine {
+
 }

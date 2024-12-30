@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-@Observable class GameStateReader: VersionObserver, SettingsObserver {
+@Observable class GameStateReader: VersionObserver {
     init() {
         setupVersionObserver()
     }
 
     func handleVersionChange(to version: Version) async throws {
-
+        print("Changed to version \(version)")
     }
 }
