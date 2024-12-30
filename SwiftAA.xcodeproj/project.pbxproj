@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490D35042B942F7300342D04 /* enchanted_netherite_boots.gif in Resources */ = {isa = PBXBuildFile; fileRef = 490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */; };
 		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
+		498147892D224C2300606027 /* HeavilyCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498147882D224C0F00606027 /* HeavilyCore.swift */; };
 		498A3E842D20FA7500F0A345 /* L1_21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A3E832D20FA6A00F0A345 /* L1_21.swift */; };
 		498A3E8A2D21153100F0A345 /* L1_21S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A3E872D21153100F0A345 /* L1_21S.swift */; };
 		498A3E8B2D21153100F0A345 /* L1_21M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A3E882D21153100F0A345 /* L1_21M.swift */; };
@@ -201,6 +202,7 @@
 /* Begin PBXFileReference section */
 		490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_netherite_boots.gif; sourceTree = "<group>"; };
 		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
+		498147882D224C0F00606027 /* HeavilyCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavilyCore.swift; sourceTree = "<group>"; };
 		498A3E832D20FA6A00F0A345 /* L1_21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21.swift; sourceTree = "<group>"; };
 		498A3E872D21153100F0A345 /* L1_21S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21S.swift; sourceTree = "<group>"; };
 		498A3E882D21153100F0A345 /* L1_21M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21M.swift; sourceTree = "<group>"; };
@@ -773,6 +775,7 @@
 		B697E0FD2B844CEF00932278 /* Statistic */ = {
 			isa = PBXGroup;
 			children = (
+				498147882D224C0F00606027 /* HeavilyCore.swift */,
 				B697E1012B844D5500932278 /* EnderPearls.swift */,
 				B697E1032B844D6F00932278 /* NetherWart.swift */,
 				B697E1052B844D8300932278 /* GhastTears.swift */,
@@ -1242,6 +1245,8 @@
 				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B62405A32B80167300CAA885 /* L1_20S.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
+				B6A4AF7A2AECC06E00C7B805 /* Utilities.swift in Sources */,
+				498147892D224C2300606027 /* HeavilyCore.swift in Sources */,
 				B697E0F92B844C9400932278 /* MajorBiomes.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
 				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
