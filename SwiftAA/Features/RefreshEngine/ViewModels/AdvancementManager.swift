@@ -227,5 +227,6 @@ import SWXMLHash
         uncountedAdvancements.removeAll()
         updateAdvancementFields()
         loadAllAdvancements()
+        TrackerEngine.shared.trackerLog.lastRefresh = Date.now
     }
 }

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ToolbarAlertView: View {
-    @ObservedObject private var trackerManager = TrackerManager.shared
+    @Access(\.trackerEngine.trackerLog) private var trackerLog
+
     @State private var showPopover: Bool = false
     let tips: [TrackerAlert] = [.enterMinecraft]
     
     var body: some View {
         VStack {
-            if let error = trackerManager.alert {
+            if let error = trackerLog.alert {
                 Button {
                     showPopover.toggle()
                 } label: {
@@ -36,7 +37,7 @@ struct ToolbarAlertView: View {
                     .transition(.scale.combined(with: .opacity))
             }
         }
-        .animation(.linear(duration: 0.2), value: trackerManager.alert)
+        .animation(.linear(duration: 0.2), value: trackerLog.alert)
     }
 }
 

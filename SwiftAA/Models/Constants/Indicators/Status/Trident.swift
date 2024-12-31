@@ -26,7 +26,7 @@ class Trident: TransferableIndicator, StatusIndicator {
         key = thunderDone ? L10n.Statistic.Trident.thunder : ((completed) ? L10n.Statistic.Trident.awaiting : L10n.Statistic.Trident.obtain)
     }
     
-    private func hasAdvancements(progress: ProgressManager) -> Bool {
+    @MainActor private func hasAdvancements(progress: ProgressManager) -> Bool {
         if !progress.advancementCompleted(veryFrightening) {
             return false
         }

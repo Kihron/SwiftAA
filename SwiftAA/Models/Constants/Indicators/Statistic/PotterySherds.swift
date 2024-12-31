@@ -45,7 +45,7 @@ class PotterySherds: StatisticIndicator {
         key = L10n.Statistic.potterySherds(count)
     }
     
-    private func getCount(id: String, progress: ProgressManager) -> Int {
+    @MainActor private func getCount(id: String, progress: ProgressManager) -> Int {
         return max(0, progress.timesPickedUp(id) - progress.timesDropped(id))
     }
 }

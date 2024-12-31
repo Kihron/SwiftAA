@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-class ProgressManager: ObservableObject {
+@MainActor class ProgressManager: ObservableObject {
     @Published var advancementsState: [String:JsonAdvancement] = [:]
     @Published var statisticsState: [String:[String:Int]] = [:]
     
-    private var dataManager = DataManager.shared
-    
+    private var advancementManager: AdvancementManager = .shared
+
     private var playTime: Int = 0
     private var wasCleared: Bool = false
     
@@ -30,7 +30,7 @@ class ProgressManager: ObservableObject {
     
     func clearProgressState() {
         if advancementsState.isEmpty && !wasCleared {
-            dataManager.lastModified = Date.now
+            TrackerEngine.shared.trackerLog.lastRefresh = .now
             wasCleared = true
         } else if !advancementsState.isEmpty {
             wasCleared = false
@@ -86,24 +86,24 @@ class ProgressManager: ObservableObject {
     }
     
     private func updateIndicators() {
-        dataManager.allAdvancements.forEach { adv in
+        advancementManager.allAdvancements.forEach { adv in
             adv.update(progress: self)
         }
         
-        dataManager.statusIndicators.forEach { status in
+        advancementManager.statusIndicators.forEach { status in
             status.update(progress: self)
         }
         
-        dataManager.statisticIndicators.forEach { statistic in
+        advancementManager.statisticIndicators.forEach { statistic in
             statistic.update(progress: self)
         }
         
-        dataManager.uncounted.forEach { adv in
+        advancementManager.uncountedAdvancements.forEach { adv in
             adv.update(progress: self)
         }
         
-        dataManager.updateAdvancementFields()
-        if !dataManager.completedAllAdvancements {
+        advancementManager.updateAdvancementFields()
+        if !advancementManager.completedAllAdvancements {
             updateInGameTime()
         }
     }

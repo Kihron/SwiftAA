@@ -42,7 +42,7 @@ class TrackerManager: ObservableObject {
         
     }
     
-    func resetWorldPath() {
+    @MainActor func resetWorldPath() {
         worldPath = ""
         lastDirectoryUpdate = Date.now
         DataManager.shared.lastModified = Date.now

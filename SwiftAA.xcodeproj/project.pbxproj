@@ -80,9 +80,6 @@
 		B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C72886F404006EC138 /* Preview Assets.xcassets */; };
 		B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C42886F404006EC138 /* Assets.xcassets */; };
 		B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1D6288709F4006EC138 /* Minecraft.otf */; };
-		B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */; };
-		B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A830288AF27000560177 /* ToolbarProgressView.swift */; };
-		B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673A832288B104F00560177 /* ToolbarRefreshView.swift */; };
 		B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B0288C419100EB8C16 /* InfoPanelView.swift */; };
 		B67424B3288C41E900EB8C16 /* NotesPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67424B2288C41E900EB8C16 /* NotesPanelView.swift */; };
 		B6743EFC2B91035E000EEC78 /* conduit.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6743EFB2B91035E000EEC78 /* conduit.gif */; };
@@ -98,7 +95,6 @@
 		B6842B04296E59B9000B62DF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6842B03296E59B9000B62DF /* Strings.swift */; };
 		B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */; };
 		B6872FB528AEAA45003CEA95 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB428AEAA45003CEA95 /* Player.swift */; };
-		B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */; };
 		B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */; };
 		B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */; };
 		B687E17D28B3E06D002CF5D7 /* Advancements in Resources */ = {isa = PBXBuildFile; fileRef = B687E17C28B3E06C002CF5D7 /* Advancements */; };
@@ -140,7 +136,6 @@
 		B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E72888FCE100436551 /* PotionPanelView.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 		B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAB57F28BA831E007B981B /* TransparentView.swift */; };
-		B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */; };
 		B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */; };
 		B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */; };
 		B6C387E72B90431F007BA7D4 /* AnimatedIconLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C387E62B90431F007BA7D4 /* AnimatedIconLayer.swift */; };
@@ -266,9 +261,6 @@
 		B65FE5972AA6E5FE00C30A8F /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
 		B66A076F28879ED900DC0A2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B66A07712887A2C900DC0A2C /* CriterionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionView.swift; sourceTree = "<group>"; };
-		B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarAlertView.swift; sourceTree = "<group>"; };
-		B673A830288AF27000560177 /* ToolbarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarProgressView.swift; sourceTree = "<group>"; };
-		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
 		B67424B0288C419100EB8C16 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		B67424B2288C41E900EB8C16 /* NotesPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPanelView.swift; sourceTree = "<group>"; };
 		B6743EFB2B91035E000EEC78 /* conduit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conduit.gif; sourceTree = "<group>"; };
@@ -284,7 +276,6 @@
 		B6842B03296E59B9000B62DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B6872FB228AEA9D7003CEA95 /* URLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDecoder.swift; sourceTree = "<group>"; };
 		B6872FB428AEAA45003CEA95 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPlayerHead.swift; sourceTree = "<group>"; };
 		B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatsView.swift; sourceTree = "<group>"; };
 		B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatistic.swift; sourceTree = "<group>"; };
 		B687E17C28B3E06C002CF5D7 /* Advancements */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Advancements; sourceTree = "<group>"; };
@@ -326,7 +317,6 @@
 		B6A772E72888FCE100436551 /* PotionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionPanelView.swift; sourceTree = "<group>"; };
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
 		B6AAB57F28BA831E007B981B /* TransparentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentView.swift; sourceTree = "<group>"; };
-		B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarInfoView.swift; sourceTree = "<group>"; };
 		B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLayout.swift; sourceTree = "<group>"; };
 		B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayViewModel.swift; sourceTree = "<group>"; };
 		B6C387E62B90431F007BA7D4 /* AnimatedIconLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIconLayer.swift; sourceTree = "<group>"; };
@@ -684,11 +674,6 @@
 		B673A82D288AEF6500560177 /* Toolbar */ = {
 			isa = PBXGroup;
 			children = (
-				B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */,
-				B673A830288AF27000560177 /* ToolbarProgressView.swift */,
-				B673A832288B104F00560177 /* ToolbarRefreshView.swift */,
-				B6872FB628AEB3BA003CEA95 /* ToolbarPlayerHead.swift */,
-				B6B2A7122ACA08DD004C9EE0 /* ToolbarInfoView.swift */,
 			);
 			path = Toolbar;
 			sourceTree = "<group>";
@@ -1195,7 +1180,6 @@
 				B6F2088C2B8EC0D90025A914 /* NSImage+Ext.swift in Sources */,
 				B65AB3502AA96AA4001F4FE6 /* UserThemes+CoreDataClass.swift in Sources */,
 				B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */,
-				B6872FB728AEB3BA003CEA95 /* ToolbarPlayerHead.swift in Sources */,
 				B641CB532B8DACF500656D6C /* CALayerHosting.swift in Sources */,
 				B6F208972B8EC33B0025A914 /* CriteriaTickerTapeViewModel.swift in Sources */,
 				B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */,
@@ -1206,7 +1190,6 @@
 				B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */,
 				B65FE5912AA6CFE900C30A8F /* ThemeManager.swift in Sources */,
 				B63A08AB2B9A671900FA92FE /* UpdateMessageView.swift in Sources */,
-				B673A82F288AEF9D00560177 /* ToolbarAlertView.swift in Sources */,
 				B62405A32B80167300CAA885 /* L1_20S.swift in Sources */,
 				B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */,
 				498147892D224C2300606027 /* HeavilyCore.swift in Sources */,
@@ -1250,7 +1233,6 @@
 				B697E1142B84709800932278 /* ImageCache.swift in Sources */,
 				B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */,
 				B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */,
-				B673A831288AF27000560177 /* ToolbarProgressView.swift in Sources */,
 				B62EA6562B797F3700EB66AC /* ProgressBarStyle.swift in Sources */,
 				B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */,
 				B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */,
@@ -1270,7 +1252,6 @@
 				B676BDA42AA79937008BD8A9 /* Color+Ext.swift in Sources */,
 				B69EB67928AC08450029B988 /* OverlayCompletedView.swift in Sources */,
 				B697E10A2B844DAB00932278 /* AzureBluet.swift in Sources */,
-				B6B2A7132ACA08DD004C9EE0 /* ToolbarInfoView.swift in Sources */,
 				B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */,
 				B63A08AD2B9BFDF800FA92FE /* ReleaseEntry.swift in Sources */,
 				B697E0E62B84194A00932278 /* CreditsView.swift in Sources */,
@@ -1282,7 +1263,6 @@
 				B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */,
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
 				B65180052B1593E600D9CC99 /* OptimalOverlayView.swift in Sources */,
-				B673A833288B104F00560177 /* ToolbarRefreshView.swift in Sources */,
 				B6E331122AA80869001D7FF2 /* TrackerManager.swift in Sources */,
 				B65AB3442AA965BB001F4FE6 /* Model.xcdatamodeld in Sources */,
 				B6DFEE372B8C19650009C541 /* CriterionIconView.swift in Sources */,

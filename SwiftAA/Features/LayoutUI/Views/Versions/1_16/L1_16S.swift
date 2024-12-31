@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct L1_16S: View {
-    @State private var advancementManager: AdvancementManager = .shared
+    @Access(\.advancementManager) private var advancementManager
 
     @State private var topStats = Utilities.getSpecificStats(types: [.godApple, .trident, .shells])
     @State private var bottomStats = Utilities.getSpecificStats(types: [.witherSkulls, .ancientDebris])
