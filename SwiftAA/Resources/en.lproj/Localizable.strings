@@ -26,6 +26,7 @@
 "goal.animals_bred" = "Animals Bred";
 "goal.biomes_visited" = "Biomes Visited";
 "goal.cats" = "Cats";
+"goal.dogs" = "Dogs";
 "goal.foods_eaten" = "Foods Eaten";
 "goal.monsters_killed" = "Monsters Killed";
 "goal.nether" = "Visited";
@@ -210,6 +211,9 @@
 "statistic.upgrade_netherite" = "Netherite Up";
 "statistic.wither.killed" = "Wither Has Been Killed";
 "statistic.wither.skulls" = "Skulls\n%d / 3";
+"statistic.heavy_core" = "Heavy Core";
+"statistic.heavy_core.obtain" = "Obtain\nHeavy Core";
+"statistic.heavy_core.obtained" = "Obtained Heavy Core";
 
 "advancement.adventure.root" = "Adventure";
 "advancement.adventure.sleep_in_bed" = "Sweet\nDreams";
@@ -246,6 +250,15 @@
 "advancement.adventure.very_very_frightening" = "Very Very Frightening";
 "advancement.adventure.adventuring_time" = "Adventuring Time";
 "advancement.adventure.kill_all_mobs" = "Monsters Hunted";
+"advancement.adventure.brush_armadillo" = "Isn't it Scute?";
+"advancement.adventure.crafters_crafting_crafters" = "Crafters Crafting";
+"advancement.adventure.minecraft_trials_edition" = "Trial(s) Edition";
+"advancement.adventure.lighten_up" = "Lighten Up";
+"advancement.adventure.who_needs_rockets" = "Who Needs Rockets?";
+"advancement.adventure.blowback" = "Blowback";
+"advancement.adventure.under_lock_and_key" = "Under Lock and Key";
+"advancement.adventure.revaulting" = "Revaulting";
+"advancement.adventure.overoverkill" = "Over-Overkill";
 
 "advancement.end.root" = "The End";
 "advancement.end.kill_dragon" = "Free the\nEnd";
@@ -270,7 +283,7 @@
 "advancement.husbandry.wax_on" = "Wax On";
 "advancement.husbandry.wax_off" = "Wax Off";
 "advancement.husbandry.silk_touch_nest" = "Total Beelocation";
-"advancement.husbandry.ride_a_boat_with_a_goat" = "Whatever Floats Your Goat!";
+"advancement.husbandry.ride_a_boat_with_a_goat" = "What Floats\nYour Goat!";
 "advancement.husbandry.allay_deliver_item_to_player" = "You've Got a Friend in Me";
 "advancement.husbandry.allay_deliver_cake_to_note_block" = "Birthday\nSong";
 "advancement.husbandry.obtain_sniffer_egg" = "Smells Interesting";
@@ -283,6 +296,9 @@
 "advancement.husbandry.froglights" = "Our Powers Combined!";
 "advancement.husbandry.leash_all_frog_variants" = "Squad Hops Into Town";
 "advancement.husbandry.tadpole_in_a_bucket" = "Bukkit Bukkit";
+"advancement.husbandry.repair_wolf_armor" = "Good as New";
+"advancement.husbandry.remove_wolf_armor" = "Shear Brilliance";
+"advancement.husbandry.whole_pack" = "The Whole Pack";
 
 "advancement.story.root" = "Minecraft";
 "advancement.story.mine_stone" = "Stone Age";
@@ -406,6 +422,7 @@
 "advancement.goal.biomes_visited.dripstone_caves" = "Dripstone Caves";
 "advancement.goal.biomes_visited.lush_caves" = "Lush Caves";
 "advancement.goal.biomes_visited.deep_dark" = "Deep Dark";
+"advancement.goal.biomes_visited.pale_garden" = "Pale Garden";
 
 "advancement.goal.monsters_killed.creeper" = "Creeper";
 "advancement.goal.monsters_killed.zombie" = "Zombie";
@@ -441,6 +458,9 @@
 "advancement.goal.monsters_killed.evoker" = "Evoker";
 "advancement.goal.monsters_killed.vex" = "Vex";
 "advancement.goal.monsters_killed.ravager" = "Ravager";
+"advancement.goal.monsters_killed.bogged" = "Bogged";
+"advancement.goal.monsters_killed.breeze" = "Breeze";
+"advancement.goal.monsters_killed.creaking" = "Creaking";
 
 "advancement.goal.animals_bred.pig" = "Pig";
 "advancement.goal.animals_bred.sheep" = "Sheep";
@@ -466,6 +486,17 @@
 "advancement.goal.animals_bred.frog" = "Frog";
 "advancement.goal.animals_bred.strider" = "Strider";
 "advancement.goal.animals_bred.hoglin" = "Hoglin";
+"advancement.goal.animals_bred.armadillo" = "Armadillo";
+
+"advancement.goal.dogs.pale" = "Pale";
+"advancement.goal.dogs.ashen" = "Ashen";
+"advancement.goal.dogs.snowy" = "Snowy";
+"advancement.goal.dogs.black" = "Black";
+"advancement.goal.dogs.rusty" = "Rusty";
+"advancement.goal.dogs.chestnut" = "Chestnut";
+"advancement.goal.dogs.spotted" = "Spotted";
+"advancement.goal.dogs.striped" = "Striped";
+"advancement.goal.dogs.woods" = "Woods";
 
 "advancement.goal.foods_eaten.bread" = "Bread";
 "advancement.goal.foods_eaten.cooked_porkchop" = "Porkchop";
@@ -550,6 +581,15 @@
 "advancement.adventure.very_very_frightening.short" = "VVF";
 "advancement.adventure.adventuring_time.short" = "Adventuring";
 "advancement.adventure.kill_all_mobs.short" = "Monsters";
+"advancement.adventure.brush_armadillo.short" = "Scute?";
+"advancement.adventure.crafters_crafting_crafters.short" = "Crafters";
+"advancement.adventure.minecraft_trials_edition.short" = "Trial(s)";
+"advancement.adventure.lighten_up.short" = "Lighten Up";
+"advancement.adventure.who_needs_rockets.short" = "Rockets?";
+"advancement.adventure.blowback.short" = "Blowback";
+"advancement.adventure.under_lock_and_key.short" = "Lock/Key";
+"advancement.adventure.revaulting.short" = "Revaulting";
+"advancement.adventure.overoverkill.short" = "Overkill";
 "advancement.end.kill_dragon.short" = "Free End";
 "advancement.end.dragon_egg.short" = "Next Gen";
 "advancement.end.enter_end_gateway.short" = "Getaway";
@@ -588,6 +628,9 @@
 "advancement.husbandry.froglights.short" = "Froglights";
 "advancement.husbandry.leash_all_frog_variants.short" = "The Squad";
 "advancement.husbandry.tadpole_in_a_bucket.short" = "Bukkit";
+"advancement.husbandry.repair_wolf_armor.short" = "Repair";
+"advancement.husbandry.remove_wolf_armor.short" = "Shear";
+"advancement.husbandry.whole_pack.short" = "Whole Pack";
 "advancement.nether.find_fortress.short" = "Fortress";
 "advancement.nether.find_bastion.short" = "The Days";
 "advancement.nether.obtain_crying_obsidian.short" = "Onions?";

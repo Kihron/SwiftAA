@@ -14,7 +14,9 @@ struct NotesPanelView: View {
     
     @State private var currentNote: Note = Note.newNote
     @State private var userInteracted: Bool = false
-    
+
+    private let f3CRegex = #//execute in [^/]*(overworld|nether|end) run tp @s (-?\d+\.\d+) (-?\d+\.\d+) (-?\d+\.\d+) -?\d+\.\d+ -?\d+\.\d+/#
+
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
@@ -79,8 +81,6 @@ struct NotesPanelView: View {
             currentNote = Note.newNote
         }
     }
-    
-    private let f3CRegex = #//execute in [^/]*(overworld|nether|end) run tp @s (-?\d+\.\d+) (-?\d+\.\d+) (-?\d+\.\d+) -?\d+\.\d+ -?\d+\.\d+/#
     
     private func checkF3C(input: String) -> String {
         if let match = input.firstMatch(of: f3CRegex),

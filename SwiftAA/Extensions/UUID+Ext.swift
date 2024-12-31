@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension UUID: RawRepresentable {
+extension UUID: @retroactive RawRepresentable {
     public var rawValue: String {
         self.uuidString
     }

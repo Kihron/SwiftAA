@@ -9,11 +9,12 @@ import SwiftUI
 
 class PlayerManager: ObservableObject {
     @AppStorage("player") var player: Player? = nil
-    
+    @Published var availablePlayers: [String] = []
+
     @Published var uuid: String = "" {
         didSet {
-            Task {
-                await updatePlayer(uuid: uuid)
+            Task { @MainActor in
+                self.player = await fetchPlayer(for: uuid)
             }
         }
     }
@@ -23,31 +24,38 @@ class PlayerManager: ObservableObject {
     init() {
         
     }
-    
-    var playerHasLoaded: Bool {
-        guard let player = player else { return false }
-        return !player.id.isEmpty
+
+    func getActivePlayerImageURL() -> URL? {
+        guard let id = player?.id else { return nil }
+        return getPlayerImageURL(for: id)
     }
-    
-    var imageURL: URL? {
-        let id = player?.id ?? ""
-        return URL(string: "https://cravatar.eu/helmhead/\(id)/64.png")
+
+    func getPlayerImageURL(for uuid: String?) -> URL? {
+        guard let uuid else { return nil }
+        return URL(string: "https://cravatar.eu/helmhead/\(uuid)/64.png")
     }
-    
-    func updatePlayerUUID(uuid: String) {
+
+    func updatePlayerUUID(uuid: String?) {
+        guard let uuid else { return }
+
         if self.uuid != uuid {
             self.uuid = uuid
         }
     }
-    
-    @MainActor private func updatePlayer(uuid: String) async {
-        guard let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)") else { return }
-        
+
+    func updateAvailablePlayers(uuids: [String]) {
+        self.availablePlayers = uuids
+    }
+
+    @MainActor private func fetchPlayer(for uuid: String) async -> Player? {
+        guard let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)") else { return nil }
+
         do {
             let player = try await URLSession.shared.decode(Player.self, from: url)
-            self.player = player
+            return player
         } catch {
-            print(error.localizedDescription)
+            print("Failed to decode Player for UUID \(uuid): \(error.localizedDescription)")
+            return nil
         }
     }
 }

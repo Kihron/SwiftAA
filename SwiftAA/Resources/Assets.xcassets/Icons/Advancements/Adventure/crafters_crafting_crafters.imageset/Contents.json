@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "crafters_crafting_crafters^32 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "crafters_crafting_crafters^32.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "crafters_crafting_crafters^48.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

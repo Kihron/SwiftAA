@@ -21,29 +21,27 @@ struct SettingsAccountView: View {
                     Divider()
                     
                     HStack(alignment: .center) {
-                        if playerManager.playerHasLoaded {
-                            CachedAsyncImage(url: playerManager.imageURL, urlCache: .imageCache) { phase in
-                                switch phase {
-                                    case .empty:
-                                        ProgressView()
-                                    case .success(let image):
-                                        image.interpolation(.none)
-                                            .resizable()
-                                            .frame(width: 26, height: 26)
-                                    case .failure:
-                                        EmptyView()
-                                    @unknown default:
-                                        EmptyView()
-                                }
+                        CachedAsyncImage(url: playerManager.getActivePlayerImageURL(), urlCache: .imageCache) { phase in
+                            switch phase {
+                                case .empty:
+                                    ProgressView()
+                                case .success(let image):
+                                    image.interpolation(.none)
+                                        .resizable()
+                                        .frame(width: 26, height: 26)
+                                case .failure:
+                                    Image("steve")
+                                        .interpolation(.none)
+                                        .resizable()
+                                        .frame(width: 26, height: 26)
+                                @unknown default:
+                                    EmptyView()
                             }
-                        } else {
-                            Image("steve")
-                                .interpolation(.none)
-                                .resizable()
-                                .frame(width: 26, height: 26)
                         }
                         
                         Text(player.name)
+                            .contentTransition(.numericText())
+                            .animation(.smooth, value: player)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .padding(.leading, 17)

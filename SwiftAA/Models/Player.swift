@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Player: Codable {
+struct Player: Codable, Identifiable, Hashable {
     let id: String
     let name: String
 }

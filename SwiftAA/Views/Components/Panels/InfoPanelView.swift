@@ -23,7 +23,7 @@ struct InfoPanelView: View {
                             PotionPanelView()
                     }
                 }
-                .frame(maxHeight: 506)
+                .frame(maxHeight: 514)
             }
             
             Button {

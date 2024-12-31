@@ -17,5 +17,11 @@
         ["stony_peaks"],
         ["frozen_peaks", "jagged_peaks"],
         ["mushroom_fields"]
+    ],
+    "1.21": [
+        ["windswept_gravelly_hills"],
+        ["stony_peaks"],
+        ["frozen_peaks", "jagged_peaks"],
+        ["mushroom_fields"]
     ]
 }
