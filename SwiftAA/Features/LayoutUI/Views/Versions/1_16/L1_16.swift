@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct L1_16: View {
-    @ObservedObject private var trackerManager = TrackerManager.shared
-    
+    @AppSettings(\.tracker) private var settings
+
     var body: some View {
-        if [.v1_16, .v1_16_5].contains(trackerManager.gameVersion) {
-            switch trackerManager.layoutStyle {
+        if [.v1_16, .v1_16_5].contains(settings.gameVersion) {
+            switch settings.layoutStyle {
                 case .standard:
                     L1_16S()
                 case .vertical:

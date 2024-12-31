@@ -8,8 +8,8 @@ import SwiftUI
 
 struct SettingsCardView<Content: View>: View {
     var padding: CGFloat?
-    let content: () -> Content
-    
+    @ViewBuilder let content: () -> Content
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             content()

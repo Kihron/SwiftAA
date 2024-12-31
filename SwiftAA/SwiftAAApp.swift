@@ -14,7 +14,8 @@ struct SwiftAAApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
     @ObservedObject private var viewModel = AppViewModel()
-    
+    @State private var AdvancementManager: AdvancementManager = .shared
+
     var body: some Scene {
         Window("SwiftAA", id: "swiftaa-window") {
             ContentView()

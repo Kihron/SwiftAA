@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
-@MainActor @Observable class Settings {
+@MainActor class Settings: ObservableObject {
     private let filemanager = FileManager.default
 
-    static let shared = Settings()
+    static let shared: Settings = .init()
 
-    var preferences: Preferences
+    @Published var preferences: Preferences
+
+    private var storeTask: AnyCancellable!
 
     private init() {
         self.preferences = .init()
@@ -21,13 +24,8 @@ import SwiftUI
     }
 
     private func observePreferences() {
-        withObservationTracking {
-            _ = preferences
-        } onChange: { [weak self] in
-            Task {
-                try? await self?.savePreferences()
-                await self?.observePreferences()
-            }
+        self.storeTask = self.$preferences.throttle(for: 2, scheduler: RunLoop.main, latest: true).sink {
+            try? self.savePreferences($0)
         }
     }
 
@@ -54,8 +52,8 @@ import SwiftUI
         return prefs
     }
 
-    private func savePreferences() throws {
-        let data = try JSONEncoder().encode(preferences)
+    private func savePreferences(_ data: Preferences) throws {
+        let data = try JSONEncoder().encode(data)
         let json = try JSONSerialization.jsonObject(with: data)
         let prettyJSON = try JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted])
         try prettyJSON.write(to: settingsURL, options: .atomic)

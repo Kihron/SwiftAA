@@ -12,7 +12,9 @@ struct ContentView: View {
     @ObservedObject private var themeManager = ThemeManager.shared
     @ObservedObject private var noteManager = NoteManager.shared
     @ObservedObject private var updateManager = UpdateManager.shared
-    
+
+    @AppSettings(\.tracker.gameVersion) private var gameVersion
+
     @FetchRequest(entity: UserThemes.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \UserThemes.name, ascending: true)])
     private var themeFetch: FetchedResults<UserThemes>
     
@@ -23,7 +25,7 @@ struct ContentView: View {
         ScrollView(.vertical) {
             ScrollView(.horizontal) {
                 ZStack {
-                    switch TrackerManager.shared.gameVersion {
+                    switch gameVersion {
                         case .v1_16, .v1_16_5 : L1_16()
                         case .v1_19 : L1_19()
                         case .v1_20: L1_20()

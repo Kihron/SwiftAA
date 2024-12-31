@@ -8,17 +8,12 @@
 import SwiftUI
 
 struct VersionFrameModifier: ViewModifier {
-    @ObservedObject private var trackerManager = TrackerManager.shared
+    @AppSettings(\.tracker) private var settings
     @State private var hasChanged: Bool = false
-    
-    private var heightFrame: CGFloat? {
-        let usableHeight = NSScreen.main?.visibleFrame.height ?? 0
-        return trackerManager.automaticExpansion && hasChanged ? usableHeight : .none
-    }
     
     func body(content: Content) -> some View {
         Group {
-            switch (trackerManager.gameVersion, trackerManager.layoutStyle)  {
+            switch (settings.gameVersion, settings.layoutStyle)  {
                 case (.v1_16, .standard), (.v1_16_5, .standard):
                     content
                         .frame(minWidth: 350, idealWidth: 1431, maxWidth: 1431, minHeight: 260, idealHeight: 764, maxHeight: 764, alignment: .center)
@@ -52,18 +47,17 @@ struct VersionFrameModifier: ViewModifier {
                 
             }
         }
-        .frame(maxHeight: heightFrame)
         .fixedSize(horizontal: hasChanged, vertical: hasChanged)
-        .onChange(of: trackerManager.gameVersion) { _ in
+        .onChange(of: settings.gameVersion) { _, _ in
             handleDimensionChange()
         }
-        .onChange(of: trackerManager.layoutStyle) { value in
+        .onChange(of: settings.layoutStyle) { _, _ in
             handleDimensionChange()
         }
     }
     
     private func handleDimensionChange() {
-        if trackerManager.automaticExpansion {
+        if settings.automaticExpansion {
             hasChanged = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.hasChanged = false

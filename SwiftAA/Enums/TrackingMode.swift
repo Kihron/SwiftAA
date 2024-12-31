@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TrackingMode: String, CaseIterable, Identifiable, Hashable, Codable {
+enum TrackingMode: String, SettingsOption {
     case seamless = "tracking.seamless"
     case directory = "tracking.custom_saves"
     

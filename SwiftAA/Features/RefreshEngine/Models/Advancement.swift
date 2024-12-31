@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-class Advancement: NSObject, Indicator, Identifiable, Codable {
+@Observable class Advancement: NSObject, Indicator, Identifiable, Codable {
     var id: String
+    var category: Category
     var key: String
     var name: String
     var shortName: String?
@@ -27,8 +28,9 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         }
     }
     
-    init(id: String, key: String, name: String, shortName: String? = nil, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool, tooltip: String = "") {
+    init(id: String, category: Category = .none, key: String, name: String, shortName: String? = nil, icon: String, frameStyle: String, criteria: [Criterion], completed: Bool, tooltip: String = "") {
         self.id = id
+        self.category = category
         self.key = key
         self.name = name
         self.shortName = shortName
@@ -38,7 +40,7 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         self.completed = completed
         self.tooltip = tooltip
     }
-    
+
     public override var description: String {
         "\(name) \(completed)"
     }
@@ -50,7 +52,7 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
         init(first: Advancement, second: Advancement, shortName: String? = nil) {
             self.first = first
             self.second = second
-            super.init(id: first.id, key: first.key, name: first.name, shortName: shortName, icon: first.icon, frameStyle: first.frameStyle, criteria: first.criteria, completed: first.completed && second.completed)
+            super.init(id: first.id, category: first.category, key: first.key, name: first.name, shortName: shortName, icon: first.icon, frameStyle: first.frameStyle, criteria: first.criteria, completed: first.completed && second.completed)
         }
         
         required init(from decoder: Decoder) throws {
@@ -65,10 +67,6 @@ class Advancement: NSObject, Indicator, Identifiable, Codable {
     }
 }
 
-extension Advancement: Transferable {
-    static var transferRepresentation: some TransferRepresentation {
-        CodableRepresentation(contentType: .item)
-    }
-    
-    static let defaultValue = Advancement(id: "", key: "", name: "", icon: "", frameStyle: "", criteria: [], completed: false)
+extension Advancement {
+    static let defaultValue = Advancement(id: "", category: .none, key: "", name: "", icon: "", frameStyle: "", criteria: [], completed: false)
 }

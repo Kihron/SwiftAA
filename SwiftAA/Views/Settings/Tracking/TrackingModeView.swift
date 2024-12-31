@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct TrackingModeView: View {
-    @ObservedObject private var trackerManager = TrackerManager.shared
-    @ObservedObject private var dataManager = DataManager.shared
+    @AppSettings(\.tracker) private var settings
     
     var body: some View {
         VStack(spacing: 12) {
@@ -18,7 +17,7 @@ struct TrackingModeView: View {
             SettingsCardView {
                 VStack {
                     HStack {
-                        Picker("", selection: $trackerManager.trackingMode) {
+                        Picker("", selection: $settings.trackingMode) {
                             ForEach(TrackingMode.allCases, id: \.self) { item in
                                 Text(item.label.localized)
                             }
@@ -29,11 +28,11 @@ struct TrackingModeView: View {
                     
                     Divider()
                     
-                    if trackerManager.trackingMode == .seamless {
-                        SettingsToggleView(title: L10n.Tracking.Mode.automaticVersionDetection, description: L10n.Tracking.Mode.AutomaticVersionDetection.info, option: $trackerManager.automaticVersionDetection)
+                    if settings.trackingMode == .seamless {
+                        SettingsToggleView(title: L10n.Tracking.Mode.automaticVersionDetection, description: L10n.Tracking.Mode.AutomaticVersionDetection.info, option: $settings.automaticVersionDetection)
                     } else {
                         HStack {
-                            TextField("", text: $trackerManager.customSavesPath)
+                            TextField("", text: $settings.customSavesPath)
                                 .textFieldStyle(.roundedBorder)
                                 .autocorrectionDisabled()
                             
@@ -45,10 +44,10 @@ struct TrackingModeView: View {
                 }
             }
         }
-        .animation(.bouncy, value: trackerManager.trackingMode)
-        .onChange(of: trackerManager.trackingMode) { _ in
+        .animation(.bouncy, value: settings.trackingMode)
+        .onChange(of: settings.trackingMode) { _ in
             withAnimation {
-                trackerManager.resetWorldPath()
+//                trackerManager.resetWorldPath()
             }
         }
     }

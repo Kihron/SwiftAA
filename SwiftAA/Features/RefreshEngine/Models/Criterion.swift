@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Criterion: NSObject, Codable, Identifiable {
+@Observable class Criterion: NSObject, Codable, Identifiable {
     var id: String
     var key: String
     var name: String

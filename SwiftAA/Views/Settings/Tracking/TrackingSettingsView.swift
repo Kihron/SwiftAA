@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct TrackingSettingsView: View {
-    @ObservedObject private var trackerManager = TrackerManager.shared
-    
+    @AppSettings(\.tracker) private var settings
+
     private var availableStyles: [LayoutStyle] {
-        return LayoutStyle.getAvailableStyles(version: trackerManager.gameVersion)
+        return LayoutStyle.getAvailableStyles(version: settings.gameVersion)
     }
     
     var body: some View {
         VStack(spacing: 12) {
             SettingsCardView {
                 VStack {
-                    SettingsPickerView(title: L10n.Tracking.gameVersion, width: 75, selection: $trackerManager.gameVersion)
-                        .disabled(trackerManager.automaticVersionDetection && trackerManager.trackingMode == .seamless)
-                    
+                    SettingsPickerView(title: L10n.Tracking.gameVersion, width: 75, selection: $settings.gameVersion)
+                        .disabled(settings.automaticVersionDetection && settings.trackingMode == .seamless)
+
                     Group {
                         if availableStyles.count > 1 {
                             Divider()
                             
-                            SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $trackerManager.layoutStyle, filter: availableStyles)
+                            SettingsPickerView(title: L10n.Tracking.viewStyle, description: L10n.Tracking.ViewStyle.info, width: 110, selection: $settings.layoutStyle, filter: availableStyles)
                         }
                     }
                     .disabled(availableStyles.count <= 1)
@@ -33,7 +33,7 @@ struct TrackingSettingsView: View {
             }
             
             SettingsCardView {
-                SettingsToggleView(title: L10n.Tracking.automaticExpansion, description: L10n.Tracking.AutomaticExpansion.info, option: $trackerManager.automaticExpansion)
+                SettingsToggleView(title: L10n.Tracking.automaticExpansion, description: L10n.Tracking.AutomaticExpansion.info, option: $settings.automaticExpansion)
             }
             
             TrackingModeView()

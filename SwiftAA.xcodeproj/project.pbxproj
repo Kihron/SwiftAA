@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		490D35042B942F7300342D04 /* enchanted_netherite_boots.gif in Resources */ = {isa = PBXBuildFile; fileRef = 490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */; };
-		490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F121D2AD3701300BC30DD /* L1_16V.swift */; };
 		498147892D224C2300606027 /* HeavilyCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498147882D224C0F00606027 /* HeavilyCore.swift */; };
 		498A3E842D20FA7500F0A345 /* L1_21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A3E832D20FA6A00F0A345 /* L1_21.swift */; };
 		498A3E8A2D21153100F0A345 /* L1_21S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A3E872D21153100F0A345 /* L1_21S.swift */; };
@@ -70,9 +69,7 @@
 		B65AB3572AA97EB5001F4FE6 /* UUID+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB3562AA97EB5001F4FE6 /* UUID+Ext.swift */; };
 		B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AB3582AA98281001F4FE6 /* Theme.swift */; };
 		B65AE1C12886F401006EC138 /* SwiftAAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C02886F401006EC138 /* SwiftAAApp.swift */; };
-		B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1C22886F401006EC138 /* AdvPanelView.swift */; };
 		B65AE1D12886F8C1006EC138 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D02886F8C1006EC138 /* IndicatorView.swift */; };
-		B65AE1D42887032F006EC138 /* Advancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AE1D32887032F006EC138 /* Advancement.swift */; };
 		B65B074D28AFDD1600E10EC5 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B074C28AFDD1600E10EC5 /* UpdateManager.swift */; };
 		B65FE5912AA6CFE900C30A8F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5902AA6CFE900C30A8F /* ThemeManager.swift */; };
 		B65FE5932AA6D27700C30A8F /* ThemePresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5922AA6D27700C30A8F /* ThemePresets.swift */; };
@@ -80,7 +77,6 @@
 		B65FE5982AA6E5FE00C30A8F /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FE5972AA6E5FE00C30A8F /* Potion.swift */; };
 		B66A077028879ED900DC0A2C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A076F28879ED900DC0A2C /* DataManager.swift */; };
 		B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07712887A2C900DC0A2C /* CriterionView.swift */; };
-		B66A07742887A32900DC0A2C /* Criterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A07732887A32900DC0A2C /* Criterion.swift */; };
 		B66A077D2887B83400DC0A2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C72886F404006EC138 /* Preview Assets.xcassets */; };
 		B66A077E2887B83900DC0A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1C42886F404006EC138 /* Assets.xcassets */; };
 		B66A077F2887B84000DC0A2C /* Minecraft.otf in Resources */ = {isa = PBXBuildFile; fileRef = B65AE1D6288709F4006EC138 /* Minecraft.otf */; };
@@ -106,8 +102,6 @@
 		B6872FB928AEBEB6003CEA95 /* FinalStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */; };
 		B6872FC528AEDA4A003CEA95 /* FinalStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */; };
 		B687E17D28B3E06D002CF5D7 /* Advancements in Resources */ = {isa = PBXBuildFile; fileRef = B687E17C28B3E06C002CF5D7 /* Advancements */; };
-		B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18628B3E457002CF5D7 /* L1_16.swift */; };
-		B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */; };
 		B687E18B28B3E996002CF5D7 /* L1_19.swift in Sources */ = {isa = PBXBuildFile; fileRef = B687E18A28B3E996002CF5D7 /* L1_19.swift */; };
 		B687E18D28B48079002CF5D7 /* sculk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* sculk_sensor.gif */; };
 		B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */; };
@@ -142,7 +136,6 @@
 		B6A4AF762AECBEB600C7B805 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */; };
 		B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */; };
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
-		B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E3288892BD00436551 /* GoalPanelView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
 		B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E72888FCE100436551 /* PotionPanelView.swift */; };
 		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
@@ -161,7 +154,6 @@
 		B6D3065828A2B150004D27E6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D3065728A2B150004D27E6 /* String+Ext.swift */; };
 		B6D67AE42B742ED3007AA80C /* TrackingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */; };
 		B6D67AE72B744A97007AA80C /* L1_20.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D67AE62B744A97007AA80C /* L1_20.swift */; };
-		B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD06252AC515F3005D1B2A /* L1_16M.swift */; };
 		B6DD182B2BAE778600C963AE /* ModernProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD182A2BAE778600C963AE /* ModernProgressBar.swift */; };
 		B6DFEE322B8BDD840009C541 /* L1_20V.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFEE312B8BDD840009C541 /* L1_20V.swift */; };
 		B6DFEE342B8C15910009C541 /* AnimatedIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DFEE332B8C15910009C541 /* AnimatedIconView.swift */; };
@@ -182,7 +174,6 @@
 		B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */; };
 		B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7B0872AAA951700D83FA7 /* OverlayView.swift */; };
 		B6E96CE02BBF800100FB59F2 /* FallbackCachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E96CDF2BBF800100FB59F2 /* FallbackCachedAsyncImage.swift */; };
-		B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */; };
 		B6EEBAD72AC4F9B7001CF4D0 /* LayoutStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */; };
 		B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */; };
 		B6F1B48C2AAEAFFF00422D8E /* TickerTapeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */; };
@@ -201,7 +192,6 @@
 
 /* Begin PBXFileReference section */
 		490D35032B942F7300342D04 /* enchanted_netherite_boots.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = enchanted_netherite_boots.gif; sourceTree = "<group>"; };
-		490F121D2AD3701300BC30DD /* L1_16V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16V.swift; sourceTree = "<group>"; };
 		498147882D224C0F00606027 /* HeavilyCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavilyCore.swift; sourceTree = "<group>"; };
 		498A3E832D20FA6A00F0A345 /* L1_21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21.swift; sourceTree = "<group>"; };
 		498A3E872D21153100F0A345 /* L1_21S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_21S.swift; sourceTree = "<group>"; };
@@ -263,12 +253,10 @@
 		B65AB3582AA98281001F4FE6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B65AE1BD2886F401006EC138 /* SwiftAA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65AE1C02886F401006EC138 /* SwiftAAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAAApp.swift; sourceTree = "<group>"; };
-		B65AE1C22886F401006EC138 /* AdvPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvPanelView.swift; sourceTree = "<group>"; };
 		B65AE1C42886F404006EC138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65AE1C72886F404006EC138 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B65AE1C92886F404006EC138 /* SwiftAA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAA.entitlements; sourceTree = "<group>"; };
 		B65AE1D02886F8C1006EC138 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		B65AE1D32887032F006EC138 /* Advancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advancement.swift; sourceTree = "<group>"; };
 		B65AE1D6288709F4006EC138 /* Minecraft.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.otf; sourceTree = "<group>"; };
 		B65AE1D828870B66006EC138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B65B074C28AFDD1600E10EC5 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
@@ -278,7 +266,6 @@
 		B65FE5972AA6E5FE00C30A8F /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
 		B66A076F28879ED900DC0A2C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B66A07712887A2C900DC0A2C /* CriterionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionView.swift; sourceTree = "<group>"; };
-		B66A07732887A32900DC0A2C /* Criterion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criterion.swift; sourceTree = "<group>"; };
 		B673A82E288AEF9D00560177 /* ToolbarAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarAlertView.swift; sourceTree = "<group>"; };
 		B673A830288AF27000560177 /* ToolbarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarProgressView.swift; sourceTree = "<group>"; };
 		B673A832288B104F00560177 /* ToolbarRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarRefreshView.swift; sourceTree = "<group>"; };
@@ -301,8 +288,6 @@
 		B6872FB828AEBEB6003CEA95 /* FinalStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatsView.swift; sourceTree = "<group>"; };
 		B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalStatistic.swift; sourceTree = "<group>"; };
 		B687E17C28B3E06C002CF5D7 /* Advancements */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Advancements; sourceTree = "<group>"; };
-		B687E18628B3E457002CF5D7 /* L1_16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16.swift; sourceTree = "<group>"; };
-		B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionFrameModifier.swift; sourceTree = "<group>"; };
 		B687E18A28B3E996002CF5D7 /* L1_19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_19.swift; sourceTree = "<group>"; };
 		B687E18C28B48079002CF5D7 /* sculk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sculk_sensor.gif; sourceTree = "<group>"; };
 		B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSidebar.swift; sourceTree = "<group>"; };
@@ -337,7 +322,6 @@
 		B6A4AF752AECBEB600C7B805 /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
 		B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableIndicator.swift; sourceTree = "<group>"; };
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
-		B6A772E3288892BD00436551 /* GoalPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPanelView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6A772E72888FCE100436551 /* PotionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionPanelView.swift; sourceTree = "<group>"; };
 		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
@@ -354,7 +338,6 @@
 		B6D3065728A2B150004D27E6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B6D67AE32B742ED3007AA80C /* TrackingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModeView.swift; sourceTree = "<group>"; };
 		B6D67AE62B744A97007AA80C /* L1_20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20.swift; sourceTree = "<group>"; };
-		B6DD06252AC515F3005D1B2A /* L1_16M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16M.swift; sourceTree = "<group>"; };
 		B6DD182A2BAE778600C963AE /* ModernProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernProgressBar.swift; sourceTree = "<group>"; };
 		B6DFEE312B8BDD840009C541 /* L1_20V.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_20V.swift; sourceTree = "<group>"; };
 		B6DFEE332B8C15910009C541 /* AnimatedIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIconView.swift; sourceTree = "<group>"; };
@@ -375,7 +358,6 @@
 		B6E7B0832AAA894600D83FA7 /* UpdateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSettings.swift; sourceTree = "<group>"; };
 		B6E7B0872AAA951700D83FA7 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		B6E96CDF2BBF800100FB59F2 /* FallbackCachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackCachedAsyncImage.swift; sourceTree = "<group>"; };
-		B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_16S.swift; sourceTree = "<group>"; };
 		B6EEBAD62AC4F9B7001CF4D0 /* LayoutStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyle.swift; sourceTree = "<group>"; };
 		B6F1B4892AAEAAA500422D8E /* OverlayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStyle.swift; sourceTree = "<group>"; };
 		B6F1B48B2AAEAFFF00422D8E /* TickerTapeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTapeOverlayView.swift; sourceTree = "<group>"; };
@@ -694,7 +676,6 @@
 		B66DB3D428A29F47006BE9D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B687E18828B3E7F1002CF5D7 /* VersionFrameModifier.swift */,
 				B6F1B48D2AAEB4CA00422D8E /* OverlayFrameModifier.swift */,
 			);
 			path = View;
@@ -737,7 +718,6 @@
 		B687E17E28B3E37F002CF5D7 /* Versions */ = {
 			isa = PBXGroup;
 			children = (
-				B6EEBAD22AC4F854001CF4D0 /* 1_16 */,
 				B6EEBAD32AC4F8B1001CF4D0 /* 1_19 */,
 				B6D67AE52B744A61007AA80C /* 1_20 */,
 				498A3E822D20FA2D00F0A345 /* 1_21 */,
@@ -961,17 +941,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		B6EEBAD22AC4F854001CF4D0 /* 1_16 */ = {
-			isa = PBXGroup;
-			children = (
-				B687E18628B3E457002CF5D7 /* L1_16.swift */,
-				B6EEBAD42AC4F8DB001CF4D0 /* L1_16S.swift */,
-				B6DD06252AC515F3005D1B2A /* L1_16M.swift */,
-				490F121D2AD3701300BC30DD /* L1_16V.swift */,
-			);
-			path = 1_16;
-			sourceTree = "<group>";
-		};
 		B6EEBAD32AC4F8B1001CF4D0 /* 1_19 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,9 +1000,7 @@
 				B6A772FF28899D3900436551 /* JsonAdvancement.swift */,
 				B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */,
 				B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */,
-				B65AE1D32887032F006EC138 /* Advancement.swift */,
 				B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */,
-				B66A07732887A32900DC0A2C /* Criterion.swift */,
 				B6872FB428AEAA45003CEA95 /* Player.swift */,
 				B683A1292ABD4D7700162E7C /* Note.swift */,
 			);
@@ -1090,8 +1057,6 @@
 				B62A00F32AB6A468007F5B7A /* Leaderboard */,
 				B6A772E72888FCE100436551 /* PotionPanelView.swift */,
 				B67424B0288C419100EB8C16 /* InfoPanelView.swift */,
-				B65AE1C22886F401006EC138 /* AdvPanelView.swift */,
-				B6A772E3288892BD00436551 /* GoalPanelView.swift */,
 				B62405AA2B81AD9A00CAA885 /* StatisticPanelView.swift */,
 			);
 			path = Panels;
@@ -1223,7 +1188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6CFEAE32B7C266E0008542B /* MinecraftFont.swift in Sources */,
-				B6DD06262AC515F3005D1B2A /* L1_16M.swift in Sources */,
 				B6842B04296E59B9000B62DF /* Strings.swift in Sources */,
 				B699E5172B92FDB600B9A4A5 /* SizeReader.swift in Sources */,
 				B697E1082B844D9B00932278 /* Pufferfish.swift in Sources */,
@@ -1248,7 +1212,6 @@
 				498147892D224C2300606027 /* HeavilyCore.swift in Sources */,
 				B697E0F92B844C9400932278 /* MajorBiomes.swift in Sources */,
 				B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */,
-				B66A07742887A32900DC0A2C /* Criterion.swift in Sources */,
 				B6F2088A2B8E978B0025A914 /* IndicatorTickerTapeView.swift in Sources */,
 				B62889502B96D12400C5C45D /* CriterionLayer.swift in Sources */,
 				B6E96CE02BBF800100FB59F2 /* FallbackCachedAsyncImage.swift in Sources */,
@@ -1267,13 +1230,11 @@
 				B6C90F952ADF7B2E00143070 /* StatusIndicatorRowView.swift in Sources */,
 				B697E0EB2B844B9700932278 /* Trident.swift in Sources */,
 				B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */,
-				B65AE1C32886F401006EC138 /* AdvPanelView.swift in Sources */,
 				B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
 				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
 				B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
-				B687E18728B3E457002CF5D7 /* L1_16.swift in Sources */,
 				B697E1022B844D5500932278 /* EnderPearls.swift in Sources */,
 				B69EB68028AC92860029B988 /* RoundedCornersShape.swift in Sources */,
 				B676BDA12AA78E12008BD8A9 /* UserTheme.swift in Sources */,
@@ -1296,10 +1257,8 @@
 				B6E3310D2AA7FF1F001D7FF2 /* SettingsBarItem.swift in Sources */,
 				B676BDAB2AA7A85B008BD8A9 /* Optional+Ext.swift in Sources */,
 				498A3E842D20FA7500F0A345 /* L1_21.swift in Sources */,
-				490F121E2AD3701300BC30DD /* L1_16V.swift in Sources */,
 				B6F92E9D28B739C9000B6D06 /* OverlayShimmerView.swift in Sources */,
 				B683A12D2ABD54A900162E7C /* WorldNote+CoreDataClass.swift in Sources */,
-				B65AE1D42887032F006EC138 /* Advancement.swift in Sources */,
 				B6F1B4902AAEC34500422D8E /* PlayerManager.swift in Sources */,
 				B683A12E2ABD54A900162E7C /* WorldNote+CoreDataProperties.swift in Sources */,
 				B6498D732AAC226400230808 /* OverlayManager.swift in Sources */,
@@ -1348,7 +1307,6 @@
 				B6DFEE442B8C3EEC0009C541 /* RefreshStyle.swift in Sources */,
 				B66A07722887A2C900DC0A2C /* CriterionView.swift in Sources */,
 				B62AEA172AA95FFD008B01CD /* NoteManager.swift in Sources */,
-				B6A772E4288892BD00436551 /* GoalPanelView.swift in Sources */,
 				B6498D772AAC244D00230808 /* OverlaySettings.swift in Sources */,
 				B6C387E72B90431F007BA7D4 /* AnimatedIconLayer.swift in Sources */,
 				B67424B1288C419100EB8C16 /* InfoPanelView.swift in Sources */,
@@ -1363,7 +1321,6 @@
 				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
 				B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */,
 				B6F208942B8EC27B0025A914 /* IndicatorLayer.swift in Sources */,
-				B6EEBAD52AC4F8DB001CF4D0 /* L1_16S.swift in Sources */,
 				B6DD182B2BAE778600C963AE /* ModernProgressBar.swift in Sources */,
 				B6F1B48A2AAEAAA500422D8E /* OverlayStyle.swift in Sources */,
 				498A3E8E2D21191300F0A345 /* HeavyCore.swift in Sources */,
@@ -1374,7 +1331,6 @@
 				B66A077028879ED900DC0A2C /* DataManager.swift in Sources */,
 				B697E0EF2B844BFC00932278 /* WitherSkulls.swift in Sources */,
 				B6E7B0842AAA894600D83FA7 /* UpdateSettings.swift in Sources */,
-				B687E18928B3E7F1002CF5D7 /* VersionFrameModifier.swift in Sources */,
 				B697E10C2B844DC800932278 /* FermentedEye.swift in Sources */,
 				B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */,
 				B697E1002B844D2300932278 /* Trims.swift in Sources */,
@@ -1541,7 +1497,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 241228;
+				CURRENT_PROJECT_VERSION = 241231;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
@@ -1577,7 +1533,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 241228;
+				CURRENT_PROJECT_VERSION = 241231;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftAA/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = D64G2TTYWM;
