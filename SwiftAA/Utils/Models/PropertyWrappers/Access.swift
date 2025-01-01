@@ -29,6 +29,7 @@ import SwiftUI
     var advancementManager: AdvancementManager = .shared
     var trackerEngine: TrackerEngine = .shared
     var playerManager: PlayerManager = .shared
+    var progressManager: ProgressManager = .shared
 
     static let shared: AccessEntries = .init()
 

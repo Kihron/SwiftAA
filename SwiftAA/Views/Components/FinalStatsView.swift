@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FinalStatsView: View {
-    @ObservedObject private var progressManager = ProgressManager.shared
+    @Access(\.progressManager) private var progressManager
     @State var statistic: FinalStatistic
     
     var body: some View {

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ToolbarRefreshView: View {
     @Access(\.trackerEngine.trackerLog.lastRefresh) private var lastRefresh
+    @Access(\.progressManager) private var progressManager
 
-    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var layoutManager = LayoutManager.shared
     
     @State private var isVisible = false

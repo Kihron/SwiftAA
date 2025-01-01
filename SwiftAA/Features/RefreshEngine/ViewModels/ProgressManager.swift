@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-@MainActor class ProgressManager: ObservableObject {
-    @Published var advancementsState: [String:JsonAdvancement] = [:]
-    @Published var statisticsState: [String:[String:Int]] = [:]
+@MainActor @Observable class ProgressManager {
+    var advancementsState: [String:JsonAdvancement] = [:]
+    var statisticsState: [String:[String:Int]] = [:]
     
     private var advancementManager: AdvancementManager = .shared
 

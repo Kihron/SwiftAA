@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct OverlayCompletedView: View {
-    @ObservedObject private var dataManager = DataManager.shared
-    @ObservedObject private var progressManager = ProgressManager.shared
-
+    @Access(\.progressManager) private var progressManager
     @AppSettings(\.player.player) private var player
+
+    @ObservedObject private var dataManager = DataManager.shared
 
     var body: some View {
         HStack {

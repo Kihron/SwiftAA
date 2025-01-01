@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct OptimalOverlayView: View {
+    @Access(\.progressManager) private var progressManager
+
     @ObservedObject private var dataManager = DataManager.shared
-    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var overlayManager = OverlayManager.shared
     
     var body: some View {

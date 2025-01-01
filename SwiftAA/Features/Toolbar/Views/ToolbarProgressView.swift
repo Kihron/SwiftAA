@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ToolbarProgressView: View {
     @Access(\.advancementManager) private var advancementManager
-    
-    @ObservedObject private var progressManager = ProgressManager.shared
+    @Access(\.progressManager) private var progressManager
+
     @ObservedObject private var trackerManager = TrackerManager.shared
     
     var body: some View {

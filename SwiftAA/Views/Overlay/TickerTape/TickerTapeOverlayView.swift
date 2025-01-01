@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TickerTapeOverlayView: View {
+    @Access(\.progressManager) private var progressManager
     @ObservedObject private var overlayManager = OverlayManager.shared
-    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var dataManager = DataManager.shared
     
     var counter: String {

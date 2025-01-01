@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct MultiPageOverlayView: View {
+    @Access(\.progressManager) private var progressManager
+
     @ObservedObject private var viewModel = MultiPageOverlayViewModel()
     @ObservedObject private var overlayManager = OverlayManager.shared
-    @ObservedObject private var progressManager = ProgressManager.shared
     @ObservedObject private var dataManager = DataManager.shared
     
     @State private var section = 0

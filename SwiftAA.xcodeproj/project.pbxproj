@@ -46,7 +46,6 @@
 		B62EA6542B797E1900EB66AC /* EnderDragonProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62EA6532B797E1900EB66AC /* EnderDragonProgressBar.swift */; };
 		B62EA6562B797F3700EB66AC /* ProgressBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62EA6552B797F3700EB66AC /* ProgressBarStyle.swift */; };
 		B63465F12BAA7D4C00D526A8 /* L1_19S.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63465F02BAA7D4C00D526A8 /* L1_19S.swift */; };
-		B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637DB3029634FA800A73F62 /* AppViewModel.swift */; };
 		B6397EDF2AC9E9B3007C8606 /* IndicatorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */; };
 		B63A08AB2B9A671900FA92FE /* UpdateMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A08AA2B9A671900FA92FE /* UpdateMessageView.swift */; };
 		B63A08AD2B9BFDF800FA92FE /* ReleaseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A08AC2B9BFDF800FA92FE /* ReleaseEntry.swift */; };
@@ -102,7 +101,6 @@
 		B687E18D28B48079002CF5D7 /* sculk_sensor.gif in Resources */ = {isa = PBXBuildFile; fileRef = B687E18C28B48079002CF5D7 /* sculk_sensor.gif */; };
 		B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */; };
 		B694010B2AC12A4800F9DE3D /* NSTextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */; };
-		B697E0E42B83EE6B00932278 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E32B83EE6B00932278 /* ProgressManager.swift */; };
 		B697E0E62B84194A00932278 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E52B84194A00932278 /* CreditsView.swift */; };
 		B697E0E92B844B7600932278 /* GodApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0E82B844B7600932278 /* GodApple.swift */; };
 		B697E0EB2B844B9700932278 /* Trident.swift in Sources */ = {isa = PBXBuildFile; fileRef = B697E0EA2B844B9700932278 /* Trident.swift */; };
@@ -225,7 +223,6 @@
 		B62EA6532B797E1900EB66AC /* EnderDragonProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderDragonProgressBar.swift; sourceTree = "<group>"; };
 		B62EA6552B797F3700EB66AC /* ProgressBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarStyle.swift; sourceTree = "<group>"; };
 		B63465F02BAA7D4C00D526A8 /* L1_19S.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1_19S.swift; sourceTree = "<group>"; };
-		B637DB3029634FA800A73F62 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B6397EDE2AC9E9B3007C8606 /* IndicatorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorInfoView.swift; sourceTree = "<group>"; };
 		B63A08AA2B9A671900FA92FE /* UpdateMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMessageView.swift; sourceTree = "<group>"; };
 		B63A08AC2B9BFDF800FA92FE /* ReleaseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseEntry.swift; sourceTree = "<group>"; };
@@ -283,7 +280,6 @@
 		B687E18C28B48079002CF5D7 /* sculk_sensor.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sculk_sensor.gif; sourceTree = "<group>"; };
 		B68CFE0A2AD259770046AFB7 /* RemoveSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSidebar.swift; sourceTree = "<group>"; };
 		B694010A2AC12A4800F9DE3D /* NSTextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Ext.swift"; sourceTree = "<group>"; };
-		B697E0E32B83EE6B00932278 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
 		B697E0E52B84194A00932278 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		B697E0E82B844B7600932278 /* GodApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodApple.swift; sourceTree = "<group>"; };
 		B697E0EA2B844B9700932278 /* Trident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trident.swift; sourceTree = "<group>"; };
@@ -469,14 +465,6 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		B637DB2F29634F7900A73F62 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				B637DB3029634FA800A73F62 /* AppViewModel.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		B6397EDD2AC9E9A2007C8606 /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,7 +619,6 @@
 				B6498D722AAC226400230808 /* OverlayManager.swift */,
 				B6F1B48F2AAEC34500422D8E /* PlayerManager.swift */,
 				B66A076F28879ED900DC0A2C /* DataManager.swift */,
-				B697E0E32B83EE6B00932278 /* ProgressManager.swift */,
 				B624F3802AB803F9006D8719 /* LayoutManager.swift */,
 				B62AEA162AA95FFD008B01CD /* NoteManager.swift */,
 			);
@@ -1004,7 +991,6 @@
 		B6FEFED82899926E0095CF08 /* Windows */ = {
 			isa = PBXGroup;
 			children = (
-				B637DB2F29634F7900A73F62 /* Main */,
 				B6B4A14B296E432600F43D4C /* Overlay */,
 			);
 			path = Windows;
@@ -1256,10 +1242,8 @@
 				B63A08AD2B9BFDF800FA92FE /* ReleaseEntry.swift in Sources */,
 				B697E0E62B84194A00932278 /* CreditsView.swift in Sources */,
 				B683A1142ABD2BDE00162E7C /* UserThemeEditor.swift in Sources */,
-				B697E0E42B83EE6B00932278 /* ProgressManager.swift in Sources */,
 				B6E331082AA7F3C2001D7FF2 /* SettingsView.swift in Sources */,
 				B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */,
-				B637DB3129634FA800A73F62 /* AppViewModel.swift in Sources */,
 				B6F2489E2AB93E58000FAF1D /* FrameStyle.swift in Sources */,
 				B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */,
 				B65180052B1593E600D9CC99 /* OptimalOverlayView.swift in Sources */,
