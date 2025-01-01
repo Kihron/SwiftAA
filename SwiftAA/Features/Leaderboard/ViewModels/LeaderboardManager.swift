@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-class LeaderboardManager: ObservableObject {
-    @ObservedObject private var networkManager = NetworkManager.shared
-    @Published var entries: [LeaderboardEntry] = []
+@Observable class LeaderboardManager: VersionObserver {
+    private var networkManager: NetworkManager = .shared
+
+    var entries: [LeaderboardEntry] = []
 
     private var otherVersionData: [String] = []
     private var v16Data: [String] = []
@@ -27,7 +28,7 @@ class LeaderboardManager: ObservableObject {
     }
 
     func getLeaderboardEntries() {
-        switch TrackerManager.shared.gameVersion {
+        switch Settings[\.tracker].gameVersion {
             case .v1_16, .v1_16_5:
                 getV16Entries()
             case .v1_19:
@@ -158,5 +159,9 @@ class LeaderboardManager: ObservableObject {
 
     private func getSpreadsheet(page: String) -> String {
         return "https://docs.google.com/spreadsheets/d/107ijqjELTQQ29KW4phUmtvYFTX9-pfHsjb18TKoWACk/export?gid=\(page)&format=csv"
+    }
+
+    func handleVersionChange(to version: Version) async throws {
+        getLeaderboardEntries()
     }
 }

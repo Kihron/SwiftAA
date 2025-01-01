@@ -17,7 +17,6 @@ import SwiftUI
     private var activeWindows = [pid_t:(String, Version?)]()
 
     private var windowObserver: NSObjectProtocol? = nil
-
     private var savesObserver: DispatchSourceFileSystemObject? = nil
     private var worldObserver: DispatchSourceFileSystemObject? = nil
     private var logObserver: DispatchSourceFileSystemObject? = nil
@@ -156,7 +155,7 @@ import SwiftUI
                 return
             }
 
-            let fileName = Settings[\.player].player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
+            let fileName = Settings[\.tracker].player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
             let advFilePath = "\(worldPath)/advancements/\(fileName)"
 
             worldObserver = FileMonitor.observeFile(at: advFilePath) {
@@ -187,15 +186,15 @@ import SwiftUI
                 return
             }
 
-            let fileName = Settings[\.player].player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
+            let fileName = Settings[\.tracker].player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
             let advFilePath = "\(worldPath)/advancements/\(fileName)"
 
             var advFileContents = try String(contentsOf: URL(fileURLWithPath: advFilePath))
             let advRange = NSRange(location: 0, length: advFileContents.count)
             advFileContents = Constants.dataVersionRegex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
 
-            let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
-            let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(worldPath)/stats/\(fileName)")))
+            let advancements = try JSONDecoder().decode([String:AdvancementData].self, from: Data(advFileContents.utf8))
+            let statistics = try JSONDecoder().decode(StatisticData.self, from: Data(contentsOf: URL(fileURLWithPath: "\(worldPath)/stats/\(fileName)")))
             let uuid = String(fileName.dropLast(5))
 
             withAnimation {

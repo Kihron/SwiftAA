@@ -7,6 +7,21 @@
 
 import SwiftUI
 
+/// A property wrapper that provides access to a specific preference within the shared `Settings` object.
+///
+/// Use the `@AppSettings` property wrapper to bind a property to a specific key path in the `Preferences`
+/// model. This allows for seamless reading and writing of user preferences throughout your SwiftUI views.
+///
+/// ```swift
+/// @AppSettings(\.somePreference) var somePreference: SomeType
+/// ```
+///
+/// - Note: The `@AppSettings` property wrapper requires that the `Preferences` model conforms to `Equatable`.
+///
+/// - Parameters:
+///   - keyPath: A key path to a specific property within the `Preferences` model.
+///
+/// - SeeAlso: ``Settings``, ``Preferences``
 @propertyWrapper
 @MainActor struct AppSettings<T>: DynamicProperty where T: Equatable {
     @StateObject var settings: Settings = .shared

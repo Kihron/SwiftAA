@@ -23,6 +23,8 @@ extension Preferences {
         var automaticVersionDetection: Bool = true
         var automaticExpansion: Bool = true
 
+        var player: Player? = nil
+
         init() {}
 
         init(from decoder: any Decoder) throws {
@@ -36,6 +38,8 @@ extension Preferences {
             self.automaticVersionDetection = try container.decodeIfPresent(Bool.self, forKey: .automaticVersionDetection) ?? true
 
             self.automaticExpansion = try container.decodeIfPresent(Bool.self, forKey: .automaticExpansion) ?? true
+
+            self.player = try container.decodeIfPresent(Player.self, forKey: .player)
         }
 
         private func sendVersionChangeNotification(old version: Version) {

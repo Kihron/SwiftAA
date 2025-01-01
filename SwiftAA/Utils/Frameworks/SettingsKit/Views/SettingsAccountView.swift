@@ -10,7 +10,7 @@ import CachedAsyncImage
 
 struct SettingsAccountView: View {
     @Access(\.playerManager) private var playerManager
-    @AppSettings(\.player.player) private var player
+    @AppSettings(\.tracker.player) private var player
 
     var body: some View {
         if let player = player {

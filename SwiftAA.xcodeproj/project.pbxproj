@@ -16,7 +16,6 @@
 		498A3E8E2D21191300F0A345 /* HeavyCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A3E8D2D21191300F0A345 /* HeavyCore.swift */; };
 		49CCDF812B7C4AF400DFE65D /* major_biomes.json in Resources */ = {isa = PBXBuildFile; fileRef = 49CCDF802B7C4AF400DFE65D /* major_biomes.json */; };
 		B608417D2AB3E37800E064E7 /* TrackerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B608417C2AB3E37800E064E7 /* TrackerAlert.swift */; };
-		B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */; };
 		B60C6BB22ABA87E300A79D4E /* MinecraftFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */; };
 		B60C6BB52ABA884000A79D4E /* GeodeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */; };
 		B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60C6BB62ABA886800A79D4E /* ModernFrame.swift */; };
@@ -33,12 +32,7 @@
 		B624F3832AB8044D006D8719 /* ModularPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624F3822AB8044D006D8719 /* ModularPanel.swift */; };
 		B62889502B96D12400C5C45D /* CriterionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628894F2B96D12400C5C45D /* CriterionLayer.swift */; };
 		B628EF7C2B7DAD7800B5D37C /* IndicatorIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */; };
-		B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */; };
-		B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */; };
-		B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */; };
-		B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */; };
 		B62A00F22AB69F9D007F5B7A /* VerificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */; };
-		B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */; };
 		B62AEA0C2AA9397E008B01CD /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA0B2AA9397E008B01CD /* ThemeSettingsView.swift */; };
 		B62AEA0E2AA93A5B008B01CD /* ThemePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA0D2AA93A5B008B01CD /* ThemePreviewView.swift */; };
 		B62AEA132AA9470E008B01CD /* ThemeExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AEA122AA9470E008B01CD /* ThemeExampleView.swift */; };
@@ -132,7 +126,6 @@
 		B6A772E228888B3600436551 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E128888B3600436551 /* ProgressBarView.swift */; };
 		B6A772E62888FBA600436551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E52888FBA600436551 /* ContentView.swift */; };
 		B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772E72888FCE100436551 /* PotionPanelView.swift */; };
-		B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A772FF28899D3900436551 /* JsonAdvancement.swift */; };
 		B6AAB58028BA831E007B981B /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AAB57F28BA831E007B981B /* TransparentView.swift */; };
 		B6B2A7152ACA11DE004C9EE0 /* SubLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */; };
 		B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */; };
@@ -193,7 +186,6 @@
 		498A3E8D2D21191300F0A345 /* HeavyCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavyCore.swift; sourceTree = "<group>"; };
 		49CCDF802B7C4AF400DFE65D /* major_biomes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = major_biomes.json; sourceTree = "<group>"; };
 		B608417C2AB3E37800E064E7 /* TrackerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlert.swift; sourceTree = "<group>"; };
-		B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPlaceholderView.swift; sourceTree = "<group>"; };
 		B60C6BB12ABA87E300A79D4E /* MinecraftFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftFrame.swift; sourceTree = "<group>"; };
 		B60C6BB42ABA884000A79D4E /* GeodeFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeodeFrame.swift; sourceTree = "<group>"; };
 		B60C6BB62ABA886800A79D4E /* ModernFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernFrame.swift; sourceTree = "<group>"; };
@@ -210,12 +202,7 @@
 		B624F3822AB8044D006D8719 /* ModularPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularPanel.swift; sourceTree = "<group>"; };
 		B628894F2B96D12400C5C45D /* CriterionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriterionLayer.swift; sourceTree = "<group>"; };
 		B628EF7B2B7DAD7800B5D37C /* IndicatorIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorIconView.swift; sourceTree = "<group>"; };
-		B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardManager.swift; sourceTree = "<group>"; };
-		B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
-		B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardPanelView.swift; sourceTree = "<group>"; };
-		B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntryView.swift; sourceTree = "<group>"; };
 		B62A00F12AB69F9D007F5B7A /* VerificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationStatus.swift; sourceTree = "<group>"; };
-		B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardEntryRank.swift; sourceTree = "<group>"; };
 		B62AEA0B2AA9397E008B01CD /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		B62AEA0D2AA93A5B008B01CD /* ThemePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePreviewView.swift; sourceTree = "<group>"; };
 		B62AEA122AA9470E008B01CD /* ThemeExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeExampleView.swift; sourceTree = "<group>"; };
@@ -311,7 +298,6 @@
 		B6A772E128888B3600436551 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B6A772E52888FBA600436551 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6A772E72888FCE100436551 /* PotionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionPanelView.swift; sourceTree = "<group>"; };
-		B6A772FF28899D3900436551 /* JsonAdvancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAdvancement.swift; sourceTree = "<group>"; };
 		B6AAB57F28BA831E007B981B /* TransparentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentView.swift; sourceTree = "<group>"; };
 		B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLayout.swift; sourceTree = "<group>"; };
 		B6B4A14C296E433B00F43D4C /* MultiPageOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPageOverlayViewModel.swift; sourceTree = "<group>"; };
@@ -444,10 +430,6 @@
 		B62A00F32AB6A468007F5B7A /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				B62A00ED2AB688B3007F5B7A /* LeaderboardPanelView.swift */,
-				B62A00EF2AB68B47007F5B7A /* LeaderboardEntryView.swift */,
-				B62A00F42AB6A493007F5B7A /* LeaderboardEntryRank.swift */,
-				B60C6BAE2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -610,7 +592,6 @@
 		B65FE58F2AA6CFDE00C30A8F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				B62A00E82AB678B1007F5B7A /* LeaderboardManager.swift */,
 				B624F37C2AB7F784006D8719 /* NetworkManager.swift */,
 				B65FE5902AA6CFE900C30A8F /* ThemeManager.swift */,
 				B65AB3542AA97C89001F4FE6 /* CoreDataManager.swift */,
@@ -968,8 +949,6 @@
 				B6F208922B8EC26C0025A914 /* CoreAnimation */,
 				B676BDA02AA78E12008BD8A9 /* UserTheme.swift */,
 				B63A08AC2B9BFDF800FA92FE /* ReleaseEntry.swift */,
-				B62A00EB2AB683C3007F5B7A /* LeaderboardEntry.swift */,
-				B6A772FF28899D3900436551 /* JsonAdvancement.swift */,
 				B6A4AF772AECBEEE00C7B805 /* TransferableIndicator.swift */,
 				B6B2A7142ACA11DE004C9EE0 /* SubLayout.swift */,
 				B6872FC428AEDA4A003CEA95 /* FinalStatistic.swift */,
@@ -1186,11 +1165,8 @@
 				B6E96CE02BBF800100FB59F2 /* FallbackCachedAsyncImage.swift in Sources */,
 				B60C6BB72ABA886800A79D4E /* ModernFrame.swift in Sources */,
 				B697E0E92B844B7600932278 /* GodApple.swift in Sources */,
-				B62A00F02AB68B47007F5B7A /* LeaderboardEntryView.swift in Sources */,
-				B60C6BAF2ABA6B7300A79D4E /* LeaderboardPlaceholderView.swift in Sources */,
 				B641CB512B8DACAC00656D6C /* CriteriaTickerTapeView.swift in Sources */,
 				B697E1042B844D6F00932278 /* NetherWart.swift in Sources */,
-				B62A00E92AB678B1007F5B7A /* LeaderboardManager.swift in Sources */,
 				B62405AB2B81AD9A00CAA885 /* StatisticPanelView.swift in Sources */,
 				B65AB3592AA98281001F4FE6 /* Theme.swift in Sources */,
 				B697E1122B844E0300932278 /* PotterySherds.swift in Sources */,
@@ -1201,7 +1177,6 @@
 				B6A4AF742AECA6B100C7B805 /* StatusType.swift in Sources */,
 				B68CFE0B2AD259770046AFB7 /* RemoveSidebar.swift in Sources */,
 				B6E331142AA808D5001D7FF2 /* Version.swift in Sources */,
-				B62A00F52AB6A493007F5B7A /* LeaderboardEntryRank.swift in Sources */,
 				B6A4AF782AECBEEF00C7B805 /* TransferableIndicator.swift in Sources */,
 				B683A1282ABD4A6800162E7C /* NotesSettingsView.swift in Sources */,
 				B697E1022B844D5500932278 /* EnderPearls.swift in Sources */,
@@ -1260,7 +1235,6 @@
 				B6E331182AA8131C001D7FF2 /* TrackingMode.swift in Sources */,
 				B6DFEE3A2B8C33490009C541 /* StatisticIconView.swift in Sources */,
 				B6B4A14D296E433B00F43D4C /* MultiPageOverlayViewModel.swift in Sources */,
-				B62A00EE2AB688B3007F5B7A /* LeaderboardPanelView.swift in Sources */,
 				B697E1062B844D8300932278 /* GhastTears.swift in Sources */,
 				B697E0F32B844C4600932278 /* Beehives.swift in Sources */,
 				B65B074D28AFDD1600E10EC5 /* UpdateManager.swift in Sources */,
@@ -1282,7 +1256,6 @@
 				B697E0F72B844C7A00932278 /* SnifferEggs.swift in Sources */,
 				B6E7B0882AAA951700D83FA7 /* OverlayView.swift in Sources */,
 				B6A772E82888FCE100436551 /* PotionPanelView.swift in Sources */,
-				B62A00EC2AB683C3007F5B7A /* LeaderboardEntry.swift in Sources */,
 				B624F37F2AB802C0006D8719 /* LayoutSettingsView.swift in Sources */,
 				B6F208942B8EC27B0025A914 /* IndicatorLayer.swift in Sources */,
 				B6DD182B2BAE778600C963AE /* ModernProgressBar.swift in Sources */,
@@ -1301,7 +1274,6 @@
 				B628EF7C2B7DAD7800B5D37C /* IndicatorIconView.swift in Sources */,
 				B65AB3572AA97EB5001F4FE6 /* UUID+Ext.swift in Sources */,
 				B64192D12AC29D02006C8CC4 /* WaypointCardView.swift in Sources */,
-				B6A7730028899D3900436551 /* JsonAdvancement.swift in Sources */,
 				B63465F12BAA7D4C00D526A8 /* L1_19S.swift in Sources */,
 				B6872FB328AEA9D7003CEA95 /* URLDecoder.swift in Sources */,
 				B624F3812AB803F9006D8719 /* LayoutManager.swift in Sources */,

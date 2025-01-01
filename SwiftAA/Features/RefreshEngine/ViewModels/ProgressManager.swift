@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor @Observable class ProgressManager {
-    var advancementsState: [String:JsonAdvancement] = [:]
+    var advancementsState: [String:AdvancementData] = [:]
     var statisticsState: [String:[String:Int]] = [:]
     
     private var advancementManager: AdvancementManager = .shared
@@ -18,11 +18,9 @@ import SwiftUI
     
     static let shared = ProgressManager()
     
-    init() {
-        
-    }
+    private init() {}
     
-    func updateProgressState(advancements: [String:JsonAdvancement], statistics: [String:[String:Int]]) {
+    func updateProgressState(advancements: [String:AdvancementData], statistics: [String:[String:Int]]) {
         advancementsState = advancements
         statisticsState = statistics
         updateIndicators()

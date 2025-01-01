@@ -16,7 +16,7 @@ import SwiftUI
     private init() {}
 
     func getActivePlayerImageURL() -> URL? {
-        guard let id = Settings[\.player].player?.id else { return nil }
+        guard let id = Settings[\.tracker].player?.id else { return nil }
         return getPlayerImageURL(for: id)
     }
 
@@ -30,7 +30,7 @@ import SwiftUI
 
         if self.uuid != uuid {
             Task {
-                Settings[\.player].player = await fetchPlayer(for: uuid)
+                Settings[\.tracker].player = await fetchPlayer(for: uuid)
                 if shouldRefreshTracker {
                     TrackerEngine.shared.refreshTracker()
                 }

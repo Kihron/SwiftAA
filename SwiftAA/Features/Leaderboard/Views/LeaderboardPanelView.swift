@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LeaderboardPanelView: View {
+    @Access(\.leaderboardManager) private var leaderboardManager
+
     @ObservedObject private var themeManager = ThemeManager.shared
-    @ObservedObject private var trackerManager = TrackerManager.shared
-    @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     @Namespace private var leaderboard
     
     private let placeholderUsers = 8
@@ -84,9 +84,6 @@ struct LeaderboardPanelView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .applyThemeBackgroundAndBorder()
-        .onChange(of: trackerManager.gameVersion) { value in
-            leaderboardManager.getLeaderboardEntries()
-        }
     }
 }
 

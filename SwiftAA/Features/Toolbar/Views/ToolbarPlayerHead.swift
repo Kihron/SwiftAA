@@ -12,7 +12,7 @@ struct ToolbarPlayerHead: View {
     @Access(\.trackerEngine) private var trackerEngine
     @Access(\.playerManager) private var playerManager
 
-    @AppSettings(\.player.player) private var player
+    @AppSettings(\.tracker.player) private var player
 
     @State private var showPlayerList: Bool = false
 

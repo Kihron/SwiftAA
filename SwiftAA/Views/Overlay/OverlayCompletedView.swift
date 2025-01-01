@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OverlayCompletedView: View {
     @Access(\.progressManager) private var progressManager
-    @AppSettings(\.player.player) private var player
+    @AppSettings(\.tracker.player) private var player
 
     @ObservedObject private var dataManager = DataManager.shared
 

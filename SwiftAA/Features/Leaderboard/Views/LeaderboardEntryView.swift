@@ -9,8 +9,9 @@ import SwiftUI
 import CachedAsyncImage
 
 struct LeaderboardEntryView: View {
+    @Access(\.leaderboardManager) private var leaderboardManager
+
     @ObservedObject private var themeManager = ThemeManager.shared
-    @ObservedObject private var leaderboardManager = LeaderboardManager.shared
     @State var entry: LeaderboardEntry
     
     var body: some View {
