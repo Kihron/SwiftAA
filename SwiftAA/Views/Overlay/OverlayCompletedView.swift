@@ -10,8 +10,9 @@ import SwiftUI
 struct OverlayCompletedView: View {
     @ObservedObject private var dataManager = DataManager.shared
     @ObservedObject private var progressManager = ProgressManager.shared
-    @ObservedObject private var playerManager = PlayerManager.shared
-    
+
+    @AppSettings(\.player.player) private var player
+
     var body: some View {
         HStack {
             VStack {
@@ -44,7 +45,7 @@ struct OverlayCompletedView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
                     
                     VStack {
-                        OverlayShimmerView(message: L10n.Overlay.Complete.message(playerManager.player?.name ?? "Player", TrackerManager.shared.gameVersion.label))
+                        OverlayShimmerView(message: L10n.Overlay.Complete.message(player?.name ?? "Player", TrackerManager.shared.gameVersion.label))
                         
                         OverlayShimmerView(message: L10n.Overlay.Complete.time(progressManager.getInGameTime()))
                             .padding(.top)

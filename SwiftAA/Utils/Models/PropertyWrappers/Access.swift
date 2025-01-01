@@ -28,6 +28,7 @@ import SwiftUI
 @MainActor @Observable class AccessEntries {
     var advancementManager: AdvancementManager = .shared
     var trackerEngine: TrackerEngine = .shared
+    var playerManager: PlayerManager = .shared
 
     static let shared: AccessEntries = .init()
 

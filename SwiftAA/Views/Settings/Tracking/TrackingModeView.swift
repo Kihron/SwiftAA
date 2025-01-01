@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrackingModeView: View {
     @AppSettings(\.tracker) private var settings
-    @Access(\.trackerEngine.trackerLog) private var trackerLog
+    @Access(\.trackerEngine) private var trackerEngine
 
     var body: some View {
         VStack(spacing: 12) {
@@ -48,7 +48,8 @@ struct TrackingModeView: View {
         .animation(.bouncy, value: settings.trackingMode)
         .onChange(of: settings.trackingMode) { _, _ in
             withAnimation {
-                trackerLog.resetWorldPath()
+                trackerEngine.trackerLog.resetWorldPath()
+                trackerEngine.refreshTracker()
             }
         }
     }

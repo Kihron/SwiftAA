@@ -7,26 +7,16 @@
 
 import SwiftUI
 
-class PlayerManager: ObservableObject {
-    @AppStorage("player") var player: Player? = nil
-    @Published var availablePlayers: [String] = []
-
-    @Published var uuid: String = "" {
-        didSet {
-            Task { @MainActor in
-                self.player = await fetchPlayer(for: uuid)
-            }
-        }
-    }
+@MainActor @Observable class PlayerManager {
+    var availablePlayers: [String] = []
+    var uuid: String = ""
     
     static let shared = PlayerManager()
     
-    init() {
-        
-    }
+    private init() {}
 
     func getActivePlayerImageURL() -> URL? {
-        guard let id = player?.id else { return nil }
+        guard let id = Settings[\.player].player?.id else { return nil }
         return getPlayerImageURL(for: id)
     }
 
@@ -35,19 +25,20 @@ class PlayerManager: ObservableObject {
         return URL(string: "https://cravatar.eu/helmhead/\(uuid)/64.png")
     }
 
-    func updatePlayerUUID(uuid: String?) {
+    func updatePlayer(to uuid: String?, shouldRefreshTracker: Bool = false) {
         guard let uuid else { return }
 
         if self.uuid != uuid {
-            self.uuid = uuid
+            Task {
+                Settings[\.player].player = await fetchPlayer(for: uuid)
+                if shouldRefreshTracker {
+                    TrackerEngine.shared.refreshTracker()
+                }
+            }
         }
     }
 
-    func updateAvailablePlayers(uuids: [String]) {
-        self.availablePlayers = uuids
-    }
-
-    @MainActor private func fetchPlayer(for uuid: String) async -> Player? {
+    private func fetchPlayer(for uuid: String) async -> Player? {
         guard let url = URL(string: "https://api.mojang.com/user/profile/\(uuid)") else { return nil }
 
         do {
@@ -57,5 +48,9 @@ class PlayerManager: ObservableObject {
             print("Failed to decode Player for UUID \(uuid): \(error.localizedDescription)")
             return nil
         }
+    }
+
+    func updateAvailablePlayers(uuids: [String]) {
+        self.availablePlayers = uuids
     }
 }

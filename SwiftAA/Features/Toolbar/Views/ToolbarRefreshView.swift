@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ToolbarRefreshView: View {
+    @Access(\.trackerEngine.trackerLog.lastRefresh) private var lastRefresh
+
     @ObservedObject private var progressManager = ProgressManager.shared
-    @ObservedObject private var dataManager = DataManager.shared
     @ObservedObject private var layoutManager = LayoutManager.shared
     
     @State private var isVisible = false
@@ -25,13 +26,13 @@ struct ToolbarRefreshView: View {
                 .frame(width: 32, height: 32)
                 .opacity(isVisible ? 5 : 0)
                 .animation(.easeInOut(duration: 1), value: isVisible)
-                .onChange(of: dataManager.lastModified) { _ in
+                .onChange(of: lastRefresh) { _, _ in
                     refreshVisibility()
                 }
-                .onChange(of: layoutManager.refreshStyle) { _ in
+                .onChange(of: layoutManager.refreshStyle) { _, _ in
                     refreshVisibility(settingChanged: true)
                 }
-                .onChange(of: layoutManager.refreshSpeed) { _ in
+                .onChange(of: layoutManager.refreshSpeed) { _, _ in
                     refreshVisibility(settingChanged: true)
                 }
         }

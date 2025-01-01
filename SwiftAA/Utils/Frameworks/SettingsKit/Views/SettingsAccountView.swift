@@ -9,10 +9,11 @@ import SwiftUI
 import CachedAsyncImage
 
 struct SettingsAccountView: View {
-    @ObservedObject private var playerManager = PlayerManager.shared
-    
+    @Access(\.playerManager) private var playerManager
+    @AppSettings(\.player.player) private var player
+
     var body: some View {
-        if let player = playerManager.player {
+        if let player = player {
             ZStack {
                 Rectangle()
                     .fill(.gray.opacity(0.05))

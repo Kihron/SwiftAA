@@ -9,7 +9,11 @@ import SwiftUI
 import CachedAsyncImage
 
 struct ToolbarPlayerHead: View {
-    @ObservedObject private var playerManager = PlayerManager.shared
+    @Access(\.trackerEngine) private var trackerEngine
+    @Access(\.playerManager) private var playerManager
+
+    @AppSettings(\.player.player) private var player
+
     @State private var showPlayerList: Bool = false
 
     var body: some View {
@@ -40,7 +44,7 @@ struct ToolbarPlayerHead: View {
         }
         .buttonStyle(.plain)
         .allowsHitTesting(playerManager.availablePlayers.count > 1)
-        .animation(.easeInOut, value: playerManager.player)
+        .animation(.easeInOut, value: player)
         .popover(isPresented: $showPlayerList) {
             availablePlayers
         }
@@ -51,7 +55,7 @@ struct ToolbarPlayerHead: View {
             LazyVStack(alignment: .leading) {
                 ForEach(playerManager.availablePlayers, id: \.self) { player in
                     Button(action: {
-                        playerManager.updatePlayerUUID(uuid: player)
+                        playerManager.updatePlayer(to: player, shouldRefreshTracker: true)
                         showPlayerList.toggle()
                     }) {
                         HStack {

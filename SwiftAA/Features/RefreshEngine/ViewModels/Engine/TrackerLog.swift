@@ -10,9 +10,6 @@ import SwiftUI
 @MainActor @Observable class TrackerLog {
     var progressManager: ProgressManager = .shared
 
-    var lastDirectoryUpdate: Date? = Date.now
-    var lastLogUpdate: Date? = Date.now
-
     var lastWorkingDirectory: String = ""
     var lastRefresh: Date = Date.now
 
@@ -26,7 +23,6 @@ import SwiftUI
     func resetWorldPath() {
         worldPath.removeAll()
         lastRefresh = Date.now
-        lastDirectoryUpdate = Date.now
         progressManager.clearProgressState()
     }
 

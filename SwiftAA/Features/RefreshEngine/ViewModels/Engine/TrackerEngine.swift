@@ -16,19 +16,33 @@ import SwiftUI
     private let fileManager = FileManager.default
     private var activeWindows = [pid_t:(String, Version?)]()
 
+    private var windowObserver: NSObjectProtocol? = nil
+
+    private var savesObserver: DispatchSourceFileSystemObject? = nil
+    private var worldObserver: DispatchSourceFileSystemObject? = nil
+    private var logObserver: DispatchSourceFileSystemObject? = nil
+
     static let shared = TrackerEngine()
 
     private init() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            MainActor.assumeIsolated {
-                withAnimation {
+        setupWindowObserver()
+    }
+
+    private func setupWindowObserver() {
+        windowObserver = NSWorkspace.shared.notificationCenter.addObserver(
+            forName: NSWorkspace.didActivateApplicationNotification,
+            object: nil,
+            queue: .main
+        ) { notification in
+            if notification.userInfo?[NSWorkspace.applicationUserInfoKey] is NSRunningApplication {
+                DispatchQueue.main.async {
                     self.refreshTracker()
                 }
             }
         }
     }
 
-    private func refreshTracker() {
+    func refreshTracker() {
         let saves: String
 
         if Settings[\.tracker].trackingMode == .directory {
@@ -58,113 +72,142 @@ import SwiftUI
             }
         }
 
-        readAllFileData(saves: saves)
+        setupWorldTracking(saves: saves)
     }
 
-    private func readAllFileData(saves: String) {
-        if (fileManager.fileExists(atPath: saves)) {
-            do {
-                let worldPath = getWorldPath(fileManager: fileManager, saves: saves) ?? trackerLog.worldPath
-                guard !worldPath.isEmpty else { return }
+    private func setupWorldTracking(saves: String) {
+        if fileManager.fileExists(atPath: saves) {
+            let logFile = "\(saves)/../logs/latest.log"
 
-                if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
-                    if trackerLog.updateErrorAlert(alert: .noFiles) {
-                        progressManager.clearProgressState()
-                    }
-                    return
+            savesObserver = FileMonitor.observeDirectory(at: saves) {
+                DispatchQueue.main.async {
+                    self.updateWorldPath(saves: saves)
+                    self.setupWorldObserver()
                 }
+            }
 
-                let files = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")
-                let stats = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats")
+            logObserver = FileMonitor.observeFile(at: logFile) {
+                DispatchQueue.main.async {
+                    self.updateWorldPath(saves: saves)
+                    self.setupWorldObserver()
+                }
+            }
 
-                if (files.isEmpty || stats.isEmpty) {
+            updateWorldPath(saves: saves)
+            setupWorldObserver()
+        } else {
+            savesObserver?.cancel()
+            logObserver?.cancel()
+            worldObserver?.cancel()
+            trackerLog.resetWorldPath()
+
+            if saves.isEmpty {
+                trackerLog.updateErrorAlert(alert: .noDirectory)
+            } else {
+                trackerLog.updateErrorAlert(alert: .directoryNotFound)
+            }
+        }
+    }
+
+    private func updateWorldPath(saves: String) {
+        do {
+            let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
+                folder != ".DS_Store"
+            })
+
+            guard !contents.isEmpty else {
+                if trackerLog.updateErrorAlert(alert: .noWorlds) {
+                    trackerLog.resetWorldPath()
+                }
+                return
+            }
+
+            var world = try contents.max { a, b in
+                let date1 = try FileMonitor.getModifiedTime(of: "\(saves)/\(a)")
+                let date2 = try FileMonitor.getModifiedTime(of: "\(saves)/\(b)")
+                return date1?.compare(date2!) == ComparisonResult.orderedAscending
+            }!
+
+            world = "\(saves)/\(world)"
+            trackerLog.worldPath = world
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func setupWorldObserver() {
+        do {
+            let worldPath = trackerLog.worldPath
+
+            if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
+                if trackerLog.updateErrorAlert(alert: .noFiles) {
+                    progressManager.clearProgressState()
+                }
+                return
+            }
+
+            let files = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")
+            let stats = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats")
+
+            if (files.isEmpty || stats.isEmpty) {
+                if trackerLog.updateErrorAlert(alert: .invalidDirectory) {
+                    progressManager.clearProgressState()
+                }
+                return
+            }
+
+            let fileName = Settings[\.player].player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
+            let advFilePath = "\(worldPath)/advancements/\(fileName)"
+
+            worldObserver = FileMonitor.observeFile(at: advFilePath) {
+                DispatchQueue.main.async {
+                    self.readWorldFiles()
+                }
+            }
+
+            readWorldFiles()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func readWorldFiles() {
+        do {
+            let worldPath = trackerLog.worldPath
+
+            let files = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")
+            let stats = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats")
+
+            if (files.isEmpty || stats.isEmpty) {
+                withAnimation {
                     if trackerLog.updateErrorAlert(alert: .invalidDirectory) {
                         progressManager.clearProgressState()
                     }
-                    return
                 }
-
-                let fileName = playerManager.player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
-                let lastUpdate = try getModifiedTime("\(worldPath)/advancements/\(fileName)", fileManager: fileManager) ?? Date.now
-
-                if (trackerLog.lastRefresh != lastUpdate) {
-                    trackerLog.lastRefresh = lastUpdate
-                    var advFileContents = try String(contentsOf: URL(fileURLWithPath: "\(worldPath)/advancements/\(fileName)"))
-                    let advRange = NSRange(location: 0, length: advFileContents.count)
-                    advFileContents = Constants.dataVersionRegex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
-
-                    let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
-                    let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(worldPath)/stats/\(fileName)")))
-                    let uuid = String(fileName.dropLast(5))
-
-                    playerManager.updatePlayerUUID(uuid: uuid)
-                    playerManager.updateAvailablePlayers(uuids: files.map({ ($0 as NSString).deletingPathExtension }))
-                    progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
-                    trackerLog.updateErrorAlert(alert: .none)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        } else {
-            trackerLog.resetWorldPath()
-            if (saves.isEmpty) {
-                trackerLog.updateErrorAlert(alert: .noDirectory)
                 return
             }
-            trackerLog.updateErrorAlert(alert: .directoryNotFound)
-        }
-    }
 
-    private func getWorldPath(fileManager: FileManager, saves: String) -> String? {
-        do {
-            let savesDirectoryUpdated = try getModifiedTime(saves, fileManager: fileManager)
-            var world: String
+            let fileName = Settings[\.player].player.flatMap({ player in files.first(where: { $0.replacingOccurrences(of: "-", with: "") == "\(player.id).json" })}) ?? files[0]
+            let advFilePath = "\(worldPath)/advancements/\(fileName)"
 
-            let logFile = "\(saves)/../logs/latest.log"
-            let logUpdated = try getModifiedTime(logFile, fileManager: fileManager)
+            var advFileContents = try String(contentsOf: URL(fileURLWithPath: advFilePath))
+            let advRange = NSRange(location: 0, length: advFileContents.count)
+            advFileContents = Constants.dataVersionRegex.stringByReplacingMatches(in: advFileContents, range: advRange, withTemplate: "")
 
-            var isNewWorld = false
-            if (trackerLog.lastLogUpdate != logUpdated) {
-                trackerLog.lastLogUpdate = logUpdated
+            let advancements = try JSONDecoder().decode([String:JsonAdvancement].self, from: Data(advFileContents.utf8))
+            let statistics = try JSONDecoder().decode(JsonStats.self, from: Data(contentsOf: URL(fileURLWithPath: "\(worldPath)/stats/\(fileName)")))
+            let uuid = String(fileName.dropLast(5))
 
-                if let line = Utilities.readLastLine(ofFileAtPath: logFile), line.contains("Loaded") && line.contains("advancements") {
-                    isNewWorld = true
-                }
-            }
-
-            if trackerLog.lastDirectoryUpdate != savesDirectoryUpdated || isNewWorld {
-                trackerLog.lastDirectoryUpdate = savesDirectoryUpdated
-                isNewWorld = false
-                let contents = try fileManager.contentsOfDirectory(atPath: saves).filter({ folder in
-                    folder != ".DS_Store"
-                })
-                if (contents.isEmpty) {
-                    if trackerLog.updateErrorAlert(alert: .noWorlds) {
-                        trackerLog.resetWorldPath()
-                    }
-                    return nil
-                }
-
-                world = try contents.max { a, b in
-                    let date1 = try getModifiedTime("\(saves)/\(a)", fileManager: fileManager)
-                    let date2 = try getModifiedTime("\(saves)/\(b)", fileManager: fileManager)
-                    return date1?.compare(date2!) == ComparisonResult.orderedAscending
-                }!
-
-                world = "\(saves)/\(world)"
-                trackerLog.worldPath = world
-                return world
-            } else {
-                return nil
+            withAnimation {
+                playerManager.updatePlayer(to: uuid)
+                playerManager.updateAvailablePlayers(uuids: files.map({ ($0 as NSString).deletingPathExtension }))
+                progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
+                trackerLog.updateErrorAlert(alert: .none)
+                trackerLog.lastRefresh = Date.now
             }
         } catch {
             print(error.localizedDescription)
-            return nil
         }
-    }
-
-    private func getModifiedTime(_ filePath: String, fileManager: FileManager) throws -> Date? {
-        try fileManager.attributesOfItem(atPath: filePath)[FileAttributeKey.modificationDate] as? Date
     }
 
     private func getInstanceInfo() -> (String, Version?)? {
