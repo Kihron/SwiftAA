@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class Beehives: TransferableIndicator, StatusIndicator {
     var type: StatusType = .beehives
     var id: String = "minecraft:bee_nest"

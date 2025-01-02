@@ -28,7 +28,7 @@ import SwiftUI
     
     func clearProgressState() {
         if advancementsState.isEmpty && !wasCleared {
-            TrackerEngine.shared.trackerLog.lastRefresh = .now
+            TrackerEngine.shared.trackerContext.lastRefresh = .now
             wasCleared = true
         } else if !advancementsState.isEmpty {
             wasCleared = false

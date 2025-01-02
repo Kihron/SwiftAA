@@ -79,6 +79,8 @@ struct IndicatorView: View {
             
             Text(name)
                 .minecraftFont()
+                .contentTransition(.numericText())
+                .monospacedDigit()
                 .tracking(0.1)
                 .foregroundColor(isOverlay ? .white : themeManager.text)
                 .lineLimit(2)

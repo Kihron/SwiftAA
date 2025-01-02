@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor @Observable class TrackerEngine {
-    var trackerLog: TrackerLog = .init()
+    var trackerContext: TrackerContext = .init()
 
     var progressManager: ProgressManager = .shared
     var playerManager: PlayerManager = .shared
@@ -50,8 +50,8 @@ import SwiftUI
             if let info = getInstanceInfo(), !info.0.isEmpty {
                 saves = info.0
 
-                if (saves != trackerLog.lastWorkingDirectory) {
-                    trackerLog.lastWorkingDirectory = saves
+                if (saves != trackerContext.lastWorkingDirectory) {
+                    trackerContext.lastWorkingDirectory = saves
                 }
 
                 if let version = info.1, Settings[\.tracker].automaticVersionDetection {
@@ -61,9 +61,9 @@ import SwiftUI
                     }
                 }
             } else {
-                saves = trackerLog.lastWorkingDirectory
+                saves = trackerContext.lastWorkingDirectory
                 if saves.isEmpty {
-                    if trackerLog.updateErrorAlert(alert: .enterMinecraft) {
+                    if trackerContext.updateErrorAlert(alert: .enterMinecraft) {
                         progressManager.clearProgressState()
                     }
                     return
@@ -98,12 +98,12 @@ import SwiftUI
             savesObserver?.cancel()
             logObserver?.cancel()
             worldObserver?.cancel()
-            trackerLog.resetWorldPath()
+            trackerContext.resetWorldPath()
 
             if saves.isEmpty {
-                trackerLog.updateErrorAlert(alert: .noDirectory)
+                trackerContext.updateErrorAlert(alert: .noDirectory)
             } else {
-                trackerLog.updateErrorAlert(alert: .directoryNotFound)
+                trackerContext.updateErrorAlert(alert: .directoryNotFound)
             }
         }
     }
@@ -115,8 +115,8 @@ import SwiftUI
             })
 
             guard !contents.isEmpty else {
-                if trackerLog.updateErrorAlert(alert: .noWorlds) {
-                    trackerLog.resetWorldPath()
+                if trackerContext.updateErrorAlert(alert: .noWorlds) {
+                    trackerContext.resetWorldPath()
                 }
                 return
             }
@@ -128,7 +128,7 @@ import SwiftUI
             }!
 
             world = "\(saves)/\(world)"
-            trackerLog.worldPath = world
+            trackerContext.worldPath = world
         } catch {
             print(error.localizedDescription)
         }
@@ -136,10 +136,10 @@ import SwiftUI
 
     private func setupWorldObserver() {
         do {
-            let worldPath = trackerLog.worldPath
+            let worldPath = trackerContext.worldPath
 
             if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
-                if trackerLog.updateErrorAlert(alert: .noFiles) {
+                if trackerContext.updateErrorAlert(alert: .noFiles) {
                     progressManager.clearProgressState()
                 }
                 return
@@ -149,7 +149,7 @@ import SwiftUI
             let stats = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats")
 
             if (files.isEmpty || stats.isEmpty) {
-                if trackerLog.updateErrorAlert(alert: .invalidDirectory) {
+                if trackerContext.updateErrorAlert(alert: .invalidDirectory) {
                     progressManager.clearProgressState()
                 }
                 return
@@ -172,14 +172,14 @@ import SwiftUI
 
     private func readWorldFiles() {
         do {
-            let worldPath = trackerLog.worldPath
+            let worldPath = trackerContext.worldPath
 
             let files = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/advancements")
             let stats = try fileManager.contentsOfDirectory(atPath: "\(worldPath)/stats")
 
             if (files.isEmpty || stats.isEmpty) {
                 withAnimation {
-                    if trackerLog.updateErrorAlert(alert: .invalidDirectory) {
+                    if trackerContext.updateErrorAlert(alert: .invalidDirectory) {
                         progressManager.clearProgressState()
                     }
                 }
@@ -201,8 +201,8 @@ import SwiftUI
                 playerManager.updatePlayer(to: uuid)
                 playerManager.updateAvailablePlayers(uuids: files.map({ ($0 as NSString).deletingPathExtension }))
                 progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
-                trackerLog.updateErrorAlert(alert: .none)
-                trackerLog.lastRefresh = Date.now
+                trackerContext.updateErrorAlert(alert: .none)
+                trackerContext.lastRefresh = Date.now
             }
         } catch {
             print(error.localizedDescription)

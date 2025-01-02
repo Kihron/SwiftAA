@@ -8,7 +8,7 @@
 import SwiftUI
 
 class Utilities {
-    static private let indicators = DataManager.shared.statusIndicators
+    static private let indicators = AdvancementManager.shared.statusIndicators
     
     private static var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()

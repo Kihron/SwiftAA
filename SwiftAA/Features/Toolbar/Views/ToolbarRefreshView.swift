@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToolbarRefreshView: View {
-    @Access(\.trackerEngine.trackerLog.lastRefresh) private var lastRefresh
+    @Access(\.trackerEngine.trackerContext.lastRefresh) private var lastRefresh
     @Access(\.progressManager) private var progressManager
 
     @ObservedObject private var layoutManager = LayoutManager.shared

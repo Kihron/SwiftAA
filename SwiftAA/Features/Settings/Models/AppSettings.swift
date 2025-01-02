@@ -24,7 +24,7 @@ import SwiftUI
 /// - SeeAlso: ``Settings``, ``Preferences``
 @propertyWrapper
 @MainActor struct AppSettings<T>: DynamicProperty where T: Equatable {
-    @StateObject var settings: Settings = .shared
+    @ObservedObject var settings: Settings = .shared
 
     let keyPath: WritableKeyPath<Preferences, T>
 

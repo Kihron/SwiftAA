@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class AncientDebris: TransferableIndicator, StatusIndicator {
     var type: StatusType = .ancientDebris
     var id: String = "minecraft:ancient_debris"

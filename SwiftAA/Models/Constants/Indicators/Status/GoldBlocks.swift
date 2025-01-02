@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class GoldBlocks: TransferableIndicator, StatusIndicator {
     var type: StatusType = .goldBlocks
     var id: String = "minecraft:gold_block"

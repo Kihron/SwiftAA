@@ -5,6 +5,9 @@
 //  Created by Andrew on 12/29/24.
 //
 
+import SwiftUI
+
+@Observable
 class HeavyCore: TransferableIndicator, StatusIndicator {
     var type: StatusType = .heavyCore
     var id: String = "minecraft:heavy_core"

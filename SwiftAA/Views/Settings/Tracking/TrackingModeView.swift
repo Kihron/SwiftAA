@@ -48,7 +48,7 @@ struct TrackingModeView: View {
         .animation(.bouncy, value: settings.trackingMode)
         .onChange(of: settings.trackingMode) { _, _ in
             withAnimation {
-                trackerEngine.trackerLog.resetWorldPath()
+                trackerEngine.trackerContext.resetWorldPath()
                 trackerEngine.refreshTracker()
             }
         }

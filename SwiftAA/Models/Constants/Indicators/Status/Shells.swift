@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class Shells: TransferableIndicator, StatusIndicator {
     var type: StatusType = .shells
     var id: String = "minecraft:nautilus_shell"

@@ -41,7 +41,7 @@ class DataManager: ObservableObject {
     static let shared = DataManager()
     
     init() {
-        loadAllAdvancements()
+//        loadAllAdvancements()
     }
     
     var uncounted: [Indicator] = []

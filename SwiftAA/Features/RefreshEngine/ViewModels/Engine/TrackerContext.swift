@@ -1,5 +1,5 @@
 //
-//  TrackerLog.swift
+//  TrackerContext.swift
 //  SwiftAA
 //
 //  Created by Kihron on 12/29/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@MainActor @Observable class TrackerLog {
+@MainActor @Observable class TrackerContext {
     var progressManager: ProgressManager = .shared
 
     var lastWorkingDirectory: String = ""

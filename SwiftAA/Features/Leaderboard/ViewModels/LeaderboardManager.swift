@@ -84,10 +84,8 @@ import SwiftUI
 
     private func updateEntries(newEntries: [LeaderboardEntry]) {
         if !newEntries.isEmpty && entries != newEntries {
-            Task { @MainActor in
-                entries.removeAll()
-                entries = newEntries
-            }
+            entries.removeAll()
+            entries = newEntries
         }
     }
 
