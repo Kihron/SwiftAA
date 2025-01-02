@@ -49,7 +49,7 @@ struct TrackingModeView: View {
         .onChange(of: settings.trackingMode) { _, _ in
             withAnimation {
                 trackerEngine.trackerContext.resetWorldPath()
-                trackerEngine.refreshTracker()
+                trackerEngine.refreshTracker(immediateRefresh: true)
             }
         }
     }

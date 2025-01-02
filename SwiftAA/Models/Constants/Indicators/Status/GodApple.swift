@@ -7,7 +7,6 @@
 
 import Foundation
 
-@Observable
 class GodApple: TransferableIndicator, StatusIndicator {
     var type: StatusType = .godApple
     var id: String = "minecraft:recipes/misc/mojang_banner_pattern"

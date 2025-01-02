@@ -53,6 +53,7 @@ import SwiftUI
 /// - SeeAlso: ``Access``
 @MainActor @Observable class AccessEntries {
     var advancementManager: AdvancementManager = .shared
+    var metricManager: MetricManager = .shared
     var trackerEngine: TrackerEngine = .shared
     var playerManager: PlayerManager = .shared
     var progressManager: ProgressManager = .shared

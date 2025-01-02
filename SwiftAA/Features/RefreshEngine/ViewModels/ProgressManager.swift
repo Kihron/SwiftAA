@@ -12,6 +12,7 @@ import SwiftUI
     var statisticsState: [String:[String:Int]] = [:]
     
     private var advancementManager: AdvancementManager = .shared
+    private var metricManager: MetricManager = .shared
 
     private var playTime: Int = 0
     private var wasCleared: Bool = false
@@ -87,19 +88,19 @@ import SwiftUI
         advancementManager.allAdvancements.forEach { adv in
             adv.update(progress: self)
         }
-        
-        advancementManager.statusIndicators.forEach { status in
-            status.update(progress: self)
-        }
-        
-        advancementManager.statisticIndicators.forEach { statistic in
-            statistic.update(progress: self)
-        }
-        
+
         advancementManager.uncountedAdvancements.forEach { adv in
             adv.update(progress: self)
         }
-        
+
+        metricManager.statusIndicators.forEach { status in
+            status.update(progress: self)
+        }
+
+        metricManager.statisticIndicators.forEach { statistic in
+            statistic.update(progress: self)
+        }
+
         advancementManager.updateAdvancementFields()
         if !advancementManager.completedAllAdvancements {
             updateInGameTime()

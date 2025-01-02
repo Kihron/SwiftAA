@@ -7,7 +7,6 @@
 
 import Foundation
 
-@Observable
 class SnifferEggs: TransferableIndicator, StatusIndicator {
     var type: StatusType = .snifferEggs
     var id: String = "minecraft:sniffer_egg"

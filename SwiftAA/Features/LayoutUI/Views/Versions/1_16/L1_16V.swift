@@ -9,8 +9,8 @@ import SwiftUI
 
 struct L1_16V: View {
     @Access(\.advancementManager) private var advancementManager
+    @Access(\.metricManager) private var metricManager
 
-    @State private var statusIndicators = Utilities.getSpecificStats(types: [.godApple, .trident, .shells, .ancientDebris, .beehives, .goldBlocks])
     @State private var statisticIndicators: [StatisticIndicator] = [EnderPearls.shared, NetherWart.shared, GhastTears.shared, Pufferfish.shared, AzureBluet.shared, FermentedEye.shared]
     
     var body: some View {
@@ -19,7 +19,7 @@ struct L1_16V: View {
                 AdvPanelView(indicators: .constant(advancementManager.minimalisticAdvancements), columnCount: 5, isMinimal: true)
                     .frame(width: 370)
                 
-                AdvPanelView(indicators: $statusIndicators, columnCount: 1, isStat: true)
+                AdvPanelView(indicators: metricManager.getSpecificStats(types: [.godApple, .trident, .shells, .ancientDebris, .beehives, .goldBlocks]), columnCount: 1, isStat: true)
                     .frame(width: 74)
                 
                 VStack(spacing: 0) {

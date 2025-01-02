@@ -7,7 +7,6 @@
 
 import Foundation
 
-@Observable
 class Trident: TransferableIndicator, StatusIndicator {
     var type: StatusType = .trident
     var id: String = "minecraft:trident"

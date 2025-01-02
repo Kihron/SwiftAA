@@ -11,7 +11,7 @@ import SWXMLHash
 @Observable class AdvancementManager: VersionObserver {
     private var map = [String:[Advancement]]() {
         didSet {
-            if map.keys.count >= 5 {
+            if map.keys.count >= 5 || map.isEmpty {
                 allAdvancements = map.values.flatMap({ $0 })
                 allCriteria = allAdvancements.filter({ !$0.criteria.isEmpty }).flatMap({ $0.criteria })
                 goalAdvancements = allAdvancements.lazy.filter({ !$0.criteria.isEmpty }).sorted(by: { $0.id < $1.id })
@@ -227,6 +227,6 @@ import SWXMLHash
         uncountedAdvancements.removeAll()
         updateAdvancementFields()
         loadAllAdvancements()
-        TrackerEngine.shared.refreshTracker()
+        TrackerEngine.shared.refreshTracker(immediateRefresh: true)
     }
 }

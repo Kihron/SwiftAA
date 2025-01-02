@@ -7,7 +7,6 @@
 
 import Foundation
 
-@Observable
 class MajorBiomes: TransferableIndicator, StatusIndicator {
     var type: StatusType = .majorBiomes
     var id: String = "minecraft:biome"

@@ -7,7 +7,6 @@
 
 import Foundation
 
-@Observable
 class WitherSkulls: TransferableIndicator, StatusIndicator {
     var type: StatusType = .witherSkulls
     var id: String = "minecraft:wither_skeleton_skull"

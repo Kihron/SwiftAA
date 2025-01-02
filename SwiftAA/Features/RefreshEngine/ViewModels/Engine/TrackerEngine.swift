@@ -24,50 +24,70 @@ import SwiftUI
     static let shared = TrackerEngine()
 
     private init() {
-        setupWindowObserver()
+        configureEngine()
+    }
+
+    private func configureEngine() {
+        if Settings[\.tracker].trackingMode == .directory {
+            refreshTracker()
+        } else {
+            setupWindowObserver()
+            trackerContext.updateErrorAlert(alert: .enterMinecraft)
+        }
     }
 
     private func setupWindowObserver() {
-        windowObserver = NSWorkspace.shared.notificationCenter.addObserver(
-            forName: NSWorkspace.didActivateApplicationNotification,
-            object: nil,
-            queue: .main
-        ) { notification in
-            if notification.userInfo?[NSWorkspace.applicationUserInfoKey] is NSRunningApplication {
-                DispatchQueue.main.async {
-                    self.refreshTracker()
+        if windowObserver == nil {
+            windowObserver = NSWorkspace.shared.notificationCenter.addObserver(
+                forName: NSWorkspace.didActivateApplicationNotification,
+                object: nil,
+                queue: .main
+            ) { notification in
+                if notification.userInfo?[NSWorkspace.applicationUserInfoKey] is NSRunningApplication {
+                    DispatchQueue.main.async {
+                        self.refreshTracker()
+                    }
                 }
             }
         }
     }
 
-    func refreshTracker() {
+    private func removeWindowObserver() {
+        if let observer = windowObserver {
+            NSWorkspace.shared.notificationCenter.removeObserver(observer)
+            windowObserver = nil
+        }
+    }
+
+    func refreshTracker(immediateRefresh: Bool = false) {
         let saves: String
 
         if Settings[\.tracker].trackingMode == .directory {
             saves = Settings[\.tracker].customSavesPath
+            removeWindowObserver()
         } else {
-            if let info = getInstanceInfo(), !info.0.isEmpty {
-                saves = info.0
+            setupWindowObserver()
 
-                if (saves != trackerContext.lastWorkingDirectory) {
-                    trackerContext.lastWorkingDirectory = saves
+            if let (path, version) = getInstanceInfo(), !path.isEmpty {
+                if let version, Settings[\.tracker].automaticVersionDetection, version != Settings[\.tracker].gameVersion {
+                    Settings[\.tracker].gameVersion = version
+                    return
                 }
 
-                if let version = info.1, Settings[\.tracker].automaticVersionDetection {
-                    if version != Settings[\.tracker].gameVersion {
-                        Settings[\.tracker].gameVersion = version
-                        return
-                    }
-                }
+                guard path != trackerContext.lastWorkingDirectory else { return }
+
+                trackerContext.lastWorkingDirectory = path
+                saves = path
             } else {
-                saves = trackerContext.lastWorkingDirectory
-                if saves.isEmpty {
+                if trackerContext.lastWorkingDirectory.isEmpty {
                     if trackerContext.updateErrorAlert(alert: .enterMinecraft) {
                         progressManager.clearProgressState()
                     }
                     return
                 }
+
+                guard immediateRefresh else { return }
+                saves = trackerContext.lastWorkingDirectory
             }
         }
 
@@ -114,21 +134,18 @@ import SwiftUI
                 folder != ".DS_Store"
             })
 
-            guard !contents.isEmpty else {
+            guard let world = try contents.max(by: { a, b in
+                let date1 = try FileMonitor.getModifiedTime(of: "\(saves)/\(a)")
+                let date2 = try FileMonitor.getModifiedTime(of: "\(saves)/\(b)")
+                return date1?.compare(date2!) == ComparisonResult.orderedAscending
+            }) else {
                 if trackerContext.updateErrorAlert(alert: .noWorlds) {
                     trackerContext.resetWorldPath()
                 }
                 return
             }
 
-            var world = try contents.max { a, b in
-                let date1 = try FileMonitor.getModifiedTime(of: "\(saves)/\(a)")
-                let date2 = try FileMonitor.getModifiedTime(of: "\(saves)/\(b)")
-                return date1?.compare(date2!) == ComparisonResult.orderedAscending
-            }!
-
-            world = "\(saves)/\(world)"
-            trackerContext.worldPath = world
+            trackerContext.worldPath = "\(saves)/\(world)"
         } catch {
             print(error.localizedDescription)
         }

@@ -32,7 +32,7 @@ import SwiftUI
             Task {
                 Settings[\.tracker].player = await fetchPlayer(for: uuid)
                 if shouldRefreshTracker {
-                    TrackerEngine.shared.refreshTracker()
+                    TrackerEngine.shared.refreshTracker(immediateRefresh: true)
                 }
             }
         }

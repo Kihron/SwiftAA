@@ -9,9 +9,7 @@ import SwiftUI
 
 struct L1_16S: View {
     @Access(\.advancementManager) private var advancementManager
-
-    @State private var topStats = Utilities.getSpecificStats(types: [.godApple, .trident, .shells])
-    @State private var bottomStats = Utilities.getSpecificStats(types: [.witherSkulls, .ancientDebris])
+    @Access(\.metricManager) private var metricManager
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -35,8 +33,8 @@ struct L1_16S: View {
                 .frame(width: 270)
                 
                 VStack(spacing: 0) {
-                    AdvPanelView(indicators: $topStats, columnCount: 1, isStat: true)
-                    AdvPanelView(indicators: $bottomStats, columnCount: 1, isStat: true)
+                    AdvPanelView(indicators: metricManager.getSpecificStats(types: [.godApple, .trident, .shells]), columnCount: 1, isStat: true)
+                    AdvPanelView(indicators: metricManager.getSpecificStats(types: [.witherSkulls, .ancientDebris]), columnCount: 1, isStat: true)
                 }
                 .frame(width: 75)
                 

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct L1_16M: View {
     @Access(\.advancementManager) private var advancementManager
+    @Access(\.metricManager) private var metricManager
 
-    @State private var statusIndicators = Utilities.getSpecificStats(types: [.godApple, .trident, .shells, .witherSkulls, .ancientDebris, .beehives, .goldBlocks])
     @State private var statistics: [StatisticIndicator] = [EnderPearls.shared, NetherWart.shared, GhastTears.shared, Pufferfish.shared, AzureBluet.shared, FermentedEye.shared]
     
     var body: some View {
@@ -19,7 +19,7 @@ struct L1_16M: View {
                 AdvPanelView(indicators: .constant(advancementManager.minimalisticAdvancements), columnCount: 7, isMinimal: true)
                     .frame(width: 518)
                 
-                AdvPanelView(indicators: $statusIndicators, columnCount: 2, isStat: true)
+                AdvPanelView(indicators: metricManager.getSpecificStats(types: [.godApple, .trident, .shells, .witherSkulls, .ancientDebris, .beehives, .goldBlocks]), columnCount: 2, isStat: true)
                     .frame(width: 148)
                 
                 GoalPanelView(advancement: advancementManager.getGoalAdvancement(id: "minecraft:husbandry/balanced_diet"), rowCount: 15, goal: L10n.Goal.foodsEaten, isMinimal: true)
