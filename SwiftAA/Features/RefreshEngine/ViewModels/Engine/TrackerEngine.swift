@@ -10,13 +10,15 @@ import SwiftUI
 @MainActor @Observable class TrackerEngine {
     var trackerContext: TrackerContext = .init()
 
-    var progressManager: ProgressManager = .shared
-    var playerManager: PlayerManager = .shared
+    private var progressManager: ProgressManager = .shared
+    private var playerManager: PlayerManager = .shared
 
     private let fileManager = FileManager.default
     private var activeWindows = [pid_t:(String, Version?)]()
 
     private var windowObserver: NSObjectProtocol? = nil
+    private var customSavesPathObserver: NSObjectProtocol? = nil
+
     private var savesObserver: DispatchSourceFileSystemObject? = nil
     private var worldObserver: DispatchSourceFileSystemObject? = nil
     private var logObserver: DispatchSourceFileSystemObject? = nil
@@ -28,67 +30,39 @@ import SwiftUI
     }
 
     private func configureEngine() {
-        if Settings[\.tracker].trackingMode == .directory {
-            refreshTracker()
-        } else {
-            setupWindowObserver()
-            trackerContext.updateErrorAlert(alert: .enterMinecraft)
-        }
-    }
-
-    private func setupWindowObserver() {
-        if windowObserver == nil {
-            windowObserver = NSWorkspace.shared.notificationCenter.addObserver(
-                forName: NSWorkspace.didActivateApplicationNotification,
-                object: nil,
-                queue: .main
-            ) { notification in
-                if notification.userInfo?[NSWorkspace.applicationUserInfoKey] is NSRunningApplication {
-                    DispatchQueue.main.async {
-                        self.refreshTracker()
-                    }
-                }
-            }
-        }
-    }
-
-    private func removeWindowObserver() {
-        if let observer = windowObserver {
-            NSWorkspace.shared.notificationCenter.removeObserver(observer)
-            windowObserver = nil
-        }
+        trackerContext.updateErrorAlert(alert: .enterMinecraft)
+        refreshTracker()
     }
 
     func refreshTracker(immediateRefresh: Bool = false) {
+        toggleObservers()
+
         let saves: String
-
-        if Settings[\.tracker].trackingMode == .directory {
-            saves = Settings[\.tracker].customSavesPath
-            removeWindowObserver()
-        } else {
-            setupWindowObserver()
-
-            if let (path, version) = getInstanceInfo(), !path.isEmpty {
-                if let version, Settings[\.tracker].automaticVersionDetection, version != Settings[\.tracker].gameVersion {
-                    Settings[\.tracker].gameVersion = version
-                    return
-                }
-
-                guard path != trackerContext.lastWorkingDirectory else { return }
-
-                trackerContext.lastWorkingDirectory = path
-                saves = path
-            } else {
-                if trackerContext.lastWorkingDirectory.isEmpty {
-                    if trackerContext.updateErrorAlert(alert: .enterMinecraft) {
-                        progressManager.clearProgressState()
+        switch Settings[\.tracker].trackingMode {
+            case .directory:
+                saves = Settings[\.tracker].customSavesPath
+            case .seamless:
+                if let (path, version) = getInstanceInfo(), !path.isEmpty {
+                    if let version, Settings[\.tracker].automaticVersionDetection, version != Settings[\.tracker].gameVersion {
+                        Settings[\.tracker].gameVersion = version
+                        return
                     }
-                    return
-                }
 
-                guard immediateRefresh else { return }
-                saves = trackerContext.lastWorkingDirectory
-            }
+                    guard path != trackerContext.lastWorkingDirectory else { return }
+
+                    trackerContext.lastWorkingDirectory = path
+                    saves = path
+                } else {
+                    if trackerContext.lastWorkingDirectory.isEmpty {
+                        if trackerContext.updateErrorAlert(alert: .enterMinecraft) {
+                            progressManager.clearProgressState()
+                        }
+                        return
+                    }
+
+                    guard immediateRefresh else { return }
+                    saves = trackerContext.lastWorkingDirectory
+                }
         }
 
         setupWorldTracking(saves: saves)
@@ -219,7 +193,6 @@ import SwiftUI
                 playerManager.updateAvailablePlayers(uuids: files.map({ ($0 as NSString).deletingPathExtension }))
                 progressManager.updateProgressState(advancements: advancements, statistics: statistics.stats)
                 trackerContext.updateErrorAlert(alert: .none)
-                trackerContext.lastRefresh = Date.now
             }
         } catch {
             print(error.localizedDescription)
@@ -278,5 +251,65 @@ import SwiftUI
         }
 
         return nil
+    }
+}
+
+extension TrackerEngine {
+    private func toggleObservers() {
+        switch Settings[\.tracker].trackingMode {
+            case .directory:
+                setupCustomSavesPathObserver()
+                removeWindowObserver()
+            case .seamless:
+                setupWindowObserver()
+                removeCustomSavesPathObserver()
+        }
+    }
+
+    private func setupWindowObserver() {
+        if windowObserver == nil {
+            windowObserver = NSWorkspace.shared.notificationCenter.addObserver(
+                forName: NSWorkspace.didActivateApplicationNotification,
+                object: nil,
+                queue: .main
+            ) { notification in
+                if notification.userInfo?[NSWorkspace.applicationUserInfoKey] is NSRunningApplication {
+                    DispatchQueue.main.async {
+                        self.refreshTracker()
+                    }
+                }
+            }
+        }
+    }
+
+    private func setupCustomSavesPathObserver() {
+        if customSavesPathObserver == nil {
+            customSavesPathObserver = NotificationCenter.default.addObserver(
+                forName: .didCustomSavesPathChange,
+                object: nil,
+                queue: .main
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    if Settings[\.tracker].trackingMode == .directory {
+                        self.refreshTracker(immediateRefresh: true)
+                    }
+                }
+            }
+        }
+    }
+
+    private func removeCustomSavesPathObserver() {
+        if let observer = customSavesPathObserver {
+            NSWorkspace.shared.notificationCenter.removeObserver(observer)
+            customSavesPathObserver = nil
+        }
+    }
+
+    private func removeWindowObserver() {
+        if let observer = windowObserver {
+            NSWorkspace.shared.notificationCenter.removeObserver(observer)
+            windowObserver = nil
+        }
     }
 }

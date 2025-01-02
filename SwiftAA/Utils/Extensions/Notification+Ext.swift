@@ -10,4 +10,5 @@ import SwiftUI
 public extension Notification.Name {
     static let didVersionChange = Notification.Name("didVersionChange")
     static let didProgressChange = Notification.Name("didProgressChange")
+    static let didCustomSavesPathChange = Notification.Name("didCustomSavesPathChange")
 }

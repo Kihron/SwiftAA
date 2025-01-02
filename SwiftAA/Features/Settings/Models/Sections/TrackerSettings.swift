@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
 extension Preferences {
     struct TrackerSettings: Codable, Hashable {
-        var customSavesPath: String = ""
+        var customSavesPath: String = "" {
+            didSet {
+                sendCustomSavesPathChangeNotification(old: oldValue)
+            }
+        }
 
         var trackingMode: TrackingMode = .seamless
         var layoutStyle: LayoutStyle = .standard
@@ -24,6 +29,8 @@ extension Preferences {
         var automaticExpansion: Bool = true
 
         var player: Player? = nil
+
+        private var cancellable: AnyCancellable?
 
         init() {}
 
@@ -42,6 +49,16 @@ extension Preferences {
             self.player = try container.decodeIfPresent(Player.self, forKey: .player)
         }
 
+        enum CodingKeys: String, CodingKey {
+            case customSavesPath
+            case trackingMode
+            case layoutStyle
+            case gameVersion
+            case automaticVersionDetection
+            case automaticExpansion
+            case player
+        }
+
         private func sendVersionChangeNotification(old version: Version) {
             if version != gameVersion {
                 NotificationCenter.default.post(
@@ -49,6 +66,20 @@ extension Preferences {
                     object: nil,
                     userInfo: ["version": gameVersion]
                 )
+            }
+        }
+
+        mutating private func sendCustomSavesPathChangeNotification(old path: String) {
+            if path != customSavesPath {
+                cancellable?.cancel()
+                cancellable = Just(customSavesPath)
+                    .delay(for: .milliseconds(300), scheduler: RunLoop.main)
+                    .sink { _ in
+                        NotificationCenter.default.post(
+                            name: .didCustomSavesPathChange,
+                            object: nil
+                        )
+                    }
             }
         }
     }

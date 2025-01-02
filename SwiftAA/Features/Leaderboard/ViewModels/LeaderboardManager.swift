@@ -20,6 +20,7 @@ import SwiftUI
 
     init() {
         loadSavedData()
+        setupVersionObserver()
 
         Task {
             await fetchAllLeaderboardData()

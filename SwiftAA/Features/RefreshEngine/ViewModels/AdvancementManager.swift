@@ -131,7 +131,7 @@ import SWXMLHash
 
                     let current: Advancement
                     if let complex = element.attribute(by: "complex")?.text, complex == "trim" {
-                        current = TrimAdvancement(id: id, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
+                        current = TrimAdvancement(id: id, category: category, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false)
                     } else {
                         current = Advancement(id: id, category: category, key: key, name: name, shortName: shortName, icon: icon, frameStyle: frameStyle, criteria: criteria, completed: false, tooltip: tooltip)
                     }

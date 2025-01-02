@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-@MainActor @Observable class TrackerContext {
-    var progressManager: ProgressManager = .shared
+@Observable class TrackerContext: ProgressObserver {
+    private var progressManager: ProgressManager = .shared
 
     var lastWorkingDirectory: String = ""
     var lastRefresh: Date = Date.now
@@ -17,13 +17,14 @@ import SwiftUI
     var alert: TrackerAlert? = .none
 
     init() {
-
+        setupProgressObserver()
     }
 
     func resetWorldPath() {
-        worldPath.removeAll()
-        lastRefresh = Date.now
-        progressManager.clearProgressState()
+        withAnimation {
+            worldPath.removeAll()
+            progressManager.clearProgressState()
+        }
     }
 
     func getInstanceNumber() -> String {
@@ -39,5 +40,9 @@ import SwiftUI
         guard self.alert != alert else { return false }
         self.alert = alert
         return true
+    }
+
+    func handleProgressChange() async throws {
+        lastRefresh = Date.now
     }
 }

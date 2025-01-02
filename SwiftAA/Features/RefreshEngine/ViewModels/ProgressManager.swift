@@ -24,12 +24,14 @@ import SwiftUI
     func updateProgressState(advancements: [String:AdvancementData], statistics: [String:[String:Int]]) {
         advancementsState = advancements
         statisticsState = statistics
+
         updateIndicators()
+        sendProgressChangeNotification()
     }
     
     func clearProgressState() {
         if advancementsState.isEmpty && !wasCleared {
-            TrackerEngine.shared.trackerContext.lastRefresh = .now
+            sendProgressChangeNotification()
             wasCleared = true
         } else if !advancementsState.isEmpty {
             wasCleared = false
@@ -111,5 +113,9 @@ import SwiftUI
         let isPreviousKey = [.v1_16, .v1_16_5].contains(TrackerManager.shared.gameVersion)
         let timeStatistic = isPreviousKey ? "minecraft:play_one_minute" : "minecraft:play_time"
         playTime = statisticsState["minecraft:custom"]?[timeStatistic] ?? 0
+    }
+
+    private func sendProgressChangeNotification() {
+        NotificationCenter.default.post(name: .didProgressChange, object: nil)
     }
 }
