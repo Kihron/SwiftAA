@@ -246,6 +246,7 @@
 "advancement.adventure.totem_of_undying" = "Postmortal";
 "advancement.adventure.avoid_vibration" = "Sneak 100";
 "advancement.adventure.kill_mob_near_sculk_catalyst" = "It Spreads";
+"advancement.adventure.use_lodestone" = "Country Lode, Take Me Home";
 "advancement.adventure.throw_trident" = "A Throwaway Joke";
 "advancement.adventure.very_very_frightening" = "Very Very Frightening";
 "advancement.adventure.adventuring_time" = "Adventuring Time";
@@ -561,6 +562,7 @@
 "advancement.adventure.sleep_in_bed.short" = "Dreams";
 "advancement.adventure.kill_a_mob.short" = "Hunter";
 "advancement.adventure.whos_the_pillager_now.short" = "The Pillager";
+"advancement.adventure.use_lodestone.short" = "Lode Home";
 "advancement.adventure.read_power_of_chiseled_bookshelf.short" = "Book Power";
 "advancement.adventure.two_birds_one_arrow.short" = "Two Birds";
 "advancement.adventure.fall_from_world_height.short" = "Caves/Cliffs";

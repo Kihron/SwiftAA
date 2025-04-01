@@ -14,6 +14,7 @@ enum Version: String, SettingsOption {
     case v1_20 = "1.20"
     case v1_21 = "1.21"
     case v1_21_4 = "1.21.4"
+    case v1_21_5 = "1.21.5"
     
     var id: Self {
         return self

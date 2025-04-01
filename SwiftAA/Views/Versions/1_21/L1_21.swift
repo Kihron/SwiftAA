@@ -11,7 +11,7 @@ struct L1_21: View {
     @ObservedObject private var trackerManager = TrackerManager.shared
     
     var body: some View {
-        if [.v1_21, .v1_21_4].contains(trackerManager.gameVersion) {
+        if [.v1_21, .v1_21_4, .v1_21_5].contains(trackerManager.gameVersion) {
             switch trackerManager.layoutStyle {
                 case .standard:
                     L1_21S()

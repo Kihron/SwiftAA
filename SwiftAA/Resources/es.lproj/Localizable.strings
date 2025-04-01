@@ -230,6 +230,7 @@
 "advancement.adventure.summon_iron_golem" = "Sicario";
 "advancement.adventure.totem_of_undying" = "Post Mortem";
 "advancement.adventure.avoid_vibration" = "Discreción\n100";
+"advancement.adventure.use_lodestone" = "Magnetita, Llévame\nA Casita";
 "advancement.adventure.kill_mob_near_sculk_catalyst" = "Se Propaga";
 "advancement.adventure.lightning_rod_with_villager_no_fire" = "Protector De Sobretensión";
 "advancement.adventure.walk_on_powder_snow_with_leather_boots" = "Ligero Como Conejo";
@@ -530,6 +531,7 @@
 "advancement.adventure.sleep_in_bed.short" = "Sueños";
 "advancement.adventure.kill_a_mob.short" = "Cazador";
 "advancement.adventure.whos_the_pillager_now.short" = "Saqueador";
+"advancement.adventure.use_lodestone.short" = "Piedra Hogar";
 "advancement.adventure.read_power_of_chiseled_bookshelf.short" = "Libro Poder";
 "advancement.adventure.two_birds_one_arrow.short" = "Dos Aves";
 "advancement.adventure.fall_from_world_height.short" = "Cuevas/Peñascos";

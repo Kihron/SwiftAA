@@ -105,6 +105,8 @@ internal enum L10n {
       internal static let twoBirdsOneArrow = L10n.tr("Localizable", "advancement.adventure.two_birds_one_arrow", fallback: "Two Birds,\nOne Arrow")
       /// Under Lock and Key
       internal static let underLockAndKey = L10n.tr("Localizable", "advancement.adventure.under_lock_and_key", fallback: "Under Lock and Key")
+      /// Country Lode, Take Me Home
+      internal static let useLodestone = L10n.tr("Localizable", "advancement.adventure.use_lodestone", fallback: "Country Lode, Take Me Home")
       /// Very Very Frightening
       internal static let veryVeryFrightening = L10n.tr("Localizable", "advancement.adventure.very_very_frightening", fallback: "Very Very Frightening")
       /// Voluntary Exile
@@ -222,6 +224,10 @@ internal enum L10n {
       internal enum UnderLockAndKey {
         /// Lock/Key
         internal static let short = L10n.tr("Localizable", "advancement.adventure.under_lock_and_key.short", fallback: "Lock/Key")
+      }
+      internal enum UseLodestone {
+        /// Lode Home
+        internal static let short = L10n.tr("Localizable", "advancement.adventure.use_lodestone.short", fallback: "Lode Home")
       }
       internal enum VeryVeryFrightening {
         /// VVF

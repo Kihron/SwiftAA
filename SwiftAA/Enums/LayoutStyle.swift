@@ -28,7 +28,7 @@ enum LayoutStyle: String, SettingsOption {
                 return [.standard]
             case .v1_20:
                 return LayoutStyle.allCases
-            case .v1_21, .v1_21_4:
+            case .v1_21, .v1_21_4, .v1_21_5:
                 return LayoutStyle.allCases
         }
     }
