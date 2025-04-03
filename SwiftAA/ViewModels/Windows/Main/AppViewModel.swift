@@ -60,10 +60,14 @@ class AppViewModel: ObservableObject {
             do {
                 let worldPath = getWorldPath(fileManager: fileManager, saves: saves) ?? trackerManager.worldPath
                 guard !worldPath.isEmpty else { return }
-                
-                if (!["advancements", "stats"].allSatisfy(try fileManager.contentsOfDirectory(atPath: worldPath).contains)) {
-                    if trackerManager.updateErrorAlert(alert: .noFiles) {
+                let directoryContents = try fileManager.contentsOfDirectory(atPath: worldPath)
+                if (!["advancements", "stats"].allSatisfy(directoryContents.contains)) {
+                    if directoryContents.contains("level.dat") {
                         progressManager.clearProgressState()
+                    } else {
+                        if trackerManager.updateErrorAlert(alert: .noFiles) {
+                            progressManager.clearProgressState()
+                        }
                     }
                     return
                 }
