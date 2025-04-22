@@ -18,6 +18,8 @@ struct CreditsView: View {
                     CreditsEntryView(name: "Slackow", role: L10n.Credits.Role.developer, icon: "wrench.adjustable.fill", color: .orange)
                     
                     CreditsEntryView(name: "nealxm", role: L10n.Credits.Role.betaTester, icon: "atom", color: .green)
+                    
+                    CreditsEntryView(name: "olock5", role: L10n.Credits.Role.supporter, icon: "heart.fill", color: .pink)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }

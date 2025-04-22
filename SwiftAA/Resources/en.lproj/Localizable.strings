@@ -2,7 +2,7 @@
 
 "about.button" = "About SwiftAA";
 "about.description" = "All Advancements Tracker for macOS";
-"about.copyright" = "Copyright © 2024 Kihron, Slackow.";
+"about.copyright" = "Copyright © 2025 Kihron, Slackow.";
 
 "alert.enter_minecraft" = "Open Minecraft to start tracking";
 "alert.invalid_directory" = "Invalid directory";
@@ -21,6 +21,7 @@
 "credits.donate.message" = "If you're finding SwiftAA helpful and would like to support its development, consider making a donation on our [Ko-fi](https://ko-fi.com/kscode).";
 "credits.role.developer" = "Developer";
 "credits.role.beta_tester" = "Beta Tester";
+"credits.role.supporter" = "Supporter";
 
 "goal.advancements" = "Advancements";
 "goal.animals_bred" = "Animals Bred";

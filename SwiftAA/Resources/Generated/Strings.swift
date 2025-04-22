@@ -15,8 +15,8 @@ internal enum L10n {
   internal enum About {
     /// About SwiftAA
     internal static let button = L10n.tr("Localizable", "about.button", fallback: "About SwiftAA")
-    /// Copyright © 2024 Kihron, Slackow.
-    internal static let copyright = L10n.tr("Localizable", "about.copyright", fallback: "Copyright © 2024 Kihron, Slackow.")
+    /// Copyright © 2025 Kihron, Slackow.
+    internal static let copyright = L10n.tr("Localizable", "about.copyright", fallback: "Copyright © 2025 Kihron, Slackow.")
     /// All Advancements Tracker for macOS
     internal static let description = L10n.tr("Localizable", "about.description", fallback: "All Advancements Tracker for macOS")
   }
@@ -1212,6 +1212,8 @@ internal enum L10n {
       internal static let betaTester = L10n.tr("Localizable", "credits.role.beta_tester", fallback: "Beta Tester")
       /// Developer
       internal static let developer = L10n.tr("Localizable", "credits.role.developer", fallback: "Developer")
+      /// Supporter
+      internal static let supporter = L10n.tr("Localizable", "credits.role.supporter", fallback: "Supporter")
     }
   }
   internal enum Goal {

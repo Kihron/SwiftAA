@@ -2,7 +2,7 @@
 
 "about.button" = "Acerca de SwiftAA";
 "about.description" = "Rastreador de todos los progresos para macOS";
-"about.copyright" = "Copyright © 2024 Kihron, Slackow.";
+"about.copyright" = "Copyright © 2025 Kihron, Slackow.";
 
 "alert.enter_minecraft" = "Abre Minecraft para empezar a rastrear";
 "alert.invalid_directory" = "Directorio inválido";
@@ -21,6 +21,7 @@
 "credits.donate.message" = "Si encuentras SwiftAA útil y te gustaría apoyar su desarrollo, considera hacer una donación en nuestro [Ko-fi](https://ko-fi.com/kscode).";
 "credits.role.developer" = "Desarrollador";
 "credits.role.beta_tester" = "Probador Beta";
+"credits.role.supporter" = "Patrocinador";
 
 "goal.advancements" = "Progresos";
 "goal.animals_bred" = "Animales Criados";
